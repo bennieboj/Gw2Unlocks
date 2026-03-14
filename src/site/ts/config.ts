@@ -1,0 +1,1 @@
+export const DATASET_URL = '/data/data.json';

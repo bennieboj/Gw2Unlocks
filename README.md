@@ -1,17 +1,19 @@
-# GW2 Unlocks — Development Guide
+# GW2 Unlocks
+
+## Development Guide
 
 This document describes how to run and develop the **GW2 Unlocks** project locally.
 
 ---
 
-## Requirements
+### Requirements
 
 * **Node.js** (recommended: ≥ 18)
 * **npm** (comes with Node)
 
-Verify installation, install dependencies, and run the dev server all in one place:
+Verify installation, install dependencies, and run the dev server:
 
-```
+```bash
 node -v
 npm -v
 cd src/site/
@@ -19,13 +21,13 @@ npm install
 npm run dev
 ```
 
-This will start a local server at `http://localhost:5000` with hot reload and local filesystem access.
+This will start a local server at `http://localhost:5000` with hot reload.
 
 ---
 
-## Project Scripts (from package.json)
+### Project Scripts (from package.json)
 
-```
+```bash
 # Start the development server
 npm run dev
 
@@ -38,31 +40,28 @@ npm run preview
 
 ---
 
-## Development vs Production Behavior
+### Development and Production Behavior
 
-* **Development mode** (`__VITE_MODE__ === "development"`):
+* **Dataset** is served from `public/data/data.json`.
 
-  * Page title shows `[DEV]`
-  * Dataset loaded from local file: `/src/data/data.json`
+  * Works in both development (`vite dev`) and production (`vite build` → Netlify).
+  * Fetch in code:
 
-* **Production mode**:
+```ts
+const DATASET_URL = '/data/data.json';
+const res = await fetch(DATASET_URL);
+const unlockData = await res.json();
+```
 
-  * Page title is normal
-  * Dataset loaded from GitHub via jsDelivr using the COMMIT_SHA environment variable
+* **Page title**:
+
+  * `[DEV]` is appended in development mode.
+  * Normal title in production.
 
 ---
 
-## Notes
+### Notes
 
-* The Vite dev server allows local access outside the project folder using:
-
-```
-// vite.config.js
-server: {
-  fs: {
-    allow: [".."] // Only in development
-  }
-}
-```
-
-* Remember to set `VITE_COMMIT_SHA` for production builds if you want a specific jsDelivr URL.
+* Static assets in `public/` are copied into the build output (`dist/`) automatically.
+* No external CDN or jsDelivr fetch is required; all data is served locally and via Netlify’s CDN in production.
+* `vite.config.js` only configures the front-end build — no changes are needed for Node scripts or other jobs.
