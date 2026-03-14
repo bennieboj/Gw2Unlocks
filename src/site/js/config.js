@@ -4,7 +4,7 @@ export const DATASET_URL = (() => {
   }  
   else if (__COMMIT_SHA__) {
     // Production: COMMIT_SHA comes from Vite env
-    return `https://cdn.jsdelivr.net/gh/bennieboj/Gw2Unlocks@${import.meta.env.VITE_COMMIT_SHA}/src/data/data.json`;
+    return `https://cdn.jsdelivr.net/gh/bennieboj/Gw2Unlocks@${__COMMIT_SHA__}/src/data/data.json`;
   }
   else {
     throw new Error("DATASET_URL could not be determined.");
