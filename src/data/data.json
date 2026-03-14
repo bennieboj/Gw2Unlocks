@@ -1,0 +1,24 @@
+[
+  {
+    "gw2_id": 20142,
+    "icon": "https://render.guildwars2.com/file/10D942432866D4BB21C0A07605250D33C4CF28A8/220485.png",
+    "unlock_type": "minis",
+    "unlock_typeid": 31,
+    "gamemode": ["pve", "pvp", "wvw"],
+    "expansion": [],
+    "map_ids": [],
+    "ui_grouping_type": "mini",
+    "name": "Mini Brown Bear"
+  },
+  {
+    "gw2_id": 6169,
+    "icon": "https://render.guildwars2.com/file/1E6AD747ADFD3405E756FE22C02374753E08A67B/1200234.png",
+    "unlock_type": "skins",
+    "unlock_typeid": 6169,
+    "gamemode": ["pve", "pvp", "wvw"],
+    "expansion": ["hot"],
+    "map_ids": [],
+    "ui_grouping_type": "skin",
+    "name": "Machined Axe"
+  }
+]
