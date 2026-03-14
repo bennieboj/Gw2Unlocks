@@ -1,4 +1,4 @@
 [build]
   base    = "src/site"            # base directory for your project
-  publish = "src/site/dist"       # output directory
+  publish = "dist"                # output directory, relative from the base dir
   command = "npm run build"
