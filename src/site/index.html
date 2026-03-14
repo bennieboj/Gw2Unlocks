@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>GW2 Unlocks</title>
+
+<style>
+body{
+  font-family: Arial, sans-serif;
+  background:#1e1e1e;
+  color:white;
+  margin:20px;
+}
+
+h2{
+  border-bottom:1px solid #444;
+  padding-bottom:5px;
+}
+
+.group{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,120px);
+  gap:10px;
+}
+
+.item{
+  background:#2a2a2a;
+  padding:10px;
+  border-radius:6px;
+  text-align:center;
+  font-size:12px;
+}
+
+.item img{
+  width:64px;
+  height:64px;
+  display:block;
+  margin:0 auto 6px auto;
+}
+</style>
+</head>
+
+<body>
+
+<gw2-unlocks></gw2-unlocks>
+
+<script>
+class Gw2Unlocks extends HTMLElement {
+
+  async connectedCallback(){
+
+    const url = "https://cdn.jsdelivr.net/gh/bennieboj/Gw2Unlocks@main/src/data/data.json";
+
+    const response = await fetch(url);
+    const data = await response.json();
+
+    const minis = data.filter(i => i.unlock_type === "minis");
+    const skins = data.filter(i => i.unlock_type === "skins");
+
+    this.innerHTML = `
+      <gw2-group title="Minis" items='${JSON.stringify(minis)}'></gw2-group>
+      <gw2-group title="Skins" items='${JSON.stringify(skins)}'></gw2-group>
+    `;
+  }
+
+}
+
+customElements.define("gw2-unlocks", Gw2Unlocks);
+
+
+class Gw2Group extends HTMLElement {
+
+  connectedCallback(){
+
+    const title = this.getAttribute("title");
+    const items = JSON.parse(this.getAttribute("items"));
+
+    const list = items.map(item => `
+      <div class="item">
+        <img src="${item.icon}" loading="lazy">
+        <div>${item.name}</div>
+      </div>
+    `).join("");
+
+    this.innerHTML = `
+      <h2>${title}</h2>
+      <div class="group">
+        ${list}
+      </div>
+    `;
+  }
+
+}
+
+customElements.define("gw2-group", Gw2Group);
+</script>
+
+</body>
+</html>
