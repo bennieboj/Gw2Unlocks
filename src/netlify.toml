@@ -1,4 +1,5 @@
 [build]
   base    = "src/site"            # base directory for your project
   publish = "src/site/dist"       # output directory
-  command = "export COMMIT_REF=$(git rev-parse --short HEAD) && npm run build"
+# command = "export COMMIT_REF=$(git rev-parse --short HEAD) && npm run build"
+  command = "npm run build"
