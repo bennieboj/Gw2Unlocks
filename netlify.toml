@@ -1,4 +1,4 @@
 [build]
-  base    = "src/site"            # base directory for your project
+  base    = "src/Gw2Unlocks/site"            # base directory for your project
   publish = "dist"                # output directory, relative from the base dir
   command = "npm run build"

@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Website": {
+      "commandName": "Executable",
+      "executablePath": "cmd.exe",
+      "commandLineArgs": "/c npm run dev",
+      "workingDirectory": "..\\site"
+    }
+  }
+}

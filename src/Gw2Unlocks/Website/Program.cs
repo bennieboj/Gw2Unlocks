@@ -1,0 +1,1 @@
+﻿Console.WriteLine("Just a dummy console program to easily run the dev site build.");
