@@ -1,3 +1,15 @@
 <Solution>
+  <Folder Name="/Solution Items/">
+    <File Path="Directory.Build.props" />
+    <File Path="Directory.Packages.props" />
+  </Folder>
+  <Project Path="Gw2Unlocks.Cache.Contract/Gw2Unlocks.Cache.Contract.csproj" Id="ef7688c4-014b-4a83-aaf4-66733a95f20f" />
+  <Project Path="Gw2Unlocks.Cache.SqlLite/Gw2Unlocks.Cache.SqlLite.csproj" Id="79eacdf9-1026-44cd-b9b9-c0239819fd3f" />
+  <Project Path="Gw2Unlocks.Cache.Testing/Gw2Unlocks.Cache.Testing.csproj" Id="bb31fa1d-f623-41ea-b9dd-cd55bcf62a11" />
+  <Project Path="Gw2Unlocks.CacheUpdater.Host/Gw2Unlocks.CacheUpdater.Host.csproj" Id="c40758ec-455b-445d-a3ab-c07019ebc6e1" />
+  <Project Path="Gw2Unlocks.CacheUpdater.Tests/Gw2Unlocks.CacheUpdater.Tests.csproj" Id="dab9e2fc-0d22-4802-b1fe-923b9070e668" />
+  <Project Path="Gw2Unlocks.CacheUpdater/Gw2Unlocks.CacheUpdater.csproj" Id="1c8d60ce-c89a-4a91-b378-5b2c1171ec6b" />
+  <Project Path="Gw2Unlocks.Gw2SDK.Testing/Gw2Unlocks.Gw2SDK.Testing.csproj" Id="4d2812b8-8427-4809-98ea-47d5aaf2d0f5" />
+  <Project Path="Gw2Unlocks.Testing.Common/Gw2Unlocks.Testing.Common.csproj" Id="e8450391-8d74-4375-9615-35ae18a0305e" />
   <Project Path="Website/Website.csproj" />
 </Solution>

@@ -1,0 +1,28 @@
+<Project>
+  <PropertyGroup>
+    <!-- Enable all Roslyn/.NET analyzers -->
+    <EnableNETAnalyzers>true</EnableNETAnalyzers>
+
+    <!-- Enable full solution analysis in VS and build -->
+    <EnableFullSolutionAnalysis>true</EnableFullSolutionAnalysis>
+
+    <!-- Use latest recommended rules -->
+    <AnalysisLevel>latest</AnalysisLevel>
+
+    <Nullable>enable</Nullable>
+
+    <!-- Treat warnings from analyzers as warnings (not errors) -->
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+
+    <!-- Optional: report diagnostics as messages to avoid failing builds -->
+    <AnalysisMode>AllEnabledByDefault</AnalysisMode>
+
+    <!-- Disable specific warnings -->
+    <!-- CA1848: Use the LoggerMessage delegates -->
+    <!-- CA2007: Do not directly await a Task (ConfigureAwait) -->
+    <!-- CA1031: Do not catch general exception types -->
+    <!-- CA1727: Use PascalCase for named placeholders-->
+    <!-- -->
+    <NoWarn>CA1848;CA2007;CA1031;CA1727</NoWarn>
+  </PropertyGroup>
+</Project>
