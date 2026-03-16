@@ -5,9 +5,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.WebUtilities" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" />
     <PackageReference Include="Microsoft.Extensions.Http" />
     <PackageReference Include="GW2SDK" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Gw2Unlocks.Gw2SDK\Gw2Unlocks.Gw2SDK.csproj" />
   </ItemGroup>
   
 </Project>

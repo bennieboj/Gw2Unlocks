@@ -10,6 +10,7 @@
   <Project Path="Gw2Unlocks.CacheUpdater.Tests/Gw2Unlocks.CacheUpdater.Tests.csproj" Id="dab9e2fc-0d22-4802-b1fe-923b9070e668" />
   <Project Path="Gw2Unlocks.CacheUpdater/Gw2Unlocks.CacheUpdater.csproj" Id="1c8d60ce-c89a-4a91-b378-5b2c1171ec6b" />
   <Project Path="Gw2Unlocks.Gw2SDK.Testing/Gw2Unlocks.Gw2SDK.Testing.csproj" Id="4d2812b8-8427-4809-98ea-47d5aaf2d0f5" />
+  <Project Path="Gw2Unlocks.Gw2SDK/Gw2Unlocks.Gw2SDK.csproj" Id="c633a6d9-92e9-4fb8-b678-24c8509a025d" />
   <Project Path="Gw2Unlocks.Testing.Common/Gw2Unlocks.Testing.Common.csproj" Id="e8450391-8d74-4375-9615-35ae18a0305e" />
   <Project Path="Website/Website.csproj" />
 </Solution>

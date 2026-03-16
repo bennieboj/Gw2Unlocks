@@ -1,7 +1,5 @@
 ﻿using GuildWars2;
-using GuildWars2.Http;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
 using Polly;
 using Polly.CircuitBreaker;
 using Polly.Hedging;
@@ -9,47 +7,45 @@ using Polly.Retry;
 using Polly.Timeout;
 using System;
 using System.IO;
-using System.Net;
 using System.Net.Http;
 using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
 using static System.Net.HttpStatusCode;
 
-namespace Gw2Unlocks.CacheUpdater.Host;
+namespace Gw2Unlocks.Gw2SDK;
 
-internal static class ServiceCollectionExtensions
+public static class ServiceCollectionExtensions
 {
-    public static IServiceCollection AddGw2Client(this IServiceCollection services)
+    public static IHttpClientBuilder AddGw2Client(this IServiceCollection services)
     {
-        // old code
-        //builder.Services.AddHttpClient<Gw2Client>(client =>
-        //    {
-        //        client.Timeout = TimeSpan.FromSeconds(120);
-        //    })
-        //    .AddTransientHttpErrorPolicy(builder =>
-        //        builder.WaitAndRetryAsync(
-        //            retryCount: 3,
-        //            sleepDurationProvider: retryAttempt => TimeSpan.FromSeconds(Math.Pow(2, retryAttempt))
-        //        )
-        //    );
+        var builder = services
+            .AddHttpClient<Gw2Client>(client =>
+            {
+                // Infinite timeout since Polly handles timeouts
+                client.Timeout = Timeout.InfiniteTimeSpan;
+            });
 
-        services.AddHttpClient<Gw2Client>(client =>
-        {
-            // Infinite timeout since Polly handles timeouts
-            client.Timeout = Timeout.InfiniteTimeSpan;
-        })
-        .AddResilienceHandler("Gw2Resiliency", builder =>
-        {
-            builder
-                .AddTimeout(Gw2Resiliency.TotalTimeoutStrategy)
-                .AddRetry(Gw2Resiliency.RetryStrategy)
-                .AddCircuitBreaker(Gw2Resiliency.CircuitBreakerStrategy)
-                .AddHedging(Gw2Resiliency.HedgingStrategy)
-                .AddTimeout(Gw2Resiliency.AttemptTimeoutStrategy);
-        });
 
-        return services;
+        builder.ConfigurePrimaryHttpMessageHandler(() =>
+            new HttpClientHandler
+            {
+                AutomaticDecompression =
+                    System.Net.DecompressionMethods.GZip |
+                    System.Net.DecompressionMethods.Deflate
+            });
+
+
+        builder.AddResilienceHandler("Gw2Resiliency", builder =>
+            {
+                builder
+                    .AddTimeout(Gw2Resiliency.TotalTimeoutStrategy)
+                    .AddRetry(Gw2Resiliency.RetryStrategy)
+                    .AddCircuitBreaker(Gw2Resiliency.CircuitBreakerStrategy)
+                    //.AddHedging(Gw2Resiliency.HedgingStrategy)
+                    .AddTimeout(Gw2Resiliency.AttemptTimeoutStrategy);
+            });
+        return builder;
     }
 }
 

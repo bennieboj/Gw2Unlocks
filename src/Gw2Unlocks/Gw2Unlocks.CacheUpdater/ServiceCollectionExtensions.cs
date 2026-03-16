@@ -9,4 +9,10 @@ public static class ServiceCollectionExtensions
         services.AddSingleton<IUpdater, Updater>();
         return services;
     }
+    public static IHttpClientBuilder AddGw2Caching(this IHttpClientBuilder builder)
+    {
+        System.ArgumentNullException.ThrowIfNull(builder);
+        builder.Services.AddTransient<Gw2CacheHandler>();
+        return builder.AddHttpMessageHandler<Gw2CacheHandler>();
+    }
 }

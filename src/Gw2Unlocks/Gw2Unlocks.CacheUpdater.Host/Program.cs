@@ -1,12 +1,10 @@
 ﻿using Gw2Unlocks.Cache.SqlLite;
 using Gw2Unlocks.CacheUpdater;
-using Gw2Unlocks.CacheUpdater.Host;
-using Microsoft.Extensions.Configuration;
+using Gw2Unlocks.Gw2SDK;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using System.Threading;
-
 
 var builder = Host.CreateApplicationBuilder(args);
 
@@ -15,7 +13,9 @@ builder.Logging.AddConfiguration(builder.Configuration.GetSection("Logging"));
 
 //builder.Logging.SetupLogging(builder.Configuration);
 builder.Services.AddGw2Client()
-                .AddUpdater()
+                .AddGw2Caching();
+
+builder.Services.AddUpdater()
                 .AddSqlLiteGw2Cache("db.sqlite");
 
 var host = builder.Build();

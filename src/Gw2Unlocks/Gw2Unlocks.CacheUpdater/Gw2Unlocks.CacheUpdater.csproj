@@ -6,10 +6,10 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Gw2Unlocks.Cache.Contract\Gw2Unlocks.Cache.Contract.csproj" />
+    <ProjectReference Include="..\Gw2Unlocks.Gw2SDK\Gw2Unlocks.Gw2SDK.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="GW2SDK" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" />
   </ItemGroup>
   

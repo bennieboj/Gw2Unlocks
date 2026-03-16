@@ -2,14 +2,8 @@
 using Gw2Unlocks.Cache.Testing;
 using Gw2Unlocks.Gw2SDK.Testing;
 using Gw2Unlocks.Testing.Common;
-using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.DependencyInjection;
 using System;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Threading;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -26,11 +20,11 @@ public class UpdaterTests : ServiceProviderBasedTest<IUpdater>
 
     protected override void Configure(IServiceCollection services)
     {
-        services.AddInMemoryGw2Cache();
+        services.AddFakeGw2Client()
+                .AddGw2Caching();
 
-        services.AddFakeGw2SDK<FakeGw2Handler>();
-
-        services.AddUpdater();
+        services.AddUpdater()
+                .AddInMemoryGw2Cache();
     }
 
     [Fact]
@@ -50,75 +44,29 @@ public class UpdaterTests : ServiceProviderBasedTest<IUpdater>
         Assert.NotNull(json43);
         Assert.Contains("Item 43", json43, StringComparison.InvariantCulture);
     }
-}
 
-#pragma warning disable CA1812 // used in generics above
-internal sealed class FakeGw2Handler : HttpMessageHandler
-#pragma warning restore CA1812 // used in generics above
-{
-    protected override Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+    [Fact]
+    public async Task CanFetchAndCacheAllEndpoints()
     {
-        ArgumentNullException.ThrowIfNull(request);
+        var sut = GetSut();
 
-        var response = new HttpResponseMessage(HttpStatusCode.OK);
-        var path = request.RequestUri!.AbsolutePath;
-        var query = request.RequestUri.Query;
+        await sut.UpdateItems(TestContext.Current.CancellationToken);
 
-        if (path.EndsWith("/v2/items", StringComparison.InvariantCulture) && query.Contains("ids=", StringComparison.InvariantCulture))
+        var endpoints = new[]
         {
-            // Parse query parameters properly
-            var queryDict = Microsoft.AspNetCore.WebUtilities.QueryHelpers.ParseQuery(query);
-            if (!queryDict.TryGetValue("ids", out var idsParam))
-            {
-                response.StatusCode = HttpStatusCode.BadRequest;
-                return Task.FromResult(response);
-            }
+        ("items", 41, "Item 41"),
+        ("achievements", 41, "Achievement 41"),
+        ("minis", 41, "Mini 41"),
+        ("novelties", 41, "Novelty 41"),
+        ("titles", 41, "Title 41"),
+    };
 
-            var ids = idsParam.ToString().Split(',', StringSplitOptions.RemoveEmptyEntries);
-
-            // Generate realistic JSON for each item
-            var itemsJson = "[" + string.Join(",", ids.Select(id => $@"{{
-            ""id"": {id},
-            ""name"": ""Item {id}"",
-            ""type"": ""Weapon"",
-            ""level"": 80,
-            ""rarity"": ""Legendary"",
-            ""vendor_value"": 100000,
-            ""default_skin"": 4678,
-            ""game_types"": [""Activity"",""Wvw"",""Dungeon"",""Pve""],
-            ""flags"": [""HideSuffix"",""NoSalvage"",""NoSell"",""AccountBindOnUse"",""DeleteWarning""],
-            ""restrictions"": [],
-            ""chat_link"": ""[&AgHhdwAA]"",
-            ""icon"": ""https://render.guildwars2.com/file/A30DA1A1EF05BD080C95AE2EF0067BADCDD0D89D/456014.png"",
-            ""details"": {{
-                ""type"": ""Greatsword"",
-                ""damage_type"": ""Physical"",
-                ""min_power"": 1045,
-                ""max_power"": 1155,
-                ""defense"": 0,
-                ""infusion_slots"": [
-                    {{ ""flags"": [""Infusion""] }},
-                    {{ ""flags"": [""Infusion""] }}
-                ],
-                ""attribute_adjustment"": 717.024,
-                ""suffix_item_id"": 24599,
-                ""stat_choices"": [161,155,159,157,158,160],
-                ""secondary_suffix_item_id"": null
-            }}
-        }}")) + "]";
-
-            response.Content = new StringContent(itemsJson);
-        }
-        else if (path.EndsWith("/v2/items", StringComparison.InvariantCulture))
+        foreach (var (endpoint, id, expected) in endpoints)
         {
-            response.Content = new StringContent("[41,42,43]");
-        }
-        else
-        {
-            response.StatusCode = HttpStatusCode.NotFound;
-        }
+            var json = await inMemoryCache.GetCachedAsync($"/v2/{endpoint}", id);
 
-        response.Content?.Headers.ContentType = new MediaTypeHeaderValue("application/json") { CharSet = "utf-8" };
-        return Task.FromResult(response);
+            Assert.NotNull(json);
+            Assert.Contains(expected, json!, StringComparison.InvariantCulture);
+        }
     }
 }

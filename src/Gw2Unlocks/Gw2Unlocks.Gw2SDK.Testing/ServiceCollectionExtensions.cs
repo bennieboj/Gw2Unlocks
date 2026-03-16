@@ -6,13 +6,12 @@ namespace Gw2Unlocks.Gw2SDK.Testing;
 
 public static class ServiceCollectionExtensions
 {
-    public static IServiceCollection AddFakeGw2SDK<THttpMessageHandler>(this IServiceCollection services) where THttpMessageHandler : HttpMessageHandler
+    public static IHttpClientBuilder AddFakeGw2Client(this IServiceCollection services)
     {
-        services
-            .AddTransient<THttpMessageHandler>()
-            .AddHttpClient<Gw2Client>()
-            .ConfigurePrimaryHttpMessageHandler<THttpMessageHandler>();
+        services.AddTransient<FakeGw2Handler>();
 
-        return services;
+        var builder = services.AddGw2Client()
+                              .ConfigurePrimaryHttpMessageHandler<FakeGw2Handler>();
+        return builder;
     }
 }
