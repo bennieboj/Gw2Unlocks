@@ -2,8 +2,7 @@
 using System.Threading.Tasks;
 
 namespace Gw2Unlocks.Cache.Contract;
-
-/// <summary>
+/// <summary>  
 /// Abstraction for a Guild Wars 2 API cache.
 /// Stores arbitrary endpoint/key -> JSON response mappings.
 /// </summary>
@@ -31,5 +30,5 @@ public interface IGw2Cache
     /// <param name="endpoint">API endpoint</param>
     /// <param name="keys">All keys to check  (id: int)</param>
     /// <returns>Keys not present in the cache</returns>
-        Task<IEnumerable<int>> GetNewKeysAsync(string endpoint, IEnumerable<int> ids);
+    Task<IEnumerable<int>> GetNewKeysAsync(string endpoint, IEnumerable<int> ids);
 }

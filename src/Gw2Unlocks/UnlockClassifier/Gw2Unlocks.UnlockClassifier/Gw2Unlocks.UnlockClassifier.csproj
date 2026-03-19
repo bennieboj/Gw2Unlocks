@@ -5,17 +5,17 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Gw2Unlocks.Cache.Contract\Gw2Unlocks.Cache.Contract.csproj" />
-    <ProjectReference Include="..\Gw2Unlocks.Gw2SDK\Gw2Unlocks.Gw2SDK.csproj" />
+    <ProjectReference Include="..\..\Api\Gw2Unlocks.Api\Gw2Unlocks.Api.csproj" />
+    <ProjectReference Include="..\..\Cache\Gw2Unlocks.Cache.Contract\Gw2Unlocks.Cache.Contract.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" />
   </ItemGroup>
-  
+
   <ItemGroup>
     <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleTo">
       <_Parameter1>Gw2Unlocks.CacheUpdater.Tests</_Parameter1>
     </AssemblyAttribute>
-  </ItemGroup>  
+  </ItemGroup>
 </Project>

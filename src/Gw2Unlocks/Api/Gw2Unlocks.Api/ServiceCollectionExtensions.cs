@@ -13,7 +13,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using static System.Net.HttpStatusCode;
 
-namespace Gw2Unlocks.Gw2SDK;
+namespace Gw2Unlocks.Api;
 
 public static class ServiceCollectionExtensions
 {
@@ -59,8 +59,8 @@ internal static class Gw2Resiliency
     public static readonly RetryStrategyOptions<HttpResponseMessage> RetryStrategy = new()
     {
         MaxRetryAttempts = 10,
-        Delay = TimeSpan.FromSeconds(10),
-        BackoffType = DelayBackoffType.Constant,
+        Delay = TimeSpan.FromSeconds(2),
+        BackoffType = DelayBackoffType.Exponential,
         UseJitter = true,
         ShouldHandle = static args => ShouldHandleCommon(args.Outcome)
     };

@@ -1,11 +1,12 @@
 ﻿using Gw2Unlocks.Cache.Contract;
 using Gw2Unlocks.Cache.Testing;
-using Gw2Unlocks.Gw2SDK.Testing;
+using Gw2Unlocks.Api.Testing;
 using Gw2Unlocks.Testing.Common;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Threading.Tasks;
 using Xunit;
+using Gw2Unlocks.Cache;
 
 namespace Gw2Unlocks.CacheUpdater.Tests;
 
@@ -20,8 +21,8 @@ public class UpdaterTests : ServiceProviderBasedTest<IUpdater>
 
     protected override void Configure(IServiceCollection services)
     {
-        services.AddFakeGw2Client()
-                .AddGw2Caching();
+        services.AddGw2ClientForTesting<FakeGw2HandlerWithProperResponses>()
+                .AddGw2Caching(new Gw2CacheOptions(CacheReadWriteMode.WriteToCache));
 
         services.AddUpdater()
                 .AddInMemoryGw2Cache();
@@ -32,7 +33,7 @@ public class UpdaterTests : ServiceProviderBasedTest<IUpdater>
     {
         var sut = GetSut();
 
-        await sut.UpdateItems(TestContext.Current.CancellationToken);
+        await sut.UpdateApiData(TestContext.Current.CancellationToken);
 
         var json41 = await inMemoryCache.GetCachedAsync("/v2/items", 41);
         var json42 = await inMemoryCache.GetCachedAsync("/v2/items", 42);
@@ -50,7 +51,7 @@ public class UpdaterTests : ServiceProviderBasedTest<IUpdater>
     {
         var sut = GetSut();
 
-        await sut.UpdateItems(TestContext.Current.CancellationToken);
+        await sut.UpdateApiData(TestContext.Current.CancellationToken);
 
         var endpoints = new[]
         {
@@ -70,3 +71,4 @@ public class UpdaterTests : ServiceProviderBasedTest<IUpdater>
         }
     }
 }
+

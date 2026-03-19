@@ -1,5 +1,6 @@
 <Project>
   <PropertyGroup>
+    <LangVersion>latest</LangVersion>
     <!-- Enable all Roslyn/.NET analyzers -->
     <EnableNETAnalyzers>true</EnableNETAnalyzers>
 

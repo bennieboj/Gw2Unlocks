@@ -13,8 +13,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Gw2Unlocks.Cache.SqlLite\Gw2Unlocks.Cache.SqlLite.csproj" />
-    <ProjectReference Include="..\Gw2Unlocks.CacheUpdater\Gw2Unlocks.CacheUpdater.csproj" />
+    <ProjectReference Include="..\..\Cache\Gw2Unlocks.Cache.SqlLite\Gw2Unlocks.Cache.SqlLite.csproj" />
+    <ProjectReference Include="..\..\CacheUpdater\Gw2Unlocks.CacheUpdater\Gw2Unlocks.CacheUpdater.csproj" />
+    <ProjectReference Include="..\..\Cache\Gw2Unlocks.Cache\Gw2Unlocks.Cache.csproj" />
   </ItemGroup>
 
 </Project>

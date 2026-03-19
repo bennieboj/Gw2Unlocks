@@ -1,16 +1,27 @@
 <Solution>
+  <Folder Name="/Api/">
+    <Project Path="Api/Gw2Unlocks.Api.Testing/Gw2Unlocks.Api.Testing.csproj" Id="4d2812b8-8427-4809-98ea-47d5aaf2d0f5" />
+    <Project Path="Api/Gw2Unlocks.Api/Gw2Unlocks.Api.csproj" Id="c633a6d9-92e9-4fb8-b678-24c8509a025d" />
+  </Folder>
+  <Folder Name="/Cache/">
+    <Project Path="Cache/Gw2Unlocks.Cache.Contract/Gw2Unlocks.Cache.Contract.csproj" Id="ef7688c4-014b-4a83-aaf4-66733a95f20f" />
+    <Project Path="Cache/Gw2Unlocks.Cache.SqlLite/Gw2Unlocks.Cache.SqlLite.csproj" Id="79eacdf9-1026-44cd-b9b9-c0239819fd3f" />
+    <Project Path="Cache/Gw2Unlocks.Cache.Testing/Gw2Unlocks.Cache.Testing.csproj" Id="bb31fa1d-f623-41ea-b9dd-cd55bcf62a11" />
+    <Project Path="Cache/Gw2Unlocks.Cache/Gw2Unlocks.Cache.csproj" Id="6d78030b-6385-4e90-9b5c-80d98f11c7f9" />
+  </Folder>
+  <Folder Name="/CacheUpdater/">
+    <Project Path="CacheUpdater/Gw2Unlocks.CacheUpdater.Host/Gw2Unlocks.CacheUpdater.Host.csproj" Id="c40758ec-455b-445d-a3ab-c07019ebc6e1" />
+    <Project Path="CacheUpdater/Gw2Unlocks.CacheUpdater.Tests/Gw2Unlocks.CacheUpdater.Tests.csproj" Id="dab9e2fc-0d22-4802-b1fe-923b9070e668" />
+    <Project Path="CacheUpdater/Gw2Unlocks.CacheUpdater/Gw2Unlocks.CacheUpdater.csproj" Id="1c8d60ce-c89a-4a91-b378-5b2c1171ec6b" />
+  </Folder>
   <Folder Name="/Solution Items/">
     <File Path="Directory.Build.props" />
     <File Path="Directory.Packages.props" />
   </Folder>
-  <Project Path="Gw2Unlocks.Cache.Contract/Gw2Unlocks.Cache.Contract.csproj" Id="ef7688c4-014b-4a83-aaf4-66733a95f20f" />
-  <Project Path="Gw2Unlocks.Cache.SqlLite/Gw2Unlocks.Cache.SqlLite.csproj" Id="79eacdf9-1026-44cd-b9b9-c0239819fd3f" />
-  <Project Path="Gw2Unlocks.Cache.Testing/Gw2Unlocks.Cache.Testing.csproj" Id="bb31fa1d-f623-41ea-b9dd-cd55bcf62a11" />
-  <Project Path="Gw2Unlocks.CacheUpdater.Host/Gw2Unlocks.CacheUpdater.Host.csproj" Id="c40758ec-455b-445d-a3ab-c07019ebc6e1" />
-  <Project Path="Gw2Unlocks.CacheUpdater.Tests/Gw2Unlocks.CacheUpdater.Tests.csproj" Id="dab9e2fc-0d22-4802-b1fe-923b9070e668" />
-  <Project Path="Gw2Unlocks.CacheUpdater/Gw2Unlocks.CacheUpdater.csproj" Id="1c8d60ce-c89a-4a91-b378-5b2c1171ec6b" />
-  <Project Path="Gw2Unlocks.Gw2SDK.Testing/Gw2Unlocks.Gw2SDK.Testing.csproj" Id="4d2812b8-8427-4809-98ea-47d5aaf2d0f5" />
-  <Project Path="Gw2Unlocks.Gw2SDK/Gw2Unlocks.Gw2SDK.csproj" Id="c633a6d9-92e9-4fb8-b678-24c8509a025d" />
+  <Folder Name="/UnlockClassifier/">
+    <Project Path="UnlockClassifier/Gw2Unlocks.UnlockClassifier.IntegrationTests/Gw2Unlocks.UnlockClassifier.IntegrationTests.csproj" Id="ac4fcd6d-a3b1-4447-9861-63b72b104ae7" />
+    <Project Path="UnlockClassifier/Gw2Unlocks.UnlockClassifier/Gw2Unlocks.UnlockClassifier.csproj" Id="3c710809-5d64-470e-85a2-1ca97167230a" />
+  </Folder>
   <Project Path="Gw2Unlocks.Testing.Common/Gw2Unlocks.Testing.Common.csproj" Id="e8450391-8d74-4375-9615-35ae18a0305e" />
   <Project Path="Website/Website.csproj" />
 </Solution>

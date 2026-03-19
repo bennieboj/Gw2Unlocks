@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="xunit.v3" />
+    <PackageReference Include="xunit.runner.visualstudio">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Cache\Gw2Unlocks.Cache.Testing\Gw2Unlocks.Cache.Testing.csproj" />
+    <ProjectReference Include="..\..\Cache\Gw2Unlocks.Cache\Gw2Unlocks.Cache.csproj" />
+    <ProjectReference Include="..\..\CacheUpdater\Gw2Unlocks.CacheUpdater\Gw2Unlocks.CacheUpdater.csproj" />
+    <ProjectReference Include="..\..\Api\Gw2Unlocks.Api.Testing\Gw2Unlocks.Api.Testing.csproj" />
+    <ProjectReference Include="..\..\Gw2Unlocks.Testing.Common\Gw2Unlocks.Testing.Common.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,6 +1,8 @@
-﻿using Gw2Unlocks.Cache.SqlLite;
+﻿using Gw2Unlocks.Api;
+using Gw2Unlocks.Cache;
+using Gw2Unlocks.Cache.Contract;
+using Gw2Unlocks.Cache.SqlLite;
 using Gw2Unlocks.CacheUpdater;
-using Gw2Unlocks.Gw2SDK;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
@@ -13,7 +15,7 @@ builder.Logging.AddConfiguration(builder.Configuration.GetSection("Logging"));
 
 //builder.Logging.SetupLogging(builder.Configuration);
 builder.Services.AddGw2Client()
-                .AddGw2Caching();
+                .AddGw2Caching(new Gw2CacheOptions(CacheReadWriteMode.WriteToCache));
 
 builder.Services.AddUpdater()
                 .AddSqlLiteGw2Cache("db.sqlite");
@@ -37,4 +39,4 @@ var host = builder.Build();
 
 //might move this to background service later
 var updater = host.Services.GetRequiredService<IUpdater>();
-await updater.UpdateItems(CancellationToken.None);
+await updater.UpdateApiData(CancellationToken.None);

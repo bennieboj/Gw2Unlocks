@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.WebUtilities;
+using System;
 using System.Globalization;
 using System.Linq;
 using System.Net;
@@ -7,11 +8,11 @@ using System.Net.Http.Headers;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Gw2Unlocks.Gw2SDK.Testing;
+namespace Gw2Unlocks.Api.Testing;
 
-#pragma warning disable CA1812 // used in generics above
-internal sealed class FakeGw2Handler : HttpMessageHandler
-#pragma warning restore CA1812 // used in generics above
+#pragma warning disable CA1812 // used in generics
+public sealed class FakeGw2HandlerWithProperResponses : HttpMessageHandler
+#pragma warning restore CA1812 // used in generics
 {
     private static readonly string[] Endpoints =
     [
@@ -39,7 +40,7 @@ internal sealed class FakeGw2Handler : HttpMessageHandler
 
         if (query.Contains("ids=", StringComparison.Ordinal))
         {
-            var queryDict = Microsoft.AspNetCore.WebUtilities.QueryHelpers.ParseQuery(query);
+            var queryDict = QueryHelpers.ParseQuery(query);
             if (!queryDict.TryGetValue("ids", out var idsParam))
             {
                 response.StatusCode = HttpStatusCode.BadRequest;
@@ -89,7 +90,7 @@ internal sealed class FakeGw2Handler : HttpMessageHandler
                 ""attribute_adjustment"": 717.024,
                 ""suffix_item_id"": 24599,
                 ""stat_choices"": [161,155,159,157,158,160],
-                ""secondary_suffix_item_id"": null
+                ""secondary_suffix_item_id"": """"
             }}
         }}",
 

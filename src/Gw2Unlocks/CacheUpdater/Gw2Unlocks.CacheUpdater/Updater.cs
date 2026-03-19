@@ -1,15 +1,9 @@
 ﻿using GuildWars2;
 using GuildWars2.Collections;
-using GuildWars2.Hero.Achievements;
-using GuildWars2.Hero.Achievements.Titles;
-using GuildWars2.Hero.Equipment.Miniatures;
-using GuildWars2.Hero.Equipment.Novelties;
-using GuildWars2.Items;
 using Gw2Unlocks.Cache.Contract;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -33,7 +27,7 @@ internal class Updater(Gw2Client client, IGw2Cache cache) : IUpdater
     // Non-bulk endpoints have a max 200 ids per request
     private const int NonBulkMaxChunkSize = 200;
 
-    public async Task UpdateItems(CancellationToken cancellationToken = default)
+    public async Task UpdateApiData(CancellationToken cancellationToken = default)
     {
         foreach (var endpoint in Endpoints)
         {
@@ -104,42 +98,16 @@ internal class Updater(Gw2Client client, IGw2Cache cache) : IUpdater
     /// <summary>
     /// Non-bulk endpoints with Task<(IImmutableValueSet<T>, MessageContext)> require chunking.
     /// </summary>
-    private static IAsyncEnumerable<(object, MessageContext)> CastByIdsChunked<T>(
+    private static async IAsyncEnumerable<(object, MessageContext)> CastByIdsChunked<T>(
         IEnumerable<int> ids,
         Func<IEnumerable<int>, Task<(IImmutableValueSet<T> Value, MessageContext Context)>> getByIds)
     {
-        return CastByIdsNonBulkWithChunkInternal(ids, getByIds);
-    }
-
-    private static async IAsyncEnumerable<(object, MessageContext)> CastByIdsNonBulkWithChunkInternal<T>(
-        IEnumerable<int> ids,
-        Func<IEnumerable<int>, Task<(IImmutableValueSet<T> Value, MessageContext Context)>> getByIds)
-    {
-        foreach (var chunk in ChunkIds(ids, NonBulkMaxChunkSize))
+        foreach (var chunk in ids.Chunk(NonBulkMaxChunkSize))
         {
             var (set, ctx) = await getByIds(chunk).ConfigureAwait(false);
+
             foreach (var item in set)
                 yield return (item!, ctx);
         }
-    }
-
-    /// <summary>
-    /// Splits a sequence of ids into batches of specified size
-    /// </summary>
-    private static IEnumerable<IEnumerable<int>> ChunkIds(IEnumerable<int> ids, int chunkSize)
-    {
-        var batch = new List<int>(chunkSize);
-        foreach (var id in ids)
-        {
-            batch.Add(id);
-            if (batch.Count == chunkSize)
-            {
-                yield return batch;
-                batch = new List<int>(chunkSize);
-            }
-        }
-
-        if (batch.Count > 0)
-            yield return batch;
     }
 }
