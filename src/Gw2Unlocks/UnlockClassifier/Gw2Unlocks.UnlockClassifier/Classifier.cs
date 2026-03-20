@@ -1,6 +1,6 @@
 ﻿using GuildWars2;
 using GuildWars2.Items;
-using Gw2Unlocks.Cache.Contract;
+using Gw2Unlocks.Api;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -9,35 +9,25 @@ using System.Threading.Tasks;
 
 namespace Gw2Unlocks.UnlockClassifier;
 
-public class Classifier(Gw2Client client, ILogger<Classifier> logger) : IClassifier
+public class Classifier(IGw2ApiSource apiSource, ILogger<Classifier> logger) : IClassifier
 {
     public async Task ClassifyUnlocks(CancellationToken cancellationToken = default)
     {
-        int lastProcessed = 0;
-        var progress = new Progress<BulkProgress>(p =>
-        {
-            lastProcessed = p.ResultCount;
-            Console.WriteLine($"Classifier fetched {p.ResultCount}/{p.ResultTotal}");
-        });
-
-        var list = new List<Item>();
-
-        try
-        {
-            await foreach (var (item, _) in client.Items.GetItemsBulk(progress: progress, cancellationToken: cancellationToken))
-        {
-            list.Add(item);
-        }
-        }
-        catch (Exception ex)
-        {
-            logger.LogError(ex, "err");
-            Console.WriteLine($"Bulk failed after {lastProcessed} items");
-            throw;
-        }
-
-
-        IEnumerable<Item> items = list;
-        items.GetEnumerator();
+        var items = await apiSource.GetItemsAsync(cancellationToken);
+        var achievements = await apiSource.GetAchievementsAsync(cancellationToken);
+        var titles = await apiSource.GetTitlesAsync(cancellationToken);
+        var novelties = await apiSource.GetNoveltiesAsync(cancellationToken);
+        var miniatures = await apiSource.GetMiniaturesAsync(cancellationToken);
+        logger.LogInformation("Loaded from API cache: " +
+            "{itemsCount} items, " +
+            "{achievementsCount} achievements, " +
+            "{titlesCount} titles, " + 
+            "{noveltiesCount} novelties, " + 
+            "{miniaturesCount} miniatures.",
+            items.Count,
+            achievements.Count,
+            titles.Count,
+            novelties.Count,
+            miniatures.Count);
     }
 }

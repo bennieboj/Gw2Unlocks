@@ -1,11 +1,16 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using System;
+using Xunit;
 
 namespace Gw2Unlocks.Testing.Common
 {
     public abstract class ServiceProviderBasedTest<TSut>
         where TSut : class
     {
+        protected ITestOutputHelper XunitTestOutputHelper { get; }
+
+        protected ServiceProviderBasedTest(ITestOutputHelper output) => XunitTestOutputHelper = output;
+
         private IServiceProvider? _provider;
 
         /// <summary>
@@ -39,6 +44,7 @@ namespace Gw2Unlocks.Testing.Common
             if (_provider == null)
             {
                 var services = new ServiceCollection();
+                services.AddXunitLogging(XunitTestOutputHelper);
                 Configure(services);  // safe now — called after derived constructor
                 _provider = services.BuildServiceProvider();
             }

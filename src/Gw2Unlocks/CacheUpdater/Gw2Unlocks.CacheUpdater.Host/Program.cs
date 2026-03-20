@@ -1,7 +1,6 @@
 ﻿using Gw2Unlocks.Api;
-using Gw2Unlocks.Cache;
-using Gw2Unlocks.Cache.Contract;
-using Gw2Unlocks.Cache.SqlLite;
+using Gw2Unlocks.Api.Cache;
+using Gw2Unlocks.Api.Implementation;
 using Gw2Unlocks.CacheUpdater;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -14,11 +13,9 @@ builder.Logging.AddConsole();
 builder.Logging.AddConfiguration(builder.Configuration.GetSection("Logging"));
 
 //builder.Logging.SetupLogging(builder.Configuration);
-builder.Services.AddGw2Client()
-                .AddGw2Caching(new Gw2CacheOptions(CacheReadWriteMode.WriteToCache));
-
-builder.Services.AddUpdater()
-                .AddSqlLiteGw2Cache("db.sqlite");
+builder.Services.AddApiSource()
+                .AddJsonCacheApi()
+                .AddUpdater();
 
 var host = builder.Build();
 //AppDomain.CurrentDomain.ProcessExit += async (sender, e) =>

@@ -1,49 +1,35 @@
-﻿using Gw2Unlocks.Cache.Contract;
-using Gw2Unlocks.Cache.Testing;
+﻿using GuildWars2.Hero.Achievements;
+using GuildWars2.Hero.Achievements.Titles;
+using GuildWars2.Hero.Equipment.Miniatures;
+using GuildWars2.Hero.Equipment.Novelties;
+using GuildWars2.Items;
+using Gw2Unlocks.Api;
 using Gw2Unlocks.Api.Testing;
+using Gw2Unlocks.Api.Testing.Builders;
 using Gw2Unlocks.Testing.Common;
 using Microsoft.Extensions.DependencyInjection;
-using System;
+using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using Xunit;
-using Gw2Unlocks.Cache;
 
 namespace Gw2Unlocks.CacheUpdater.Tests;
 
 public class UpdaterTests : ServiceProviderBasedTest<IUpdater>
 {
-    private readonly IGw2Cache inMemoryCache;
+    private readonly Gw2ApiSuccessResponseFake source;
+    private readonly Gw2ApiSuccessResponseFake cache;
 
-    public UpdaterTests()
+    public UpdaterTests(ITestOutputHelper output) : base(output)
     {
-        inMemoryCache = GetService<IGw2Cache>();
+        source = (Gw2ApiSuccessResponseFake)GetService<IGw2ApiSource>();
+        cache = (Gw2ApiSuccessResponseFake)GetService<IGw2ApiCache>();
     }
 
     protected override void Configure(IServiceCollection services)
     {
-        services.AddGw2ClientForTesting<FakeGw2HandlerWithProperResponses>()
-                .AddGw2Caching(new Gw2CacheOptions(CacheReadWriteMode.WriteToCache));
-
-        services.AddUpdater()
-                .AddInMemoryGw2Cache();
-    }
-
-    [Fact]
-    public async Task CanFetchAndCacheItems()
-    {
-        var sut = GetSut();
-
-        await sut.UpdateApiData(TestContext.Current.CancellationToken);
-
-        var json41 = await inMemoryCache.GetCachedAsync("/v2/items", 41);
-        var json42 = await inMemoryCache.GetCachedAsync("/v2/items", 42);
-        var json43 = await inMemoryCache.GetCachedAsync("/v2/items", 43);
-        Assert.NotNull(json41);
-        Assert.Contains("Item 41", json41, StringComparison.InvariantCulture);
-        Assert.NotNull(json42);
-        Assert.Contains("Item 42", json42, StringComparison.InvariantCulture);
-        Assert.NotNull(json43);
-        Assert.Contains("Item 43", json43, StringComparison.InvariantCulture);
+        services.AddFakeApiSourceSuccess()
+                .AddFakeApiCacheSuccess()
+                .AddUpdater();
     }
 
     [Fact]
@@ -51,24 +37,39 @@ public class UpdaterTests : ServiceProviderBasedTest<IUpdater>
     {
         var sut = GetSut();
 
+        source.Items = new ReadOnlyCollection<Item>(
+        [
+            new ItemBuilder().WithName("Item 1").Build(),
+            new ItemBuilder().WithName("Item 2").Build()
+        ]);
+
+        source.Achievements = new ReadOnlyCollection<Achievement>(
+        [
+            new AchievementBuilder().WithName("Ach 1").Build()
+        ]);
+
+        source.Miniatures = new ReadOnlyCollection<Miniature>(
+        [
+            new MiniatureBuilder().WithName("Mini 1").Build()
+        ]);
+
+        source.Novelties = new ReadOnlyCollection<Novelty>(
+        [
+            new NoveltyBuilder().WithName("Novelty 1").Build()
+        ]);
+
+        source.Titles = new ReadOnlyCollection<Title>(
+        [
+            new TitleBuilder().WithName("Title 1").Build()
+        ]);
+
         await sut.UpdateApiData(TestContext.Current.CancellationToken);
 
-        var endpoints = new[]
-        {
-        ("items", 41, "Item 41"),
-        ("achievements", 41, "Achievement 41"),
-        ("minis", 41, "Mini 41"),
-        ("novelties", 41, "Novelty 41"),
-        ("titles", 41, "Title 41"),
-    };
-
-        foreach (var (endpoint, id, expected) in endpoints)
-        {
-            var json = await inMemoryCache.GetCachedAsync($"/v2/{endpoint}", id);
-
-            Assert.NotNull(json);
-            Assert.Contains(expected, json!, StringComparison.InvariantCulture);
-        }
+        Assert.Equal(2, cache.SavedItems?.Count);
+        Assert.Single(cache.SavedAchievements!);
+        Assert.Single(cache.SavedMiniatures!);
+        Assert.Single(cache.SavedNovelties!);
+        Assert.Single(cache.SavedTitles!);
     }
 }
 

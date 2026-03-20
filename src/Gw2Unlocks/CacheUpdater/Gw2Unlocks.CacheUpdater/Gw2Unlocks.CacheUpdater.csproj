@@ -5,7 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Cache\Gw2Unlocks.Cache.Contract\Gw2Unlocks.Cache.Contract.csproj" />
     <ProjectReference Include="..\..\API\Gw2Unlocks.Api\Gw2Unlocks.Api.csproj" />
   </ItemGroup>
 

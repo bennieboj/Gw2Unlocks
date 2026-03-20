@@ -1,113 +1,59 @@
-﻿using GuildWars2;
-using GuildWars2.Collections;
-using Gw2Unlocks.Cache.Contract;
+﻿using GuildWars2.Collections;
+using GuildWars2.Hero.Achievements;
+using GuildWars2.Hero.Achievements.Titles;
+using GuildWars2.Hero.Equipment.Miniatures;
+using GuildWars2.Hero.Equipment.Novelties;
+using GuildWars2.Items;
+using Gw2Unlocks.Api;
 using System;
-using System.Collections.Generic;
-using System.Linq;
+using System.Collections.ObjectModel;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace Gw2Unlocks.CacheUpdater;
 
-internal class Updater(Gw2Client client, IGw2Cache cache) : IUpdater
+internal class Updater(IGw2ApiSource reader, IGw2ApiCache writer) : IUpdater
 {
-    private readonly Gw2Client _client = client;
-    private readonly IGw2Cache _cache = cache;
+    private const int MaxRetries = 5;
 
-    // Endpoints we support
-    private static readonly string[] Endpoints =
-    [
-        "items",
-        "achievements",
-        "minis",
-        "novelties",
-        "titles",
-    ];
-
-    // Non-bulk endpoints have a max 200 ids per request
-    private const int NonBulkMaxChunkSize = 200;
-
-    public async Task UpdateApiData(CancellationToken cancellationToken = default)
+    public async Task UpdateApiData(CancellationToken cancellationToken)
     {
-        foreach (var endpoint in Endpoints)
-        {
-            await UpdateEndpoint(endpoint, cancellationToken);
-        }
+        // Items
+        var items = await RetryAsync(() => reader.GetItemsAsync(cancellationToken), "Items");
+        await writer.SaveToCacheAsync("items.json", new ImmutableValueSet<Item>(items), cancellationToken);
+
+        // Achievements
+        var achievements = await RetryAsync(() => reader.GetAchievementsAsync(cancellationToken), "Achievements");
+        await writer.SaveToCacheAsync("achievements.json", new ImmutableValueSet<Achievement>(achievements), cancellationToken);
+
+        // Miniatures
+        var miniatures = await RetryAsync(() => reader.GetMiniaturesAsync(cancellationToken), "Miniatures");
+        await writer.SaveToCacheAsync("miniatures.json", new ImmutableValueSet<Miniature>(miniatures), cancellationToken);
+
+        // Novelties
+        var novelties = await RetryAsync(() => reader.GetNoveltiesAsync(cancellationToken), "Novelties");
+        await writer.SaveToCacheAsync("novelties.json", new ImmutableValueSet<Novelty>(novelties), cancellationToken);
+
+        // Titles
+        var titles = await RetryAsync(() => reader.GetTitlesAsync(cancellationToken), "Titles");
+        await writer.SaveToCacheAsync("titles.json", new ImmutableValueSet<Title>(titles), cancellationToken);
     }
 
-    private async Task UpdateEndpoint(string endpoint, CancellationToken cancellationToken)
+    private static async Task<ReadOnlyCollection<T>> RetryAsync<T>(Func<Task<ReadOnlyCollection<T>>> action, string name)
     {
-        var index = await GetIndex(endpoint, cancellationToken);
-
-        // Get only new keys
-        var newIds = await _cache.GetNewKeysAsync($"/v2/{endpoint}", index);
-        if (!newIds.Any())
-            return;
-
-        var progress = new Progress<BulkProgress>(p =>
+        int attempt = 0;
+        while (true)
         {
-            Console.WriteLine($"{endpoint}: {p.ResultCount}/{p.ResultTotal}");
-        });
-
-        await foreach (var _ in GetBulk(endpoint, newIds, progress, cancellationToken))
-        {
-            // Gw2CacheHandler caches automatically
-        }
-    }
-
-    private async Task<IEnumerable<int>> GetIndex(string endpoint, CancellationToken ct)
-    {
-        return endpoint switch
-        {
-            "items" => await _client.Items.GetItemsIndex(cancellationToken: ct).ValueOnly(),
-            "achievements" => await _client.Hero.Achievements.GetAchievementsIndex(cancellationToken: ct).ValueOnly(),
-            "minis" => await _client.Hero.Equipment.Miniatures.GetMiniaturesIndex(cancellationToken: ct).ValueOnly(),
-            "novelties" => await _client.Hero.Equipment.Novelties.GetNoveltiesIndex(cancellationToken: ct).ValueOnly(),
-            "titles" => await _client.Hero.Achievements.GetTitlesIndex(cancellationToken: ct).ValueOnly(),
-            _ => throw new NotSupportedException(endpoint)
-        };
-    }
-
-    private IAsyncEnumerable<(object, MessageContext)> GetBulk(
-        string endpoint,
-        IEnumerable<int> ids,
-        IProgress<BulkProgress>? progress,
-        CancellationToken ct)
-    {
-        return endpoint switch
-        {
-            "items" => CastByIdsBulk(_client.Items.GetItemsBulk(ids, progress: progress, cancellationToken: ct)),
-            "achievements" => CastByIdsBulk(_client.Hero.Achievements.GetAchievementsBulk(ids, progress: progress, cancellationToken: ct)),
-            "minis" => CastByIdsChunked(ids, idsChunk => _client.Hero.Equipment.Miniatures.GetMiniaturesByIds(idsChunk, cancellationToken: ct)),
-            "novelties" => CastByIdsChunked(ids, idsChunk => _client.Hero.Equipment.Novelties.GetNoveltiesByIds(idsChunk, cancellationToken: ct)),
-            "titles" => CastByIdsChunked(ids, idsChunk => _client.Hero.Achievements.GetTitlesByIds(idsChunk, cancellationToken: ct)),
-            _ => throw new NotSupportedException(endpoint)
-        };
-    }
-
-    /// <summary>
-    /// Cast bulk IAsyncEnumerable<(T Value, MessageContext Context)> to IAsyncEnumerable<(object, MessageContext)>
-    /// </summary>
-    private static async IAsyncEnumerable<(object, MessageContext)> CastByIdsBulk<T>(
-        IAsyncEnumerable<(T Value, MessageContext Context)> source)
-    {
-        await foreach (var (value, ctx) in source)
-            yield return (value!, ctx);
-    }
-
-    /// <summary>
-    /// Non-bulk endpoints with Task<(IImmutableValueSet<T>, MessageContext)> require chunking.
-    /// </summary>
-    private static async IAsyncEnumerable<(object, MessageContext)> CastByIdsChunked<T>(
-        IEnumerable<int> ids,
-        Func<IEnumerable<int>, Task<(IImmutableValueSet<T> Value, MessageContext Context)>> getByIds)
-    {
-        foreach (var chunk in ids.Chunk(NonBulkMaxChunkSize))
-        {
-            var (set, ctx) = await getByIds(chunk).ConfigureAwait(false);
-
-            foreach (var item in set)
-                yield return (item!, ctx);
+            try
+            {
+                attempt++;
+                return await action();
+            }
+            catch (Exception ex) when (attempt <= MaxRetries)
+            {
+                Console.WriteLine($"Attempt {attempt} for {name} failed: {ex.Message}. Retrying...");
+                //await Task.Delay(200 * attempt); // optional backoff
+            }
         }
     }
 }

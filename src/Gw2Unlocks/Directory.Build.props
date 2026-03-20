@@ -14,7 +14,7 @@
 
     <!-- Treat warnings from analyzers as warnings (not errors) -->
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-
+    
     <!-- Optional: report diagnostics as messages to avoid failing builds -->
     <AnalysisMode>AllEnabledByDefault</AnalysisMode>
 
@@ -22,8 +22,11 @@
     <!-- CA1848: Use the LoggerMessage delegates -->
     <!-- CA2007: Do not directly await a Task (ConfigureAwait) -->
     <!-- CA1031: Do not catch general exception types -->
-    <!-- CA1727: Use PascalCase for named placeholders-->
+    <!-- CA1727: Use PascalCase for named placeholders -->
+    <!-- CA1873: Evaluation of this argument may be expensive and unnecessary if logging is disabled -->
     <!-- -->
-    <NoWarn>CA1848;CA2007;CA1031;CA1727</NoWarn>
+    <NoWarn>$(NoWarn);CA1848;CA2007;CA1031;CA1727;CA1873</NoWarn>
+
+    <CacheRoot>$(MSBuildThisFileDirectory)..\cache-root</CacheRoot>
   </PropertyGroup>
 </Project>

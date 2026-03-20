@@ -4,7 +4,7 @@ namespace Gw2Unlocks.UnlockClassifier;
 
 public static class ServiceCollectionExtensions
 {
-    public static IServiceCollection AddUpdater(this IServiceCollection services)
+    public static IServiceCollection AddClassifier(this IServiceCollection services)
     {
         services.AddSingleton<IClassifier, Classifier>();
         return services;

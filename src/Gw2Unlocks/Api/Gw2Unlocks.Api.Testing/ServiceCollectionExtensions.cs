@@ -1,18 +1,25 @@
-﻿using GuildWars2;
-using Microsoft.Extensions.DependencyInjection;
-using System.Net.Http;
-using System.Reflection.Metadata;
+﻿using Microsoft.Extensions.DependencyInjection;
 
 namespace Gw2Unlocks.Api.Testing;
 
 public static class ServiceCollectionExtensions
 {
-    public static IHttpClientBuilder AddGw2ClientForTesting<THandler>(this IServiceCollection services) where THandler : HttpMessageHandler
+    public static IServiceCollection AddFakeApiSourceSuccess(this IServiceCollection services)
     {
-        services.AddTransient<THandler>();
-
-        var builder = services.AddGw2Client()
-                              .ConfigurePrimaryHttpMessageHandler<THandler>();
-        return builder;
+        services.AddSingleton<Gw2ApiSuccessResponseFake>();
+        services.AddSingleton<IGw2ApiSource>(sp => sp.GetRequiredService<Gw2ApiSuccessResponseFake>());
+        return services;
+    }
+    public static IServiceCollection AddFakeApiCacheSuccess(this IServiceCollection services)
+    {
+        services.AddSingleton<Gw2ApiSuccessResponseFake>();
+        services.AddSingleton<IGw2ApiCache>(sp => sp.GetRequiredService<Gw2ApiSuccessResponseFake>());
+        return services;
+    }
+    public static IServiceCollection AddakeApiSourceTransient(this IServiceCollection services)
+    {
+        services.AddSingleton<Gw2ApiTransientFailingResponseFake>();
+        services.AddSingleton<IGw2ApiSource>(sp => sp.GetRequiredService<Gw2ApiTransientFailingResponseFake>());
+        return services;
     }
 }
