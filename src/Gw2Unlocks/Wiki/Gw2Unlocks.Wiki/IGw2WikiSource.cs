@@ -20,5 +20,5 @@ public abstract record AcquisitionNode(string Title)
 
 public interface IGw2WikiSource
 {
-    Task<ReadOnlyCollection<UnlockInfo>> GetAllUnlocks(CancellationToken cancellationToken);
+    Task<ReadOnlyCollection<UnlockInfo>> GetAllUnlocks(ICollection<string> pageTitles, CancellationToken cancellationToken);
 }

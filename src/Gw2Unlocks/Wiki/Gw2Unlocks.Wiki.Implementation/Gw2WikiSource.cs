@@ -23,15 +23,9 @@ public record ZoneAcquisitionNode(string Title) : AcquisitionNode(Title);
 
 public partial class Gw2WikiSource(IWikiApi api) : IGw2WikiSource
 {
-    public async Task<ReadOnlyCollection<UnlockInfo>> GetAllUnlocks(CancellationToken cancellationToken)
+    public async Task<ReadOnlyCollection<UnlockInfo>> GetAllUnlocks(ICollection<string> pageTitles, CancellationToken cancellationToken)
     {
-        var minis = await GetCategoryMembers("Miniatures", cancellationToken);
-        var novelties = await GetCategoryMembers("Novelties", cancellationToken);
-        var skins = await GetCategoryMembers("Skins", cancellationToken);
-
-        var allTitles = minis
-            .Concat(novelties)
-            .Concat(skins)
+        var allTitles = pageTitles
             .Distinct(StringComparer.OrdinalIgnoreCase)
             .ToList();
 
@@ -350,26 +344,6 @@ public partial class Gw2WikiSource(IWikiApi api) : IGw2WikiSource
             type.Success ? type.Groups[1].Value.Trim() : null,
             within.Success ? within.Groups[1].Value.Trim() : null
         );
-    }
-
-    private async Task<List<string>> GetCategoryMembers(string category, CancellationToken cancellationToken)
-    {
-        var response = await api.QueryAsync(new
-        {
-            action = "query",
-            list = "categorymembers",
-            cmtitle = $"Category:{category}",
-            cmlimit = 500,
-            format = "json"
-        }, cancellationToken);
-
-        return response["query"]?["categorymembers"]?
-            .AsArray()
-            .Select(x => x?["title"]?.GetValue<string>())
-            .Where(x => !string.IsNullOrWhiteSpace(x))
-            .Select(x => x!) // FIX nullability
-            .ToList()
-            ?? new List<string>();
     }
 
     // ---------------- REGEX (SYSLIB1045 FIX) ----------------

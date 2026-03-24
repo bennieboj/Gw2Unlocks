@@ -2,6 +2,7 @@
 using Gw2Unlocks.Wiki.WikiApi;
 using Gw2Unlocks.Wiki.WikiApi.Testing;
 using Microsoft.Extensions.DependencyInjection;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Xunit;
@@ -45,14 +46,10 @@ public class Gw2WikiSourceTests : ServiceProviderBasedTest<IGw2WikiSource>
     [Fact]
     public async Task SoldByShouldReturnVendorWithLocation()
     {
-        fakeWikiApi.AddCategory("Miniatures", "Mini Exalted Sage");
-        fakeWikiApi.AddCategory("Novelties");
-        fakeWikiApi.AddCategory("Skins");
-
         fakeWikiApi.AddTemplate("{{Sold by|Mini Exalted Sage}}",
             CreateSoldByTable("Exalted Mastery Vendor", "Tarir, the Forgotten City", "Auric Basin"));
 
-        var result = await GetSut().GetAllUnlocks(TestContext.Current.CancellationToken);
+        var result = await GetSut().GetAllUnlocks(["Mini Exalted Sage"], TestContext.Current.CancellationToken);
         var root = Assert.Single(result).Root;
 
         var paths = Gw2WikiSource.GetPathsToTerminal(root);
@@ -70,15 +67,11 @@ public class Gw2WikiSourceTests : ServiceProviderBasedTest<IGw2WikiSource>
     [Fact]
     public async Task ContainedInShouldRecurseToVendor()
     {
-        fakeWikiApi.AddCategory("Miniatures", "Item A");
-        fakeWikiApi.AddCategory("Novelties");
-        fakeWikiApi.AddCategory("Skins");
-
         fakeWikiApi.AddTemplate("{{contained in|Item A}}", "[[Container A]]");
         fakeWikiApi.AddTemplate("{{Sold by|Container A}}",
             CreateSoldByTable("Vendor A", "Tarir, the Forgotten City", "Auric Basin"));
 
-        var result = await GetSut().GetAllUnlocks(TestContext.Current.CancellationToken);
+        var result = await GetSut().GetAllUnlocks(["Item A"], TestContext.Current.CancellationToken);
         var root = Assert.Single(result).Root;
 
         var paths = Gw2WikiSource.GetPathsToTerminal(root);
@@ -102,15 +95,11 @@ public class Gw2WikiSourceTests : ServiceProviderBasedTest<IGw2WikiSource>
     [Fact]
     public async Task SkinShouldRecurseThroughItems()
     {
-        fakeWikiApi.AddCategory("Skins", "Skin X (skin)");
-        fakeWikiApi.AddCategory("Miniatures");
-        fakeWikiApi.AddCategory("Novelties");
-
         fakeWikiApi.AddTemplate("{{skin list|Skin X (skin)}}", "[[Item X]]");
         fakeWikiApi.AddTemplate("{{Sold by|Item X}}",
             CreateSoldByTable("Vendor X", "Tarir, the Forgotten City", "Auric Basin"));
 
-        var result = await GetSut().GetAllUnlocks(TestContext.Current.CancellationToken);
+        var result = await GetSut().GetAllUnlocks(["Skin X (skin)"], TestContext.Current.CancellationToken);
         var root = Assert.Single(result).Root;
 
         var paths = Gw2WikiSource.GetPathsToTerminal(root);
@@ -128,17 +117,13 @@ public class Gw2WikiSourceTests : ServiceProviderBasedTest<IGw2WikiSource>
     [Fact]
     public async Task MultiplePathsShouldAggregateResults()
     {
-        fakeWikiApi.AddCategory("Miniatures", "Item Multi");
-        fakeWikiApi.AddCategory("Novelties");
-        fakeWikiApi.AddCategory("Skins");
-
         fakeWikiApi.AddTemplate("{{contained in|Item Multi}}", "[[Container A]] [[Container B]]");
         fakeWikiApi.AddTemplate("{{Sold by|Container A}}",
             CreateSoldByTable("Vendor A", "Tarir, the Forgotten City", "Auric Basin"));
         fakeWikiApi.AddTemplate("{{Sold by|Container B}}",
             CreateSoldByTable("Vendor B", "Tarir, the Forgotten City", "Auric Basin"));
 
-        var result = await GetSut().GetAllUnlocks(TestContext.Current.CancellationToken);
+        var result = await GetSut().GetAllUnlocks(["Item Multi"], TestContext.Current.CancellationToken);
         var root = Assert.Single(result).Root;
 
         var paths = Gw2WikiSource.GetPathsToTerminal(root);
@@ -153,13 +138,9 @@ public class Gw2WikiSourceTests : ServiceProviderBasedTest<IGw2WikiSource>
     [Fact]
     public async Task AchievementShouldStopTraversal()
     {
-        fakeWikiApi.AddCategory("Skins", "Skin A");
-        fakeWikiApi.AddCategory("Miniatures");
-        fakeWikiApi.AddCategory("Novelties");
-
         fakeWikiApi.AddTemplate("{{achievement box|Skin A}}", "[[Achievement A]]");
 
-        var result = await GetSut().GetAllUnlocks(TestContext.Current.CancellationToken);
+        var result = await GetSut().GetAllUnlocks(["Skin A"], TestContext.Current.CancellationToken);
         var root = Assert.Single(result).Root;
 
         Assert.IsType<ItemAcquisitionNode>(root);
@@ -173,12 +154,10 @@ public class Gw2WikiSourceTests : ServiceProviderBasedTest<IGw2WikiSource>
     [Fact]
     public async Task ShouldAvoidInfiniteLoops()
     {
-        fakeWikiApi.AddCategory("Miniatures", "Item Loop");
-
         fakeWikiApi.AddTemplate("{{contained in|Item Loop}}", "[[Container Loop]]");
         fakeWikiApi.AddTemplate("{{contained in|Container Loop}}", "[[Item Loop]]");
 
-        var result = await GetSut().GetAllUnlocks(TestContext.Current.CancellationToken);
+        var result = await GetSut().GetAllUnlocks(["Item Loop"] ,TestContext.Current.CancellationToken);
 
         Assert.Empty(result);
     }
@@ -186,9 +165,7 @@ public class Gw2WikiSourceTests : ServiceProviderBasedTest<IGw2WikiSource>
     [Fact]
     public async Task ShouldReturnNothingWhenNoVendorOrAchievement()
     {
-        fakeWikiApi.AddCategory("Miniatures", "Lost Item");
-
-        var result = await GetSut().GetAllUnlocks(TestContext.Current.CancellationToken);
+        var result = await GetSut().GetAllUnlocks(["Lost Item"],TestContext.Current.CancellationToken);
 
         Assert.Empty(result);
     }
@@ -196,10 +173,6 @@ public class Gw2WikiSourceTests : ServiceProviderBasedTest<IGw2WikiSource>
     [Fact]
     public async Task SoldByWithMultipleAreasShouldFollowAllPaths()
     {
-        fakeWikiApi.AddCategory("Miniatures", "Mini Exalted Sage");
-        fakeWikiApi.AddCategory("Novelties");
-        fakeWikiApi.AddCategory("Skins");
-
         // Template returns two areas for the vendor
         fakeWikiApi.AddTemplate("{{Sold by|Mini Exalted Sage}}",
             @"[[SMW::off]]
@@ -218,7 +191,7 @@ public class Gw2WikiSourceTests : ServiceProviderBasedTest<IGw2WikiSource>
 |-
 |}[[SMW::on]]");
 
-        var result = await GetSut().GetAllUnlocks(TestContext.Current.CancellationToken);
+        var result = await GetSut().GetAllUnlocks(["Mini Exalted Sage"], TestContext.Current.CancellationToken);
 
         var unlock = Assert.Single(result, u => u.Name == "Mini Exalted Sage");
         var root = unlock.Root;
