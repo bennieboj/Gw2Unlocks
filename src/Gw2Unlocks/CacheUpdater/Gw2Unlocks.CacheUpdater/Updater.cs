@@ -1,10 +1,5 @@
-﻿using GuildWars2.Collections;
-using GuildWars2.Hero.Achievements;
-using GuildWars2.Hero.Achievements.Titles;
-using GuildWars2.Hero.Equipment.Miniatures;
-using GuildWars2.Hero.Equipment.Novelties;
-using GuildWars2.Items;
-using Gw2Unlocks.Api;
+﻿using Gw2Unlocks.Api;
+using Gw2Unlocks.Wiki;
 using System;
 using System.Collections.ObjectModel;
 using System.Threading;
@@ -12,31 +7,31 @@ using System.Threading.Tasks;
 
 namespace Gw2Unlocks.CacheUpdater;
 
-internal class Updater(IGw2ApiSource reader, IGw2ApiCache writer) : IUpdater
+internal class Updater(IGw2ApiSource apiSource, IGw2ApiCache apiCache, IGw2WikiSource wikiSource) : IUpdater
 {
     private const int MaxRetries = 5;
 
     public async Task UpdateApiData(CancellationToken cancellationToken)
     {
         // Items
-        var items = await RetryAsync(() => reader.GetItemsAsync(cancellationToken), "Items");
-        await writer.SaveToCacheAsync("items.json", new ImmutableValueSet<Item>(items), cancellationToken);
+        var items = await RetryAsync(() => apiSource.GetItemsAsync(cancellationToken), "Items");
+        await apiCache.SaveToCacheAsync("items.json", items, cancellationToken);
 
         // Achievements
-        var achievements = await RetryAsync(() => reader.GetAchievementsAsync(cancellationToken), "Achievements");
-        await writer.SaveToCacheAsync("achievements.json", new ImmutableValueSet<Achievement>(achievements), cancellationToken);
+        var achievements = await RetryAsync(() => apiSource.GetAchievementsAsync(cancellationToken), "Achievements");
+        await apiCache.SaveToCacheAsync("achievements.json", achievements, cancellationToken);
 
         // Miniatures
-        var miniatures = await RetryAsync(() => reader.GetMiniaturesAsync(cancellationToken), "Miniatures");
-        await writer.SaveToCacheAsync("miniatures.json", new ImmutableValueSet<Miniature>(miniatures), cancellationToken);
+        var miniatures = await RetryAsync(() => apiSource.GetMiniaturesAsync(cancellationToken), "Miniatures");
+        await apiCache.SaveToCacheAsync("miniatures.json", miniatures, cancellationToken);
 
         // Novelties
-        var novelties = await RetryAsync(() => reader.GetNoveltiesAsync(cancellationToken), "Novelties");
-        await writer.SaveToCacheAsync("novelties.json", new ImmutableValueSet<Novelty>(novelties), cancellationToken);
+        var novelties = await RetryAsync(() => apiSource.GetNoveltiesAsync(cancellationToken), "Novelties");
+        await apiCache.SaveToCacheAsync("novelties.json", novelties, cancellationToken);
 
         // Titles
-        var titles = await RetryAsync(() => reader.GetTitlesAsync(cancellationToken), "Titles");
-        await writer.SaveToCacheAsync("titles.json", new ImmutableValueSet<Title>(titles), cancellationToken);
+        var titles = await RetryAsync(() => apiSource.GetTitlesAsync(cancellationToken), "Titles");
+        await apiCache.SaveToCacheAsync("titles.json", titles, cancellationToken);
     }
 
     private static async Task<ReadOnlyCollection<T>> RetryAsync<T>(Func<Task<ReadOnlyCollection<T>>> action, string name)
@@ -55,5 +50,10 @@ internal class Updater(IGw2ApiSource reader, IGw2ApiCache writer) : IUpdater
                 //await Task.Delay(200 * attempt); // optional backoff
             }
         }
+    }
+
+    public async Task UpdateWikiData(CancellationToken cancellationToken)
+    {
+        await wikiSource.GetAllUnlocks(cancellationToken);
     }
 }

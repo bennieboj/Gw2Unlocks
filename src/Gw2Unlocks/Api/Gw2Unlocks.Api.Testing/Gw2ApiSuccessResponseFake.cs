@@ -1,6 +1,5 @@
 ﻿namespace Gw2Unlocks.Api.Testing;
 
-using GuildWars2.Collections;
 using GuildWars2.Hero.Achievements;
 using GuildWars2.Hero.Achievements.Titles;
 using GuildWars2.Hero.Equipment.Miniatures;
@@ -43,25 +42,25 @@ public class Gw2ApiSuccessResponseFake : IGw2ApiSource, IGw2ApiCache
     public ReadOnlyCollection<Title>? SavedTitles { get; private set; }
 
 
-    public Task SaveToCacheAsync<T>(string fileName, IImmutableValueSet<T> data, CancellationToken cancellationToken)
+    public Task SaveToCacheAsync<T>(string fileName, ReadOnlyCollection<T> data, CancellationToken cancellationToken)
     {
         // Save into the appropriate property depending on type
         switch (typeof(T).Name)
         {
             case nameof(Item):
-                SavedItems = new ReadOnlyCollection<Item>([.. data.Cast<Item>()]);
+                SavedItems = [.. data.Cast<Item>()];
                 break;
             case nameof(Achievement):
-                SavedAchievements = new ReadOnlyCollection<Achievement>([.. data.Cast<Achievement>()]);
+                SavedAchievements = [.. data.Cast<Achievement>()];
                 break;
             case nameof(Miniature):
-                SavedMiniatures = new ReadOnlyCollection<Miniature>([.. data.Cast<Miniature>()]);
+                SavedMiniatures = [.. data.Cast<Miniature>()];
                 break;
             case nameof(Novelty):
-                SavedNovelties = new ReadOnlyCollection<Novelty>([.. data.Cast<Novelty>()]);
+                SavedNovelties = [.. data.Cast<Novelty>()];
                 break;
             case nameof(Title):
-                SavedTitles = new ReadOnlyCollection<Title>([.. data.Cast<Title>()]);
+                SavedTitles = [.. data.Cast<Title>()];
                 break;
         }
 

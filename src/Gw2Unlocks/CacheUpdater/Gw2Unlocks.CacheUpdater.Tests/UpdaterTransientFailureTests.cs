@@ -7,10 +7,10 @@ using Gw2Unlocks.Api;
 using Gw2Unlocks.Api.Testing;
 using Gw2Unlocks.Api.Testing.Builders;
 using Gw2Unlocks.Testing.Common;
+using Gw2Unlocks.Wiki.Testing;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.ObjectModel;
-using System.Threading;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -29,8 +29,10 @@ public class UpdaterTransientFailureTests : ServiceProviderBasedTest<IUpdater>
 
     protected override void Configure(IServiceCollection services)
     {
-        services.AddakeApiSourceTransient()
+        services.AddFakeApiSourceTransient()
                 .AddFakeApiCacheSuccess()
+                .AddFakeWikiSourceSuccess()
+                .AddFakeWikiSourceSuccess()
                 .AddUpdater();
     }
 

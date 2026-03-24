@@ -14,11 +14,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\CacheUpdater\Gw2Unlocks.CacheUpdater\Gw2Unlocks.CacheUpdater.csproj" />
-    <ProjectReference Include="..\..\Api\Gw2Unlocks.Api.Testing\Gw2Unlocks.Api.Testing.csproj" />
     <ProjectReference Include="..\..\Gw2Unlocks.Testing.Common\Gw2Unlocks.Testing.Common.csproj" />
     <ProjectReference Include="..\..\Gw2Unlocks.Wiki.WikiApi.Testing\Gw2Unlocks.Wiki.WikiApi.Testing.csproj" />
-    <ProjectReference Include="..\..\Wiki\Gw2Unlocks.Wiki.Testing\Gw2Unlocks.Wiki.Testing.csproj" />
+    <ProjectReference Include="..\Gw2Unlocks.Wiki.Implementation\Gw2Unlocks.Wiki.Implementation.csproj" />
   </ItemGroup>
 
 </Project>

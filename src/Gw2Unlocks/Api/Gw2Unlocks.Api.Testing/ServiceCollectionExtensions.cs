@@ -16,7 +16,7 @@ public static class ServiceCollectionExtensions
         services.AddSingleton<IGw2ApiCache>(sp => sp.GetRequiredService<Gw2ApiSuccessResponseFake>());
         return services;
     }
-    public static IServiceCollection AddakeApiSourceTransient(this IServiceCollection services)
+    public static IServiceCollection AddFakeApiSourceTransient(this IServiceCollection services)
     {
         services.AddSingleton<Gw2ApiTransientFailingResponseFake>();
         services.AddSingleton<IGw2ApiSource>(sp => sp.GetRequiredService<Gw2ApiTransientFailingResponseFake>());

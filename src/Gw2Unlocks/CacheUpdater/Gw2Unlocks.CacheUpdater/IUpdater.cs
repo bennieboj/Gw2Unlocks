@@ -6,4 +6,5 @@ namespace Gw2Unlocks.CacheUpdater;
 public interface IUpdater
 {
     Task UpdateApiData(CancellationToken cancellationToken);
+    Task UpdateWikiData(CancellationToken cancellationToken);
 }

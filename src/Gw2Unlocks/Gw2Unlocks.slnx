@@ -18,6 +18,17 @@
     <Project Path="UnlockClassifier/Gw2Unlocks.UnlockClassifier.IntegrationTests/Gw2Unlocks.UnlockClassifier.IntegrationTests.csproj" Id="ac4fcd6d-a3b1-4447-9861-63b72b104ae7" />
     <Project Path="UnlockClassifier/Gw2Unlocks.UnlockClassifier/Gw2Unlocks.UnlockClassifier.csproj" Id="3c710809-5d64-470e-85a2-1ca97167230a" />
   </Folder>
+  <Folder Name="/Wiki/">
+    <Project Path="Gw2Unlocks.Wiki.WikiApi.Implementation/Gw2Unlocks.Wiki.WikiApi.Implementation.csproj" Id="5dc23c9d-8fa7-4562-a40e-0c676deb0848" />
+    <Project Path="Gw2Unlocks.Wiki.WikiApi.Testing/Gw2Unlocks.Wiki.WikiApi.Testing.csproj" Id="2a2b8b61-e60f-4980-8cb8-7afcc5f92531" />
+    <Project Path="Wiki/Gw2Unlocks.Wiki.Cache/Gw2Unlocks.Wiki.Cache.csproj" Id="323e3c94-6018-4873-b20b-3e4d58f13d75" />
+    <Project Path="Wiki/Gw2Unlocks.Wiki.Implementation.Tests/Gw2Unlocks.Wiki.Implementation.Tests.csproj" Id="33f2d291-92df-4ade-9d96-825d67d84d0c" />
+    <Project Path="Wiki/Gw2Unlocks.Wiki.Implementation/Gw2Unlocks.Wiki.Implementation.csproj" />
+    <Project Path="Wiki/Gw2Unlocks.Wiki.Testing/Gw2Unlocks.Wiki.Testing.csproj" Id="5f4173d6-682f-487d-b0b4-7ff8026afb98" />
+    <Project Path="Wiki/Gw2Unlocks.Wiki.WikiApi/Gw2Unlocks.Wiki.WikiApi.csproj" Id="053a507b-0713-4b7d-bb35-3fdcf0badffc" />
+    <Project Path="Wiki/Gw2Unlocks.Wiki/Gw2Unlocks.Wiki.csproj" />
+  </Folder>
+  <Project Path="Gw2Unlocks.Cache.Common/Gw2Unlocks.Cache.Common.csproj" Id="56f494be-f154-4154-be20-c4c435f8f140" />
   <Project Path="Gw2Unlocks.Testing.Common/Gw2Unlocks.Testing.Common.csproj" Id="e8450391-8d74-4375-9615-35ae18a0305e" />
   <Project Path="Website/Website.csproj" />
 </Solution>

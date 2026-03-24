@@ -1,10 +1,6 @@
-﻿using GuildWars2.Collections;
-using System.Threading;
-using System.Threading.Tasks;
-
+﻿using Gw2Unlocks.Cache.Common;
 namespace Gw2Unlocks.Api;
 
-public interface IGw2ApiCache : IGw2ApiSource
+public interface IGw2ApiCache : IGw2ApiSource, IGenericCache
 {
-    Task SaveToCacheAsync<T>(string fileName, IImmutableValueSet<T> data, CancellationToken cancellationToken);
 }

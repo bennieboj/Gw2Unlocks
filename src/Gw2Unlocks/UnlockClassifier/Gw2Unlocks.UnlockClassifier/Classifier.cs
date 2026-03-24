@@ -1,9 +1,5 @@
-﻿using GuildWars2;
-using GuildWars2.Items;
-using Gw2Unlocks.Api;
+﻿using Gw2Unlocks.Api;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 

@@ -4,12 +4,10 @@ using Xunit;
 
 namespace Gw2Unlocks.Testing.Common
 {
-    public abstract class ServiceProviderBasedTest<TSut>
+    public abstract class ServiceProviderBasedTest<TSut>(ITestOutputHelper output)
         where TSut : class
     {
-        protected ITestOutputHelper XunitTestOutputHelper { get; }
-
-        protected ServiceProviderBasedTest(ITestOutputHelper output) => XunitTestOutputHelper = output;
+        protected ITestOutputHelper XunitTestOutputHelper { get; } = output;
 
         private IServiceProvider? _provider;
 

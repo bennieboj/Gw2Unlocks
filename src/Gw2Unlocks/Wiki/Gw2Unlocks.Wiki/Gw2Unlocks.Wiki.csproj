@@ -5,10 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="GW2SDK" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\..\Gw2Unlocks.Cache.Common\Gw2Unlocks.Cache.Common.csproj" />
   </ItemGroup>
 
