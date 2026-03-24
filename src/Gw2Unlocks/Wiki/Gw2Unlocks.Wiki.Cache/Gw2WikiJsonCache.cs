@@ -1,4 +1,5 @@
 ﻿using Gw2Unlocks.Cache.Common;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Threading;
 using System.Threading.Tasks;
@@ -13,5 +14,5 @@ internal sealed class Gw2WikiJsonCache : GenericCache, IGw2WikiCache
     {
     }
 
-    public Task<ReadOnlyCollection<UnlockInfo>> GetAllUnlocks(CancellationToken cancellationToken) => LoadFromFileAsync<UnlockInfo>("vendorInfos.json", cancellationToken);
+    public Task<ReadOnlyCollection<UnlockInfo>> GetAllUnlocks(ICollection<string> pageTitles, CancellationToken cancellationToken) => LoadFromFileAsync<UnlockInfo>("vendorInfos.json", cancellationToken);
 }

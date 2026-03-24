@@ -2,7 +2,6 @@
 using Gw2Unlocks.Wiki.WikiApi;
 using Gw2Unlocks.Wiki.WikiApi.Testing;
 using Microsoft.Extensions.DependencyInjection;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Xunit;
@@ -67,6 +66,7 @@ public class Gw2WikiSourceTests : ServiceProviderBasedTest<IGw2WikiSource>
     [Fact]
     public async Task ContainedInShouldRecurseToVendor()
     {
+        fakeWikiApi.AddPage("Item A", "");
         fakeWikiApi.AddTemplate("{{contained in|Item A}}", "[[Container A]]");
         fakeWikiApi.AddTemplate("{{Sold by|Container A}}",
             CreateSoldByTable("Vendor A", "Tarir, the Forgotten City", "Auric Basin"));
@@ -95,6 +95,7 @@ public class Gw2WikiSourceTests : ServiceProviderBasedTest<IGw2WikiSource>
     [Fact]
     public async Task SkinShouldRecurseThroughItems()
     {
+        fakeWikiApi.AddPage("Skin X (skin)", "");
         fakeWikiApi.AddTemplate("{{skin list|Skin X (skin)}}", "[[Item X]]");
         fakeWikiApi.AddTemplate("{{Sold by|Item X}}",
             CreateSoldByTable("Vendor X", "Tarir, the Forgotten City", "Auric Basin"));
@@ -117,6 +118,7 @@ public class Gw2WikiSourceTests : ServiceProviderBasedTest<IGw2WikiSource>
     [Fact]
     public async Task MultiplePathsShouldAggregateResults()
     {
+        fakeWikiApi.AddPage("Item Multi", "");
         fakeWikiApi.AddTemplate("{{contained in|Item Multi}}", "[[Container A]] [[Container B]]");
         fakeWikiApi.AddTemplate("{{Sold by|Container A}}",
             CreateSoldByTable("Vendor A", "Tarir, the Forgotten City", "Auric Basin"));
@@ -138,7 +140,7 @@ public class Gw2WikiSourceTests : ServiceProviderBasedTest<IGw2WikiSource>
     [Fact]
     public async Task AchievementShouldStopTraversal()
     {
-        fakeWikiApi.AddTemplate("{{achievement box|Skin A}}", "[[Achievement A]]");
+        fakeWikiApi.AddPage("Skin A", "{{achievement box|Achievement A}}");
 
         var result = await GetSut().GetAllUnlocks(["Skin A"], TestContext.Current.CancellationToken);
         var root = Assert.Single(result).Root;
@@ -154,6 +156,8 @@ public class Gw2WikiSourceTests : ServiceProviderBasedTest<IGw2WikiSource>
     [Fact]
     public async Task ShouldAvoidInfiniteLoops()
     {
+        fakeWikiApi.AddPage("Item Loop", "");
+        fakeWikiApi.AddPage("Container Loop", "");
         fakeWikiApi.AddTemplate("{{contained in|Item Loop}}", "[[Container Loop]]");
         fakeWikiApi.AddTemplate("{{contained in|Container Loop}}", "[[Item Loop]]");
 
@@ -163,9 +167,47 @@ public class Gw2WikiSourceTests : ServiceProviderBasedTest<IGw2WikiSource>
     }
 
     [Fact]
-    public async Task ShouldReturnNothingWhenNoVendorOrAchievement()
+    public async Task ShouldReturnNothingWhenNoVendorOrAchievementBecauseNoLinks()
     {
-        var result = await GetSut().GetAllUnlocks(["Lost Item"],TestContext.Current.CancellationToken);
+        fakeWikiApi.AddPage("Lost Item", "");
+        var result = await GetSut().GetAllUnlocks(["Lost Item"], TestContext.Current.CancellationToken);
+
+        Assert.Empty(result);
+    }
+
+    [Fact]
+    public async Task ShouldReturnNothingWhenNoVendorOrAchievementBecauseNoResultsForSoldBy()
+    {
+        fakeWikiApi.AddPage("Not Sold Item", "");
+        fakeWikiApi.AddTemplate("{{achievement box|No results for sold by}}", "[[Achievement NeverFound]]");
+        fakeWikiApi.AddTemplate("{{Sold by|Not Sold Item}}", "No results for sold by");
+        var result = await GetSut().GetAllUnlocks(["Not Sold Item"], TestContext.Current.CancellationToken);
+
+        Assert.Empty(result);
+    }
+
+    [Fact]
+    public async Task ShouldReturnNothingWhenNoVendorOrAchievementBecauseNoResultsForAchievementBox()
+    {
+        fakeWikiApi.AddPage("Unachieved Item", "");
+        fakeWikiApi.AddTemplate("{{Sold by|Category:Pages with empty semantic mediawiki query results}}",
+            CreateSoldByTable("Vendor A", "Tarir, the Forgotten City", "Auric Basin"));
+        fakeWikiApi.AddTemplate("{{achievement box|Unachieved Item}}", "[[Category:Pages with empty semantic mediawiki query results]]");
+
+        var result = await GetSut().GetAllUnlocks(["Unachieved Item"], TestContext.Current.CancellationToken);
+
+        Assert.Empty(result);
+    }
+
+    [Fact]
+    public async Task ShouldReturnNothingWhenNoVendorOrAchievementBecauseNoResultsForContainedIn()
+    {
+        fakeWikiApi.AddPage("NotContained Item", "");
+        fakeWikiApi.AddTemplate("{{Sold by|Category:Pages with empty semantic mediawiki query results}}",
+            CreateSoldByTable("Vendor A", "Tarir, the Forgotten City", "Auric Basin"));
+        fakeWikiApi.AddTemplate("{{contained in|NotContained Item}}", "[[Category:Pages with empty semantic mediawiki query results]]");
+
+        var result = await GetSut().GetAllUnlocks(["NotContained Item"], TestContext.Current.CancellationToken);
 
         Assert.Empty(result);
     }

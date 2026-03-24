@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Gw2Unlocks.CacheUpdater;
 
-internal class Updater(IGw2ApiSource apiSource, IGw2ApiCache apiCache, IGw2WikiSource wikiSource) : IUpdater
+internal class Updater(IGw2ApiSource apiSource, IGw2ApiCache apiCache, IGw2WikiSource wikiSource, IGw2WikiCache wikiCache) : IUpdater
 {
     private const int MaxRetries = 5;
 
@@ -54,6 +54,12 @@ internal class Updater(IGw2ApiSource apiSource, IGw2ApiCache apiCache, IGw2WikiS
 
     public async Task UpdateWikiData(CancellationToken cancellationToken)
     {
-        await wikiSource.GetAllUnlocks(cancellationToken);
+        var data = await wikiSource.GetAllUnlocks([
+            "Weaver's Sword (skin)"
+            //"Mini Exalted Sage",
+            //"Luminate's Backplate (skin)"
+            //, "Endless Exalted Caster Tonic"
+            ], cancellationToken);
+        await wikiCache.SaveToCacheAsync("wiki.json", data, cancellationToken);
     }
 }

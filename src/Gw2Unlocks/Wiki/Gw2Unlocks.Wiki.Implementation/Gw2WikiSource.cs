@@ -106,7 +106,7 @@ public partial class Gw2WikiSource(IWikiApi api) : IGw2WikiSource
         // SOLD BY
         var soldByText = await ExpandAsync($"{{{{Sold by|{title}}}}}", cancellationToken);
 
-        if (!string.IsNullOrWhiteSpace(soldByText))
+        if (!string.IsNullOrWhiteSpace(soldByText) /*&& !soldByText.Contains("No results for sold by", StringComparison.InvariantCulture)*/)
         {
             var rows = ParseSoldByTable(soldByText);
 
@@ -136,10 +136,17 @@ public partial class Gw2WikiSource(IWikiApi api) : IGw2WikiSource
         }
 
         // ACHIEVEMENT
-        var achievements = await GetLinksFromTemplate($"{{{{achievement box|{title}}}}}", cancellationToken);
+        var content = await GetPageWikitextAsync(title, cancellationToken);
+        var achievement = ExtractAchievement(content);
 
-        foreach (var a in achievements)
-            node.AddNext(new AchievementAcquisitionNode(a));
+        if (!string.IsNullOrEmpty(achievement))
+        {
+            var achievementNode = new AchievementAcquisitionNode(achievement);
+            node.AddNext(achievementNode);
+
+            // STOP traversal here (per your test)
+            return node;
+        }
 
         // CONTAINERS
         var containers = await GetLinksFromTemplate($"{{{{contained in|{title}}}}}", cancellationToken);
@@ -274,10 +281,50 @@ public partial class Gw2WikiSource(IWikiApi api) : IGw2WikiSource
     }
 
     // ---------------- HELPERS ----------------
+    private static string? ExtractAchievement(string wikitext)
+    {
+        if (string.IsNullOrEmpty(wikitext))
+            return null;
+
+        var match = AchievementBoxRegex().Match(wikitext);
+
+        if (!match.Success)
+            return null;
+
+        return match.Groups[1].Value
+        .Split('|', StringSplitOptions.RemoveEmptyEntries)[0]
+        .Trim();
+    }
+
     private async Task<List<string>> GetLinksFromTemplate(string template, CancellationToken cancellationToken)
     {
         var text = await ExpandAsync(template, cancellationToken);
-        return ExtractLinks(text);
+        var links = ExtractLinks(text);
+        links = links.Where(l => !"Category:Pages with empty semantic mediawiki query results".Equals(l, StringComparison.OrdinalIgnoreCase)).ToList() ;
+        return links;
+    }
+
+    private async Task<string> GetPageWikitextAsync(string title, CancellationToken cancellationToken)
+    {
+        var result = await api.QueryAsync(new
+        {
+            action = "query",
+            prop = "revisions",
+            titles = title,
+            rvprop = "content",
+            format = "json"
+        }, cancellationToken);
+
+        var pages = result?["query"]?["pages"]?.AsObject();
+
+        if (pages == null || pages.Count == 0)
+            return "";
+
+        var page = pages.First().Value;
+
+        return page?["revisions"]?[0]?["slots"]?["main"]?["*"]?.GetValue<string>()
+            ?? page?["revisions"]?[0]?["*"]?.GetValue<string>()
+            ?? "";
     }
 
     private async Task<string> ExpandAsync(string template, CancellationToken cancellationToken)
@@ -359,5 +406,8 @@ public partial class Gw2WikiSource(IWikiApi api) : IGw2WikiSource
 
     [GeneratedRegex(@"\[\[(.*?)\]\]", RegexOptions.Compiled)]
     public static partial Regex LinkRegex();
+
+    [GeneratedRegex(@"\{\{\s*achievement box\s*\|\s*(.*?)\s*\}\}", RegexOptions.IgnoreCase | RegexOptions.Compiled)]
+    public static partial Regex AchievementBoxRegex();
 
 }

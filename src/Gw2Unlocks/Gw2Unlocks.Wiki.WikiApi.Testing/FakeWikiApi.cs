@@ -1,11 +1,13 @@
 ﻿using System.Text.Json;
 using System.Text.Json.Nodes;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Gw2Unlocks.Wiki.WikiApi.Testing;
 
 public class FakeWikiApi : IWikiApi
 {
     private readonly Dictionary<string, JsonNode> _templateResponses = [];
+    private readonly Dictionary<string, JsonNode> _pageResponses = [];
 
     public void AddTemplate(string template, string wikitext)
     {
@@ -31,6 +33,40 @@ public class FakeWikiApi : IWikiApi
             return Task.FromResult(JsonNode.Parse("{}")!);
         }
 
+        if (action == "query" && json?["prop"]?.ToString() == "revisions")
+        {
+            var title = json?["titles"]?.ToString();
+            if(title != null && _pageResponses.TryGetValue(title, out var value))
+                return Task.FromResult(value);
+        }
+
         throw new InvalidOperationException("Unsupported query in FakeWikiApi");
+    }
+
+    public void AddPage(string title, string wikitext)
+    {
+        var x = JsonNode.Parse($$"""
+    {
+      "query": {
+        "pages": {
+          "123": {
+            "pageid": 123,
+            "title": "Test",
+            "revisions": [
+              {
+                "slots": {
+                  "main": {
+                    "*": {{JsonSerializer.Serialize(wikitext)}}
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+    """)!;
+
+        _pageResponses[title] = x;
     }
 }

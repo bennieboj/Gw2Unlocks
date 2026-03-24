@@ -1,8 +1,8 @@
 ﻿using Gw2Unlocks.Api.Cache;
 using Gw2Unlocks.Api.Implementation;
 using Gw2Unlocks.CacheUpdater;
+using Gw2Unlocks.Wiki.Cache;
 using Gw2Unlocks.Wiki.Implementation;
-using Gw2Unlocks.Wiki.WikiApi.Implementation;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
@@ -17,7 +17,7 @@ builder.Logging.AddConfiguration(builder.Configuration.GetSection("Logging"));
 builder.Services.AddApiSource()
                 .AddJsonCacheApi()
                 .AddWikiSource()
-                .AddRealWikiApi()
+                .AddJsonCacheWiki()
                 .AddUpdater();
 
 var host = builder.Build();
