@@ -35,12 +35,13 @@ public sealed partial class Gw2WikiSource(ILogger<Gw2WikiSource> logger, IWikiAp
      AcquisitionGraph graph,
      string title,
      HashSet<string> visited,
-     CancellationToken cancellationToken)
+     CancellationToken cancellationToken,
+     NodeType nodeType = NodeType.Item)
     {
         if (!visited.Add(title))
             return;
 
-        var itemNode = graph.GetOrCreate(NodeType.Item, title);
+        var itemNode = graph.GetOrCreate(nodeType, title);
 
         // --- SOLD BY ---
         var soldByText = await ExpandAsync($"{{{{Sold by|{title}}}}}", cancellationToken);
@@ -90,7 +91,7 @@ public sealed partial class Gw2WikiSource(ILogger<Gw2WikiSource> logger, IWikiAp
             var containerNode = graph.GetOrCreate(NodeType.Container, container);
             graph.AddEdge(itemNode.Id, containerNode.Id, EdgeType.Contains);
 
-            await BuildGraph(graph, container, visited, cancellationToken);
+            await BuildGraph(graph, container, visited, cancellationToken, NodeType.Container);
         }
 
         // --- SKINS ---
