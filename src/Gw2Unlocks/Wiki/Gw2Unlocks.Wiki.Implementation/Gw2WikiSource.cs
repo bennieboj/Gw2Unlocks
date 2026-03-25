@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 namespace Gw2Unlocks.Wiki.Implementation;
 
 public record ItemAcquisitionNode(string Title) : AcquisitionNode(Title);
-public record VendorAcquisitionNode(string Title) : AcquisitionNode(Title);
+public record VendorAcquisitionNode(string Title, string Cost) : AcquisitionNode(Title);
 public record AchievementAcquisitionNode(string Title) : AcquisitionNode(Title);
 public record ContainerAcquisitionNode(string Title) : AcquisitionNode(Title);
 public record SkinAcquisitionNode(string Title) : AcquisitionNode(Title);
@@ -29,17 +29,11 @@ public partial class Gw2WikiSource(IWikiApi api) : IGw2WikiSource
             .Distinct(StringComparer.OrdinalIgnoreCase)
             .ToList();
 
-        //allTitles = new List<string> {
-        //                    "Mini Exalted Sage",
-        //                    "Endless Exalted Caster Tonic",
-        //                    "Luminate's Backplate (skin)"
-        //};
-
         var result = new List<UnlockInfo>();
 
         foreach (var title in allTitles)
         {
-            var root = await ResolveInternal(title, new HashSet<string>(), cancellationToken);
+            var root = await ResolveInternal(title, [], cancellationToken);
 
             if (root == null)
                 continue;
@@ -49,7 +43,7 @@ public partial class Gw2WikiSource(IWikiApi api) : IGw2WikiSource
             if (paths.Count == 0)
                 continue;
 
-            result.Add(new UnlockInfo(title, root));
+            result.Add(new UnlockInfo(title, paths));
         }
 
         return new ReadOnlyCollection<UnlockInfo>(result);
@@ -57,7 +51,7 @@ public partial class Gw2WikiSource(IWikiApi api) : IGw2WikiSource
 
     // ---------------- GRAPH TRAVERSAL ----------------
 
-    public static IReadOnlyList<IReadOnlyList<AcquisitionNode>> GetPathsToTerminal(AcquisitionNode root)
+    private static List<List<AcquisitionNode>> GetPathsToTerminal(AcquisitionNode root)
     {
         ArgumentNullException.ThrowIfNull(root);
 
@@ -73,7 +67,7 @@ public partial class Gw2WikiSource(IWikiApi api) : IGw2WikiSource
 
             if (IsTerminal(node))
             {
-                results.Add(new List<AcquisitionNode>(current));
+                results.Add([.. current]);
             }
             else
             {
@@ -86,9 +80,7 @@ public partial class Gw2WikiSource(IWikiApi api) : IGw2WikiSource
 
         Traverse(root);
 
-        return results
-            .Select(path => (IReadOnlyList<AcquisitionNode>)path)
-            .ToList();
+        return [.. results.Select(path => path)];
     }
 
     // ---------------- RESOLUTION ----------------
@@ -106,13 +98,13 @@ public partial class Gw2WikiSource(IWikiApi api) : IGw2WikiSource
         // SOLD BY
         var soldByText = await ExpandAsync($"{{{{Sold by|{title}}}}}", cancellationToken);
 
-        if (!string.IsNullOrWhiteSpace(soldByText) /*&& !soldByText.Contains("No results for sold by", StringComparison.InvariantCulture)*/)
+        if (!string.IsNullOrWhiteSpace(soldByText) && !soldByText.Contains("No results for sold by", StringComparison.InvariantCulture))
         {
             var rows = ParseSoldByTable(soldByText);
 
-            foreach (var (vendor, areas, zones) in rows)
+            foreach (var (vendor, areas, zones, cost) in rows)
             {
-                var vendorNode = new VendorAcquisitionNode(vendor);
+                var vendorNode = new VendorAcquisitionNode(vendor, cost);
 
                 var count = Math.Min(areas.Count, zones.Count);
 
@@ -126,9 +118,6 @@ public partial class Gw2WikiSource(IWikiApi api) : IGw2WikiSource
                 }
 
                 node.AddNext(vendorNode);
-
-                // attach cost to unlock (or collect it)
-                //unlockCost = cost; // depends on your flow
             }
 
             if (rows.Count > 0)
@@ -183,9 +172,9 @@ public partial class Gw2WikiSource(IWikiApi api) : IGw2WikiSource
 
     // ---------------- LOCATION ----------------
 
-    private static List<(string vendor, List<string> areas, List<string> zones)> ParseSoldByTable(string text)
+    private static List<(string vendor, List<string> areas, List<string> zones, string cost)> ParseSoldByTable(string text)
     {
-        var result = new List<(string, List<string>, List<string>)>();
+        var result = new List<(string, List<string>, List<string>, string)>();
 
         if (string.IsNullOrWhiteSpace(text))
             return result;
@@ -229,7 +218,7 @@ public partial class Gw2WikiSource(IWikiApi api) : IGw2WikiSource
 
     private static void ProcessRow(
         List<string> rowLines,
-        List<(string vendor, List<string> areas, List<string> zones)> result)
+        List<(string vendor, List<string> areas, List<string> zones, string cost)> result)
     {
         // Expect at least 4 columns: Vendor, Area, Zone, Cost(, Notes)
         if (rowLines.Count < 3)
@@ -237,7 +226,7 @@ public partial class Gw2WikiSource(IWikiApi api) : IGw2WikiSource
 
         // Clean cell content: remove leading '|'
         var cells = rowLines
-            .Select(l => l.Length > 1 ? l.Substring(1).Trim() : "")
+            .Select(l => l.Length > 1 ? l[1..].Trim() : "")
             .ToList();
 
         // --- Vendor ---
@@ -256,12 +245,12 @@ public partial class Gw2WikiSource(IWikiApi api) : IGw2WikiSource
             .ToList();
 
         // --- Cost (raw text, cleaned a bit) ---
-        //var cost = CleanCost(cells[3]);
+        var cost = CleanCost(cells[3]);
 
         if (areas.Count == 0 || zones.Count == 0)
             return;
 
-        result.Add((vendor, areas, zones));
+        result.Add((vendor, areas, zones, cost));
     }
 
     private static string CleanCost(string text)
@@ -300,7 +289,7 @@ public partial class Gw2WikiSource(IWikiApi api) : IGw2WikiSource
     {
         var text = await ExpandAsync(template, cancellationToken);
         var links = ExtractLinks(text);
-        links = links.Where(l => !"Category:Pages with empty semantic mediawiki query results".Equals(l, StringComparison.OrdinalIgnoreCase)).ToList() ;
+        links = [.. links.Where(l => !"Category:Pages with empty semantic mediawiki query results".Equals(l, StringComparison.OrdinalIgnoreCase))];
         return links;
     }
 
@@ -366,14 +355,13 @@ public partial class Gw2WikiSource(IWikiApi api) : IGw2WikiSource
 
     private static List<string> ExtractLinks(string text)
     {
-        return LinkRegex()
+        return [.. LinkRegex()
             .Matches(text)
             .Select(m => m.Groups[1].Value.Split('|')[0].Trim())
             .Where(x => !string.IsNullOrWhiteSpace(x) && !x.StartsWith("File:", StringComparison.OrdinalIgnoreCase)) // filter out files
             .Where(x => !string.IsNullOrWhiteSpace(x) && !x.StartsWith("SMW::", StringComparison.OrdinalIgnoreCase)) // filter out SMW
             .Where(x => !string.IsNullOrWhiteSpace(x)) // FIX (CS8619)
-            .Distinct()
-            .ToList();
+            .Distinct()];
     }
 
     private static string? ExtractLocation(string content)

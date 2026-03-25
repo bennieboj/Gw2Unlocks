@@ -49,16 +49,25 @@ public class Gw2WikiSourceTests : ServiceProviderBasedTest<IGw2WikiSource>
             CreateSoldByTable("Exalted Mastery Vendor", "Tarir, the Forgotten City", "Auric Basin"));
 
         var result = await GetSut().GetAllUnlocks(["Mini Exalted Sage"], TestContext.Current.CancellationToken);
-        var root = Assert.Single(result).Root;
 
-        var paths = Gw2WikiSource.GetPathsToTerminal(root);
-        var chain = Assert.Single(paths);
+        var unlock = Assert.Single(result);
+        var paths = unlock.Paths;
+        var path = Assert.Single(paths);
 
-        Assert.Collection(chain,
-            n => Assert.IsType<ItemAcquisitionNode>(n),
-            n => Assert.IsType<VendorAcquisitionNode>(n),
-            n => Assert.IsType<AreaAcquisitionNode>(n),
-            n => Assert.IsType<ZoneAcquisitionNode>(n)
+        Assert.Contains(paths, path =>
+            path.Count == 4 &&
+            path[0].GetType() == typeof(ItemAcquisitionNode) &&
+            path[1].GetType() == typeof(VendorAcquisitionNode) &&
+            path[2].GetType() == typeof(AreaAcquisitionNode) &&
+            path[3].GetType() == typeof(ZoneAcquisitionNode)
+        );
+
+        Assert.Contains(paths, path =>
+             path.Count == 4 &&
+             path[0].Title == "Mini Exalted Sage" &&
+             path[1].Title == "Exalted Mastery Vendor" &&
+             path[2].Title == "Tarir, the Forgotten City" &&
+             path[3].Title == "Auric Basin"
         );
     }
 
@@ -72,24 +81,20 @@ public class Gw2WikiSourceTests : ServiceProviderBasedTest<IGw2WikiSource>
             CreateSoldByTable("Vendor A", "Tarir, the Forgotten City", "Auric Basin"));
 
         var result = await GetSut().GetAllUnlocks(["Item A"], TestContext.Current.CancellationToken);
-        var root = Assert.Single(result).Root;
+        var unlock = Assert.Single(result);
+        var path = Assert.Single(unlock.Paths);
 
-        var paths = Gw2WikiSource.GetPathsToTerminal(root);
-        var chain = Assert.Single(paths);
-
-        Assert.Collection(chain,
-            n => Assert.IsType<ItemAcquisitionNode>(n),
-            n => Assert.IsType<ContainerAcquisitionNode>(n),
-            n => Assert.IsType<VendorAcquisitionNode>(n),
-            n => Assert.IsType<AreaAcquisitionNode>(n),
-            n => Assert.IsType<ZoneAcquisitionNode>(n)
-        );
-
-        Assert.Equal("Item A", chain[0].Title);
-        Assert.Equal("Container A", chain[1].Title);
-        Assert.Equal("Vendor A", chain[2].Title);
-        Assert.Equal("Tarir, the Forgotten City", chain[3].Title);
-        Assert.Equal("Auric Basin", chain[4].Title);
+        Assert.Equal(5, path.Count);
+        Assert.IsType<ItemAcquisitionNode>(path[0]);
+        Assert.IsType<ContainerAcquisitionNode>(path[1]);
+        Assert.IsType<VendorAcquisitionNode>(path[2]);
+        Assert.IsType<AreaAcquisitionNode>(path[3]);
+        Assert.IsType<ZoneAcquisitionNode>(path[4]);
+        Assert.Equal("Item A", path[0].Title);
+        Assert.Equal("Container A", path[1].Title);
+        Assert.Equal("Vendor A", path[2].Title);
+        Assert.Equal("Tarir, the Forgotten City", path[3].Title);
+        Assert.Equal("Auric Basin", path[4].Title);
     }
 
     [Fact]
@@ -101,18 +106,21 @@ public class Gw2WikiSourceTests : ServiceProviderBasedTest<IGw2WikiSource>
             CreateSoldByTable("Vendor X", "Tarir, the Forgotten City", "Auric Basin"));
 
         var result = await GetSut().GetAllUnlocks(["Skin X (skin)"], TestContext.Current.CancellationToken);
-        var root = Assert.Single(result).Root;
 
-        var paths = Gw2WikiSource.GetPathsToTerminal(root);
-        var chain = Assert.Single(paths);
+        var unlock = Assert.Single(result);
+        var path = Assert.Single(unlock.Paths);
 
-        Assert.Collection(chain,
-            n => Assert.IsType<ItemAcquisitionNode>(n),   // Skin root
-            n => Assert.IsType<ItemAcquisitionNode>(n),   // Item X
-            n => Assert.IsType<VendorAcquisitionNode>(n),
-            n => Assert.IsType<AreaAcquisitionNode>(n),
-            n => Assert.IsType<ZoneAcquisitionNode>(n)
-        );
+        Assert.Equal(5, path.Count);
+        Assert.IsType<ItemAcquisitionNode>(path[0]);
+        Assert.IsType<ItemAcquisitionNode>(path[1]);
+        Assert.IsType<VendorAcquisitionNode>(path[2]);
+        Assert.IsType<AreaAcquisitionNode>(path[3]);
+        Assert.IsType<ZoneAcquisitionNode>(path[4]);
+        Assert.Equal("Skin X (skin)", path[0].Title);
+        Assert.Equal("Item X", path[1].Title);
+        Assert.Equal("Vendor X", path[2].Title);
+        Assert.Equal("Tarir, the Forgotten City", path[3].Title);
+        Assert.Equal("Auric Basin", path[4].Title);
     }
 
     [Fact]
@@ -126,12 +134,10 @@ public class Gw2WikiSourceTests : ServiceProviderBasedTest<IGw2WikiSource>
             CreateSoldByTable("Vendor B", "Tarir, the Forgotten City", "Auric Basin"));
 
         var result = await GetSut().GetAllUnlocks(["Item Multi"], TestContext.Current.CancellationToken);
-        var root = Assert.Single(result).Root;
 
-        var paths = Gw2WikiSource.GetPathsToTerminal(root);
-
+        var unlock = Assert.Single(result);
+        var paths = unlock.Paths;
         Assert.Equal(2, paths.Count);
-
         Assert.Contains(paths, p => p.Any(n => n.Title == "Vendor A"));
         Assert.Contains(paths, p => p.Any(n => n.Title == "Vendor B"));
     }
@@ -143,14 +149,12 @@ public class Gw2WikiSourceTests : ServiceProviderBasedTest<IGw2WikiSource>
         fakeWikiApi.AddPage("Skin A", "{{achievement box|Achievement A}}");
 
         var result = await GetSut().GetAllUnlocks(["Skin A"], TestContext.Current.CancellationToken);
-        var root = Assert.Single(result).Root;
-
-        Assert.IsType<ItemAcquisitionNode>(root);
-
-        var next = Assert.Single(root.Next);
-
-        Assert.IsType<AchievementAcquisitionNode>(next);
-        Assert.Equal("Achievement A", next.Title);
+        var unlock = Assert.Single(result);
+        var path = Assert.Single(unlock.Paths);
+        Assert.Equal(2, path.Count);
+        Assert.IsType<ItemAcquisitionNode>(path[0]);
+        Assert.IsType<AchievementAcquisitionNode>(path[1]);
+        Assert.Equal("Achievement A", path[1].Title);
     }
 
     [Fact]
@@ -235,29 +239,23 @@ public class Gw2WikiSourceTests : ServiceProviderBasedTest<IGw2WikiSource>
 
         var result = await GetSut().GetAllUnlocks(["Mini Exalted Sage"], TestContext.Current.CancellationToken);
 
+
         var unlock = Assert.Single(result, u => u.Name == "Mini Exalted Sage");
-        var root = unlock.Root;
-
-        // Collect all paths to terminals (zone/achievement)
-        var paths = Gw2WikiSource.GetPathsToTerminal(root);
-
+        var paths = unlock.Paths;
         // We expect 2 paths: one via Tarir → Auric Basin, one via Noble Ledges → Verdant Brink
         Assert.Equal(2, paths.Count);
-
         Assert.Contains(paths, path =>
-         path.Count == 4 &&
-         path[0].Title == "Mini Exalted Sage" &&
-         path[1].Title == "Exalted Mastery Vendor" &&
-         path[1] is VendorAcquisitionNode &&
-         path[2].Title == "Tarir, the Forgotten City" &&
-         path[3].Title == "Auric Basin"
-     );
+             path.Count == 4 &&
+             path[0].Title == "Mini Exalted Sage" &&
+             path[1].Title == "Exalted Mastery Vendor" &&
+             path[2].Title == "Tarir, the Forgotten City" &&
+             path[3].Title == "Auric Basin"
+        );
 
         Assert.Contains(paths, path =>
             path.Count == 4 &&
             path[0].Title == "Mini Exalted Sage" &&
             path[1].Title == "Exalted Mastery Vendor" &&
-            path[1] is VendorAcquisitionNode &&
             path[2].Title == "Noble Ledges" &&
             path[3].Title == "Verdant Brink"
         );
