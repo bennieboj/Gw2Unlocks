@@ -2,173 +2,112 @@
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
-using System.Reflection.Metadata;
-using System.Security.Claims;
 using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace Gw2Unlocks.Wiki.Implementation;
 
-public record ItemAcquisitionNode(string Title) : AcquisitionNode(Title);
-public record VendorAcquisitionNode(string Title, string Cost) : AcquisitionNode(Title);
-public record AchievementAcquisitionNode(string Title) : AcquisitionNode(Title);
-public record ContainerAcquisitionNode(string Title) : AcquisitionNode(Title);
-public record SkinAcquisitionNode(string Title) : AcquisitionNode(Title);
-
-public record AreaAcquisitionNode(string Title) : AcquisitionNode(Title);
-public record ZoneAcquisitionNode(string Title) : AcquisitionNode(Title);
-
-
-public partial class Gw2WikiSource(ILogger<Gw2WikiSource> logger, IWikiApi api) : IGw2WikiSource
+public sealed partial class Gw2WikiSource(ILogger<Gw2WikiSource> logger, IWikiApi api) : IGw2WikiSource
 {
-    public async Task<ReadOnlyCollection<UnlockInfo>> GetAllUnlocks(ICollection<string> pageTitles, CancellationToken cancellationToken)
+    public async Task<AcquisitionGraph> GetAcquisitionGraph(IEnumerable<string> itemNames, AcquisitionGraph? existingGraph = null, CancellationToken cancellationToken = default)
     {
-        var allTitles = pageTitles
+        var allTitles = itemNames
             .Distinct(StringComparer.OrdinalIgnoreCase)
             .ToList();
 
-        var result = new List<UnlockInfo>();
+        var graph = existingGraph ?? new AcquisitionGraph();
+        var visited = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
 
         foreach (var title in allTitles)
         {
             logger.LogInformation("Processing page: {Title}", title);
-            var root = await ResolveInternal(title, [], cancellationToken);
-
-            if (root == null)
-                continue;
-
-            var paths = GetPathsToTerminal(root);
-
-            result.Add(new UnlockInfo(title, paths));
-            logger.LogInformation("Found {count} paths: {Title}", paths.Count, title);
+            await BuildGraph(graph, title, visited, cancellationToken);
         }
 
-        return new ReadOnlyCollection<UnlockInfo>(result);
+        return graph;
     }
 
     // ---------------- GRAPH TRAVERSAL ----------------
 
-    private static List<List<AcquisitionNode>> GetPathsToTerminal(AcquisitionNode root)
-    {
-        ArgumentNullException.ThrowIfNull(root);
-
-        var results = new List<List<AcquisitionNode>>();
-        var current = new List<AcquisitionNode>();
-
-        static bool IsTerminal(AcquisitionNode node) =>
-            node is ZoneAcquisitionNode or AchievementAcquisitionNode;
-
-        void Traverse(AcquisitionNode node)
-        {
-            current.Add(node);
-
-            if (IsTerminal(node))
-            {
-                results.Add([.. current]);
-            }
-            else
-            {
-                foreach (var next in node.Next)
-                    Traverse(next);
-            }
-
-            current.RemoveAt(current.Count - 1);
-        }
-
-        Traverse(root);
-
-        return [.. results.Select(path => path)];
-    }
-
-    // ---------------- RESOLUTION ----------------
-
-    private async Task<AcquisitionNode?> ResolveInternal(
-        string title,
-        HashSet<string> visited,
-        CancellationToken cancellationToken)
+    private async Task BuildGraph(
+     AcquisitionGraph graph,
+     string title,
+     HashSet<string> visited,
+     CancellationToken cancellationToken)
     {
         if (!visited.Add(title))
-            return null;
+            return;
 
-        var node = new ItemAcquisitionNode(title);
+        var itemNode = graph.GetOrCreate(NodeType.Item, title);
 
-        // SOLD BY
+        // --- SOLD BY ---
         var soldByText = await ExpandAsync($"{{{{Sold by|{title}}}}}", cancellationToken);
 
-        if (!string.IsNullOrWhiteSpace(soldByText) && !soldByText.Contains("No results for sold by", StringComparison.InvariantCulture))
+        if (!string.IsNullOrWhiteSpace(soldByText) &&
+            !soldByText.Contains("No results for sold by", StringComparison.InvariantCulture))
         {
             var rows = ParseSoldByTable(soldByText);
 
             foreach (var (vendor, areas, zones, cost) in rows)
             {
-                var vendorNode = new VendorAcquisitionNode(vendor, cost);
+                var vendorNode = graph.GetOrCreate(NodeType.Vendor, vendor);
+                graph.AddEdge(itemNode.Id, vendorNode.Id, EdgeType.SoldBy,
+                    new Dictionary<string, string> { ["cost"] = cost });
 
                 var count = Math.Min(areas.Count, zones.Count);
 
                 for (int i = 0; i < count; i++)
                 {
-                    var areaNode = new AreaAcquisitionNode(areas[i]);
-                    var zoneNode = new ZoneAcquisitionNode(zones[i]);
+                    var areaNode = graph.GetOrCreate(NodeType.Area, areas[i]);
+                    var zoneNode = graph.GetOrCreate(NodeType.Zone, zones[i]);
 
-                    areaNode.AddNext(zoneNode);
-                    vendorNode.AddNext(areaNode);
+                    graph.AddEdge(vendorNode.Id, areaNode.Id, EdgeType.LocatedIn);
+                    graph.AddEdge(areaNode.Id, zoneNode.Id, EdgeType.LocatedIn);
                 }
-
-                node.AddNext(vendorNode);
             }
 
             if (rows.Count > 0)
-                return node;
+                return;
         }
 
-        // ACHIEVEMENT
+        // --- ACHIEVEMENT ---
         var content = await GetPageWikitextAsync(title, cancellationToken);
         var achievement = ExtractAchievement(content);
 
         if (!string.IsNullOrEmpty(achievement))
         {
-            var achievementNode = new AchievementAcquisitionNode(achievement);
-            node.AddNext(achievementNode);
-
-            // STOP traversal here (per your test)
-            return node;
+            var achievementNode = graph.GetOrCreate(NodeType.Achievement, achievement);
+            graph.AddEdge(itemNode.Id, achievementNode.Id, EdgeType.Rewards);
+            return;
         }
 
-        // CONTAINERS
+        // --- CONTAINERS ---
         var containers = await GetLinksFromTemplate($"{{{{contained in|{title}}}}}", cancellationToken);
-
         foreach (var container in containers)
         {
-            var containerNode = new ContainerAcquisitionNode(container);
-            node.AddNext(containerNode);
+            var containerNode = graph.GetOrCreate(NodeType.Container, container);
+            graph.AddEdge(itemNode.Id, containerNode.Id, EdgeType.Contains);
 
-            var sub = await ResolveInternal(container, visited, cancellationToken);
-
-            if (sub != null)
-            {
-                foreach (var next in sub.Next)
-                    containerNode.AddNext(next);
-            }
+            await BuildGraph(graph, container, visited, cancellationToken);
         }
 
-        // SKIN
+        // --- SKINS ---
         if (title.Contains("(skin)", StringComparison.OrdinalIgnoreCase))
         {
             var items = await GetLinksFromTemplate($"{{{{skin list|{title}}}}}", cancellationToken);
 
             foreach (var item in items)
             {
-                var sub = await ResolveInternal(item, visited, cancellationToken);
-                if (sub != null)
-                    node.AddNext(sub);
+                var itemNode2 = graph.GetOrCreate(NodeType.Item, item);
+                graph.AddEdge(itemNode.Id, itemNode2.Id, EdgeType.SkinUnlock);
+
+                await BuildGraph(graph, item, visited, cancellationToken);
             }
         }
-
-        return node.Next.Count > 0 ? node : null;
     }
+
 
     // ---------------- LOCATION ----------------
 
@@ -397,5 +336,4 @@ public partial class Gw2WikiSource(ILogger<Gw2WikiSource> logger, IWikiApi api) 
 
     [GeneratedRegex(@"\{\{\s*achievement box\s*\|\s*(.*?)\s*\}\}", RegexOptions.IgnoreCase | RegexOptions.Compiled)]
     public static partial Regex AchievementBoxRegex();
-
 }

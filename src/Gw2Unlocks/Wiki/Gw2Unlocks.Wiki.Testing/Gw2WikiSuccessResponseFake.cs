@@ -1,16 +1,14 @@
-﻿using System.Collections.ObjectModel;
-
-namespace Gw2Unlocks.Wiki.Testing
+﻿namespace Gw2Unlocks.Wiki.Testing
 {
     public class Gw2WikiSuccessResponseFake : IGw2WikiSource, IGw2WikiCache
     {
-        public Task<ReadOnlyCollection<UnlockInfo>> GetAllUnlocks(ICollection<string> pageTitles, CancellationToken cancellationToken)
+        public Task<AcquisitionGraph> GetAcquisitionGraph(IEnumerable<string> itemNames, AcquisitionGraph? existingGraph, CancellationToken cancellationToken)
         {
             throw new NotImplementedException();
         }
 
 
-        public Task SaveUnlocksToCacheAsync(ReadOnlyCollection<UnlockInfo> data, CancellationToken cancellationToken)
+        public Task SaveAcquisitionGraphToCacheAsync(AcquisitionGraph data, CancellationToken cancellationToken)
         {
             throw new NotImplementedException();
         }

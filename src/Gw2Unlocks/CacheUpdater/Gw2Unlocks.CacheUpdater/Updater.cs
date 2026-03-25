@@ -1,7 +1,6 @@
 ﻿using Gw2Unlocks.Api;
 using Gw2Unlocks.Wiki;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading;
@@ -58,27 +57,18 @@ internal class Updater(IGw2ApiSource apiSource, IGw2ApiCache apiCache, IGw2WikiS
     {
         var minis = await apiCache.GetMiniaturesAsync(cancellationToken);
 
-        var results = new List<UnlockInfo> (await wikiCache.GetAllUnlocks([], CancellationToken.None));
-        var existingNames = results.Select(x => x.Name).ToHashSet(StringComparer.OrdinalIgnoreCase);
+        var graph = await wikiCache.GetAcquisitionGraph([], null, CancellationToken.None);
 
-        var remaining = minis
-            .Where(m => !existingNames.Contains(m.Name))
-            .ToList();
-
-        foreach (var chunk in remaining.Chunk(20))
+        try
         {
-            try
-            {
-                var data = await wikiSource.GetAllUnlocks([.. chunk.Select(m => m.Name)], cancellationToken);
-                results.AddRange(data);
-            }
-            catch (OperationCanceledException)
-            {
-                await wikiCache.SaveUnlocksToCacheAsync(new ReadOnlyCollection<UnlockInfo>(results), CancellationToken.None);
-                throw;
-            }
-
-            await wikiCache.SaveUnlocksToCacheAsync(new ReadOnlyCollection<UnlockInfo>(results), CancellationToken.None);
+            await wikiSource.GetAcquisitionGraph([.. minis.Select(m => m.Name)], graph, cancellationToken);
         }
+        catch (OperationCanceledException)
+        {
+            await wikiCache.SaveAcquisitionGraphToCacheAsync(graph, CancellationToken.None);
+            throw;
+        }
+
+        await wikiCache.SaveAcquisitionGraphToCacheAsync(graph, CancellationToken.None);
     }
 }

@@ -23,16 +23,16 @@ internal sealed class Gw2ApiJsonCache : GenericCache, IGw2ApiCache
     {
     }
 
-    public Task<ReadOnlyCollection<Item>> GetItemsAsync(CancellationToken cancellationToken) => LoadFromFileAsync<Item>(itemsFileName, cancellationToken);
-    public Task<ReadOnlyCollection<Achievement>> GetAchievementsAsync(CancellationToken cancellationToken) => LoadFromFileAsync<Achievement>(achievementsFileName, cancellationToken);
-    public Task<ReadOnlyCollection<Miniature>> GetMiniaturesAsync(CancellationToken cancellationToken) => LoadFromFileAsync<Miniature>(miniaturesFileName, cancellationToken);
-    public Task<ReadOnlyCollection<Novelty>> GetNoveltiesAsync(CancellationToken cancellationToken) => LoadFromFileAsync<Novelty>(noveltiesFileName, cancellationToken);
-    public Task<ReadOnlyCollection<Title>> GetTitlesAsync(CancellationToken cancellationToken) => LoadFromFileAsync<Title>(titlesFileName, cancellationToken);
+    public Task<ReadOnlyCollection<Item>> GetItemsAsync(CancellationToken cancellationToken) => LoadFromFileAsync<ReadOnlyCollection<Item>>(itemsFileName, cancellationToken);
+    public Task<ReadOnlyCollection<Achievement>> GetAchievementsAsync(CancellationToken cancellationToken) => LoadFromFileAsync<ReadOnlyCollection<Achievement>>(achievementsFileName, cancellationToken);
+    public Task<ReadOnlyCollection<Miniature>> GetMiniaturesAsync(CancellationToken cancellationToken) => LoadFromFileAsync<ReadOnlyCollection<Miniature>>(miniaturesFileName, cancellationToken);
+    public Task<ReadOnlyCollection<Novelty>> GetNoveltiesAsync(CancellationToken cancellationToken) => LoadFromFileAsync<ReadOnlyCollection<Novelty>>(noveltiesFileName, cancellationToken);
+    public Task<ReadOnlyCollection<Title>> GetTitlesAsync(CancellationToken cancellationToken) => LoadFromFileAsync<ReadOnlyCollection<Title>>(titlesFileName, cancellationToken);
 
 
-    public Task SaveItemsToCacheAsync(ReadOnlyCollection<Item> data, CancellationToken cancellationToken) => SaveToCacheAsync<Item>(itemsFileName, data, cancellationToken);
-    public Task SaveAchievementsToCacheAsync(ReadOnlyCollection<Achievement> data, CancellationToken cancellationToken) => SaveToCacheAsync<Achievement>(achievementsFileName, data, cancellationToken);
-    public Task SaveMiniaturesToCacheAsync(ReadOnlyCollection<Miniature> data, CancellationToken cancellationToken) => SaveToCacheAsync<Miniature>(miniaturesFileName, data, cancellationToken);
-    public Task SaveNoveltiesToCacheAsync(ReadOnlyCollection<Novelty> data, CancellationToken cancellationToken) => SaveToCacheAsync<Novelty>(noveltiesFileName, data, cancellationToken);
-    public Task SaveTitlesToCacheAsync(ReadOnlyCollection<Title> data, CancellationToken cancellationToken) => SaveToCacheAsync<Title>(titlesFileName, data, cancellationToken);
+    public Task SaveItemsToCacheAsync(ReadOnlyCollection<Item> data, CancellationToken cancellationToken) => SaveToCacheAsync<ReadOnlyCollection<Item>>(itemsFileName, data, cancellationToken);
+    public Task SaveAchievementsToCacheAsync(ReadOnlyCollection<Achievement> data, CancellationToken cancellationToken) => SaveToCacheAsync<ReadOnlyCollection<Achievement>>(achievementsFileName, data, cancellationToken);
+    public Task SaveMiniaturesToCacheAsync(ReadOnlyCollection<Miniature> data, CancellationToken cancellationToken) => SaveToCacheAsync<ReadOnlyCollection<Miniature>>(miniaturesFileName, data, cancellationToken);
+    public Task SaveNoveltiesToCacheAsync(ReadOnlyCollection<Novelty> data, CancellationToken cancellationToken) => SaveToCacheAsync<ReadOnlyCollection<Novelty>>(noveltiesFileName, data, cancellationToken);
+    public Task SaveTitlesToCacheAsync(ReadOnlyCollection<Title> data, CancellationToken cancellationToken) => SaveToCacheAsync<ReadOnlyCollection<Title>>(titlesFileName, data, cancellationToken);
 }

@@ -1,6 +1,5 @@
 ﻿using Gw2Unlocks.Cache.Common;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -15,7 +14,7 @@ internal sealed class Gw2WikiJsonCache : GenericCache, IGw2WikiCache
     {
     }
 
-    public Task<ReadOnlyCollection<UnlockInfo>> GetAllUnlocks(ICollection<string> pageTitles, CancellationToken cancellationToken) => LoadFromFileAsync<UnlockInfo>(unlocksFileName, cancellationToken);
+    public Task<AcquisitionGraph> GetAcquisitionGraph(IEnumerable<string> itemNames, AcquisitionGraph? graph, CancellationToken cancellationToken) => LoadFromFileAsync<AcquisitionGraph>(unlocksFileName, cancellationToken);
 
-    public Task SaveUnlocksToCacheAsync(ReadOnlyCollection<UnlockInfo> data, CancellationToken cancellationToken) => SaveToCacheAsync<UnlockInfo>(unlocksFileName, data, cancellationToken);
+    public Task SaveAcquisitionGraphToCacheAsync(AcquisitionGraph data, CancellationToken cancellationToken) => SaveToCacheAsync<AcquisitionGraph>(unlocksFileName, data, cancellationToken);
 }

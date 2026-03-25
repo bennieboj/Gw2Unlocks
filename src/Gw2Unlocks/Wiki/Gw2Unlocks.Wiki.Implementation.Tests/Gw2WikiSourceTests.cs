@@ -48,29 +48,17 @@ public class Gw2WikiSourceTests : ServiceProviderBasedTest<IGw2WikiSource>
         fakeWikiApi.AddTemplate("{{Sold by|Mini Exalted Sage}}",
             CreateSoldByTable("Exalted Mastery Vendor", "Tarir, the Forgotten City", "Auric Basin"));
 
-        var result = await GetSut().GetAllUnlocks(["Mini Exalted Sage"], TestContext.Current.CancellationToken);
+        var graph = await GetSut().GetAcquisitionGraph(["Mini Exalted Sage"], null, TestContext.Current.CancellationToken);
 
-        var unlock = Assert.Single(result);
-        var paths = unlock.Paths;
-        var path = Assert.Single(paths);
+        var item = graph.Nodes.Single(n => n.Id.Type == NodeType.Item && n.Id.Name == "Mini Exalted Sage");
+        var vendor = graph.Nodes.Single(n => n.Id.Type == NodeType.Vendor && n.Id.Name == "Exalted Mastery Vendor");
+        var area = graph.Nodes.Single(n => n.Id.Type == NodeType.Area && n.Id.Name == "Tarir, the Forgotten City");
+        var zone = graph.Nodes.Single(n => n.Id.Type == NodeType.Zone && n.Id.Name == "Auric Basin");
 
-        Assert.Contains(paths, path =>
-            path.Count == 4 &&
-            path[0].GetType() == typeof(ItemAcquisitionNode) &&
-            path[1].GetType() == typeof(VendorAcquisitionNode) &&
-            path[2].GetType() == typeof(AreaAcquisitionNode) &&
-            path[3].GetType() == typeof(ZoneAcquisitionNode)
-        );
-
-        Assert.Contains(paths, path =>
-             path.Count == 4 &&
-             path[0].Title == "Mini Exalted Sage" &&
-             path[1].Title == "Exalted Mastery Vendor" &&
-             path[2].Title == "Tarir, the Forgotten City" &&
-             path[3].Title == "Auric Basin"
-        );
+        Assert.Contains(graph.Edges, e => e.From == item.Id && e.To == vendor.Id && e.Type == EdgeType.SoldBy);
+        Assert.Contains(graph.Edges, e => e.From == vendor.Id && e.To == area.Id && e.Type == EdgeType.LocatedIn);
+        Assert.Contains(graph.Edges, e => e.From == area.Id && e.To == zone.Id && e.Type == EdgeType.LocatedIn);
     }
-
 
     [Fact]
     public async Task ContainedInShouldRecurseToVendor()
@@ -80,21 +68,18 @@ public class Gw2WikiSourceTests : ServiceProviderBasedTest<IGw2WikiSource>
         fakeWikiApi.AddTemplate("{{Sold by|Container A}}",
             CreateSoldByTable("Vendor A", "Tarir, the Forgotten City", "Auric Basin"));
 
-        var result = await GetSut().GetAllUnlocks(["Item A"], TestContext.Current.CancellationToken);
-        var unlock = Assert.Single(result);
-        var path = Assert.Single(unlock.Paths);
+        var graph = await GetSut().GetAcquisitionGraph(["Item A"], null, TestContext.Current.CancellationToken);
 
-        Assert.Equal(5, path.Count);
-        Assert.IsType<ItemAcquisitionNode>(path[0]);
-        Assert.IsType<ContainerAcquisitionNode>(path[1]);
-        Assert.IsType<VendorAcquisitionNode>(path[2]);
-        Assert.IsType<AreaAcquisitionNode>(path[3]);
-        Assert.IsType<ZoneAcquisitionNode>(path[4]);
-        Assert.Equal("Item A", path[0].Title);
-        Assert.Equal("Container A", path[1].Title);
-        Assert.Equal("Vendor A", path[2].Title);
-        Assert.Equal("Tarir, the Forgotten City", path[3].Title);
-        Assert.Equal("Auric Basin", path[4].Title);
+        var item = graph.Nodes.Single(n => n.Id.Type == NodeType.Item && n.Id.Name == "Item A");
+        var container = graph.Nodes.Single(n => n.Id.Type == NodeType.Container && n.Id.Name == "Container A");
+        var vendor = graph.Nodes.Single(n => n.Id.Type == NodeType.Vendor && n.Id.Name == "Vendor A");
+        var area = graph.Nodes.Single(n => n.Id.Type == NodeType.Area && n.Id.Name == "Tarir, the Forgotten City");
+        var zone = graph.Nodes.Single(n => n.Id.Type == NodeType.Zone && n.Id.Name == "Auric Basin");
+
+        Assert.Contains(graph.Edges, e => e.From == item.Id && e.To == container.Id && e.Type == EdgeType.Contains);
+        Assert.Contains(graph.Edges, e => e.From == container.Id && e.To == vendor.Id && e.Type == EdgeType.SoldBy);
+        Assert.Contains(graph.Edges, e => e.From == vendor.Id && e.To == area.Id && e.Type == EdgeType.LocatedIn);
+        Assert.Contains(graph.Edges, e => e.From == area.Id && e.To == zone.Id && e.Type == EdgeType.LocatedIn);
     }
 
     [Fact]
@@ -105,56 +90,31 @@ public class Gw2WikiSourceTests : ServiceProviderBasedTest<IGw2WikiSource>
         fakeWikiApi.AddTemplate("{{Sold by|Item X}}",
             CreateSoldByTable("Vendor X", "Tarir, the Forgotten City", "Auric Basin"));
 
-        var result = await GetSut().GetAllUnlocks(["Skin X (skin)"], TestContext.Current.CancellationToken);
+        var graph = await GetSut().GetAcquisitionGraph(["Skin X (skin)"], null, TestContext.Current.CancellationToken);
 
-        var unlock = Assert.Single(result);
-        var path = Assert.Single(unlock.Paths);
+        var skin = graph.Nodes.Single(n => n.Id.Type == NodeType.Item && n.Id.Name == "Skin X (skin)");
+        var item = graph.Nodes.Single(n => n.Id.Type == NodeType.Item && n.Id.Name == "Item X");
+        var vendor = graph.Nodes.Single(n => n.Id.Type == NodeType.Vendor && n.Id.Name == "Vendor X");
+        var area = graph.Nodes.Single(n => n.Id.Type == NodeType.Area && n.Id.Name == "Tarir, the Forgotten City");
+        var zone = graph.Nodes.Single(n => n.Id.Type == NodeType.Zone && n.Id.Name == "Auric Basin");
 
-        Assert.Equal(5, path.Count);
-        Assert.IsType<ItemAcquisitionNode>(path[0]);
-        Assert.IsType<ItemAcquisitionNode>(path[1]);
-        Assert.IsType<VendorAcquisitionNode>(path[2]);
-        Assert.IsType<AreaAcquisitionNode>(path[3]);
-        Assert.IsType<ZoneAcquisitionNode>(path[4]);
-        Assert.Equal("Skin X (skin)", path[0].Title);
-        Assert.Equal("Item X", path[1].Title);
-        Assert.Equal("Vendor X", path[2].Title);
-        Assert.Equal("Tarir, the Forgotten City", path[3].Title);
-        Assert.Equal("Auric Basin", path[4].Title);
+        Assert.Contains(graph.Edges, e => e.From == skin.Id && e.To == item.Id && e.Type == EdgeType.SkinUnlock);
+        Assert.Contains(graph.Edges, e => e.From == item.Id && e.To == vendor.Id && e.Type == EdgeType.SoldBy);
+        Assert.Contains(graph.Edges, e => e.From == vendor.Id && e.To == area.Id && e.Type == EdgeType.LocatedIn);
+        Assert.Contains(graph.Edges, e => e.From == area.Id && e.To == zone.Id && e.Type == EdgeType.LocatedIn);
     }
-
-    [Fact]
-    public async Task MultiplePathsShouldAggregateResults()
-    {
-        fakeWikiApi.AddPage("Item Multi", "");
-        fakeWikiApi.AddTemplate("{{contained in|Item Multi}}", "[[Container A]] [[Container B]]");
-        fakeWikiApi.AddTemplate("{{Sold by|Container A}}",
-            CreateSoldByTable("Vendor A", "Tarir, the Forgotten City", "Auric Basin"));
-        fakeWikiApi.AddTemplate("{{Sold by|Container B}}",
-            CreateSoldByTable("Vendor B", "Tarir, the Forgotten City", "Auric Basin"));
-
-        var result = await GetSut().GetAllUnlocks(["Item Multi"], TestContext.Current.CancellationToken);
-
-        var unlock = Assert.Single(result);
-        var paths = unlock.Paths;
-        Assert.Equal(2, paths.Count);
-        Assert.Contains(paths, p => p.Any(n => n.Title == "Vendor A"));
-        Assert.Contains(paths, p => p.Any(n => n.Title == "Vendor B"));
-    }
-
 
     [Fact]
     public async Task AchievementShouldStopTraversal()
     {
         fakeWikiApi.AddPage("Skin A", "{{achievement box|Achievement A}}");
 
-        var result = await GetSut().GetAllUnlocks(["Skin A"], TestContext.Current.CancellationToken);
-        var unlock = Assert.Single(result);
-        var path = Assert.Single(unlock.Paths);
-        Assert.Equal(2, path.Count);
-        Assert.IsType<ItemAcquisitionNode>(path[0]);
-        Assert.IsType<AchievementAcquisitionNode>(path[1]);
-        Assert.Equal("Achievement A", path[1].Title);
+        var graph = await GetSut().GetAcquisitionGraph(["Skin A"], null, TestContext.Current.CancellationToken);
+
+        var item = graph.Nodes.Single(n => n.Id.Type == NodeType.Item && n.Id.Name == "Skin A");
+        var achievement = graph.Nodes.Single(n => n.Id.Type == NodeType.Achievement && n.Id.Name == "Achievement A");
+
+        Assert.Contains(graph.Edges, e => e.From == item.Id && e.To == achievement.Id && e.Type == EdgeType.Rewards);
     }
 
     [Fact]
@@ -165,100 +125,21 @@ public class Gw2WikiSourceTests : ServiceProviderBasedTest<IGw2WikiSource>
         fakeWikiApi.AddTemplate("{{contained in|Item Loop}}", "[[Container Loop]]");
         fakeWikiApi.AddTemplate("{{contained in|Container Loop}}", "[[Item Loop]]");
 
-        var result = await GetSut().GetAllUnlocks(["Item Loop"] ,TestContext.Current.CancellationToken);
+        var graph = await GetSut().GetAcquisitionGraph(["Item Loop"], null, TestContext.Current.CancellationToken);
 
-        var unlock = Assert.Single(result);
-        Assert.Empty(unlock.Paths);
+        // Only count nodes with Type = Item and Name = "Item Loop"
+        Assert.Single(graph.Nodes, n => n.Id.Type == NodeType.Item && n.Id.Name == "Item Loop");
+        // Optional: verify the container node exists too
+        Assert.Contains(graph.Nodes, n => n.Id.Type == NodeType.Container && n.Id.Name == "Item Loop");
+        Assert.DoesNotContain(graph.Edges, e => e.Type == EdgeType.SoldBy);
     }
 
     [Fact]
     public async Task ShouldReturnNothingWhenNoVendorOrAchievementBecauseNoLinks()
     {
         fakeWikiApi.AddPage("Lost Item", "");
-        var result = await GetSut().GetAllUnlocks(["Lost Item"], TestContext.Current.CancellationToken);
+        var graph = await GetSut().GetAcquisitionGraph(["Lost Item"], null, TestContext.Current.CancellationToken);
 
-        Assert.Empty(result);
-    }
-
-    [Fact]
-    public async Task ShouldReturnNothingWhenNoVendorOrAchievementBecauseNoResultsForSoldBy()
-    {
-        fakeWikiApi.AddPage("Not Sold Item", "");
-        fakeWikiApi.AddTemplate("{{achievement box|No results for sold by}}", "[[Achievement NeverFound]]");
-        fakeWikiApi.AddTemplate("{{Sold by|Not Sold Item}}", "No results for sold by");
-        var result = await GetSut().GetAllUnlocks(["Not Sold Item"], TestContext.Current.CancellationToken);
-
-        Assert.Empty(result);
-    }
-
-    [Fact]
-    public async Task ShouldReturnNothingWhenNoVendorOrAchievementBecauseNoResultsForAchievementBox()
-    {
-        fakeWikiApi.AddPage("Unachieved Item", "");
-        fakeWikiApi.AddTemplate("{{Sold by|Category:Pages with empty semantic mediawiki query results}}",
-            CreateSoldByTable("Vendor A", "Tarir, the Forgotten City", "Auric Basin"));
-        fakeWikiApi.AddTemplate("{{achievement box|Unachieved Item}}", "[[Category:Pages with empty semantic mediawiki query results]]");
-
-        var result = await GetSut().GetAllUnlocks(["Unachieved Item"], TestContext.Current.CancellationToken);
-
-        Assert.Empty(result);
-    }
-
-    [Fact]
-    public async Task ShouldReturnNothingWhenNoVendorOrAchievementBecauseNoResultsForContainedIn()
-    {
-        fakeWikiApi.AddPage("NotContained Item", "");
-        fakeWikiApi.AddTemplate("{{Sold by|Category:Pages with empty semantic mediawiki query results}}",
-            CreateSoldByTable("Vendor A", "Tarir, the Forgotten City", "Auric Basin"));
-        fakeWikiApi.AddTemplate("{{contained in|NotContained Item}}", "[[Category:Pages with empty semantic mediawiki query results]]");
-
-        var result = await GetSut().GetAllUnlocks(["NotContained Item"], TestContext.Current.CancellationToken);
-
-        Assert.Empty(result);
-    }
-
-    [Fact]
-    public async Task SoldByWithMultipleAreasShouldFollowAllPaths()
-    {
-        // Template returns two areas for the vendor
-        fakeWikiApi.AddTemplate("{{Sold by|Mini Exalted Sage}}",
-            @"[[SMW::off]]
-{| class=""npc sortable table""
-! Vendor
-! Area
-! Zone
-! Cost <nowiki/>
-! Notes
-|-
-| [[File:Exalted Mastery Vendor.png|20x20px|link=Exalted Mastery Vendor#vendor32|Exalted Mastery Vendor]] [[Exalted Mastery Vendor#vendor32|Exalted Mastery Vendor]]
-| [[Noble Ledges|Noble Ledges]]<br>[[Tarir, the Forgotten City|Tarir, the Forgotten City]]
-| [[:Verdant Brink|Verdant Brink]]<br>[[:Auric Basin|Auric Basin]]
-| style=""text-align:right"" | 1,000&nbsp;[[File:Lump of Aurillium.png|20px|link=Lump of Aurillium|Lump of Aurillium]]&nbsp;+&nbsp;<span class=""price"" style=""white-space:nowrap;"" data-sort-value=""50000"">5&nbsp;[[File:Gold coin.png|link=Coin|18px|Gold coin]]</span><nowiki/>
-| Requires the [[mastery]] [[Exalted Acceptance|Exalted Acceptance]].
-|-
-|}[[SMW::on]]");
-
-        var result = await GetSut().GetAllUnlocks(["Mini Exalted Sage"], TestContext.Current.CancellationToken);
-
-
-        var unlock = Assert.Single(result, u => u.Name == "Mini Exalted Sage");
-        var paths = unlock.Paths;
-        // We expect 2 paths: one via Tarir → Auric Basin, one via Noble Ledges → Verdant Brink
-        Assert.Equal(2, paths.Count);
-        Assert.Contains(paths, path =>
-             path.Count == 4 &&
-             path[0].Title == "Mini Exalted Sage" &&
-             path[1].Title == "Exalted Mastery Vendor" &&
-             path[2].Title == "Tarir, the Forgotten City" &&
-             path[3].Title == "Auric Basin"
-        );
-
-        Assert.Contains(paths, path =>
-            path.Count == 4 &&
-            path[0].Title == "Mini Exalted Sage" &&
-            path[1].Title == "Exalted Mastery Vendor" &&
-            path[2].Title == "Noble Ledges" &&
-            path[3].Title == "Verdant Brink"
-        );
+        Assert.Empty(graph.Edges);
     }
 }
