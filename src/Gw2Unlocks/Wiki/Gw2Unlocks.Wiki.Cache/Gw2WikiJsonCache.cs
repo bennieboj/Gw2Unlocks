@@ -8,13 +8,13 @@ namespace Gw2Unlocks.Wiki.Cache;
 internal sealed class Gw2WikiJsonCache : GenericCache, IGw2WikiCache
 #pragma warning restore CA1812 // This class is instantiated via DI and not directly, so it may appear unused
 {
-    private const string unlocksFileName = "unlocks.json";
+    private const string wikiGraphFileName = "wikigraph.json";
 
     public Gw2WikiJsonCache() : base("wiki-cache")
     {
     }
 
-    public Task<AcquisitionGraph> GetAcquisitionGraph(IEnumerable<string> itemNames, AcquisitionGraph? graph, CancellationToken cancellationToken) => LoadFromFileAsync<AcquisitionGraph>(unlocksFileName, cancellationToken);
+    public Task<AcquisitionGraph> GetAcquisitionGraph(IEnumerable<string> itemNames, AcquisitionGraph? graph, CancellationToken cancellationToken) => LoadFromFileAsync<AcquisitionGraph>(wikiGraphFileName, cancellationToken);
 
-    public Task SaveAcquisitionGraphToCacheAsync(AcquisitionGraph data, CancellationToken cancellationToken) => SaveToCacheAsync<AcquisitionGraph>(unlocksFileName, data, cancellationToken);
+    public Task SaveAcquisitionGraphToCacheAsync(AcquisitionGraph data, CancellationToken cancellationToken) => SaveToCacheAsync<AcquisitionGraph>(wikiGraphFileName, data, cancellationToken);
 }
