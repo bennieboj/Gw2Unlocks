@@ -167,7 +167,8 @@ public class Gw2WikiSourceTests : ServiceProviderBasedTest<IGw2WikiSource>
 
         var result = await GetSut().GetAllUnlocks(["Item Loop"] ,TestContext.Current.CancellationToken);
 
-        Assert.Empty(result);
+        var unlock = Assert.Single(result);
+        Assert.Empty(unlock.Paths);
     }
 
     [Fact]

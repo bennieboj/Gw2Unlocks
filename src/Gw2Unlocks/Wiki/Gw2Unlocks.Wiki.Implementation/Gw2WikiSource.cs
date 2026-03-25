@@ -1,4 +1,5 @@
 ﻿using Gw2Unlocks.Wiki.WikiApi;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -21,7 +22,7 @@ public record AreaAcquisitionNode(string Title) : AcquisitionNode(Title);
 public record ZoneAcquisitionNode(string Title) : AcquisitionNode(Title);
 
 
-public partial class Gw2WikiSource(IWikiApi api) : IGw2WikiSource
+public partial class Gw2WikiSource(ILogger<Gw2WikiSource> logger, IWikiApi api) : IGw2WikiSource
 {
     public async Task<ReadOnlyCollection<UnlockInfo>> GetAllUnlocks(ICollection<string> pageTitles, CancellationToken cancellationToken)
     {
@@ -33,6 +34,7 @@ public partial class Gw2WikiSource(IWikiApi api) : IGw2WikiSource
 
         foreach (var title in allTitles)
         {
+            logger.LogInformation("Processing page: {Title}", title);
             var root = await ResolveInternal(title, [], cancellationToken);
 
             if (root == null)
@@ -40,10 +42,8 @@ public partial class Gw2WikiSource(IWikiApi api) : IGw2WikiSource
 
             var paths = GetPathsToTerminal(root);
 
-            if (paths.Count == 0)
-                continue;
-
             result.Add(new UnlockInfo(title, paths));
+            logger.LogInformation("Found {count} paths: {Title}", paths.Count, title);
         }
 
         return new ReadOnlyCollection<UnlockInfo>(result);

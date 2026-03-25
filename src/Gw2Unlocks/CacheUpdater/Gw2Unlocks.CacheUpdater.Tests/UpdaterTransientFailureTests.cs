@@ -32,7 +32,7 @@ public class UpdaterTransientFailureTests : ServiceProviderBasedTest<IUpdater>
         services.AddFakeApiSourceTransient()
                 .AddFakeApiCacheSuccess()
                 .AddFakeWikiSourceSuccess()
-                .AddFakeWikiSourceSuccess()
+                .AddFakeWikiCacheSuccess()
                 .AddUpdater();
     }
 

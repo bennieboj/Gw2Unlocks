@@ -1,5 +1,4 @@
-﻿namespace Gw2Unlocks.Api.Testing;
-
+﻿
 using GuildWars2.Hero.Achievements;
 using GuildWars2.Hero.Achievements.Titles;
 using GuildWars2.Hero.Equipment.Miniatures;
@@ -7,10 +6,10 @@ using GuildWars2.Hero.Equipment.Novelties;
 using GuildWars2.Items;
 using System;
 using System.Collections.ObjectModel;
-using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
+namespace Gw2Unlocks.Api.Testing;
 public class Gw2ApiSuccessResponseFake : IGw2ApiSource, IGw2ApiCache
 {
     public ReadOnlyCollection<Item> Items { get; set; } = new ReadOnlyCollection<Item>(Array.Empty<Item>());
@@ -42,28 +41,33 @@ public class Gw2ApiSuccessResponseFake : IGw2ApiSource, IGw2ApiCache
     public ReadOnlyCollection<Title>? SavedTitles { get; private set; }
 
 
-    public Task SaveToCacheAsync<T>(string fileName, ReadOnlyCollection<T> data, CancellationToken cancellationToken)
+    public Task SaveItemsToCacheAsync(ReadOnlyCollection<Item> data, CancellationToken cancellationToken)
     {
-        // Save into the appropriate property depending on type
-        switch (typeof(T).Name)
-        {
-            case nameof(Item):
-                SavedItems = [.. data.Cast<Item>()];
-                break;
-            case nameof(Achievement):
-                SavedAchievements = [.. data.Cast<Achievement>()];
-                break;
-            case nameof(Miniature):
-                SavedMiniatures = [.. data.Cast<Miniature>()];
-                break;
-            case nameof(Novelty):
-                SavedNovelties = [.. data.Cast<Novelty>()];
-                break;
-            case nameof(Title):
-                SavedTitles = [.. data.Cast<Title>()];
-                break;
-        }
+        SavedItems = [.. data];
+        return Task.CompletedTask;
+    }
 
+    public Task SaveAchievementsToCacheAsync(ReadOnlyCollection<Achievement> data, CancellationToken cancellationToken)
+    {
+        SavedAchievements = [.. data];
+        return Task.CompletedTask;
+    }
+
+    public Task SaveMiniaturesToCacheAsync(ReadOnlyCollection<Miniature> data, CancellationToken cancellationToken)
+    {
+        SavedMiniatures = [.. data];
+        return Task.CompletedTask;
+    }
+
+    public Task SaveNoveltiesToCacheAsync(ReadOnlyCollection<Novelty> data, CancellationToken cancellationToken)
+    {
+        SavedNovelties = [.. data];
+        return Task.CompletedTask;
+    }
+
+    public Task SaveTitlesToCacheAsync(ReadOnlyCollection<Title> data, CancellationToken cancellationToken)
+    {
+        SavedTitles = [.. data];
         return Task.CompletedTask;
     }
 }

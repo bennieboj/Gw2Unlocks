@@ -8,7 +8,6 @@ using Gw2Unlocks.Api.Testing;
 using Gw2Unlocks.Api.Testing.Builders;
 using Gw2Unlocks.Testing.Common;
 using Gw2Unlocks.Wiki.Testing;
-using Gw2Unlocks.Wiki.WikiApi.Testing;
 using Microsoft.Extensions.DependencyInjection;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
@@ -32,7 +31,7 @@ public class UpdaterTests : ServiceProviderBasedTest<IUpdater>
         services.AddFakeApiSourceSuccess()
                 .AddFakeApiCacheSuccess()
                 .AddFakeWikiSourceSuccess()
-                .AddFakeWikiSourceSuccess()
+                .AddFakeWikiCacheSuccess()
                 .AddUpdater();
     }
 
