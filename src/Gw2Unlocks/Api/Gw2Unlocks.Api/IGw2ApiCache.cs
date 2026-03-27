@@ -10,9 +10,9 @@ namespace Gw2Unlocks.Api;
 
 public interface IGw2ApiCache : IGw2ApiSource
 {
-    Task SaveItemsToCacheAsync(ReadOnlyCollection<Item> data, CancellationToken cancellationToken);
-    Task SaveAchievementsToCacheAsync(ReadOnlyCollection<Achievement> data, CancellationToken cancellationToken);
-    Task SaveMiniaturesToCacheAsync(ReadOnlyCollection<Miniature> data, CancellationToken cancellationToken);
-    Task SaveNoveltiesToCacheAsync(ReadOnlyCollection<Novelty> data, CancellationToken cancellationToken);
-    Task SaveTitlesToCacheAsync(ReadOnlyCollection<Title> data, CancellationToken cancellationToken);
+    Task SaveItemsToCacheAsync(Collection<Item> data, CancellationToken cancellationToken);
+    Task SaveAchievementsToCacheAsync(Collection<Achievement> data, CancellationToken cancellationToken);
+    Task SaveMiniaturesToCacheAsync(Collection<Miniature> data, CancellationToken cancellationToken);
+    Task SaveNoveltiesToCacheAsync(Collection<Novelty> data, CancellationToken cancellationToken);
+    Task SaveTitlesToCacheAsync(Collection<Title> data, CancellationToken cancellationToken);
 }

@@ -35,7 +35,7 @@ internal class Updater(IGw2ApiSource apiSource, IGw2ApiCache apiCache, IGw2WikiS
         await apiCache.SaveTitlesToCacheAsync(titles, cancellationToken);
     }
 
-    private static async Task<ReadOnlyCollection<T>> RetryAsync<T>(Func<Task<ReadOnlyCollection<T>>> action, string name)
+    private static async Task<Collection<T>> RetryAsync<T>(Func<Task<Collection<T>>> action, string name)
     {
         int attempt = 0;
         while (true)
@@ -56,12 +56,24 @@ internal class Updater(IGw2ApiSource apiSource, IGw2ApiCache apiCache, IGw2WikiS
     public async Task UpdateWikiData(CancellationToken cancellationToken)
     {
         var minis = await apiCache.GetMiniaturesAsync(cancellationToken);
+        var items = await apiCache.GetItemsAsync(cancellationToken);
+        var achis = await apiCache.GetAchievementsAsync(cancellationToken);
+        var novelties = await apiCache.GetNoveltiesAsync(cancellationToken);
+        var titles = await apiCache.GetTitlesAsync(cancellationToken);
+
+        var allNames = minis.Select(i => i.Name)
+            .Concat(items.Select(m => m.Name))
+            .Concat(achis.Select(a => a.Name))
+            .Concat(novelties.Select(n => n.Name))
+            .Concat(titles.Select(t => t.Name))
+            .ToList();
+
 
         var graph = await wikiCache.GetAcquisitionGraph([], null, CancellationToken.None);
-
+        var first50 = allNames.Take(50).ToList();
         try
         {
-            await wikiSource.GetAcquisitionGraph([.. minis.Select(m => m.Name)], graph, cancellationToken);
+            await wikiSource.GetAcquisitionGraph([.. first50], graph, cancellationToken);
         }
         catch (OperationCanceledException)
         {

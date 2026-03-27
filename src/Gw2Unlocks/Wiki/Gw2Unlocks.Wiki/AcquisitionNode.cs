@@ -1,7 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Security.Principal;
 
 namespace Gw2Unlocks.Wiki;
+
+public static class AcquisitionGraphUtils
+{
+    public static string ToKey(this NodeId id)
+    {
+        ArgumentNullException.ThrowIfNull(id);
+        return $"{id.Type}:{id.Name}";
+    }
+}
 
 public enum NodeType
 {
@@ -16,7 +26,20 @@ public enum NodeType
 
 public record NodeId(NodeType Type, string Name);
 
-public record Node(NodeId Id);
+public class Node
+{
+    // = default! is for json deserialisation
+    public NodeId Id { get; init; } = default!;
+    public bool IsProcessed { get; set; }
+
+    //for json deserialisation
+    public Node() { }
+
+    public Node(NodeId id)
+    {
+        Id = id;
+    }
+}
 
 public enum EdgeType
 {
@@ -35,11 +58,10 @@ public sealed record Edge(
 );
 public class AcquisitionGraph
 {
-    private readonly Dictionary<NodeId, Node> _nodes = [];
-    private readonly HashSet<Edge> _edges = [];
-
-    public IReadOnlyCollection<Node> Nodes => _nodes.Values;
-    public IReadOnlyCollection<Edge> Edges => _edges;
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Usage", "CA2227:Collection properties should be read only")]
+    public Dictionary<string, Node> Nodes { get; set; } = [];
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Usage", "CA2227:Collection properties should be read only")]
+    public HashSet<Edge> Edges { get; set; } = [];
 
     public Node GetOrCreate(NodeType type, string name)
     {
@@ -48,12 +70,19 @@ public class AcquisitionGraph
         name = Normalize(name);
         var id = new NodeId(type, name);
 
-        if (!_nodes.TryGetValue(id, out var node))
+        var idString = id.ToKey();
+        if (!Nodes.TryGetValue(idString, out var node))
         {
             node = new Node(id);
-            _nodes[id] = node;
+            Nodes[idString] = node;
         }
 
+        return node;
+    }
+
+    public Node? GetNode(NodeType type, string name)
+    {
+        Nodes.TryGetValue($"{type}:{name}", out var node);
         return node;
     }
 
@@ -70,6 +99,6 @@ public class AcquisitionGraph
         var fromNode = GetOrCreate(from.Type, from.Name);
         var toNode = GetOrCreate(to.Type, to.Name);
 
-        _edges.Add(new Edge(fromNode.Id, toNode.Id, type, metadata));
+        Edges.Add(new Edge(fromNode.Id, toNode.Id, type, metadata));
     }
 }

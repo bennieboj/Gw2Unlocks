@@ -13,14 +13,20 @@ namespace Gw2Unlocks.Api.Testing;
 public class Gw2ApiTransientFailingResponseFake : IGw2ApiSource
 {
     // Configurable data
-    public ReadOnlyCollection<Item>? ItemsData { get; set; }
-    public ReadOnlyCollection<Achievement>? AchievementsData { get; set; }
-    public ReadOnlyCollection<Miniature>? MiniaturesData { get; set; }
-    public ReadOnlyCollection<Novelty>? NoveltiesData { get; set; }
-    public ReadOnlyCollection<Title>? TitlesData { get; set; }
+    private Collection<Item> Items = new Collection<Item>(Array.Empty<Item>());
+    private Collection<Achievement> Achievements = new Collection<Achievement>(Array.Empty<Achievement>());
+    private Collection<Miniature> Miniatures = new Collection<Miniature>(Array.Empty<Miniature>());
+    private Collection<Novelty> Novelties = new Collection<Novelty>(Array.Empty<Novelty>());
+    private Collection<Title> Titles = new Collection<Title>(Array.Empty<Title>());
+
+    public void SetItems(Collection<Item> items) => Items = items;
+    public void SetAchievements(Collection<Achievement> achievements) => Achievements = achievements;
+    public void SetMiniatures(Collection<Miniature> miniatures) => Miniatures = miniatures;
+    public void SetNovelties(Collection<Novelty> novelties) => Novelties = novelties;
+    public void SetTitles(Collection<Title> titles) => Titles = titles;
 
     // Shared fail configuration
-    public int FailCount { get; set; } = 1;
+    private int FailCount = 1;
 
     // Internal counter
     private int attempts;
@@ -32,33 +38,35 @@ public class Gw2ApiTransientFailingResponseFake : IGw2ApiSource
             throw new InvalidOperationException(message);
     }
 
-    public Task<ReadOnlyCollection<Item>> GetItemsAsync(CancellationToken cancellationToken)
+    public void SetFailCount(int count) => FailCount = count;
+
+    public Task<Collection<Item>> GetItemsAsync(CancellationToken cancellationToken)
     {
         ThrowIfNeeded("Transient Items failure");
-        return Task.FromResult(ItemsData ?? new ReadOnlyCollection<Item>(Array.Empty<Item>()));
+        return Task.FromResult(Items);
     }
 
-    public Task<ReadOnlyCollection<Achievement>> GetAchievementsAsync(CancellationToken cancellationToken)
+    public Task<Collection<Achievement>> GetAchievementsAsync(CancellationToken cancellationToken)
     {
         ThrowIfNeeded("Transient Achievements failure");
-        return Task.FromResult(AchievementsData ?? new ReadOnlyCollection<Achievement>(Array.Empty<Achievement>()));
+        return Task.FromResult(Achievements);
     }
 
-    public Task<ReadOnlyCollection<Miniature>> GetMiniaturesAsync(CancellationToken cancellationToken)
+    public Task<Collection<Miniature>> GetMiniaturesAsync(CancellationToken cancellationToken)
     {
         ThrowIfNeeded("Transient Miniatures failure");
-        return Task.FromResult(MiniaturesData ?? new ReadOnlyCollection<Miniature>(Array.Empty<Miniature>()));
+        return Task.FromResult(Miniatures);
     }
 
-    public Task<ReadOnlyCollection<Novelty>> GetNoveltiesAsync(CancellationToken cancellationToken)
+    public Task<Collection<Novelty>> GetNoveltiesAsync(CancellationToken cancellationToken)
     {
         ThrowIfNeeded("Transient Novelties failure");
-        return Task.FromResult(NoveltiesData ?? new ReadOnlyCollection<Novelty>(Array.Empty<Novelty>()));
+        return Task.FromResult(Novelties);
     }
 
-    public Task<ReadOnlyCollection<Title>> GetTitlesAsync(CancellationToken cancellationToken)
+    public Task<Collection<Title>> GetTitlesAsync(CancellationToken cancellationToken)
     {
         ThrowIfNeeded("Transient Titles failure");
-        return Task.FromResult(TitlesData ?? new ReadOnlyCollection<Title>(Array.Empty<Title>()));
+        return Task.FromResult(Titles);
     }
 }

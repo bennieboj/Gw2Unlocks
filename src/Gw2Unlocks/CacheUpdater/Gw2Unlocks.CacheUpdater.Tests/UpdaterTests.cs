@@ -40,31 +40,31 @@ public class UpdaterTests : ServiceProviderBasedTest<IUpdater>
     {
         var sut = GetSut();
 
-        source.Items = new ReadOnlyCollection<Item>(
+        source.SetItems(new Collection<Item>(
         [
             new ItemBuilder().WithName("Item 1").Build(),
             new ItemBuilder().WithName("Item 2").Build()
-        ]);
+        ]));
 
-        source.Achievements = new ReadOnlyCollection<Achievement>(
+        source.SetAchievements(new Collection<Achievement>(
         [
             new AchievementBuilder().WithName("Ach 1").Build()
-        ]);
+        ]));
 
-        source.Miniatures = new ReadOnlyCollection<Miniature>(
+        source.SetMiniatures(new Collection<Miniature>(
         [
             new MiniatureBuilder().WithName("Mini 1").Build()
-        ]);
+        ]));
 
-        source.Novelties = new ReadOnlyCollection<Novelty>(
+        source.SetNovelties(new Collection<Novelty>(
         [
             new NoveltyBuilder().WithName("Novelty 1").Build()
-        ]);
+        ]));
 
-        source.Titles = new ReadOnlyCollection<Title>(
+        source.SetTitles(new Collection<Title>(
         [
             new TitleBuilder().WithName("Title 1").Build()
-        ]);
+        ]));
 
         await sut.UpdateApiData(TestContext.Current.CancellationToken);
 

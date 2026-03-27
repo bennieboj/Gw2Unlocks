@@ -10,9 +10,9 @@ using System.Threading.Tasks;
 namespace Gw2Unlocks.Api;
 public interface IGw2ApiSource
 {
-    Task<ReadOnlyCollection<Item>> GetItemsAsync(CancellationToken cancellationToken);
-    Task<ReadOnlyCollection<Achievement>> GetAchievementsAsync(CancellationToken cancellationToken);
-    Task<ReadOnlyCollection<Miniature>> GetMiniaturesAsync(CancellationToken cancellationToken);
-    Task<ReadOnlyCollection<Novelty>> GetNoveltiesAsync(CancellationToken cancellationToken);
-    Task<ReadOnlyCollection<Title>> GetTitlesAsync(CancellationToken cancellationToken);
+    Task<Collection<Item>> GetItemsAsync(CancellationToken cancellationToken);
+    Task<Collection<Achievement>> GetAchievementsAsync(CancellationToken cancellationToken);
+    Task<Collection<Miniature>> GetMiniaturesAsync(CancellationToken cancellationToken);
+    Task<Collection<Novelty>> GetNoveltiesAsync(CancellationToken cancellationToken);
+    Task<Collection<Title>> GetTitlesAsync(CancellationToken cancellationToken);
 }

@@ -2,10 +2,12 @@
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace Gw2Unlocks.Wiki.Implementation;
 
@@ -22,8 +24,13 @@ public sealed partial class Gw2WikiSource(ILogger<Gw2WikiSource> logger, IWikiAp
 
         foreach (var title in allTitles)
         {
-            logger.LogInformation("Processing page: {Title}", title);
-            await BuildGraph(graph, title, visited, cancellationToken);
+            var sw = Stopwatch.StartNew();
+            await BuildGraph(graph, title, visited, CancellationToken.None);
+            sw.Stop();
+            logger.LogInformation("Processing page in {ms}: {Title}", sw.ElapsedMilliseconds, title);
+
+            //bail if cancellation requested after each page to avoid long waits
+            cancellationToken.ThrowIfCancellationRequested();
         }
 
         return graph;
@@ -43,6 +50,9 @@ public sealed partial class Gw2WikiSource(ILogger<Gw2WikiSource> logger, IWikiAp
 
         var itemNode = graph.GetOrCreate(nodeType, title);
 
+        if (itemNode.IsProcessed)
+            return;
+
         // --- SOLD BY ---
         var soldByText = await ExpandAsync($"{{{{Sold by|{title}}}}}", cancellationToken);
 
@@ -54,23 +64,26 @@ public sealed partial class Gw2WikiSource(ILogger<Gw2WikiSource> logger, IWikiAp
             foreach (var (vendor, areas, zones, cost) in rows)
             {
                 var vendorNode = graph.GetOrCreate(NodeType.Vendor, vendor);
-                graph.AddEdge(itemNode.Id, vendorNode.Id, EdgeType.SoldBy,
-                    new Dictionary<string, string> { ["cost"] = cost });
 
                 var count = Math.Min(areas.Count, zones.Count);
-
                 for (int i = 0; i < count; i++)
                 {
                     var areaNode = graph.GetOrCreate(NodeType.Area, areas[i]);
+                    areaNode.IsProcessed = true;
                     var zoneNode = graph.GetOrCreate(NodeType.Zone, zones[i]);
+                    areaNode.IsProcessed = true;
 
                     graph.AddEdge(vendorNode.Id, areaNode.Id, EdgeType.LocatedIn);
                     graph.AddEdge(areaNode.Id, zoneNode.Id, EdgeType.LocatedIn);
                 }
-            }
 
-            if (rows.Count > 0)
-                return;
+                if (rows.Count > 0)
+                {
+                    graph.AddEdge(itemNode.Id, vendorNode.Id, EdgeType.SoldBy,
+                        new Dictionary<string, string> { ["cost"] = cost });
+                    vendorNode.IsProcessed = true;
+                }
+            }
         }
 
         // --- ACHIEVEMENT ---
@@ -81,7 +94,7 @@ public sealed partial class Gw2WikiSource(ILogger<Gw2WikiSource> logger, IWikiAp
         {
             var achievementNode = graph.GetOrCreate(NodeType.Achievement, achievement);
             graph.AddEdge(itemNode.Id, achievementNode.Id, EdgeType.Rewards);
-            return;
+            achievementNode.IsProcessed = true;
         }
 
         // --- CONTAINERS ---
@@ -107,6 +120,9 @@ public sealed partial class Gw2WikiSource(ILogger<Gw2WikiSource> logger, IWikiAp
                 await BuildGraph(graph, item, visited, cancellationToken);
             }
         }
+
+
+        itemNode.IsProcessed = true;
     }
 
 

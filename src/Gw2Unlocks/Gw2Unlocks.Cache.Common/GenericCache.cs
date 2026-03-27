@@ -16,15 +16,15 @@ namespace Gw2Unlocks.Cache.Common
         }
 
         // --- Generic helper to read JSON ---
-        protected async Task<T> LoadFromFileAsync<T>(string fileName, CancellationToken cancellationToken)
+        protected async Task<T> LoadFromFileAsync<T>(string fileName, CancellationToken cancellationToken) where T : new()
         {
             var path = Path.Combine(CachePaths.Root, cacheFolder, fileName);
-
-            if (!File.Exists(path))
-                throw new FileNotFoundException($"Cache file not found: {path}");
-
-            var json = await File.ReadAllTextAsync(path, cancellationToken);
-            return JsonSerializer.Deserialize<T>(json)!;
+            if (File.Exists(path))
+            {
+                var json = await File.ReadAllTextAsync(path, cancellationToken);
+                return JsonSerializer.Deserialize<T>(json)!;
+            }
+            return new T();
         }
 
         // --- Generic helper to save JSON from caller-provided data ---

@@ -43,30 +43,30 @@ public class UpdaterTransientFailureTests : ServiceProviderBasedTest<IUpdater>
     public async Task EndpointsFailUntilMaxOf5ThenSucceed(int failcount)
     {
         var sut = GetSut();
-        source.FailCount = failcount;
+        source.SetFailCount(failcount);
 
         // Configure the “real” data
-        source.ItemsData = new ReadOnlyCollection<Item>(
+        source.SetItems(new Collection<Item>(
         [
             new ItemBuilder().WithName("Item 1").Build(),
             new ItemBuilder().WithName("Item 2").Build()
-        ]);
-        source.AchievementsData = new ReadOnlyCollection<Achievement>(
+        ]));
+        source.SetAchievements(new Collection<Achievement>(
         [
             new AchievementBuilder().WithName("Ach 1").Build()
-        ]);
-        source.MiniaturesData = new ReadOnlyCollection<Miniature>(
+        ]));
+        source.SetMiniatures(new Collection<Miniature>(
         [
             new MiniatureBuilder().WithName("Mini 1").Build()
-        ]);
-        source.NoveltiesData = new ReadOnlyCollection<Novelty>(
+        ]));
+        source.SetNovelties(new Collection<Novelty>(
         [
             new NoveltyBuilder().WithName("Novelty 1").Build()
-        ]);
-        source.TitlesData = new ReadOnlyCollection<Title>(
+        ]));
+        source.SetTitles(new Collection<Title>(
         [
             new TitleBuilder().WithName("Title 1").Build()
-        ]);
+        ]));
 
         await sut.UpdateApiData(TestContext.Current.CancellationToken);
 
@@ -82,7 +82,7 @@ public class UpdaterTransientFailureTests : ServiceProviderBasedTest<IUpdater>
     public async Task EndpointsFailShouldThrowException()
     {
         var sut = GetSut();
-        source.FailCount = 6;
+        source.SetFailCount(6);
 
         await Assert.ThrowsAsync<InvalidOperationException>(async () => await sut.UpdateApiData(TestContext.Current.CancellationToken));
     }
