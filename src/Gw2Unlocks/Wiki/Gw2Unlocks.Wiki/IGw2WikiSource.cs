@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -6,5 +8,6 @@ namespace Gw2Unlocks.Wiki;
 
 public interface IGw2WikiSource
 {
-    Task<AcquisitionGraph> GetAcquisitionGraph(IEnumerable<string> itemNames, AcquisitionGraph? existingGraph = null, CancellationToken cancellationToken = default);
+    Task<Collection<string>> GetAllPages(CancellationToken cancellationToken = default);
+    IAsyncEnumerable<string> StreamAllPages(CancellationToken cancellationToken = default);
 }

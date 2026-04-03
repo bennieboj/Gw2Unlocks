@@ -27,9 +27,7 @@ public static class AsyncEnumerableExtensions
     }
 }
 
-#pragma warning disable CA1812 // This class is instantiated via DI and not directly, so it may appear unused
 internal sealed class Gw2Api(Gw2Client client) : IGw2ApiSource
-#pragma warning restore CA1812 // This class is instantiated via DI and not directly, so it may appear unused
 {
     public async Task<Collection<Achievement>> GetAchievementsAsync(CancellationToken cancellationToken)
     {

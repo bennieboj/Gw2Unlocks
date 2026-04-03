@@ -1,5 +1,7 @@
-﻿using Gw2Unlocks.Api;
+﻿using GuildWars2.Items;
+using Gw2Unlocks.Api;
 using Gw2Unlocks.Wiki;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -8,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Gw2Unlocks.CacheUpdater;
 
-internal class Updater(IGw2ApiSource apiSource, IGw2ApiCache apiCache, IGw2WikiSource wikiSource, IGw2WikiCache wikiCache) : IUpdater
+internal class Updater(IGw2ApiSource apiSource, IGw2ApiCache apiCache, IGw2WikiSource wikiSource, IGw2WikiCache wikiCache, ILogger<Updater> logger) : IUpdater
 {
     private const int MaxRetries = 5;
 
@@ -55,32 +57,14 @@ internal class Updater(IGw2ApiSource apiSource, IGw2ApiCache apiCache, IGw2WikiS
 
     public async Task UpdateWikiData(CancellationToken cancellationToken)
     {
-        var minis = await apiCache.GetMiniaturesAsync(cancellationToken);
-        var items = await apiCache.GetItemsAsync(cancellationToken);
-        var achis = await apiCache.GetAchievementsAsync(cancellationToken);
-        var novelties = await apiCache.GetNoveltiesAsync(cancellationToken);
-        var titles = await apiCache.GetTitlesAsync(cancellationToken);
+        //var data = await wikiSource.GetAllPages(cancellationToken);
+        //await wikiCache.SaveAllPagesToCacheAsync(data, cancellationToken);
 
-        var allNames = minis.Select(i => i.Name)
-            .Concat(items.Select(m => m.Name))
-            .Concat(achis.Select(a => a.Name))
-            .Concat(novelties.Select(n => n.Name))
-            .Concat(titles.Select(t => t.Name))
-            .ToList();
+        await wikiCache.StreamPagesToCacheAsync(
+            wikiSource.StreamAllPages(cancellationToken),
+            cancellationToken
+        );
 
-
-        var graph = await wikiCache.GetAcquisitionGraph([], null, CancellationToken.None);
-        var first50 = allNames.Take(50).ToList();
-        try
-        {
-            await wikiSource.GetAcquisitionGraph([.. first50], graph, cancellationToken);
-        }
-        catch (OperationCanceledException)
-        {
-            await wikiCache.SaveAcquisitionGraphToCacheAsync(graph, CancellationToken.None);
-            throw;
-        }
-
-        await wikiCache.SaveAcquisitionGraphToCacheAsync(graph, CancellationToken.None);
+        logger.LogInformation("Fetched all page names from wiki.");
     }
 }

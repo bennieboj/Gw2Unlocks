@@ -24,8 +24,9 @@
     <!-- CA1031: Do not catch general exception types -->
     <!-- CA1727: Use PascalCase for named placeholders -->
     <!-- CA1873: Evaluation of this argument may be expensive and unnecessary if logging is disabled -->
-    <!-- -->
-    <NoWarn>$(NoWarn);CA1848;CA2007;CA1031;CA1727;CA1873</NoWarn>
+    <!-- CA1303: Do not pass literals as localized parameters-->
+    <!-- CA1812: This class is instantiated via DI and not directly, so it may appear unused-->
+    <NoWarn>$(NoWarn);CA1848;CA2007;CA1031;CA1727;CA1873;CA1303;CA1812</NoWarn>
 
     <CacheRoot>$(MSBuildThisFileDirectory)..\cache-root</CacheRoot>
   </PropertyGroup>

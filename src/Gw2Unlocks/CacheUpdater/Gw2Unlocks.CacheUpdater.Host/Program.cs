@@ -1,24 +1,26 @@
 ﻿using Gw2Unlocks.Api.Cache;
 using Gw2Unlocks.Api.Implementation;
+using Gw2Unlocks.Cache.Common;
 using Gw2Unlocks.CacheUpdater;
+using Gw2Unlocks.Common;
 using Gw2Unlocks.Wiki.Cache;
 using Gw2Unlocks.Wiki.Implementation;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using System.Threading;
 
 var builder = Host.CreateApplicationBuilder(args);
 
 builder.Logging.AddConsole();
 builder.Logging.AddConfiguration(builder.Configuration.GetSection("Logging"));
 
-//builder.Logging.SetupLogging(builder.Configuration);
+builder.Logging.SetupLogging(builder.Configuration);
 builder.Services.AddApiSource()
                 .AddJsonCacheApi()
+                .AddCacheDir()
                 .AddWikiSource()
-                .AddJsonCacheWiki()
-                .AddUpdater();
+                .AddCacheWikiAsCache();
+
+builder.Services.AddUpdater();
 
 var host = builder.Build();
 //AppDomain.CurrentDomain.ProcessExit += async (sender, e) =>
@@ -35,9 +37,4 @@ var host = builder.Build();
 //        Console.Error.WriteLine(ex.ToString());
 //    }
 //};
-//await host.RunAsync();
-
-//might move this to background service later
-var updater = host.Services.GetRequiredService<IUpdater>();
-//await updater.UpdateApiData(CancellationToken.None);
-await updater.UpdateWikiData(CancellationToken.None);
+await host.RunAsync();
