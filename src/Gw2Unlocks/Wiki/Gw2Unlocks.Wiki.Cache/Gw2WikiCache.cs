@@ -1,39 +1,115 @@
 ﻿using Gw2Unlocks.Cache.Common;
+using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.IO;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace Gw2Unlocks.Wiki.Cache;
-internal sealed class Gw2WikiCache(CachePaths cachePaths) : GenericCache(cachePaths, "wiki-cache"), IGw2WikiCache
+
+internal sealed class Gw2WikiCache(CachePaths cachePaths)
+    : GenericCache(cachePaths, "wiki-cache"), IGw2WikiCache
 {
-    private const string wikiBulkFileName = "wikibulk.xml";
+    private const string WikiBulkPrefix = "wikibulk_";
+    private const string WikiBulkExtension = ".xml";
 
-    public Task<Collection<string>> GetAllPages(CancellationToken cancellationToken = default) => LoadFromFileAsync<Collection<string>>(wikiBulkFileName, cancellationToken);
+    private const long DefaultMaxFileSize = 75 * 1024 * 1024; // 75 MB
 
-    public Task SaveAllPagesToCacheAsync(Collection<string> data, CancellationToken cancellationToken) => SaveToCacheAsync<Collection<string>>(wikiBulkFileName, data, cancellationToken);
-
-    public IAsyncEnumerable<string> StreamAllPages(CancellationToken cancellationToken = default)
+    // =============================
+    // READ (from multiple files)
+    // =============================
+    public async IAsyncEnumerable<string> StreamAllPages(
+        [System.Runtime.CompilerServices.EnumeratorCancellation]
+        CancellationToken cancellationToken = default)
     {
-        return StreamFromFileAsyncEnumerable(
-            wikiBulkFileName,
-            ReadXmlPages,
+        var files = Directory
+            .EnumerateFiles(CacheFolder, $"{WikiBulkPrefix}*{WikiBulkExtension}")
+            .OrderBy(f => f); // ensure correct order
+
+        foreach (var file in files)
+        {
+            await foreach (var page in StreamFromFileAsyncEnumerable(
+                file,
+                ReadXmlPages,
+                cancellationToken))
+            {
+                yield return page;
+            }
+        }
+    }
+
+    // =============================
+    // WRITE (split into chunks)
+    // =============================
+    public async Task StreamPagesToCacheAsync(
+        IAsyncEnumerable<string> pages,
+        CancellationToken cancellationToken = default)
+    {
+        foreach (var file in Directory.EnumerateFiles(CacheFolder, $"{WikiBulkPrefix}*{WikiBulkExtension}"))
+        {
+            File.Delete(file);
+        }
+
+        await StreamPagesToCacheSplitAsync(
+            pages,
+            DefaultMaxFileSize,
             cancellationToken);
     }
 
-    public async Task StreamPagesToCacheAsync(
-    IAsyncEnumerable<string> pages,
-    CancellationToken cancellationToken = default)
+    private async Task StreamPagesToCacheSplitAsync(
+        IAsyncEnumerable<string> pages,
+        long maxFileSizeBytes,
+        CancellationToken cancellationToken)
     {
-        await using var stream = File.Create(Path.Combine(CacheFolder, wikiBulkFileName));
-        await using var writer = new StreamWriter(stream);
+        int fileIndex = 0;
 
-        // optional XML header
-        await writer.WriteLineAsync(@"<?xml version=""1.0"" encoding=""UTF-8""?><mediawiki xmlns=""http://www.mediawiki.org/xml/export-0.11/"">");
+        FileStream? stream = null;
+        StreamWriter? writer = null;
 
-        await WritePagesAsync(pages, writer, cancellationToken);
+        async Task CloseCurrentFileAsync()
+        {
+            if (writer == null)
+                return;
 
-        await writer.WriteLineAsync("</mediawiki>");
+            await writer.WriteLineAsync("</mediawiki>");
+            await writer.DisposeAsync();
+            await stream!.DisposeAsync();
+
+            writer = null;
+            stream = null;
+        }
+
+        async Task StartNewFileAsync()
+        {
+            await CloseCurrentFileAsync();
+
+            var fileName = $"{WikiBulkPrefix}{fileIndex++:D4}{WikiBulkExtension}";
+            var path = Path.Combine(CacheFolder, fileName);
+
+            stream = File.Create(path);
+            writer = new StreamWriter(stream);
+
+            await writer.WriteLineAsync(
+                @"<?xml version=""1.0"" encoding=""UTF-8""?><mediawiki xmlns=""http://www.mediawiki.org/xml/export-0.11/"">");
+        }
+
+        await StartNewFileAsync();
+
+        await foreach (var page in pages.WithCancellation(cancellationToken))
+        {
+            cancellationToken.ThrowIfCancellationRequested();
+
+            var bytes = writer!.Encoding.GetByteCount(page + Environment.NewLine);
+
+            if (stream!.Length + bytes > maxFileSizeBytes)
+            {
+                await StartNewFileAsync();
+            }
+
+            await writer.WriteLineAsync(page);
+        }
+
+        await CloseCurrentFileAsync();
     }
 }

@@ -78,13 +78,14 @@ namespace Gw2Unlocks.Cache.Common
             }
         }
 
-        protected async IAsyncEnumerable<T> StreamFromFileAsyncEnumerable<T>(
-            string fileName,
+        protected static async IAsyncEnumerable<T> StreamFromFileAsyncEnumerable<T>(
+            string fullpath,
             Func<Stream, CancellationToken, IAsyncEnumerable<T>> reader,
             [EnumeratorCancellation] CancellationToken cancellationToken = default)
         {
             ArgumentNullException.ThrowIfNull(reader);
-            var path = Path.Combine(CacheFolder, fileName);
+
+            var path = fullpath;
 
             if (!File.Exists(path))
                 yield break;
