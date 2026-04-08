@@ -24,13 +24,13 @@
     <Project Path="Wiki/Gw2Unlocks.Wiki.Testing/Gw2Unlocks.Wiki.Testing.csproj" Id="5f4173d6-682f-487d-b0b4-7ff8026afb98" />
     <Project Path="Wiki/Gw2Unlocks.Wiki/Gw2Unlocks.Wiki.csproj" />
   </Folder>
-  <Folder Name="/WikiGraph/">
-    <Project Path="WikiGraph/Gw2Unlocks.WikiGraph.Cache/Gw2Unlocks.WikiGraph.Cache.csproj" Id="d734d3bd-4cc9-4818-ade0-82da412eb1e9" />
-    <Project Path="WikiGraph/Gw2Unlocks.WikiGraph.Host/Gw2Unlocks.WikiGraph.Host.csproj" Id="dcaaf6c5-0e65-42d4-b9a0-5abf8f4870fa" />
-    <Project Path="WikiGraph/Gw2Unlocks.WikiGraph.Implementation/Gw2Unlocks.WikiGraph.Implementation.csproj" Id="2938687c-9a81-497d-82c6-aaf6540fa29c" />
-    <Project Path="WikiGraph/Gw2Unlocks.WikiGraph.IntegrationTests/Gw2Unlocks.WikiGraph.IntegrationTests.csproj" />
-    <Project Path="WikiGraph/Gw2Unlocks.WikiGraph.Testing/Gw2Unlocks.WikiGraph.Testing.csproj" Id="86124b30-ff1d-4b1a-b93f-3e6c00d17e52" />
-    <Project Path="WikiGraph/Gw2Unlocks.WikiGraph/Gw2Unlocks.WikiGraph.csproj" Id="76631d7c-1a0c-4ade-a1ff-a5f0f6952f3c" />
+  <Folder Name="/WikiProcessing/">
+    <Project Path="WikiProcessing/Gw2Unlocks.WikiProcessing.Cache/Gw2Unlocks.WikiProcessing.Cache.csproj" Id="d734d3bd-4cc9-4818-ade0-82da412eb1e9" />
+    <Project Path="WikiProcessing/Gw2Unlocks.WikiProcessing.Host/Gw2Unlocks.WikiProcessing.Host.csproj" Id="dcaaf6c5-0e65-42d4-b9a0-5abf8f4870fa" />
+    <Project Path="WikiProcessing/Gw2Unlocks.WikiProcessing.Implementation/Gw2Unlocks.WikiProcessing.Implementation.csproj" Id="2938687c-9a81-497d-82c6-aaf6540fa29c" />
+    <Project Path="WikiProcessing/Gw2Unlocks.WikiProcessing.IntegrationTests/Gw2Unlocks.WikiProcessing.IntegrationTests.csproj" />
+    <Project Path="WikiProcessing/Gw2Unlocks.WikiProcessing.Testing/Gw2Unlocks.WikiProcessing.Testing.csproj" Id="86124b30-ff1d-4b1a-b93f-3e6c00d17e52" />
+    <Project Path="WikiProcessing/Gw2Unlocks.WikiProcessing/Gw2Unlocks.WikiProcessing.csproj" Id="76631d7c-1a0c-4ade-a1ff-a5f0f6952f3c" />
   </Folder>
   <Project Path="Gw2Unlocks.Cache.Common/Gw2Unlocks.Cache.Common.csproj" Id="56f494be-f154-4154-be20-c4c435f8f140" />
   <Project Path="Gw2Unlocks.Common/Gw2Unlocks.Common.csproj" Id="83712cb6-1e97-4a9e-a4b1-75ce2c29ed45" />

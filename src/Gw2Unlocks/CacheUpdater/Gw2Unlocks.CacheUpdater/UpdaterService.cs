@@ -13,8 +13,8 @@ internal sealed class UpdaterService(ILogger<BackgroundService> logger, IUpdater
         ArgumentNullException.ThrowIfNull(logger);
         try
         {
-            //await updater.UpdateApiData(stoppingToken);
-            await updater.UpdateWikiData(stoppingToken);
+            await updater.UpdateApiData(stoppingToken);
+            //await updater.UpdateWikiData(stoppingToken);
         }
         catch (OperationCanceledException)
         {

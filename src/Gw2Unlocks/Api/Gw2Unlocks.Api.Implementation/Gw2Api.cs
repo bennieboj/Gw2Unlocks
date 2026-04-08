@@ -3,6 +3,7 @@ using GuildWars2.Hero.Achievements;
 using GuildWars2.Hero.Achievements.Titles;
 using GuildWars2.Hero.Equipment.Miniatures;
 using GuildWars2.Hero.Equipment.Novelties;
+using GuildWars2.Hero.Equipment.Wardrobe;
 using GuildWars2.Items;
 using System;
 using System.Collections.Generic;
@@ -15,14 +16,19 @@ namespace Gw2Unlocks.Api.Implementation;
 
 public static class AsyncEnumerableExtensions
 {
-    public static async Task<Collection<T>> ToCollectionAsync<T>(this IAsyncEnumerable<T> source)
+    public static async Task<Collection<T>> ToCollectionAsync<T>(
+        this IAsyncEnumerable<T> source,
+        CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(source);
+
         var list = new List<T>();
-        await foreach (var item in source)
+
+        await foreach (var item in source.WithCancellation(cancellationToken))
         {
             list.Add(item);
         }
+
         return new Collection<T>(list);
     }
 }
@@ -31,12 +37,17 @@ internal sealed class Gw2Api(Gw2Client client) : IGw2ApiSource
 {
     public async Task<Collection<Achievement>> GetAchievementsAsync(CancellationToken cancellationToken)
     {
-        return await client.Hero.Achievements.GetAchievementsBulk(cancellationToken: cancellationToken).ValueOnly(cancellationToken).ToCollectionAsync();
+        return await client.Hero.Achievements.GetAchievementsBulk(cancellationToken: cancellationToken).ValueOnly(cancellationToken).ToCollectionAsync(cancellationToken);
+    }
+
+    public async Task<Collection<EquipmentSkin>> GetSkinsAsync(CancellationToken cancellationToken)
+    {
+        return await client.Hero.Equipment.Wardrobe.GetSkinsBulk(cancellationToken: cancellationToken).ValueOnly(cancellationToken).ToCollectionAsync(cancellationToken);
     }
 
     public async Task<Collection<Item>> GetItemsAsync(CancellationToken cancellationToken)
     {
-        return await client.Items.GetItemsBulk(cancellationToken: cancellationToken).ValueOnly(cancellationToken).ToCollectionAsync();
+        return await client.Items.GetItemsBulk(cancellationToken: cancellationToken).ValueOnly(cancellationToken).ToCollectionAsync(cancellationToken);
     }
 
     public async Task<Collection<Miniature>> GetMiniaturesAsync(CancellationToken cancellationToken)

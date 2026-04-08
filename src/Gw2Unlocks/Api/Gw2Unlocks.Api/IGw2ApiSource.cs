@@ -2,6 +2,7 @@
 using GuildWars2.Hero.Achievements.Titles;
 using GuildWars2.Hero.Equipment.Miniatures;
 using GuildWars2.Hero.Equipment.Novelties;
+using GuildWars2.Hero.Equipment.Wardrobe;
 using GuildWars2.Items;
 using System.Collections.ObjectModel;
 using System.Threading;
@@ -11,6 +12,7 @@ namespace Gw2Unlocks.Api;
 public interface IGw2ApiSource
 {
     Task<Collection<Item>> GetItemsAsync(CancellationToken cancellationToken);
+    Task<Collection<EquipmentSkin>> GetSkinsAsync(CancellationToken cancellationToken);
     Task<Collection<Achievement>> GetAchievementsAsync(CancellationToken cancellationToken);
     Task<Collection<Miniature>> GetMiniaturesAsync(CancellationToken cancellationToken);
     Task<Collection<Novelty>> GetNoveltiesAsync(CancellationToken cancellationToken);

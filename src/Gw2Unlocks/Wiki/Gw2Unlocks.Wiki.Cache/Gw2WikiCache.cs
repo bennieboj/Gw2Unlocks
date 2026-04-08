@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using static System.Net.WebRequestMethods;
 
 namespace Gw2Unlocks.Wiki.Cache;
 
@@ -39,6 +40,20 @@ internal sealed class Gw2WikiCache(CachePaths cachePaths)
         }
     }
 
+    public async Task<string?> GetSinglePage(string title, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrWhiteSpace(title);
+        await foreach (var page in StreamAllPages(cancellationToken))
+        {
+            if (page.Contains($"<title>{title}</title>", StringComparison.OrdinalIgnoreCase))
+            {
+                return page;
+            }
+        }
+
+        return null;
+    }
+
     // =============================
     // WRITE (split into chunks)
     // =============================
@@ -48,7 +63,7 @@ internal sealed class Gw2WikiCache(CachePaths cachePaths)
     {
         foreach (var file in Directory.EnumerateFiles(CacheFolder, $"{WikiBulkPrefix}*{WikiBulkExtension}"))
         {
-            File.Delete(file);
+            System.IO.File.Delete(file);
         }
 
         await StreamPagesToCacheSplitAsync(
@@ -87,7 +102,7 @@ internal sealed class Gw2WikiCache(CachePaths cachePaths)
             var fileName = $"{WikiBulkPrefix}{fileIndex++:D4}{WikiBulkExtension}";
             var path = Path.Combine(CacheFolder, fileName);
 
-            stream = File.Create(path);
+            stream = System.IO.File.Create(path);
             writer = new StreamWriter(stream);
 
             await writer.WriteLineAsync(

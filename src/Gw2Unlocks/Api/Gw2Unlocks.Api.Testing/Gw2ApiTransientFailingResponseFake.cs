@@ -2,6 +2,7 @@
 using GuildWars2.Hero.Achievements.Titles;
 using GuildWars2.Hero.Equipment.Miniatures;
 using GuildWars2.Hero.Equipment.Novelties;
+using GuildWars2.Hero.Equipment.Wardrobe;
 using GuildWars2.Items;
 using System;
 using System.Collections.ObjectModel;
@@ -13,13 +14,15 @@ namespace Gw2Unlocks.Api.Testing;
 public class Gw2ApiTransientFailingResponseFake : IGw2ApiSource
 {
     // Configurable data
-    private Collection<Item> Items = new Collection<Item>(Array.Empty<Item>());
-    private Collection<Achievement> Achievements = new Collection<Achievement>(Array.Empty<Achievement>());
-    private Collection<Miniature> Miniatures = new Collection<Miniature>(Array.Empty<Miniature>());
-    private Collection<Novelty> Novelties = new Collection<Novelty>(Array.Empty<Novelty>());
-    private Collection<Title> Titles = new Collection<Title>(Array.Empty<Title>());
+    private Collection<Item> Items = [];
+    private Collection<EquipmentSkin> Skins = [];
+    private Collection<Achievement> Achievements = [];
+    private Collection<Miniature> Miniatures = [];
+    private Collection<Novelty> Novelties = [];
+    private Collection<Title> Titles = [];
 
     public void SetItems(Collection<Item> items) => Items = items;
+    public void SetSkins(Collection<EquipmentSkin> skins) => Skins = skins;
     public void SetAchievements(Collection<Achievement> achievements) => Achievements = achievements;
     public void SetMiniatures(Collection<Miniature> miniatures) => Miniatures = miniatures;
     public void SetNovelties(Collection<Novelty> novelties) => Novelties = novelties;
@@ -44,6 +47,12 @@ public class Gw2ApiTransientFailingResponseFake : IGw2ApiSource
     {
         ThrowIfNeeded("Transient Items failure");
         return Task.FromResult(Items);
+    }
+
+    public Task<Collection<EquipmentSkin>> GetSkinsAsync(CancellationToken cancellationToken)
+    {
+        ThrowIfNeeded("Transient Skins failure");
+        return Task.FromResult(Skins);
     }
 
     public Task<Collection<Achievement>> GetAchievementsAsync(CancellationToken cancellationToken)

@@ -170,42 +170,8 @@ public sealed class Gw2WikiSource(ILogger<Gw2WikiSource> logger, Lazy<Task<WikiS
 
         return await response.Content.ReadAsStringAsync(cancellationToken);
     }
-    /*
-    static async Task<string> DownloadExportBatch(HttpClient http, Polly.Retry.AsyncRetryPolicy<HttpResponseMessage> retryPolicy, List<string> titles, CancellationToken cancellationToken)
-    {
-        var url = new Uri("https://wiki.guildwars2.com/wiki/Special:Export");
 
-        // Build pages list (newline-separated, quoted like the form expects)
-        // Build EXACT payload like curl
-        var sb = new StringBuilder();
-        sb.Append("title=Special%3AExport");
-        sb.Append("&pages=");
-
-        for (int i = 0; i < titles.Count; i++)
-        {
-            if (i > 0) sb.Append("%0D%0A");
-
-            sb.Append(EncodeFormComponent(titles[i]));
-        }
-
-        sb.Append("&curonly=1&wpDownload=1");
-        var content = new StringContent(sb.ToString(), Encoding.UTF8, "application/x-www-form-urlencoded");
-
-        var response = await retryPolicy.ExecuteAsync(() => http.PostAsync(url, content, cancellationToken));
-        response.EnsureSuccessStatusCode();
-
-        content.Dispose();
-
-        return await response.Content.ReadAsStringAsync(cancellationToken);
-    }
-
-    static string EncodeFormComponent(string value)
-    {
-        return Uri.EscapeDataString(value).Replace("%20", "+", StringComparison.Ordinal);
-    }
-    */
-
-    public Task StreamAllPages(Func<string, Task> onPage, CancellationToken cancellationToken = default)
+    public Task<string?> GetSinglePage(string title, CancellationToken cancellationToken = default)
     {
         throw new NotImplementedException();
     }

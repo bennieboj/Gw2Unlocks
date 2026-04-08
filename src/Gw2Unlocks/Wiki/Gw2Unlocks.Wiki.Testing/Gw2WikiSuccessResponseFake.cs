@@ -13,6 +13,11 @@ namespace Gw2Unlocks.Wiki.Testing
             throw new NotImplementedException();
         }
 
+        public Task<string?> GetSinglePage(string title, CancellationToken cancellationToken = default)
+        {
+            throw new NotImplementedException();
+        }
+
         public Task SaveAllPagesToCacheAsync(Collection<string> data, CancellationToken cancellationToken)
         {
             throw new NotImplementedException();

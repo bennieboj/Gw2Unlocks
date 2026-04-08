@@ -1,0 +1,47 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="xunit.v3" />
+    <PackageReference Include="xunit.runner.visualstudio">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Gw2Unlocks.Testing.Common\Gw2Unlocks.Testing.Common.csproj" />
+    <ProjectReference Include="..\..\Wiki\Gw2Unlocks.Wiki.Testing\Gw2Unlocks.Wiki.Testing.csproj" />
+    <ProjectReference Include="..\Gw2Unlocks.WikiProcessing.Implementation\Gw2Unlocks.WikiProcessing.Implementation.csproj" />
+    <ProjectReference Include="..\Gw2Unlocks.WikiProcessing\Gw2Unlocks.WikiProcessing.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Gw2Unlocks.Cache.Common\Gw2Unlocks.Cache.Common.csproj">
+      <AdditionalProperties>CacheRoot=$(OutputPath)cache\</AdditionalProperties>
+    </ProjectReference>
+  </ItemGroup>
+  
+  <ItemGroup>
+    <None Update="AB_map.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Arah_contains.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="LA_halloween.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Mini_Green_Raptor_Hatchling.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="zone.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

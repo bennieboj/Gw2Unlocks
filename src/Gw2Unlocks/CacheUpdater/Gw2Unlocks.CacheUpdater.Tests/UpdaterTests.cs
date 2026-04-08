@@ -2,6 +2,7 @@
 using GuildWars2.Hero.Achievements.Titles;
 using GuildWars2.Hero.Equipment.Miniatures;
 using GuildWars2.Hero.Equipment.Novelties;
+using GuildWars2.Hero.Equipment.Wardrobe;
 using GuildWars2.Items;
 using Gw2Unlocks.Api;
 using Gw2Unlocks.Api.Testing;
@@ -46,6 +47,11 @@ public class UpdaterTests : ServiceProviderBasedTest<IUpdater>
             new ItemBuilder().WithName("Item 2").Build()
         ]));
 
+        source.SetSkins(new Collection<EquipmentSkin>(
+        [
+            new SkinBuilder().WithName("Skin 1").Build()
+        ]));
+
         source.SetAchievements(new Collection<Achievement>(
         [
             new AchievementBuilder().WithName("Ach 1").Build()
@@ -69,6 +75,7 @@ public class UpdaterTests : ServiceProviderBasedTest<IUpdater>
         await sut.UpdateApiData(TestContext.Current.CancellationToken);
 
         Assert.Equal(2, cache.SavedItems?.Count);
+        Assert.Single(cache.SavedSkins!);
         Assert.Single(cache.SavedAchievements!);
         Assert.Single(cache.SavedMiniatures!);
         Assert.Single(cache.SavedNovelties!);

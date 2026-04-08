@@ -20,6 +20,10 @@ internal class Updater(IGw2ApiSource apiSource, IGw2ApiCache apiCache, IGw2WikiS
         var items = await RetryAsync(() => apiSource.GetItemsAsync(cancellationToken), "Items");
         await apiCache.SaveItemsToCacheAsync(items, cancellationToken);
 
+        // Skins
+        var skins = await RetryAsync(() => apiSource.GetSkinsAsync(cancellationToken), "Skins");
+        await apiCache.SaveSkinsToCacheAsync(skins, cancellationToken);
+
         // Achievements
         var achievements = await RetryAsync(() => apiSource.GetAchievementsAsync(cancellationToken), "Achievements");
         await apiCache.SaveAchievementsToCacheAsync(achievements, cancellationToken);
@@ -57,9 +61,6 @@ internal class Updater(IGw2ApiSource apiSource, IGw2ApiCache apiCache, IGw2WikiS
 
     public async Task UpdateWikiData(CancellationToken cancellationToken)
     {
-        //var data = await wikiSource.GetAllPages(cancellationToken);
-        //await wikiCache.SaveAllPagesToCacheAsync(data, cancellationToken);
-
         await wikiCache.StreamPagesToCacheAsync(
             wikiSource.StreamAllPages(cancellationToken),
             cancellationToken

@@ -6,7 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Api\Gw2Unlocks.Api\Gw2Unlocks.Api.csproj" />
-    <ProjectReference Include="..\..\WikiGraph\Gw2Unlocks.WikiGraph\Gw2Unlocks.WikiGraph.csproj" />
+    <ProjectReference Include="..\..\WikiProcessing\Gw2Unlocks.WikiProcessing\Gw2Unlocks.WikiProcessing.csproj" />
   </ItemGroup>
 
   <ItemGroup>

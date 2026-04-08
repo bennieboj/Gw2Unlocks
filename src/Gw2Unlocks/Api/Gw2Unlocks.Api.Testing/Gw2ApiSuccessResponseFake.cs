@@ -3,6 +3,7 @@ using GuildWars2.Hero.Achievements;
 using GuildWars2.Hero.Achievements.Titles;
 using GuildWars2.Hero.Equipment.Miniatures;
 using GuildWars2.Hero.Equipment.Novelties;
+using GuildWars2.Hero.Equipment.Wardrobe;
 using GuildWars2.Items;
 using System;
 using System.Collections.ObjectModel;
@@ -12,13 +13,15 @@ using System.Threading.Tasks;
 namespace Gw2Unlocks.Api.Testing;
 public class Gw2ApiSuccessResponseFake : IGw2ApiSource, IGw2ApiCache
 {
-    public Collection<Item> Items { get; private set; } = new Collection<Item>(Array.Empty<Item>());
-    public Collection<Achievement> Achievements { get; private set; } = new Collection<Achievement>(Array.Empty<Achievement>());
-    public Collection<Miniature> Miniatures { get; private set; } = new Collection<Miniature>(Array.Empty<Miniature>());
-    public Collection<Novelty> Novelties { get; private set; } = new Collection<Novelty>(Array.Empty<Novelty>());
-    public Collection<Title> Titles { get; private set; } = new Collection<Title>(Array.Empty<Title>());
+    public Collection<Item> Items { get; private set; } = [];
+    public Collection<EquipmentSkin> Skins { get; private set; } = [];
+    public Collection<Achievement> Achievements { get; private set; } = [];
+    public Collection<Miniature> Miniatures { get; private set; } = [];
+    public Collection<Novelty> Novelties { get; private set; } = [];
+    public Collection<Title> Titles { get; private set; } = [];
 
     public void SetItems(Collection<Item> items) => Items = items;
+    public void SetSkins(Collection<EquipmentSkin> skins) => Skins = skins;
     public void SetAchievements(Collection<Achievement> achievements) => Achievements = achievements;
     public void SetMiniatures(Collection<Miniature> miniatures) => Miniatures = miniatures;
     public void SetNovelties(Collection<Novelty> novelties) => Novelties = novelties;
@@ -26,6 +29,8 @@ public class Gw2ApiSuccessResponseFake : IGw2ApiSource, IGw2ApiCache
 
     public virtual Task<Collection<Item>> GetItemsAsync(CancellationToken cancellationToken)
         => Task.FromResult(Items);
+    public virtual Task<Collection<EquipmentSkin>> GetSkinsAsync(CancellationToken cancellationToken)
+        => Task.FromResult(Skins);
 
     public virtual Task<Collection<Achievement>> GetAchievementsAsync(CancellationToken cancellationToken)
         => Task.FromResult(Achievements);
@@ -41,6 +46,7 @@ public class Gw2ApiSuccessResponseFake : IGw2ApiSource, IGw2ApiCache
 
 
     public Collection<Item>? SavedItems { get; private set; }
+    public Collection<EquipmentSkin>? SavedSkins { get; private set; }
     public Collection<Achievement>? SavedAchievements { get; private set; }
     public Collection<Miniature>? SavedMiniatures { get; private set; }
     public Collection<Novelty>? SavedNovelties { get; private set; }
@@ -50,6 +56,11 @@ public class Gw2ApiSuccessResponseFake : IGw2ApiSource, IGw2ApiCache
     public Task SaveItemsToCacheAsync(Collection<Item> data, CancellationToken cancellationToken)
     {
         SavedItems = [.. data];
+        return Task.CompletedTask;
+    }
+    public Task SaveSkinsToCacheAsync(Collection<EquipmentSkin> data, CancellationToken cancellationToken)
+    {
+        SavedSkins = [.. data];
         return Task.CompletedTask;
     }
 
