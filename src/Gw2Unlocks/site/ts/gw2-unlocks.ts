@@ -99,6 +99,30 @@ class Gw2Unlocks extends HTMLElement {
           width: 64px;
           height: 64px;
         }
+        
+        .controls {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+        }
+
+        .kofi-btn {
+          margin-left: 10px;
+          padding: 6px 10px;
+          background: #29abe0;
+          color: white;
+          border-radius: 6px;
+          text-decoration: none;
+          font-size: 0.9em;
+          font-weight: 500;
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+        }
+
+        .kofi-btn:hover {
+          opacity: 0.9;
+        }
       </style>
 
       <div class="controls">
@@ -107,6 +131,16 @@ class Gw2Unlocks extends HTMLElement {
         <button id="savekey">Save</button>
         <button id="refresh">Refresh API Data</button>
         <span id="status"></span>
+
+        <a
+          href="https://ko-fi.com/bennieboj"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="kofi-btn"
+          style="margin-left:auto;"
+        >
+          ☕ Support Bennieboj on Ko-fi
+        </a>
       </div>
 
       <div class="layout">
