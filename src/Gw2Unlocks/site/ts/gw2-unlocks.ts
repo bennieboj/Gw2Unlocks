@@ -10,33 +10,74 @@ const STORAGE_KEYS = {
 
 type StorageKey = keyof typeof STORAGE_KEYS;
 
-const REFRESH_COOLDOWN = 5 * 60 * 1000; // 5 minutes
+const REFRESH_COOLDOWN = 5 * 60 * 1000;
 
 class Gw2Unlocks extends HTMLElement {
-  unlockData: UnlockItem[] = [];
+  unlockData: any = {};
 
-  // Connected callback
   async connectedCallback() {
     console.log(`using mode ${__VITE_MODE__}, dataset ${DATASET_URL}`);
     document.title = "GW2 Unlocks" + (__VITE_MODE__ === "development" ? " [DEV]" : "");
 
     try {
       const res = await fetch(DATASET_URL);
-      this.unlockData = await res.json() as UnlockItem[];
+      this.unlockData = await res.json();
     } catch (e) {
       console.error("Failed to load dataset", e);
-      this.unlockData = [];
+      this.unlockData = {};
     }
 
     this.render();
     this.renderItems();
   }
 
-  // Render main HTML
   render() {
     const apiKey = localStorage.getItem(STORAGE_KEYS.apiKey) || "";
 
     this.innerHTML = `
+      <style>
+        .group-title {
+          font-size: 1.5em;
+          font-weight: bold;
+          text-decoration: underline;
+          margin-top: 20px;
+        }
+
+        .category-title {
+          font-size: 1.2em;
+          font-weight: 600;
+          margin-top: 12px;
+        }
+
+        .type-title {
+          font-size: 1em;
+          font-weight: 500;
+          margin-top: 8px;
+        }
+
+        .grid {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 8px;
+          margin: 6px 0 10px 0;
+        }
+
+        .item {
+          width: 80px;
+          text-align: center;
+          opacity: 0.4;
+        }
+
+        .item.unlocked {
+          opacity: 1;
+        }
+
+        .item img {
+          width: 64px;
+          height: 64px;
+        }
+      </style>
+
       <div class="controls">
         API Key:
         <input id="apikey" value="${apiKey}" size="60">
@@ -44,17 +85,14 @@ class Gw2Unlocks extends HTMLElement {
         <button id="refresh">Refresh API Data</button>
         <span id="status"></span>
       </div>
-      <h2>Minis</h2>
-      <div id="minis" class="group"></div>
-      <h2>Skins</h2>
-      <div id="skins" class="group"></div>
+
+      <div id="content"></div>
     `;
 
     this.querySelector<HTMLButtonElement>("#savekey")!.onclick = () => this.saveKey();
     this.querySelector<HTMLButtonElement>("#refresh")!.onclick = () => this.refreshApi();
   }
 
-  // Save API key
   saveKey() {
     const keyInput = this.querySelector<HTMLInputElement>("#apikey")!;
     const key = keyInput.value.trim();
@@ -62,45 +100,101 @@ class Gw2Unlocks extends HTMLElement {
     this.setStatus("API key saved");
   }
 
-  // Display status
   setStatus(msg: string) {
     const statusEl = this.querySelector<HTMLSpanElement>("#status")!;
     statusEl.innerText = msg;
   }
 
-  // Get stored unlocks from localStorage
   getStoredUnlocks(type: "minis" | "skins"): number[] {
     const data = localStorage.getItem(STORAGE_KEYS[type]);
     return data ? JSON.parse(data) : [];
   }
 
-  // Render unlock items
   renderItems() {
     const minisUnlocked = this.getStoredUnlocks("minis");
     const skinsUnlocked = this.getStoredUnlocks("skins");
 
-    const minisContainer = this.querySelector<HTMLDivElement>("#minis")!;
-    const skinsContainer = this.querySelector<HTMLDivElement>("#skins")!;
+    const container = this.querySelector<HTMLDivElement>("#content")!;
+    container.innerHTML = "";
 
-    const minis = this.unlockData.filter(i => i.unlock_type === "minis");
-    const skins = this.unlockData.filter(i => i.unlock_type === "skins");
+    const createItem = (unlock: any) => {
+      if (!unlock?.ApiData) return null;
 
-    minisContainer.innerHTML = minis.map(item => `
-      <div class="item ${minisUnlocked.includes(item.unlock_typeid) ? "unlocked" : ""}">
-        <img src="${item.icon}" alt="${item.name}">
-        <div>${item.name}</div>
-      </div>
-    `).join("");
+      const type = unlock.Node?.Type;
+      const id = unlock.ApiData.id;
+      const name = unlock.ApiData.name;
+      const icon = unlock.ApiData.icon;
 
-    skinsContainer.innerHTML = skins.map(item => `
-      <div class="item ${skinsUnlocked.includes(item.unlock_typeid) ? "unlocked" : ""}">
-        <img src="${item.icon}" alt="${item.name}">
-        <div>${item.name}</div>
-      </div>
-    `).join("");
+      const unlocked =
+        type === "Miniature"
+          ? minisUnlocked.includes(id)
+          : type === "Skin"
+          ? skinsUnlocked.includes(id)
+          : false;
+
+      return {
+        type,
+        html: `
+          <div class="item ${unlocked ? "unlocked" : ""}">
+            <img src="${icon}" alt="${name}">
+            <div>${name}</div>
+          </div>
+        `
+      };
+    };
+
+    const groupByType = (unlocks: any[]) => {
+      const result: Record<string, string> = {};
+
+      unlocks.forEach(u => {
+        const item = createItem(u);
+        if (!item) return;
+
+        if (!result[item.type]) result[item.type] = "";
+        result[item.type] += item.html;
+      });
+
+      return result;
+    };
+
+    const renderTypeSection = (title: string, content: string) => {
+      return `
+        <div class="type-title">${title}</div>
+        <div class="grid">${content}</div>
+      `;
+    };
+
+    this.unlockData.UnlockGroups?.forEach((group: any) => {
+      let groupHTML = `<div class="group-title">${group.Name}</div>`;
+
+      group.UnlockCategories?.forEach((cat: any) => {
+        const grouped = groupByType(cat.Unlocks || []);
+
+        let categoryHTML = `<div class="category-title">${cat.Name}</div>`;
+
+        if (grouped["Skin"]) {
+          categoryHTML += renderTypeSection("Skins", grouped["Skin"]);
+        }
+
+        if (grouped["Miniature"]) {
+          categoryHTML += renderTypeSection("Miniatures", grouped["Miniature"]);
+        }
+
+        if (grouped["Novelty"]) {
+          categoryHTML += renderTypeSection("Novelties", grouped["Novelty"]);
+        }
+
+        if (grouped["Achievement"]) {
+          categoryHTML += renderTypeSection("Achievements", grouped["Achievement"]);
+        }
+
+        groupHTML += categoryHTML;
+      });
+
+      container.innerHTML += groupHTML;
+    });
   }
 
-  // Refresh API data
   async refreshApi() {
     const last = localStorage.getItem(STORAGE_KEYS.lastRefresh);
     if (last && Date.now() - parseInt(last) < REFRESH_COOLDOWN) {
