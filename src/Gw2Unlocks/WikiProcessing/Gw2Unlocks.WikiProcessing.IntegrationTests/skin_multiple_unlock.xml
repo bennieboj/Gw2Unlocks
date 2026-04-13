@@ -1,0 +1,208 @@
+<mediawiki xmlns="http://www.mediawiki.org/xml/export-0.11/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mediawiki.org/xml/export-0.11/ http://www.mediawiki.org/xml/export-0.11.xsd" version="0.11" xml:lang="en">
+  <siteinfo>
+    <sitename>Guild Wars 2 Wiki</sitename>
+    <dbname>en_wikidb_gw2</dbname>
+    <base>https://wiki.guildwars2.com/wiki/Main_Page</base>
+    <generator>MediaWiki 1.39.17</generator>
+    <case>first-letter</case>
+    <namespaces>
+      <namespace key="-2" case="first-letter">Media</namespace>
+      <namespace key="-1" case="first-letter">Special</namespace>
+      <namespace key="0" case="first-letter" />
+      <namespace key="1" case="first-letter">Talk</namespace>
+      <namespace key="2" case="first-letter">User</namespace>
+      <namespace key="3" case="first-letter">User talk</namespace>
+      <namespace key="4" case="first-letter">Guild Wars 2 Wiki</namespace>
+      <namespace key="5" case="first-letter">Guild Wars 2 Wiki talk</namespace>
+      <namespace key="6" case="first-letter">File</namespace>
+      <namespace key="7" case="first-letter">File talk</namespace>
+      <namespace key="8" case="first-letter">MediaWiki</namespace>
+      <namespace key="9" case="first-letter">MediaWiki talk</namespace>
+      <namespace key="10" case="first-letter">Template</namespace>
+      <namespace key="11" case="first-letter">Template talk</namespace>
+      <namespace key="12" case="first-letter">Help</namespace>
+      <namespace key="13" case="first-letter">Help talk</namespace>
+      <namespace key="14" case="first-letter">Category</namespace>
+      <namespace key="15" case="first-letter">Category talk</namespace>
+      <namespace key="102" case="first-letter">Property</namespace>
+      <namespace key="103" case="first-letter">Property talk</namespace>
+      <namespace key="106" case="first-letter">Form</namespace>
+      <namespace key="107" case="first-letter">Form talk</namespace>
+      <namespace key="108" case="first-letter">Concept</namespace>
+      <namespace key="109" case="first-letter">Concept talk</namespace>
+      <namespace key="112" case="first-letter">smw/schema</namespace>
+      <namespace key="113" case="first-letter">smw/schema talk</namespace>
+      <namespace key="114" case="first-letter">Rule</namespace>
+      <namespace key="115" case="first-letter">Rule talk</namespace>
+      <namespace key="200" case="first-letter">ArenaNet</namespace>
+      <namespace key="201" case="first-letter">ArenaNet talk</namespace>
+      <namespace key="202" case="first-letter">API</namespace>
+      <namespace key="203" case="first-letter">API talk</namespace>
+      <namespace key="274" case="first-letter">Widget</namespace>
+      <namespace key="275" case="first-letter">Widget talk</namespace>
+    </namespaces>
+  </siteinfo>
+  <page>
+    <title>Acclaimed Militia Chestpiece Skin</title>
+    <ns>0</ns>
+    <id>386156</id>
+    <revision>
+      <id>3111066</id>
+      <parentid>2927664</parentid>
+      <timestamp>2026-02-24T22:50:36Z</timestamp>
+      <contributor>
+        <username>Chieftain Alex</username>
+        <id>28878</id>
+      </contributor>
+      <minor/>
+      <origin>3111066</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="1071" sha1="o2ufkig0fmplhwv8buxdrp69myxk0pd" xml:space="preserve">{{Item infobox
+| icon = Acclaimed Militia Chestpiece.png
+| description = Double-click to apply this appearance to your current chest [[armor]]. This will unlock the skin in your [[wardrobe]].
+| type = armor skin
+| skin type = Chest
+| skin = Acclaimed Militia Chestpiece (heavy skin); Acclaimed Militia Chestpiece (medium skin); Acclaimed Militia Chestpiece (light skin)
+| rarity = Masterwork
+| bound = Account
+| id = 103616
+| gallery1 = Acclaimed Militia Chestpiece.jpg
+| gallery2 = Acclaimed Militia Chestpiece back.jpg
+}}
+
+== Acquisition ==
+=== Sold by ===
+{{Sold by}}
+
+=== Contained in ===
+{{contained in}}
+
+== Gallery ==
+&lt;gallery&gt;
+Black Lion Chest (Shrouded Verdant Chest) banner.jpg|Gem Store banner.
+Acclaimed Militia Chestpiece Skin promo.jpg|Promo screenshot.
+&lt;/gallery&gt;
+
+== Notes ==
+* This skin has four [[dye]] channels.
+
+== See also ==
+* [[Acclaimed Militia Leggings Skin]]
+
+[[Category:Black Lion Chest armor skins]]
+[[de:Skin für Preisgekrönter Miliz-Brustschutz]]
+[[es:Diseño de cota de milicia aclamada]]
+[[fr:Apparence de plastron de milicien acclamé]]</text>
+      <sha1>o2ufkig0fmplhwv8buxdrp69myxk0pd</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Acclaimed Militia Chestpiece (medium skin)</title>
+    <ns>0</ns>
+    <id>386158</id>
+    <revision>
+      <id>3077086</id>
+      <parentid>2877957</parentid>
+      <timestamp>2025-12-14T20:38:43Z</timestamp>
+      <contributor>
+        <username>AWB Alex</username>
+        <id>102516</id>
+      </contributor>
+      <minor/>
+      <comment>/* top */ +Fixing parameter.</comment>
+      <origin>3077086</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="560" sha1="bv8ckdr4od45aku2wvczh74g1ctrluk" xml:space="preserve">{{otheruses|the [[skin]] unlocked in the [[wardrobe]]|the consumable item|Acclaimed Militia Chestpiece Skin}}
+{{Skin infobox
+| name = Acclaimed Militia Chestpiece
+| icon = Acclaimed Militia Chestpiece.png
+| class = Medium 
+| type = Chest
+| dye channels = 4
+| id = 12596
+| acquisition = Obtained from Black Lion Chests or Black Lion Chest Merchants using Black Lion Statuettes.
+| gallery1 = Acclaimed Militia Chestpiece.jpg
+}}
+
+[[Acclaimed Militia Chestpiece (medium skin)|Acclaimed Militia Chestpiece]] is a [[chest]] [[skin]].
+
+== Acquisition ==
+{{skin list}}</text>
+      <sha1>bv8ckdr4od45aku2wvczh74g1ctrluk</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Acclaimed Militia Chestpiece (light skin)</title>
+    <ns>0</ns>
+    <id>386159</id>
+    <revision>
+      <id>3077087</id>
+      <parentid>2870913</parentid>
+      <timestamp>2025-12-14T20:38:45Z</timestamp>
+      <contributor>
+        <username>AWB Alex</username>
+        <id>102516</id>
+      </contributor>
+      <minor/>
+      <comment>/* top */ +Fixing parameter.</comment>
+      <origin>3077087</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="558" sha1="rgyg8458a4xxxfzae2ev7yk6f5cvakh" xml:space="preserve">{{otheruses|the [[skin]] unlocked in the [[wardrobe]]|the consumable item|Acclaimed Militia Chestpiece Skin}}
+{{Skin infobox
+| name = Acclaimed Militia Chestpiece
+| icon = Acclaimed Militia Chestpiece.png
+| class = Light 
+| type = Chest
+| dye channels = 4
+| id = 12587
+| acquisition = Obtained from Black Lion Chests or Black Lion Chest Merchants using Black Lion Statuettes.
+| gallery1 = Acclaimed Militia Chestpiece.jpg
+}}
+
+[[Acclaimed Militia Chestpiece (light skin)|Acclaimed Militia Chestpiece]] is a [[chest]] [[skin]].
+
+== Acquisition ==
+{{skin list}}</text>
+      <sha1>rgyg8458a4xxxfzae2ev7yk6f5cvakh</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Acclaimed Militia Chestpiece (heavy skin)</title>
+    <ns>0</ns>
+    <id>386157</id>
+    <revision>
+      <id>3077088</id>
+      <parentid>2870911</parentid>
+      <timestamp>2025-12-14T20:38:46Z</timestamp>
+      <contributor>
+        <username>AWB Alex</username>
+        <id>102516</id>
+      </contributor>
+      <minor/>
+      <comment>/* top */ +Fixing parameter.</comment>
+      <origin>3077088</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="557" sha1="dudtsg9gaxi110xvqjqxzprmytlg93c" xml:space="preserve">{{otheruses|the [[skin]] unlocked in the [[wardrobe]]|the consumable item|Acclaimed Militia Chestpiece Skin}}
+{{Skin infobox
+| name = Acclaimed Militia Chestpiece
+| icon = Acclaimed Militia Chestpiece.png
+| class = Heavy
+| type = Chest
+| dye channels = 4
+| id = 12583
+| acquisition = Obtained from Black Lion Chests or Black Lion Chest Merchants using Black Lion Statuettes.
+| gallery1 = Acclaimed Militia Chestpiece.jpg
+}}
+
+[[Acclaimed Militia Chestpiece (heavy skin)|Acclaimed Militia Chestpiece]] is a [[chest]] [[skin]].
+
+== Acquisition ==
+{{skin list}}</text>
+      <sha1>dudtsg9gaxi110xvqjqxzprmytlg93c</sha1>
+    </revision>
+  </page>
+</mediawiki>

@@ -18,7 +18,7 @@ public static class AsyncEnumerableExtensions
 {
     public static async Task<Collection<T>> ToCollectionAsync<T>(
         this IAsyncEnumerable<T> source,
-        CancellationToken cancellationToken = default)
+        CancellationToken cancellationToken)
     {
         ArgumentNullException.ThrowIfNull(source);
 

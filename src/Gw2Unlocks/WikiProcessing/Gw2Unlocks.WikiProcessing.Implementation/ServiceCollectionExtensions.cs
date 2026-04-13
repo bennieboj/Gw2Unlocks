@@ -7,7 +7,7 @@ public static class ServiceCollectionExtensions
 {
     public static IServiceCollection AddWikiGraphSource(this IServiceCollection services)
     {
-        services.AddSingleton<IGw2WikiGraphSource, Gw2WikiGraphSource>();
+        services.AddSingleton<IGw2WikiProcessingSource, Gw2WikiProcessingSource>();
         return services;
     }
 

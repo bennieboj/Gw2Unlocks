@@ -1,13 +1,12 @@
 ﻿using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using System;
-using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace Gw2Unlocks.WikiProcessing.Implementation;
 
-internal sealed class UpdaterService(ILogger<BackgroundService> logger, IGw2WikiGraphSource graphSource, IGw2WikiGraphCache graphCache) : BackgroundService
+internal sealed class UpdaterService(ILogger<BackgroundService> logger, IGw2WikiProcessingSource graphSource, IGw2WikiProcessingCache graphCache) : BackgroundService
 {
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
@@ -16,6 +15,8 @@ internal sealed class UpdaterService(ILogger<BackgroundService> logger, IGw2Wiki
         {
             var graph = await graphSource.GetAcquisitionGraph(stoppingToken);
             await graphCache.SaveAcquisitionGraphToCacheAsync(graph, stoppingToken);
+            var zoneData = await graphSource.GetZoneData(stoppingToken);
+            await graphCache.SaveZoneDataToCacheAsync(zoneData, stoppingToken);
         }
         catch (OperationCanceledException)
         {

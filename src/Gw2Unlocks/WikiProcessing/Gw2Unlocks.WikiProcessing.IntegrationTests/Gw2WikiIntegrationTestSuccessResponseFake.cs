@@ -12,12 +12,12 @@ namespace Gw2Unlocks.WikiProcessing.IntegrationTests
     {
         internal required string FileName { get; set; } = string.Empty;
 
-        public Task<Collection<string>> GetAllPages(CancellationToken cancellationToken = default)
+        public Task<Collection<string>> GetAllPages(CancellationToken cancellationToken)
         {
             throw new NotImplementedException();
         }
 
-        public async Task<string?> GetSinglePage(string title, CancellationToken cancellationToken = default)
+        public async Task<string?> GetSinglePage(string title, CancellationToken cancellationToken)
         {
             ArgumentException.ThrowIfNullOrWhiteSpace(title);
             await foreach (var page in StreamAllPages(cancellationToken))
@@ -36,7 +36,7 @@ namespace Gw2Unlocks.WikiProcessing.IntegrationTests
             throw new NotImplementedException();
         }
 
-        public IAsyncEnumerable<string> StreamAllPages(CancellationToken cancellationToken = default)
+        public IAsyncEnumerable<string> StreamAllPages(CancellationToken cancellationToken)
         {
             return StreamFromFileAsyncEnumerable(
                 FileName,
@@ -44,7 +44,7 @@ namespace Gw2Unlocks.WikiProcessing.IntegrationTests
                 cancellationToken);
         }
 
-        public Task StreamPagesToCacheAsync(IAsyncEnumerable<string> pages, CancellationToken cancellationToken = default)
+        public Task StreamPagesToCacheAsync(IAsyncEnumerable<string> pages, CancellationToken cancellationToken)
         {
             throw new NotImplementedException();
         }

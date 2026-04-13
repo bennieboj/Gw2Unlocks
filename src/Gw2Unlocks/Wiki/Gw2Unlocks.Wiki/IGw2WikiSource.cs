@@ -6,7 +6,7 @@ namespace Gw2Unlocks.Wiki;
 
 public interface IGw2WikiSource
 {
-    IAsyncEnumerable<string> StreamAllPages(CancellationToken cancellationToken = default);
+    IAsyncEnumerable<string> StreamAllPages(CancellationToken cancellationToken);
 
-    Task<string?> GetSinglePage(string title, CancellationToken cancellationToken = default);
+    Task<string?> GetSinglePage(string title, CancellationToken cancellationToken);
 }

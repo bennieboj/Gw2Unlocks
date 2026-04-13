@@ -1,10 +1,9 @@
-﻿using System.Collections.Generic;
-using System.Threading;
+﻿using System.Threading;
 using System.Threading.Tasks;
 
 namespace Gw2Unlocks.UnlockClassifier;
 
 public interface IClassifier
 {
-    Task<ClassifyConfig> ClassifyUnlocks(string? unlockToLookup = null, CancellationToken cancellationToken = default);
+    Task<ClassifyConfig> ClassifyUnlocks(CancellationToken cancellationToken, string? unlockToLookup = null);
 }

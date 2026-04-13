@@ -22,7 +22,7 @@ internal sealed class Gw2WikiCache(CachePaths cachePaths)
     // =============================
     public async IAsyncEnumerable<string> StreamAllPages(
         [System.Runtime.CompilerServices.EnumeratorCancellation]
-        CancellationToken cancellationToken = default)
+        CancellationToken cancellationToken)
     {
         var files = Directory
             .EnumerateFiles(CacheFolder, $"{WikiBulkPrefix}*{WikiBulkExtension}")
@@ -40,7 +40,7 @@ internal sealed class Gw2WikiCache(CachePaths cachePaths)
         }
     }
 
-    public async Task<string?> GetSinglePage(string title, CancellationToken cancellationToken = default)
+    public async Task<string?> GetSinglePage(string title, CancellationToken cancellationToken)
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(title);
         await foreach (var page in StreamAllPages(cancellationToken))
@@ -59,7 +59,7 @@ internal sealed class Gw2WikiCache(CachePaths cachePaths)
     // =============================
     public async Task StreamPagesToCacheAsync(
         IAsyncEnumerable<string> pages,
-        CancellationToken cancellationToken = default)
+        CancellationToken cancellationToken)
     {
         foreach (var file in Directory.EnumerateFiles(CacheFolder, $"{WikiBulkPrefix}*{WikiBulkExtension}"))
         {

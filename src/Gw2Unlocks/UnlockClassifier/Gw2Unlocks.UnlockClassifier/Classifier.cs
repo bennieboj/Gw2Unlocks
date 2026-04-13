@@ -1,79 +1,26 @@
 ﻿using GuildWars2.Hero.Achievements;
+using GuildWars2.Hero.Achievements.Rewards;
 using GuildWars2.Hero.Achievements.Titles;
 using GuildWars2.Hero.Equipment.Miniatures;
 using GuildWars2.Hero.Equipment.Novelties;
 using GuildWars2.Hero.Equipment.Wardrobe;
 using GuildWars2.Items;
-using GuildWars2.Pve.Home.Nodes;
 using Gw2Unlocks.Api;
 using Gw2Unlocks.WikiProcessing;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using static Gw2Unlocks.UnlockClassifier.ClassifyConfigExtensions;
 
 namespace Gw2Unlocks.UnlockClassifier;
 
-public record ClassifyConfig(Collection<UnlockGroup> UnlockGroups) {
-}
-public record UnlockGroup(string Name, Collection<UnlockCategory> UnlockCategories)
-{
-    public Collection<Unlock> Unlocks { get; init; } = new();
-}
-public record UnlockCategory(string Name, Collection<UnlockCriteria> UnlockCriteria)
-{
-    public Collection<Unlock> Unlocks { get; init; } = new();
-}
-
-public class Unlock(string name, WikiProcessing.Node node)
-{
-    public string Name { get; set; } = name;
-    public WikiProcessing.Node Node { get; set; } = node;
-    public object? ApiData { get; set; }
-}
-
-public abstract class UnlockCriteria
-{
-    public abstract bool Matches(object unlock);
-}
-
-class NoOpCriteria : UnlockCriteria
-{
-    public override bool Matches(object unlock)
-    {
-        return false;
-    }
-}
-
-class ZoneCriteria(string ZoneName) : UnlockCriteria
-{
-    public override bool Matches(object unlock)
-    {
-        var name = unlock.ToString();
-        return string.Equals(
-            name,
-            ZoneName,
-            StringComparison.OrdinalIgnoreCase);
-    }
-}
-
-
-
-class CurrencyCriteria(string CurrencyName) : UnlockCriteria
-{
-    public override bool Matches(object cost)
-    {
-        var costString = cost.ToString() ?? throw new ArgumentException("Cost must be convertible to string", nameof(cost));
-        return costString.Contains(
-            CurrencyName,
-            StringComparison.OrdinalIgnoreCase);
-    }
-}
-
-public class Classifier(IGw2ApiSource apiSource, IGw2WikiGraphSource wikigraphSource, ILogger<Classifier> logger) : IClassifier
+public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikigraphSource, ILogger<Classifier> logger) : IClassifier
 {
     private AcquisitionGraph? graph;
     private Collection<Miniature>? miniatures;
@@ -83,10 +30,9 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiGraphSource wikigraphSo
     private Collection<Title>? titles;
     private Collection<Novelty>? novelties;
 
-
     private static readonly ClassifyConfig classifyConfig = new(
         [
-            new UnlockGroup("Heart of Thorns",
+            new UnlockGroup("Heart of Thorns", [ new NoOpCriteria() ],
             [
                 new UnlockCategory("Verdant Brink", [ new ZoneCriteria("Verdant Brink"), new CurrencyCriteria("Airship Part") ]),
                 new UnlockCategory("Auric Basin", [ new ZoneCriteria("Auric Basin"), new CurrencyCriteria("Lump of Aurillium") ]),
@@ -94,7 +40,7 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiGraphSource wikigraphSo
                 new UnlockCategory("Dragon's Stand", [ new ZoneCriteria("Dragon's Stand") ]),
             ]),
 
-            new UnlockGroup("Path of Fire",
+            new UnlockGroup("Path of Fire", [ new NoOpCriteria() ],
             [
                 new UnlockCategory("Crystal Oasis", [ new ZoneCriteria("Crystal Oasis") ]),
                 new UnlockCategory("Desert Highlands", [ new ZoneCriteria("Desert Highlands") ]),
@@ -103,7 +49,7 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiGraphSource wikigraphSo
                 new UnlockCategory("Domain of Vabbi", [ new ZoneCriteria("Domain of Vabbi") ]),
             ]),
 
-            new UnlockGroup("End of Dragons",
+            new UnlockGroup("End of Dragons", [ new NoOpCriteria() ],
             [
                 new UnlockCategory("Seitung Province", [ new ZoneCriteria("Seitung Province") ]),
                 new UnlockCategory("New Kaineng City", [ new ZoneCriteria("New Kaineng City") ]),
@@ -113,7 +59,7 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiGraphSource wikigraphSo
                 new UnlockCategory("Gyala Delve", [ new ZoneCriteria("Gyala Delve") ]),
             ]),
 
-            new UnlockGroup("Secrets of the Obscure",
+            new UnlockGroup("Secrets of the Obscure", [ new NoOpCriteria() ],
             [
                 new UnlockCategory("Skywatch Archipelago", [ new ZoneCriteria("Skywatch Archipelago") ]),
                 new UnlockCategory("The Wizard's Tower", [ new ZoneCriteria("The Wizard's Tower") ]),
@@ -121,23 +67,23 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiGraphSource wikigraphSo
                 new UnlockCategory("Inner Nayos", [ new ZoneCriteria("Inner Nayos") ]),
             ]),
 
-            new UnlockGroup("Janthir Wilds",
+            new UnlockGroup("Janthir Wilds", [ new NoOpCriteria() ],
             [
                 new UnlockCategory("Lowland Shore", [ new ZoneCriteria("Lowland Shore") ]),
                 new UnlockCategory("Janthir Syntri", [ new ZoneCriteria("Janthir Syntri") ]),
             ]),
-            new UnlockGroup("LW Season 1",
+            new UnlockGroup("LW Season 1", [ new NoOpCriteria() ],
             [
                 new UnlockCategory("Season 1", [ new NoOpCriteria() ]),
             ]),
 
-            new UnlockGroup("LW Season 2",
+            new UnlockGroup("LW Season 2", [ new NoOpCriteria() ],
             [
                 new UnlockCategory("Dry Top", [ new ZoneCriteria("Dry Top") ]),
                 new UnlockCategory("The Silverwastes", [ new ZoneCriteria("The Silverwastes") ]),
             ]),
 
-            new UnlockGroup("LW Season 3",
+            new UnlockGroup("LW Season 3", [ new NoOpCriteria() ],
             [
                 new UnlockCategory("Bloodstone Fen", [ new ZoneCriteria("Bloodstone Fen") ]),
                 new UnlockCategory("Ember Bay", [ new ZoneCriteria("Ember Bay") ]),
@@ -147,7 +93,7 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiGraphSource wikigraphSo
                 new UnlockCategory("Siren's Landing", [ new ZoneCriteria("Siren's Landing") ]),
             ]),
 
-            new UnlockGroup("LW Season 4",
+            new UnlockGroup("LW Season 4", [ new NoOpCriteria() ],
             [
                 new UnlockCategory("Domain of Istan", [ new ZoneCriteria("Domain of Istan") ]),
                 new UnlockCategory("Sandswept Isles", [ new ZoneCriteria("Sandswept Isles") ]),
@@ -157,14 +103,14 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiGraphSource wikigraphSo
                 new UnlockCategory("Dragonfall", [ new ZoneCriteria("Dragonfall") ]),
             ]),
 
-            new UnlockGroup("Icebrood Saga",
+            new UnlockGroup("Icebrood Saga", [ new NoOpCriteria() ],
             [
                 new UnlockCategory("Grothmar Valley", [ new ZoneCriteria("Grothmar Valley") ]),
                 new UnlockCategory("Bjora Marches", [ new ZoneCriteria("Bjora Marches") ]),
                 new UnlockCategory("Drizzlewood Coast", [ new ZoneCriteria("Drizzlewood Coast") ]),
             ]),
 
-            new UnlockGroup("Dungeons",
+            new UnlockGroup("Dungeons", [ new NoOpCriteria() ],
             [
                 new UnlockCategory("Ascalonian Catacombs", [ new NoOpCriteria() ]),
                 new UnlockCategory("Caudecus's Manor", [ new NoOpCriteria() ]),
@@ -176,7 +122,7 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiGraphSource wikigraphSo
                 new UnlockCategory("The Ruined City of Arah", [ new NoOpCriteria() ]),
             ]),
 
-            new UnlockGroup("Raid Encounters",
+            new UnlockGroup("Raid Encounters", [ new NoOpCriteria() ],
             [
                 new UnlockCategory("Old Lion's Court", [ new NoOpCriteria() ]),
                 new UnlockCategory("Shiverpeaks Pass", [ new NoOpCriteria() ]),
@@ -195,7 +141,7 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiGraphSource wikigraphSo
                 new UnlockCategory("Guardian's Glade", [ new NoOpCriteria() ]),
             ]),
 
-            new UnlockGroup("Raids",
+            new UnlockGroup("Raids", [ new NoOpCriteria() ],
             [
                 new UnlockCategory("Spirit Vale", [ new NoOpCriteria() ]),
                 new UnlockCategory("Salvation Pass", [ new NoOpCriteria() ]),
@@ -206,23 +152,23 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiGraphSource wikigraphSo
                 new UnlockCategory("The Key of Ahdashim", [ new NoOpCriteria() ]),
             ]),
 
-            new UnlockGroup("PvP / WvW",
+            new UnlockGroup("PvP / WvW", [ new NoOpCriteria() ],
             [
                 new UnlockCategory("PvP", [ new NoOpCriteria() ]),
                 new UnlockCategory("WvW", [ new NoOpCriteria() ]),
             ]),
 
-            new UnlockGroup("Festivals",
+            new UnlockGroup("Festivals", [ new NoOpCriteria() ],
             [
                 new UnlockCategory("Lunar New Year", [ new NoOpCriteria() ]),
                 new UnlockCategory("Super Adventure Box", [ new NoOpCriteria() ]),
                 new UnlockCategory("Dragon Bash", [ new NoOpCriteria() ]),
                 new UnlockCategory("Festival of the Four Winds", [ new NoOpCriteria() ]),
                 new UnlockCategory("Halloween", [ new NoOpCriteria() ]),
-                new UnlockCategory("Wintersday", [ new NoOpCriteria() ]),
+                new UnlockCategory("Wintersday", [ new TokenCriteria("Snow Diamond") ]),
             ]),
 
-            new UnlockGroup("Cities",
+            new UnlockGroup("Cities", [ new NoOpCriteria() ],
             [
                 new UnlockCategory("Divinity's Reach", [ new NoOpCriteria() ]),
                 new UnlockCategory("The Grove", [ new NoOpCriteria() ]),
@@ -233,7 +179,7 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiGraphSource wikigraphSo
                 new UnlockCategory("Eye of the North", [ new NoOpCriteria() ]),
             ]),
 
-            new UnlockGroup("Other",
+            new UnlockGroup("Other", [ new NoOpCriteria() ],
             [
                 new UnlockCategory("Elite Specializations", [ new NoOpCriteria() ]),
                 new UnlockCategory("Guild", [ new NoOpCriteria() ]),
@@ -249,25 +195,29 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiGraphSource wikigraphSo
             ]),
         ]
     );
+    private static readonly IEnumerable<UnlockCriteriaContext<TokenCriteria>> tokenCriteria = classifyConfig.GetUnlockCriteriaWithContext<TokenCriteria>();
 
-    //private readonly Dictionary<string, Collection<string>> _linkAchievementCategoryTo = new()
-    //{
-    //        { "Verdant Brink", new Collection<string> { "Airship Part" } },
-    //        { "Auric Basin", new Collection<string> { "Lump of Aurillium" } }
-    //};
-
-    public async Task<ClassifyConfig> ClassifyUnlocks(string? unlockToLookup = null, CancellationToken cancellationToken = default)
+    public async Task<ClassifyConfig> ClassifyUnlocks(CancellationToken cancellationToken, string? unlockToLookup = null)
     {
+        Stopwatch sw = Stopwatch.StartNew();
         await Init(cancellationToken);
+        logger.LogInformation("Initialization completed in {elapsed} ms", sw.ElapsedMilliseconds);
 
         var nodes = graph!.Nodes.ToList();
         if(unlockToLookup != null)
         {
-            nodes = nodes.Where(n => n.Key.Equals(unlockToLookup, StringComparison.OrdinalIgnoreCase)).ToList();
+            nodes = [.. nodes.Where(n => n.Key.Equals(unlockToLookup, StringComparison.OrdinalIgnoreCase))];
         }
 
+        int i = 0;
         foreach (var (key, node) in nodes)
         {
+            if (cancellationToken.IsCancellationRequested)
+            {
+                logger.LogWarning("Cancellation requested, returning partial result.");
+                break;
+            }
+
             if (!ShouldClassify(node))
             {
                 logger.LogDebug("Skipping {key} ({type})", key, node.Type);
@@ -276,18 +226,24 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiGraphSource wikigraphSo
             logger.LogInformation("Finding {key} ({type})", key, node.Type);
 
             await ClassifyUnlock(key);
+
+            i++;
+            logger.LogInformation("{progress}/{total}", i, nodes.Count);
         }
 
         foreach(var group in classifyConfig.UnlockGroups)
         {
-            //logger.LogInformation("Group: {groupName}", group.Name);
+
+            logger.LogInformation("Group: {groupName} ({unlockCount} unlocks)", group.Name, group.Unlocks.Count);
             foreach (var unlock in group.Unlocks)
             {
+                var apidata = GetApiData(unlock.Node, unlock.Name);
+                unlock.ApiData = apidata;
                 //logger.LogInformation("    Unlock: {unlockName} ({unlockType})", unlock.Name, unlock.Node.Type);
             }
             foreach (var category in group.UnlockCategories)
             {
-                //logger.LogInformation("  Category: {categoryName} ({unlockCount} unlocks)", category.Name, category.Unlocks.Count);
+                logger.LogInformation("  Category: {categoryName} ({unlockCount} unlocks)", category.Name, category.Unlocks.Count);
                 foreach (var unlock in category.Unlocks)
                 {
                     var apidata = GetApiData(unlock.Node, unlock.Name);
@@ -303,7 +259,7 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiGraphSource wikigraphSo
 
     private async Task<ClassifyConfig> ClassifyUnlock(string unlock)
     {
-        var result = FindZoneOrCity(graph!, unlock);
+        var result = Classify(graph!, unlock);
         if (result != null)
         {
             var zone = result.Value;
@@ -330,10 +286,20 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiGraphSource wikigraphSo
         novelties ??= await apiSource.GetNoveltiesAsync(cancellationToken);
     }
 
-    private static bool ShouldClassify(WikiProcessing.Node node) =>
+    private static bool ShouldClassify(Node node) =>
     node switch
     {
-        { Type: NodeType.Skin } => true,
+        { 
+            Type: NodeType.Skin,
+            Metadata: var metadata
+        } when metadata.TryGetValue("type", out var type) &&
+               (
+                   !type.Equals("Fishing Rod", StringComparison.OrdinalIgnoreCase) &&
+                   !type.Equals("Mining", StringComparison.OrdinalIgnoreCase) &&
+                   !type.Equals("Logging", StringComparison.OrdinalIgnoreCase) &&
+                   !type.Equals("Foraging", StringComparison.OrdinalIgnoreCase)
+               )
+            => true,
         {
             Type: NodeType.Item,
             Metadata: var metadata
@@ -354,11 +320,16 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiGraphSource wikigraphSo
         //"Halloween Vendor",
         //"Hooligan's Route",
         //"Lion's Arch",
+        "Mini Foostivoo the Merry",
         "Mini Exalted Sage",
         "Exalted Mastery Vendor",
         "Noble Ledges",
         "Verdant Brink",
         "Noble's Folly",
+        "Zinn's Stash",
+        "Glob of Ectoplasm",
+        "Bladed Helmet (skin)",
+        "Adam"
         //"Tarir, the Forgotten City",
         //"Auric Basin",
         //"Axe of the Dragon's Deep",
@@ -370,60 +341,38 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiGraphSource wikigraphSo
     {
         public string Key { get; init; } = default!;
         public string? Cost { get; init; } // store raw cost string
+        public EdgeType? IncomingEdgeType { get; init; }
     }
 
-    private static bool IsValidForZone(string zone, SearchState? searchState, string startKey, WikiProcessing.Node startNode)
+    private object? GetApiData(Node node, string startKey)
     {
-        // Find the category whose ZoneCriteria matches this zone
-        foreach (var group in classifyConfig.UnlockGroups)
+        if(miniatures == null || skins == null || achievements == null)
         {
-            foreach (var category in group.UnlockCategories)
-            {
-                // Does the category have a ZoneCriteria that matches this zone?
-                var hasZone = category.UnlockCriteria
-                    .OfType<ZoneCriteria>()
-                    .Any(z => z.Matches(zone));
-
-                if (!hasZone)
-                    continue;
-
-
-                // Does the category have a CurrencyCriteria that matches this currency?
-                var validCurrencies = category.UnlockCriteria
-                    .OfType<CurrencyCriteria>().ToList();
-
-                var cost = searchState?.Cost;
-                if (cost == null || validCurrencies.Count == 0 || validCurrencies.Any(c => c.Matches(cost)))
-                {
-                    category.Unlocks.Add(new Unlock(startKey, startNode));
-                    return true;
-                }
-
-                return false; // zone matched but currency didn't
-            }
+            logger.LogWarning("API data not initialized when trying to get API data for {key} ({type})", startKey, node.Type);
+            return null;
         }
 
-        // No category found with matching zone
-        return false;
+        object? result = null;
+        if (node.Type == NodeType.Item && node.Metadata.TryGetValue("type", out var metadataType) && metadataType == "miniature"
+            && node.Metadata.TryGetValue("miniature id", out var miniId) && !string.IsNullOrEmpty(miniId) && int.TryParse(miniId, out var miniIdInt))
+        {
+            result = miniatures.Single(m => m.Id == miniIdInt); 
+        }
 
+        if (node.Type == NodeType.Skin && node.Metadata.TryGetValue("id", out var skinId) && !string.IsNullOrEmpty(skinId) && int.TryParse(skinId, out var skinIdInt))
+        {
+            result = skins.Single(i => i.Id == skinIdInt);
+        }
+
+        if (result == null)
+        {
+            logger.LogWarning("No API data found for {key} ({type})", startKey, node.Type);
+        }
+
+        return result;
     }
 
-    private object? GetApiData(WikiProcessing.Node node, string startKey)
-    {
-        if (node.Type == NodeType.Item && node.Metadata.TryGetValue("type", out var metadataType) && metadataType == "miniature")
-        {
-            return miniatures?.Single(m => m.Name == startKey); 
-        }
-
-        if (node.Type == NodeType.Skin)
-        {
-            return skins?.Single(i => i.Name == startKey.Replace("(skin)", "", StringComparison.InvariantCulture).Trim());
-        }
-
-        return null;
-    }
-
-    private (string Key, WikiProcessing.Node Node, List<string> Path)? FindZoneOrCity(
+    private (string Key, Node Node, List<string> Path)? Classify(
         AcquisitionGraph graph,
         string startKey)
     {
@@ -439,23 +388,30 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiGraphSource wikigraphSo
         queue.Enqueue(new SearchState
         {
             Key = startKey,
-            Cost = null
+            Cost = null,
+            IncomingEdgeType = null,
         });
         parent[startKey] = null;
 
         while (queue.Count > 0)
         {
-            var state = queue.Dequeue();
-            var currentKey = state.Key;
+            var searchState = queue.Dequeue();
+            var currentKey = searchState.Key;
             var current = graph.GetNode(currentKey);
 
-            if(debugtitles.Contains(currentKey) && false)
+            if(debugtitles.Contains(currentKey))
             {
-                logger.LogInformation("Visiting {key} ({type}) with cost {cost}", currentKey, current?.Type, state.Cost);
+                logger.LogInformation("Visiting {key} ({type}) with cost {cost}", currentKey, current?.Type, searchState.Cost);
             }
 
             if (current == null)
                 continue;
+
+            if (searchState.IncomingEdgeType == EdgeType.GatheredFrom 
+                && current.Type == NodeType.Gw2Object && current.Metadata.TryGetValue("type", out var objectType) && objectType != "chest")
+            {
+                continue;
+            }
 
             // When we reach a zone/city → validate cost
             if (current.Type == NodeType.Location &&
@@ -463,17 +419,89 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiGraphSource wikigraphSo
                 (value.Equals("Zone", StringComparison.OrdinalIgnoreCase) ||
                  value.Equals("City", StringComparison.OrdinalIgnoreCase)))
             {
-                if (IsValidForZone(currentKey, state, startKey, startNode))
+                var zone = currentKey;
+                foreach (var group in classifyConfig.UnlockGroups)
                 {
-                    var path = BuildPath(currentKey, parent);
-                    return (currentKey, current, path);
+                    foreach (var category in group.UnlockCategories)
+                    {
+                        // Does the category have a ZoneCriteria that matches this zone?
+                        var hasZone = category.UnlockCriteria
+                            .OfType<ZoneCriteria>()
+                            .Any(z => z.Matches(zone));
+
+                        if (!hasZone)
+                            continue;
+
+
+                        // Does the category have a CurrencyCriteria that matches this currency?
+                        var validCurrencies = category.UnlockCriteria
+                            .OfType<CurrencyCriteria>().ToList();
+
+                        var cost = searchState.Cost;
+                        if (cost == null || validCurrencies.Count == 0 || validCurrencies.Any(c => c.Matches(cost)))
+                        {
+
+                            var path = CategorizeAndBuildPath(group.Name, category.Name, startKey, startNode, currentKey, parent);
+                            return (currentKey, current, path);
+                        }
+                    }
                 }
             }
 
-            foreach (var edge in graph.Edges.Where(e => e.From == currentKey))
+            if(current.Type == NodeType.Item && current.Metadata.TryGetValue("id", out var itemId) && int.TryParse(itemId, out var itemIdInt)
+                && achievements != null)
             {
-                var nextCost = state.Cost;
+                var foundAchi = achievements.Where(a => a.Rewards != null && a.Rewards.OfType<ItemReward>().Any(ir => ir.Id == itemIdInt));
+                if(foundAchi.Any())
+                {
+                }
 
+            }
+
+            IEnumerable<Edge> edges = [.. graph.Edges.Where(e => e.From == currentKey)];
+
+            if(edges.Any(
+                e => e.Type == EdgeType.HasIngredient && e.Metadata != null
+                && 
+                    (e.Metadata.TryGetValue("discipline", out var discipline) && !string.IsNullOrWhiteSpace(discipline)
+                    || e.Metadata.TryGetValue("disciplines", out var disciplines) && !string.IsNullOrWhiteSpace(disciplines))
+                    )
+                )
+            {
+                var path = CategorizeAndBuildPath("Other", "Crafting", startKey, startNode, currentKey, parent);
+                return (currentKey, current, path);
+            }
+
+            var foundTokenCriteria = tokenCriteria.Where(c => edges.Any(e => c.Criteria.Matches(e.To))).ToList();
+            if (foundTokenCriteria.Count > 0)
+            {
+                foreach (var criteria in foundTokenCriteria)
+                {
+                    var groupName = criteria.Group?.Name;
+                    var categoryName = criteria.Category?.Name ?? "";
+                    var groupOfCategoryName = criteria.GroupOfCategoryName ?? "";
+                    if(groupName != null)
+                    {
+                        var path = CategorizeAndBuildPath(groupName, null, startKey, startNode, currentKey, parent);
+                        return (currentKey, current, path);
+                    }
+                    else
+                    {
+                        var path = CategorizeAndBuildPath(groupOfCategoryName, categoryName, startKey, startNode, currentKey, parent);
+                        return (currentKey, current, path);
+                    }
+                }
+            }
+
+            foreach (var edge in edges)
+            {
+                if (edge.Type == EdgeType.HasIngredient && edge.Metadata != null && edge.Metadata.TryGetValue("source", out var recipeSource) && recipeSource.Equals("mystic forge", StringComparison.OrdinalIgnoreCase))
+                {
+                    var path = CategorizeAndBuildPath("Other", "Mystic Forge", startKey, startNode, currentKey, parent);
+                    return (currentKey, current, path);
+                }
+
+                var nextCost = searchState.Cost;
                 // If SoldBy → capture cost
                 if (edge.Type == EdgeType.SoldBy &&
                     edge.Metadata != null && edge.Metadata.TryGetValue("cost", out var cost))
@@ -488,13 +516,39 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiGraphSource wikigraphSo
                     queue.Enqueue(new SearchState
                     {
                         Key = edge.To,
-                        Cost = nextCost
+                        Cost = nextCost,
+                        IncomingEdgeType = edge.Type
                     });
                 }
+            }
+
+            if (current.Type == NodeType.Weapon && current.Metadata.TryGetValue("IsNamedExoticWeapon", out var rarity) && rarity.Equals("true", StringComparison.OrdinalIgnoreCase))
+            {
+                var path = CategorizeAndBuildPath("Other", "General", startKey, startNode, currentKey, parent);
+                return (currentKey, current, path);
             }
         }
 
         return null;
+    }
+
+    private static List<string> CategorizeAndBuildPath(string groupName, string? categoryName, string startKkey, Node startNode, string currentKey, Dictionary<string, string?> parent)
+    {
+        categoryName ??= "";
+
+        var group = classifyConfig.UnlockGroups.Single(g => g.Name.Equals(groupName, StringComparison.Ordinal));
+        if (categoryName == null)
+        {
+            group.Unlocks.Add(new Unlock(startKkey, startNode));
+        }
+        else
+        {
+            var category = group.UnlockCategories.Single(c => c.Name.Equals(categoryName, StringComparison.Ordinal));
+            category.Unlocks.Add(new Unlock(startKkey, startNode));
+        }
+        var path = BuildPath(currentKey, parent);
+        path.Add($"{group.Name}:{categoryName}");
+        return path;
     }
 
     private static List<string> BuildPath(string endKey, Dictionary<string, string?> parent)

@@ -1,0 +1,2467 @@
+{
+    "UnlockGroups": [
+        {
+            "Name": "Heart of Thorns",
+            "UnlockCriteria": [
+                {}
+            ],
+            "UnlockCategories": [
+                {
+                    "Name": "Verdant Brink",
+                    "UnlockCriteria": [
+                        {},
+                        {}
+                    ],
+                    "Unlocks": []
+                },
+                {
+                    "Name": "Auric Basin",
+                    "UnlockCriteria": [
+                        {},
+                        {}
+                    ],
+                    "Unlocks": []
+                },
+                {
+                    "Name": "Tangled Depths",
+                    "UnlockCriteria": [
+                        {}
+                    ],
+                    "Unlocks": []
+                },
+                {
+                    "Name": "Dragon\u0027s Stand",
+                    "UnlockCriteria": [
+                        {}
+                    ],
+                    "Unlocks": []
+                }
+            ],
+            "Unlocks": []
+        },
+        {
+            "Name": "Path of Fire",
+            "UnlockCriteria": [
+                {}
+            ],
+            "UnlockCategories": [
+                {
+                    "Name": "Crystal Oasis",
+                    "UnlockCriteria": [
+                        {}
+                    ],
+                    "Unlocks": []
+                },
+                {
+                    "Name": "Desert Highlands",
+                    "UnlockCriteria": [
+                        {}
+                    ],
+                    "Unlocks": []
+                },
+                {
+                    "Name": "Elon Riverlands",
+                    "UnlockCriteria": [
+                        {}
+                    ],
+                    "Unlocks": []
+                },
+                {
+                    "Name": "The Desolation",
+                    "UnlockCriteria": [
+                        {}
+                    ],
+                    "Unlocks": []
+                },
+                {
+                    "Name": "Domain of Vabbi",
+                    "UnlockCriteria": [
+                        {}
+                    ],
+                    "Unlocks": []
+                }
+            ],
+            "Unlocks": []
+        },
+        {
+            "Name": "End of Dragons",
+            "UnlockCriteria": [
+                {}
+            ],
+            "UnlockCategories": [
+                {
+                    "Name": "Seitung Province",
+                    "UnlockCriteria": [
+                        {}
+                    ],
+                    "Unlocks": []
+                },
+                {
+                    "Name": "New Kaineng City",
+                    "UnlockCriteria": [
+                        {}
+                    ],
+                    "Unlocks": []
+                },
+                {
+                    "Name": "The Echovald Wilds",
+                    "UnlockCriteria": [
+                        {}
+                    ],
+                    "Unlocks": []
+                },
+                {
+                    "Name": "Arborstone",
+                    "UnlockCriteria": [
+                        {}
+                    ],
+                    "Unlocks": []
+                },
+                {
+                    "Name": "Dragon\u0027s End",
+                    "UnlockCriteria": [
+                        {}
+                    ],
+                    "Unlocks": []
+                },
+                {
+                    "Name": "Gyala Delve",
+                    "UnlockCriteria": [
+                        {}
+                    ],
+                    "Unlocks": []
+                }
+            ],
+            "Unlocks": []
+        },
+        {
+            "Name": "Secrets of the Obscure",
+            "UnlockCriteria": [
+                {}
+            ],
+            "UnlockCategories": [
+                {
+                    "Name": "Skywatch Archipelago",
+                    "UnlockCriteria": [
+                        {}
+                    ],
+                    "Unlocks": []
+                },
+                {
+                    "Name": "The Wizard\u0027s Tower",
+                    "UnlockCriteria": [
+                        {}
+                    ],
+                    "Unlocks": []
+                },
+                {
+                    "Name": "Amnytas",
+                    "UnlockCriteria": [
+                        {}
+                    ],
+                    "Unlocks": []
+                },
+                {
+                    "Name": "Inner Nayos",
+                    "UnlockCriteria": [
+                        {}
+                    ],
+                    "Unlocks": []
+                }
+            ],
+            "Unlocks": []
+        },
+        {
+            "Name": "Janthir Wilds",
+            "UnlockCriteria": [
+                {}
+            ],
+            "UnlockCategories": [
+                {
+                    "Name": "Lowland Shore",
+                    "UnlockCriteria": [
+                        {}
+                    ],
+                    "Unlocks": []
+                },
+                {
+                    "Name": "Janthir Syntri",
+                    "UnlockCriteria": [
+                        {}
+                    ],
+                    "Unlocks": []
+                }
+            ],
+            "Unlocks": []
+        },
+        {
+            "Name": "LW Season 1",
+            "UnlockCriteria": [
+                {}
+            ],
+            "UnlockCategories": [
+                {
+                    "Name": "Season 1",
+                    "UnlockCriteria": [
+                        {}
+                    ],
+                    "Unlocks": []
+                }
+            ],
+            "Unlocks": []
+        },
+        {
+            "Name": "LW Season 2",
+            "UnlockCriteria": [
+                {}
+            ],
+            "UnlockCategories": [
+                {
+                    "Name": "Dry Top",
+                    "UnlockCriteria": [
+                        {}
+                    ],
+                    "Unlocks": [
+                        {
+                            "Name": "Adventurer\u0027s Scarf (heavy skin)",
+                            "Node": {
+                                "Metadata": {
+                                    "name": "Adventurer\u0027s Scarf",
+                                    "icon": "Adventurer\u0027s Scarf.png",
+                                    "type": "Headgear",
+                                    "class": "heavy",
+                                    "id": "5482",
+                                    "dye channels": "1",
+                                    "gallery1": "Adventurer\u0027s Scarf.jpg"
+                                },
+                                "Type": "Skin",
+                                "IsProcessed": false
+                            },
+                            "ApiData": {
+                                "$type": "armor_skin",
+                                "$armor_skin_type": "helm_skin",
+                                "id": 5482,
+                                "name": "Adventurer\u0027s Scarf",
+                                "description": "",
+                                "flags": {
+                                    "hide_if_locked": false,
+                                    "no_cost": false,
+                                    "override_rarity": false,
+                                    "show_in_wardrobe": true,
+                                    "other": []
+                                },
+                                "races": [
+                                    "Asura",
+                                    "Charr",
+                                    "Human",
+                                    "Norn",
+                                    "Sylvari"
+                                ],
+                                "rarity": "Basic",
+                                "icon": "https://render.guildwars2.com/file/364CAB0FB673800ED57AF256291301E45AFDDE9D/831464.png",
+                                "weight_class": "Heavy",
+                                "dye_slots": {
+                                    "default": [
+                                        null,
+                                        null,
+                                        {
+                                            "color_id": 1,
+                                            "material": "cloth"
+                                        },
+                                        null
+                                    ],
+                                    "asura_female": null,
+                                    "asura_male": null,
+                                    "charr_female": null,
+                                    "charr_male": null,
+                                    "human_female": null,
+                                    "human_male": null,
+                                    "norn_female": null,
+                                    "norn_male": null,
+                                    "sylvari_female": null,
+                                    "sylvari_male": null
+                                }
+                            }
+                        },
+                        {
+                            "Name": "Adventurer\u0027s Scarf (light skin)",
+                            "Node": {
+                                "Metadata": {
+                                    "name": "Adventurer\u0027s Scarf",
+                                    "icon": "Adventurer\u0027s Scarf.png",
+                                    "type": "Headgear",
+                                    "class": "light",
+                                    "id": "5484",
+                                    "dye channels": "1",
+                                    "gallery1": "Adventurer\u0027s Scarf.jpg"
+                                },
+                                "Type": "Skin",
+                                "IsProcessed": false
+                            },
+                            "ApiData": {
+                                "$type": "armor_skin",
+                                "$armor_skin_type": "helm_skin",
+                                "id": 5484,
+                                "name": "Adventurer\u0027s Scarf",
+                                "description": "",
+                                "flags": {
+                                    "hide_if_locked": false,
+                                    "no_cost": false,
+                                    "override_rarity": false,
+                                    "show_in_wardrobe": true,
+                                    "other": []
+                                },
+                                "races": [
+                                    "Asura",
+                                    "Charr",
+                                    "Human",
+                                    "Norn",
+                                    "Sylvari"
+                                ],
+                                "rarity": "Basic",
+                                "icon": "https://render.guildwars2.com/file/364CAB0FB673800ED57AF256291301E45AFDDE9D/831464.png",
+                                "weight_class": "Light",
+                                "dye_slots": {
+                                    "default": [
+                                        null,
+                                        null,
+                                        {
+                                            "color_id": 15,
+                                            "material": "cloth"
+                                        },
+                                        null
+                                    ],
+                                    "asura_female": null,
+                                    "asura_male": null,
+                                    "charr_female": null,
+                                    "charr_male": null,
+                                    "human_female": null,
+                                    "human_male": null,
+                                    "norn_female": null,
+                                    "norn_male": null,
+                                    "sylvari_female": null,
+                                    "sylvari_male": null
+                                }
+                            }
+                        },
+                        {
+                            "Name": "Adventurer\u0027s Scarf (medium skin)",
+                            "Node": {
+                                "Metadata": {
+                                    "name": "Adventurer\u0027s Scarf",
+                                    "icon": "Adventurer\u0027s Scarf.png",
+                                    "type": "Headgear",
+                                    "class": "medium",
+                                    "id": "5480",
+                                    "dye channels": "1",
+                                    "gallery1": "Adventurer\u0027s Scarf.jpg"
+                                },
+                                "Type": "Skin",
+                                "IsProcessed": false
+                            },
+                            "ApiData": {
+                                "$type": "armor_skin",
+                                "$armor_skin_type": "helm_skin",
+                                "id": 5480,
+                                "name": "Adventurer\u0027s Scarf",
+                                "description": "",
+                                "flags": {
+                                    "hide_if_locked": false,
+                                    "no_cost": false,
+                                    "override_rarity": false,
+                                    "show_in_wardrobe": true,
+                                    "other": []
+                                },
+                                "races": [
+                                    "Asura",
+                                    "Charr",
+                                    "Human",
+                                    "Norn",
+                                    "Sylvari"
+                                ],
+                                "rarity": "Basic",
+                                "icon": "https://render.guildwars2.com/file/364CAB0FB673800ED57AF256291301E45AFDDE9D/831464.png",
+                                "weight_class": "Medium",
+                                "dye_slots": {
+                                    "default": [
+                                        null,
+                                        null,
+                                        {
+                                            "color_id": 15,
+                                            "material": "cloth"
+                                        },
+                                        null
+                                    ],
+                                    "asura_female": null,
+                                    "asura_male": null,
+                                    "charr_female": null,
+                                    "charr_male": null,
+                                    "human_female": null,
+                                    "human_male": null,
+                                    "norn_female": null,
+                                    "norn_male": null,
+                                    "sylvari_female": null,
+                                    "sylvari_male": null
+                                }
+                            }
+                        },
+                        {
+                            "Name": "Adventurer\u0027s Spectacles (heavy skin)",
+                            "Node": {
+                                "Metadata": {
+                                    "name": "Adventurer\u0027s Spectacles",
+                                    "icon": "Adventurer\u0027s Spectacles.png",
+                                    "type": "Headgear",
+                                    "class": "heavy",
+                                    "id": "5481",
+                                    "dye channels": "3",
+                                    "gallery1": "Adventurer\u0027s Spectacles.jpg"
+                                },
+                                "Type": "Skin",
+                                "IsProcessed": false
+                            },
+                            "ApiData": {
+                                "$type": "armor_skin",
+                                "$armor_skin_type": "helm_skin",
+                                "id": 5481,
+                                "name": "Adventurer\u0027s Spectacles",
+                                "description": "",
+                                "flags": {
+                                    "hide_if_locked": false,
+                                    "no_cost": false,
+                                    "override_rarity": false,
+                                    "show_in_wardrobe": true,
+                                    "other": []
+                                },
+                                "races": [
+                                    "Asura",
+                                    "Charr",
+                                    "Human",
+                                    "Norn",
+                                    "Sylvari"
+                                ],
+                                "rarity": "Basic",
+                                "icon": "https://render.guildwars2.com/file/5E5A34BD30EE6814DEC6C2D0FD9DAB0CD164CCAF/831462.png",
+                                "weight_class": "Heavy",
+                                "dye_slots": {
+                                    "default": [
+                                        {
+                                            "color_id": 1247,
+                                            "material": "leather"
+                                        },
+                                        {
+                                            "color_id": 15,
+                                            "material": "metal"
+                                        },
+                                        {
+                                            "color_id": 15,
+                                            "material": "cloth"
+                                        },
+                                        null
+                                    ],
+                                    "asura_female": null,
+                                    "asura_male": null,
+                                    "charr_female": null,
+                                    "charr_male": null,
+                                    "human_female": null,
+                                    "human_male": null,
+                                    "norn_female": null,
+                                    "norn_male": null,
+                                    "sylvari_female": null,
+                                    "sylvari_male": null
+                                }
+                            }
+                        },
+                        {
+                            "Name": "Adventurer\u0027s Spectacles (light skin)",
+                            "Node": {
+                                "Metadata": {
+                                    "name": "Adventurer\u0027s Spectacles",
+                                    "icon": "Adventurer\u0027s Spectacles.png",
+                                    "type": "Headgear",
+                                    "class": "light",
+                                    "id": "5485",
+                                    "dye channels": "3",
+                                    "gallery1": "Adventurer\u0027s Spectacles.jpg"
+                                },
+                                "Type": "Skin",
+                                "IsProcessed": false
+                            },
+                            "ApiData": {
+                                "$type": "armor_skin",
+                                "$armor_skin_type": "helm_skin",
+                                "id": 5485,
+                                "name": "Adventurer\u0027s Spectacles",
+                                "description": "",
+                                "flags": {
+                                    "hide_if_locked": false,
+                                    "no_cost": false,
+                                    "override_rarity": false,
+                                    "show_in_wardrobe": true,
+                                    "other": []
+                                },
+                                "races": [
+                                    "Asura",
+                                    "Charr",
+                                    "Human",
+                                    "Norn",
+                                    "Sylvari"
+                                ],
+                                "rarity": "Basic",
+                                "icon": "https://render.guildwars2.com/file/5E5A34BD30EE6814DEC6C2D0FD9DAB0CD164CCAF/831462.png",
+                                "weight_class": "Light",
+                                "dye_slots": {
+                                    "default": [
+                                        {
+                                            "color_id": 1,
+                                            "material": "leather"
+                                        },
+                                        {
+                                            "color_id": 1,
+                                            "material": "metal"
+                                        },
+                                        {
+                                            "color_id": 1,
+                                            "material": "cloth"
+                                        },
+                                        null
+                                    ],
+                                    "asura_female": null,
+                                    "asura_male": null,
+                                    "charr_female": null,
+                                    "charr_male": null,
+                                    "human_female": null,
+                                    "human_male": null,
+                                    "norn_female": null,
+                                    "norn_male": null,
+                                    "sylvari_female": null,
+                                    "sylvari_male": null
+                                }
+                            }
+                        },
+                        {
+                            "Name": "Adventurer\u0027s Spectacles (medium skin)",
+                            "Node": {
+                                "Metadata": {
+                                    "name": "Adventurer\u0027s Spectacles",
+                                    "icon": "Adventurer\u0027s Spectacles.png",
+                                    "type": "Headgear",
+                                    "class": "medium",
+                                    "id": "5488",
+                                    "dye channels": "3",
+                                    "gallery1": "Adventurer\u0027s Spectacles.jpg"
+                                },
+                                "Type": "Skin",
+                                "IsProcessed": false
+                            },
+                            "ApiData": {
+                                "$type": "armor_skin",
+                                "$armor_skin_type": "helm_skin",
+                                "id": 5488,
+                                "name": "Adventurer\u0027s Spectacles",
+                                "description": "",
+                                "flags": {
+                                    "hide_if_locked": false,
+                                    "no_cost": false,
+                                    "override_rarity": false,
+                                    "show_in_wardrobe": true,
+                                    "other": []
+                                },
+                                "races": [
+                                    "Asura",
+                                    "Charr",
+                                    "Human",
+                                    "Norn",
+                                    "Sylvari"
+                                ],
+                                "rarity": "Basic",
+                                "icon": "https://render.guildwars2.com/file/5E5A34BD30EE6814DEC6C2D0FD9DAB0CD164CCAF/831462.png",
+                                "weight_class": "Medium",
+                                "dye_slots": {
+                                    "default": [
+                                        {
+                                            "color_id": 1,
+                                            "material": "leather"
+                                        },
+                                        {
+                                            "color_id": 1,
+                                            "material": "metal"
+                                        },
+                                        {
+                                            "color_id": 1,
+                                            "material": "cloth"
+                                        },
+                                        null
+                                    ],
+                                    "asura_female": null,
+                                    "asura_male": null,
+                                    "charr_female": null,
+                                    "charr_male": null,
+                                    "human_female": null,
+                                    "human_male": null,
+                                    "norn_female": null,
+                                    "norn_male": null,
+                                    "sylvari_female": null,
+                                    "sylvari_male": null
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "Name": "The Silverwastes",
+                    "UnlockCriteria": [
+                        {}
+                    ],
+                    "Unlocks": []
+                }
+            ],
+            "Unlocks": []
+        },
+        {
+            "Name": "LW Season 3",
+            "UnlockCriteria": [
+                {}
+            ],
+            "UnlockCategories": [
+                {
+                    "Name": "Bloodstone Fen",
+                    "UnlockCriteria": [
+                        {}
+                    ],
+                    "Unlocks": []
+                },
+                {
+                    "Name": "Ember Bay",
+                    "UnlockCriteria": [
+                        {}
+                    ],
+                    "Unlocks": []
+                },
+                {
+                    "Name": "Bitterfrost Frontier",
+                    "UnlockCriteria": [
+                        {}
+                    ],
+                    "Unlocks": []
+                },
+                {
+                    "Name": "Lake Doric",
+                    "UnlockCriteria": [
+                        {}
+                    ],
+                    "Unlocks": []
+                },
+                {
+                    "Name": "Draconis Mons",
+                    "UnlockCriteria": [
+                        {}
+                    ],
+                    "Unlocks": []
+                },
+                {
+                    "Name": "Siren\u0027s Landing",
+                    "UnlockCriteria": [
+                        {}
+                    ],
+                    "Unlocks": []
+                }
+            ],
+            "Unlocks": []
+        },
+        {
+            "Name": "LW Season 4",
+            "UnlockCriteria": [
+                {}
+            ],
+            "UnlockCategories": [
+                {
+                    "Name": "Domain of Istan",
+                    "UnlockCriteria": [
+                        {}
+                    ],
+                    "Unlocks": []
+                },
+                {
+                    "Name": "Sandswept Isles",
+                    "UnlockCriteria": [
+                        {}
+                    ],
+                    "Unlocks": []
+                },
+                {
+                    "Name": "Domain of Kourna",
+                    "UnlockCriteria": [
+                        {}
+                    ],
+                    "Unlocks": []
+                },
+                {
+                    "Name": "Jahai Bluffs",
+                    "UnlockCriteria": [
+                        {}
+                    ],
+                    "Unlocks": []
+                },
+                {
+                    "Name": "Thunderhead Peaks",
+                    "UnlockCriteria": [
+                        {}
+                    ],
+                    "Unlocks": []
+                },
+                {
+                    "Name": "Dragonfall",
+                    "UnlockCriteria": [
+                        {}
+                    ],
+                    "Unlocks": []
+                }
+            ],
+            "Unlocks": []
+        },
+        {
+            "Name": "Icebrood Saga",
+            "UnlockCriteria": [
+                {}
+            ],
+            "UnlockCategories": [
+                {
+                    "Name": "Grothmar Valley",
+                    "UnlockCriteria": [
+                        {}
+                    ],
+                    "Unlocks": []
+                },
+                {
+                    "Name": "Bjora Marches",
+                    "UnlockCriteria": [
+                        {}
+                    ],
+                    "Unlocks": []
+                },
+                {
+                    "Name": "Drizzlewood Coast",
+                    "UnlockCriteria": [
+                        {}
+                    ],
+                    "Unlocks": []
+                }
+            ],
+            "Unlocks": []
+        },
+        {
+            "Name": "Dungeons",
+            "UnlockCriteria": [
+                {}
+            ],
+            "UnlockCategories": [
+                {
+                    "Name": "Ascalonian Catacombs",
+                    "UnlockCriteria": [
+                        {}
+                    ],
+                    "Unlocks": []
+                },
+                {
+                    "Name": "Caudecus\u0027s Manor",
+                    "UnlockCriteria": [
+                        {}
+                    ],
+                    "Unlocks": []
+                },
+                {
+                    "Name": "Twilight Arbor",
+                    "UnlockCriteria": [
+                        {}
+                    ],
+                    "Unlocks": []
+                },
+                {
+                    "Name": "Sorrow\u0027s Embrace",
+                    "UnlockCriteria": [
+                        {}
+                    ],
+                    "Unlocks": []
+                },
+                {
+                    "Name": "Citadel of Flame",
+                    "UnlockCriteria": [
+                        {}
+                    ],
+                    "Unlocks": []
+                },
+                {
+                    "Name": "Honor of the Waves",
+                    "UnlockCriteria": [
+                        {}
+                    ],
+                    "Unlocks": []
+                },
+                {
+                    "Name": "Crucible of Eternity",
+                    "UnlockCriteria": [
+                        {}
+                    ],
+                    "Unlocks": []
+                },
+                {
+                    "Name": "The Ruined City of Arah",
+                    "UnlockCriteria": [
+                        {}
+                    ],
+                    "Unlocks": []
+                }
+            ],
+            "Unlocks": []
+        },
+        {
+            "Name": "Raid Encounters",
+            "UnlockCriteria": [
+                {}
+            ],
+            "UnlockCategories": [
+                {
+                    "Name": "Old Lion\u0027s Court",
+                    "UnlockCriteria": [
+                        {}
+                    ],
+                    "Unlocks": []
+                },
+                {
+                    "Name": "Shiverpeaks Pass",
+                    "UnlockCriteria": [
+                        {}
+                    ],
+                    "Unlocks": []
+                },
+                {
+                    "Name": "Voice of the Fallen and Claw of the Fallen",
+                    "UnlockCriteria": [
+                        {}
+                    ],
+                    "Unlocks": []
+                },
+                {
+                    "Name": "Fraenir of Jormag",
+                    "UnlockCriteria": [
+                        {}
+                    ],
+                    "Unlocks": []
+                },
+                {
+                    "Name": "Boneskinner",
+                    "UnlockCriteria": [
+                        {}
+                    ],
+                    "Unlocks": []
+                },
+                {
+                    "Name": "Whisper of Jormag",
+                    "UnlockCriteria": [
+                        {}
+                    ],
+                    "Unlocks": []
+                },
+                {
+                    "Name": "Forging Steel",
+                    "UnlockCriteria": [
+                        {}
+                    ],
+                    "Unlocks": []
+                },
+                {
+                    "Name": "Cold War",
+                    "UnlockCriteria": [
+                        {}
+                    ],
+                    "Unlocks": []
+                },
+                {
+                    "Name": "Aetherblade Hideout",
+                    "UnlockCriteria": [
+                        {}
+                    ],
+                    "Unlocks": []
+                },
+                {
+                    "Name": "Xunlai Jade Junkyard",
+                    "UnlockCriteria": [
+                        {}
+                    ],
+                    "Unlocks": []
+                },
+                {
+                    "Name": "Kaineng Overlook",
+                    "UnlockCriteria": [
+                        {}
+                    ],
+                    "Unlocks": []
+                },
+                {
+                    "Name": "Harvest Temple",
+                    "UnlockCriteria": [
+                        {}
+                    ],
+                    "Unlocks": []
+                },
+                {
+                    "Name": "Cosmic Observatory",
+                    "UnlockCriteria": [
+                        {}
+                    ],
+                    "Unlocks": []
+                },
+                {
+                    "Name": "Temple of Febe",
+                    "UnlockCriteria": [
+                        {}
+                    ],
+                    "Unlocks": []
+                },
+                {
+                    "Name": "Guardian\u0027s Glade",
+                    "UnlockCriteria": [
+                        {}
+                    ],
+                    "Unlocks": []
+                }
+            ],
+            "Unlocks": []
+        },
+        {
+            "Name": "Raids",
+            "UnlockCriteria": [
+                {}
+            ],
+            "UnlockCategories": [
+                {
+                    "Name": "Spirit Vale",
+                    "UnlockCriteria": [
+                        {}
+                    ],
+                    "Unlocks": []
+                },
+                {
+                    "Name": "Salvation Pass",
+                    "UnlockCriteria": [
+                        {}
+                    ],
+                    "Unlocks": []
+                },
+                {
+                    "Name": "Stronghold of the Faithful",
+                    "UnlockCriteria": [
+                        {}
+                    ],
+                    "Unlocks": []
+                },
+                {
+                    "Name": "Bastion of the Penitent",
+                    "UnlockCriteria": [
+                        {}
+                    ],
+                    "Unlocks": []
+                },
+                {
+                    "Name": "Hall of Chains",
+                    "UnlockCriteria": [
+                        {}
+                    ],
+                    "Unlocks": []
+                },
+                {
+                    "Name": "Mythwright Gambit",
+                    "UnlockCriteria": [
+                        {}
+                    ],
+                    "Unlocks": []
+                },
+                {
+                    "Name": "The Key of Ahdashim",
+                    "UnlockCriteria": [
+                        {}
+                    ],
+                    "Unlocks": []
+                }
+            ],
+            "Unlocks": []
+        },
+        {
+            "Name": "PvP / WvW",
+            "UnlockCriteria": [
+                {}
+            ],
+            "UnlockCategories": [
+                {
+                    "Name": "PvP",
+                    "UnlockCriteria": [
+                        {}
+                    ],
+                    "Unlocks": []
+                },
+                {
+                    "Name": "WvW",
+                    "UnlockCriteria": [
+                        {}
+                    ],
+                    "Unlocks": []
+                }
+            ],
+            "Unlocks": []
+        },
+        {
+            "Name": "Festivals",
+            "UnlockCriteria": [
+                {}
+            ],
+            "UnlockCategories": [
+                {
+                    "Name": "Lunar New Year",
+                    "UnlockCriteria": [
+                        {}
+                    ],
+                    "Unlocks": []
+                },
+                {
+                    "Name": "Super Adventure Box",
+                    "UnlockCriteria": [
+                        {}
+                    ],
+                    "Unlocks": []
+                },
+                {
+                    "Name": "Dragon Bash",
+                    "UnlockCriteria": [
+                        {}
+                    ],
+                    "Unlocks": []
+                },
+                {
+                    "Name": "Festival of the Four Winds",
+                    "UnlockCriteria": [
+                        {}
+                    ],
+                    "Unlocks": []
+                },
+                {
+                    "Name": "Halloween",
+                    "UnlockCriteria": [
+                        {}
+                    ],
+                    "Unlocks": []
+                },
+                {
+                    "Name": "Wintersday",
+                    "UnlockCriteria": [
+                        {}
+                    ],
+                    "Unlocks": []
+                }
+            ],
+            "Unlocks": []
+        },
+        {
+            "Name": "Cities",
+            "UnlockCriteria": [
+                {}
+            ],
+            "UnlockCategories": [
+                {
+                    "Name": "Divinity\u0027s Reach",
+                    "UnlockCriteria": [
+                        {}
+                    ],
+                    "Unlocks": []
+                },
+                {
+                    "Name": "The Grove",
+                    "UnlockCriteria": [
+                        {}
+                    ],
+                    "Unlocks": []
+                },
+                {
+                    "Name": "Hoelbrak",
+                    "UnlockCriteria": [
+                        {}
+                    ],
+                    "Unlocks": []
+                },
+                {
+                    "Name": "Rata Sum",
+                    "UnlockCriteria": [
+                        {}
+                    ],
+                    "Unlocks": []
+                },
+                {
+                    "Name": "Black Citadel",
+                    "UnlockCriteria": [
+                        {}
+                    ],
+                    "Unlocks": []
+                },
+                {
+                    "Name": "Lion\u0027s Arch",
+                    "UnlockCriteria": [
+                        {}
+                    ],
+                    "Unlocks": []
+                },
+                {
+                    "Name": "Eye of the North",
+                    "UnlockCriteria": [
+                        {}
+                    ],
+                    "Unlocks": []
+                }
+            ],
+            "Unlocks": []
+        },
+        {
+            "Name": "Other",
+            "UnlockCriteria": [
+                {}
+            ],
+            "UnlockCategories": [
+                {
+                    "Name": "Elite Specializations",
+                    "UnlockCriteria": [
+                        {}
+                    ],
+                    "Unlocks": []
+                },
+                {
+                    "Name": "Guild",
+                    "UnlockCriteria": [
+                        {}
+                    ],
+                    "Unlocks": []
+                },
+                {
+                    "Name": "Mystic Forge",
+                    "UnlockCriteria": [
+                        {}
+                    ],
+                    "Unlocks": [
+                        {
+                            "Name": "Abyssal Scepter (skin)",
+                            "Node": {
+                                "Metadata": {
+                                    "name": "Abyssal Scepter",
+                                    "icon": "Abyssal Scepter.png",
+                                    "type": "Scepter",
+                                    "set": "Phantasm weapons",
+                                    "id": "4851",
+                                    "gallery1": "Abyssal Scepter.jpg"
+                                },
+                                "Type": "Skin",
+                                "IsProcessed": false
+                            },
+                            "ApiData": {
+                                "$type": "weapon_skin",
+                                "$weapon_skin_type": "scepter_skin",
+                                "id": 4851,
+                                "name": "Abyssal Scepter",
+                                "description": "",
+                                "flags": {
+                                    "hide_if_locked": false,
+                                    "no_cost": false,
+                                    "override_rarity": false,
+                                    "show_in_wardrobe": true,
+                                    "other": []
+                                },
+                                "races": [
+                                    "Asura",
+                                    "Charr",
+                                    "Human",
+                                    "Norn",
+                                    "Sylvari"
+                                ],
+                                "rarity": "Basic",
+                                "icon": "https://render.guildwars2.com/file/24F016906FB2AE5325E938E40E23D433B1975AFC/534315.png",
+                                "damage_type": "Physical"
+                            }
+                        },
+                        {
+                            "Name": "Accursed Chains (skin)",
+                            "Node": {
+                                "Metadata": {
+                                    "name": "Accursed Chains",
+                                    "icon": "Accursed Chains.png",
+                                    "type": "focus",
+                                    "categorize": "y",
+                                    "id": "4862",
+                                    "gallery1": "Accursed Chains.jpg"
+                                },
+                                "Type": "Skin",
+                                "IsProcessed": false
+                            },
+                            "ApiData": {
+                                "$type": "weapon_skin",
+                                "$weapon_skin_type": "focus_skin",
+                                "id": 4862,
+                                "name": "Accursed Chains",
+                                "description": "",
+                                "flags": {
+                                    "hide_if_locked": false,
+                                    "no_cost": false,
+                                    "override_rarity": false,
+                                    "show_in_wardrobe": true,
+                                    "other": []
+                                },
+                                "races": [
+                                    "Asura",
+                                    "Charr",
+                                    "Human",
+                                    "Norn",
+                                    "Sylvari"
+                                ],
+                                "rarity": "Basic",
+                                "icon": "https://render.guildwars2.com/file/E40F2D1DDE3003A40EF0C8E4EE013734090971F7/534309.png",
+                                "damage_type": "Physical"
+                            }
+                        },
+                        {
+                            "Name": "Ad Infinitum (skin)",
+                            "Node": {
+                                "Metadata": {
+                                    "name": "Ad Infinitum",
+                                    "icon": "Ad Infinitum.png",
+                                    "type": "Back item",
+                                    "rarity": "Legendary",
+                                    "id": "6344",
+                                    "categorize": "y",
+                                    "gallery1": "Ad Infinitum.jpg"
+                                },
+                                "Type": "Skin",
+                                "IsProcessed": false
+                            },
+                            "ApiData": {
+                                "$type": "back_skin",
+                                "id": 6344,
+                                "name": "Ad Infinitum",
+                                "description": "",
+                                "flags": {
+                                    "hide_if_locked": false,
+                                    "no_cost": false,
+                                    "override_rarity": false,
+                                    "show_in_wardrobe": true,
+                                    "other": []
+                                },
+                                "races": [
+                                    "Asura",
+                                    "Charr",
+                                    "Human",
+                                    "Norn",
+                                    "Sylvari"
+                                ],
+                                "rarity": "Legendary",
+                                "icon": "https://render.guildwars2.com/file/562A009CE8D66B63B975251BC97041BFBE0E07E1/1202351.png"
+                            }
+                        },
+                        {
+                            "Name": "Advanced Spinal Blades (skin)",
+                            "Node": {
+                                "Metadata": {
+                                    "name": "Advanced Spinal Blades",
+                                    "icon": "Advanced Spinal Blades.png",
+                                    "type": "Back item",
+                                    "id": "2335",
+                                    "categorize": "y",
+                                    "gallery1": "Advanced Spinal Blades.jpg"
+                                },
+                                "Type": "Skin",
+                                "IsProcessed": false
+                            },
+                            "ApiData": {
+                                "$type": "back_skin",
+                                "id": 2335,
+                                "name": "Advanced Spinal Blades",
+                                "description": "",
+                                "flags": {
+                                    "hide_if_locked": false,
+                                    "no_cost": false,
+                                    "override_rarity": false,
+                                    "show_in_wardrobe": true,
+                                    "other": []
+                                },
+                                "races": [
+                                    "Asura",
+                                    "Charr",
+                                    "Human",
+                                    "Norn",
+                                    "Sylvari"
+                                ],
+                                "rarity": "Basic",
+                                "icon": "https://render.guildwars2.com/file/F7702E70374FD170B380F626CA4E46B89E7EFEBE/740275.png"
+                            }
+                        },
+                        {
+                            "Name": "Aether (skin)",
+                            "Node": {
+                                "Metadata": {
+                                    "name": "Aether",
+                                    "icon": "Aether.png",
+                                    "type": "Short Bow",
+                                    "set": "Spirit weapons",
+                                    "id": "4819",
+                                    "categorize": "y",
+                                    "collection": "Spirit Crafter",
+                                    "gallery1": "Azureflame.jpg"
+                                },
+                                "Type": "Skin",
+                                "IsProcessed": false
+                            },
+                            "ApiData": {
+                                "$type": "weapon_skin",
+                                "$weapon_skin_type": "short_bow_skin",
+                                "id": 4819,
+                                "name": "Aether",
+                                "description": "",
+                                "flags": {
+                                    "hide_if_locked": false,
+                                    "no_cost": false,
+                                    "override_rarity": false,
+                                    "show_in_wardrobe": true,
+                                    "other": []
+                                },
+                                "races": [
+                                    "Asura",
+                                    "Charr",
+                                    "Human",
+                                    "Norn",
+                                    "Sylvari"
+                                ],
+                                "rarity": "Basic",
+                                "icon": "https://render.guildwars2.com/file/EEA7F20220A13ACE66AC0BFBA86516F7DCEA92E2/534319.png",
+                                "damage_type": "Physical"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "Name": "Crafting",
+                    "UnlockCriteria": [
+                        {}
+                    ],
+                    "Unlocks": [
+                        {
+                            "Name": "Sunspear Warsickle (skin)",
+                            "Node": {
+                                "Metadata": {
+                                    "name": "Sunspear Warsickle",
+                                    "icon": "Sunspear Waraxe.png",
+                                    "hint": "Unlock the skin for the Sunspear Warsickle by crafting it with a recipe purchased in the Crystal Desert or through the item Abasi\u0027s Envenomed Cleaver.",
+                                    "type": "Axe",
+                                    "set": "Sunspear weapons",
+                                    "collection": "The Main Thrust",
+                                    "id": "7389",
+                                    "gallery1": "Sunspear Warsickle.jpg"
+                                },
+                                "Type": "Skin",
+                                "IsProcessed": false
+                            },
+                            "ApiData": {
+                                "$type": "weapon_skin",
+                                "$weapon_skin_type": "axe_skin",
+                                "id": 7389,
+                                "name": "Sunspear Warsickle",
+                                "description": "",
+                                "flags": {
+                                    "hide_if_locked": false,
+                                    "no_cost": false,
+                                    "override_rarity": false,
+                                    "show_in_wardrobe": true,
+                                    "other": []
+                                },
+                                "races": [
+                                    "Asura",
+                                    "Charr",
+                                    "Human",
+                                    "Norn",
+                                    "Sylvari"
+                                ],
+                                "rarity": "Basic",
+                                "icon": "https://render.guildwars2.com/file/05DE1976B84B7FF3703CE1F398087D011A1B0422/1765928.png",
+                                "damage_type": "Physical"
+                            }
+                        },
+                        {
+                            "Name": "Steam Axe (skin)",
+                            "Node": {
+                                "Metadata": {
+                                    "name": "Steam Axe",
+                                    "icon": "Steam Axe.png",
+                                    "type": "Axe",
+                                    "set": "Steam weapons",
+                                    "id": "5208",
+                                    "gallery1": "Steam Axe.jpg"
+                                },
+                                "Type": "Skin",
+                                "IsProcessed": false
+                            },
+                            "ApiData": {
+                                "$type": "weapon_skin",
+                                "$weapon_skin_type": "axe_skin",
+                                "id": 5208,
+                                "name": "Steam Axe",
+                                "description": "",
+                                "flags": {
+                                    "hide_if_locked": false,
+                                    "no_cost": false,
+                                    "override_rarity": false,
+                                    "show_in_wardrobe": true,
+                                    "other": []
+                                },
+                                "races": [
+                                    "Asura",
+                                    "Charr",
+                                    "Human",
+                                    "Norn",
+                                    "Sylvari"
+                                ],
+                                "rarity": "Basic",
+                                "icon": "https://render.guildwars2.com/file/B606E3BEBF034E08D1DDEC54CA74E811F4284CD1/66427.png",
+                                "damage_type": "Physical"
+                            }
+                        },
+                        {
+                            "Name": "Leather Coat (skin)",
+                            "Node": {
+                                "Metadata": {
+                                    "icon": "Leather Coat.png",
+                                    "name": "Leather Coat",
+                                    "id": "176",
+                                    "dye channels": "3",
+                                    "type": "chest",
+                                    "class": "medium",
+                                    "set": "Leather armor"
+                                },
+                                "Type": "Skin",
+                                "IsProcessed": false
+                            },
+                            "ApiData": {
+                                "$type": "armor_skin",
+                                "$armor_skin_type": "coat_skin",
+                                "id": 176,
+                                "name": "Leather Coat",
+                                "description": "",
+                                "flags": {
+                                    "hide_if_locked": false,
+                                    "no_cost": false,
+                                    "override_rarity": false,
+                                    "show_in_wardrobe": true,
+                                    "other": []
+                                },
+                                "races": [
+                                    "Asura",
+                                    "Charr",
+                                    "Human",
+                                    "Norn",
+                                    "Sylvari"
+                                ],
+                                "rarity": "Basic",
+                                "icon": "https://render.guildwars2.com/file/06A6BAC572D5981EC34DA79DD0B86EA992D51FAA/61429.png",
+                                "weight_class": "Medium",
+                                "dye_slots": {
+                                    "default": [
+                                        {
+                                            "color_id": 18,
+                                            "material": "leather"
+                                        },
+                                        {
+                                            "color_id": 25,
+                                            "material": "leather"
+                                        },
+                                        {
+                                            "color_id": 315,
+                                            "material": "leather"
+                                        },
+                                        null
+                                    ],
+                                    "asura_female": null,
+                                    "asura_male": null,
+                                    "charr_female": null,
+                                    "charr_male": null,
+                                    "human_female": null,
+                                    "human_male": null,
+                                    "norn_female": null,
+                                    "norn_male": null,
+                                    "sylvari_female": null,
+                                    "sylvari_male": null
+                                }
+                            }
+                        },
+                        {
+                            "Name": "Acolyte Boots (skin)",
+                            "Node": {
+                                "Metadata": {
+                                    "name": "Acolyte Boots",
+                                    "icon": "Acolyte Boots.png",
+                                    "type": "Boots",
+                                    "class": "Light",
+                                    "set": "Acolyte armor",
+                                    "id": "160",
+                                    "dye channels": "3"
+                                },
+                                "Type": "Skin",
+                                "IsProcessed": false
+                            },
+                            "ApiData": {
+                                "$type": "armor_skin",
+                                "$armor_skin_type": "boots_skin",
+                                "id": 160,
+                                "name": "Acolyte Boots",
+                                "description": "",
+                                "flags": {
+                                    "hide_if_locked": false,
+                                    "no_cost": false,
+                                    "override_rarity": false,
+                                    "show_in_wardrobe": true,
+                                    "other": []
+                                },
+                                "races": [
+                                    "Asura",
+                                    "Charr",
+                                    "Human",
+                                    "Norn",
+                                    "Sylvari"
+                                ],
+                                "rarity": "Basic",
+                                "icon": "https://render.guildwars2.com/file/B45591DA0AB60D98A428FE792704F22015AF6C66/61412.png",
+                                "weight_class": "Light",
+                                "dye_slots": {
+                                    "default": [
+                                        {
+                                            "color_id": 18,
+                                            "material": "cloth"
+                                        },
+                                        {
+                                            "color_id": 25,
+                                            "material": "metal"
+                                        },
+                                        {
+                                            "color_id": 315,
+                                            "material": "cloth"
+                                        },
+                                        null
+                                    ],
+                                    "asura_female": null,
+                                    "asura_male": null,
+                                    "charr_female": null,
+                                    "charr_male": null,
+                                    "human_female": null,
+                                    "human_male": null,
+                                    "norn_female": null,
+                                    "norn_male": null,
+                                    "sylvari_female": null,
+                                    "sylvari_male": null
+                                }
+                            }
+                        },
+                        {
+                            "Name": "Acolyte Coat (skin)",
+                            "Node": {
+                                "Metadata": {
+                                    "name": "Acolyte Coat",
+                                    "icon": "Acolyte Coat.png",
+                                    "type": "Chest",
+                                    "class": "Light",
+                                    "set": "Acolyte armor",
+                                    "id": "146",
+                                    "dye channels": "3"
+                                },
+                                "Type": "Skin",
+                                "IsProcessed": false
+                            },
+                            "ApiData": {
+                                "$type": "armor_skin",
+                                "$armor_skin_type": "coat_skin",
+                                "id": 146,
+                                "name": "Acolyte Coat",
+                                "description": "",
+                                "flags": {
+                                    "hide_if_locked": false,
+                                    "no_cost": false,
+                                    "override_rarity": false,
+                                    "show_in_wardrobe": true,
+                                    "other": []
+                                },
+                                "races": [
+                                    "Asura",
+                                    "Charr",
+                                    "Human",
+                                    "Norn",
+                                    "Sylvari"
+                                ],
+                                "rarity": "Basic",
+                                "icon": "https://render.guildwars2.com/file/0E430BC85D287EE957900398A8B3AD4E06562352/61413.png",
+                                "weight_class": "Light",
+                                "dye_slots": {
+                                    "default": [
+                                        {
+                                            "color_id": 1,
+                                            "material": "cloth"
+                                        },
+                                        {
+                                            "color_id": 1,
+                                            "material": "metal"
+                                        },
+                                        {
+                                            "color_id": 1,
+                                            "material": "cloth"
+                                        },
+                                        null
+                                    ],
+                                    "asura_female": null,
+                                    "asura_male": null,
+                                    "charr_female": null,
+                                    "charr_male": null,
+                                    "human_female": null,
+                                    "human_male": null,
+                                    "norn_female": null,
+                                    "norn_male": null,
+                                    "sylvari_female": null,
+                                    "sylvari_male": null
+                                }
+                            }
+                        },
+                        {
+                            "Name": "Acolyte Gloves (skin)",
+                            "Node": {
+                                "Metadata": {
+                                    "name": "Acolyte Gloves",
+                                    "icon": "Acolyte Gloves.png",
+                                    "type": "Gloves",
+                                    "class": "Light",
+                                    "set": "Acolyte armor",
+                                    "acquisition": "Obtained through crafting.",
+                                    "id": "249",
+                                    "dye channels": "3"
+                                },
+                                "Type": "Skin",
+                                "IsProcessed": false
+                            },
+                            "ApiData": {
+                                "$type": "armor_skin",
+                                "$armor_skin_type": "gloves_skin",
+                                "id": 249,
+                                "name": "Acolyte Gloves",
+                                "description": "",
+                                "flags": {
+                                    "hide_if_locked": false,
+                                    "no_cost": false,
+                                    "override_rarity": false,
+                                    "show_in_wardrobe": true,
+                                    "other": []
+                                },
+                                "races": [
+                                    "Asura",
+                                    "Charr",
+                                    "Human",
+                                    "Norn",
+                                    "Sylvari"
+                                ],
+                                "rarity": "Basic",
+                                "icon": "https://render.guildwars2.com/file/EE07D4EAFCEA5FC80CD5BC09C6BA7DB23D191AD8/61414.png",
+                                "weight_class": "Light",
+                                "dye_slots": {
+                                    "default": [
+                                        {
+                                            "color_id": 1,
+                                            "material": "cloth"
+                                        },
+                                        {
+                                            "color_id": 1,
+                                            "material": "metal"
+                                        },
+                                        {
+                                            "color_id": 1,
+                                            "material": "cloth"
+                                        },
+                                        null
+                                    ],
+                                    "asura_female": null,
+                                    "asura_male": null,
+                                    "charr_female": null,
+                                    "charr_male": null,
+                                    "human_female": null,
+                                    "human_male": null,
+                                    "norn_female": null,
+                                    "norn_male": null,
+                                    "sylvari_female": null,
+                                    "sylvari_male": null
+                                }
+                            }
+                        },
+                        {
+                            "Name": "Acolyte Mantle (skin)",
+                            "Node": {
+                                "Metadata": {
+                                    "name": "Acolyte Mantle",
+                                    "icon": "Acolyte Mantle.png",
+                                    "type": "Shoulders",
+                                    "class": "Light",
+                                    "set": "Acolyte armor",
+                                    "id": "157",
+                                    "dye channels": "3"
+                                },
+                                "Type": "Skin",
+                                "IsProcessed": false
+                            },
+                            "ApiData": {
+                                "$type": "armor_skin",
+                                "$armor_skin_type": "shoulders_skin",
+                                "id": 157,
+                                "name": "Acolyte Mantle",
+                                "description": "",
+                                "flags": {
+                                    "hide_if_locked": false,
+                                    "no_cost": false,
+                                    "override_rarity": false,
+                                    "show_in_wardrobe": true,
+                                    "other": []
+                                },
+                                "races": [
+                                    "Asura",
+                                    "Charr",
+                                    "Human",
+                                    "Norn",
+                                    "Sylvari"
+                                ],
+                                "rarity": "Basic",
+                                "icon": "https://render.guildwars2.com/file/035B7F50F3E7A8DC75FF29EF0306011A3650A55D/61094.png",
+                                "weight_class": "Light",
+                                "dye_slots": {
+                                    "default": [
+                                        {
+                                            "color_id": 1,
+                                            "material": "cloth"
+                                        },
+                                        {
+                                            "color_id": 1,
+                                            "material": "metal"
+                                        },
+                                        {
+                                            "color_id": 1,
+                                            "material": "cloth"
+                                        },
+                                        null
+                                    ],
+                                    "asura_female": null,
+                                    "asura_male": null,
+                                    "charr_female": null,
+                                    "charr_male": null,
+                                    "human_female": null,
+                                    "human_male": null,
+                                    "norn_female": null,
+                                    "norn_male": null,
+                                    "sylvari_female": null,
+                                    "sylvari_male": null
+                                }
+                            }
+                        },
+                        {
+                            "Name": "Acolyte Mask (skin)",
+                            "Node": {
+                                "Metadata": {
+                                    "name": "Acolyte Mask",
+                                    "icon": "Acolyte Mask.png",
+                                    "type": "Headgear",
+                                    "class": "Light",
+                                    "set": "Acolyte armor",
+                                    "id": "173",
+                                    "dye channels": "1"
+                                },
+                                "Type": "Skin",
+                                "IsProcessed": false
+                            },
+                            "ApiData": {
+                                "$type": "armor_skin",
+                                "$armor_skin_type": "helm_skin",
+                                "id": 173,
+                                "name": "Acolyte Mask",
+                                "description": "",
+                                "flags": {
+                                    "hide_if_locked": false,
+                                    "no_cost": false,
+                                    "override_rarity": false,
+                                    "show_in_wardrobe": true,
+                                    "other": []
+                                },
+                                "races": [
+                                    "Asura",
+                                    "Charr",
+                                    "Human",
+                                    "Norn",
+                                    "Sylvari"
+                                ],
+                                "rarity": "Basic",
+                                "icon": "https://render.guildwars2.com/file/F00DB730CCCDE84341E0A7B93F48B975E6DED57A/218934.png",
+                                "weight_class": "Light",
+                                "dye_slots": {
+                                    "default": [
+                                        {
+                                            "color_id": 18,
+                                            "material": "cloth"
+                                        },
+                                        null,
+                                        null,
+                                        null
+                                    ],
+                                    "asura_female": null,
+                                    "asura_male": null,
+                                    "charr_female": null,
+                                    "charr_male": [
+                                        {
+                                            "color_id": 18,
+                                            "material": "cloth"
+                                        },
+                                        null,
+                                        {
+                                            "color_id": 315,
+                                            "material": "cloth"
+                                        },
+                                        null
+                                    ],
+                                    "human_female": [
+                                        {
+                                            "color_id": 18,
+                                            "material": "cloth"
+                                        },
+                                        {
+                                            "color_id": 25,
+                                            "material": "metal"
+                                        },
+                                        null,
+                                        null
+                                    ],
+                                    "human_male": null,
+                                    "norn_female": [
+                                        {
+                                            "color_id": 18,
+                                            "material": "cloth"
+                                        },
+                                        {
+                                            "color_id": 25,
+                                            "material": "metal"
+                                        },
+                                        null,
+                                        null
+                                    ],
+                                    "norn_male": null,
+                                    "sylvari_female": [
+                                        {
+                                            "color_id": 18,
+                                            "material": "cloth"
+                                        },
+                                        {
+                                            "color_id": 25,
+                                            "material": "metal"
+                                        },
+                                        null,
+                                        null
+                                    ],
+                                    "sylvari_male": null
+                                }
+                            }
+                        },
+                        {
+                            "Name": "Acolyte Pants (skin)",
+                            "Node": {
+                                "Metadata": {
+                                    "name": "Acolyte Pants",
+                                    "icon": "Acolyte Pants.png",
+                                    "type": "Leggings",
+                                    "class": "Light",
+                                    "set": "Acolyte armor",
+                                    "id": "147",
+                                    "dye channels": "3"
+                                },
+                                "Type": "Skin",
+                                "IsProcessed": false
+                            },
+                            "ApiData": {
+                                "$type": "armor_skin",
+                                "$armor_skin_type": "leggings_skin",
+                                "id": 147,
+                                "name": "Acolyte Pants",
+                                "description": "",
+                                "flags": {
+                                    "hide_if_locked": false,
+                                    "no_cost": false,
+                                    "override_rarity": false,
+                                    "show_in_wardrobe": true,
+                                    "other": []
+                                },
+                                "races": [
+                                    "Asura",
+                                    "Charr",
+                                    "Human",
+                                    "Norn",
+                                    "Sylvari"
+                                ],
+                                "rarity": "Basic",
+                                "icon": "https://render.guildwars2.com/file/313DC61F6E982D1A1F7D53E463B54049FF20F0C8/218935.png",
+                                "weight_class": "Light",
+                                "dye_slots": {
+                                    "default": [
+                                        {
+                                            "color_id": 1,
+                                            "material": "cloth"
+                                        },
+                                        {
+                                            "color_id": 1,
+                                            "material": "metal"
+                                        },
+                                        {
+                                            "color_id": 1,
+                                            "material": "cloth"
+                                        },
+                                        null
+                                    ],
+                                    "asura_female": null,
+                                    "asura_male": null,
+                                    "charr_female": null,
+                                    "charr_male": null,
+                                    "human_female": null,
+                                    "human_male": null,
+                                    "norn_female": null,
+                                    "norn_male": null,
+                                    "sylvari_female": null,
+                                    "sylvari_male": null
+                                }
+                            }
+                        },
+                        {
+                            "Name": "Duelist Boots (skin)",
+                            "Node": {
+                                "Metadata": {
+                                    "type": "Boots",
+                                    "class": "Medium",
+                                    "name": "Duelist Boots",
+                                    "icon": "Duelist Boots.png",
+                                    "set": "Duelist armor",
+                                    "id": "887",
+                                    "dye channels": "3"
+                                },
+                                "Type": "Skin",
+                                "IsProcessed": false
+                            },
+                            "ApiData": {
+                                "$type": "armor_skin",
+                                "$armor_skin_type": "boots_skin",
+                                "id": 887,
+                                "name": "Duelist Boots",
+                                "description": "",
+                                "flags": {
+                                    "hide_if_locked": false,
+                                    "no_cost": false,
+                                    "override_rarity": false,
+                                    "show_in_wardrobe": true,
+                                    "other": []
+                                },
+                                "races": [
+                                    "Asura",
+                                    "Charr",
+                                    "Human",
+                                    "Norn",
+                                    "Sylvari"
+                                ],
+                                "rarity": "Basic",
+                                "icon": "https://render.guildwars2.com/file/9C7E0C5C680DAA0AF4EE73ED5ED3B6C2E49B0250/61033.png",
+                                "weight_class": "Medium",
+                                "dye_slots": {
+                                    "default": [
+                                        {
+                                            "color_id": 15,
+                                            "material": "leather"
+                                        },
+                                        {
+                                            "color_id": 438,
+                                            "material": "leather"
+                                        },
+                                        null,
+                                        null
+                                    ],
+                                    "asura_female": [
+                                        {
+                                            "color_id": 15,
+                                            "material": "leather"
+                                        },
+                                        {
+                                            "color_id": 438,
+                                            "material": "leather"
+                                        },
+                                        {
+                                            "color_id": 1,
+                                            "material": "cloth"
+                                        },
+                                        null
+                                    ],
+                                    "asura_male": [
+                                        {
+                                            "color_id": 15,
+                                            "material": "leather"
+                                        },
+                                        {
+                                            "color_id": 438,
+                                            "material": "leather"
+                                        },
+                                        {
+                                            "color_id": 1,
+                                            "material": "cloth"
+                                        },
+                                        null
+                                    ],
+                                    "charr_female": null,
+                                    "charr_male": null,
+                                    "human_female": null,
+                                    "human_male": null,
+                                    "norn_female": null,
+                                    "norn_male": null,
+                                    "sylvari_female": null,
+                                    "sylvari_male": null
+                                }
+                            }
+                        },
+                        {
+                            "Name": "Stately Footwear",
+                            "Node": {
+                                "Metadata": {
+                                    "icon": "Stately Footwear.png",
+                                    "type": "Boots",
+                                    "class": "Light",
+                                    "set": "Stately armor",
+                                    "id": "885",
+                                    "dye channels": "2"
+                                },
+                                "Type": "Skin",
+                                "IsProcessed": false
+                            },
+                            "ApiData": {
+                                "$type": "armor_skin",
+                                "$armor_skin_type": "boots_skin",
+                                "id": 885,
+                                "name": "Stately Footwear",
+                                "description": "",
+                                "flags": {
+                                    "hide_if_locked": false,
+                                    "no_cost": false,
+                                    "override_rarity": false,
+                                    "show_in_wardrobe": true,
+                                    "other": []
+                                },
+                                "races": [
+                                    "Asura",
+                                    "Charr",
+                                    "Human",
+                                    "Norn",
+                                    "Sylvari"
+                                ],
+                                "rarity": "Basic",
+                                "icon": "https://render.guildwars2.com/file/F12103C50DB541A53BAE92F2676719713E674AAF/61229.png",
+                                "weight_class": "Light",
+                                "dye_slots": {
+                                    "default": [
+                                        null,
+                                        {
+                                            "color_id": 25,
+                                            "material": "cloth"
+                                        },
+                                        {
+                                            "color_id": 315,
+                                            "material": "cloth"
+                                        },
+                                        null
+                                    ],
+                                    "asura_female": null,
+                                    "asura_male": null,
+                                    "charr_female": null,
+                                    "charr_male": null,
+                                    "human_female": null,
+                                    "human_male": null,
+                                    "norn_female": null,
+                                    "norn_male": null,
+                                    "sylvari_female": null,
+                                    "sylvari_male": null
+                                }
+                            }
+                        },
+                        {
+                            "Name": "Adventurer\u0027s Mantle (heavy skin)",
+                            "Node": {
+                                "Metadata": {
+                                    "name": "Adventurer\u0027s Mantle",
+                                    "icon": "Adventurer\u0027s Mantle.png",
+                                    "type": "Headgear",
+                                    "class": "heavy",
+                                    "id": "5487",
+                                    "dye channels": "3",
+                                    "gallery1": "Adventurer\u0027s Mantle.jpg"
+                                },
+                                "Type": "Skin",
+                                "IsProcessed": false
+                            },
+                            "ApiData": {
+                                "$type": "armor_skin",
+                                "$armor_skin_type": "helm_skin",
+                                "id": 5487,
+                                "name": "Adventurer\u0027s Mantle",
+                                "description": "",
+                                "flags": {
+                                    "hide_if_locked": false,
+                                    "no_cost": false,
+                                    "override_rarity": false,
+                                    "show_in_wardrobe": true,
+                                    "other": []
+                                },
+                                "races": [
+                                    "Asura",
+                                    "Charr",
+                                    "Human",
+                                    "Norn",
+                                    "Sylvari"
+                                ],
+                                "rarity": "Basic",
+                                "icon": "https://render.guildwars2.com/file/0FA3F4540E0C61A6EB684FD2FE561E799FDF1F0A/831465.png",
+                                "weight_class": "Heavy",
+                                "dye_slots": {
+                                    "default": [
+                                        {
+                                            "color_id": 1,
+                                            "material": "leather"
+                                        },
+                                        {
+                                            "color_id": 1,
+                                            "material": "metal"
+                                        },
+                                        {
+                                            "color_id": 1,
+                                            "material": "cloth"
+                                        },
+                                        null
+                                    ],
+                                    "asura_female": null,
+                                    "asura_male": null,
+                                    "charr_female": null,
+                                    "charr_male": null,
+                                    "human_female": null,
+                                    "human_male": null,
+                                    "norn_female": null,
+                                    "norn_male": null,
+                                    "sylvari_female": null,
+                                    "sylvari_male": null
+                                }
+                            }
+                        },
+                        {
+                            "Name": "Adventurer\u0027s Mantle (light skin)",
+                            "Node": {
+                                "Metadata": {
+                                    "name": "Adventurer\u0027s Mantle",
+                                    "icon": "Adventurer\u0027s Mantle.png",
+                                    "type": "Headgear",
+                                    "class": "light",
+                                    "id": "5486",
+                                    "dye channels": "3",
+                                    "gallery1": "Adventurer\u0027s Mantle.jpg"
+                                },
+                                "Type": "Skin",
+                                "IsProcessed": false
+                            },
+                            "ApiData": {
+                                "$type": "armor_skin",
+                                "$armor_skin_type": "helm_skin",
+                                "id": 5486,
+                                "name": "Adventurer\u0027s Mantle",
+                                "description": "",
+                                "flags": {
+                                    "hide_if_locked": false,
+                                    "no_cost": false,
+                                    "override_rarity": false,
+                                    "show_in_wardrobe": true,
+                                    "other": []
+                                },
+                                "races": [
+                                    "Asura",
+                                    "Charr",
+                                    "Human",
+                                    "Norn",
+                                    "Sylvari"
+                                ],
+                                "rarity": "Basic",
+                                "icon": "https://render.guildwars2.com/file/0FA3F4540E0C61A6EB684FD2FE561E799FDF1F0A/831465.png",
+                                "weight_class": "Light",
+                                "dye_slots": {
+                                    "default": [
+                                        {
+                                            "color_id": 1,
+                                            "material": "leather"
+                                        },
+                                        {
+                                            "color_id": 1,
+                                            "material": "metal"
+                                        },
+                                        {
+                                            "color_id": 1,
+                                            "material": "cloth"
+                                        },
+                                        null
+                                    ],
+                                    "asura_female": null,
+                                    "asura_male": null,
+                                    "charr_female": null,
+                                    "charr_male": null,
+                                    "human_female": null,
+                                    "human_male": null,
+                                    "norn_female": null,
+                                    "norn_male": null,
+                                    "sylvari_female": null,
+                                    "sylvari_male": null
+                                }
+                            }
+                        },
+                        {
+                            "Name": "Adventurer\u0027s Mantle (medium skin)",
+                            "Node": {
+                                "Metadata": {
+                                    "name": "Adventurer\u0027s Mantle",
+                                    "icon": "Adventurer\u0027s Mantle.png",
+                                    "type": "Headgear",
+                                    "class": "medium",
+                                    "id": "5483",
+                                    "dye channels": "3",
+                                    "gallery1": "Adventurer\u0027s Mantle.jpg"
+                                },
+                                "Type": "Skin",
+                                "IsProcessed": false
+                            },
+                            "ApiData": {
+                                "$type": "armor_skin",
+                                "$armor_skin_type": "helm_skin",
+                                "id": 5483,
+                                "name": "Adventurer\u0027s Mantle",
+                                "description": "",
+                                "flags": {
+                                    "hide_if_locked": false,
+                                    "no_cost": false,
+                                    "override_rarity": false,
+                                    "show_in_wardrobe": true,
+                                    "other": []
+                                },
+                                "races": [
+                                    "Asura",
+                                    "Charr",
+                                    "Human",
+                                    "Norn",
+                                    "Sylvari"
+                                ],
+                                "rarity": "Basic",
+                                "icon": "https://render.guildwars2.com/file/0FA3F4540E0C61A6EB684FD2FE561E799FDF1F0A/831465.png",
+                                "weight_class": "Medium",
+                                "dye_slots": {
+                                    "default": [
+                                        {
+                                            "color_id": 1,
+                                            "material": "leather"
+                                        },
+                                        {
+                                            "color_id": 1,
+                                            "material": "metal"
+                                        },
+                                        {
+                                            "color_id": 1,
+                                            "material": "cloth"
+                                        },
+                                        null
+                                    ],
+                                    "asura_female": null,
+                                    "asura_male": null,
+                                    "charr_female": null,
+                                    "charr_male": null,
+                                    "human_female": null,
+                                    "human_male": null,
+                                    "norn_female": null,
+                                    "norn_male": null,
+                                    "sylvari_female": null,
+                                    "sylvari_male": null
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "Name": "Black Lion Claim Ticket",
+                    "UnlockCriteria": [
+                        {}
+                    ],
+                    "Unlocks": []
+                },
+                {
+                    "Name": "Black Lion Statuette",
+                    "UnlockCriteria": [
+                        {}
+                    ],
+                    "Unlocks": []
+                },
+                {
+                    "Name": "Gathering Tools",
+                    "UnlockCriteria": [
+                        {}
+                    ],
+                    "Unlocks": []
+                },
+                {
+                    "Name": "Gem Store",
+                    "UnlockCriteria": [
+                        {}
+                    ],
+                    "Unlocks": []
+                },
+                {
+                    "Name": "General",
+                    "UnlockCriteria": [
+                        {}
+                    ],
+                    "Unlocks": [
+                        {
+                            "Name": "Adam (skin)",
+                            "Node": {
+                                "Metadata": {
+                                    "name": "Adam",
+                                    "icon": "Adam.png",
+                                    "type": "Focus",
+                                    "categorize": "y",
+                                    "id": "4802",
+                                    "gallery1": "Adam.jpg"
+                                },
+                                "Type": "Skin",
+                                "IsProcessed": false
+                            },
+                            "ApiData": {
+                                "$type": "weapon_skin",
+                                "$weapon_skin_type": "focus_skin",
+                                "id": 4802,
+                                "name": "Adam",
+                                "description": "",
+                                "flags": {
+                                    "hide_if_locked": false,
+                                    "no_cost": false,
+                                    "override_rarity": false,
+                                    "show_in_wardrobe": true,
+                                    "other": []
+                                },
+                                "races": [
+                                    "Asura",
+                                    "Charr",
+                                    "Human",
+                                    "Norn",
+                                    "Sylvari"
+                                ],
+                                "rarity": "Basic",
+                                "icon": "https://render.guildwars2.com/file/A8926FCCDA06D3AB2C4568CDFF2731CCD2D4A5E4/1861988.png",
+                                "damage_type": "Physical"
+                            }
+                        },
+                        {
+                            "Name": "Adamant Guard Trident (skin)",
+                            "Node": {
+                                "Metadata": {
+                                    "name": "Adamant Guard Trident",
+                                    "icon": "Adamant Guard Staff.png",
+                                    "type": "Trident",
+                                    "set": "Adamant Guard weapons",
+                                    "id": "4282",
+                                    "gallery1": "Adamant Guard Trident.jpg"
+                                },
+                                "Type": "Skin",
+                                "IsProcessed": false
+                            },
+                            "ApiData": {
+                                "$type": "weapon_skin",
+                                "$weapon_skin_type": "trident_skin",
+                                "id": 4282,
+                                "name": "Adamant Guard Trident",
+                                "description": "",
+                                "flags": {
+                                    "hide_if_locked": false,
+                                    "no_cost": false,
+                                    "override_rarity": false,
+                                    "show_in_wardrobe": true,
+                                    "other": []
+                                },
+                                "races": [
+                                    "Asura",
+                                    "Charr",
+                                    "Human",
+                                    "Norn",
+                                    "Sylvari"
+                                ],
+                                "rarity": "Basic",
+                                "icon": "https://render.guildwars2.com/file/313769FF990118AB92CD7EB4D50E1104B3D6D7E0/575191.png",
+                                "damage_type": "Physical"
+                            }
+                        },
+                        {
+                            "Name": "Ceremonial Warhorn (skin)",
+                            "Node": {
+                                "Metadata": {
+                                    "name": "Ceremonial Warhorn",
+                                    "icon": "Ceremonial Warhorn.png",
+                                    "type": "Warhorn",
+                                    "set": "Ceremonial weapons",
+                                    "id": "5132",
+                                    "gallery1": "Ceremonial Warhorn.jpg"
+                                },
+                                "Type": "Skin",
+                                "IsProcessed": false
+                            },
+                            "ApiData": {
+                                "$type": "weapon_skin",
+                                "$weapon_skin_type": "warhorn_skin",
+                                "id": 5132,
+                                "name": "Ceremonial Warhorn",
+                                "description": "",
+                                "flags": {
+                                    "hide_if_locked": false,
+                                    "no_cost": false,
+                                    "override_rarity": false,
+                                    "show_in_wardrobe": true,
+                                    "other": []
+                                },
+                                "races": [
+                                    "Asura",
+                                    "Charr",
+                                    "Human",
+                                    "Norn",
+                                    "Sylvari"
+                                ],
+                                "rarity": "Basic",
+                                "icon": "https://render.guildwars2.com/file/1A9E41FB11730CD40DC39D4890A6DB15539BCE0F/534106.png",
+                                "damage_type": "Physical"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "Name": "Fractals",
+                    "UnlockCriteria": [
+                        {}
+                    ],
+                    "Unlocks": []
+                },
+                {
+                    "Name": "Wizard\u0027s Vault",
+                    "UnlockCriteria": [
+                        {}
+                    ],
+                    "Unlocks": []
+                }
+            ],
+            "Unlocks": []
+        }
+    ]
+}

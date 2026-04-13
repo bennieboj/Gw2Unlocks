@@ -19,7 +19,7 @@ namespace Gw2Unlocks.Wiki.Implementation;
 public sealed class Gw2WikiSource(ILogger<Gw2WikiSource> logger, Lazy<Task<WikiSite>> lazySite) : IGw2WikiSource
 {
     public async IAsyncEnumerable<string> StreamAllPages(
-        [EnumeratorCancellation] CancellationToken cancellationToken = default)
+        [EnumeratorCancellation] CancellationToken cancellationToken)
     {
         var site = await lazySite.Value;
         var generator = new AllPagesGenerator(site) { NamespaceId = 0, PaginationSize = 100 };
@@ -171,7 +171,7 @@ public sealed class Gw2WikiSource(ILogger<Gw2WikiSource> logger, Lazy<Task<WikiS
         return await response.Content.ReadAsStringAsync(cancellationToken);
     }
 
-    public Task<string?> GetSinglePage(string title, CancellationToken cancellationToken = default)
+    public Task<string?> GetSinglePage(string title, CancellationToken cancellationToken)
     {
         throw new NotImplementedException();
     }

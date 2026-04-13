@@ -23,18 +23,4 @@ builder.Services.AddApiSource()
 builder.Services.AddUpdater();
 
 var host = builder.Build();
-//AppDomain.CurrentDomain.ProcessExit += async (sender, e) =>
-//{
-//    try
-//    {
-//        await using var scope = host.Services.CreateAsyncScope();
-//        var disposableService = scope.ServiceProvider.GetRequiredService<IDotnetOsInteractionMarker>();
-//        await disposableService.DisposeAsync();
-//    }
-//    catch (ObjectDisposedException) { /* happens when pressing Ctrl+C */}
-//    catch (Exception ex)
-//    {
-//        Console.Error.WriteLine(ex.ToString());
-//    }
-//};
 await host.RunAsync();

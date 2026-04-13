@@ -15,6 +15,7 @@
     <File Path="Directory.Packages.props" />
   </Folder>
   <Folder Name="/UnlockClassifier/">
+    <Project Path="UnlockClassifier/Gw2Unlocks.UnlockClassifier.Host/Gw2Unlocks.UnlockClassifier.Host.csproj" Id="3ba197e0-13dc-4358-a243-1228b725ef35" />
     <Project Path="UnlockClassifier/Gw2Unlocks.UnlockClassifier.IntegrationTests/Gw2Unlocks.UnlockClassifier.IntegrationTests.csproj" Id="ac4fcd6d-a3b1-4447-9861-63b72b104ae7" />
     <Project Path="UnlockClassifier/Gw2Unlocks.UnlockClassifier/Gw2Unlocks.UnlockClassifier.csproj" Id="3c710809-5d64-470e-85a2-1ca97167230a" />
   </Folder>

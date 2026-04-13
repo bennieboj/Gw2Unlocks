@@ -40,7 +40,7 @@ namespace Gw2Unlocks.Cache.Common
 
         protected async IAsyncEnumerable<T> StreamFromFileAsyncEnumerable<T>(
             string fileName,
-            [EnumeratorCancellation] CancellationToken cancellationToken = default)
+            [EnumeratorCancellation] CancellationToken cancellationToken)
         {
             var path = Path.Combine(CacheFolder, fileName);
 
@@ -62,7 +62,7 @@ namespace Gw2Unlocks.Cache.Common
 
         protected static async IAsyncEnumerable<string> ReadXmlPages(
             Stream stream,
-            [EnumeratorCancellation] CancellationToken cancellationToken = default)
+            [EnumeratorCancellation] CancellationToken cancellationToken)
         {
             var settings = new XmlReaderSettings { Async = true };
             using var reader = XmlReader.Create(stream, settings);
@@ -81,7 +81,7 @@ namespace Gw2Unlocks.Cache.Common
         protected static async IAsyncEnumerable<T> StreamFromFileAsyncEnumerable<T>(
             string fullpath,
             Func<Stream, CancellationToken, IAsyncEnumerable<T>> reader,
-            [EnumeratorCancellation] CancellationToken cancellationToken = default)
+            [EnumeratorCancellation] CancellationToken cancellationToken)
         {
             ArgumentNullException.ThrowIfNull(reader);
 

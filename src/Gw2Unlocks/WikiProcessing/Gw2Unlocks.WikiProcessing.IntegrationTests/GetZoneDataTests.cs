@@ -9,7 +9,7 @@ using Xunit;
 
 namespace Gw2Unlocks.WikiProcessing.IntegrationTests;
 
-public class GetZoneDataTests : ServiceProviderBasedTest<IGw2WikiGraphSource>
+public class GetZoneDataTests : ServiceProviderBasedTest<IGw2WikiProcessingSource>
 {
     private readonly Gw2WikiIntegrationTestSuccessResponseFake fakeWikiApi;
 

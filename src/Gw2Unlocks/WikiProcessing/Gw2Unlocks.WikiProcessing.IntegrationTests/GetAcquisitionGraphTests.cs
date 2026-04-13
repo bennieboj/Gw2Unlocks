@@ -8,7 +8,7 @@ using Xunit;
 
 namespace Gw2Unlocks.WikiProcessing.IntegrationTests;
 
-public class GetAcquisitionGraphTests : ServiceProviderBasedTest<IGw2WikiGraphSource>
+public class GetAcquisitionGraphTests : ServiceProviderBasedTest<IGw2WikiProcessingSource>
 {
     private readonly Gw2WikiIntegrationTestSuccessResponseFake fakeWikiApi;
 
@@ -24,6 +24,54 @@ public class GetAcquisitionGraphTests : ServiceProviderBasedTest<IGw2WikiGraphSo
                 .AddSingleton<Gw2WikiIntegrationTestSuccessResponseFake>()
                 .AddSingleton<IGw2WikiCache>(sp => sp.GetRequiredService<Gw2WikiIntegrationTestSuccessResponseFake>());
     }
+
+    [Fact]
+    public async Task HistoricalItemsShouldNotBeIncludedInTheGraph()
+    {
+        fakeWikiApi.FileName = "named_exotic_weapons.xml";
+        var graph = await GetSut().GetAcquisitionGraph(TestContext.Current.CancellationToken);
+
+        Assert.Empty(graph.Nodes);
+    }
+
+    [Fact]
+    public async Task NamedExoticWeaponsShouldBeTaggedAsSuch()
+    {
+        fakeWikiApi.FileName = "named_exotic_weapons.xml";
+        var graph = await GetSut().GetAcquisitionGraph(TestContext.Current.CancellationToken);
+        const string weapon = "Anura";
+        var weaponNode = graph.GetNode(weapon, NodeType.Weapon);
+
+        Assert.NotNull(weaponNode);
+
+        Assert.Equal("true", weaponNode.Metadata["IsNamedExoticWeapon"]);
+    }
+
+    [Fact]
+    public async Task MultipleSkinUnlocksShouldBeSplitProperly()
+    {
+        fakeWikiApi.FileName = "skin_multiple_unlock.xml";
+        var graph = await GetSut().GetAcquisitionGraph(TestContext.Current.CancellationToken);
+
+        const string item = "Acclaimed Militia Chestpiece Skin";
+        var itemNode = graph.GetNode(item, NodeType.Item);
+        const string skinHeavy = "Acclaimed Militia Chestpiece (heavy skin)";
+        var skinHeavyNode = graph.GetNode(skinHeavy, NodeType.Skin);
+        const string skinMedium = "Acclaimed Militia Chestpiece (medium skin)";
+        var skinMediumNode = graph.GetNode(skinMedium, NodeType.Skin);
+        const string skinLight = "Acclaimed Militia Chestpiece (light skin)";
+        var skinLightNode = graph.GetNode(skinLight, NodeType.Skin);
+
+        Assert.NotNull(itemNode);
+        Assert.NotNull(skinHeavyNode);
+        Assert.NotNull(skinMediumNode);
+        Assert.NotNull(skinLightNode);
+
+        Assert.Contains(graph.Edges, e => e.From == skinHeavy && e.To == item && e.Type == EdgeType.SkinUnlock);
+        Assert.Contains(graph.Edges, e => e.From == skinMedium && e.To == item && e.Type == EdgeType.SkinUnlock);
+        Assert.Contains(graph.Edges, e => e.From == skinLight && e.To == item && e.Type == EdgeType.SkinUnlock);
+    }
+
     [Fact]
     public async Task CraftingRecipeShouldLookAtIngredientsAndObjectShouldGoToZone()
     {
@@ -51,8 +99,10 @@ public class GetAcquisitionGraphTests : ServiceProviderBasedTest<IGw2WikiGraphSo
         Assert.NotNull(zoneNode);
 
         Assert.Contains(graph.Edges, e => e.From == skin && e.To == weapon && e.Type == EdgeType.SkinUnlock);
-        Assert.Contains(graph.Edges, e => e.From == weapon && e.To == itemCore && e.Type == EdgeType.HasIngredient);
-        Assert.Contains(graph.Edges, e => e.From == itemCore && e.To == itemIngot && e.Type == EdgeType.HasIngredient);
+        Assert.Contains(graph.Edges, e => e.From == weapon && e.To == itemCore && e.Type == EdgeType.HasIngredient
+                            && e.Metadata != null && e.Metadata.TryGetValue("discipline", out var discipline) && discipline == "weaponsmith");
+        Assert.Contains(graph.Edges, e => e.From == itemCore && e.To == itemIngot && e.Type == EdgeType.HasIngredient
+                            && e.Metadata != null && e.Metadata.TryGetValue("source", out var source) && source == "recipe sheet");
         Assert.Contains(graph.Edges, e => e.From == itemIngot && e.To == chest && e.Type == EdgeType.GatheredFrom);
         Assert.Contains(graph.Edges, e => e.From == chest && e.To == zone && e.Type == EdgeType.LocatedIn);
     }
