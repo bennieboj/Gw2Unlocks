@@ -38,6 +38,18 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
     }
 
     [Fact]
+    public async Task NoveltiesWork()
+    {
+        var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, "Endless Exalted Caster Tonic");
+        var group = results.UnlockGroups.Single(g => g.Name == "Heart of Thorns");
+        var category = group.UnlockCategories.Single(c => c.Name == "Auric Basin");
+        var unlock = category.Unlocks.Single(c => c.Name == "Endless Exalted Caster Tonic");
+
+        Assert.NotNull(unlock);
+        Assert.NotNull(unlock.ApiData);
+    }
+
+    [Fact]
     public async Task GivenUnlockHavingRecipeWithTokenAsIngredientShouldLinkToCategory()
     {
         var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, "Mini Foostivoo the Merry");

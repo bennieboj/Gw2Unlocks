@@ -4,6 +4,7 @@ const STORAGE_KEYS = {
   apiKey: "gw2_api_key",
   minis: "gw2_account_minis",
   skins: "gw2_account_skins",
+  novelties: "gw2_account_novelties",
   lastRefresh: "gw2_last_refresh"
 } as const;
 
@@ -218,7 +219,7 @@ class Gw2Unlocks extends HTMLElement {
     this.renderCategory(g, c);
   }
 
-  getStoredUnlocks(type: "minis" | "skins"): number[] {
+  getStoredUnlocks(type: "minis" | "skins" | "novelties"): number[] {
     const data = localStorage.getItem(STORAGE_KEYS[type]);
     return data ? JSON.parse(data) : [];
   }
@@ -228,23 +229,47 @@ class Gw2Unlocks extends HTMLElement {
 
     const minis = this.getStoredUnlocks("minis");
     const skins = this.getStoredUnlocks("skins");
+    const novelties = this.getStoredUnlocks("novelties");
 
-    const type = unlock.Node?.Type;
+    const metadataType = unlock.Node?.Metadata?.type?.toLowerCase?.() || "";
+    const apiType = unlock.ApiData?.type?.toLowerCase?.() || "";
+
+    let type: string | null = null;
+
+    if (metadataType.includes("miniature")) {
+      type = "Miniature";
+    }
+    else if (unlock.Node?.Type === "Skin" || apiType.includes("skin")) {
+      type = "Skin";
+    }
+    else if (metadataType.includes("novelty")) {
+      type = "Novelty";
+    }
+    else if (unlock.Node?.Type === "Achievement") {
+      type = "Achievement";
+    }
+
+    if (!type) return null;
+
     const id = unlock.ApiData.id;
+    const name = unlock.ApiData.name;
+    const icon = unlock.ApiData.icon;
 
     const unlocked =
       type === "Miniature"
         ? minis.includes(id)
         : type === "Skin"
         ? skins.includes(id)
+        : type === "Novelty"
+        ? novelties.includes(id)
         : false;
 
     return {
       type,
       html: `
         <div class="item ${unlocked ? "unlocked" : ""}">
-          <img src="${unlock.ApiData.icon}">
-          <div>${unlock.ApiData.name}</div>
+          <img src="${icon}" alt="${name}">
+          <div>${name}</div>
         </div>
       `
     };
@@ -377,16 +402,19 @@ class Gw2Unlocks extends HTMLElement {
     this.setStatus("Loading API data...");
 
     try {
-      const [minisRes, skinsRes] = await Promise.all([
+      const [minisRes, skinsRes, noveltiesRes] = await Promise.all([
         fetch(`https://api.guildwars2.com/v2/account/minis?access_token=${apiKey}`),
-        fetch(`https://api.guildwars2.com/v2/account/skins?access_token=${apiKey}`)
+        fetch(`https://api.guildwars2.com/v2/account/skins?access_token=${apiKey}`),
+        fetch(`https://api.guildwars2.com/v2/account/novelties?access_token=${apiKey}`)
       ]);
 
       const minis: number[] = await minisRes.json();
       const skins: number[] = await skinsRes.json();
+      const novelties: number[] = await noveltiesRes.json();
 
       localStorage.setItem(STORAGE_KEYS.minis, JSON.stringify(minis));
       localStorage.setItem(STORAGE_KEYS.skins, JSON.stringify(skins));
+      localStorage.setItem(STORAGE_KEYS.novelties, JSON.stringify(novelties));
       localStorage.setItem(STORAGE_KEYS.lastRefresh, Date.now().toString());
 
       this.setStatus("API data refreshed");

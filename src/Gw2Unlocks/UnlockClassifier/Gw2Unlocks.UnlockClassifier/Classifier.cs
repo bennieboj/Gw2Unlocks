@@ -346,17 +346,23 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikigr
 
     private object? GetApiData(Node node, string startKey)
     {
-        if(miniatures == null || skins == null || achievements == null)
+        if(miniatures == null || skins == null || achievements == null || titles == null || novelties == null)
         {
             logger.LogWarning("API data not initialized when trying to get API data for {key} ({type})", startKey, node.Type);
             return null;
         }
 
         object? result = null;
-        if (node.Type == NodeType.Item && node.Metadata.TryGetValue("type", out var metadataType) && metadataType == "miniature"
+        if (node.Type == NodeType.Item && node.Metadata.TryGetValue("type", out var metadataTypeMini) && metadataTypeMini == "miniature"
             && node.Metadata.TryGetValue("miniature id", out var miniId) && !string.IsNullOrEmpty(miniId) && int.TryParse(miniId, out var miniIdInt))
         {
-            result = miniatures.Single(m => m.Id == miniIdInt); 
+            result = miniatures.Single(m => m.Id == miniIdInt);
+        }
+
+        if (node.Type == NodeType.Item && node.Metadata.TryGetValue("type", out var metadataTypeNovelty) && metadataTypeNovelty.Contains("novelty", StringComparison.OrdinalIgnoreCase)
+            && node.Metadata.TryGetValue("novelty-id", out var noveltyId) && !string.IsNullOrEmpty(noveltyId) && int.TryParse(noveltyId, out var noveltyIdInt))
+        {
+            result = novelties.Single(m => m.Id == noveltyIdInt);
         }
 
         if (node.Type == NodeType.Skin && node.Metadata.TryGetValue("id", out var skinId) && !string.IsNullOrEmpty(skinId) && int.TryParse(skinId, out var skinIdInt))
