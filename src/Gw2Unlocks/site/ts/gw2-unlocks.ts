@@ -31,21 +31,28 @@ class Gw2Unlocks extends HTMLElement {
 
     this.innerHTML = `
       <style>
+        html, body {
+          height: auto;
+          overflow-y: auto;
+        }
+
+        :host {
+          display: block;
+        }
+
         .layout {
           display: flex;
-          height: 100vh;
+          min-height: 100vh;
         }
 
         .sidebar {
           width: 260px;
-          overflow-y: auto;
           border-right: 1px solid #ccc;
           padding: 10px;
         }
 
         .content {
           flex: 1;
-          overflow-y: auto;
           padding: 16px;
         }
 
