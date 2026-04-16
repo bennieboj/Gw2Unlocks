@@ -28,7 +28,7 @@ public class GetAcquisitionGraphTests : ServiceProviderBasedTest<IGw2WikiProcess
     [Fact]
     public async Task HistoricalItemsShouldNotBeIncludedInTheGraph()
     {
-        fakeWikiApi.FileName = "named_exotic_weapons.xml";
+        fakeWikiApi.FileName = "historical.xml";
         var graph = await GetSut().GetAcquisitionGraph(TestContext.Current.CancellationToken);
 
         Assert.Empty(graph.Nodes);
