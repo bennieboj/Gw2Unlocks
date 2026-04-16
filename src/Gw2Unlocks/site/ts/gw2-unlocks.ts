@@ -507,12 +507,12 @@ class Gw2Unlocks extends HTMLElement {
     Object.keys(map).forEach(type => {
       if (!grouped[type]) return;
 
-      const { percent } = this.getCompletion(grouped, type);
+      const { unlocked, items, percent } = this.getCompletion(grouped, type);
       const color = this.getColor(percent);
 
       html += `
         <div class="type-title" style="color:${color}">
-          ${map[type]} (${percent}%)
+          ${map[type]} (${unlocked} / ${items} · ${percent}%)
         </div>
         <div class="grid">${grouped[type]}</div>
       `;
