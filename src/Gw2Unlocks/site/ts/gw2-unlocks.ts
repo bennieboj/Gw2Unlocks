@@ -89,6 +89,7 @@ class Gw2Unlocks extends HTMLElement {
           width: 80px;
           text-align: center;
           opacity: 0.4;
+          cursor: pointer;
         }
 
         .item.unlocked {
@@ -123,6 +124,66 @@ class Gw2Unlocks extends HTMLElement {
         .kofi-btn:hover {
           opacity: 0.9;
         }
+        .modal-backdrop {
+          position: fixed;
+          inset: 0;
+          background: rgba(0,0,0,0.65);
+          display: none;
+          align-items: center;
+          justify-content: center;
+          z-index: 1000;
+        }
+
+        .modal-backdrop.open {
+          display: flex;
+        }
+
+        .modal {
+          background: #222;
+          color: white;
+          padding: 20px;
+          border-radius: 12px;
+          min-width: 320px;
+          text-align: center;
+        }
+
+        .modal img {
+          width: 96px;
+          height: 96px;
+          margin: 12px 0;
+        }
+
+        .modal-actions a,
+        .modal-actions button {
+          padding: 8px 12px;
+          border: none;
+          border-radius: 8px;
+          text-decoration: none;
+          cursor: pointer;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          min-width: 110px;
+          font: inherit;
+        }
+
+        .modal-actions a {
+          background: #3b82f6;
+          color: white;
+        }
+
+        .modal-actions a:hover {
+          opacity: 0.9;
+        }
+
+        .modal-actions button {
+          background: #555;
+          color: white;
+        }
+
+        .modal-actions button:hover {
+          opacity: 0.9;
+        }
       </style>
 
       <div class="controls">
@@ -147,6 +208,17 @@ class Gw2Unlocks extends HTMLElement {
         <div class="sidebar" id="sidebar"></div>
         <div class="content" id="content"></div>
       </div>
+
+      <div class="modal-backdrop" id="modal">
+        <div class="modal">
+          <div id="modal-name"></div>
+          <img id="modal-icon">
+          <div class="modal-actions">
+            <a id="wiki-link" target="_blank">Open Wiki</a>
+            <button id="close-modal">Close</button>
+          </div>
+        </div>
+      </div>
     `;
 
     this.renderSidebar();
@@ -161,7 +233,90 @@ class Gw2Unlocks extends HTMLElement {
     this.querySelector("#refresh")!.addEventListener("click", () => this.refreshApi());
 
     window.addEventListener("hashchange", () => this.renderRoute());
+
+    this.querySelector("#close-modal")!
+      .addEventListener("click", () => this.closeModal());
+
+    this.querySelector("#modal")!
+      .addEventListener("click", (e) => {
+        if (e.target === e.currentTarget) this.closeModal();
+      });
   }
+
+  getChatLink(id: number, type: string) {
+    let bytes: number[] = [];
+
+    if (type === "Miniature" || type === "Novelty") {
+      bytes = [
+        0x02,                 // item header
+        0x01,                 // quantity = 1
+        id & 0xff,
+        (id >> 8) & 0xff,
+        (id >> 16) & 0xff,
+        0x00                  // flags
+      ];
+    }
+    else if (type === "Skin") {
+      bytes = [
+        0x0A,
+        id & 0xff,
+        (id >> 8) & 0xff,
+        (id >> 16) & 0xff,
+        (id >> 24) & 0xff
+      ];
+    }
+    else if (type === "Outfit") {
+      bytes = [
+        0x0B,
+        id & 0xff,
+        (id >> 8) & 0xff,
+        (id >> 16) & 0xff,
+        (id >> 24) & 0xff
+      ];
+    }
+
+    const binary = String.fromCharCode(...bytes);
+
+    return `[&${btoa(binary)}]`;
+  }
+
+  getWikiUrl(id: number, type: string, name: string) {
+    if (type === "Achievement") {
+      return `https://wiki.guildwars2.com/index.php?search=${encodeURIComponent(name)}`;
+    }
+
+    const chatLink = this.getChatLink(id, type);
+
+    return `https://wiki.guildwars2.com/index.php?title=Special%3ASearch&search=${encodeURIComponent(chatLink)}`;
+  }
+
+  openModal(data: any, type: string) {
+    (this.querySelector("#modal-name") as HTMLElement).textContent = data.name;
+    (this.querySelector("#modal-icon") as HTMLImageElement).src = data.icon;
+
+    (this.querySelector("#wiki-link") as HTMLAnchorElement).href =
+      this.getWikiUrl(data.wikiId, type, data.name);
+
+    this.querySelector("#modal")!.classList.add("open");
+  }
+
+  closeModal() {
+    this.querySelector("#modal")!.classList.remove("open");
+  }
+
+  activateItems() {
+    this.querySelectorAll(".item").forEach(el => {
+      el.addEventListener("click", () => {
+        const node = el as HTMLElement;
+
+        this.openModal({
+          wikiId: Number(node.dataset.wikiId),
+          name: node.dataset.name,
+          icon: node.dataset.icon
+        }, node.dataset.type!);
+      });
+    });
+}
 
   getCompletion(grouped: any, type: string) {
     const items = (grouped[type] || "").match(/class="item/g)?.length || 0;
@@ -282,12 +437,24 @@ class Gw2Unlocks extends HTMLElement {
     else if (unlock.Node?.Type === "Achievement") {
       type = "Achievement";
     }
+    else if (apiType.includes("outfit")) {
+      type = "Outfit";
+    }
 
     if (!type) return null;
 
     const id = unlock.ApiData.id;
     const name = unlock.ApiData.name;
     const icon = unlock.ApiData.icon;
+
+    let wikiId = id;
+
+    if (type === "Miniature") {
+      wikiId = unlock.ApiData.item_id;
+    }
+    else if (type === "Novelty" || type === "Outfit") {
+      wikiId = unlock.ApiData.unlock_item_ids?.[0];
+    }
 
     const unlocked =
       type === "Miniature"
@@ -301,7 +468,13 @@ class Gw2Unlocks extends HTMLElement {
     return {
       type,
       html: `
-        <div class="item ${unlocked ? "unlocked" : ""}">
+        <div
+          class="item ${unlocked ? "unlocked" : ""}"
+          data-type="${type}"
+          data-wiki-id="${wikiId || ""}"
+          data-name="${name.replace(/"/g, "&quot;")}"
+          data-icon="${icon}"
+        >
           <img src="${icon}" alt="${name}">
           <div>${name}</div>
         </div>
@@ -327,7 +500,8 @@ class Gw2Unlocks extends HTMLElement {
       Skin: "Skins",
       Miniature: "Miniatures",
       Novelty: "Novelties",
-      Achievement: "Achievements"
+      Achievement: "Achievements",
+      Outfit: "Outfits"
     };
 
     Object.keys(map).forEach(type => {
@@ -373,6 +547,7 @@ class Gw2Unlocks extends HTMLElement {
       <div class="title-group">All Unlocks</div>
       ${this.renderTypes(grouped)}
     `;
+    this.activateItems();
   }
   renderGroup(group: any) {
     const content = this.querySelector("#content")!;
@@ -397,6 +572,7 @@ class Gw2Unlocks extends HTMLElement {
       <div class="title-group">${group.Name}</div>
       ${this.renderTypes(grouped)}
     `;
+    this.activateItems();
   }
 
   renderCategory(group: any, cat: any) {
@@ -408,6 +584,7 @@ class Gw2Unlocks extends HTMLElement {
       <div class="title-category">${cat.Name}</div>
       ${this.renderTypes(grouped)}
     `;
+    this.activateItems();
   }
 
 
