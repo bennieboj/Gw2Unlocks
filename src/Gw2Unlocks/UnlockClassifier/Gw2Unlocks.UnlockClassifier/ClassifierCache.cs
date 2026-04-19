@@ -7,6 +7,7 @@ namespace Gw2Unlocks.UnlockClassifier
     internal class ClassifierCache(CachePaths cachePaths) : GenericCache(cachePaths, "classifier-cache"), IClassifierCache
     {
         private const string classifierConfigFileName = "classifier-config.json";
+        public Task<ClassifyConfig> GetClassifierConfigFromCacheAsync(CancellationToken cancellationToken) => LoadFromFileAsync<ClassifyConfig>(classifierConfigFileName, cancellationToken);
         public Task SaveClassifierConfigToCacheAsync(ClassifyConfig data, CancellationToken cancellationToken) => SaveToCacheAsync(classifierConfigFileName, data, cancellationToken);
     }
 }

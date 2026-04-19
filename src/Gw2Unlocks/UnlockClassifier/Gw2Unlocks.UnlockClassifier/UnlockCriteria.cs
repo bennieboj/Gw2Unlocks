@@ -7,14 +7,6 @@ public abstract class UnlockCriteria
     public abstract bool Matches(string unlock);
 }
 
-class NoOpCriteria : UnlockCriteria
-{
-    public override bool Matches(string unlock)
-    {
-        return false;
-    }
-}
-
 class ZoneCriteria(string ZoneName) : UnlockCriteria
 {
     public override bool Matches(string unlock)
@@ -36,6 +28,31 @@ class TokenCriteria(string TokenName) : UnlockCriteria
         return string.Equals(
             name,
             TokenName,
+            StringComparison.OrdinalIgnoreCase);
+    }
+}
+
+
+class AchievementCategoryCriteria(string AchievementCategoryName) : UnlockCriteria
+{
+    public override bool Matches(string unlock)
+    {
+        var name = unlock.ToString();
+        return string.Equals(
+            name,
+            AchievementCategoryName,
+            StringComparison.OrdinalIgnoreCase);
+    }
+}
+
+class CraftingMaterialCriteria(string craftingMaterialName) : UnlockCriteria
+{
+    public override bool Matches(string unlock)
+    {
+        var name = unlock.ToString();
+        return string.Equals(
+            name,
+            craftingMaterialName,
             StringComparison.OrdinalIgnoreCase);
     }
 }

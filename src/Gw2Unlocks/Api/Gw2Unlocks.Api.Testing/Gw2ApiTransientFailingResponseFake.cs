@@ -1,4 +1,5 @@
 ﻿using GuildWars2.Hero.Achievements;
+using GuildWars2.Hero.Achievements.Categories;
 using GuildWars2.Hero.Achievements.Titles;
 using GuildWars2.Hero.Equipment.Miniatures;
 using GuildWars2.Hero.Equipment.Novelties;
@@ -17,6 +18,7 @@ public class Gw2ApiTransientFailingResponseFake : IGw2ApiSource
     private Collection<Item> Items = [];
     private Collection<EquipmentSkin> Skins = [];
     private Collection<Achievement> Achievements = [];
+    private Collection<AchievementCategory> AchievementCategories = [];
     private Collection<Miniature> Miniatures = [];
     private Collection<Novelty> Novelties = [];
     private Collection<Title> Titles = [];
@@ -24,6 +26,7 @@ public class Gw2ApiTransientFailingResponseFake : IGw2ApiSource
     public void SetItems(Collection<Item> items) => Items = items;
     public void SetSkins(Collection<EquipmentSkin> skins) => Skins = skins;
     public void SetAchievements(Collection<Achievement> achievements) => Achievements = achievements;
+    public void SetAchievementCategories(Collection<AchievementCategory> achievementCategories) => AchievementCategories = achievementCategories;
     public void SetMiniatures(Collection<Miniature> miniatures) => Miniatures = miniatures;
     public void SetNovelties(Collection<Novelty> novelties) => Novelties = novelties;
     public void SetTitles(Collection<Title> titles) => Titles = titles;
@@ -59,6 +62,12 @@ public class Gw2ApiTransientFailingResponseFake : IGw2ApiSource
     {
         ThrowIfNeeded("Transient Achievements failure");
         return Task.FromResult(Achievements);
+    }
+
+    public Task<Collection<AchievementCategory>> GetAchievementCategoriesAsync(CancellationToken cancellationToken)
+    {
+        ThrowIfNeeded("Transient Achievement Categories failure");
+        return Task.FromResult(AchievementCategories);
     }
 
     public Task<Collection<Miniature>> GetMiniaturesAsync(CancellationToken cancellationToken)

@@ -15,7 +15,7 @@ builder.Logging.SetupLogging(builder.Configuration);
 builder.Services.AddCacheWikiAsCache()
                 .AddWikiGraphSource()
                 .AddCacheDir()
-                .AddJsonCacheWikiGraph();
+                .AddJsonCacheWikiProcessing();
 
 builder.Services.AddUpdater();
 

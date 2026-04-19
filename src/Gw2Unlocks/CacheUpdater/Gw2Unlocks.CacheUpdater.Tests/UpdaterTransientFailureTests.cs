@@ -1,4 +1,5 @@
 ﻿using GuildWars2.Hero.Achievements;
+using GuildWars2.Hero.Achievements.Categories;
 using GuildWars2.Hero.Achievements.Titles;
 using GuildWars2.Hero.Equipment.Miniatures;
 using GuildWars2.Hero.Equipment.Novelties;
@@ -60,6 +61,10 @@ public class UpdaterTransientFailureTests : ServiceProviderBasedTest<IUpdater>
         [
             new AchievementBuilder().WithName("Ach 1").Build()
         ]));
+        source.SetAchievementCategories(new Collection<AchievementCategory>(
+        [
+            new AchievementCategoryBuilder().WithName("Category 1").Build()
+        ]));
         source.SetMiniatures(new Collection<Miniature>(
         [
             new MiniatureBuilder().WithName("Mini 1").Build()
@@ -79,6 +84,7 @@ public class UpdaterTransientFailureTests : ServiceProviderBasedTest<IUpdater>
         Assert.Equal(2, cache.SavedItems?.Count);
         Assert.Single(cache.SavedSkins!);
         Assert.Single(cache.SavedAchievements!);
+        Assert.Single(cache.SavedAchievementCategories!);
         Assert.Single(cache.SavedMiniatures!);
         Assert.Single(cache.SavedNovelties!);
         Assert.Single(cache.SavedTitles!);

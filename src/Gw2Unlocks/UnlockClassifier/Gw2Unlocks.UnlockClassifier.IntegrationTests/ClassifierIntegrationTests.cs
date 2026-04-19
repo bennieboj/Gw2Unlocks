@@ -28,10 +28,28 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
     [Fact]
     public async Task GivenUnlockSoldBySameVendorInMultipleZonesWhenClassifyingUnlockThenShouldReturnZoneLinkedToSellingCurrency()
     {
-        var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, "Mini Exalted Sage");
+        var unlockName = "Mini Exalted Sage";
+        var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
         var group = results.UnlockGroups.Single(g => g.Name == "Heart of Thorns");
         var category = group.UnlockCategories.Single(c => c.Name == "Auric Basin");
-        var unlock = category.Unlocks.Single(c => c.Name == "Mini Exalted Sage");
+        var unlock = category.Unlocks.Single(c => c.Name == unlockName);
+
+        Assert.NotNull(unlock);
+        Assert.NotNull(unlock.ApiData);
+    }
+
+    [Theory]
+    [InlineData("Great Capra (skin)", "Verdant Brink")]
+    [InlineData("Ley Guard's Protector", "Auric Basin")]
+    [InlineData("Ley Guard's Revolver", "Auric Basin")]
+    [InlineData("Augury of Death (skin)", "Auric Basin")]
+    [InlineData("Plated Axe (skin)", "Dragon's Stand")]
+    public async Task GivenUnlockInChestInZoneShouldResultInZone(string unlockName, string zoneName)
+    {
+        var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
+        var group = results.UnlockGroups.Single(g => g.Name == "Heart of Thorns");
+        var category = group.UnlockCategories.Single(c => c.Name == zoneName);
+        var unlock = category.Unlocks.Single(c => c.Name == unlockName);
 
         Assert.NotNull(unlock);
         Assert.NotNull(unlock.ApiData);
@@ -40,10 +58,11 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
     [Fact]
     public async Task NoveltiesWork()
     {
-        var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, "Endless Exalted Caster Tonic");
+        var unlockName = "Endless Exalted Caster Tonic";
+        var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
         var group = results.UnlockGroups.Single(g => g.Name == "Heart of Thorns");
         var category = group.UnlockCategories.Single(c => c.Name == "Auric Basin");
-        var unlock = category.Unlocks.Single(c => c.Name == "Endless Exalted Caster Tonic");
+        var unlock = category.Unlocks.Single(c => c.Name == unlockName);
 
         Assert.NotNull(unlock);
         Assert.NotNull(unlock.ApiData);
@@ -52,11 +71,11 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
     [Fact]
     public async Task GivenUnlockHavingRecipeWithTokenAsIngredientShouldLinkToCategory()
     {
-        var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, "Mini Foostivoo the Merry");
+        var unlockName = "Mini Foostivoo the Merry";
+        var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
         var group = results.UnlockGroups.Single(g => g.Name == "Festivals");
         var category = group.UnlockCategories.Single(c => c.Name == "Wintersday");
-        var unlock = category.Unlocks.Single(c => c.Name == "Mini Foostivoo the Merry");
-
+        var unlock = category.Unlocks.Single(c => c.Name == unlockName);
         Assert.NotNull(unlock);
         Assert.NotNull(unlock.ApiData);
     }
@@ -64,10 +83,11 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
     [Fact]
     public async Task GivenUnlockContainsExoticChestShouldBeGeneralCategory()
     {
-        var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, "Adam (skin)");
+        var unlockName = "Adam (skin)";
+        var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
         var group = results.UnlockGroups.Single(g => g.Name == "Other");
         var category = group.UnlockCategories.Single(c => c.Name == "General");
-        var unlock = category.Unlocks.Single(c => c.Name == "Adam (skin)");
+        var unlock = category.Unlocks.Single(c => c.Name == unlockName);
 
         Assert.NotNull(unlock);
         Assert.NotNull(unlock.ApiData);
@@ -76,25 +96,37 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
     [Fact]
     public async Task GivenUnlockSkinShouldContainApiData()
     {
+        var unlockName = "Bladed Helmet (skin)";
         var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, "Bladed Helmet (skin)");
         var group = results.UnlockGroups.Single(g => g.Name == "Heart of Thorns");
         var category = group.UnlockCategories.Single(c => c.Name == "Verdant Brink");
-        var unlock = category.Unlocks.Single(c => c.Name == "Bladed Helmet (skin)");
+        var unlock = category.Unlocks.Single(c => c.Name == unlockName);
 
         Assert.NotNull(unlock);
         Assert.NotNull(unlock.ApiData);
     }
 
 
-    [Theory]
-    [InlineData("Sunspear Warsickle (skin)")]
-    [InlineData("Leather Coat (skin)")]
-    public async Task CraftingShouldBeCrafting(string unlockname)
+    [Fact]
+    public async Task CraftingShouldBeCrafting()
     {
-        var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockname);
+        string unlockName = "Leather Coat (skin)";
+        var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
         var group = results.UnlockGroups.Single(g => g.Name == "Other");
         var category = group.UnlockCategories.Single(c => c.Name == "Crafting");
-        var unlock = category.Unlocks.Single(c => c.Name == unlockname);
+        var unlock = category.Unlocks.Single(c => c.Name == unlockName);
+
+        Assert.NotNull(unlock);
+        Assert.NotNull(unlock.ApiData);
+    }
+
+    [Fact]
+    public async Task ItemInMultipleClassificationsShouldUseMostCommon()
+    {
+        string unlockName = "Sunspear Warsickle (skin)";
+        var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
+        var group = results.UnlockGroups.Single(g => g.Name == "Path of Fire");
+        var unlock = group.Unlocks.Single(c => c.Name == unlockName);
 
         Assert.NotNull(unlock);
         Assert.NotNull(unlock.ApiData);
@@ -103,22 +135,77 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
     [Fact]
     public async Task GivenItemWithRecipeSourceMysticForrgeShouldBeCategoryMysticForge()
     {
-        var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, "Abyssal Scepter (skin)");
+        var unlockName = "Abyssal Scepter (skin)";
+        var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
         var group = results.UnlockGroups.Single(g => g.Name == "Other");
         var category = group.UnlockCategories.Single(c => c.Name == "Mystic Forge");
-        var unlock = category.Unlocks.Single(c => c.Name == "Abyssal Scepter (skin)");
+        var unlock = category.Unlocks.Single(c => c.Name == unlockName);
 
         Assert.NotNull(unlock);
         Assert.NotNull(unlock.ApiData);
     }
 
     [Fact]
-    public async Task GivenItemAwardedByAchievementShouldTakeGroupAndCategoryOfAchievement()
+    public async Task GivenItemAwardedByAchievementShouldTakeGroupAndCategoryLinkedToAchievementCategory()
     {
-        var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, "Temple Gate (skin)");
-        var group = results.UnlockGroups.Single(g => g.Name == "Path of Fire");
+        var unlockName = "Temple Gate (skin)";
+        var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
+        var group = results.UnlockGroups.Single(g => g.Name == "End of Dragons");
         var category = group.UnlockCategories.Single(c => c.Name == "Seitung Province");
-        var unlock = category.Unlocks.Single(c => c.Name == "Temple Gate (skin)");
+        var unlock = category.Unlocks.Single(c => c.Name == unlockName);
+
+        Assert.NotNull(unlock);
+        Assert.NotNull(unlock.ApiData);
+    }
+
+    [Theory]
+    [InlineData("Auric Axe (skin)")]
+    [InlineData("Auric Longbow (skin)")]
+    public async Task ItemsRequiredForAchievementShouldCategorizeCorrectly(string unlockName)
+    {
+        var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
+        var group = results.UnlockGroups.Single(g => g.Name == "Heart of Thorns");
+        var category = group.UnlockCategories.Single(c => c.Name == "Auric Basin");
+        var unlock = category.Unlocks.Single(c => c.Name == unlockName);
+
+        Assert.NotNull(unlock);
+        Assert.NotNull(unlock.ApiData);
+    }
+
+    [Fact]
+    public async Task GivenItemsAwardedByAchievementShouldInfluenceGroupAndCategory()
+    {
+        var unlockName = "Auric Backplate (skin)";
+        var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
+        var group = results.UnlockGroups.Single(g => g.Name == "Heart of Thorns");
+        var category = group.UnlockCategories.Single(c => c.Name == "Auric Basin");
+        var unlock = category.Unlocks.Single(c => c.Name == unlockName);
+
+        Assert.NotNull(unlock);
+        Assert.NotNull(unlock.ApiData);
+    }
+
+    [Fact]
+    public async Task ItemsRequiredForAchievementShouldInfluenceGroupAndCategory()
+    {
+        var unlockName = "Auric Weapons";
+        var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
+        var group = results.UnlockGroups.Single(g => g.Name == "Heart of Thorns");
+        var category = group.UnlockCategories.Single(c => c.Name == "Auric Basin");
+        var unlock = category.Unlocks.Single(c => c.Name == unlockName);
+
+        Assert.NotNull(unlock);
+        Assert.NotNull(unlock.ApiData);
+    }
+
+    [Fact]
+    public async Task GivenAchievementsPartOfAchievementCategoryWhichIsLinkedtoUnlockCategory()
+    {
+        var unlockName = "Highest Gear";
+        var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
+        var group = results.UnlockGroups.Single(g => g.Name == "Heart of Thorns");
+        var category = group.UnlockCategories.Single(c => c.Name == "Auric Basin");
+        var unlock = category.Unlocks.Single(c => c.Name == unlockName);
 
         Assert.NotNull(unlock);
         Assert.NotNull(unlock.ApiData);

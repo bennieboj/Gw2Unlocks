@@ -1,5 +1,6 @@
 ﻿using GuildWars2;
 using GuildWars2.Hero.Achievements;
+using GuildWars2.Hero.Achievements.Categories;
 using GuildWars2.Hero.Achievements.Titles;
 using GuildWars2.Hero.Equipment.Miniatures;
 using GuildWars2.Hero.Equipment.Novelties;
@@ -35,6 +36,12 @@ public static class AsyncEnumerableExtensions
 
 internal sealed class Gw2Api(Gw2Client client) : IGw2ApiSource
 {
+    public async Task<Collection<AchievementCategory>> GetAchievementCategoriesAsync(CancellationToken cancellationToken)
+    {
+        var set = await client.Hero.Achievements.GetAchievementCategories(cancellationToken: cancellationToken).ValueOnly();
+        return [.. set];
+    }
+
     public async Task<Collection<Achievement>> GetAchievementsAsync(CancellationToken cancellationToken)
     {
         return await client.Hero.Achievements.GetAchievementsBulk(cancellationToken: cancellationToken).ValueOnly(cancellationToken).ToCollectionAsync(cancellationToken);

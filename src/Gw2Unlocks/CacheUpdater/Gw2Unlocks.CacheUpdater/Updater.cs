@@ -28,6 +28,10 @@ internal class Updater(IGw2ApiSource apiSource, IGw2ApiCache apiCache, IGw2WikiS
         var achievements = await RetryAsync(() => apiSource.GetAchievementsAsync(cancellationToken), "Achievements");
         await apiCache.SaveAchievementsToCacheAsync(achievements, cancellationToken);
 
+        // Achievement Categories
+        var achievementCategories = await RetryAsync(() => apiSource.GetAchievementCategoriesAsync(cancellationToken), "Achievement Categories");
+        await apiCache.SaveAchievementCategoriesToCacheAsync(achievementCategories, cancellationToken);
+
         // Miniatures
         var miniatures = await RetryAsync(() => apiSource.GetMiniaturesAsync(cancellationToken), "Miniatures");
         await apiCache.SaveMiniaturesToCacheAsync(miniatures, cancellationToken);

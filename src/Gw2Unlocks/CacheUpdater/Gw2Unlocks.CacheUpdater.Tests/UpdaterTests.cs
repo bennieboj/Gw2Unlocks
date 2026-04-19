@@ -1,4 +1,5 @@
 ﻿using GuildWars2.Hero.Achievements;
+using GuildWars2.Hero.Achievements.Categories;
 using GuildWars2.Hero.Achievements.Titles;
 using GuildWars2.Hero.Equipment.Miniatures;
 using GuildWars2.Hero.Equipment.Novelties;
@@ -55,6 +56,11 @@ public class UpdaterTests : ServiceProviderBasedTest<IUpdater>
         source.SetAchievements(new Collection<Achievement>(
         [
             new AchievementBuilder().WithName("Ach 1").Build()
+        ]));
+
+        source.SetAchievementCategories(new Collection<AchievementCategory>(
+        [
+            new AchievementCategoryBuilder().WithName("Category 1").Build()
         ]));
 
         source.SetMiniatures(new Collection<Miniature>(

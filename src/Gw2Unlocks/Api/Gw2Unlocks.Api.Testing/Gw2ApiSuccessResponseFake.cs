@@ -1,5 +1,6 @@
 ﻿
 using GuildWars2.Hero.Achievements;
+using GuildWars2.Hero.Achievements.Categories;
 using GuildWars2.Hero.Achievements.Titles;
 using GuildWars2.Hero.Equipment.Miniatures;
 using GuildWars2.Hero.Equipment.Novelties;
@@ -16,6 +17,7 @@ public class Gw2ApiSuccessResponseFake : IGw2ApiSource, IGw2ApiCache
     public Collection<Item> Items { get; private set; } = [];
     public Collection<EquipmentSkin> Skins { get; private set; } = [];
     public Collection<Achievement> Achievements { get; private set; } = [];
+    public Collection<AchievementCategory> AchievementCategories { get; private set; } = [];
     public Collection<Miniature> Miniatures { get; private set; } = [];
     public Collection<Novelty> Novelties { get; private set; } = [];
     public Collection<Title> Titles { get; private set; } = [];
@@ -23,6 +25,7 @@ public class Gw2ApiSuccessResponseFake : IGw2ApiSource, IGw2ApiCache
     public void SetItems(Collection<Item> items) => Items = items;
     public void SetSkins(Collection<EquipmentSkin> skins) => Skins = skins;
     public void SetAchievements(Collection<Achievement> achievements) => Achievements = achievements;
+    public void SetAchievementCategories(Collection<AchievementCategory> achievementCategories) => AchievementCategories = achievementCategories;
     public void SetMiniatures(Collection<Miniature> miniatures) => Miniatures = miniatures;
     public void SetNovelties(Collection<Novelty> novelties) => Novelties = novelties;
     public void SetTitles(Collection<Title> titles) => Titles = titles;
@@ -34,6 +37,9 @@ public class Gw2ApiSuccessResponseFake : IGw2ApiSource, IGw2ApiCache
 
     public virtual Task<Collection<Achievement>> GetAchievementsAsync(CancellationToken cancellationToken)
         => Task.FromResult(Achievements);
+
+    public virtual Task<Collection<AchievementCategory>> GetAchievementCategoriesAsync(CancellationToken cancellationToken)
+        => Task.FromResult(AchievementCategories);
 
     public virtual Task<Collection<Miniature>> GetMiniaturesAsync(CancellationToken cancellationToken)
         => Task.FromResult(Miniatures);
@@ -48,6 +54,7 @@ public class Gw2ApiSuccessResponseFake : IGw2ApiSource, IGw2ApiCache
     public Collection<Item>? SavedItems { get; private set; }
     public Collection<EquipmentSkin>? SavedSkins { get; private set; }
     public Collection<Achievement>? SavedAchievements { get; private set; }
+    public Collection<AchievementCategory>? SavedAchievementCategories { get; private set; }
     public Collection<Miniature>? SavedMiniatures { get; private set; }
     public Collection<Novelty>? SavedNovelties { get; private set; }
     public Collection<Title>? SavedTitles { get; private set; }
@@ -67,6 +74,12 @@ public class Gw2ApiSuccessResponseFake : IGw2ApiSource, IGw2ApiCache
     public Task SaveAchievementsToCacheAsync(Collection<Achievement> data, CancellationToken cancellationToken)
     {
         SavedAchievements = [.. data];
+        return Task.CompletedTask;
+    }
+
+    public Task SaveAchievementCategoriesToCacheAsync(Collection<AchievementCategory> data, CancellationToken cancellationToken)
+    {
+        SavedAchievementCategories = [.. data];
         return Task.CompletedTask;
     }
 
