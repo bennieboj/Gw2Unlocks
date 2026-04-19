@@ -62,6 +62,7 @@ public sealed class Gw2WikiProcessingSource(
                         if(infobox.InfoBoxType.Equals("Achievement category", StringComparison.OrdinalIgnoreCase))
                         {
                             ApplyAchievements(graph, title, ast, infobox);
+                            logger.LogInformation("Processed achievement category page {title}", title);
                             continue;
                         }
 
