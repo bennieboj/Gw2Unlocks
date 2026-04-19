@@ -48,6 +48,26 @@ public class GetAcquisitionGraphTests : ServiceProviderBasedTest<IGw2WikiProcess
     }
 
     [Fact]
+    public async Task AchievementsShouldBeParsedProperly()
+    {
+        fakeWikiApi.FileName = "achievements.xml";
+        var graph = await GetSut().GetAcquisitionGraph(TestContext.Current.CancellationToken);
+        const int highestGearAchiId = 2292;
+        var highestGearNode = graph.GetAchievementNode(highestGearAchiId);
+        const int auricWeaponsAchiId = 2262;
+        var auricWeaponsNode = graph.GetAchievementNode(auricWeaponsAchiId);
+
+        Assert.NotNull(highestGearNode);
+        Assert.Equal("2292", highestGearNode.Metadata["achievementId"]);
+        Assert.Equal("Highest Gear", highestGearNode.Metadata["name"]);
+        Assert.Equal("Auric Basin (achievements)", highestGearNode.Metadata["category"]);
+        Assert.NotNull(auricWeaponsNode);
+        Assert.Equal("2262", auricWeaponsNode.Metadata["achievementId"]);
+        Assert.Equal("Auric Weapons", auricWeaponsNode.Metadata["name"]);
+        Assert.Equal("Basic Collections", auricWeaponsNode.Metadata["category"]);
+    }
+
+    [Fact]
     public async Task MultipleSkinUnlocksShouldBeSplitProperly()
     {
         fakeWikiApi.FileName = "skin_multiple_unlock.xml";

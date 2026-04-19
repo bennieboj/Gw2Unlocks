@@ -34,7 +34,8 @@ public enum NodeType
     Region = 22,
     City = 23,
     // Semantic
-    Container = 30
+    Container = 30,
+    Achievement = 40,
 }
 
 
@@ -165,8 +166,18 @@ public class AcquisitionGraph
         return node.Type == type ? node : null;
     }
 
+    public Node? GetAchievementNode(int achievementId)
+    {
+        var name = Nodes.Keys.SingleOrDefault(k => k.Contains($"#achievement{achievementId}", StringComparison.Ordinal));
+        if (name == null) return null;
+        return GetNode(name, NodeType.Achievement);
+    }
+
     private static string Normalize(string name)
     {
+        if (name.Contains("#achievement", StringComparison.OrdinalIgnoreCase))
+            return name.Trim();
+
         return name.Split('#')[0].Trim();
     }
 

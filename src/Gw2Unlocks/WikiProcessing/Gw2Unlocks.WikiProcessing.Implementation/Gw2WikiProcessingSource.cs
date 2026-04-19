@@ -59,6 +59,12 @@ public sealed class Gw2WikiProcessingSource(
                         if (infobox == null || infobox.Metadata.TryGetValue("status", out var status) && status == "historical")
                             continue;
 
+                        if(infobox.InfoBoxType.Equals("Achievement category", StringComparison.OrdinalIgnoreCase))
+                        {
+                            ApplyAchievements(graph, title, ast, infobox);
+                            continue;
+                        }
+
                         var nodeType = MapNodeType(infobox.InfoBoxType);
                         if (nodeType == NodeType.None)
                         {
@@ -167,6 +173,40 @@ public sealed class Gw2WikiProcessingSource(
 
             _ => NodeType.None
         };
+    }
+
+    private static void ApplyAchievements(
+    AcquisitionGraph graph,
+    string title,
+    Wikitext ast,
+    InfoboxData info)
+    {
+        if (!info.InfoBoxType.Equals("Achievement category", StringComparison.OrdinalIgnoreCase))
+            return;
+
+        foreach (var template in ast.EnumDescendants().OfType<Template>())
+        {
+            if (!template.Name.ToString().Trim()
+                .Equals("Achievement table row", StringComparison.OrdinalIgnoreCase))
+                continue;
+
+            var id = GetArg(template, "id");
+            var name = GetArg(template, "name");
+
+            if (string.IsNullOrWhiteSpace(id) || string.IsNullOrWhiteSpace(name))
+                continue;
+
+            var key = $"{title}#achievement{id}";
+
+            var node = graph.GetOrCreate(key, new Dictionary<string, string>
+            {
+                ["name"] = name,
+                ["achievementId"] = id,
+                ["category"] = title
+            });
+
+            node.SetType(NodeType.Achievement);
+        }
     }
 
     // -------------------------
@@ -413,8 +453,8 @@ public sealed class Gw2WikiProcessingSource(
     private static string? GetArg(Template template, string name)
     {
         return template.Arguments
-            .FirstOrDefault(a => a.Name?.ToString().Equals(name, StringComparison.OrdinalIgnoreCase) == true)
-            ?.Value?.ToString();
+            .FirstOrDefault(a => a.Name?.ToString().Trim().Equals(name, StringComparison.OrdinalIgnoreCase) == true)
+            ?.Value?.ToString().Trim();
     }
 
     private static string GetText(Wikitext? node)
