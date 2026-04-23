@@ -1,10 +1,14 @@
-﻿using Gw2Unlocks.Api.Cache;
+﻿using GuildWars2.Hero.Achievements;
+using GuildWars2.Hero.Equipment.Miniatures;
+using GuildWars2.Hero.Equipment.Novelties;
+using GuildWars2.Hero.Equipment.Wardrobe;
+using Gw2Unlocks.Api.Cache;
 using Gw2Unlocks.Cache.Common;
 using Gw2Unlocks.Testing.Common;
 using Gw2Unlocks.WikiProcessing.Cache;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Xunit;
@@ -36,6 +40,23 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
 
         Assert.NotNull(unlock);
         Assert.NotNull(unlock.ApiData);
+        Assert.IsAssignableFrom<Miniature>(unlock.ApiData);
+    }
+
+#pragma warning disable xUnit1004 // Test methods should not be skipped
+    [Fact(Skip = "doesn't work for now")]
+#pragma warning restore xUnit1004 // Test methods should not be skipped
+    public async Task GivenBloodRubyBackpackSoldInBloodstoneFenShouldLinkToCorrectCategory()
+    {
+        var unlockName = "Blood Ruby Backpack (skin)";
+        var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
+        var group = results.UnlockGroups.Single(g => g.Name == "LW Season 3");
+        var category = group.UnlockCategories.Single(c => c.Name == "Bloodstone Fen");
+        var unlock = category.Unlocks.Single(c => c.Name == unlockName);
+
+        Assert.NotNull(unlock);
+        Assert.NotNull(unlock.ApiData);
+        Assert.IsAssignableFrom<EquipmentSkin>(unlock.ApiData);
     }
 
     [Theory]
@@ -53,6 +74,7 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
 
         Assert.NotNull(unlock);
         Assert.NotNull(unlock.ApiData);
+        Assert.IsAssignableFrom<EquipmentSkin>(unlock.ApiData);
     }
 
     [Fact]
@@ -66,6 +88,7 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
 
         Assert.NotNull(unlock);
         Assert.NotNull(unlock.ApiData);
+        Assert.IsAssignableFrom<Novelty>(unlock.ApiData);
     }
 
     [Fact]
@@ -78,6 +101,7 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
         var unlock = category.Unlocks.Single(c => c.Name == unlockName);
         Assert.NotNull(unlock);
         Assert.NotNull(unlock.ApiData);
+        Assert.IsAssignableFrom<Miniature>(unlock.ApiData);
     }
 
     [Fact]
@@ -91,6 +115,7 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
 
         Assert.NotNull(unlock);
         Assert.NotNull(unlock.ApiData);
+        Assert.IsAssignableFrom<EquipmentSkin>(unlock.ApiData);
     }
 
     [Fact]
@@ -104,6 +129,7 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
 
         Assert.NotNull(unlock);
         Assert.NotNull(unlock.ApiData);
+        Assert.IsAssignableFrom<EquipmentSkin>(unlock.ApiData);
     }
 
 
@@ -118,6 +144,7 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
 
         Assert.NotNull(unlock);
         Assert.NotNull(unlock.ApiData);
+        Assert.IsAssignableFrom<EquipmentSkin>(unlock.ApiData);
     }
 
     [Fact]
@@ -130,6 +157,7 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
 
         Assert.NotNull(unlock);
         Assert.NotNull(unlock.ApiData);
+        Assert.IsAssignableFrom<EquipmentSkin>(unlock.ApiData);
     }
 
     [Fact]
@@ -143,19 +171,28 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
 
         Assert.NotNull(unlock);
         Assert.NotNull(unlock.ApiData);
+        Assert.IsAssignableFrom<EquipmentSkin>(unlock.ApiData);
     }
 
     [Fact]
-    public async Task GivenItemAwardedByAchievementShouldTakeGroupAndCategoryLinkedToAchievementCategory()
+    public async Task GivenAchievementWithRewardShouldTakeGroupAndCategoryLinkedToAchievementCategory()
     {
-        var unlockName = "Temple Gate (skin)";
-        var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
+        var unlockSkinName = "Temple Gate (skin)";
+        var unlockAchiName = "Seitung Province (achievements)#achievement6331";
+        var unlocks = new string[] { unlockSkinName, unlockAchiName };
+        var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlocks);
         var group = results.UnlockGroups.Single(g => g.Name == "End of Dragons");
         var category = group.UnlockCategories.Single(c => c.Name == "Seitung Province");
-        var unlock = category.Unlocks.Single(c => c.Name == unlockName);
+        var unlockSkin = category.Unlocks.Single(c => c.Name == unlockSkinName);
+        var unlockAchi = category.Unlocks.Single(c => c.Name == unlockAchiName);
 
-        Assert.NotNull(unlock);
-        Assert.NotNull(unlock.ApiData);
+        Assert.NotNull(unlockSkin);
+        Assert.NotNull(unlockSkin.ApiData);
+        Assert.IsAssignableFrom<EquipmentSkin>(unlockSkin.ApiData);
+
+        Assert.NotNull(unlockAchi);
+        Assert.NotNull(unlockAchi.ApiData);
+        Assert.IsAssignableFrom<Achievement>(unlockAchi.ApiData);
     }
 
     [Theory]
@@ -170,38 +207,48 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
 
         Assert.NotNull(unlock);
         Assert.NotNull(unlock.ApiData);
+        Assert.IsAssignableFrom<EquipmentSkin>(unlock.ApiData);
     }
 
     [Fact]
-    public async Task GivenItemsAwardedByAchievementShouldInfluenceGroupAndCategory()
+    public async Task GivenAchievementWithRewardThenItemsRequiredForAchievementShouldInfluenceGroupAndCategory()
     {
-        var unlockName = "Auric Backplate (skin)";
-        var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
+        var unlocksForAchi = new List<string> { "Auric Axe (skin)", "Auric Longbow (skin)" };
+        var unlockAchiName = "Basic Collections#achievement2262"; // Auric Weapons achievement
+        var unlockRewardName = "Auric Backplate (skin)";
+        var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, [.. unlocksForAchi, unlockAchiName]);
         var group = results.UnlockGroups.Single(g => g.Name == "Heart of Thorns");
         var category = group.UnlockCategories.Single(c => c.Name == "Auric Basin");
+        var unlockAchi = category.Unlocks.Single(c => c.Name == unlockAchiName);
+        var unlockReward = category.Unlocks.Single(c => c.Name == unlockRewardName);
+
+        Assert.NotNull(unlockAchi);
+        Assert.NotNull(unlockAchi.ApiData);
+        Assert.IsAssignableFrom<Achievement>(unlockAchi.ApiData);
+
+        Assert.NotNull(unlockReward);
+        Assert.NotNull(unlockReward.ApiData);
+    }
+
+    [Fact]
+    public async Task GivenAchievementWithoutRewardThenItemsRequiredForAchievementShouldInfluenceGroupAndCategory()
+    {
+        var unlocksForAchi = new List<string> { "Bladed Greaves (skin)" };
+        var unlockName = "Basic Collections#achievement2407"; // Bladed Armor achievement
+        var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, [.. unlocksForAchi, unlockName]);
+        var group = results.UnlockGroups.Single(g => g.Name == "Heart of Thorns");
+        var category = group.UnlockCategories.Single(c => c.Name == "Verdant Brink");
         var unlock = category.Unlocks.Single(c => c.Name == unlockName);
 
         Assert.NotNull(unlock);
         Assert.NotNull(unlock.ApiData);
-    }
-
-    [Fact]
-    public async Task ItemsRequiredForAchievementShouldInfluenceGroupAndCategory()
-    {
-        var unlockName = "Auric Weapons";
-        var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
-        var group = results.UnlockGroups.Single(g => g.Name == "Heart of Thorns");
-        var category = group.UnlockCategories.Single(c => c.Name == "Auric Basin");
-        var unlock = category.Unlocks.Single(c => c.Name == unlockName);
-
-        Assert.NotNull(unlock);
-        Assert.NotNull(unlock.ApiData);
+        Assert.IsAssignableFrom<Achievement>(unlock.ApiData);
     }
 
     [Fact]
     public async Task GivenAchievementsPartOfAchievementCategoryWhichIsLinkedtoUnlockCategory()
     {
-        var unlockName = "Highest Gear";
+        var unlockName = "Auric Basin (achievements)#achievement2292"; // Highest Gear achievement
         var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
         var group = results.UnlockGroups.Single(g => g.Name == "Heart of Thorns");
         var category = group.UnlockCategories.Single(c => c.Name == "Auric Basin");
@@ -209,5 +256,6 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
 
         Assert.NotNull(unlock);
         Assert.NotNull(unlock.ApiData);
+        Assert.IsAssignableFrom<Achievement>(unlock.ApiData);
     }
 }

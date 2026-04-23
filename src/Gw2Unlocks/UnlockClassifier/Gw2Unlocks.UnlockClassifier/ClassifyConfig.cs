@@ -8,19 +8,18 @@ namespace Gw2Unlocks.UnlockClassifier;
 
 public static class ClassifyConfigExtensions
 {
-    internal sealed class UnlockCriteriaContext<T> where T : UnlockCriteria
+    internal sealed class Categorization
     {
-        public required T Criteria { get; init; }
         public UnlockGroup? Group { get; init; }
         public UnlockCategory? Category { get; init; }
         public string? GroupOfCategoryName { get; init; }
     }
-    internal sealed class UnlockContext
+
+    internal sealed record UnlockCriteriaContext<T>(T Criteria, Categorization Categorization) where T : UnlockCriteria
     {
-        public required Unlock Unlock { get; init; }
-        public UnlockGroup? Group { get; init; }
-        public UnlockCategory? Category { get; init; }
-        public string? GroupOfCategoryName { get; init; }
+    }
+    internal sealed record UnlockContext(Unlock Unlock, Categorization Categorization)
+    {
     }
 
 
@@ -31,28 +30,34 @@ public static class ClassifyConfigExtensions
         // Group-level unlocks
         var groupUnlocks = config.UnlockGroups
             .SelectMany(g => g.Unlocks
-                .Select(u => new UnlockContext
-                {
-                    Unlock = u,
-                    Group = g,
-                    Category = null,
-                    GroupOfCategoryName = null,
-                }));
+                .Select(u => new UnlockContext(
+                    u,
+                    new Categorization
+                    {
+                        Group = g,
+                        Category = null,
+                        GroupOfCategoryName = null,
+                    }
+                )
+                ));
 
         // Category-level unlocks
         var categoryUnlocks = config.UnlockGroups
             .SelectMany(g => g.UnlockCategories
                 .SelectMany(cat => cat.Unlocks
-                    .Select(u => new UnlockContext
-                    {
-                        Unlock = u,
-                        Group = null,
-                        Category = cat,
-                        GroupOfCategoryName = g.Name,
-                    })));
+                    .Select(u => new UnlockContext(
+                            u,
+                            new Categorization
+                            {
+                                Group = null,
+                                Category = cat,
+                                GroupOfCategoryName = g.Name,
+                            }
+                        )
+                    )));
 
 
-        return categoryUnlocks.Union(groupUnlocks);
+        return [.. categoryUnlocks.Union(groupUnlocks)];
     }
 
     internal static IEnumerable<T> GetUnlockCriteria<T>(this ClassifyConfig config) where T : UnlockCriteria
@@ -72,26 +77,32 @@ public static class ClassifyConfigExtensions
         var groupCriteria = config.UnlockGroups
             .SelectMany(g => g.UnlockCriteria
                 .OfType<T>()
-                .Select(c => new UnlockCriteriaContext<T>
-                {
-                    Criteria = c,
-                    Group = g,
-                    Category = null,
-                    GroupOfCategoryName = null,
-                }));
+                .Select(c => new UnlockCriteriaContext<T>(
+                    c,
+                    new Categorization
+                    {
+                        Group = g,
+                        Category = null,
+                        GroupOfCategoryName = null,
+                    }
+                )
+            ));
 
         // Category-level criteria
         var categoryCriteria = config.UnlockGroups
             .SelectMany(g => g.UnlockCategories
                 .SelectMany(cat => cat.UnlockCriteria
                     .OfType<T>()
-                    .Select(c => new UnlockCriteriaContext<T>
-                    {
-                        Criteria = c,
-                        Group = null,
-                        Category = cat,
-                        GroupOfCategoryName = g.Name,
-                    })));
+                    .Select(c => new UnlockCriteriaContext<T>(
+                        c,
+                        new Categorization
+                        {
+                            Group = null,
+                            Category = cat,
+                            GroupOfCategoryName = g.Name,
+                        }
+                    )
+                )));
 
         return groupCriteria.Concat(categoryCriteria);
     }

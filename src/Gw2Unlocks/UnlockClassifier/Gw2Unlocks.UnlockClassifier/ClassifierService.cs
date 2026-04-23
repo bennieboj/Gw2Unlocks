@@ -16,7 +16,7 @@ internal sealed class ClassifierService(ILogger<BackgroundService> logger, IClas
         try
         {
             var oldConfig = await classifierCache.GetClassifierConfigFromCacheAsync(stoppingToken);
-            var newConfig = await classifier.ClassifyUnlocks(stoppingToken, null);
+            var newConfig = await classifier.ClassifyUnlocks(stoppingToken);
 
             await PrintDiffAsync(oldConfig, newConfig);
 

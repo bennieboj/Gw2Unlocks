@@ -6,7 +6,6 @@ using GuildWars2.Hero.Achievements.Titles;
 using GuildWars2.Hero.Equipment.Miniatures;
 using GuildWars2.Hero.Equipment.Novelties;
 using GuildWars2.Hero.Equipment.Wardrobe;
-using GuildWars2.Hero.Wallet;
 using GuildWars2.Items;
 using Gw2Unlocks.Api;
 using Gw2Unlocks.WikiProcessing;
@@ -14,12 +13,11 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Diagnostics;
-using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using static Gw2Unlocks.UnlockClassifier.ClassifyConfigExtensions;
+using Node = Gw2Unlocks.WikiProcessing.Node;
 
 namespace Gw2Unlocks.UnlockClassifier;
 
@@ -33,8 +31,12 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
     private Collection<AchievementCategory>? achievementCategories;
     private Collection<Title>? titles;
     private Collection<Novelty>? novelties;
-    private Dictionary<int, List<AchievementCategory>>? achievementCategoriesByAchievementId;
+    //private Dictionary<int, List<AchievementCategory>>? achievementCategoriesByAchievementId;
+    private Dictionary<int, List<UnlockCriteriaContext<AchievementCategoryCriteria>>>? achievementCriteriaByAchievementId;
+    private Dictionary<int, string>? skinLookup;
+    private Dictionary<int, string>? itemLookup;
     private Dictionary<string, List<Edge>>? edgesByFrom;
+    private Dictionary<string, List<Edge>>? edgesByTo;
     private ClassifyConfig? classifyConfig;
     private static ClassifyConfig CreateConfig()
     {
@@ -455,344 +457,70 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
 
     private IEnumerable<UnlockCriteriaContext<TokenCriteria>>? tokenCriteria;
     private IEnumerable<UnlockCriteriaContext<CraftingMaterialCriteria>>? craftingMaterialCriteria;
-    private IEnumerable<UnlockCriteriaContext<AchievementCategoryCriteria>>? achievementCategoryCriteria;
 
-    public async Task<ClassifyConfig> ClassifyUnlocks(CancellationToken cancellationToken, string? unlockToLookup = null)
+    public async Task<ClassifyConfig> ClassifyUnlocks(CancellationToken cancellationToken, params string[] unlocksToLookup)
     {
         await Init(cancellationToken);
 
-        var zoneData = await wikiProcessingSource.GetZoneData(cancellationToken);
-
-        foreach (var group in classifyConfig!.UnlockGroups)
-        {
-            foreach (var category in group.UnlockCategories)
-            {
-                var foundCategory = zoneData.Zones.SingleOrDefault(z => category.Name == z.Name);
-                if (foundCategory != null)
-                {
-                    foreach (var achievementCategory in foundCategory.AchievementCategories)
-                    {
-                        category.UnlockCriteria.Add(new AchievementCategoryCriteria(achievementCategory));
-                    }
-                }
-            }
-        }
-
         var nodes = graph!.Nodes.ToList();
-        if (unlockToLookup != null)
+        if (unlocksToLookup != null)
         {
-            nodes = [.. nodes.Where(n => n.Key.Equals(unlockToLookup, StringComparison.OrdinalIgnoreCase))];
+            nodes = [.. nodes.Where(n => unlocksToLookup.Contains(n.Key, StringComparer.OrdinalIgnoreCase))];
+        }
+        var achievementNodes = nodes.Where(n => n.Value.Type == NodeType.Achievement);
+        if (unlocksToLookup != null)
+        {
+            achievementNodes = [.. achievementNodes.Where(n => unlocksToLookup.Contains(n.Key, StringComparer.OrdinalIgnoreCase))];
         }
 
-        int i = 0;
+        int iNode = 0;
         foreach (var (key, node) in nodes)
         {
             if (cancellationToken.IsCancellationRequested)
             {
-                logger.LogWarning("Cancellation requested, returning partial result.");
+                logger.LogWarning("Cancellation requested, returning partial nodes result.");
                 break;
             }
 
             if (!ShouldClassify(node))
             {
-                logger.LogDebug("Skipping {key} ({type})", key, node.Type);
-                i++;
+                logger.LogDebug("Skipping node {key} ({type})", key, node.Type);
+                iNode++;
                 continue;
             }
-            logger.LogInformation("Finding {key} ({type})", key, node.Type);
+            logger.LogInformation("Finding node {key} ({type})", key, node.Type);
 
             ClassifyUnlock(key);
 
-            i++;
-            logger.LogInformation("{progress}/{total}", i, nodes.Count);
+            iNode++;
+            logger.LogInformation("node {progress}/{total}", iNode, nodes.Count);
         }
 
-        foreach (var group in classifyConfig.UnlockGroups)
-        {
+        var unlocksFromGraph = classifyConfig!.GetUnlocks().ToList();
+        var unlockByName = unlocksFromGraph.ToDictionary(u => u.Unlock.Name);
 
-            logger.LogInformation("Group: {groupName} ({unlockCount} unlocks)", group.Name, group.Unlocks.Count);
-            foreach (var unlock in group.Unlocks)
+        int iAchi = 0;
+        foreach (var (keyAchi, nodeAchi) in achievementNodes)
+        {
+            if (cancellationToken.IsCancellationRequested)
             {
-                var apidata = GetApiData(unlock.Node, unlock.Name);
-                unlock.ApiData = apidata;
-                //logger.LogInformation("    Unlock: {unlockName} ({unlockType})", unlock.Name, unlock.Node.Type);
-            }
-            foreach (var category in group.UnlockCategories)
-            {
-                logger.LogInformation("  Category: {categoryName} ({unlockCount} unlocks)", category.Name, category.Unlocks.Count);
-                foreach (var unlock in category.Unlocks)
-                {
-                    var apidata = GetApiData(unlock.Node, unlock.Name);
-                    unlock.ApiData = apidata;
-                    //logger.LogInformation("    Unlock: {unlockName} ({unlockType})", unlock.Name, unlock.Node.Type);
-                }
-            }
-        }
-
-        return classifyConfig;
-    }
-
-
-    private void ClassifyUnlock(string unlock)
-    {
-        var result = Classify(graph!, unlock);
-        if (result != null)
-        {
-            var zone = result.Value;
-            logger.LogInformation("{zone.Key} ({zone.Node.Type})", zone.Key, zone.Node?.Type);
-
-            logger.LogInformation("Path:");
-            foreach (var step in zone.Path)
-            {
-                logger.LogInformation("  -> {step}", step);
-            }
-        }
-    }
-
-    private async Task Init(CancellationToken cancellationToken)
-    {
-        graph ??= await wikiProcessingSource.GetAcquisitionGraph(cancellationToken);
-        miniatures ??= await apiSource.GetMiniaturesAsync(cancellationToken);
-        items ??= await apiSource.GetItemsAsync(cancellationToken);
-        skins ??= await apiSource.GetSkinsAsync(cancellationToken);
-        achievements ??= await apiSource.GetAchievementsAsync(cancellationToken);
-        achievementCategories ??= await apiSource.GetAchievementCategoriesAsync(cancellationToken);
-        titles ??= await apiSource.GetTitlesAsync(cancellationToken);
-        novelties ??= await apiSource.GetNoveltiesAsync(cancellationToken);
-
-        classifyConfig = CreateConfig();
-
-        tokenCriteria = classifyConfig.GetUnlockCriteriaWithContext<TokenCriteria>();
-        craftingMaterialCriteria = classifyConfig.GetUnlockCriteriaWithContext<CraftingMaterialCriteria>();
-        achievementCategoryCriteria = classifyConfig.GetUnlockCriteriaWithContext<AchievementCategoryCriteria>();
-
-        achievementCategoriesByAchievementId = achievementCategories
-            .SelectMany(cat => cat.Achievements.Select(a => new { a.Id, cat }))
-            .GroupBy(x => x.Id)
-            .ToDictionary(
-                g => g.Key,
-                g => g.Select(x => x.cat).ToList());
-
-        edgesByFrom = graph.Edges
-            .GroupBy(x => x.From)
-            .ToDictionary(g => g.Key, g => g.ToList());
-    }
-
-    private static bool ShouldClassify(Node node) =>
-    node switch
-    {
-        {
-            Type: NodeType.Skin,
-            Metadata: var metadata
-        } when metadata.TryGetValue("type", out var type) &&
-               (
-                   !type.Equals("Fishing Rod", StringComparison.OrdinalIgnoreCase) &&
-                   !type.Equals("Mining", StringComparison.OrdinalIgnoreCase) &&
-                   !type.Equals("Logging", StringComparison.OrdinalIgnoreCase) &&
-                   !type.Equals("Foraging", StringComparison.OrdinalIgnoreCase)
-               )
-            => true,
-        {
-            Type: NodeType.Item,
-            Metadata: var metadata
-        } when metadata.TryGetValue("type", out var type) &&
-               (
-                   type.Equals("miniature", StringComparison.OrdinalIgnoreCase) ||
-                   type.Contains("Novelty", StringComparison.OrdinalIgnoreCase)
-               )
-            => true,
-
-        // ❌ Everything else
-        _ => false
-    };
-
-    private readonly List<string> debugtitles = [
-        //"Plush Zhaia Backpack (skin)",
-        //"Plush Zhaia Backpack",
-        //"Halloween Vendor",
-        //"Hooligan's Route",
-        //"Lion's Arch",
-        "Auric Backplate (skin)",
-        "Inscription of the Spearmarshal",
-        "Mini Foostivoo the Merry",
-        "Mini Exalted Sage",
-        "Exalted Mastery Vendor",
-        "Noble Ledges",
-        "Verdant Brink",
-        "Noble's Folly",
-        "Zinn's Stash",
-        "Glob of Ectoplasm",
-        "Bladed Helmet (skin)",
-        "Adam",
-        "Great Capra (skin)"
-        //"Tarir, the Forgotten City",
-        //"Auric Basin",
-        //"Axe of the Dragon's Deep",
-        //"Arah Weapons Box",
-        //"Dungeon Weapon Container",
-    ];
-
-    private class SearchState
-    {
-        public string Key { get; init; } = default!;
-        public string? Cost { get; init; } // store raw cost string
-        public EdgeType? IncomingEdgeType { get; init; }
-    }
-
-    private object? GetApiData(Node node, string startKey)
-    {
-        if (miniatures == null || skins == null || achievements == null || achievementCategories == null || titles == null || novelties == null)
-        {
-            logger.LogWarning("API data not initialized when trying to get API data for {key} ({type})", startKey, node.Type);
-            return null;
-        }
-
-        object? result = null;
-        if (node.Type == NodeType.Item && node.Metadata.TryGetValue("type", out var metadataTypeMini) && metadataTypeMini == "miniature"
-            && node.Metadata.TryGetValue("miniature id", out var miniId) && !string.IsNullOrEmpty(miniId) && int.TryParse(miniId, out var miniIdInt))
-        {
-            result = miniatures.Single(m => m.Id == miniIdInt);
-        }
-
-        if (node.Type == NodeType.Item && node.Metadata.TryGetValue("type", out var metadataTypeNovelty) && metadataTypeNovelty.Contains("novelty", StringComparison.OrdinalIgnoreCase)
-            && node.Metadata.TryGetValue("novelty-id", out var noveltyId) && !string.IsNullOrEmpty(noveltyId) && int.TryParse(noveltyId, out var noveltyIdInt))
-        {
-            result = novelties.Single(m => m.Id == noveltyIdInt);
-        }
-
-        if (node.Type == NodeType.Skin && node.Metadata.TryGetValue("id", out var skinId) && !string.IsNullOrEmpty(skinId) && int.TryParse(skinId, out var skinIdInt))
-        {
-            result = skins.Single(i => i.Id == skinIdInt);
-        }
-
-        if (result == null)
-        {
-            logger.LogWarning("No API data found for {key} ({type})", startKey, node.Type);
-        }
-
-        return result;
-    }
-
-    private (string? Key, Node? Node, List<string> Path)? Classify(
-        AcquisitionGraph graph,
-        string startKey)
-    {
-        var visited = new HashSet<string>();
-        var queue = new Queue<SearchState>();
-        var parent = new Dictionary<string, string?>();
-        var startNode = graph.GetNode(startKey);
-        List<PossibleClassification> possibleClassifications = [];
-        var craftingCandidates = new List<string>();
-
-        if (startNode == null)
-            return null;
-
-        visited.Add(startKey);
-        queue.Enqueue(new SearchState
-        {
-            Key = startKey,
-            Cost = null,
-            IncomingEdgeType = null,
-        });
-        parent[startKey] = null;
-
-        while (queue.Count > 0)
-        {
-            var searchState = queue.Dequeue();
-            var currentKey = searchState.Key;
-            var current = graph.GetNode(currentKey);
-
-            if (debugtitles.Contains(currentKey))
-            {
-                logger.LogInformation("Visiting {key} ({type}) with cost {cost}", currentKey, current?.Type, searchState.Cost);
+                logger.LogWarning("Cancellation requested, returning partial achi result.");
+                break;
             }
 
-            if (current == null)
-                continue;
-
-            if (searchState.IncomingEdgeType == EdgeType.GatheredFrom
-                && current.Type == NodeType.Gw2Object && current.Metadata.TryGetValue("type", out var objectType) && objectType != "chest")
+            if (!nodeAchi.Metadata.TryGetValue("achievementId", out var achievementId) || !int.TryParse(achievementId, out var achievementIdInt))
             {
+                logger.LogDebug("Skipping achi {key} ({type})", keyAchi, nodeAchi.Type);
                 continue;
             }
+            logger.LogInformation("Finding node {key} ({type})", keyAchi, nodeAchi.Type);
 
-            if (current.Type == NodeType.Item && current.Metadata.TryGetValue("type", out var itemType))
-            {
-                if ((itemType.Equals("crafting material", StringComparison.OrdinalIgnoreCase) || itemType.Equals("trophy", StringComparison.OrdinalIgnoreCase))
-                    && current.Metadata.TryGetValue("material storage", out var materialStorage) && !string.IsNullOrWhiteSpace(materialStorage))
-                {
-                    var matchingCraftingMaterials = craftingMaterialCriteria!.Where(c => c.Criteria.Matches(currentKey)).ToList();
-                    if (matchingCraftingMaterials.Count == 0)
-                    {
-                        continue;
-                    }
-                    else
-                    {
-                        foreach (var criteria in matchingCraftingMaterials)
-                        {
-                            var groupName = criteria.Group?.Name;
-                            var categoryName = criteria.Category?.Name ?? "";
-                            var groupOfCategoryName = criteria.GroupOfCategoryName ?? "";
-                            if (groupName != null)
-                            {
-                                possibleClassifications.Add(new(groupName, null, BuildPath(currentKey, parent), 100));
-                                //var path = CategorizeAndBuildPath(groupName, null, startKey, startNode, currentKey, parent);
-                                //return (currentKey, current, path);
-                            }
-                            else
-                            {
-                                possibleClassifications.Add(new(groupOfCategoryName, categoryName, BuildPath(currentKey, parent), 100));
-                                //var path = CategorizeAndBuildPath(groupOfCategoryName, categoryName, startKey, startNode, currentKey, parent);
-                                //return (currentKey, current, path);
-                            }
-                        }
-                        continue;
-                    }
-                }
-                if (itemType.Equals("Container", StringComparison.OrdinalIgnoreCase))
-                {
-                    if (containersToIgnore.Any(c => currentKey.Contains(c, StringComparison.OrdinalIgnoreCase)))
-                    {
-                        continue;
-                    }
-                }
-            }
+            ClassifyAchievement(unlockByName, keyAchi, nodeAchi, achievementIdInt);
+            iAchi++;
+            logger.LogInformation("achi {progress}/{total}", iAchi, nodes.Count);
+        }
 
-            // When we reach a zone/city → validate cost
-            if (current.Type == NodeType.Location &&
-                current.Metadata.TryGetValue("type", out var value) &&
-                (value.Equals("Zone", StringComparison.OrdinalIgnoreCase) ||
-                 value.Equals("City", StringComparison.OrdinalIgnoreCase)))
-            {
-                var zone = currentKey;
-                foreach (var group in classifyConfig!.UnlockGroups)
-                {
-                    foreach (var category in group.UnlockCategories)
-                    {
-                        // Does the category have a ZoneCriteria that matches this zone?
-                        var hasZone = category.UnlockCriteria
-                            .OfType<ZoneCriteria>()
-                            .Any(z => z.Matches(zone));
-
-                        if (!hasZone)
-                            continue;
-
-
-                        // Does the category have a CurrencyCriteria that matches this currency?
-                        var validCurrencies = category.UnlockCriteria
-                            .OfType<CurrencyCriteria>().ToList();
-
-                        var cost = searchState.Cost;
-                        if (cost == null || validCurrencies.Count == 0 || validCurrencies.Any(c => c.Matches(cost)))
-                        {
-                            possibleClassifications.Add(new(group.Name, category.Name, BuildPath(currentKey, parent), 80));
-                            //var path = CategorizeAndBuildPath(group.Name, category.Name, startKey, startNode, currentKey, parent);
-                            //return (currentKey, current, path);
-                        }
-                    }
-                }
-            }
-
+        /*
             if (current.Metadata.TryGetValue("id", out var itemId) && int.TryParse(itemId, out var itemIdInt))
             {
                 var foundAchis = achievements!.Where(a => a.Rewards != null && a.Rewards.OfType<ItemReward>().Any(ir => ir.Id == itemIdInt)).ToList();
@@ -860,14 +588,452 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                 }
 
             }
+         */
+
+
+
+        foreach (var group in classifyConfig!.UnlockGroups)
+        {
+
+            logger.LogInformation("Group: {groupName} ({unlockCount} unlocks)", group.Name, group.Unlocks.Count);
+            foreach (var unlock in group.Unlocks)
+            {
+                FillInApiData(unlock);
+                //logger.LogInformation("    Unlock: {unlockName} ({unlockType})", unlock.Name, unlock.Node.Type);
+            }
+            foreach (var category in group.UnlockCategories)
+            {
+                logger.LogInformation("  Category: {categoryName} ({unlockCount} unlocks)", category.Name, category.Unlocks.Count);
+                foreach (var unlock in category.Unlocks)
+                {
+                    FillInApiData(unlock);
+                    //logger.LogInformation("    Unlock: {unlockName} ({unlockType})", unlock.Name, unlock.Node.Type);
+                }
+            }
+        }
+
+        return classifyConfig;
+    }
+
+    private void ClassifyAchievement(Dictionary<string, UnlockContext> unlocksByName, string keyAchi, Node nodeAchi, int achievementIdInt)
+    {
+        List<Categorization> possibleClassifications = [];
+        var achievement = achievements!.SingleOrDefault(a => a.Id == achievementIdInt);
+        if (achievementCriteriaByAchievementId!.TryGetValue(achievementIdInt, out var foundAchievementCategoryCriteria))
+        {
+            possibleClassifications.AddRange(foundAchievementCategoryCriteria.Select(c => c.Categorization).OfType<Categorization>());
+        }
+        else if (achievement != null && achievement.Bits != null)
+        {
+            var skinIds = achievement.Bits.OfType<AchievementSkinBit>().Select(b => b.Id).ToList();
+            var skinNames = skinIds
+                .Select(skinId =>
+                    skinLookup!.TryGetValue(skinId, out var skinKey)
+                        ? skinKey
+                        : null)
+                .Where(x => x is not null)
+                .ToHashSet();
+
+            possibleClassifications.AddRange(unlocksByName.Where(kvp => skinNames.Contains(kvp.Key)).Select(kvp => kvp.Value.Categorization).OfType<Categorization>());
+        }
+
+        var bestClassificationGroup = possibleClassifications
+            .GroupBy(x => x)
+            .Select(g => new
+            {
+                g.Key,
+                Count = g.Count(),
+                Items = g.ToList()
+            })
+            .OrderByDescending(x => x.Count)
+            .FirstOrDefault();
+        if (bestClassificationGroup == null)
+        {
+            return;
+        }
+        Categorization bestClassification = bestClassificationGroup.Key;
+        
+        List<Unlock> unlocksToClassify = [];
+        if (achievement?.Rewards != null)
+        {
+            var itemIds = achievement.Rewards.OfType<ItemReward>().Where(ir => ir != null).Select(ir => ir.Id);
+            var itemNames = itemIds
+                .Select(itemId =>
+                    itemLookup!.TryGetValue(itemId, out var itemKey)
+                        ? itemKey
+                        : null)
+                .OfType<string>();
+
+            unlocksToClassify = [.. itemNames
+                .Select(itemName =>
+                {
+                    var edges = edgesByTo!.TryGetValue(itemName, out var e) ? e : [];
+                    var skins = edges.Where(e => e.Type == EdgeType.SkinUnlock).Select(e => e.From);
+                    
+                    return skins.Select(s => {
+                        var node = graph!.GetNode(s);
+                        if(node != null){
+                            return new Unlock(s, node);
+                        }
+                        return null;
+                    })
+                    .OfType<Unlock>()
+                    .ToList();
+                })
+                .SelectMany(x => x)
+                .ToList()];
+        }
+
+        unlocksToClassify.Add(new Unlock(keyAchi, nodeAchi));
+
+        foreach (var unlock in unlocksToClassify.Distinct())
+        {
+            if (bestClassification.Group != null)
+            {
+                Categorize(bestClassification.Group.Name, null, unlock.Name, unlock.Node);
+            }
+            else if (bestClassification.GroupOfCategoryName != null && bestClassification.Category != null)
+            {
+                Categorize(bestClassification.GroupOfCategoryName, bestClassification.Category.Name, unlock.Name, unlock.Node);
+            }
+        }
+    }
+
+    private void ClassifyUnlock(string unlock)
+    {
+        var result = Classify(graph!, unlock);
+        if (result != null)
+        {
+            var zone = result.Value;
+            logger.LogInformation("{zone.Key} ({zone.Node.Type})", zone.Key, zone.Node?.Type);
+
+            logger.LogInformation("Path:");
+            foreach (var step in zone.Path)
+            {
+                logger.LogInformation("  -> {step}", step);
+            }
+        }
+    }
+
+    private async Task Init(CancellationToken cancellationToken)
+    {
+        graph ??= await wikiProcessingSource.GetAcquisitionGraph(cancellationToken);
+        miniatures ??= await apiSource.GetMiniaturesAsync(cancellationToken);
+        items ??= await apiSource.GetItemsAsync(cancellationToken);
+        skins ??= await apiSource.GetSkinsAsync(cancellationToken);
+        achievements ??= await apiSource.GetAchievementsAsync(cancellationToken);
+        achievementCategories ??= await apiSource.GetAchievementCategoriesAsync(cancellationToken);
+        titles ??= await apiSource.GetTitlesAsync(cancellationToken);
+        novelties ??= await apiSource.GetNoveltiesAsync(cancellationToken);
+
+        classifyConfig = CreateConfig();
+
+        var zoneData = await wikiProcessingSource.GetZoneData(cancellationToken);
+
+        foreach (var group in classifyConfig.UnlockGroups)
+        {
+            foreach (var category in group.UnlockCategories)
+            {
+                var foundCategory = zoneData.Zones.SingleOrDefault(z => category.Name == z.Name);
+                if (foundCategory != null)
+                {
+                    foreach (var achievementCategory in foundCategory.AchievementCategories)
+                    {
+                        category.UnlockCriteria.Add(new AchievementCategoryCriteria(achievementCategory));
+                    }
+                }
+            }
+        }
+
+        tokenCriteria = classifyConfig.GetUnlockCriteriaWithContext<TokenCriteria>();
+        craftingMaterialCriteria = classifyConfig.GetUnlockCriteriaWithContext<CraftingMaterialCriteria>();
+        var achievementCategoryCriteria = classifyConfig.GetUnlockCriteriaWithContext<AchievementCategoryCriteria>();
+
+        achievementCriteriaByAchievementId = [];
+        foreach (var category in achievementCategories)
+        {
+            var matchingCriteria = achievementCategoryCriteria
+                .Where(c => c.Criteria.Matches(category.Name))
+                .ToList();
+
+            if (matchingCriteria.Count == 0)
+                continue;
+
+            foreach (var achievement in category.Achievements)
+            {
+                if (!achievementCriteriaByAchievementId.TryGetValue(achievement.Id, out var list))
+                {
+                    list = [];
+                    achievementCriteriaByAchievementId[achievement.Id] = list;
+                }
+
+                list.AddRange(matchingCriteria);
+            }
+        }
+
+        skinLookup = [];
+        itemLookup = [];
+        foreach (var kvp in graph.Nodes)
+        {
+            var key = kvp.Key;
+            var node = kvp.Value;
+
+            var nodetypes = new List<NodeType> { NodeType.Item, NodeType.BackItem, NodeType.Weapon, NodeType.Armor, NodeType.Container };
+
+            if (node.Type == NodeType.Skin &&
+                node.Metadata.TryGetValue("id", out var skinId) &&
+                !string.IsNullOrWhiteSpace(skinId) &&
+                int.TryParse(skinId, out var skinIdInt))
+            {
+                skinLookup[skinIdInt] = key;
+            }
+            else if (nodetypes.Contains(node.Type) &&
+                node.Metadata.TryGetValue("id", out var itemId) &&
+                !string.IsNullOrWhiteSpace(itemId) &&
+                int.TryParse(itemId, out var itemIdInt))
+            {
+                itemLookup[itemIdInt] = key;
+            }
+        }
+
+        edgesByFrom = graph.Edges
+            .GroupBy(x => x.From)
+            .ToDictionary(g => g.Key, g => g.ToList());
+        edgesByTo = graph.Edges
+            .GroupBy(x => x.To)
+            .ToDictionary(g => g.Key, g => g.ToList());
+    }
+
+    private static bool ShouldClassify(Node node) =>
+    node switch
+    {
+        {
+            Type: NodeType.Skin,
+            Metadata: var metadata
+        } when metadata.TryGetValue("type", out var type) &&
+               (
+                   !type.Equals("Fishing Rod", StringComparison.OrdinalIgnoreCase) &&
+                   !type.Equals("Mining", StringComparison.OrdinalIgnoreCase) &&
+                   !type.Equals("Logging", StringComparison.OrdinalIgnoreCase) &&
+                   !type.Equals("Foraging", StringComparison.OrdinalIgnoreCase)
+               )
+            => true,
+        {
+            Type: NodeType.Item,
+            Metadata: var metadata
+        } when metadata.TryGetValue("type", out var type) &&
+               (
+                   type.Equals("miniature", StringComparison.OrdinalIgnoreCase) ||
+                   type.Contains("Novelty", StringComparison.OrdinalIgnoreCase)
+               )
+            => true,
+
+        // ❌ Everything else
+        _ => false
+    };
+
+    private readonly List<string> debugtitles = [
+        //"Plush Zhaia Backpack (skin)",
+        //"Plush Zhaia Backpack",
+        //"Halloween Vendor",
+        //"Hooligan's Route",
+        //"Lion's Arch",
+        "Auric Backplate (skin)",
+        "Inscription of the Spearmarshal",
+        "Mini Foostivoo the Merry",
+        "Mini Exalted Sage",
+        "Exalted Mastery Vendor",
+        "Noble Ledges",
+        "Verdant Brink",
+        "Noble's Folly",
+        "Zinn's Stash",
+        "Glob of Ectoplasm",
+        "Bladed Helmet (skin)",
+        "Adam",
+        "Great Capra (skin)"
+        //"Tarir, the Forgotten City",
+        //"Auric Basin",
+        //"Axe of the Dragon's Deep",
+        //"Arah Weapons Box",
+        //"Dungeon Weapon Container",
+    ];
+
+    private class SearchState
+    {
+        public string Key { get; init; } = default!;
+        public string? Cost { get; init; } // store raw cost string
+        public EdgeType? IncomingEdgeType { get; init; }
+    }
+
+    private void FillInApiData(Unlock unlock)
+    {
+        var node = unlock.Node;
+        var startKey = unlock.Name;
+        if (miniatures == null || skins == null || achievements == null || achievementCategories == null || titles == null || novelties == null)
+        {
+            logger.LogWarning("API data not initialized when trying to get API data for {key} ({type})", startKey, node.Type);
+            return;
+        }
+
+        object? result = null;
+        if (node.Type == NodeType.Item && node.Metadata.TryGetValue("type", out var metadataTypeMini) && metadataTypeMini == "miniature"
+            && node.Metadata.TryGetValue("miniature id", out var miniId) && !string.IsNullOrEmpty(miniId) && int.TryParse(miniId, out var miniIdInt))
+        {
+            result = miniatures.Single(m => m.Id == miniIdInt);
+        }
+
+        if (node.Type == NodeType.Item && node.Metadata.TryGetValue("type", out var metadataTypeNovelty) && metadataTypeNovelty.Contains("novelty", StringComparison.OrdinalIgnoreCase)
+            && node.Metadata.TryGetValue("novelty-id", out var noveltyId) && !string.IsNullOrEmpty(noveltyId) && int.TryParse(noveltyId, out var noveltyIdInt))
+        {
+            result = novelties.Single(m => m.Id == noveltyIdInt);
+        }
+
+        if (node.Type == NodeType.Skin && node.Metadata.TryGetValue("id", out var skinId) && !string.IsNullOrEmpty(skinId) && int.TryParse(skinId, out var skinIdInt))
+        {
+            result = skins.Single(i => i.Id == skinIdInt);
+        }
+
+        if (node.Type == NodeType.Achievement && node.Metadata.TryGetValue("achievementId", out var achievementId) && !string.IsNullOrEmpty(achievementId) && int.TryParse(achievementId, out var achievementIdInt))
+        {
+            result = achievements.Single(i => i.Id == achievementIdInt);
+        }
+
+        if (result == null)
+        {
+            logger.LogWarning("No API data found for {key} ({type})", startKey, node.Type);
+            return;
+        }
+
+        unlock.ApiData = result;
+    }
+
+    private (string? Key, Node? Node, List<string> Path)? Classify(
+        AcquisitionGraph graph,
+        string startKey)
+    {
+        var visited = new HashSet<string>();
+        var queue = new Queue<SearchState>();
+        var parent = new Dictionary<string, string?>();
+        var startNode = graph.GetNode(startKey);
+        List<PossibleClassification> possibleClassifications = [];
+        var craftingCandidates = new List<string>();
+
+        if (startNode == null)
+            return null;
+
+        visited.Add(startKey);
+        queue.Enqueue(new SearchState
+        {
+            Key = startKey,
+            Cost = null,
+            IncomingEdgeType = null,
+        });
+        parent[startKey] = null;
+
+        while (queue.Count > 0)
+        {
+            var searchState = queue.Dequeue();
+            var currentKey = searchState.Key;
+            var current = graph.GetNode(currentKey);
+
+            if (debugtitles.Contains(currentKey))
+            {
+                logger.LogInformation("Visiting {key} ({type}) with cost {cost}", currentKey, current?.Type, searchState.Cost);
+            }
+
+            if (current == null)
+                continue;
+
+            if (searchState.IncomingEdgeType == EdgeType.GatheredFrom
+                && current.Type == NodeType.Gw2Object && current.Metadata.TryGetValue("type", out var objectType) && objectType != "chest")
+            {
+                continue;
+            }
+
+            if (current.Type == NodeType.Item && current.Metadata.TryGetValue("type", out var itemType))
+            {
+                if ((itemType.Equals("crafting material", StringComparison.OrdinalIgnoreCase) || itemType.Equals("trophy", StringComparison.OrdinalIgnoreCase))
+                    && current.Metadata.TryGetValue("material storage", out var materialStorage) && !string.IsNullOrWhiteSpace(materialStorage))
+                {
+                    var matchingCraftingMaterials = craftingMaterialCriteria!.Where(c => c.Criteria.Matches(currentKey)).ToList();
+                    if (matchingCraftingMaterials.Count == 0)
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        foreach (var criteria in matchingCraftingMaterials)
+                        {
+                            var groupName = criteria.Categorization!.Group?.Name;
+                            var categoryName = criteria.Categorization!.Category?.Name ?? "";
+                            var groupOfCategoryName = criteria.Categorization!.GroupOfCategoryName ?? "";
+                            if (groupName != null)
+                            {
+                                possibleClassifications.Add(new(groupName, null, BuildPath(currentKey, parent), 100));
+                                //var path = CategorizeAndBuildPath(groupName, null, startKey, startNode, currentKey, parent);
+                                //return (currentKey, current, path);
+                            }
+                            else
+                            {
+                                possibleClassifications.Add(new(groupOfCategoryName, categoryName, BuildPath(currentKey, parent), 100));
+                                //var path = CategorizeAndBuildPath(groupOfCategoryName, categoryName, startKey, startNode, currentKey, parent);
+                                //return (currentKey, current, path);
+                            }
+                        }
+                        continue;
+                    }
+                }
+                if (itemType.Equals("Container", StringComparison.OrdinalIgnoreCase))
+                {
+                    if (containersToIgnore.Any(c => currentKey.Contains(c, StringComparison.OrdinalIgnoreCase)))
+                    {
+                        continue;
+                    }
+                }
+            }
+
+            // When we reach a zone/city → validate cost
+            if (current.Type == NodeType.Location &&
+                current.Metadata.TryGetValue("type", out var value) &&
+                (value.Equals("Zone", StringComparison.OrdinalIgnoreCase) ||
+                 value.Equals("City", StringComparison.OrdinalIgnoreCase)))
+            {
+                var zone = currentKey;
+                foreach (var group in classifyConfig!.UnlockGroups)
+                {
+                    foreach (var category in group.UnlockCategories)
+                    {
+                        // Does the category have a ZoneCriteria that matches this zone?
+                        var hasZone = category.UnlockCriteria
+                            .OfType<ZoneCriteria>()
+                            .Any(z => z.Matches(zone));
+
+                        if (!hasZone)
+                            continue;
+
+
+                        // Does the category have a CurrencyCriteria that matches this currency?
+                        var validCurrencies = category.UnlockCriteria
+                            .OfType<CurrencyCriteria>().ToList();
+
+                        var cost = searchState.Cost;
+                        if (cost == null || validCurrencies.Count == 0 || validCurrencies.Any(c => c.Matches(cost)))
+                        {
+                            possibleClassifications.Add(new(group.Name, category.Name, BuildPath(currentKey, parent), 80));
+                            //var path = CategorizeAndBuildPath(group.Name, category.Name, startKey, startNode, currentKey, parent);
+                            //return (currentKey, current, path);
+                        }
+                    }
+                }
+            }
 
             var edges = edgesByFrom!.TryGetValue(currentKey, out var e) ? e : [];
             var foundTokenCriteria = tokenCriteria!.Where(c => edges.Any(e => c.Criteria.Matches(e.To))).ToList();
             foreach (var criteria in foundTokenCriteria)
             {
-                var groupName = criteria.Group?.Name;
-                var categoryName = criteria.Category?.Name ?? "";
-                var groupOfCategoryName = criteria.GroupOfCategoryName ?? "";
+                var groupName = criteria.Categorization!.Group?.Name;
+                var categoryName = criteria.Categorization!.Category?.Name ?? "";
+                var groupOfCategoryName = criteria.Categorization!.GroupOfCategoryName ?? "";
                 if (groupName != null)
                 {
                     possibleClassifications.Add(new(groupName, null, BuildPath(currentKey, parent), 100));
