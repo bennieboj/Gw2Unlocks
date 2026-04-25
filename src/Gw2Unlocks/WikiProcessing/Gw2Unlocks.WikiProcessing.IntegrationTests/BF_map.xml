@@ -1,0 +1,552 @@
+<mediawiki xmlns="http://www.mediawiki.org/xml/export-0.11/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mediawiki.org/xml/export-0.11/ http://www.mediawiki.org/xml/export-0.11.xsd" version="0.11" xml:lang="en">
+  <siteinfo>
+    <sitename>Guild Wars 2 Wiki</sitename>
+    <dbname>en_wikidb_gw2</dbname>
+    <base>https://wiki.guildwars2.com/wiki/Main_Page</base>
+    <generator>MediaWiki 1.39.17</generator>
+    <case>first-letter</case>
+    <namespaces>
+      <namespace key="-2" case="first-letter">Media</namespace>
+      <namespace key="-1" case="first-letter">Special</namespace>
+      <namespace key="0" case="first-letter" />
+      <namespace key="1" case="first-letter">Talk</namespace>
+      <namespace key="2" case="first-letter">User</namespace>
+      <namespace key="3" case="first-letter">User talk</namespace>
+      <namespace key="4" case="first-letter">Guild Wars 2 Wiki</namespace>
+      <namespace key="5" case="first-letter">Guild Wars 2 Wiki talk</namespace>
+      <namespace key="6" case="first-letter">File</namespace>
+      <namespace key="7" case="first-letter">File talk</namespace>
+      <namespace key="8" case="first-letter">MediaWiki</namespace>
+      <namespace key="9" case="first-letter">MediaWiki talk</namespace>
+      <namespace key="10" case="first-letter">Template</namespace>
+      <namespace key="11" case="first-letter">Template talk</namespace>
+      <namespace key="12" case="first-letter">Help</namespace>
+      <namespace key="13" case="first-letter">Help talk</namespace>
+      <namespace key="14" case="first-letter">Category</namespace>
+      <namespace key="15" case="first-letter">Category talk</namespace>
+      <namespace key="102" case="first-letter">Property</namespace>
+      <namespace key="103" case="first-letter">Property talk</namespace>
+      <namespace key="106" case="first-letter">Form</namespace>
+      <namespace key="107" case="first-letter">Form talk</namespace>
+      <namespace key="108" case="first-letter">Concept</namespace>
+      <namespace key="109" case="first-letter">Concept talk</namespace>
+      <namespace key="112" case="first-letter">smw/schema</namespace>
+      <namespace key="113" case="first-letter">smw/schema talk</namespace>
+      <namespace key="114" case="first-letter">Rule</namespace>
+      <namespace key="115" case="first-letter">Rule talk</namespace>
+      <namespace key="200" case="first-letter">ArenaNet</namespace>
+      <namespace key="201" case="first-letter">ArenaNet talk</namespace>
+      <namespace key="202" case="first-letter">API</namespace>
+      <namespace key="203" case="first-letter">API talk</namespace>
+      <namespace key="274" case="first-letter">Widget</namespace>
+      <namespace key="275" case="first-letter">Widget talk</namespace>
+    </namespaces>
+  </siteinfo>
+  <page>
+    <title>Blood Ruby Backpack (skin)</title>
+    <ns>0</ns>
+    <id>186949</id>
+    <revision>
+      <id>1794193</id>
+      <parentid>1423625</parentid>
+      <timestamp>2018-11-23T09:48:23Z</timestamp>
+      <contributor>
+        <username>J.A.R.V.I.S.</username>
+        <id>207015</id>
+      </contributor>
+      <minor/>
+      <comment>/* top */bot edit - &gt; switching release to requires</comment>
+      <origin>1794193</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="357" sha1="of4gxk6pm0z8a091tpqp67x5dfdq967" xml:space="preserve">{{otheruses|the wardrobe [[skin]]|the [[back item]]|Blood Ruby Backpack}}
+{{Skin infobox
+| name = Blood Ruby Backpack
+| icon = Blood Ruby Backpack.png
+| type = Back item
+| id = 6875
+| requires = hot
+| gallery1 = Blood Ruby Backpack.jpg
+}}
+
+[[Blood Ruby Backpack (skin)|Blood Ruby Backpack]] is a [[skin]] for [[back item]]s.
+
+== Acquisition ==
+{{skin list}}</text>
+      <sha1>of4gxk6pm0z8a091tpqp67x5dfdq967</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Blood Ruby Backpack</title>
+    <ns>0</ns>
+    <id>186527</id>
+    <revision>
+      <id>2987230</id>
+      <parentid>2595632</parentid>
+      <timestamp>2025-06-21T16:28:00Z</timestamp>
+      <contributor>
+        <username>Chieftain Alex</username>
+        <id>28878</id>
+      </contributor>
+      <minor/>
+      <origin>2987230</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="908" sha1="ks10n67br1kkvtsynkbv6osaplrewx7" xml:space="preserve">{{Back item infobox
+| description = {{flavor|You should be careful about carrying this around with you.}}—[[Scholar Glenna]]
+| level = 80
+| rarity = ascended
+| prefix = selectable
+| infusion slot = y
+| bound = account
+| skin = Blood Ruby Backpack (skin)
+| id = 79157
+| requires = hot
+| unique = y
+}}
+
+== Acquisition ==
+{{Sold by}}
+
+== Used in ==
+{{recipe list}}
+
+== Available prefixes ==
+* The following [[Attribute combinations|prefixes]] can be selected:
+{{prefix selection|all ascended trinket|collapsed=y}}
+
+== Salvage results ==
+* {{salvages into|Ball of Dark Energy}} (0-1)
+* {{salvages into|1 Agony Infusion}} (5-9)
+* {{salvages into|Unbound Magic}} (500)
+
+== Notes ==
+*Can be salvaged with an [[Ascended Salvage Tool]].
+*The chosen prefix for this item can be reset by using a [[Bloodstone Capacitor]].
+
+[[de:Blutrubin-Rucksack]]
+[[es:Mochila de rubí de sangre]]
+[[fr:Sac à dos de rubis de sang]]</text>
+      <sha1>ks10n67br1kkvtsynkbv6osaplrewx7</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Scholar Rakka</title>
+    <ns>0</ns>
+    <id>186474</id>
+    <revision>
+      <id>3092521</id>
+      <parentid>2906370</parentid>
+      <timestamp>2026-01-13T21:50:09Z</timestamp>
+      <contributor>
+        <username>Tery3065</username>
+        <id>270948</id>
+      </contributor>
+      <minor/>
+      <origin>3092521</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="921" sha1="fchkbnk2a6vquf0y4c87qv9wlq67qwj" xml:space="preserve">{{NPC infobox
+| icon = Unbound Magic Collector.png
+| image = Priory asura male heavy 2 (HoT weaponless).jpg
+| location = Haunted Canyons
+| race = asura
+| organization = Durmand Priory, Pact
+| service = Unbound Magic Collector
+| coordinates = [35226,30460]
+| requires = LWS3
+}}
+[[Scholar Rakka]] is a [[Pact]] vendor that trades [[Blood Ruby|Blood Rubies]] for items.
+
+== Location ==
+;[[Heart of Maguuma]]
+* [[Bloodstone Fen]]
+** [[Haunted Canyons]]
+
+== Items offered ==
+{{vendor table header|showFacts=false|showLevel=false}}
+{{vendor table row|item=Blood Ruby Band|cost=2000 Unbound Magic + 100 Blood Ruby}}
+{{vendor table row|item=Blood Ruby Pendant|cost=3000 Unbound Magic + 125 Blood Ruby}}
+{{vendor table row|item=Blood Ruby Backpack|cost=5000 Unbound Magic + 200 Blood Ruby}}
+{{vendor table row|item=Bloodstone Capacitor|cost=100 Unbound Magic}}
+|}
+
+[[de:Gelehrter Rakka]]
+[[es:Erudito Rakka]]
+[[fr:érudite Rakka]]</text>
+      <sha1>fchkbnk2a6vquf0y4c87qv9wlq67qwj</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Haunted Canyons</title>
+    <ns>0</ns>
+    <id>186494</id>
+    <revision>
+      <id>2892385</id>
+      <parentid>2265226</parentid>
+      <timestamp>2024-11-06T13:54:44Z</timestamp>
+      <contributor>
+        <username>BeeBeeKay</username>
+        <id>223338</id>
+      </contributor>
+      <minor/>
+      <comment>/* NPCs */ Plurals</comment>
+      <origin>2892385</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="5792" sha1="drlg8fnb0lm94bp3spbjd48bxl9z1io" xml:space="preserve">{{Location infobox
+| points-of-interest = 2
+| type = Area
+| sector id = 1366
+| within = Bloodstone Fen
+| levels = 80
+| connections = [[Bloodstone Maw]] (E)
+}}
+The [[Haunted Canyons]] is a jungle like area found within [[Bloodstone Fen]]. When the [[Bloodstone]] exploded, it caused the long dead spirits of those slain there to materialize as angered spirits during the night and any members of either the [[White Mantle]] or the [[Pact]] members caught in the blast became Bloodstone-crazed and now patrol the area looking for more Bloodstone.
+
+== Locations and objectives ==
+;Points of Interest
+:{{map objective|point of interest|Salvation Springs}}
+:{{map objective|point of interest|Tomb of the Confessors}}
+
+;Events
+{{area events}}
+
+== NPCs ==
+=== Allies ===
+;[[Asura]]
+* [[Vigil Crusader]]
+
+;[[Human]]s
+* [[Marksman Morrica]]
+* [[Priory Scholar]]
+* [[Squad Leader Bennett]]
+* [[Vigil Recruit]]
+
+;[[Norn]]
+* [[Whispers Agent]]
+
+;[[Sylvari]]
+* [[Priory Historian]]
+
+;Various
+* [[Vigil Marksman]]
+
+=== Services ===
+: {{vendor|Unbound Magic Collector}} [[Scholar Rakka]]
+
+=== Foes ===
+;[[Ambient creature]]s
+* [[Beetle]]
+* [[Frog]]
+* [[Mosquito (Ambient creature)|Mosquito]]
+* [[Sparkfly]]
+
+;Asura
+* [[Crazed Vigil Crusader]]
+
+;[[Charr]]
+* [[Crazed Whispers Agent]]
+
+;Humans
+* [[Crazed Priory Magister]]
+
+;[[Elemental]]s
+* [[Bloodstone Elemental Mauler]]
+* [[Bloodstone Elemental Sprite]]
+* [[Volatile Bloodstone Elemental]]
+
+;[[Insect]]s
+* [[Adolescent Beetle]]
+* [[Giant Beetle]]
+* [[Giant Spotted Beetle]]
+
+;[[Moa]]s
+* [[Green Moa]]
+
+;Norn
+* [[Crazed Vigil Marksman]]
+
+;[[Porcine]]s
+* [[Jungle Boar]]
+
+;[[White Mantle]]
+* [[White Mantle Elementalist]]
+* [[White Mantle Knight]]
+* [[White Mantle Mesmer]]
+* [[White Mantle Necromancer]]
+* [[White Mantle Seeker]]
+
+== Ambient dialogue ==
+;At the Pact Camp
+:'''Vigil Crusader:''' ''Sir, this is the second near-death experience you've had in a very short while.''
+:'''Squad Leader Bennett:''' ''Can't say I hadn't noticed. I'm either exceptionally unlucky or exceptionally lucky. Can't decide which.''
+:'''Vigil Crusader:''' ''While the concept of luck is generally preposterous, the [[Eternal Alchemy]] does seem to favor you.''
+:'''Squad Leader Bennett:''' ''Favor me? I went from nearly being executed by a giant bloodstone to nearly being blown up by an even bigger bloodstone!''
+:'''Vigil Crusader:''' ''Yet you survived both! I think you deserve a nickname. Bennett the Everlasting!''
+:'''Squad Leader Bennett:''' ''Isn't that tempting the Eternal Alchemy to smite me for my arrogance...or something?''
+:'''Vigil Crusader:''' ''That's not how the Eternal Alchemy works.''
+
+:'''Marksman Morrica:''' ''We have to leave! Now! The stone men are coming for us!''
+:'''Marksman Morrica:''' ''They made me see horrible ...things. They got in my head. They turned my own fears against me!''
+:'''Priory Historian:''' ''You need to calm yourself and rest.''
+:'''Marksman Morrica:''' ''I'm afraid to close my eyes. I see them still, inside my head. They're inside me!''
+
+:'''Whispers Agent:''' ''How is she? Any improvements?''
+:'''Priory Historian:''' ''She's stable. Well, physically stable, at least.''
+:'''Whispers Agent:''' ''And mentally?''
+:'''Priory Historian:''' ''This magic is unlike anything I've seen. It's deliberately tuned to cause as much suffering as possible.''
+:'''Whispers Agent:''' ''Let's hunt down these stone men and show 'em how the Pact deals with its enemies!''
+:'''Priory Historian:''' ''I fear—until we have a better idea of hat we're up against—we'd suffer the same fate she did.''
+:'''Whispers Agent:''' ''Soon as we know what we're up against, I'm gonna find out if stone bleeds!''
+:'''Priory Historian:''' ''I can guess. It seems like an overload of magic. Like getting electrocuted, but...not.''
+:'''Priory Historian:''' ''It's affected her mind and her body both.''
+:'''Whispers Agent:''' ''Hang up in there, soldier. Medic, keep up the good work. We can't lose her. She's too valuable.''
+:'''Priory Historian:''' ''Understood.''
+
+:'''Vigil Recruit:''' ''I've got a feeling the damage is far-flung. We should probably call for backup.''
+:'''Priory Scholar:''' ''I don't know if there's backup available. We're probably on our own.''
+:'''Vigil Recruit:''' ''Bennett will figure something out. We just need to follow his lead.''
+
+:'''Priory Scholar:''' ''You think Marksman Morrica will be okay?''
+:'''Vigil Recruit:''' ''I hope so, but it doesn't look good. Her condition is worsening.''
+:'''Priory Scholar:''' ''It's like that magic fried her inside, or confused her circuits. She's in so much pain.''
+:'''Vigil Recruit:''' ''C'mon. Talking about it isn't going to make it better. Do something productive.
+:'''Priory Scholar:''' ''Such as?''
+:'''Vigil Recruit:''' ''Thinking about it with your mouth closed would be a step in the right direction.''
+
+:'''Priory Scholar:''' ''Okay, I'm panicking. I admit it. This is a disaster!''
+:'''Vigil Recruit:''' ''Keep it together soldier. This is no worse than what we've seen before.''
+:'''Priory Scholar:''' ''You're kidding, right? Look at what the jade men did to her!''
+:'''Priory Scholar:''' ''And all this magic...there's too much. What are we going to do?''
+:'''Vigil Recruit:''' ''Let's take it one step at a time. Right now, you need to breathe.''
+
+== Objects ==
+* [[Bouncing Mushroom]]
+* [[Rift Entrance]]
+* [[Unstable Bloodstone Fragment]]
+
+== Crafting resources ==
+;Resource nodes
+: {{gathering node|Bloodstone Crystals}}
+: {{gathering node|Mithril Ore (node)|Mithril Ore}}
+: {{gathering node|Jungle Plants}}
+: {{gathering node|Sawgill Mushrooms}}
+: {{gathering node|Mussels}}
+: {{gathering node|Ancient Sapling}}
+: {{gathering node|Palm Sapling}}
+
+{{Bloodstone Fen nav}}
+
+[[de:Verwunschene Schluchten]]
+[[es:Cañones Encantados]]
+[[fr:Canyons hantés]]</text>
+      <sha1>drlg8fnb0lm94bp3spbjd48bxl9z1io</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Bloodstone Fen</title>
+    <ns>0</ns>
+    <id>9399</id>
+    <revision>
+      <id>3121068</id>
+      <parentid>3086928</parentid>
+      <timestamp>2026-03-29T17:27:43Z</timestamp>
+      <contributor>
+        <username>Tery3065</username>
+        <id>270948</id>
+      </contributor>
+      <minor/>
+      <comment>/* Bloodstone Maw (east / depths) */</comment>
+      <origin>3121068</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="11120" sha1="mcxi1jtepxq64nlrdji192yrrx9njz5" xml:space="preserve">{{spoiler|[[Living World Season 3]]}}
+{{Location infobox
+| levels = 80
+| type = Zone
+| requires = lws3
+| within = Heart of Maguuma
+| location tree = Tyria; Heart of Maguuma
+| id = 1165
+| region id = 10
+| continent id = 1
+| map = Bloodstone Fen level 2 map.jpg
+}}
+[[File:Bloodstone Fen level 3 map.jpg|thumb|240px|Sky (level 3) map]]
+[[File:Bloodstone Fen level 1 map.jpg|thumb|240px|Underground (level 1) map]]
+[[Bloodstone Fen]] is a [[zone]] available via [[Living World Season 3]] episode [[Out of the Shadows]]. Found in the [[Heart of Maguuma]], it is the location of the [[Maguuma Jungle]] [[Bloodstone]]. The [[White Mantle]] has been active here since their exile from [[Kryta]], studying the Bloodstone's properties and how to harness its power. Years of tampering with the Bloodstone has caused it to explode, devastating the surrounding area and leaving orbs of [[Unbound Magic]] and pockets of [[Unstable Magic]] suspended in the air.
+
+The majority of the [[White Mantle]] and [[Pact]] personnel who survived the explosion have been driven mad, hungering for Bloodstone magic. The souls of humans sacrificed atop the Bloodstone have been freed and haunt the area as restless spirits, most notably the dangerous [[Ghostly Justiciar Hablion|Justiciar Hablion]]. The White Mantle have also managed to take control of [[jade construct]]s, which are periodically brought into Bloodstone Maw to gather any lingering energy.
+
+While in Bloodstone Fen, characters have access to special skills usable while [[gliding]], channeling ambient magic to attack foes and maneuver while airborne.
+
+== Getting there ==
+Like most of the Living World Season 3 zones, Bloodstone Fen is not directly connected to neighboring areas. In order to reach it, one can use one of the following methods:
+
+* Complete the [[Out of the Shadows]] instance [[Research in Rata Novus]] - the second story step of Episode 1 from [[Living World Season 3]].
+* Use a [[Bloodstone Fen Portal Scroll]].
+* Use a [[Teleport to Friend]] after having unlocked the [[Out of the Shadows]] episode on the account.
+** Not having unlocked the story episode will result in a wasted Teleport to Friend.
+*** If your friend is actually standing on the waypoint, you will get the waypoint, but you will still not have access to the map until starting the episode.
+
+== Map resources ==
+* {{item icon|Unbound Magic}} is found throughout the map and is dropped by various enemies and events.
+* {{item icon|Blood Ruby|Blood Rubies}} can be found in [[Bloodstone Crystals|Bloodstone Crystal]] ore nodes throughout the map and as event rewards. These are needed to buy Blood Ruby accessories from [[Scholar Rakka]].
+
+== Completion rewards ==
+* {{exp|8001}}
+* {{rewards item|Unbound Magic|qty=100}}
+* {{rewards item|Blood Ruby|qty=5}}
+* 1 piece of [[gear]] of {{rarity|Rare}} or higher [[Item#Rarity|rarity]].
+* One of the following:
+** {{rewards item|Transmutation Charge (item)|chance=chance}}
+** {{rewards item|Black Lion Key|chance=chance}} (rare)
+
+== Gliding skills ==
+Initially, characters can only use [[Focused Magic]]. To unlock the other skills, they must be purchased from [[Natto]] aboard the [[Pride of the Pact]] airship. The purchase is for all characters and is only required once per account.
+
+{| {{STDT|pve skills}}
+{{Environmental skill table header}}
+{{Environmental skill table row|Focused Magic}}
+{{Environmental skill table row|Unstable Magic Volley}}
+{{Environmental skill table row|Pacified Magical Storm}}
+{{Environmental skill table row|Dogfight or Flight}}
+{{Environmental skill table row|Ride the Ley Line}}
+|}
+
+== Locations ==
+{| {{STDT|sortable pve locations}}
+{{Location table header|showLevel=false}}
+|- style="visibility:collapse"
+| colspan="2" | &lt;!-- dummy row to sort the subheader to the bottom --&gt;
+|- class="sortbottom"
+! colspan="2" | Sky level
+|-
+| [[Fragmented Wastes]]
+|
+: {{map icon|waypoint}} Zealot's Overlook Waypoint
+: {{map icon|poi}} [[Bloodstone's Shell]]
+: {{map icon|poi}} [[Colosseum of the Faithful]]
+: {{map icon|poi}} [[Temple of Sacrifice]]
+: {{map icon|vista}} Colosseum of the Faithful Vista
+: {{map icon|vista}} Fragmented Wastes Vista
+: {{map icon|masteryhot}} [[Bloodstone Fen Insight: Fragmented Wastes]]
+|-
+| [[Pride of the Pact]]
+|
+: {{map icon|waypoint}} Soulkeeper's Airship Waypoint
+|- style="visibility:collapse"
+| colspan="2" | &lt;!-- dummy row to sort the subheader to the bottom --&gt;
+|- class="sortbottom"
+! colspan="2" | Ground level
+|-
+| [[Bloodstone Maw]]
+|
+: {{map icon|waypoint}} Ground Zero Waypoint
+: {{map icon|poi}} [[Crater's Precipice]]
+|-
+| [[Haunted Canyons]]
+|
+: {{map icon|poi}} [[Salvation Springs]]
+: {{map icon|poi}} [[Tomb of the Confessors]]
+|- style="visibility:collapse"
+| colspan="2" | &lt;!-- dummy row to sort the subheader to the bottom --&gt;
+|- class="sortbottom"
+! colspan="2" | Underground level
+|-
+| [[Cavern of Unseen Lights]]
+|
+: {{map icon|waypoint}} Depths of the Maw Waypoint
+: {{map icon|poi}} [[Temple of Renewal]]
+: {{map icon|vista}} Cavern of Unseen Lights Vista
+: {{map icon|masteryhot}} [[Bloodstone Fen Insight: Temple of Renewal]]
+: {{map icon|raid}} [[Bastion of the Penitent]]
+|}
+
+== Interactive map ==
+;Sky
+{{Interactive map | floor = 2 | markers =
+{ "name": "Ley line", "type": "antline", "color": "rgba(30,200,200,0.8)", "coord": [[36004,30798],[36023,30795],[36044,30789],[36062,30779],[36079,30765],[36095,30752],[36109,30736],[36123,30720],[36126,30701],[36120,30680],[36113,30659],[36108,30639],[36101,30619],[36089,30602],[36074,30587],[36059,30572],[36044,30556],[36029,30542],[36012,30528],[35994,30520],[35973,30513],[35955,30508],[35933,30500],[35914,30493],[35894,30485],[35874,30491],[35855,30502],[35837,30512],[35819,30521],[35799,30531],[35783,30543],[35775,30563],[35775,30585],[35777,30606],[35779,30628],[35782,30648],[35787,30669],[35797,30687],[35811,30704],[35826,30718],[35841,30735],[35856,30748],[35872,30763],[35888,30775],[35906,30788],[35923,30800],[35943,30808],[35962,30805],[35983,30799],[36003,30798]] }
+}}&lt;!-- In the sky: [[Colosseum of the Faithful]]. --&gt;
+;Ground &lt;!-- On the ground: [[Bloodstone's Shell]] and [[Tomb of the Confessors]]. --&gt;
+{{Interactive map | floor = 1}}
+;Depths &lt;!-- In the depths: [[Temple of Renewal]], [[Crater's Precipice]], [[Salvation Springs]]. --&gt;
+{{Interactive map | floor = 3}}
+
+== Events ==
+=== [[Fragmented Wastes]] (sky) ===
+;[[Fragmented Wastes (meta event)|Fragmented Wastes meta event]]
+This is a continuous series of events on the shattered top layer of Bloodstone Fen. Rifts open and expunge disorientated creatures that must be beaten down to force them back into the rift. When enough creatures have been defeated, the rift closes and the event succeeds. 
+
+Rifts can be reached from the air, or via Rift Entrances that spawn in the [[Haunted Canyons]] and [[Bloodstone Maw]] areas. Once eight of these rifts are closed, a group boss event will spawn at [[Bloodstone's Shell]].
+* {{event|Defeat beasts disgorged from the blazing unstable rift}}
+* {{event|Defeat beasts disgorged from the frigid unstable rift}}
+* {{event|Defeat beasts disgorged from the rumbling unstable rift}}
+** {{event|Defeat the enormous bloodstone elemental!}}
+
+;[[Colosseum of the Faithful]] event chain
+* {{event|Exorcise the angered spirits haunting Zealot's Overlook}}
+** {{event|Defeat the spirit of Justiciar Hablion}} &lt;small&gt;(This chain is on a similar timer to [[Bloodstone Maw (meta event)|Bloodstone Maw meta event]]. It resets 30 minutes after [[Ghostly Justiciar Hablion]] is defeated.)&lt;/small&gt;
+
+=== [[Haunted Canyons]] (west / ground) ===
+;[[The spirits mostly come out at night. Mostly...]]
+During the day, there will be two occasional events and a large number of [[White Mantle]] in the area. Once [[Day and night|night falls]], the meta chain begins with an exorcism event to eliminate disturbed ghosts. Once completed, four Champion ghosts will spawn after one another and finally an escort event with [[Alari Doubleblade]] as she makes her way to [[Tomb of the Confessors]].
+; Day events
+* {{event|Defeat the patrolling justiciar}}
+* {{event|Defeat the patrolling crazed agent}}
+; Night events
+* {{event|Exorcise the angered spirits stalking the Haunted Canyons}}
+** {{event|Defeat the angry spirit of Savant Ehrin}}
+*** {{event|Defeat the angry spirit of Nyle the Compassionate}}
+**** {{event|Defeat the angry spirit of Ritualist Josa}}
+***** {{event|Defeat the angry spirit of Thief Lloyd}}
+****** {{event|Escort Alari Doubleblade on her quest for vengeance}}
+
+;Other events
+* {{event|Kill the seekers to halt the cleric's supply of bloodstone shards, or throw shards at her to weaken her shield}}
+** {{event|Kill the White Mantle cleric!}}
+** {{event|Kill the empowered White Mantle cleric!}}
+* {{event|Find and slay the treasure mushroom! (Bloodstone Fen)}}
+* {{event|Stop the skritt burglar before she escapes with the treasure}}
+
+=== [[Bloodstone Maw]] (east / depths) ===
+;[[Bloodstone Maw (meta event)|Bloodstone Maw meta event]]
+The meta event approximately on a 60-90 minute cooldown, the timer appears to be instance-based rather than set on a global timer. The countdown starts when the Unbound Guardian dies or an event in the event chain fails. After the countdown, the Jade Construct events will recommence. The first event of the chain starts at the {{waypoint|Ground Zero Waypoint}}. A [[Champion Jade Armor]] or a [[Champion Jade Bow]] must be defeated before it absorbs the [[Bloodstone Stalagmite]] (which can be communed with for experience and 10 Unbound Magic once the Jade Construct is dead). Once the first event has been completed, a new one will appear at the lower level, followed by two more of the same format. The final event of this type features both the Armor and the Bow bosses.
+
+After all of the Jade bosses have been defeated, a [[Legendary Unbound Guardian]] appears deep within the [[Cavern of Unseen Lights]]. A time limit of 15 minutes is in place to defeat it.
+* {{event|Defeat the jade construct before it drains the bloodstone!}} (occurs four times in different locations)
+** {{event|Defeat the jade constructs before they drain the bloodstone!}}
+*** {{event|Disperse the Unbound Guardian}}
+
+== Map bonus rewards ==
+{{map bonus reward}}
+
+== Related achievements ==
+{{main|Out of the Shadows (achievements)}}
+
+== Crafting resources ==
+;Resource nodes
+: {{gathering icon|mine}} [[Mithril Ore]]/[[Rich Mithril Vein]]
+: {{gathering icon|mine}} [[Orichalcum Ore]]
+: {{gathering icon|mine}} [[Bloodstone Crystals]]
+: {{gathering icon|wood}} [[Palm Sapling]]
+: {{gathering icon|wood}} [[Ancient Sapling]]
+: {{gathering icon|plant}} [[Jungle Plants]]
+: {{gathering icon|plant}} [[Sawgill Mushrooms]]
+: {{gathering icon|plant}} [[Flax]]
+: {{gathering icon|plant}} [[Mussels]]
+
+== Trivia ==
+{{gww}}
+* During the events of ''[[Guild Wars]]'', the [[White Mantle]] would use this location to sacrifice villagers at the behest of the [[mursaat]] in order to power the [[gw1:soul battery|soul batteries]] keeping shut the [[gw1:Door of Komalie|Door of Komalie]].
+
+{{Zone nav}}
+
+[[de:Blutsteinsumpf]]
+[[es:Pantano de la Hematites]]
+[[fr:Marais de la pierre de sang]]</text>
+      <sha1>mcxi1jtepxq64nlrdji192yrrx9njz5</sha1>
+    </revision>
+  </page>
+</mediawiki>

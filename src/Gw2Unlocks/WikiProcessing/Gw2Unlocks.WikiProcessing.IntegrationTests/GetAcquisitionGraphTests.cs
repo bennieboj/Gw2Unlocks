@@ -154,6 +154,35 @@ public class GetAcquisitionGraphTests : ServiceProviderBasedTest<IGw2WikiProcess
     }
 
     [Fact]
+    public async Task ShouldFindSoldbyBFmap()
+    {
+        fakeWikiApi.FileName = "BF_map.xml";
+        var graph = await GetSut().GetAcquisitionGraph(TestContext.Current.CancellationToken);
+
+        const string skin = "Blood Ruby Backpack (skin)";
+        var skinNode = graph.GetNode(skin, NodeType.Skin);
+        const string item = "Blood Ruby Backpack";
+        var itemNode = graph.GetNode(item, NodeType.BackItem);
+        const string vendor = "Scholar Rakka";
+        var vendorNode = graph.GetNode(vendor, NodeType.NPC);
+        const string area = "Haunted Canyons";
+        var areaNode = graph.GetNode(area, NodeType.Location);
+        const string zone = "Bloodstone Fen";
+        var zoneNode = graph.GetNode(zone, NodeType.Location);
+
+        Assert.NotNull(skinNode);
+        Assert.NotNull(itemNode);
+        Assert.NotNull(vendorNode);
+        Assert.NotNull(areaNode);
+        Assert.NotNull(zoneNode);
+
+        Assert.Contains(graph.Edges, e => e.From == item && e.To == vendor && e.Type == EdgeType.SoldBy
+                        && e.Metadata != null && e.Metadata.ContainsKey("cost"));
+        Assert.Contains(graph.Edges, e => e.From == vendor && e.To == area && e.Type == EdgeType.LocatedIn);
+        Assert.Contains(graph.Edges, e => e.From == area && e.To == zone && e.Type == EdgeType.LocatedIn);
+    }
+
+    [Fact]
     public async Task ContainedInShouldRecurseToVendor()
     {
         fakeWikiApi.FileName = "Arah_contains.xml";

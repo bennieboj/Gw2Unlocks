@@ -44,6 +44,7 @@ public sealed class Gw2WikiProcessingSource(
                             //"Axe of the Dragon's Deep",
                             //"Arah Weapons Box",
                             //"Dungeon Weapon Container",
+                            "Scholar Rakka"
                             ];
 
                         //logger.LogInformation(
@@ -267,7 +268,7 @@ public sealed class Gw2WikiProcessingSource(
         // 🔹 NPC that are merchants (Vendor)
         if (info.InfoBoxType.Equals("NPC", StringComparison.OrdinalIgnoreCase))
         {
-            if (info.Get("service")?.Contains("merchant", StringComparison.OrdinalIgnoreCase) == true)
+            if (!string.IsNullOrWhiteSpace(info.Get("service")))
             {
                 HandleLocation(graph, nodeId, info);
 
