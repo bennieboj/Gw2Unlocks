@@ -838,19 +838,6 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
         //"Halloween Vendor",
         //"Hooligan's Route",
         //"Lion's Arch",
-        "Auric Backplate (skin)",
-        "Inscription of the Spearmarshal",
-        "Mini Foostivoo the Merry",
-        "Mini Exalted Sage",
-        "Exalted Mastery Vendor",
-        "Noble Ledges",
-        "Verdant Brink",
-        "Noble's Folly",
-        "Zinn's Stash",
-        "Glob of Ectoplasm",
-        "Bladed Helmet (skin)",
-        "Adam",
-        "Great Capra (skin)"
         //"Tarir, the Forgotten City",
         //"Auric Basin",
         //"Axe of the Dragon's Deep",
@@ -952,8 +939,11 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
 
             if (current.Type == NodeType.Item && current.Metadata.TryGetValue("type", out var itemType))
             {
-                if ((itemType.Equals("crafting material", StringComparison.OrdinalIgnoreCase) || itemType.Equals("trophy", StringComparison.OrdinalIgnoreCase))
-                    && current.Metadata.TryGetValue("material storage", out var materialStorage) && !string.IsNullOrWhiteSpace(materialStorage))
+                var isCraftingMaterial = itemType.Equals("crafting material", StringComparison.OrdinalIgnoreCase);
+                var isThrophy = itemType.Equals("trophy", StringComparison.OrdinalIgnoreCase);
+                var isInMaterialStorage = current.Metadata.TryGetValue("material storage", out var materialStorage) && !string.IsNullOrWhiteSpace(materialStorage);
+                var isMysticMaterial = current.Metadata.TryGetValue("material type", out var materialType) && materialType.Equals("mystic", StringComparison.OrdinalIgnoreCase);
+                if ((isCraftingMaterial || isThrophy) && (isInMaterialStorage || isMysticMaterial ))
                 {
                     var matchingCraftingMaterials = craftingMaterialCriteria!.Where(c => c.Criteria.Matches(currentKey)).ToList();
                     if (matchingCraftingMaterials.Count == 0)

@@ -43,9 +43,7 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
         Assert.IsAssignableFrom<Miniature>(unlock.ApiData);
     }
 
-#pragma warning disable xUnit1004 // Test methods should not be skipped
-    [Fact(Skip = "doesn't work for now")]
-#pragma warning restore xUnit1004 // Test methods should not be skipped
+    [Fact]
     public async Task GivenBloodRubyBackpackSoldInBloodstoneFenShouldLinkToCorrectCategory()
     {
         var unlockName = "Blood Ruby Backpack (skin)";
