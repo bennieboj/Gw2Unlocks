@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Gw2Unlocks.WikiProcessing.Implementation;
 
-internal sealed class UpdaterService(ILogger<BackgroundService> logger, IGw2WikiProcessingSource graphSource, IGw2WikiProcessingCache graphCache) : BackgroundService
+internal sealed class UpdaterService(ILogger<BackgroundService> logger, IGw2WikiProcessingSource graphSource, IGw2WikiProcessingCache graphCache, IHostApplicationLifetime hostApplicationLifetime) : BackgroundService
 {
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
@@ -25,6 +25,10 @@ internal sealed class UpdaterService(ILogger<BackgroundService> logger, IGw2Wiki
         catch (Exception ex)
         {
             logger.LogError(ex, "Error in UpdaterService");
+        }
+        finally
+        {
+            hostApplicationLifetime.StopApplication();
         }
     }
 }

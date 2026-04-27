@@ -1,4 +1,5 @@
 ﻿using GuildWars2.Hero.Achievements;
+using GuildWars2.Hero.Builds;
 using GuildWars2.Hero.Equipment.Miniatures;
 using GuildWars2.Hero.Equipment.Novelties;
 using GuildWars2.Hero.Equipment.Wardrobe;
@@ -10,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -36,6 +38,34 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
         var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
         var group = results.UnlockGroups.Single(g => g.Name == "Heart of Thorns");
         var category = group.UnlockCategories.Single(c => c.Name == "Auric Basin");
+        var unlock = category.Unlocks.Single(c => c.Name == unlockName);
+
+        Assert.NotNull(unlock);
+        Assert.NotNull(unlock.ApiData);
+        Assert.IsAssignableFrom<Miniature>(unlock.ApiData);
+    }
+
+    [Fact]
+    public async Task GivenUnlockSoldByVendorForTokenInZoneWhenClassifyingUnlockThenShouldReturnZone()
+    {
+        var unlockName = "Endless Spotted Beetle Tonic";
+        var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
+        var group = results.UnlockGroups.Single(g => g.Name == "Heart of Thorns");
+        var category = group.UnlockCategories.Single(c => c.Name == "Dragon's Stand");
+        var unlock = category.Unlocks.Single(c => c.Name == unlockName);
+
+        Assert.NotNull(unlock);
+        Assert.NotNull(unlock.ApiData);
+        Assert.IsAssignableFrom<Novelty>(unlock.ApiData);
+    }
+
+    [Fact]
+    public async Task GivenUnlockSoldByVendorInZoneForCommonCurrencyWhenClassifyingUnlockThenShouldReturnZone()
+    {
+        var unlockName = "Mini Whisper of Jormag";
+        var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
+        var group = results.UnlockGroups.Single(g => g.Name == "Icebrood Saga");
+        var category = group.UnlockCategories.Single(c => c.Name == "Bjora Marches");
         var unlock = category.Unlocks.Single(c => c.Name == unlockName);
 
         Assert.NotNull(unlock);
@@ -103,6 +133,19 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
     }
 
     [Fact]
+    public async Task GivenUnlockHavingSoldForFestivalCurrencyShouldLinkToFestivalCategory()
+    {
+        var unlockName = "Plush Zhaia Backpack (skin)";
+        var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
+        var group = results.UnlockGroups.Single(g => g.Name == "Festivals");
+        var category = group.UnlockCategories.Single(c => c.Name == "Halloween");
+        var unlock = category.Unlocks.Single(c => c.Name == unlockName);
+        Assert.NotNull(unlock);
+        Assert.NotNull(unlock.ApiData);
+        Assert.IsAssignableFrom<BackItemSkin>(unlock.ApiData);
+    }
+
+    [Fact]
     public async Task GivenUnlockContainsExoticChestShouldBeGeneralCategory()
     {
         var unlockName = "Adam (skin)";
@@ -159,6 +202,20 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
     }
 
     [Fact]
+    public async Task MiniWithTypePropertyCaptalizedAndMultipleCostsShouldStillFindApiDataAndTakeVendorWithHighestMathcingCosts()
+    {
+        string unlockName = "Mini Tyrannus Maneater";
+        var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
+        var group = results.UnlockGroups.Single(g => g.Name == "Visions of Eternity");
+        var category = group.UnlockCategories.Single(c => c.Name == "Starlit Weald");
+        var unlock = category.Unlocks.Single(c => c.Name == unlockName);
+
+        Assert.NotNull(unlock);
+        Assert.NotNull(unlock.ApiData);
+        Assert.IsAssignableFrom<Miniature>(unlock.ApiData);
+    }
+
+    [Fact]
     public async Task GivenItemWithRecipeSourceMysticForrgeShouldBeCategoryMysticForge()
     {
         var unlockName = "Abyssal Scepter (skin)";
@@ -190,7 +247,7 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
 
         Assert.NotNull(unlockAchi);
         Assert.NotNull(unlockAchi.ApiData);
-        Assert.IsAssignableFrom<Achievement>(unlockAchi.ApiData);
+        Assert.IsAssignableFrom<AchievementWithTitle>(unlockAchi.ApiData);
     }
 
     [Theory]
@@ -222,7 +279,7 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
 
         Assert.NotNull(unlockAchi);
         Assert.NotNull(unlockAchi.ApiData);
-        Assert.IsAssignableFrom<Achievement>(unlockAchi.ApiData);
+        Assert.IsAssignableFrom<AchievementWithTitle>(unlockAchi.ApiData);
 
         Assert.NotNull(unlockReward);
         Assert.NotNull(unlockReward.ApiData);
@@ -240,7 +297,7 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
 
         Assert.NotNull(unlock);
         Assert.NotNull(unlock.ApiData);
-        Assert.IsAssignableFrom<Achievement>(unlock.ApiData);
+        Assert.IsAssignableFrom<AchievementWithTitle>(unlock.ApiData);
     }
 
     [Fact]
@@ -254,6 +311,22 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
 
         Assert.NotNull(unlock);
         Assert.NotNull(unlock.ApiData);
-        Assert.IsAssignableFrom<Achievement>(unlock.ApiData);
+        Assert.IsAssignableFrom<AchievementWithTitle>(unlock.ApiData);
+    }
+
+    [Fact]
+    public async Task GivenAchievementsHasTitleApiDataShouldContainAchievementAndTitle()
+    {
+        var unlockName = "A Crack in the Ice (achievements)#achievement3221"; // Playing Chicken  achievement
+        var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
+        var group = results.UnlockGroups.Single(g => g.Name == "LW Season 3");
+        var category = group.UnlockCategories.Single(c => c.Name == "Bitterfrost Frontier");
+        var unlock = category.Unlocks.Single(c => c.Name == unlockName);
+
+        Assert.NotNull(unlock);
+        Assert.NotNull(unlock.ApiData);
+        Assert.IsAssignableFrom<AchievementWithTitle>(unlock.ApiData);
+        Assert.Equal(3221, ((AchievementWithTitle)unlock.ApiData).Id);
+        Assert.Equal("Chicken Chaser", ((AchievementWithTitle)unlock.ApiData).TitleName);
     }
 }

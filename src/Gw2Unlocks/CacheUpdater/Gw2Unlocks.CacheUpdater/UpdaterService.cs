@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Gw2Unlocks.CacheUpdater;
 
-internal sealed class UpdaterService(ILogger<BackgroundService> logger, IUpdater updater) : BackgroundService
+internal sealed class UpdaterService(ILogger<UpdaterService> logger, IUpdater updater, IHostApplicationLifetime hostApplicationLifetime) : BackgroundService
 {
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
@@ -14,7 +14,7 @@ internal sealed class UpdaterService(ILogger<BackgroundService> logger, IUpdater
         try
         {
             await updater.UpdateApiData(stoppingToken);
-            //await updater.UpdateWikiData(stoppingToken);
+            await updater.UpdateWikiData(stoppingToken);
         }
         catch (OperationCanceledException)
         {
@@ -23,6 +23,10 @@ internal sealed class UpdaterService(ILogger<BackgroundService> logger, IUpdater
         catch (Exception ex)
         {
             logger.LogError(ex, "Error in UpdaterService");
+        }
+        finally
+        {
+            hostApplicationLifetime.StopApplication();
         }
     }
 }

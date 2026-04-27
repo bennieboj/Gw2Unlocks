@@ -14,6 +14,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Threading;
 using System.Threading.Tasks;
 using static Gw2Unlocks.UnlockClassifier.ClassifyConfigExtensions;
@@ -31,13 +32,15 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
     private Collection<AchievementCategory>? achievementCategories;
     private Collection<Title>? titles;
     private Collection<Novelty>? novelties;
-    //private Dictionary<int, List<AchievementCategory>>? achievementCategoriesByAchievementId;
     private Dictionary<int, List<UnlockCriteriaContext<AchievementCategoryCriteria>>>? achievementCriteriaByAchievementId;
     private Dictionary<int, string>? skinLookup;
     private Dictionary<int, string>? itemLookup;
     private Dictionary<string, List<Edge>>? edgesByFrom;
     private Dictionary<string, List<Edge>>? edgesByTo;
     private ClassifyConfig? classifyConfig;
+
+    private List<CurrencyCriteria> commonCurrencies = [new CurrencyCriteria("Coin"), new CurrencyCriteria("Karma"), new CurrencyCriteria("Research Note")];
+
     private static ClassifyConfig CreateConfig()
     {
         return new ClassifyConfig
@@ -80,11 +83,18 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                         new CraftingMaterialCriteria("Eye of Kormir"),
                         new CraftingMaterialCriteria("Ley-Infused Sand"),
                         new CraftingMaterialCriteria("Powdered Rose Quartz"),
-                        new CraftingMaterialCriteria("Eye of Kormir")
+                        new CraftingMaterialCriteria("Eye of Kormir"),
+                        new CurrencyCriteria("Trade Contract"),
+                        new CurrencyCriteria("Elegy Mosaic"),
                     ],
                     UnlockCategories =
                     [
-                        new() { Name = "Crystal Oasis", UnlockCriteria = [ new ZoneCriteria("Crystal Oasis") ] },
+                        new() { 
+                            Name = "Crystal Oasis",
+                            UnlockCriteria = [ 
+                                new ZoneCriteria("Crystal Oasis"), new CurrencyCriteria("Casino Coin")
+                            ]
+                        },
                         new() { Name = "Desert Highlands", UnlockCriteria = [ new ZoneCriteria("Desert Highlands") ] },
                         new() { Name = "Elon Riverlands", UnlockCriteria = [ new ZoneCriteria("Elon Riverlands") ] },
                         new() { Name = "The Desolation", UnlockCriteria = [ new ZoneCriteria("The Desolation") ] },
@@ -95,13 +105,13 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                 new()
                 {
                     Name = "End of Dragons",
-                    UnlockCriteria = [  ],
+                    UnlockCriteria = [ new CurrencyCriteria("Ancient Coin") ],
                     UnlockCategories =
                     [
                         new() { Name = "Seitung Province", UnlockCriteria = [ new ZoneCriteria("Seitung Province") ] },
                         new() { Name = "New Kaineng City", UnlockCriteria = [ new ZoneCriteria("New Kaineng City") ] },
                         new() { Name = "The Echovald Wilds", UnlockCriteria = [ new ZoneCriteria("The Echovald Wilds") ] },
-                        new() { Name = "Arborstone", UnlockCriteria = [ new ZoneCriteria("Arborstone") ] },
+                        new() { Name = "Arborstone", UnlockCriteria = [ new ZoneCriteria("Arborstone"), new CurrencyCriteria("Canach Coin") ] },
                         new() { Name = "Dragon's End", UnlockCriteria = [ new ZoneCriteria("Dragon's End") ] },
                         new() { Name = "Gyala Delve", UnlockCriteria = [ new ZoneCriteria("Gyala Delve") ] },
                     ]
@@ -110,7 +120,7 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                 new()
                 {
                     Name = "Secrets of the Obscure",
-                    UnlockCriteria = [  ],
+                    UnlockCriteria = [ new CurrencyCriteria("Ancient Coin") ],
                     UnlockCategories =
                     [
                         new() { Name = "Skywatch Archipelago", UnlockCriteria = [ new ZoneCriteria("Skywatch Archipelago"), new CurrencyCriteria("Static Charge") ] },
@@ -123,7 +133,7 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                 new()
                 {
                     Name = "Janthir Wilds",
-                    UnlockCriteria = [  ],
+                    UnlockCriteria = [ new CurrencyCriteria("Ancient Coin") ],
                     UnlockCategories =
                     [
                         new() { Name = "Lowland Shore",
@@ -150,6 +160,29 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                                 new TokenCriteria("Curious Mursaat Remnants")
                             ]
                         },
+                    ]
+                },
+
+                new()
+                {
+                    Name = "Visions of Eternity",
+                    UnlockCriteria = [ new CurrencyCriteria("Unusual Coin") ],
+                    UnlockCategories =
+                    [
+                        new() { Name = "Shipwreck Strand",
+                            UnlockCriteria = [
+                                new ZoneCriteria("Shipwreck Strand"),
+                                new CurrencyCriteria("Aether-Rich Sap"),
+                                new TokenCriteria("Chromatic Sap")
+                            ]
+                        },
+                        new() { Name = "Starlit Weald",
+                            UnlockCriteria = [
+                                new ZoneCriteria("Starlit Weald"),
+                                new CurrencyCriteria("Antiquated Ducat"),
+                                new TokenCriteria("Raw Enchanting Stone")
+                            ]
+                        }
                     ]
                 },
 
@@ -224,7 +257,9 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                 new()
                 {
                     Name = "LW Season 4",
-                    UnlockCriteria = [  ],
+                    UnlockCriteria = [ 
+                        new CurrencyCriteria("Volatile Magic")
+                    ],
                     UnlockCategories =
                     [
                         new() { Name = "Domain of Istan",
@@ -463,12 +498,12 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
         await Init(cancellationToken);
 
         var nodes = graph!.Nodes.ToList();
-        if (unlocksToLookup != null)
+        if (unlocksToLookup != null && unlocksToLookup.Length > 0)
         {
             nodes = [.. nodes.Where(n => unlocksToLookup.Contains(n.Key, StringComparer.OrdinalIgnoreCase))];
         }
         var achievementNodes = nodes.Where(n => n.Value.Type == NodeType.Achievement);
-        if (unlocksToLookup != null)
+        if (unlocksToLookup != null && unlocksToLookup.Length > 0)
         {
             achievementNodes = [.. achievementNodes.Where(n => unlocksToLookup.Contains(n.Key, StringComparer.OrdinalIgnoreCase))];
         }
@@ -519,78 +554,6 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
             iAchi++;
             logger.LogInformation("achi {progress}/{total}", iAchi, nodes.Count);
         }
-
-        /*
-            if (current.Metadata.TryGetValue("id", out var itemId) && int.TryParse(itemId, out var itemIdInt))
-            {
-                var foundAchis = achievements!.Where(a => a.Rewards != null && a.Rewards.OfType<ItemReward>().Any(ir => ir.Id == itemIdInt)).ToList();
-                var foundAchiIds = foundAchis.Select(a => a.Id).ToHashSet();
-                var foundAchisCategories = foundAchiIds.Where(id => achievementCategoriesByAchievementId!.ContainsKey(id)).SelectMany(id => achievementCategoriesByAchievementId![id]).Distinct();
-
-                var foundAchievementCategoryCriteria = achievementCategoryCriteria!.Where(c => foundAchisCategories.Any(ac => c.Criteria.Matches(ac.Name))).ToList();
-
-                if(foundAchievementCategoryCriteria.Count == 0 && foundAchis.Count > 0)
-                {
-                    var skinIds = foundAchis.Where(a => a.Bits != null).SelectMany(a => a.Bits!.OfType<AchievementSkinBit>().Select(b => b.Id));
-                    var nodesToClassifyForAchievement = graph.Nodes.Where(n => n.Value.Type == NodeType.Skin && n.Value.Metadata.TryGetValue("id", out var skinId) && int.TryParse(skinId, out var skinIdInt) && skinIds.Contains(skinIdInt)).ToList();
-                    var unlocks = classifyConfig!.GetUnlocks();
-                    nodesToClassifyForAchievement = [.. nodesToClassifyForAchievement.Where(n => !unlocks.Any(u => u.Unlock.Name == n.Key))];
-                    
-                    foreach (var node in nodesToClassifyForAchievement) {
-                        Classify(graph, node.Key);
-                    }
-                    var unlocksAfter = classifyConfig!.GetUnlocks();
-                    var classifiedUnlocksForAchievement = unlocksAfter.Where(u => nodesToClassifyForAchievement.Any(n => n.Key == u.Unlock.Name)).ToList();
-
-                    var bestMatchForAchievementAndReward = classifiedUnlocksForAchievement
-                    .GroupBy(x => new { x.Group, x.Category, x.GroupOfCategoryName })
-                    .Select(g => new
-                    {
-                        g.Key.Group,
-                        g.Key.Category,
-                        g.Key.GroupOfCategoryName,
-                        Count = g.Count(),
-                        Items = g.ToList()
-                    })
-                    .OrderByDescending(x => x.Count) // optional tie-breaker
-                    .FirstOrDefault();
-
-                    if (bestMatchForAchievementAndReward != null)
-                    {
-                        if (bestMatchForAchievementAndReward.Group != null)
-                        {
-                            possibleClassifications.Add(new(bestMatchForAchievementAndReward.Group.Name, null, BuildPath(currentKey, parent), 90));
-                        }
-                        else if (bestMatchForAchievementAndReward.GroupOfCategoryName != null && bestMatchForAchievementAndReward.Category != null)
-                        {
-                            possibleClassifications.Add(new(bestMatchForAchievementAndReward.GroupOfCategoryName, bestMatchForAchievementAndReward.Category.Name, BuildPath(currentKey, parent), 90));
-                        }
-                    }
-                }
-
-                foreach (var criteria in foundAchievementCategoryCriteria)
-                {
-                    var groupName = criteria.Group?.Name;
-                    var categoryName = criteria.Category?.Name ?? "";
-                    var groupOfCategoryName = criteria.GroupOfCategoryName ?? "";
-                    if (groupName != null)
-                    {
-                        possibleClassifications.Add(new(groupName, null, BuildPath(currentKey, parent), 90));
-                        //var path = CategorizeAndBuildPath(groupName, null, startKey, startNode, currentKey, parent);
-                        //return (currentKey, current, path);
-                    }
-                    else
-                    {
-                        possibleClassifications.Add(new(groupOfCategoryName, categoryName, BuildPath(currentKey, parent), 90));
-                        //var path = CategorizeAndBuildPath(groupOfCategoryName, categoryName, startKey, startNode, currentKey, parent);
-                        //return (currentKey, current, path);
-                    }
-                }
-
-            }
-         */
-
-
 
         foreach (var group in classifyConfig!.UnlockGroups)
         {
@@ -843,14 +806,13 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
         //"Axe of the Dragon's Deep",
         //"Arah Weapons Box",
         //"Dungeon Weapon Container",
+        //"Dragon's Stand"
     ];
 
-    private class SearchState
-    {
-        public string Key { get; init; } = default!;
-        public string? Cost { get; init; } // store raw cost string
-        public EdgeType? IncomingEdgeType { get; init; }
-    }
+    private sealed record SearchState(
+        string Key,
+        string? Cost,
+        EdgeType? IncomingEdgeType);
 
     private void FillInApiData(Unlock unlock)
     {
@@ -863,10 +825,21 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
         }
 
         object? result = null;
-        if (node.Type == NodeType.Item && node.Metadata.TryGetValue("type", out var metadataTypeMini) && metadataTypeMini == "miniature"
-            && node.Metadata.TryGetValue("miniature id", out var miniId) && !string.IsNullOrEmpty(miniId) && int.TryParse(miniId, out var miniIdInt))
+        if (node.Type == NodeType.Item && node.Metadata.TryGetValue("type", out var metadataTypeMini) && metadataTypeMini.Equals("miniature", StringComparison.OrdinalIgnoreCase))
         {
-            result = miniatures.Single(m => m.Id == miniIdInt);
+            if(node.Metadata.TryGetValue("miniature id", out var miniId) && !string.IsNullOrEmpty(miniId) && int.TryParse(miniId, out var miniIdInt))
+            {
+                result = miniatures.Single(m => m.Id == miniIdInt);
+            }
+            else
+            {
+                var matchingMiniature = miniatures.FirstOrDefault(m => m.Name.Equals(startKey, StringComparison.Ordinal));
+                if (matchingMiniature != null)
+                {
+                    result = matchingMiniature;
+                }
+            }
+
         }
 
         if (node.Type == NodeType.Item && node.Metadata.TryGetValue("type", out var metadataTypeNovelty) && metadataTypeNovelty.Contains("novelty", StringComparison.OrdinalIgnoreCase)
@@ -882,7 +855,14 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
 
         if (node.Type == NodeType.Achievement && node.Metadata.TryGetValue("achievementId", out var achievementId) && !string.IsNullOrEmpty(achievementId) && int.TryParse(achievementId, out var achievementIdInt))
         {
-            result = achievements.Single(i => i.Id == achievementIdInt);
+            var achievement = achievements.Single(i => i.Id == achievementIdInt);
+            string? titleName = null;
+            if (achievement.Rewards != null) {
+                var titleIds = achievement.Rewards.OfType<TitleReward>().Where(ir => ir != null).Select(ir => ir.Id);
+                var firstTitleId = titleIds.FirstOrDefault();
+                titleName = titles.FirstOrDefault(t => firstTitleId == t.Id)?.Name;
+            }
+            result = new AchievementWithTitle(achievement, titleName);
         }
 
         if (result == null)
@@ -898,7 +878,7 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
         AcquisitionGraph graph,
         string startKey)
     {
-        var visited = new HashSet<string>();
+        var visited = new Dictionary<string, HashSet<string?>>();
         var queue = new Queue<SearchState>();
         var parent = new Dictionary<string, string?>();
         var startNode = graph.GetNode(startKey);
@@ -908,13 +888,9 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
         if (startNode == null)
             return null;
 
-        visited.Add(startKey);
-        queue.Enqueue(new SearchState
-        {
-            Key = startKey,
-            Cost = null,
-            IncomingEdgeType = null,
-        });
+        var startState = new SearchState(startKey, null, null);
+        TryVisit(visited, startKey, null);
+        queue.Enqueue(startState);
         parent[startKey] = null;
 
         while (queue.Count > 0)
@@ -960,14 +936,10 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                             if (groupName != null)
                             {
                                 possibleClassifications.Add(new(groupName, null, BuildPath(currentKey, parent), 100));
-                                //var path = CategorizeAndBuildPath(groupName, null, startKey, startNode, currentKey, parent);
-                                //return (currentKey, current, path);
                             }
                             else
                             {
                                 possibleClassifications.Add(new(groupOfCategoryName, categoryName, BuildPath(currentKey, parent), 100));
-                                //var path = CategorizeAndBuildPath(groupOfCategoryName, categoryName, startKey, startNode, currentKey, parent);
-                                //return (currentKey, current, path);
                             }
                         }
                         continue;
@@ -980,6 +952,23 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                         continue;
                     }
                 }
+            }
+
+            if(current.Type == NodeType.NPC && searchState.Cost != null)
+            {
+                var cost = searchState.Cost;
+                var festivals = classifyConfig!.UnlockGroups.Single(g => g.Name == "Festivals");
+                foreach (var category in festivals.UnlockCategories)
+                {
+                    var validTokens = category.UnlockCriteria
+                        .OfType<TokenCriteria>().ToList();
+
+                    if (validTokens.Any(t => t.MatchesCost(cost)))
+                    {
+                        possibleClassifications.Add(new(festivals.Name, category.Name, BuildPath(currentKey, parent), 100));
+                    }
+                }
+
             }
 
             // When we reach a zone/city → validate cost
@@ -1004,14 +993,20 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
 
                         // Does the category have a CurrencyCriteria that matches this currency?
                         var validCurrencies = category.UnlockCriteria
-                            .OfType<CurrencyCriteria>().ToList();
+                            .OfType<CurrencyCriteria>().Concat(group.UnlockCriteria.OfType<CurrencyCriteria>()).Concat(commonCurrencies).ToList();
+                        var validTokens = category.UnlockCriteria
+                            .OfType<TokenCriteria>().Concat(group.UnlockCriteria.OfType<TokenCriteria>()).ToList();
 
                         var cost = searchState.Cost;
-                        if (cost == null || validCurrencies.Count == 0 || validCurrencies.Any(c => c.Matches(cost)))
+                        if (cost == null || (validCurrencies.Count == 0 && validTokens.Count == 0))
                         {
                             possibleClassifications.Add(new(group.Name, category.Name, BuildPath(currentKey, parent), 80));
-                            //var path = CategorizeAndBuildPath(group.Name, category.Name, startKey, startNode, currentKey, parent);
-                            //return (currentKey, current, path);
+                        }
+                        else
+                        {
+                            var countOfValidCurrencies = validCurrencies.Count(c => c.Matches(cost));
+                            var countofValidTokens = validTokens.Count(t => t.MatchesCost(cost));
+                            possibleClassifications.Add(new(group.Name, category.Name, BuildPath(currentKey, parent), 80 + countOfValidCurrencies * 5 + countofValidTokens * 5));
                         }
                     }
                 }
@@ -1027,14 +1022,10 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                 if (groupName != null)
                 {
                     possibleClassifications.Add(new(groupName, null, BuildPath(currentKey, parent), 100));
-                    //var path = CategorizeAndBuildPath(groupName, null, startKey, startNode, currentKey, parent);
-                    //return (currentKey, current, path);
                 }
                 else
                 {
                     possibleClassifications.Add(new(groupOfCategoryName, categoryName, BuildPath(currentKey, parent), 100));
-                    //var path = CategorizeAndBuildPath(groupOfCategoryName, categoryName, startKey, startNode, currentKey, parent);
-                    //return (currentKey, current, path);
                 }
             }
 
@@ -1057,8 +1048,6 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                     if (recipeType == null || !recipeType.Equals("promotion", StringComparison.OrdinalIgnoreCase))
                     {
                         possibleClassifications.Add(new("Other", "Mystic Forge", BuildPath(currentKey, parent), 70));
-                        //var path = CategorizeAndBuildPath("Other", "Mystic Forge", startKey, startNode, currentKey, parent);
-                        //return (currentKey, current, path);
                     }
                 }
 
@@ -1072,34 +1061,28 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                     nextCost = cost; // overwrite or store
                 }
 
-                if (visited.Add(edge.To))
+                var nextState = new SearchState(
+                    edge.To,
+                    nextCost,
+                    edge.Type);
+
+                if (TryVisit(visited, edge.To, nextCost))
                 {
                     parent[edge.To] = currentKey;
 
-                    queue.Enqueue(new SearchState
-                    {
-                        Key = edge.To,
-                        Cost = nextCost,
-                        IncomingEdgeType = edge.Type
-                    });
+                    queue.Enqueue(nextState);
                 }
             }
 
             if (current.Type == NodeType.Weapon && current.Metadata.TryGetValue("IsNamedExoticWeapon", out var rarity) && rarity.Equals("true", StringComparison.OrdinalIgnoreCase))
             {
                 possibleClassifications.Add(new("Other", "General", BuildPath(currentKey, parent), 60));
-                //var path = CategorizeAndBuildPath("Other", "General", startKey, startNode, currentKey, parent);
-                //return (currentKey, current, path);
             }
         }
 
         if (craftingCandidates.Count > 0)
         {
             possibleClassifications.Add(new("Other", "Crafting", [startKey], 50));
-            //string? currentKey = null;
-            //Node? current = null;
-            //var path = CategorizeAndBuildPath("Other", "Crafting", startKey, startNode, currentKey, parent);
-            //return (currentKey, current, path);
         }
 
         var bestMatch = possibleClassifications
@@ -1123,6 +1106,20 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
         }
 
         return null;
+    }
+
+    private static bool TryVisit(
+        Dictionary<string, HashSet<string?>> visited,
+        string key,
+        string? cost)
+    {
+        if (!visited.TryGetValue(key, out var costs))
+        {
+            costs = new HashSet<string?>();
+            visited[key] = costs;
+        }
+
+        return costs.Add(cost);
     }
 
     private void Categorize(string groupName, string? categoryName, string startKkey, Node startNode)

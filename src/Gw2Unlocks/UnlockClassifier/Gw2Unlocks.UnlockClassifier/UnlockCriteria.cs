@@ -30,6 +30,14 @@ class TokenCriteria(string TokenName) : UnlockCriteria
             TokenName,
             StringComparison.OrdinalIgnoreCase);
     }
+
+    public bool MatchesCost(string cost)
+    {
+        var costString = cost.ToString() ?? throw new ArgumentException("Token must be convertible to string for cost matching", nameof(cost));
+        return costString.Contains(
+            TokenName,
+            StringComparison.OrdinalIgnoreCase);
+    }
 }
 
 

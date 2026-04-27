@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading;
@@ -8,22 +9,33 @@ using System.Threading.Tasks;
 
 namespace Gw2Unlocks.UnlockClassifier;
 
-internal sealed class ClassifierService(ILogger<BackgroundService> logger, IClassifier classifier, IClassifierCache classifierCache) : BackgroundService
+internal sealed class ClassifierService(
+    ILogger<ClassifierService> logger,
+    IClassifier classifier,
+    IClassifierCache classifierCache,
+    IHostApplicationLifetime hostApplicationLifetime) : BackgroundService
 {
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
         ArgumentNullException.ThrowIfNull(logger);
+
         try
         {
             var oldConfig = await classifierCache.GetClassifierConfigFromCacheAsync(stoppingToken);
             var newConfig = await classifier.ClassifyUnlocks(stoppingToken);
 
-            await PrintDiffAsync(oldConfig, newConfig);
+            await PrintDiffAsync(logger, oldConfig, newConfig);
 
             Console.Write("Press y to continue");
-            var key = Console.ReadKey(intercept: true);
+            var key = Console.ReadKey(intercept: false);
+
             if (key.Key == ConsoleKey.Y)
-                await classifierCache.SaveClassifierConfigToCacheAsync(newConfig, CancellationToken.None);
+            {
+                await classifierCache.SaveClassifierConfigToCacheAsync(
+                    newConfig,
+                    CancellationToken.None);
+                logger.LogInformation("Updated classifier cache");
+            }
         }
         catch (OperationCanceledException)
         {
@@ -33,14 +45,20 @@ internal sealed class ClassifierService(ILogger<BackgroundService> logger, IClas
         {
             logger.LogError(ex, "Error in ClassifierService");
         }
+        finally
+        {
+            hostApplicationLifetime.StopApplication();
+        }
     }
 
-
-
-    public static async Task PrintDiffAsync(
-    ClassifyConfig oldConfig,
-    ClassifyConfig newConfig)
+    public static Task PrintDiffAsync(
+        ILogger logger,
+        ClassifyConfig oldConfig,
+        ClassifyConfig newConfig)
     {
+        var oldLocations = BuildLocationMap(oldConfig);
+        var newLocations = BuildLocationMap(newConfig);
+
         var oldGroups = oldConfig.UnlockGroups.ToDictionary(x => x.Name);
         var newGroups = newConfig.UnlockGroups.ToDictionary(x => x.Name);
 
@@ -55,17 +73,17 @@ internal sealed class ClassifierService(ILogger<BackgroundService> logger, IClas
 
             if (oldGroup is null && newGroup is not null)
             {
-                Console.WriteLine(groupName);
-                PrintAdds(newGroup.Unlocks, 1);
-                PrintAllCategories(newGroup, isAdd: true);
+                logger.LogInformation("{GroupName}", groupName);
+                PrintAdds(logger, newGroup.Unlocks, 1);
+                PrintAllCategories(logger, newGroup, true);
                 continue;
             }
 
             if (oldGroup is not null && newGroup is null)
             {
-                Console.WriteLine(groupName);
-                PrintRemoves(oldGroup.Unlocks, 1);
-                PrintAllCategories(oldGroup, isAdd: false);
+                logger.LogInformation("{GroupName}", groupName);
+                PrintRemoves(logger, oldGroup.Unlocks, 1, oldLocations, newLocations);
+                PrintAllCategoriesRemoved(logger, oldGroup, oldLocations, newLocations);
                 continue;
             }
 
@@ -79,9 +97,15 @@ internal sealed class ClassifierService(ILogger<BackgroundService> logger, IClas
             if (!groupChanged)
                 continue;
 
-            Console.WriteLine(groupName);
+            logger.LogInformation("{GroupName}", groupName);
 
-            PrintUnlockDiff(oldGroup.Unlocks, newGroup.Unlocks, 1);
+            PrintUnlockDiff(
+                logger,
+                oldGroup.Unlocks,
+                newGroup.Unlocks,
+                1,
+                oldLocations,
+                newLocations);
 
             var oldCategories = oldGroup.UnlockCategories.ToDictionary(x => x.Name);
             var newCategories = newGroup.UnlockCategories.ToDictionary(x => x.Name);
@@ -97,15 +121,20 @@ internal sealed class ClassifierService(ILogger<BackgroundService> logger, IClas
 
                 if (oldCategory is null && newCategory is not null)
                 {
-                    WriteIndented(1, categoryName);
-                    PrintAdds(newCategory.Unlocks, 2);
+                    WriteIndented(logger, 1, categoryName);
+                    PrintAdds(logger, newCategory.Unlocks, 2);
                     continue;
                 }
 
                 if (oldCategory is not null && newCategory is null)
                 {
-                    WriteIndented(1, categoryName);
-                    PrintRemoves(oldCategory.Unlocks, 2);
+                    WriteIndented(logger, 1, categoryName);
+                    PrintRemoves(
+                        logger,
+                        oldCategory.Unlocks,
+                        2,
+                        oldLocations,
+                        newLocations);
                     continue;
                 }
 
@@ -115,10 +144,38 @@ internal sealed class ClassifierService(ILogger<BackgroundService> logger, IClas
                 if (!HasUnlockChanges(oldCategory.Unlocks, newCategory.Unlocks))
                     continue;
 
-                WriteIndented(1, categoryName);
-                PrintUnlockDiff(oldCategory.Unlocks, newCategory.Unlocks, 2);
+                WriteIndented(logger, 1, categoryName);
+
+                PrintUnlockDiff(
+                    logger,
+                    oldCategory.Unlocks,
+                    newCategory.Unlocks,
+                    2,
+                    oldLocations,
+                    newLocations);
             }
         }
+
+        return Task.CompletedTask;
+    }
+
+    private static Dictionary<string, string> BuildLocationMap(ClassifyConfig config)
+    {
+        var map = new Dictionary<string, string>(StringComparer.Ordinal);
+
+        foreach (var group in config.UnlockGroups)
+        {
+            foreach (var unlock in group.Unlocks)
+                map[unlock.Name] = group.Name;
+
+            foreach (var category in group.UnlockCategories)
+            {
+                foreach (var unlock in category.Unlocks)
+                    map[unlock.Name] = $"{group.Name} > {category.Name}";
+            }
+        }
+
+        return map;
     }
 
     private static bool HasCategoryChanges(UnlockGroup oldGroup, UnlockGroup newGroup)
@@ -154,9 +211,12 @@ internal sealed class ClassifierService(ILogger<BackgroundService> logger, IClas
     }
 
     private static void PrintUnlockDiff(
+        ILogger logger,
         Collection<Unlock> oldUnlocks,
         Collection<Unlock> newUnlocks,
-        int indent)
+        int indent,
+        Dictionary<string, string> oldLocations,
+        Dictionary<string, string> newLocations)
     {
         var oldNames = oldUnlocks.Select(x => x.Name).ToHashSet();
         var newNames = newUnlocks.Select(x => x.Name).ToHashSet();
@@ -165,52 +225,105 @@ internal sealed class ClassifierService(ILogger<BackgroundService> logger, IClas
         var removed = oldNames.Except(newNames).OrderBy(x => x);
 
         foreach (var name in added)
-            WriteColoredIndented(indent, $"+ {name}", ConsoleColor.Green);
+        {
+            if (oldLocations.TryGetValue(name, out var previousLocation))
+            {
+                WriteIndented(
+                    logger,
+                    indent,
+                    $"[*] {name} (from {previousLocation})");
+            }
+            else
+            {
+                WriteIndented(
+                    logger,
+                    indent,
+                    $"[+] {name}");
+            }
+        }
 
         foreach (var name in removed)
-            WriteColoredIndented(indent, $"- {name}", ConsoleColor.Red);
-    }
-
-    private static void PrintAdds(Collection<Unlock> unlocks, int indent)
-    {
-        foreach (var unlock in unlocks.OrderBy(x => x.Name))
-            WriteColoredIndented(indent, $"+ {unlock.Name}", ConsoleColor.Green);
-    }
-
-    private static void PrintRemoves(Collection<Unlock> unlocks, int indent)
-    {
-        foreach (var unlock in unlocks.OrderBy(x => x.Name))
-            WriteColoredIndented(indent, $"- {unlock.Name}", ConsoleColor.Red);
-    }
-
-    private static void PrintAllCategories(UnlockGroup group, bool isAdd)
-    {
-        foreach (var category in group.UnlockCategories.OrderBy(x => x.Name))
         {
-            WriteIndented(1, category.Name);
-
-            if (isAdd)
-                PrintAdds(category.Unlocks, 2);
-            else
-                PrintRemoves(category.Unlocks, 2);
+            if (!newLocations.ContainsKey(name) &&
+                oldLocations.TryGetValue(name, out var previousLocation))
+            {
+                WriteIndented(
+                    logger,
+                    indent,
+                    $"[-] {name} (from {previousLocation})");
+            }
         }
     }
 
-    private static void WriteIndented(int indent, string text)
+
+    private static void PrintAdds(
+        ILogger logger,
+        Collection<Unlock> unlocks,
+        int indent)
     {
-        Console.WriteLine($"{new string(' ', indent * 2)}{text}");
+        foreach (var unlock in unlocks.OrderBy(x => x.Name))
+            WriteIndented(logger, indent, $"[+] {unlock.Name}");
     }
 
-    private static void WriteColoredIndented(
+
+    private static void PrintRemoves(
+        ILogger logger,
+        Collection<Unlock> unlocks,
         int indent,
-        string text,
-        ConsoleColor color)
+        Dictionary<string, string> oldLocations,
+        Dictionary<string, string> newLocations)
     {
-        var previous = Console.ForegroundColor;
-        Console.ForegroundColor = color;
+        foreach (var unlock in unlocks.OrderBy(x => x.Name))
+        {
+            if (!newLocations.ContainsKey(unlock.Name) &&
+                oldLocations.TryGetValue(unlock.Name, out var previousLocation))
+            {
+                WriteIndented(
+                    logger,
+                    indent,
+                    $"[-] {unlock.Name} (from {previousLocation})");
+            }
+        }
+    }
 
-        Console.WriteLine($"{new string(' ', indent * 2)}{text}");
+    private static void PrintAllCategories(
+        ILogger logger,
+        UnlockGroup group,
+        bool isAdd)
+    {
+        foreach (var category in group.UnlockCategories.OrderBy(x => x.Name))
+        {
+            WriteIndented(logger, 1, category.Name);
 
-        Console.ForegroundColor = previous;
+            if (isAdd)
+                PrintAdds(logger, category.Unlocks, 2);
+        }
+    }
+
+    private static void PrintAllCategoriesRemoved(
+        ILogger logger,
+        UnlockGroup group,
+        Dictionary<string, string> oldLocations,
+        Dictionary<string, string> newLocations)
+    {
+        foreach (var category in group.UnlockCategories.OrderBy(x => x.Name))
+        {
+            WriteIndented(logger, 1, category.Name);
+
+            PrintRemoves(
+                logger,
+                category.Unlocks,
+                2,
+                oldLocations,
+                newLocations);
+        }
+    }
+
+    private static void WriteIndented(
+        ILogger logger,
+        int indent,
+        string text)
+    {
+        logger.LogInformation("{Text}", $"{new string(' ', indent * 2)}{text}");
     }
 }
