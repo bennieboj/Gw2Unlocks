@@ -856,7 +856,7 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
         if (node.Type == NodeType.Achievement && node.Metadata.TryGetValue("achievementId", out var achievementId) && !string.IsNullOrEmpty(achievementId) && int.TryParse(achievementId, out var achievementIdInt))
         {
             var achievement = achievements.Single(i => i.Id == achievementIdInt);
-            string? titleName = null;
+            string? rewardName = null;
             string? rewardIcon = null;
             if (achievement.Rewards != null) {
                 var reward = (achievement.Rewards is { Count: > 0 }) ? achievement.Rewards[0] : null;
@@ -865,7 +865,7 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                     switch (reward)
                     {
                         case TitleReward titleReward:
-                            titleName = titles.FirstOrDefault(t => titleReward.Id == t.Id)?.Name;
+                            rewardName = titles.FirstOrDefault(t => titleReward.Id == t.Id)?.Name;
                             rewardIcon = "/img/icon_title.png";
                             break;
                         case MasteryPointReward masteryReward:
@@ -873,12 +873,13 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                             break;
                         case ItemReward itemReward:
                             var item = items.SingleOrDefault(i => i.Id == itemReward.Id);
+                            rewardName = item?.Name;
                             rewardIcon = item?.IconUrl?.ToString();
                             break;
                     }
                 }
             }
-            result = new AchievementWithTitle(achievement, rewardIcon, titleName);
+            result = new AchievementWithReward(achievement, rewardIcon, rewardName);
         }
 
         if (result == null)

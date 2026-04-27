@@ -248,7 +248,7 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
 
         Assert.NotNull(unlockAchi);
         Assert.NotNull(unlockAchi.ApiData);
-        Assert.IsAssignableFrom<AchievementWithTitle>(unlockAchi.ApiData);
+        Assert.IsAssignableFrom<AchievementWithReward>(unlockAchi.ApiData);
     }
 
     [Theory]
@@ -280,7 +280,7 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
 
         Assert.NotNull(unlockAchi);
         Assert.NotNull(unlockAchi.ApiData);
-        Assert.IsAssignableFrom<AchievementWithTitle>(unlockAchi.ApiData);
+        Assert.IsAssignableFrom<AchievementWithReward>(unlockAchi.ApiData);
 
         Assert.NotNull(unlockReward);
         Assert.NotNull(unlockReward.ApiData);
@@ -298,7 +298,7 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
 
         Assert.NotNull(unlock);
         Assert.NotNull(unlock.ApiData);
-        Assert.IsAssignableFrom<AchievementWithTitle>(unlock.ApiData);
+        Assert.IsAssignableFrom<AchievementWithReward>(unlock.ApiData);
     }
 
     [Fact]
@@ -312,7 +312,7 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
 
         Assert.NotNull(unlock);
         Assert.NotNull(unlock.ApiData);
-        Assert.IsAssignableFrom<AchievementWithTitle>(unlock.ApiData);
+        Assert.IsAssignableFrom<AchievementWithReward>(unlock.ApiData);
     }
 
     [Fact]
@@ -326,10 +326,10 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
 
         Assert.NotNull(unlock);
         Assert.NotNull(unlock.ApiData);
-        Assert.IsAssignableFrom<AchievementWithTitle>(unlock.ApiData);
-        Assert.Equal(3221, ((AchievementWithTitle)unlock.ApiData).Id);
-        Assert.Equal("Chicken Chaser", ((AchievementWithTitle)unlock.ApiData).TitleName);
-        Assert.Equal("/img/icon_title.png", ((AchievementWithTitle)unlock.ApiData).RewardIcon);
+        Assert.IsAssignableFrom<AchievementWithReward>(unlock.ApiData);
+        Assert.Equal(3221, ((AchievementWithReward)unlock.ApiData).Id);
+        Assert.Equal("Chicken Chaser", ((AchievementWithReward)unlock.ApiData).RewardName);
+        Assert.Equal("/img/icon_title.png", ((AchievementWithReward)unlock.ApiData).RewardIcon);
 
     }
 
@@ -344,9 +344,9 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
 
         Assert.NotNull(unlock);
         Assert.NotNull(unlock.ApiData);
-        Assert.IsAssignableFrom<AchievementWithTitle>(unlock.ApiData);
-        Assert.Equal("Maguuma", ((AchievementWithTitle)unlock.ApiData).Rewards!.OfType<MasteryPointReward>().Single().Region);
-        Assert.Equal("/img/mastery_Maguuma.png", ((AchievementWithTitle)unlock.ApiData).RewardIcon);
+        Assert.IsAssignableFrom<AchievementWithReward>(unlock.ApiData);
+        Assert.Equal("Maguuma", ((AchievementWithReward)unlock.ApiData).Rewards!.OfType<MasteryPointReward>().Single().Region);
+        Assert.Equal("/img/mastery_Maguuma.png", ((AchievementWithReward)unlock.ApiData).RewardIcon);
     }
 
     [Fact]
@@ -360,7 +360,8 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
 
         Assert.NotNull(unlock);
         Assert.NotNull(unlock.ApiData);
-        Assert.IsAssignableFrom<AchievementWithTitle>(unlock.ApiData);
-        Assert.Equal("https://render.guildwars2.com/file/C399F9556A9478EF32A491345C4DA07605AD49D6/1465576.png", ((AchievementWithTitle)unlock.ApiData).RewardIcon);
+        Assert.IsAssignableFrom<AchievementWithReward>(unlock.ApiData);
+        Assert.Equal("Magic-Warped Packet", ((AchievementWithReward)unlock.ApiData).RewardName);
+        Assert.Equal("https://render.guildwars2.com/file/C399F9556A9478EF32A491345C4DA07605AD49D6/1465576.png", ((AchievementWithReward)unlock.ApiData).RewardIcon);
     }
 }
