@@ -7,12 +7,14 @@ namespace Gw2Unlocks.UnlockClassifier
     public record AchievementWithTitle : Achievement
     {
         public string? TitleName { get; init; }
+        public string? RewardIcon { get; init; }
 
         [SetsRequiredMembers]
-        public AchievementWithTitle(Achievement source, string? titleName)
+        public AchievementWithTitle(Achievement source, string? rewardIcon, string? titleName)
         {
             ArgumentNullException.ThrowIfNull(source);
             TitleName = titleName;
+            RewardIcon = rewardIcon;
 
             Id = source.Id;
             Name = source.Name;

@@ -1,4 +1,5 @@
 ﻿using GuildWars2.Hero.Achievements;
+using GuildWars2.Hero.Achievements.Rewards;
 using GuildWars2.Hero.Builds;
 using GuildWars2.Hero.Equipment.Miniatures;
 using GuildWars2.Hero.Equipment.Novelties;
@@ -315,7 +316,7 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
     }
 
     [Fact]
-    public async Task GivenAchievementsHasTitleApiDataShouldContainAchievementAndTitle()
+    public async Task GivenAchievementsRewardsTitleApiDataShouldContainAchievementAndTitle()
     {
         var unlockName = "A Crack in the Ice (achievements)#achievement3221"; // Playing Chicken  achievement
         var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
@@ -328,5 +329,38 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
         Assert.IsAssignableFrom<AchievementWithTitle>(unlock.ApiData);
         Assert.Equal(3221, ((AchievementWithTitle)unlock.ApiData).Id);
         Assert.Equal("Chicken Chaser", ((AchievementWithTitle)unlock.ApiData).TitleName);
+        Assert.Equal("/img/icon_title.png", ((AchievementWithTitle)unlock.ApiData).RewardIcon);
+
+    }
+
+    [Fact]
+    public async Task GivenAchievementsRewardsMasteryPointThenApiDataShouldContainRewardIconInApiData()
+    {
+        var unlockName = "A Crack in the Ice (achievements)#achievement3214"; // Quirky Quaggan Quest  achievement
+        var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
+        var group = results.UnlockGroups.Single(g => g.Name == "LW Season 3");
+        var category = group.UnlockCategories.Single(c => c.Name == "Bitterfrost Frontier");
+        var unlock = category.Unlocks.Single(c => c.Name == unlockName);
+
+        Assert.NotNull(unlock);
+        Assert.NotNull(unlock.ApiData);
+        Assert.IsAssignableFrom<AchievementWithTitle>(unlock.ApiData);
+        Assert.Equal("Maguuma", ((AchievementWithTitle)unlock.ApiData).Rewards!.OfType<MasteryPointReward>().Single().Region);
+        Assert.Equal("/img/mastery_Maguuma.png", ((AchievementWithTitle)unlock.ApiData).RewardIcon);
+    }
+
+    [Fact]
+    public async Task GivenAchievementsRewardsItemThenApiDataShouldContainRewardIconInApiData()
+    {
+        var unlockName = "A Crack in the Ice (achievements)#achievement3188"; // Stay Unfrosty  achievement
+        var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
+        var group = results.UnlockGroups.Single(g => g.Name == "LW Season 3");
+        var category = group.UnlockCategories.Single(c => c.Name == "Bitterfrost Frontier");
+        var unlock = category.Unlocks.Single(c => c.Name == unlockName);
+
+        Assert.NotNull(unlock);
+        Assert.NotNull(unlock.ApiData);
+        Assert.IsAssignableFrom<AchievementWithTitle>(unlock.ApiData);
+        Assert.Equal("https://render.guildwars2.com/file/C399F9556A9478EF32A491345C4DA07605AD49D6/1465576.png", ((AchievementWithTitle)unlock.ApiData).RewardIcon);
     }
 }

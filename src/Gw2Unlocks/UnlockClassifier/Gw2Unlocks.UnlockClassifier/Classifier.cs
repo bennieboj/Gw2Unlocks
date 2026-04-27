@@ -818,7 +818,7 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
     {
         var node = unlock.Node;
         var startKey = unlock.Name;
-        if (miniatures == null || skins == null || achievements == null || achievementCategories == null || titles == null || novelties == null)
+        if (miniatures == null || skins == null || achievements == null || achievementCategories == null || titles == null || novelties == null || items == null)
         {
             logger.LogWarning("API data not initialized when trying to get API data for {key} ({type})", startKey, node.Type);
             return;
@@ -857,12 +857,28 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
         {
             var achievement = achievements.Single(i => i.Id == achievementIdInt);
             string? titleName = null;
+            string? rewardIcon = null;
             if (achievement.Rewards != null) {
-                var titleIds = achievement.Rewards.OfType<TitleReward>().Where(ir => ir != null).Select(ir => ir.Id);
-                var firstTitleId = titleIds.FirstOrDefault();
-                titleName = titles.FirstOrDefault(t => firstTitleId == t.Id)?.Name;
+                var reward = (achievement.Rewards is { Count: > 0 }) ? achievement.Rewards[0] : null;
+                if (reward != null)
+                {
+                    switch (reward)
+                    {
+                        case TitleReward titleReward:
+                            titleName = titles.FirstOrDefault(t => titleReward.Id == t.Id)?.Name;
+                            rewardIcon = "/img/icon_title.png";
+                            break;
+                        case MasteryPointReward masteryReward:
+                            rewardIcon = $"/img/mastery_{masteryReward.Region}.png";
+                            break;
+                        case ItemReward itemReward:
+                            var item = items.SingleOrDefault(i => i.Id == itemReward.Id);
+                            rewardIcon = item?.IconUrl?.ToString();
+                            break;
+                    }
+                }
             }
-            result = new AchievementWithTitle(achievement, titleName);
+            result = new AchievementWithTitle(achievement, rewardIcon, titleName);
         }
 
         if (result == null)
