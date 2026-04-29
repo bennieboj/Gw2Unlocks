@@ -15,6 +15,7 @@ namespace Gw2Unlocks.Cache.Common
         protected string CacheFolder { get; }
         private static readonly JsonSerializerOptions JsonOptions = new()
         {
+            PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
             Converters = { new JsonStringEnumConverter() },
             PropertyNameCaseInsensitive = true
         };

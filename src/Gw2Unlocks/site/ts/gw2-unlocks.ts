@@ -5,6 +5,7 @@ const STORAGE_KEYS = {
   minis: "gw2_account_minis",
   skins: "gw2_account_skins",
   novelties: "gw2_account_novelties",
+  achievements: "gw2_account_achievements",
   lastRefresh: "gw2_last_refresh"
 } as const;
 
@@ -191,6 +192,40 @@ class Gw2Unlocks extends HTMLElement {
         .modal-actions button:hover {
           opacity: 0.9;
         }
+
+        .icon-wrap {
+          position: relative;
+          width: 64px;
+          height: 64px;
+          margin: 0 auto;
+        }
+
+        .icon-wrap img {
+          width: 64px;
+          height: 64px;
+        }
+
+        .reward-badge {
+          position: absolute;
+          bottom: -8px;
+          left: 50%;
+          transform: translateX(-50%);
+          
+          display: flex;
+          align-items: center;
+          gap: 4px;
+
+          font-size: 10px;
+          background: rgba(0,0,0,0.6);
+          padding: 2px 4px;
+          border-radius: 6px;
+          white-space: nowrap;
+        }
+
+        .reward-badge img {
+          width: 14px;
+          height: 14px;
+        }
       </style>
 
       <div class="controls">
@@ -220,6 +255,9 @@ class Gw2Unlocks extends HTMLElement {
         <div class="modal">
           <div id="modal-name"></div>
           <img id="modal-icon">
+        
+          <div id="modal-requirement" style="margin-top:10px; font-size:0.9em; opacity:0.85;"></div>
+
           <div class="modal-actions">
             <a id="wiki-link" target="_blank">Open Wiki</a>
             <button id="close-modal">Close</button>
@@ -301,6 +339,9 @@ class Gw2Unlocks extends HTMLElement {
     (this.querySelector("#modal-name") as HTMLElement).textContent = data.name;
     (this.querySelector("#modal-icon") as HTMLImageElement).src = data.icon;
 
+    (this.querySelector("#modal-requirement") as HTMLElement).textContent =
+      data.requirement || "";
+
     (this.querySelector("#wiki-link") as HTMLAnchorElement).href =
       this.getWikiUrl(data.wikiId, type, data.name);
 
@@ -319,7 +360,8 @@ class Gw2Unlocks extends HTMLElement {
         this.openModal({
           wikiId: Number(node.dataset.wikiId),
           name: node.dataset.name,
-          icon: node.dataset.icon
+          icon: node.dataset.icon,
+          requirement: node.dataset.requirement
         }, node.dataset.type!);
       });
     });
@@ -358,24 +400,24 @@ class Gw2Unlocks extends HTMLElement {
     sidebar.appendChild(hr);
 
     // Existing groups + categories
-    this.unlockData.UnlockGroups?.forEach((group: any) => {
+    this.unlockData.unlockGroups?.forEach((group: any) => {
       const g = document.createElement("div");
 
-      g.innerHTML = `<div class="group-link">${group.Name}</div>`;
+      g.innerHTML = `<div class="group-link">${group.name}</div>`;
       g.onclick = () => {
-        location.hash = `group=${encodeURIComponent(group.Name)}`;
+        location.hash = `group=${encodeURIComponent(group.name)}`;
       };
 
       sidebar.appendChild(g);
 
-      group.UnlockCategories?.forEach((cat: any) => {
+      group.unlockCategories?.forEach((cat: any) => {
         const c = document.createElement("div");
         c.className = "category-link";
-        c.textContent = cat.Name;
+        c.textContent = cat.name;
 
         c.onclick = (e) => {
           e.stopPropagation();
-          location.hash = `group=${encodeURIComponent(group.Name)}&category=${encodeURIComponent(cat.Name)}`;
+          location.hash = `group=${encodeURIComponent(group.name)}&category=${encodeURIComponent(cat.name)}`;
         };
 
         sidebar.appendChild(c);
@@ -401,7 +443,7 @@ class Gw2Unlocks extends HTMLElement {
       return;
     }
 
-    const g = this.unlockData.UnlockGroups?.find((x: any) => x.Name === group);
+    const g = this.unlockData.unlockGroups?.find((x: any) => x.name === group);
     if (!g) return;
 
     if (!category) {
@@ -409,39 +451,40 @@ class Gw2Unlocks extends HTMLElement {
       return;
     }
 
-    const c = g.UnlockCategories?.find((x: any) => x.Name === category);
+    const c = g.unlockCategories?.find((x: any) => x.name === category);
     if (!c) return;
 
     this.renderCategory(g, c);
   }
 
-  getStoredUnlocks(type: "minis" | "skins" | "novelties"): number[] {
+  getStoredUnlocks(type: "minis" | "skins" | "novelties" | "achievements"): number[] {
     const data = localStorage.getItem(STORAGE_KEYS[type]);
     return data ? JSON.parse(data) : [];
   }
 
   createItem(unlock: any) {
-    if (!unlock?.ApiData) return null;
+    if (!unlock?.apiData) return null;
 
     const minis = this.getStoredUnlocks("minis");
     const skins = this.getStoredUnlocks("skins");
     const novelties = this.getStoredUnlocks("novelties");
+    const achievements = this.getStoredUnlocks("achievements");
 
-    const metadataType = unlock.Node?.Metadata?.type?.toLowerCase?.() || "";
-    const apiType = unlock.ApiData?.type?.toLowerCase?.() || "";
+    const metadataType = unlock.node?.metadata?.type?.toLowerCase?.() || "";
+    const apiType = unlock.apiData?.type?.toLowerCase?.() || "";
 
     let type: string | null = null;
 
     if (metadataType.includes("miniature")) {
       type = "Miniature";
     }
-    else if (unlock.Node?.Type === "Skin" || apiType.includes("skin")) {
+    else if (unlock.node?.type === "Skin" || apiType.includes("skin")) {
       type = "Skin";
     }
     else if (metadataType.includes("novelty")) {
       type = "Novelty";
     }
-    else if (unlock.Node?.Type === "Achievement") {
+    else if (unlock.node?.type === "Achievement") {
       type = "Achievement";
     }
     else if (apiType.includes("outfit")) {
@@ -450,17 +493,20 @@ class Gw2Unlocks extends HTMLElement {
 
     if (!type) return null;
 
-    const id = unlock.ApiData.id;
-    const name = unlock.ApiData.name;
-    const icon = unlock.ApiData.icon;
+    const id = unlock.apiData.id;
+    const name = unlock.apiData.name;
+    const icon = unlock.apiData.icon;
+    const requirement = unlock.apiData?.requirement || "";
+    const rewardIcon = unlock.rewardIcon || "";
+    const rewardName = unlock.rewardName || "";
 
     let wikiId = id;
 
     if (type === "Miniature") {
-      wikiId = unlock.ApiData.item_id;
+      wikiId = unlock.apiData.item_id;
     }
     else if (type === "Novelty" || type === "Outfit") {
-      wikiId = unlock.ApiData.unlock_item_ids?.[0];
+      wikiId = unlock.apiData.unlock_item_ids?.[0];
     }
 
     const unlocked =
@@ -470,7 +516,13 @@ class Gw2Unlocks extends HTMLElement {
         ? skins.includes(id)
         : type === "Novelty"
         ? novelties.includes(id)
+        : type === "Achievement"
+        ? achievements.includes(id)
         : false;
+
+    if(name.includes("Playing Chicken")) {
+      console.log({name, type, id, wikiId});
+    }
 
     return {
       type,
@@ -481,8 +533,22 @@ class Gw2Unlocks extends HTMLElement {
           data-wiki-id="${wikiId || ""}"
           data-name="${name.replace(/"/g, "&quot;")}"
           data-icon="${icon}"
+          data-requirement="${requirement}"
         >
-          <img src="${icon}" alt="${name}">
+          <div class="icon-wrap">
+            <img src="${icon}" alt="${name}">
+
+            ${
+              rewardIcon || rewardName
+                ? `
+                  <div class="reward-badge">
+                    ${rewardIcon ? `<img src="${rewardIcon}">` : ""}
+                    ${rewardName ? `<span>${rewardName}</span>` : ""}
+                  </div>
+                `
+                : ""
+            }
+          </div>
           <div>${name}</div>
         </div>
       `
@@ -534,16 +600,16 @@ class Gw2Unlocks extends HTMLElement {
     let allUnlocks: any[] = [];
 
     // Collect everything from all groups
-    this.unlockData.UnlockGroups?.forEach((group: any) => {
+    this.unlockData.unlockGroups?.forEach((group: any) => {
       // group-level unlocks
-      if (group.Unlocks?.length) {
-        allUnlocks = allUnlocks.concat(group.Unlocks);
+      if (group.unlocks?.length) {
+        allUnlocks = allUnlocks.concat(group.unlocks);
       }
 
       // category-level unlocks
-      group.UnlockCategories?.forEach((cat: any) => {
-        if (cat.Unlocks?.length) {
-          allUnlocks = allUnlocks.concat(cat.Unlocks);
+      group.unlockCategories?.forEach((cat: any) => {
+        if (cat.unlocks?.length) {
+          allUnlocks = allUnlocks.concat(cat.unlocks);
         }
       });
     });
@@ -562,21 +628,21 @@ class Gw2Unlocks extends HTMLElement {
     // Collect ALL unlocks from all categories
     let allUnlocks: any[] = [];
 
-    group.UnlockCategories?.forEach((cat: any) => {
-      if (cat.Unlocks?.length) {
-        allUnlocks = allUnlocks.concat(cat.Unlocks);
+    group.unlockCategories?.forEach((cat: any) => {
+      if (cat.unlocks?.length) {
+        allUnlocks = allUnlocks.concat(cat.unlocks);
       }
     });
 
     // Also include group-level unlocks if they exist
-    if (group.Unlocks?.length) {
-      allUnlocks = allUnlocks.concat(group.Unlocks);
+    if (group.unlocks?.length) {
+      allUnlocks = allUnlocks.concat(group.unlocks);
     }
 
     const grouped = this.groupByType(allUnlocks);
 
     content.innerHTML = `
-      <div class="title-group">${group.Name}</div>
+      <div class="title-group">${group.name}</div>
       ${this.renderTypes(grouped)}
     `;
     this.activateItems();
@@ -584,11 +650,11 @@ class Gw2Unlocks extends HTMLElement {
 
   renderCategory(group: any, cat: any) {
     const content = this.querySelector("#content")!;
-    const grouped = this.groupByType(cat.Unlocks || []);
+    const grouped = this.groupByType(cat.unlocks || []);
 
     content.innerHTML = `
-      <div class="title-group">${group.Name}</div>
-      <div class="title-category">${cat.Name}</div>
+      <div class="title-group">${group.name}</div>
+      <div class="title-category">${cat.name}</div>
       ${this.renderTypes(grouped)}
     `;
     this.activateItems();
@@ -620,19 +686,22 @@ class Gw2Unlocks extends HTMLElement {
     this.setStatus("Loading API data...");
 
     try {
-      const [minisRes, skinsRes, noveltiesRes] = await Promise.all([
+      const [minisRes, skinsRes, noveltiesRes, achievementsRes] = await Promise.all([
         fetch(`https://api.guildwars2.com/v2/account/minis?access_token=${apiKey}`),
         fetch(`https://api.guildwars2.com/v2/account/skins?access_token=${apiKey}`),
-        fetch(`https://api.guildwars2.com/v2/account/novelties?access_token=${apiKey}`)
+        fetch(`https://api.guildwars2.com/v2/account/novelties?access_token=${apiKey}`),
+        fetch(`https://api.guildwars2.com/v2/account/achievements?access_token=${apiKey}`)
       ]);
 
       const minis: number[] = await minisRes.json();
       const skins: number[] = await skinsRes.json();
       const novelties: number[] = await noveltiesRes.json();
+      const achievements: number[] = (await achievementsRes.json()).map((x: { id: number; }) => x.id);
 
       localStorage.setItem(STORAGE_KEYS.minis, JSON.stringify(minis));
       localStorage.setItem(STORAGE_KEYS.skins, JSON.stringify(skins));
       localStorage.setItem(STORAGE_KEYS.novelties, JSON.stringify(novelties));
+      localStorage.setItem(STORAGE_KEYS.achievements, JSON.stringify(achievements));
       localStorage.setItem(STORAGE_KEYS.lastRefresh, Date.now().toString());
 
       this.setStatus("API data refreshed");

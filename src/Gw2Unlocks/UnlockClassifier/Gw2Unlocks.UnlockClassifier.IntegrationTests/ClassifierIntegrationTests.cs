@@ -299,6 +299,7 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
         Assert.NotNull(unlock);
         Assert.NotNull(unlock.ApiData);
         Assert.IsAssignableFrom<AchievementWithReward>(unlock.ApiData);
+        Assert.Equal("https://render.guildwars2.com/file/109A0AE76FCA3EBC03039BA668B90142CAB0DDA2/866109.png", ((AchievementWithReward)unlock.ApiData).IconUrl?.ToString());
     }
 
     [Fact]
@@ -363,5 +364,20 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
         Assert.IsAssignableFrom<AchievementWithReward>(unlock.ApiData);
         Assert.Equal("Magic-Warped Packet", ((AchievementWithReward)unlock.ApiData).RewardName);
         Assert.Equal("https://render.guildwars2.com/file/C399F9556A9478EF32A491345C4DA07605AD49D6/1465576.png", ((AchievementWithReward)unlock.ApiData).RewardIcon);
+    }
+
+    [Fact]
+    public async Task GivenAchievementsThenApiDataShouldContainIconInApiData()
+    {
+        var unlockName = "A Crack in the Ice (achievements)#achievement3188"; // Stay Unfrosty  achievement
+        var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
+        var group = results.UnlockGroups.Single(g => g.Name == "LW Season 3");
+        var category = group.UnlockCategories.Single(c => c.Name == "Bitterfrost Frontier");
+        var unlock = category.Unlocks.Single(c => c.Name == unlockName);
+
+        Assert.NotNull(unlock);
+        Assert.NotNull(unlock.ApiData);
+        Assert.IsAssignableFrom<AchievementWithReward>(unlock.ApiData);
+        Assert.Equal("https://render.guildwars2.com/file/136E663C59275A077ADD394C935F26091B065A51/1601931.png", ((AchievementWithReward)unlock.ApiData).IconUrl?.ToString());
     }
 }

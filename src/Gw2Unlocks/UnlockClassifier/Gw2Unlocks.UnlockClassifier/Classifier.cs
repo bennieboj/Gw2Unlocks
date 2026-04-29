@@ -33,13 +33,14 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
     private Collection<Title>? titles;
     private Collection<Novelty>? novelties;
     private Dictionary<int, List<UnlockCriteriaContext<AchievementCategoryCriteria>>>? achievementCriteriaByAchievementId;
+    private Dictionary<int, AchievementCategory>? achievementCategoryByAchievementId;
     private Dictionary<int, string>? skinLookup;
     private Dictionary<int, string>? itemLookup;
     private Dictionary<string, List<Edge>>? edgesByFrom;
     private Dictionary<string, List<Edge>>? edgesByTo;
     private ClassifyConfig? classifyConfig;
 
-    private List<CurrencyCriteria> commonCurrencies = [new CurrencyCriteria("Coin"), new CurrencyCriteria("Karma"), new CurrencyCriteria("Research Note")];
+    private readonly List<CurrencyCriteria> commonCurrencies = [new CurrencyCriteria("Coin"), new CurrencyCriteria("Karma"), new CurrencyCriteria("Research Note")];
 
     private static ClassifyConfig CreateConfig()
     {
@@ -713,17 +714,22 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
         var achievementCategoryCriteria = classifyConfig.GetUnlockCriteriaWithContext<AchievementCategoryCriteria>();
 
         achievementCriteriaByAchievementId = [];
+        achievementCategoryByAchievementId = [];
         foreach (var category in achievementCategories)
         {
             var matchingCriteria = achievementCategoryCriteria
                 .Where(c => c.Criteria.Matches(category.Name))
                 .ToList();
 
-            if (matchingCriteria.Count == 0)
-                continue;
+
 
             foreach (var achievement in category.Achievements)
             {
+                achievementCategoryByAchievementId[achievement.Id] = category;
+
+                if (matchingCriteria.Count == 0)
+                    continue;
+
                 if (!achievementCriteriaByAchievementId.TryGetValue(achievement.Id, out var list))
                 {
                     list = [];
@@ -818,7 +824,8 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
     {
         var node = unlock.Node;
         var startKey = unlock.Name;
-        if (miniatures == null || skins == null || achievements == null || achievementCategories == null || titles == null || novelties == null || items == null)
+        if (miniatures == null || skins == null || achievements == null || achievementCategories == null
+            || titles == null || novelties == null || items == null || achievementCategoryByAchievementId == null)
         {
             logger.LogWarning("API data not initialized when trying to get API data for {key} ({type})", startKey, node.Type);
             return;
@@ -879,7 +886,8 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                     }
                 }
             }
-            result = new AchievementWithReward(achievement, rewardIcon, rewardName);
+            var category = achievementCategoryByAchievementId.TryGetValue(achievementIdInt, out var cat) ? cat : null;
+            result = new AchievementWithReward(achievement, rewardIcon, rewardName, category?.IconUrl);
         }
 
         if (result == null)
@@ -1132,7 +1140,7 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
     {
         if (!visited.TryGetValue(key, out var costs))
         {
-            costs = new HashSet<string?>();
+            costs = [];
             visited[key] = costs;
         }
 

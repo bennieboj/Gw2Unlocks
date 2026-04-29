@@ -53,7 +53,6 @@ public class Node
     public Dictionary<string, string> Metadata { get; private set; } = [];
 
     public NodeType Type { get; set; } = NodeType.None;
-    public bool IsProcessed { get; set; }
 
     //for json deserialisation
     public Node() { }
