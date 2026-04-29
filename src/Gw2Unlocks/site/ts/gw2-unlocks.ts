@@ -520,10 +520,6 @@ class Gw2Unlocks extends HTMLElement {
         ? achievements.includes(id)
         : false;
 
-    if(name.includes("Playing Chicken")) {
-      console.log({name, type, id, wikiId});
-    }
-
     return {
       type,
       html: `
