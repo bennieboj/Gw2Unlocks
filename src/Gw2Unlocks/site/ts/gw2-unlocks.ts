@@ -382,7 +382,6 @@ class Gw2Unlocks extends HTMLElement {
     const sidebar = this.querySelector("#sidebar")!;
     sidebar.innerHTML = "";
 
-    // ✅ ALL UNLOCKS link (top)
     const all = document.createElement("div");
     all.className = "group-link";
     all.textContent = "All Unlocks";
@@ -391,15 +390,32 @@ class Gw2Unlocks extends HTMLElement {
     };
     sidebar.appendChild(all);
 
-    // Optional separator
     const hr = document.createElement("hr");
     sidebar.appendChild(hr);
 
-    // Existing groups + categories
     this.unlockData.unlockGroups?.forEach((group: any) => {
+      let allUnlocks: any[] = [];
+
+      if (group.unlocks?.length) {
+        allUnlocks = allUnlocks.concat(group.unlocks);
+      }
+
+      group.unlockCategories?.forEach((cat: any) => {
+        if (cat.unlocks?.length) {
+          allUnlocks = allUnlocks.concat(cat.unlocks);
+        }
+      });
+
+      const { total, unlocked } = this.getUnlockCount(allUnlocks);
+
       const g = document.createElement("div");
 
-      g.innerHTML = `<div class="group-link">${group.name}</div>`;
+
+      g.innerHTML = `
+        <div class="group-link">
+          ${group.name} (${unlocked} / ${total})
+        </div>
+      `;
       g.onclick = () => {
         location.hash = `group=${encodeURIComponent(group.name)}`;
       };
@@ -407,9 +423,10 @@ class Gw2Unlocks extends HTMLElement {
       sidebar.appendChild(g);
 
       group.unlockCategories?.forEach((cat: any) => {
+        const { total, unlocked } = this.getUnlockCount(cat.unlocks || []);
         const c = document.createElement("div");
         c.className = "category-link";
-        c.textContent = cat.name;
+        c.textContent = `${cat.name} (${unlocked} / ${total})`;
 
         c.onclick = (e) => {
           e.stopPropagation();
@@ -543,6 +560,21 @@ class Gw2Unlocks extends HTMLElement {
         </div>
       `
     };
+  }
+
+  getUnlockCount(unlocks: any[]) {
+    const grouped = this.groupByType(unlocks);
+
+    let total = 0;
+    let unlocked = 0;
+
+    Object.keys(grouped).forEach(type => {
+      const res = this.getCompletion(grouped, type);
+      total += res.items;
+      unlocked += res.unlocked;
+    });
+
+    return { total, unlocked };
   }
 
   groupByType(unlocks: any[]) {
@@ -696,7 +728,6 @@ class Gw2Unlocks extends HTMLElement {
 
       this.setStatus("API data refreshed");
 
-      // 🔥 Important change for routed UI
       this.renderRoute();
     } catch (e) {
       console.error("API error", e);
