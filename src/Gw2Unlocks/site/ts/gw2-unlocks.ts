@@ -207,7 +207,7 @@ class Gw2Unlocks extends HTMLElement {
 
         .reward-badge {
           position: absolute;
-          bottom: -8px;
+          bottom: 0px;
           left: 50%;
           transform: translateX(-50%);
           
@@ -215,16 +215,12 @@ class Gw2Unlocks extends HTMLElement {
           align-items: center;
           gap: 4px;
 
-          font-size: 10px;
-          background: rgba(0,0,0,0.6);
-          padding: 2px 4px;
-          border-radius: 6px;
-          white-space: nowrap;
+          filter: drop-shadow(0 0 2px black);
         }
 
         .reward-badge img {
-          width: 14px;
-          height: 14px;
+          width: 24px;
+          height: 24px;
         }
       </style>
 
@@ -533,13 +529,11 @@ class Gw2Unlocks extends HTMLElement {
         >
           <div class="icon-wrap">
             <img src="${icon}" alt="${name}">
-
             ${
-              rewardIcon || rewardName
+              rewardIcon
                 ? `
                   <div class="reward-badge">
-                    ${rewardIcon ? `<img src="${rewardIcon}">` : ""}
-                    ${rewardName ? `<span>${rewardName}</span>` : ""}
+                    <img src="${rewardIcon}" alt="${rewardName || ""}" title="${rewardName || ""}">
                   </div>
                 `
                 : ""
