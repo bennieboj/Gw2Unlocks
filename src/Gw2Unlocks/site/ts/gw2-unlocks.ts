@@ -115,6 +115,12 @@ class Gw2Unlocks extends HTMLElement {
           gap: 8px;
         }
 
+        .wip-icon {
+          height: 16px;
+          vertical-align: middle;
+          margin-right: 4px;
+        }
+
         .kofi-btn {
           margin-left: 10px;
           padding: 6px 10px;
@@ -132,6 +138,25 @@ class Gw2Unlocks extends HTMLElement {
         .kofi-btn:hover {
           opacity: 0.9;
         }
+
+        .github-btn {
+          margin-left: 10px;
+          padding: 6px 10px;
+          background: #8534F3;
+          color: white;
+          border-radius: 6px;
+          text-decoration: none;
+          font-size: 0.9em;
+          font-weight: 500;
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+        }
+
+        .github-btn:hover {
+          opacity: 0.9;
+        }
+
         .modal-backdrop {
           position: fixed;
           inset: 0;
@@ -231,15 +256,25 @@ class Gw2Unlocks extends HTMLElement {
         <button id="refresh">Refresh API Data</button>
         <span id="status"></span>
 
-        <a
-          href="https://ko-fi.com/bennieboj"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="kofi-btn"
-          style="margin-left:auto;"
-        >
-          ☕ Support Bennieboj on Ko-fi
-        </a>
+        <div style="margin-left:auto; display:flex; gap:8px;">
+          <a
+            href="https://github.com/bennieboj/Gw2Unlocks/issues"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="github-btn"
+          >
+            <img src="img/bug.png" alt="Report Issue"> Report Issue
+          </a>
+
+          <a
+            href="https://ko-fi.com/bennieboj"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="kofi-btn"
+          >
+            ☕ Support Bennieboj
+          </a>
+        </div>
       </div>
 
       <div class="layout">
@@ -413,7 +448,11 @@ class Gw2Unlocks extends HTMLElement {
 
       g.innerHTML = `
         <div class="group-link">
-          ${group.name} (${unlocked} / ${total})
+          ${
+            total === 0
+              ? `${group.name} (${unlocked} / ${total}) <img src="img/wip.png" title="Work in progress" alt="Work in progress" class="wip-icon">`
+              : `${group.name} (${unlocked} / ${total})`
+          }
         </div>
       `;
       g.onclick = () => {
@@ -426,7 +465,13 @@ class Gw2Unlocks extends HTMLElement {
         const { total, unlocked } = this.getUnlockCount(cat.unlocks || []);
         const c = document.createElement("div");
         c.className = "category-link";
-        c.textContent = `${cat.name} (${unlocked} / ${total})`;
+        c.innerHTML = `
+          ${
+            total === 0
+              ? `${cat.name} (${unlocked} / ${total}) <img src="img/wip.png" title="Work in progress" alt="Work in progress" class="wip-icon">`
+              : `${cat.name} (${unlocked} / ${total})`
+          }
+        `;
 
         c.onclick = (e) => {
           e.stopPropagation();
@@ -718,7 +763,10 @@ class Gw2Unlocks extends HTMLElement {
       const minis: number[] = await minisRes.json();
       const skins: number[] = await skinsRes.json();
       const novelties: number[] = await noveltiesRes.json();
-      const achievements: number[] = (await achievementsRes.json()).map((x: { id: number; }) => x.id);
+      const achievementsData: { id: number; done: boolean }[] = await achievementsRes.json();
+      const achievements = achievementsData
+        .filter(a => a.done)
+        .map(a => a.id);
 
       localStorage.setItem(STORAGE_KEYS.minis, JSON.stringify(minis));
       localStorage.setItem(STORAGE_KEYS.skins, JSON.stringify(skins));

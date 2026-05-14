@@ -12,7 +12,7 @@ using System.Threading;
 using System.Threading.Tasks;
 
 namespace Gw2Unlocks.Api.Cache;
-internal sealed class Gw2ApiJsonCache(CachePaths cachePaths) : GenericCache(cachePaths, "api-cache"), IGw2ApiCache
+internal sealed class Gw2ApiJsonCache(CachePaths cachePaths) : GenericCache(cachePaths.CacheDir, "api-cache"), IGw2ApiCache
 {
     private const string itemsFileName = "items.json";
     private const string skinsFileName = "skins.json";

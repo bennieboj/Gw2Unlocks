@@ -16,11 +16,44 @@ public sealed class Gw2WikiProcessingSource(
     ILogger<Gw2WikiProcessingSource> logger,
     IGw2WikiCache wikiCache) : IGw2WikiProcessingSource
 {
+    private const string gemStorePage = "Gem Store/data";
+
+    private const string blackLionWeaponsSpecialistNPCKey = "Black Lion Weapons Specialist";
+    private readonly List<string> blackLionClaimTicketPages = ["Black Lion Weapons Specialist/historical", "Template:Inventory/black lion claim ticket", "Black Lion Weapons Specialist (Halloween)"];
+    private readonly List<string> blackLionStatuettePages = ["Black Lion Statuette/historical", "Template:Inventory/statuette"];
+
     public async Task<AcquisitionGraph> GetAcquisitionGraph(CancellationToken cancellationToken)
     {
         var graph = new AcquisitionGraph();
         var parser = new WikitextParser();
 
+        await RunParsingPass(graph, parser, FirstPass, cancellationToken);
+        await RunParsingPass(graph, parser, SecondPass, cancellationToken);
+        ApplyBlackLion(graph);
+        graph.Nodes.Where(kv => kv.Value.Type == NodeType.None)
+            .ToList()
+            .ForEach(kv => logger.LogWarning("Node with no type: {title}", kv.Key));
+
+        return graph;
+    }
+
+    private static void ApplyBlackLion(AcquisitionGraph graph)
+    {
+        foreach (var item in graph.Nodes.ToList())
+        {
+            if ((item.Value.Type == NodeType.Item || item.Value.Type == NodeType.Skin) && item.Value.Metadata.TryGetValue("collection", out var collection))
+            {
+                var x = graph.GetNode(collection, NodeType.BlackLionWeaponCollection);
+                if (x != null)
+                {
+                    graph.AddEdge(item.Key, blackLionWeaponsSpecialistNPCKey, EdgeType.SoldBy, x.Metadata);
+                }
+            }
+        }
+    }
+
+    private async Task RunParsingPass(AcquisitionGraph graph, WikitextParser parser, Action<AcquisitionGraph, string, Wikitext> pass, CancellationToken cancellationToken)
+    {
         await foreach (var xml in wikiCache.StreamAllPages(cancellationToken))
         {
             try
@@ -29,22 +62,17 @@ public sealed class Gw2WikiProcessingSource(
                 {
                     try
                     {
-                        var ast = parser.Parse(text, cancellationToken);
-                        
+                        var textCleaned = text;
+                        if (title.Contains("Template:", StringComparison.Ordinal))
+                        {
+                            textCleaned = textCleaned.Replace("<onlyinclude>", "", StringComparison.Ordinal);
+                        }
+
                         List<string> debugtitles = [
                             //"Plush Zhaia Backpack (skin)",
-                            //"Plush Zhaia Backpack",
-                            //"Halloween Vendor",
-                            //"Hooligan's Route",
-                            //"Lion's Arch",
-                            //"Mini Exalted Sage",
-                            //"Exalted Mastery Vendor",
-                            //"Tarir, the Forgotten City",
-                            //"Auric Basin",
-                            //"Axe of the Dragon's Deep",
-                            //"Arah Weapons Box",
-                            //"Dungeon Weapon Container",
-                            "Scholar Rakka"
+                            "Piles of Bloodstone Dust",
+                            "Pile of Bloodstone Dust",
+                            "Abaddon's Axe"
                             ];
 
                         //logger.LogInformation(
@@ -55,32 +83,11 @@ public sealed class Gw2WikiProcessingSource(
                         //);
                         if (debugtitles.Contains(title.Trim()))
                             logger.LogDebug("debug thing found {title}", title);
-                        
-                        var infobox = ParseInfobox(ast);
-                        if (infobox == null || infobox.Metadata.TryGetValue("status", out var status) && status == "historical")
-                            continue;
 
-                        if(infobox.InfoBoxType.Equals("Achievement category", StringComparison.OrdinalIgnoreCase))
-                        {
-                            ApplyAchievements(graph, title, ast, infobox);
-                            logger.LogInformation("Processed achievement category page {title}", title);
-                            continue;
-                        }
+                        var ast = parser.Parse(textCleaned, cancellationToken);
 
-                        var nodeType = MapNodeType(infobox.InfoBoxType);
-                        if (nodeType == NodeType.None)
-                        {
-                            var nodeAlreadyInGraph = graph.GetNode(title);
-                            if (nodeAlreadyInGraph != null && nodeAlreadyInGraph.Type == NodeType.None)
-                                graph.RemoveNodeAndAllEdges(title);
-                            logger.LogDebug("Skipping {title} {infoboxtype}", title, infobox.InfoBoxType);
-                            continue;
-                        }
+                        pass.Invoke(graph, title, ast);
 
-                        var node = graph.GetOrCreate(title, infobox.Metadata);                        
-                        node.SetType(nodeType);
-
-                        ApplyRelationships(graph, title, node, ast, infobox);
                         logger.LogInformation("Processed wiki page {title}", title);
                     }
                     catch (Exception ex)
@@ -94,12 +101,89 @@ public sealed class Gw2WikiProcessingSource(
                 logger.LogError(ex, "Error processing wiki page XML {xml}", xml);
             }
         }
+    }
 
-        graph.Nodes.Where(kv => kv.Value.Type == NodeType.None)
-            .ToList()
-            .ForEach(kv => logger.LogWarning("Node with no type: {title}", kv.Key));
 
-        return graph;
+    private static void FirstPass(AcquisitionGraph graph, string title, Wikitext ast)
+    {
+        ParseAndAssignRedirects(graph, title, ast);
+    }
+    private void SecondPass(AcquisitionGraph graph, string title, Wikitext ast)
+    {
+        if(IsRedirect(ast))
+        {
+            return;
+        }
+
+        var infobox = ParseInfobox(ast);
+        if (title.Contains(gemStorePage, StringComparison.Ordinal))
+        {
+            ParseGemStoreEntries(graph, ast);
+            return;
+        }
+        else if (blackLionClaimTicketPages.Any(pageTitle => title.Equals(pageTitle, StringComparison.Ordinal)))
+        {
+            ParseBlackLionClaimTicketEntries(graph, ast);
+            return;
+        }
+        else if (blackLionStatuettePages.Any(pageTitle => title.Equals(pageTitle, StringComparison.Ordinal)))
+        {
+            ParseBlackLionStatuetteEntries(graph, ast);
+            return;
+        }
+        else if (infobox == null || infobox.Metadata.TryGetValue("status", out var status) && status == "historical")
+        {
+            return;
+        }
+        if (infobox.InfoBoxType.Equals("Achievement category", StringComparison.OrdinalIgnoreCase))
+        {
+            ApplyAchievements(graph, title, ast, infobox);
+            logger.LogInformation("Processed achievement category page {title}", title);
+            return;
+        }
+
+        var nodeType = MapNodeType(infobox.InfoBoxType);
+        if (nodeType == NodeType.None)
+        {
+            var nodeAlreadyInGraph = graph.GetNode(title);
+            if (nodeAlreadyInGraph != null && nodeAlreadyInGraph.Type == NodeType.None)
+                graph.RemoveNodeAndAllEdges(title);
+            logger.LogDebug("Skipping {title} {infoboxtype}", title, infobox.InfoBoxType);
+            return;
+        }
+
+        var node = graph.GetOrCreate(title, infobox.Metadata);
+        node.SetType(nodeType);
+
+        ApplyRelationships(graph, title, node, ast, infobox);
+    }
+
+    private static bool ParseAndAssignRedirects(AcquisitionGraph graph, string title, Wikitext ast)
+    {
+        var target = DetectRedirect(ast);
+        if (target != null)
+            graph.CreateRedirect(title, target);
+        return target != null;
+    }
+    private static bool IsRedirect(Wikitext ast)
+    {
+        var target = DetectRedirect(ast);
+        return target != null;
+    }
+
+    private static string? DetectRedirect(Wikitext ast)
+    {
+        return ast.Lines.OfType<InlineContainerLineNode>()
+                              .SelectMany(l => l.Inlines)
+                              .Select(il => new { il, link = il as WikiLink })
+                              .Where(x =>
+                                x.link != null &&
+                                x.il.PreviousNode is PlainText prev &&
+                                prev.Content.Trim().Equals("REDIRECT", StringComparison.Ordinal) &&
+                                !string.IsNullOrWhiteSpace(x.link.Target?.ToString())
+                                )
+                              .Select(x => x.link!.Target!.ToString())
+                              .FirstOrDefault();
     }
 
     // -------------------------
@@ -112,6 +196,150 @@ public sealed class Gw2WikiProcessingSource(
 
         public string? Get(string key)
             => Metadata.TryGetValue(key, out var v) ? v : null;
+    }
+
+    private static void ParseGemStoreEntries(AcquisitionGraph graph, Wikitext ast)
+    {
+        var gemStoreEntries = ast.EnumDescendants()
+            .OfType<Template>()
+            .Where(t => t.Name.ToString().Contains("Gem store entry", StringComparison.OrdinalIgnoreCase));
+
+        const string gemStoreNpcKey = "Gem Store";
+        var gemstore = graph.GetNode(gemStoreNpcKey);
+        if (gemstore == null)
+        {
+            gemstore = new Node(new Dictionary<string, string> {
+                { "service", "merchant" }
+            });
+            gemstore.SetType(NodeType.NPC);
+            graph.Nodes.Add(gemStoreNpcKey, gemstore);
+        }
+
+        foreach (var gemstoreEntry in gemStoreEntries)
+        {
+            string? itemName = null;
+            string? cost = null;
+            string? availability = null;
+            var metadata = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
+            foreach (var arg in gemstoreEntry.Arguments)
+            {
+                var key = GetText(arg.Name);
+                var value = GetText(arg.Value);
+
+                if (key.Equals("item", StringComparison.OrdinalIgnoreCase))
+                {
+                    itemName = value;
+                    continue;
+                }
+                else if (key.Equals("cost", StringComparison.OrdinalIgnoreCase))
+                {
+                    cost = value;
+                    continue;
+                }
+                else if (key.Equals("availability", StringComparison.OrdinalIgnoreCase))
+                {
+                    availability = value;
+                    continue;
+                }
+                if (!string.IsNullOrWhiteSpace(key) && !string.IsNullOrWhiteSpace(value))
+                {
+                    metadata[key] = value;
+                }
+            }
+            if (itemName == null || cost == null || availability == null || availability.Equals("historical", StringComparison.OrdinalIgnoreCase))
+                continue;
+            metadata.Add("cost", cost + " Gems");
+            graph.AddEdge(itemName, gemStoreNpcKey, EdgeType.SoldBy, metadata);
+        }
+    }
+
+    private static void ParseBlackLionClaimTicketEntries(AcquisitionGraph graph, Wikitext ast)
+    {
+        var tablerows = ast.EnumDescendants().OfType<Template>()
+                             .Where(t => t.Name.ToString().Trim().Contains("vendor table row", StringComparison.OrdinalIgnoreCase));
+        foreach (var row in tablerows)
+        {
+            var itemName = row.Arguments.FirstOrDefault(a => a.Name?.ToString().Trim() == "item")?.Value?.ToString().Trim();
+            var cost = row.Arguments.FirstOrDefault(a => a.Name?.ToString().Trim() == "cost")?.Value?.ToString().Trim();
+
+            if (!string.IsNullOrWhiteSpace(itemName))
+            {
+                graph.GetOrCreate(itemName);
+
+                var metadata = !string.IsNullOrWhiteSpace(cost)
+                    ? new Dictionary<string, string> { ["cost"] = cost }
+                    : null;
+
+                graph.AddEdge(itemName, blackLionWeaponsSpecialistNPCKey, EdgeType.SoldBy, metadata);
+            }
+        }
+
+
+        var tables = ast.EnumDescendants().OfType<Template>()
+                             .Where(t => t.Name.ToString().Trim().Contains("Vendor table (Black Lion Weapons)", StringComparison.OrdinalIgnoreCase));
+        foreach (var table in tables)
+        {
+            var collectionName = table.Arguments.FirstOrDefault(a => a.Name?.ToString().Trim() == "collection")?.Value?.ToString().Trim();
+            var cost = table.Arguments.FirstOrDefault(a => a.Name?.ToString().Trim() == "cost")?.Value?.ToString().Trim();
+
+            if (!string.IsNullOrWhiteSpace(collectionName))
+            {
+                var metadata = !string.IsNullOrWhiteSpace(cost)
+                    ? new Dictionary<string, string> { ["cost"] = cost + " Black Lion Claim Ticket" }
+                    : null;
+                var node = graph.GetOrCreate(collectionName + " Weapon Collection", metadata);
+                node.SetType(NodeType.BlackLionWeaponCollection);
+            }
+        }
+    }
+
+    private static void ParseBlackLionStatuetteEntries(AcquisitionGraph graph, Wikitext ast)
+    {
+        var gemStoreEntries = ast.EnumDescendants()
+            .OfType<Template>()
+            .Where(t => t.Name.ToString().Contains("vendor table row", StringComparison.OrdinalIgnoreCase));
+
+        const string blackLionChestMerchantNpcKey = "Black Lion Chest Merchant";
+        var gemstore = graph.GetNode(blackLionChestMerchantNpcKey);
+        if (gemstore == null)
+        {
+            gemstore = new Node(new Dictionary<string, string> {
+                { "service", "merchant" }
+            });
+            gemstore.SetType(NodeType.NPC);
+            graph.Nodes.Add(blackLionChestMerchantNpcKey, gemstore);
+        }
+
+        foreach (var gemstoreEntry in gemStoreEntries)
+        {
+            string? itemName = null;
+            string? cost = null;
+            var metadata = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
+            foreach (var arg in gemstoreEntry.Arguments)
+            {
+                var key = GetText(arg.Name);
+                var value = GetText(arg.Value);
+
+                if (key.Equals("item", StringComparison.OrdinalIgnoreCase))
+                {
+                    itemName = value;
+                    continue;
+                }
+                else if (key.Equals("cost", StringComparison.OrdinalIgnoreCase))
+                {
+                    cost = value;
+                    continue;
+                }
+                if (!string.IsNullOrWhiteSpace(key) && !string.IsNullOrWhiteSpace(value))
+                {
+                    metadata[key] = value;
+                }
+            }
+            if (itemName == null || cost == null)
+                continue;
+            metadata.Add("cost", cost);
+            graph.AddEdge(itemName, blackLionChestMerchantNpcKey, EdgeType.SoldBy, metadata);
+        }
     }
 
     private static InfoboxData? ParseInfobox(Wikitext ast)
@@ -162,6 +390,7 @@ public sealed class Gw2WikiProcessingSource(
         return typeName.ToUpperInvariant() switch
         {
             "ITEM" => NodeType.Item,
+            "GEM STORE COMBO" => NodeType.GemStoreCombo,
             "NPC" => NodeType.NPC,
             "SKIN" => NodeType.Skin,
             "LOCATION" => NodeType.Location,
@@ -268,9 +497,17 @@ public sealed class Gw2WikiProcessingSource(
         // 🔹 NPC that are merchants (Vendor)
         if (info.InfoBoxType.Equals("NPC", StringComparison.OrdinalIgnoreCase))
         {
+            string? vendorHeaderLocation = null;
+            var vendorHeaders = ast.EnumDescendants().OfType<Template>().Where(t => t.Name.ToString().Contains("vendor table header", StringComparison.OrdinalIgnoreCase)).ToList();
+            if(vendorHeaders.Count == 1)
+            {
+                var header = vendorHeaders[0];
+                vendorHeaderLocation = header.Arguments.FirstOrDefault(a => string.Equals(a.Name?.ToString()?.Trim(),"location", StringComparison.OrdinalIgnoreCase))?.Value?.ToString();
+            }
+
             if (!string.IsNullOrWhiteSpace(info.Get("service")))
             {
-                HandleLocation(graph, nodeId, info);
+                HandleLocation(graph, nodeId, info, vendorHeaderLocation);
 
                 foreach (var row in ast.EnumDescendants().OfType<Template>()
                              .Where(t => t.Name.ToString().Contains("vendor table row", StringComparison.OrdinalIgnoreCase)))
@@ -293,9 +530,11 @@ public sealed class Gw2WikiProcessingSource(
         }
 
         // 🔹 Container (metadata-driven)
-        if (info.Get("type")?.Equals("Container", StringComparison.OrdinalIgnoreCase) == true)
+        var isContainer = info.Get("type")?.Equals("Container", StringComparison.OrdinalIgnoreCase);
+        if (isContainer == true || node.Type == NodeType.GemStoreCombo)
         {
-            node.SetType(NodeType.Container);
+            if(isContainer == true)
+                node.SetType(NodeType.Container);
 
             foreach (var template in ast.EnumDescendants().OfType<Template>())
             {
@@ -341,10 +580,18 @@ public sealed class Gw2WikiProcessingSource(
         ApplyCrafting(graph, nodeId, ast);
     }
 
-    private static void HandleLocation(AcquisitionGraph graph, string nodeId, InfoboxData info)
+    private static void HandleLocation(AcquisitionGraph graph, string nodeId, InfoboxData info, string? allowedLocations = null)
     {
         var locations = info.Get("location")?
                         .Split(';', StringSplitOptions.TrimEntries | StringSplitOptions.RemoveEmptyEntries);
+
+        if(allowedLocations != null)
+        {
+            var allowed = allowedLocations
+                .Split(';', StringSplitOptions.TrimEntries | StringSplitOptions.RemoveEmptyEntries)
+                .ToHashSet(StringComparer.OrdinalIgnoreCase);
+            locations = locations?.Where(l => allowed.Contains(l)).ToArray();
+        }
 
         if (locations != null)
         {
@@ -559,7 +806,7 @@ public sealed class Gw2WikiProcessingSource(
         if (raw == null)
         {
             // fallback
-            return new[] { zoneName };
+            return [zoneName];
         }
 
         if (raw.Equals("none", StringComparison.OrdinalIgnoreCase))

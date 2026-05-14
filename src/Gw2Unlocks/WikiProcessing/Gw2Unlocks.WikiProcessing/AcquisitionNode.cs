@@ -28,14 +28,11 @@ public enum NodeType
     Weapon = 10,
     Armor = 11,
     BackItem = 12,
-    // Location subtypes
-    Area = 20,
-    Zone = 21,
-    Region = 22,
-    City = 23,
     // Semantic
     Container = 30,
     Achievement = 40,
+    GemStoreCombo = 50,
+    BlackLionWeaponCollection = 51
 }
 
 
@@ -105,12 +102,32 @@ public class AcquisitionGraph
     public Dictionary<string, Node> Nodes { get; set; } = [];
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Usage", "CA2227:Collection properties should be read only")]
     public HashSet<Edge> Edges { get; set; } = [];
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Usage", "CA2227:Collection properties should be read only")]
+    public Dictionary<string, string> Redirects { get; set; } = [];
+
+    private string ResolveRedirect(string name)
+    {
+        while (Redirects.TryGetValue(name, out var target))
+        {
+            name = target;
+        }
+        return name;
+    }
+
+    public void CreateRedirect(string fromId, string toId)
+    {
+        ArgumentException.ThrowIfNullOrWhiteSpace(fromId);
+        ArgumentException.ThrowIfNullOrWhiteSpace(toId);
+        fromId = Normalize(fromId);
+        toId = Normalize(toId);
+        Redirects[fromId] = toId;
+    }
 
     public Node GetOrCreate(string nodeId, Dictionary<string, string>? metadata = null)
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(nodeId);
 
-        nodeId = Normalize(nodeId);
+        nodeId = Normalize(ResolveRedirect(nodeId));
 
         if (!Nodes.TryGetValue(nodeId, out var node))
         {
@@ -184,6 +201,9 @@ public class AcquisitionGraph
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(fromId);
         ArgumentException.ThrowIfNullOrWhiteSpace(toId);
+
+        fromId = Normalize(ResolveRedirect(fromId));
+        toId = Normalize(ResolveRedirect(toId));
 
         GetOrCreate(fromId);
         GetOrCreate(toId);

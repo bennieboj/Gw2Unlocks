@@ -27,9 +27,9 @@ internal sealed class ClassifierService(
             await PrintDiffAsync(logger, oldConfig, newConfig);
 
             Console.Write("Press y to continue");
-            var key = Console.ReadKey(intercept: false);
+            var input = Console.ReadLine();
 
-            if (key.Key == ConsoleKey.Y)
+            if (input is { Length: 1 } && (input[0] == 'y' || input[0] == 'Y'))
             {
                 await classifierCache.SaveClassifierConfigToCacheAsync(
                     newConfig,

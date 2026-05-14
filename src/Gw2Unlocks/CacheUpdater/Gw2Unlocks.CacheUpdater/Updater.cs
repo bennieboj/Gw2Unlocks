@@ -45,7 +45,7 @@ internal class Updater(IGw2ApiSource apiSource, IGw2ApiCache apiCache, IGw2WikiS
         await apiCache.SaveTitlesToCacheAsync(titles, cancellationToken);
     }
 
-    private static async Task<Collection<T>> RetryAsync<T>(Func<Task<Collection<T>>> action, string name)
+    private async Task<Collection<T>> RetryAsync<T>(Func<Task<Collection<T>>> action, string name)
     {
         int attempt = 0;
         while (true)
@@ -57,8 +57,7 @@ internal class Updater(IGw2ApiSource apiSource, IGw2ApiCache apiCache, IGw2WikiS
             }
             catch (Exception ex) when (attempt <= MaxRetries)
             {
-                Console.WriteLine($"Attempt {attempt} for {name} failed: {ex.Message}. Retrying...");
-                //await Task.Delay(200 * attempt); // optional backoff
+                logger.LogInformation("Attempt {attempt} for {name} failed: {exMessage}. Retrying...", attempt, name, ex.Message);
             }
         }
     }

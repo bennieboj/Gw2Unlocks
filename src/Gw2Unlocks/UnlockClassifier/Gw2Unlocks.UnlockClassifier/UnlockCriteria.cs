@@ -20,8 +20,10 @@ class ZoneCriteria(string ZoneName) : UnlockCriteria
 }
 
 
-class TokenCriteria(string TokenName) : UnlockCriteria
+class TokenCriteria(string TokenName, bool UsedInZoneSpecification = true) : UnlockCriteria
 {
+    public bool UsedInZoneSpecification { get; } = UsedInZoneSpecification;
+
     public override bool Matches(string unlock)
     {
         var name = unlock.ToString();
@@ -65,8 +67,10 @@ class CraftingMaterialCriteria(string craftingMaterialName) : UnlockCriteria
     }
 }
 
-class CurrencyCriteria(string CurrencyName) : UnlockCriteria
+class CurrencyCriteria(string CurrencyName, bool UsedInZoneSpecification = true) : UnlockCriteria
 {
+    public bool UsedInZoneSpecification { get; } = UsedInZoneSpecification;
+
     public override bool Matches(string cost)
     {
         var costString = cost.ToString() ?? throw new ArgumentException("Cost must be convertible to string", nameof(cost));

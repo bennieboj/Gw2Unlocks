@@ -1,0 +1,1151 @@
+<mediawiki xmlns="http://www.mediawiki.org/xml/export-0.11/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mediawiki.org/xml/export-0.11/ http://www.mediawiki.org/xml/export-0.11.xsd" version="0.11" xml:lang="en">
+  <siteinfo>
+    <sitename>Guild Wars 2 Wiki</sitename>
+    <dbname>en_wikidb_gw2</dbname>
+    <base>https://wiki.guildwars2.com/wiki/Main_Page</base>
+    <generator>MediaWiki 1.39.17</generator>
+    <case>first-letter</case>
+    <namespaces>
+      <namespace key="-2" case="first-letter">Media</namespace>
+      <namespace key="-1" case="first-letter">Special</namespace>
+      <namespace key="0" case="first-letter" />
+      <namespace key="1" case="first-letter">Talk</namespace>
+      <namespace key="2" case="first-letter">User</namespace>
+      <namespace key="3" case="first-letter">User talk</namespace>
+      <namespace key="4" case="first-letter">Guild Wars 2 Wiki</namespace>
+      <namespace key="5" case="first-letter">Guild Wars 2 Wiki talk</namespace>
+      <namespace key="6" case="first-letter">File</namespace>
+      <namespace key="7" case="first-letter">File talk</namespace>
+      <namespace key="8" case="first-letter">MediaWiki</namespace>
+      <namespace key="9" case="first-letter">MediaWiki talk</namespace>
+      <namespace key="10" case="first-letter">Template</namespace>
+      <namespace key="11" case="first-letter">Template talk</namespace>
+      <namespace key="12" case="first-letter">Help</namespace>
+      <namespace key="13" case="first-letter">Help talk</namespace>
+      <namespace key="14" case="first-letter">Category</namespace>
+      <namespace key="15" case="first-letter">Category talk</namespace>
+      <namespace key="102" case="first-letter">Property</namespace>
+      <namespace key="103" case="first-letter">Property talk</namespace>
+      <namespace key="106" case="first-letter">Form</namespace>
+      <namespace key="107" case="first-letter">Form talk</namespace>
+      <namespace key="108" case="first-letter">Concept</namespace>
+      <namespace key="109" case="first-letter">Concept talk</namespace>
+      <namespace key="112" case="first-letter">smw/schema</namespace>
+      <namespace key="113" case="first-letter">smw/schema talk</namespace>
+      <namespace key="114" case="first-letter">Rule</namespace>
+      <namespace key="115" case="first-letter">Rule talk</namespace>
+      <namespace key="200" case="first-letter">ArenaNet</namespace>
+      <namespace key="201" case="first-letter">ArenaNet talk</namespace>
+      <namespace key="202" case="first-letter">API</namespace>
+      <namespace key="203" case="first-letter">API talk</namespace>
+      <namespace key="274" case="first-letter">Widget</namespace>
+      <namespace key="275" case="first-letter">Widget talk</namespace>
+    </namespaces>
+  </siteinfo>
+  <page>
+    <title>Black Lion Weapons Specialist/historical</title>
+    <ns>0</ns>
+    <id>136487</id>
+    <revision>
+      <id>3109346</id>
+      <parentid>3029139</parentid>
+      <timestamp>2026-02-16T18:22:16Z</timestamp>
+      <contributor>
+        <username>Ruby12</username>
+        <id>239584</id>
+      </contributor>
+      <minor/>
+      <origin>3109346</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="9564" sha1="1s83vrq6provbz5mvaq2c11t0g7pyc6" xml:space="preserve">{{Historical content}}{{#set:Has canonical name=Black Lion Weapons Specialist|Has game icon=File:Weaponsmith.png|Has availability=Historical}}
+These weapon sets were previously offered by [[Black Lion Weapons Specialist]]. 
+== Items offered ==
+&lt;div id="weapon-wrapper"&gt;
+{{Vendor table (Black Lion Weapons) | collection = Abaddon's        | cost = 3 | status = Historical }}
+{{Vendor table (Black Lion Weapons) | collection = Abyss Stalker    | cost = 3 | status = Historical }}
+{{Vendor table (Black Lion Weapons) | collection = Aetherized       | cost = 5 | status = Historical }}
+{{Vendor table (Black Lion Weapons) | collection = Alchemist        | cost = 3 | status = Historical }}
+{{Vendor table (Black Lion Weapons) | collection = Balthazar's      | cost = 5 | status = Historical }}
+{{Vendor table (Black Lion Weapons) | collection = Beastslayer      | cost = 2 | status = Historical }}
+{{Vendor table (Black Lion Weapons) | collection = Bioluminescent   | cost = 3 | status = Historical }}
+{{Vendor table (Black Lion Weapons) | collection = Bloodstone       | cost = 3 | status = Historical }}
+{{Vendor table (Black Lion Weapons) | collection = Branded          | cost = 3 | status = Historical }}
+{{Vendor table (Black Lion Weapons) | collection = Bright Inquisitor| cost = 3 | status = Historical }}
+{{Vendor table (Black Lion Weapons) | collection = Cavalier         | cost = 3 | status = Historical }}
+{{Vendor table (Black Lion Weapons) | collection = Chaos            | cost = 5 | status = Historical }}
+{{Vendor table (Black Lion Weapons) | collection = Crimson Lion     | cost = 5 | status = Historical }}
+{{Vendor table (Black Lion Weapons) | collection = Collapsing Star  | cost = 3 | status = Historical }}
+{{Vendor table (Black Lion Weapons) | collection = Dark Matter      | cost = 3 | status = Historical }}
+{{Vendor table (Black Lion Weapons) | collection = Dark Wing        | cost = 3 | status = Historical }}
+{{Vendor table (Black Lion Weapons) | collection = Daydreamer's     | cost = 3 | status = Historical }}
+{{Vendor table (Black Lion Weapons) | collection = Defiant Glass    | cost = 3 | status = Historical }}
+{{Vendor table (Black Lion Weapons) | collection = Desert King      | cost = 3 | status = Historical }}
+{{Vendor table (Black Lion Weapons) | collection = Devoted          | cost = 2 | status = Historical }}
+{{Vendor table (Black Lion Weapons) | collection = Dokkaebi         | cost = 3 | status = Historical }}
+{{Vendor table (Black Lion Weapons) | collection = Dominator        | cost = 3 | status = Historical }}
+{{Vendor table (Black Lion Weapons) | collection = Draconic         | cost = 3 | status = Historical }}
+{{Vendor table (Black Lion Weapons) | collection = Dragon's Jade    | cost = 5 | status = Historical }}
+{{Vendor table (Black Lion Weapons) | collection = Dreamthistle     | cost = 3 | status = Historical }}
+{{Vendor table (Black Lion Weapons) | collection = Dwayna's         | cost = 3 | status = Historical }}
+{{Vendor table (Black Lion Weapons) | collection = Embellished      | cost = 3 | status = Historical }}
+{{Vendor table (Black Lion Weapons) | collection = Endless Ocean    | cost = 3 | status = Historical }}
+{{Vendor table (Black Lion Weapons) | collection = Equinox          | cost = 3 | status = Historical }}
+{{Vendor table (Black Lion Weapons) | collection = Eternal Forged   | cost = 3 | status = Historical }}
+{{Vendor table (Black Lion Weapons) | collection = Etherbound       | cost = 3 | status = Historical }}
+{{Vendor table (Black Lion Weapons) | collection = Fox Fire         | cost = 3 | status = Historical }}
+{{Vendor table (Black Lion Weapons) | collection = Frostforged      | cost = 3 | status = Historical }}
+{{Vendor table (Black Lion Weapons) | collection = Fused            | cost = 7 | status = Historical }}
+{{Vendor table (Black Lion Weapons) | collection = Gallant          | cost = 3 | status = Historical }}
+{{Vendor table (Black Lion Weapons) | collection = Gargoyle         | cost = 3 | status = Historical }}
+{{Vendor table (Black Lion Weapons) | collection = Glacial          | cost = 3 | status = Historical }}
+{{Vendor table (Black Lion Weapons) | collection = Glittering       | cost = 3 | status = Historical }}
+{{Vendor table (Black Lion Weapons) | collection = Ice Reaver       | cost = 3 | status = Historical }}
+{{Vendor table (Black Lion Weapons) | collection = Improvised       | cost = 3 | status = Historical }}
+{{Vendor table (Black Lion Weapons) | collection = Inquest Mark II  | cost = 3 | status = Historical }}
+{{Vendor table (Black Lion Weapons) | collection = Keepsake         | cost = 3 | status = Historical }}
+{{Vendor table (Black Lion Weapons) | collection = Ley Line         | cost = 5 | status = Historical }}
+{{Vendor table (Black Lion Weapons) | collection = Lorekeeper       | cost = 3 | status = Historical }}
+{{Vendor table (Black Lion Weapons) | collection = Lovestruck       | cost = 5 | status = Historical }}
+{{Vendor table (Black Lion Weapons) | collection = Mad Realm        | cost = 3 | status = Historical }}
+{{Vendor table (Black Lion Weapons) | collection = Magical          | cost = 3 | status = Historical }}
+{{Vendor table (Black Lion Weapons) | collection = Maguuma          | cost = 3 | status = Historical }}
+{{Vendor table (Black Lion Weapons) | collection = Merciless        | cost = 3 | status = Historical }}
+{{Vendor table (Black Lion Weapons) | collection = Mordrem          | cost = 5 | status = Historical }}
+{{Vendor table (Black Lion Weapons) | collection = Necrotic Essence | cost = 3 | status = Historical }}
+{{Vendor table (Black Lion Weapons) | collection = New Kaineng      | cost = 3 | status = Historical }}
+{{Vendor table (Black Lion Weapons) | collection = Orchestral       | cost = 3 | status = Historical }}
+{{Vendor table (Black Lion Weapons) | collection = Pact Fleet       | cost = 5 | status = Historical }}
+{{Vendor table (Black Lion Weapons) | collection = Paladin's Decree | cost = 3 | status = Historical }}
+{{Vendor table (Black Lion Weapons) | collection = Phoenix          | cost = 5 | status = Historical }}
+{{Vendor table (Black Lion Weapons) | collection = Plasma           | cost = 3 | status = Historical }}
+{{Vendor table (Black Lion Weapons) | collection = Red Crane        | cost = 3 | status = Historical }}
+{{Vendor table (Black Lion Weapons) | collection = Reflective Koi   | cost = 3 | status = Historical }}
+{{Vendor table (Black Lion Weapons) | collection = Scientific       | cost = 5 | status = Historical }}
+{{Vendor table (Black Lion Weapons) | collection = Sclerite         | cost = 3 | status = Historical }}
+{{Vendor table (Black Lion Weapons) | collection = Seven Reapers    | cost = 3 | status = Historical }}
+{{Vendor table (Black Lion Weapons) | collection = Shadow           | cost = 5 | status = Historical }}
+{{Vendor table (Black Lion Weapons) | collection = Shadow Chevalier | cost = 3 | status = Historical }}
+{{Vendor table (Black Lion Weapons) | collection = Shifting Sands   | cost = 3 | status = Historical }}
+{{Vendor table (Black Lion Weapons) | collection = Shimmering Aurora| cost = 3 | status = Historical }}
+{{Vendor table (Black Lion Weapons) | collection = Snow Garden      | cost = 3 | status = Historical }}
+{{Vendor table (Black Lion Weapons) | collection = Soaring          | cost = 3 | status = Historical }}
+{{Vendor table (Black Lion Weapons) | collection = Spectral         | cost = 3 | status = Historical }}
+{{Vendor table (Black Lion Weapons) | collection = Steel Lotus      | cost = 3 | status = Historical }}
+{{Vendor table (Black Lion Weapons) | collection = Tempest          | cost = 5 | status = Historical }}
+{{Vendor table (Black Lion Weapons) | collection = Thundercrag      | cost = 3 | status = Historical }}
+{{Vendor table (Black Lion Weapons) | collection = Timekeeper       | cost = 3 | status = Historical }}
+{{Vendor table (Black Lion Weapons) | collection = Tormented        | cost = 5 | status = Historical }}
+{{Vendor table (Black Lion Weapons) | collection = Venombite        | cost = 3 | status = Historical }}
+{{Vendor table (Black Lion Weapons) | collection = Vinelord Edgebloom| cost = 3 | status = Historical }}
+{{Vendor table (Black Lion Weapons) | collection = War God's        | cost = 3 | status = Historical }}
+{{Vendor table (Black Lion Weapons) | collection = White Tiger      | cost = 3 | status = Historical }}
+{{Vendor table (Black Lion Weapons) | collection = Wintersday       | cost = 5 | status = Historical }}
+{{Vendor table (Black Lion Weapons) | collection = Zodiac           | cost = 5 | status = Historical }}
+
+&lt;div style="display:inline-block; margin-right:1em;"&gt;
+=== Halloween Weapons ===
+{{vendor table header | showFacts = false | showLevel = false | showRarity = false | showType = false }}
+{{vendor table row | item = Chiroptophobia Greatsword Skin | cost = 2 Black Lion Claim Ticket | status = Historical }}
+{{vendor table row | item = Araneae Longbow Skin           | cost = 2 Black Lion Claim Ticket | status = Historical }}
+{{vendor table row | item = Dead Stop Shield Skin          | cost = 2 Black Lion Claim Ticket | status = Historical }}
+{{vendor table row | item = Bloody Prince Staff Skin       | cost = 2 Black Lion Claim Ticket | status = Historical }}
+{{vendor table row | item = Silly Scimitar Skin            | cost = 2 Black Lion Claim Ticket | status = Historical }}
+{{vendor table row | item = Bloody Prince's Toy Chest      | cost = 0 Black Lion Claim Ticket | status = Historical }}
+|}
+&lt;/div&gt;
+&lt;/div&gt;
+
+[[es:Especialista en armas del León Negro/histórico]]</text>
+      <sha1>1s83vrq6provbz5mvaq2c11t0g7pyc6</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Template:Inventory/black lion claim ticket</title>
+    <ns>10</ns>
+    <id>256524</id>
+    <revision>
+      <id>3102457</id>
+      <parentid>3069833</parentid>
+      <timestamp>2026-02-03T22:05:21Z</timestamp>
+      <contributor>
+        <username>DiegoDeLaHouska</username>
+        <id>206595</id>
+      </contributor>
+      <minor/>
+      <origin>3102457</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="2544" sha1="3e7awx3td9tu6kwfmbqdmfx3aoy4nz5" xml:space="preserve">{{Inventory/Vendor subpage header}}
+&lt;onlyinclude&gt;
+&lt;div id="weapon-collection-container"&gt;
+{{Vendor table (Black Lion Weapons) | collection = Painter's Brilliance | cost = 1 }}
+{{Vendor table (Black Lion Weapons) | collection = Calligrapher's       | cost = 2 }}
+{{Vendor table (Black Lion Weapons) | collection = Shade-Touched        | cost = 3 }}
+{{Vendor table (Black Lion Weapons) | collection = Imperial Everbloom   | cost = 3 }}
+{{Vendor table (Black Lion Weapons) | collection = Dragon Essence       | cost = 3 }}
+{{Vendor table (Black Lion Weapons) | collection = Foefire              | cost = 3 }}
+{{Vendor table (Black Lion Weapons) | collection = Mystical Beast       | cost = 3 }}
+{{Vendor table (Black Lion Weapons) | collection = Void Corrupted       | cost = 3 }}
+{{Vendor table (Black Lion Weapons) | collection = Chromatic Assassin   | cost = 3 }}
+&lt;/div&gt;
+=== Vintage Edition Spears ===
+{{vendor table header | showFacts = false | showLevel = false | showRarity= false | showType = false }} || TP Buy Price || TP Sell Price
+{{vendor table row | item = Collapsing Star Spear Skin | cost = 3 Black Lion Claim Ticket | }} || {{tp|Collapsing Star Spear Skin|buy}} || {{tp|Collapsing Star Spear Skin|sell}}
+{{vendor table row | item = Abyss Stalker Spear Skin | cost = 3 Black Lion Claim Ticket }} || {{tp|Abyss Stalker Spear Skin|buy}} || {{tp|Abyss Stalker Spear Skin|sell}}
+{{vendor table row | item = Seven Reapers Spear Skin | cost = 3 Black Lion Claim Ticket }} || {{tp|Seven Reapers Spear Skin|buy}} || {{tp|Seven Reapers Spear Skin|sell}}
+{{vendor table row | item = Fox Fire Spear Skin | cost = 3 Black Lion Claim Ticket }} || {{tp|Fox Fire Spear Skin|buy}} || {{tp|Fox Fire Spear Skin|sell}}
+{{vendor table row | item = Magical Spear Skin | cost = 3 Black Lion Claim Ticket }} || {{tp|Magical Spear Skin|buy}} || {{tp|Magical Spear Skin|sell}}
+{{vendor table row | item = Shimmering Aurora Spear Skin | cost = 3 Black Lion Claim Ticket }} || {{tp|Shimmering Aurora Spear Skin|buy}} || {{tp|Shimmering Aurora Spear Skin|sell}}
+|}
+
+=== General Offerings ===
+{{vendor table header | showFacts = false | showLevel = false }}
+{{vendor table row | item = Black Lion Claim Ticket | cost = 10 Black Lion Claim Ticket Scrap }}
+{{vendor table row | item = Vintage Black Lion Weapon Box | cost = 1 Black Lion Claim Ticket}}
+|}
+== Previously offered ==
+{{main|Black Lion Weapons Specialist/historical|label=For Black Lion Weapon Sets that were previously offered, see}}
+&lt;/onlyinclude&gt;
+&lt;/div&gt;&lt;!-- closes &lt;div&gt; from the header template --&gt;</text>
+      <sha1>3e7awx3td9tu6kwfmbqdmfx3aoy4nz5</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Black Lion Weapons Specialist</title>
+    <ns>0</ns>
+    <id>92889</id>
+    <revision>
+      <id>3136878</id>
+      <parentid>3126704</parentid>
+      <timestamp>2026-05-06T15:00:14Z</timestamp>
+      <contributor>
+        <username>Tery3065</username>
+        <id>270948</id>
+      </contributor>
+      <minor/>
+      <origin>3136878</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="4071" sha1="azoguii6wg4hecylhzl5g9eyhohfwaw" xml:space="preserve">{{otheruses|the latest nine Black Lion Weapon sets vendors|the Halloween weapons|Black Lion Weapons Specialist (Halloween)|Privateer weapons|Black Lion Weapons Specialist (Privateer Weapons)}}
+{{NPC infobox
+| image = Lionguard human heavy 1 (weaponless).jpg
+| random = yes
+| icon = Weaponsmith.png
+| location = Armistice Bastion; Dwayna High Road; Interdisciplinary Accessium; Memorial Quadrant; Mistlock Sanctuary; Reckoner's Terrace; Trade Commons; Eastern Ward; Trader's Forum; Havoc's Heir
+| race = Charr, Human, Norn
+| service = Vendor
+| gallery1 = Lionguard norn heavy 4 (weaponless).jpg
+| gallery1-text = Norn appearance.
+| organization = Black Lion Trading Company
+}}
+[[Black Lion Weapons Specialist]]s are [[vendor]]s where players can redeem their [[Black Lion Claim Ticket]]s. They can be found next to [[Black Lion Trader]]s in [[Trading Post]] buildings in every [[city]] and [[lounge]].
+
+== Locations ==
+;[[Ascalon]]
+* [[Black Citadel]]
+** [[Memorial Quadrant]]
+
+;[[Kryta]]
+* [[Divinity's Reach]]
+** [[Dwayna High Road]]
+
+* [[Lion's Arch]]
+** [[Eastern Ward]]
+*** [[The Vaults]]
+** [[Trader's Forum]]
+
+* [[Gendarran Fields]]
+** [[Havoc's Heir]] &lt;small&gt;(Only accessible with a [[Captain's Airship Pass]])&lt;/small&gt;
+
+;[[Maguuma Jungle]]
+* [[Rata Sum]]
+** [[Interdisciplinary Accessium]]
+
+* [[The Grove]]
+** [[Reckoner's Terrace]]
+
+;[[Shiverpeak Mountains]]
+* [[Hoelbrak]]
+** [[Trade Commons]]
+
+;[[The Mists]]
+* [[Armistice Bastion]] &lt;small&gt;(Only accessible with a [[Armistice Bastion Pass]])&lt;/small&gt;
+* [[Mistlock Sanctuary]] &lt;small&gt;(Only accessible with a [[Mistlock Sanctuary Passkey]])&lt;/small&gt;
+
+== Items offered ==
+{{inventory|black lion claim ticket}}
+
+== Dialogue ==
+:Welcome to the Black Lion Trading Company. If you've got a claim ticket, or enough scraps of one, I can show you some of our rarest and most interesting merchandise.
+:{{dialogue icon|more}} ''Tell me about new weapon opportunities.''
+::Check back often, as we discover new weapons, or have special ticket pricing on different weapon sets.
+::{{dialogue icon|more}} ''Will these weapons always be available?''
+:::We endeavor to keep most weapon types available, but as weapon supplies decrease, our prices will rise considerably.
+:::{{dialogue icon|end}} ''I'll be back.''
+::{{dialogue icon|sell}} ''I'd like to upgrade my soulbound permanent gathering tool.'' &lt;small&gt;'''(If you have old soulbound permanent gathering tools)'''&lt;/small&gt;
+::{{dialogue icon|end}} ''I get the gist.''
+:{{dialogue icon|sell}} ''Show me what you've got.''
+:{{dialogue icon|end}} ''I'll be back.''
+
+== Notes ==
+* New Black Lion weapon skins are usually introduced at a rate of one Black Lion Claim Ticket. The price is eventually increased to three tickets, usually at the same time as a new skin is introduced.
+* Skin sets are regularly removed from the vendor to open up space for new sets, but may return in the future. [[Lauren Kamieniecki]] hinted  in 2015 there might be some improvements to these vendors so that skins are always available.&lt;ref&gt;[https://forum-en.gw2archive.eu/forum/support/bugs/Zodiac-Weapons-gone-from-merchant/first#post5015369 Lauren Kamieniecki on Official Forums]&lt;/ref&gt;. However, as of 2024, this has not been implemented.
+* To check which skins you have already unlocked, see [[Black Lion Claim Ticket/Skin unlocks]].
+
+== Trivia ==
+* The Black Lion Specialist in Lion's Arch will exchange the following discontinued [[soulbound]] unlimited gathering tools for the equivalent account bound version. You need to have a soulbound version of the item in your inventory (i.e. unequipped) to exchange your tool.
+** {{item icon|Jack-in-the-Box Scythe}}
+** {{item icon|Bone Pick}}
+** {{item icon|Chop-It-All Logging Axe}}
+** {{item icon|Consortium Harvesting Sickle}}
+** {{item icon|Molten Alliance Mining Pick}}
+* The ability to convert soulbound gathering tools to account bound ones was added as part of [[The Nightmares Within]].
+
+== References ==
+&lt;references/&gt;
+
+[[de:Schwarzlöwen-Waffenspezialist]]
+[[es:Especialista en armas del León Negro]]
+[[fr:Spécialiste des armes du Lion noir]]</text>
+      <sha1>azoguii6wg4hecylhzl5g9eyhohfwaw</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Painter's Brilliance Axe</title>
+    <ns>0</ns>
+    <id>412523</id>
+    <revision>
+      <id>3102753</id>
+      <timestamp>2026-02-03T22:45:17Z</timestamp>
+      <contributor>
+        <username>DiegoDeLaHouska</username>
+        <id>206595</id>
+      </contributor>
+      <comment>New page: '{{otheruses|the [[skin]] unlocked in the [[wardrobe]]|the consumable item|Painter's Brilliance Axe Skin}} {{Skin infobox | type = Axe | set = Painter's Brilliance weapon skins | acquisition = Obtained from Black Lion Chests or Black Lion Weapons Specialists using Black Lion Claim Tickets. | id = 13726 }}  [[Painter's Brilliance Axe]] is a Axe [[skin]] that is part of the [[Painter's Brilliance weapon skins]] set.  == Acquisition == {{skin list}}'</comment>
+      <origin>3102753</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="449" sha1="p2sp9b6nyloc80r70iduh9bdgjhd5nw" xml:space="preserve">{{otheruses|the [[skin]] unlocked in the [[wardrobe]]|the consumable item|Painter's Brilliance Axe Skin}}
+{{Skin infobox
+| type = Axe
+| set = Painter's Brilliance weapon skins
+| acquisition = Obtained from Black Lion Chests or Black Lion Weapons Specialists using Black Lion Claim Tickets.
+| id = 13726
+}}
+
+[[Painter's Brilliance Axe]] is a Axe [[skin]] that is part of the [[Painter's Brilliance weapon skins]] set.
+
+== Acquisition ==
+{{skin list}}</text>
+      <sha1>p2sp9b6nyloc80r70iduh9bdgjhd5nw</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Painter's Brilliance Axe Skin</title>
+    <ns>0</ns>
+    <id>412522</id>
+    <revision>
+      <id>3102750</id>
+      <parentid>3102748</parentid>
+      <timestamp>2026-02-03T22:43:44Z</timestamp>
+      <contributor>
+        <username>DiegoDeLaHouska</username>
+        <id>206595</id>
+      </contributor>
+      <minor/>
+      <origin>3102750</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="564" sha1="bhxgn8wqrxz2hlrajr93zvn8qhx3nhc" xml:space="preserve">{{Item infobox
+| icon = Painter's Brilliance Axe.png
+| description = Double-click to apply this look to any other [[axe]].
+| type = weapon skin
+| skin type = Axe
+| rarity = Rare
+| skin = Painter's Brilliance Axe
+| collection = Painter's Brilliance Weapon Collection
+| id = 107038
+| gallery1 = Painter's Brilliance Axe.jpg
+}}
+
+== Acquisition ==
+{{Sold by}}
+
+{{weapon set nav|Painter's Brilliance|skin=y|noaquatic=y|nospear=n}}
+[[de:Skin für Axt der Brillanz des Malers]]
+[[es:Diseño de hacha de esplendor del pintor]]
+[[fr:Apparence de hache de peintre brillant]]</text>
+      <sha1>bhxgn8wqrxz2hlrajr93zvn8qhx3nhc</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Abaddon Axe (skin)</title>
+    <ns>0</ns>
+    <id>207574</id>
+    <revision>
+      <id>3093699</id>
+      <parentid>2820326</parentid>
+      <timestamp>2026-01-14T17:04:47Z</timestamp>
+      <contributor>
+        <username>AWB Alex</username>
+        <id>102516</id>
+      </contributor>
+      <minor/>
+      <comment>/* top */ +Update acquisition text per bot request</comment>
+      <origin>3093699</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="604" sha1="s0a3kcjbah2lpikbjrvmqzue5uwv6rb" xml:space="preserve">{{otheruses|the [[skin]] unlocked in the [[wardrobe]]|the consumable item|Abaddon Axe}}
+{{Skin infobox
+| name = Abaddon Axe
+| icon = Abaddon Axe.png
+| type = Axe
+| set = Abaddon weapon skins
+| collection = Abaddon's Weapon Collection
+| acquisition = Obtained from the [[Vintage Black Lion Weapon Box]], which can be acquired by trading [[Black Lion Claim Tickets]] to [[Black Lion Weapons Specialist|Black Lion Weapons Specialists]].
+| id = 7295
+| gallery1 = Abaddon Axe.jpg
+}}
+[[Abaddon Axe (skin)|Abaddon Axe]] is a [[skin]] that is part of the [[Abaddon weapons]] set.
+
+== Acquisition ==
+{{skin list}}</text>
+      <sha1>s0a3kcjbah2lpikbjrvmqzue5uwv6rb</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Black Lion Statuette/historical</title>
+    <ns>0</ns>
+    <id>229479</id>
+    <revision>
+      <id>3001816</id>
+      <parentid>3000014</parentid>
+      <timestamp>2025-07-19T09:01:51Z</timestamp>
+      <contributor>
+        <username>ItVictor</username>
+        <id>240054</id>
+      </contributor>
+      <origin>3001816</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="25138" sha1="t2q27aco9iyhb50ubp6vwmvduz7jo2l" xml:space="preserve">{{historical content}}
+{{#set:Has canonical name=Black Lion Statuette|Has availability=Historical|Is historical=Y|Has game icon=File:Black Lion Statuette.png}}
+Previous items offered from [[Black Lion Statuette]] can be found here. Historical availability of each item can be found on its page.
+
+=== Outfits ===
+{{vendor table header|historical=Y|showFacts=false|showLevel=false|showTP=true|itemWidth=300px|rarityWidth=70px|page=Template:Inventory/statuette/storage|root=Template:Inventory/statuette}}
+{{vendor table row | item = Wedding Attire Outfit | cost = 30 Black Lion Statuette}}
+{{vendor table row | item = Witch's Outfit | cost = 30 Black Lion Statuette}}
+{{vendor table row | item = Bloody Prince's Outfit | cost = 30 Black Lion Statuette}}
+{{vendor table row | item = Executioner's Outfit | cost = 30 Black Lion Statuette}}
+{{vendor table row | item = Ghostly Outfit | cost = 30 Black Lion Statuette}}
+{{vendor table row | item = Lunatic Guard Outfit | cost = 30 Black Lion Statuette}}
+{{vendor table row | item = Mad King's Outfit | cost = 30 Black Lion Statuette}}
+{{vendor table row | item = Grenth's Regalia Outfit | cost = 30 Black Lion Statuette}}
+{{vendor table row | item = Balthazar's Regalia Outfit | cost = 30 Black Lion Statuette}}
+{{vendor table row | item = Lyssa's Regalia | cost = 30 Black Lion Statuette}}
+{{vendor table row | item = Dwayna's Regalia Outfit | cost = 30 Black Lion Statuette}}
+{{vendor table row | item = Crystal Arbiter Outfit | cost = 30 Black Lion Statuette}}
+{{vendor table row | item = Dynamics Exo-Suit Outfit | cost = 30 Black Lion Statuette}}
+{{vendor table row | item = Ironclad Outfit | cost = 30 Black Lion Statuette}}
+{{vendor table row | item = Awakened Zealot Outfit | cost = 30 Black Lion Statuette}}
+{{vendor table row | item = Bandit Sniper's Outfit | cost = 30 Black Lion Statuette}}
+{{vendor table row | item = Zafirah's Tactical Outfit | cost = 30 Black Lion Statuette}}
+{{vendor table row | item = Logan's Pact Marshal Outfit | cost = 30 Black Lion Statuette}}
+{{vendor table row | item = Braham's Wolfblood Outfit | cost = 30 Black Lion Statuette}}
+{{vendor table row | item = Marjory's Shrouded Outfit | cost = 30 Black Lion Statuette}}
+{{vendor table row | item = Taimi's Outfit | cost = 30 Black Lion Statuette}}
+{{vendor table row | item = Kasmeer's Regal Outfit | cost = 30 Black Lion Statuette}}
+{{vendor table row | item = Verdant Executor Outfit | cost = 30 Black Lion Statuette}}
+{{vendor table row | item = Rox's Pathfinder Outfit | cost = 30 Black Lion Statuette}}
+{{vendor table row | item = White Mantle Outfit | cost = 30 Black Lion Statuette}}
+{{vendor table row | item = Outlaw Outfit | cost = 30 Black Lion Statuette}}
+{{vendor table row | item = Mursaat Robes | cost = 30 Black Lion Statuette}}
+{{vendor table row | item = Pirate Captain's Outfit | cost = 30 Black Lion Statuette}}
+|}
+
+=== Gliders ===
+{{vendor table header|historical=Y|showFacts=false|showLevel=false|showTP=true|itemWidth=300px|rarityWidth=70px|page=Template:Inventory/statuette/storage|root=Template:Inventory/statuette}}
+{{vendor table row | item = Golden Wings Glider and Back Set | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Crystalline Dragon Wings Backpack Glider Combo (voucher) | cost = 30 Black Lion Statuette}}
+{{vendor table row | item = White Mantle Glider | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Crystal Arbiter Glider | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Dynamics Exo-Suit Glider Backpack Combo (container) | cost = 30 Black Lion Statuette}}
+{{vendor table row | item = Largos Fin Backpack Glider Combo (voucher) | cost = 30 Black Lion Statuette}}
+{{vendor table row | item = Vine-Touched Destroyer Glider Combo (voucher) | cost = 30 Black Lion Statuette}}
+{{vendor table row | item = Forged Backpack and Glider Combo (voucher) | cost = 30 Black Lion Statuette}}
+{{vendor table row | item = Hawk Wings Glider Combo (statuettes) | cost = 30 Black Lion Statuette}}
+{{vendor table row | item = Abaddon's Glider | cost = 30 Black Lion Statuette}}
+{{vendor table row | item = Bubble Glider | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Floral Glider | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Classical Glider | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Spectral Glider | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Phoenix Kite Glider | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = White Wings Glider Combo (voucher) | cost = 30 Black Lion Statuette}}
+{{vendor table row | item = Black Wings Glider Combo (voucher) | cost = 30 Black Lion Statuette}}
+{{vendor table row | item = Macaw Wings Glider Combo (voucher) | cost = 30 Black Lion Statuette}}
+{{vendor table row | item = Ironclad Glider | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Necrotic Glider | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Exalted Glider | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Electromagnetic-Descender Glider | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Magic Carpet Glider | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Geomancer Glider | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Timekeeper Glider | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Soul River Glider | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Bloodstone Glider | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Phoenix Glider | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Sheet Music Glider | cost = 25 Black Lion Statuette}}
+|}
+
+=== Armor Skins ===
+{{vendor table header|historical=Y|showFacts=false|showLevel=false|showTP=true|itemWidth=300px|rarityWidth=70px|page=Template:Inventory/statuette/storage|root=Template:Inventory/statuette}}
+{{vendor table row | item = Chaos Gloves Skin | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Glint's Gaze Mask | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Glowing Green Mask | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Glowing Crimson Mask | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Magitech Medium Armor Skin | cost = 30 Black Lion Statuette}}
+{{vendor table row | item = Phoenix Light Armor Skin | cost = 30 Black Lion Statuette}}
+{{vendor table row | item = Braham's Heavy Armor Skin | cost = 30 Black Lion Statuette}}
+{{vendor table row | item = Mask of the Jubilee Skin | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Mask of the Queen Skin | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Mask of the Crown Skin | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Abaddon's Mask Skin | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Aetherblade Heavy Armor Skin | cost = 30 Black Lion Statuette}}
+{{vendor table row | item = Aetherblade Medium Armor Skin | cost = 30 Black Lion Statuette}}
+{{vendor table row | item = Aetherblade Light Armor Skin | cost = 30 Black Lion Statuette}}
+{{vendor table row | item = Foefire Mantle | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Fuzzy Leopard Hat | cost = 15 Black Lion Statuette}}
+{{vendor table row | item = Shadow of the Dragon Helmet Skin | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Zodiac Light Armor Skin | cost = 30 Black Lion Statuette}}
+{{vendor table row | item = Zodiac Medium Armor Skin | cost = 30 Black Lion Statuette}}
+{{vendor table row | item = Zodiac Heavy Armor Skin | cost = 30 Black Lion Statuette}}
+{{vendor table row | item = Trickster's Light-Armor Skin | cost = 30 Black Lion Statuette}}
+{{vendor table row | item = Viper's Medium-Armor Skin | cost = 30 Black Lion Statuette}}
+{{vendor table row | item = Phalanx Heavy-Armor Skin | cost = 30 Black Lion Statuette}}
+{{vendor table row | item = Flamekissed Light Armor Skin | cost = 30 Black Lion Statuette}}
+{{vendor table row | item = Flamewalker Medium Armor Skin | cost = 30 Black Lion Statuette}}
+{{vendor table row | item = Flamewrath Heavy Armor Skin | cost = 30 Black Lion Statuette}}
+{{vendor table row | item = Profane Light Armor Skin | cost = 30 Black Lion Statuette}}
+{{vendor table row | item = Krytan Medium Armor Skin | cost = 30 Black Lion Statuette}}
+{{vendor table row | item = Primeval Heavy Armor Skin | cost = 30 Black Lion Statuette}}
+{{vendor table row | item = Fuzzy Quaggan Hat | cost = 15 Black Lion Statuette}}
+{{vendor table row | item = Fuzzy Hylek Hat | cost = 15 Black Lion Statuette}}
+{{vendor table row | item = Top Hat | cost = 15 Black Lion Statuette}}
+{{vendor table row | item = Ringmaster's Hat | cost = 15 Black Lion Statuette}}
+{{vendor table row | item = Sailor's Beanie | cost = 15 Black Lion Statuette}}
+{{vendor table row | item = Fuzzy Quaggan Hat with Bow | cost = 15 Black Lion Statuette}}
+{{vendor table row | item = Fuzzy Bear Hat | cost = 15 Black Lion Statuette}}
+{{vendor table row | item = Pirate Corsair Hat Skin | cost = 15 Black Lion Statuette}}
+{{vendor table row | item = Wizard's Hat | cost = 15 Black Lion Statuette}}
+{{vendor table row | item = Fuzzy Panda Hat | cost = 15 Black Lion Statuette}}
+{{vendor table row | item = Festive Hat | cost = 15 Black Lion Statuette}}
+{{vendor table row | item = Fuzzy Cat Hat | cost = 15 Black Lion Statuette}}
+{{vendor table row | item = Aviator Cap | cost = 15 Black Lion Statuette}}
+{{vendor table row | item = Fuzzy Aurene Hat | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Swaggering Hat | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Toxic Gloves Skin | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Toxic Mantle Skin | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Scarlet's Grasp | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Scarlet's Spaulders | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Shadow of the Dragon Gloves Skin | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Shadow of the Dragon Shoulder Skin | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Salvaged Forged Gloves | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Salvaged Forged Helm | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Foefire Greaves | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Foefire Wraps | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Jackal Rune Gauntlets | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Jackal Rune Greaves | cost = 25 Black Lion Statuette}}
+|}
+
+=== Weapon Skins ===
+{{vendor table header|historical=Y|showFacts=false|showLevel=false|showTP=true|itemWidth=300px|rarityWidth=70px|page=Template:Inventory/statuette/storage|root=Template:Inventory/statuette}}
+{{vendor table row | item = God-Slayer Bow Package | cost = 30 Black Lion Statuette}}
+{{vendor table row | item = Shield of the Goddess | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Trained Choya Hammer Skin | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Lord Faren's Rapier Skin | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Amethyst Aegis | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Chain-Whip Sword Skin | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Elegant Fan Focus Skin | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Emissary's Staff | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Hourglass Staff | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Kurzick Dual Axe Skin | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Peacock Scepter Skin | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Storm Bow | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Suntouched Scythe Staff Skin | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Dragon Kama Skin | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Ritualist Staff Skin | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Rival Skies Axe Set | cost = 45 Black Lion Statuette}}
+{{vendor table row | item = Celestial Axe Skin | cost = 60 Black Lion Statuette}}
+{{vendor table row | item = Belinda's Greatsword Skin | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Braham's Mace Skin | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Braham's Shield Skin | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Caithe's Bloom Dagger Skin | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Caithe's Crystal Bloom Sword | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Eir's Legacy Longbow Skin | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Kasmeer's Staff Skin | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Lord Caudecus's Pistol Skin | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Lord Caudecus's Sword Skin | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Marjory's Axe Skin | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Marjory's Dagger Skin | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Replica Mirror of Lyssa | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Rox's Short Bow Skin | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Zafirah's Rifle Skin | cost = 25 Black Lion Statuette}}
+|}
+
+=== Backpack Skins and Combos ===
+{{vendor table header|historical=Y|showFacts=false|showLevel=false|showTP=true|itemWidth=300px|rarityWidth=70px|page=Template:Inventory/statuette/storage|root=Template:Inventory/statuette}}
+{{vendor table row | item = Pink Quaggan Backpack | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Glittering Backpack Set | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Green Quaggan Backpack Set | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Warrior Quaggan Backpack Cover | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Green Quaggan Backpack Cover | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Plush Quaggan Backpack Cover | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Pink Quaggan Backpack Cover | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Quaggan Killer Whale Backpack Cover | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Daydreamer's Wings Backpack Set | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Replica Job-o-Tron Backpack | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Butterfly Wings Backpack Set | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Mercenary Backpack | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Dread Quiver Backpack | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Scruffy Backpack | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Fire Quiver Backpack | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Mist Herald Back Item Skin Set | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Rox's Quiver Set | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Plush Charr Backpack Set | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Plush Baby Aurene Backpack | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Plush Ram Backpack Set | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Sloth Backpack | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Mist Herald Back Item Skin Set | cost = 30 Black Lion Statuette}}
+|}
+
+=== Dyes ===
+{{vendor table header|historical=Y|showFacts=false|showLevel=false|showTP=true|itemWidth=300px|rarityWidth=70px|page=Template:Inventory/statuette/storage|root=Template:Inventory/statuette}}
+{{vendor table row | item = Zephyrite Color Swatch: Blue | cost = 6 Black Lion Statuette}}
+{{vendor table row | item = Zephyrite Color Swatch: Green | cost = 6 Black Lion Statuette}}
+{{vendor table row | item = Zephyrite Color Swatch: Red | cost = 6 Black Lion Statuette}}
+{{vendor table row | item = Zephyrite Color Swatch: Yellow | cost = 6 Black Lion Statuette}}
+{{vendor table row | item = Consortium Dye Kit | cost = 5 Black Lion Statuette}}
+{{vendor table row | item = Blue Shift Dye Kit | cost = 5 Black Lion Statuette}}
+{{vendor table row | item = Crimson Lion Dye Kit | cost = 5 Black Lion Statuette}}
+{{vendor table row | item = Elonian Beasts Dye Kit | cost = 5 Black Lion Statuette}}
+{{vendor table row | item = Elonian Landscape Dye Kit | cost = 5 Black Lion Statuette}}
+{{vendor table row | item = Shadow Dye Kit | cost = 5 Black Lion Statuette}}
+{{vendor table row | item = Winter Chimes Dye Kit | cost = 5 Black Lion Statuette}}
+{{vendor table row | item = Glint's Winter Dye Kit | cost = 5 Black Lion Statuette}}
+{{vendor table row | item = Awakened Dye Kit | cost = 5 Black Lion Statuette}}
+{{vendor table row | item = Mordremoth Dye Kit | cost = 5 Black Lion Statuette}}
+{{vendor table row | item = Deathly Dye Kit | cost = 5 Black Lion Statuette}}
+{{vendor table row | item = Mad King Dye Kit | cost = 5 Black Lion Statuette}}
+{{vendor table row | item = Toxic Dye Kit | cost = 5 Black Lion Statuette}}
+{{vendor table row | item = Norn Dye Kit | cost = 5 Black Lion Statuette}}
+{{vendor table row | item = Charr Dye Kit | cost = 5 Black Lion Statuette}}
+{{vendor table row | item = Aurene Dye Kit | cost = 5 Black Lion Statuette}}
+{{vendor table row | item = Taimi's Dye Kit | cost = 5 Black Lion Statuette}}
+{{vendor table row | item = Vibrant Dye Kit | cost = 5 Black Lion Statuette}}
+{{vendor table row | item = Solar and Lunar Dye Kit | cost = 5 Black Lion Statuette}}
+{{vendor table row | item = Flame Dye Kit | cost = 5 Black Lion Statuette}}
+{{vendor table row | item = Frost Dye Kit | cost = 5 Black Lion Statuette}}
+{{vendor table row | item = Zhaitan Dye Kit | cost = 5 Black Lion Statuette}}
+{{vendor table row | item = Primordus Dye Kit | cost = 5 Black Lion Statuette}}
+{{vendor table row | item = Bloodstone Dye Kit | cost = 5 Black Lion Statuette}}
+{{vendor table row | item = Lion's Arch Commemorative Dye Kit | cost = 5 Black Lion Statuette}}
+{{vendor table row | item = Lion's Arch Rebuild Dye Kit | cost = 5 Black Lion Statuette}}
+{{vendor table row | item = Lion's Arch Survivors Dye Kit | cost = 5 Black Lion Statuette}}
+{{vendor table row | item = Metallurgic Dye Kit | cost = 5 Black Lion Statuette}}
+{{vendor table row | item = Jormag Dye Kit | cost = 5 Black Lion Statuette}}
+{{vendor table row | item = Kralkatorrik Dye Kit | cost = 5 Black Lion Statuette}}
+{{vendor table row | item = Sacred Dye Kit | cost = 5 Black Lion Statuette}}
+|}
+
+=== Gathering Tools ===
+{{vendor table header|historical=Y|showFacts=false|showLevel=false|showTP=true|itemWidth=300px|rarityWidth=70px|page=Template:Inventory/statuette/storage|root=Template:Inventory/statuette}}
+{{vendor table row | item = Cosmic Mining Tool | cost = 45 Black Lion Statuette}}
+{{vendor table row | item = Cosmic Logging Tool | cost = 45 Black Lion Statuette}}
+{{vendor table row | item = Cosmic Harvesting Tool | cost = 45 Black Lion Statuette}}
+{{vendor table row | item = Mad Scientist's Harvesting Tool | cost = 45 Black Lion Statuette}}
+{{vendor table row | item = Mad Scientist's Logging Tool | cost = 45 Black Lion Statuette}}
+{{vendor table row | item = Mad Scientist's Mining Tool | cost = 45 Black Lion Statuette}}
+{{vendor table row | item = Choya Harvesting Tool | cost = 45 Black Lion Statuette}}
+{{vendor table row | item = Choya Logging Tool | cost = 45 Black Lion Statuette}}
+{{vendor table row | item = Choya Mining Tool | cost = 45 Black Lion Statuette}}
+{{vendor table row | item = Butterfly Harvesting Flute | cost = 45 Black Lion Statuette}}
+{{vendor table row | item = Swarm Logging Flute | cost = 45 Black Lion Statuette}}
+{{vendor table row | item = Firefly Mining Flute | cost = 45 Black Lion Statuette}}
+{{vendor table row | item = Celestial Rooster Harvesting Tool | cost = 45 Black Lion Statuette}}
+{{vendor table row | item = Lucky Dog Harvesting Tool | cost = 45 Black Lion Statuette}}
+{{vendor table row | item = Glitter Bomb Harvesting Tool | cost = 45 Black Lion Statuette}}
+|}
+
+=== Minis ===
+{{vendor table header|historical=Y|showFacts=false|showLevel=false|showTP=true|itemWidth=300px|rarityWidth=70px|page=Template:Inventory/statuette/storage|root=Template:Inventory/statuette}}
+{{vendor table row | item = Mini Angry Wintersday Gift | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Mini Plush Aurene | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Mini Polar Bear Cub | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Mini Piglet | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Mini Orange Kitten | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Mini Moa Chick | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Mini Lion Cub | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Mini Fox Kit | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Mini Snow Cougar Cub | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Mini Arctodus Cub | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Mini Bear Cub | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Mini Hippo Calf | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Mini Jaguar Cub | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Mini White Kitten | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Mini Lucky Lantern Puppy | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Mini Garm | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Mini Summit Wildhorn Springer        | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Mini Grand Lion Griffon              | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Mini Resplendent Avialan Raptor      | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Mini Reforged Warhound Jackal        | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Mini Umbral Demon Skimmer            | cost = 25 Black Lion Statuette}}
+|}
+
+=== Toys ===
+{{vendor table header|historical=Y|showFacts=false|showLevel=false|showTP=true|itemWidth=300px|rarityWidth=70px|page=Template:Inventory/statuette/storage|root=Template:Inventory/statuette}}
+{{vendor table row | item = Lightning Kite | cost = 15 Black Lion Statuette}}
+{{vendor table row | item = Sun Kite | cost = 15 Black Lion Statuette}}
+{{vendor table row | item = Wind Kite | cost = 15 Black Lion Statuette}}
+{{vendor table row | item = Dragon Emblem Balloon | cost = 10 Black Lion Statuette}}
+{{vendor table row | item = Pact Airship Balloon | cost = 10 Black Lion Statuette}}
+{{vendor table row | item = Ram Balloon | cost = 10 Black Lion Statuette}}
+{{vendor table row | item = Red Lantern (toy) | cost = 10 Black Lion Statuette}}
+{{vendor table row | item = Bloodstone Ascender | cost = 10 Black Lion Statuette}}
+{{vendor table row | item = Electromagnetic Ascender | cost = 10 Black Lion Statuette}}
+{{vendor table row | item = Hovering Mad Mirror | cost = 10 Black Lion Statuette}}
+{{vendor table row | item = Magic Carpet | cost = 10 Black Lion Statuette}}
+{{vendor table row | item = Sonic Tunneling Tool | cost = 10 Black Lion Statuette}}
+{{vendor table row | item = Riding Broom | cost = 10 Black Lion Statuette}}
+{{vendor table row | item = Flute | cost = 30 Black Lion Statuette}}
+{{vendor table row | item = Marriner's Horn | cost = 30 Black Lion Statuette}}
+{{vendor table row | item = Musical Bass Guitar | cost = 30 Black Lion Statuette}}
+{{vendor table row | item = Musical Frame Drum | cost = 30 Black Lion Statuette}}
+{{vendor table row | item = Musical Harp | cost = 30 Black Lion Statuette}}
+{{vendor table row | item = Musical Lute | cost = 30 Black Lion Statuette}}
+{{vendor table row | item = Haunted Gramophone | cost = 30 Black Lion Statuette}}
+|}
+
+=== Historical items ===
+These items have been replaced and will no longer be available, or were available only once and never returned.
+{{vendor table header|showFacts=false|showLevel=false|showTP=true|itemWidth=300px|rarityWidth=70px}}
+{{vendor table row | item = White Wings Glider Combo (statuettes) | cost = 30 Black Lion Statuette}}
+{{vendor table row | item = Black Wings Glider Combo (statuettes) | cost = 30 Black Lion Statuette}}
+{{vendor table row | item = Season 1 Memory Box - Flame and Festivals | cost = 15 Black Lion Statuette}}
+{{vendor table row | item = Season 1 Memory Box - Scarlet vs. Lion's Arch | cost = 15 Black Lion Statuette}}
+{{vendor table row | item = Black Lion Winter's Weapons Selection | cost = 125 Black Lion Statuette}}
+{{vendor table row | item = Black Lion Winter's Weapons Complete Collection | cost = 1000 Black Lion Statuette}}
+{{vendor table row | item = Black Lion Wintersday Weapons Selection | cost = 125 Black Lion Statuette}}
+{{vendor table row | item = Black Lion Wintersday Weapons Complete Collection | cost = 1600 Black Lion Statuette}}
+|}</text>
+      <sha1>t2q27aco9iyhb50ubp6vwmvduz7jo2l</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Template:Inventory/statuette</title>
+    <ns>10</ns>
+    <id>229478</id>
+    <revision>
+      <id>3128274</id>
+      <parentid>3118106</parentid>
+      <timestamp>2026-04-14T22:06:23Z</timestamp>
+      <contributor>
+        <username>DiegoDeLaHouska</username>
+        <id>206595</id>
+      </contributor>
+      <minor/>
+      <origin>3128274</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="24280" sha1="gc7905caqqqj59ayw743yh8zpsz3cdp" xml:space="preserve">{{Inventory/Vendor subpage header}}
+
+&lt;onlyinclude&gt;
+=== General Offerings ===
+{{vendor table header|showFacts=false|showLevel=false|showTP=true|itemWidth=300px|rarityWidth=70px}}
+{{vendor table row | item = Black Lion Claim Ticket              | cost = 40 Black Lion Statuette}}
+{{vendor table row | item = Black Lion Claim Ticket Scrap        | cost = 5 Black Lion Statuette}}
+{{vendor table row | item = Total Makeover Kit                   | cost = 10 Black Lion Statuette}}
+{{vendor table row | item = Self-Style Hair Kit                  | cost = 7 Black Lion Statuette}}
+{{vendor table row | item = Transmutation Charge (item) | quantity = 2 | cost = 1 Black Lion Statuette}}
+{{vendor table row | item = Golden Black Lion Chest Key          | cost = 50 Black Lion Statuette}}
+{{vendor table row | item = Revive Orb                           | cost = 2 Black Lion Statuette}}
+{{vendor table row | item = Upgrade Extractor                    | cost = 2 Black Lion Statuette}}
+{{vendor table row | item = Teleport to Friend                   | cost = 4 Black Lion Statuette}}
+{{vendor table row | item = Black Lion Salvage Kit               | cost = 3 Black Lion Statuette}}
+{{vendor table row | item = Metabolic Primer                     | cost = 2 Black Lion Statuette}}
+{{vendor table row | item = Utility Primer                       | cost = 2 Black Lion Statuette}}
+{{vendor table row | item = Heroic Booster                       | cost = 3 Black Lion Statuette}}
+{{vendor table row | item = Black Lion Booster                   | cost = 1 Black Lion Statuette}}
+{{vendor table row | item = Communal Boost Bonfire               | cost = 7 Black Lion Statuette}}
+{{vendor table row | item = Large Crafting Bag                   | cost = 1 Black Lion Statuette}}
+{{vendor table row | item = Heavy Crafting Bag                   | cost = 2 Black Lion Statuette}}
+{{vendor table row | item = Black Lion Material Bag: Orr         | cost = 4 Black Lion Statuette}}
+{{vendor table row | item = Black Lion Material Bag: Elona       | cost = 4 Black Lion Statuette}}
+{{vendor table row | item = Black Lion Material Bag: Istan       | cost = 4 Black Lion Statuette}}
+{{vendor table row | item = Black Lion Material Bag: Thunderhead | cost = 4 Black Lion Statuette}}
+{{vendor table row | item = Black Lion Material Bag: Dragonfall  | cost = 4 Black Lion Statuette}}
+{{vendor table row | item = Black Lion Material Bag: Bjora Marches  | cost = 5 Black Lion Statuette}}
+{{vendor table row | item = Black Lion Material Bag: Icebrood Saga  | cost = 5 Black Lion Statuette}}
+{{vendor table row | item = Black Lion Commemorative Coin        | cost = 1 Black Lion Statuette}}
+{{vendor table row | item = Armistice Bastion Pass (2 weeks)     | cost = 5 Black Lion Statuette}}
+{{vendor table row | item = Captain's Airship Pass (2 weeks)     | cost = 4 Black Lion Statuette}}
+{{vendor table row | item = Lava Lounge Pass (2 weeks)           | cost = 4 Black Lion Statuette}}
+{{vendor table row | item = Mistlock Sanctuary Passkey (2 weeks) | cost = 5 Black Lion Statuette}}
+{{vendor table row | item = Noble's Folly Pass (2 weeks)         | cost = 4 Black Lion Statuette}}
+{{vendor table row | item = Royal Pass (2 weeks)                 | cost = 4 Black Lion Statuette}}
+{{vendor table row | item = Thousand Seas Pavilion Pass (2 weeks) | cost = 5 Black Lion Statuette}}
+|}
+
+=== New Black Lion Chest Exclusives ===
+{{vendor table header|showFacts=false|showLevel=false|showTP=true|itemWidth=300px|rarityWidth=70px|requirement=the respective item not already unlocked in the wardrobe}}
+{{vendor table row | item = Acclaimed Militia Leggings Skin| cost = 60 Black Lion Statuette}}
+{{vendor table row | item = Dance Platform Package| cost = 60 Black Lion Statuette}}
+{{vendor table row | item = Vermilion Staff Skin| cost = 60 Black Lion Statuette}}
+{{vendor table row | item = Steam-Powered Legwear Package| cost = 60 Black Lion Statuette}}
+{{vendor table row | item = Asuran Conjured Doorway Skin| cost = 60 Black Lion Statuette}}
+{{vendor table row | item = Blazing Cape and Glider Combo| cost = 60 Black Lion Statuette}}
+|}
+
+=== Recent Black Lion Chest Exclusives ===
+{{vendor table header|showFacts=false|showLevel=false|showTP=true|itemWidth=300px|rarityWidth=70px|requirement=the respective item not already unlocked in the wardrobe}}
+{{vendor table row | item = Witch Cauldron Chair| cost = 45 Black Lion Statuette}}
+{{vendor table row | item = "/Barbecue" Emote Tome| cost = 45 Black Lion Statuette}}
+{{vendor table row | item = Haunted Anchor Axe Skin| cost = 45 Black Lion Statuette}}
+{{vendor table row | item = Regenerative Chamber Chair| cost = 45 Black Lion Statuette}}
+{{vendor table row | item = Valkyrie's Champion Helm Skin| cost = 45 Black Lion Statuette}}
+{{vendor table row | item = Stellar Dragon Wings Backpack and Glider Combo| cost = 45 Black Lion Statuette}}
+{{vendor table row | item = Aquarium Greatsword Skin| cost = 45 Black Lion Statuette}}
+{{vendor table row | item = "/MagicTrick" Emote Tome| cost = 45 Black Lion Statuette}}
+{{vendor table row | item = Synergetics Headset Pack| cost = 45 Black Lion Statuette}}
+{{vendor table row | item = Infused Aurora Leggings Skin| cost = 45 Black Lion Statuette}}
+{{vendor table row | item = "/BlowKiss" Emote Tome| cost = 45 Black Lion Statuette}}
+{{vendor table row | item = Campfire Chair| cost = 45 Black Lion Statuette}}
+{{vendor table row | item = Vagabond's Package| cost = 45 Black Lion Statuette}}
+{{vendor table row | item = Vengeful Wolf Rider Helm Skin| cost = 45 Black Lion Statuette}}
+{{vendor table row | item = The Stormpiercer Spear Skin| cost = 45 Black Lion Statuette}}
+{{vendor table row | item = Mystic Visionary Cape| cost = 45 Black Lion Statuette}}
+{{vendor table row | item = Portable Hot Springs Chair| cost = 45 Black Lion Statuette}}
+{{vendor table row | item = Acclaimed Militia Chestpiece Skin| cost = 45 Black Lion Statuette}}
+{{vendor table row | item = Skysteel Package| cost = 45 Black Lion Statuette}}
+|}
+
+=== Vintage Black Lion Chest Exclusives ===
+{{vendor table header|showFacts=false|showLevel=false|showTP=true|itemWidth=300px|rarityWidth=70px|requirement=the respective item not already unlocked in the wardrobe}}
+{{vendor table row | item = Divine Radiance Sword Skin| cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Neon Demon Mask Skin| cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Flowing Scaled Cape| cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Council of Commentators Chair| cost = 25 Black Lion Statuette}}
+{{vendor table row | item = "/Unleash" Emote Tome| cost = 25 Black Lion Statuette|requirement=emote not to be unlocked yet}}
+{{vendor table row | item = Toymaker's Party Skiff Skin| cost = 40 Black Lion Statuette}}
+{{vendor table row | item = Cyberhowl Greatsword Skin| cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Star Sentinel Outfit| cost = 30 Black Lion Statuette}}
+{{vendor table row | item = Box of Deathly Shoulder Skins | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Box of Deathly Avian Shoulder Skins | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Box of Deathly Bull's Shoulder Skins | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Arcane Sigil Backpack and Glider Combo | cost = 30 Black Lion Statuette}}
+{{vendor table row | item = Dove Lover's Bench Chair | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Clockwork Scythe Staff Skin | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Exalted Mining Tool | cost = 30 Black Lion Statuette}}
+{{vendor table row | item = Personal Gyrocopter Chair Glider Combo | cost = 30 Black Lion Statuette}}
+{{vendor table row | item = Reconfigurable Construct Greatsword Skin | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Infused Aurora Gloves Skin | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Infused Aurora Chestguard Skin | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Roundtail Dragon Jade Bot Skin | cost = 40 Black Lion Statuette}}
+{{vendor table row | item = Hologram Outfit | cost = 30 Black Lion Statuette}}
+{{vendor table row | item = Ebonhawke Crossbow Rifle Skin | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Scrivener's Knowledge Shoulders Skin | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Undying Shackles Cape and Glider Combo | cost = 30 Black Lion Statuette}}
+{{vendor table row | item = Fate Unraveling Sword Skin | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Devil-Rending Cape | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Fortunate Blossom Fishing Rod Skin | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Festive Iceberg Skiff Skin | cost = 40 Black Lion Statuette}}
+{{vendor table row | item = Infernal Flail Mace Skin | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Seven Reapers Breastplate Skin | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Seven Reapers Legguards Skin | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Playful Ghost Jade Bot Skin | cost = 40 Black Lion Statuette}}
+{{vendor table row | item = Candlewick Sprite Jade Bot Skin | cost = 40 Black Lion Statuette}}
+{{vendor table row | item = Jade Tech Jetpack Backpack and Glider Combo | cost = 30 Black Lion Statuette}}
+{{vendor table row | item = Holographic Koi Backpiece Skin | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Mystical Dragon Horns Helm Skin | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Jade Tech Chair | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Jade Tech Wings Backpack and Glider Combo | cost = 30 Black Lion Statuette}}
+{{vendor table row | item = Winged Reverie Skiff Skin | cost = 40 Black Lion Statuette}}
+{{vendor table row | item = Bloodflame Sword Skin | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Lunar Backpack and Glider Combo | cost = 30 Black Lion Statuette}}
+{{vendor table row | item = Ebonhawke Crossbow Pistol Skin | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Seven Reapers Helm Skin | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Seven Reapers Greaves Skin | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Vermilion Bow Package | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Archdemon Wings Backpack and Glider Combo | cost = 30 Black Lion Statuette}}
+{{vendor table row | item = Arcane Battlestaff Skin | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Starborn Cape | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Seraph Wings Backpack and Glider Combo | cost = 30 Black Lion Statuette}}
+{{vendor table row | item = Mystic Smoking Pipe Warhorn Skin | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Seven Reapers Pauldrons Skin | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Wandering Cloud Chair and Glider Combo | cost = 30 Black Lion Statuette}}
+{{vendor table row | item = Tempest Gaze Helm Skin | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Shimmering Aurora Cape and Glider Combo | cost = 30 Black Lion Statuette}}
+{{vendor table row | item = Vermilion Blaze Greatsword Skin | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Vermilion Throne | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Dark Matter Cape | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Ebon Vanguard Elite Outfit and Shoulders Package | cost = 30 Black Lion Statuette}}
+{{vendor table row | item = Thunderhorse Staff Skin | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Vermilion Wings Backpack and Glider Combo | cost = 30 Black Lion Statuette}}
+{{vendor table row | item = Wyrm's Breath Cape | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Seven Reapers Grasps Skin | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Vermilion Tail Feather Skin | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Dreamwalker Wings Backpack and Glider Combo | cost = 30 Black Lion Statuette}}
+{{vendor table row | item = Kasmeer's Regalia Cape | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Whale Spirit Glider | cost = 30 Black Lion Statuette}}
+{{vendor table row | item = Starlight Wings Backpack and Glider Combo | cost = 30 Black Lion Statuette}}
+{{vendor table row | item = Celestial Axe Skin | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Searing Chain Gloves | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Golden Talon Longbow | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Watchwork Wings Package | cost = 30 Black Lion Statuette}}
+{{vendor table row | item = Starborn Outfit | cost = 30 Black Lion Statuette}}
+{{vendor table row | item = Dragon Fireworks Package | cost = 30 Black Lion Statuette}}
+{{vendor table row | item = Branded Relic Package | cost = 30 Black Lion Statuette}}
+{{vendor table row | item = Etherbound Package | cost = 30 Black Lion Statuette}}
+{{vendor table row | item = Exalted Shoulders Skin | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Roaring Dragon Glider | cost = 30 Black Lion Statuette}}
+{{vendor table row | item = Iron Beast Greatsword | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Desert King Throne | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Envoy Scythe Staff Skin | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Springer Kit Backpack | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Mini Exo-Suit Mounts Pack | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Storm Dagger Skin | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Mini Awakened Mounts Pack | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Jeweled Scarab Package | cost = 30 Black Lion Statuette}}
+{{vendor table row | item = Exalted Gloves (consumable) | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Celestial Compass Skin | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Mini Branded Mounts Pack | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Fire-Breathing Package | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Griffon Hatchling Package | cost = 30 Black Lion Statuette}}
+{{vendor table row | item = Svanir Gauntlets | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Mini Cozy Wintersday Mounts Pack | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Wild Magic Backpack Glider Combo | cost = 30 Black Lion Statuette}}
+{{vendor table row | item = Mini Spooky Mounts Pack | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Fallen Balthazar Package | cost = 30 Black Lion Statuette}}
+{{vendor table row | item = Hydra Staff | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Jackal Pup Backpack | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Mini Dwayna's Messenger | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Feathers of the Zephyr Package | cost = 30 Black Lion Statuette}}
+{{vendor table row | item = Hounds of Balthazar Mail Carrier | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Sworn Zaishen Helm Skin | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Elemental Sword | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Noran's Safe Room Pass and Key | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Mini Celestial Rooster | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Infinirarium Glider | cost = 30 Black Lion Statuette}}
+{{vendor table row | item = Candelabra Staff | cost = 25 Black Lion Statuette}}
+{{vendor table row | item = Bitterfrost Vantage Point | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Grasping Phantom Glider | cost = 30 Black Lion Statuette}}
+|}
+
+=== Classic Cosmetics ===
+{{vendor table header|showFacts=false|showLevel=false|showTP=true|itemWidth=300px|rarityWidth=70px}}
+{{vendor table row | item = Black Lion Miniature Claim Ticket    | cost = 10 Black Lion Statuette}}
+{{vendor table row | item = Toy Mini Egg                         | cost = 5 Black Lion Statuette}}
+{{vendor table row | item = Guaranteed Wardrobe Unlock           | cost = 15 Black Lion Statuette}}
+{{vendor table row | item = Guaranteed Armor Unlock              | cost = 30 Black Lion Statuette}}
+{{vendor table row | item = Guaranteed Weapon Unlock             | cost = 30 Black Lion Statuette}}
+{{vendor table row | item = Endless Mystery Tonic | id =20320    | cost = 75 Black Lion Statuette}}
+{{vendor table row | item = Endless Mystery Tonic | id =20321    | cost = 75 Black Lion Statuette}}
+{{vendor table row | item = Endless Mystery Tonic | id =20319    | cost = 75 Black Lion Statuette}}
+{{vendor table row | item = Endless Desert Mystery Tonic         | cost = 75 Black Lion Statuette}}
+{{vendor table row | item = Immortal Weapon Choice               | cost = 100 Black Lion Statuette}}
+{{vendor table row | item = Onyx and Gold Lion Weapon Choice     | cost = 125 Black Lion Statuette}}
+{{vendor table row | item = Mythic Weapon Choice     | cost = 150 Black Lion Statuette}}
+{{vendor table row | item = Mini Red Griffon Hatchling | cost = 5 Black Lion Statuette}}
+{{vendor table row | item = Mini Green Raptor Hatchling | cost = 5 Black Lion Statuette}}
+{{vendor table row | item = Mini Brown Springer Kit | cost = 5 Black Lion Statuette}}
+{{vendor table row | item = Mini Blue Skimmer Pup | cost = 5 Black Lion Statuette}}
+{{vendor table row | item = Mini Gray Skyscale Hatchling | cost = 5 Black Lion Statuette}}
+{{vendor table row | item = Mini Yellow Jackal Pup | cost = 5 Black Lion Statuette}}
+{{vendor table row | item = Mini Red Shiba Inu | cost = 5 Black Lion Statuette}}
+{{vendor table row | item = Mini Orange Tigris Cub | cost = 5 Black Lion Statuette}}
+{{vendor table row | item = Mini Blue Cuckoo Hatchling | cost = 5 Black Lion Statuette}}
+|}
+
+=== Resources ===
+{{vendor table header|showFacts=false|showLevel=false|showTP=true|itemWidth=300px|rarityWidth=70px}}
+{{vendor table row | item = Hard Wood Logging Node | cost = 100 Black Lion Statuette}}
+{{vendor table row | item = Ancient Wood Logging Node | cost = 100 Black Lion Statuette}}
+{{vendor table row | item = Elder Wood Logging Node | cost = 100 Black Lion Statuette}}
+{{vendor table row | item = Mithril Mining Node | cost = 100 Black Lion Statuette}}
+{{vendor table row | item = Orichalcum Mining Node | cost = 100 Black Lion Statuette}}
+{{vendor table row | item = Iron Ore Mining Node | cost = 100 Black Lion Statuette}}
+{{vendor table row | item = Platinum Mining Node | cost = 100 Black Lion Statuette}}
+{{vendor table row | item = Snow Truffle Harvesting Node | cost = 100 Black Lion Statuette}}
+{{vendor table row | item = Omnomberry Harvesting Node | cost = 100 Black Lion Statuette}}
+{{vendor table row | item = Orrian Truffle Harvesting Node | cost = 100 Black Lion Statuette}}
+{{vendor table row | item = Flaxseed Harvesting Node | cost = 100 Black Lion Statuette}}
+{{vendor table row | item = Ghost Pepper Harvesting Node | cost = 100 Black Lion Statuette}}
+{{vendor table row | item = Lotus Harvesting Node | cost = 100 Black Lion Statuette}}
+{{vendor table row | item = Fused Molten Sickle | cost = 45 Black Lion Statuette}}
+{{vendor table row | item = Fused Molten Logging Axe | cost = 45 Black Lion Statuette}}
+{{vendor table row | item = Molten Alliance Mining Pick | cost = 45 Black Lion Statuette}}
+{{vendor table row | item = Reap-r-Tron | cost = 45 Black Lion Statuette}}
+{{vendor table row | item = Log-r-Tron | cost = 45 Black Lion Statuette}}
+{{vendor table row | item = Mine-r-Tron | cost = 45 Black Lion Statuette}}
+|}
+
+=== Mail Carriers and Finishers ===
+{{vendor table header|showFacts=false|showLevel=false|showTP=true|itemWidth=300px|rarityWidth=70px}}
+{{vendor table row | item = Aviator Quaggan Mail Carrier | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Confetti Mail Delivery | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Exalted Mail Courier | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Ghostly Mail Courier | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Gifts Mail Delivery | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Griffon Mail Carrier | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Red Envelope Mail Carrier | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Revenant Mail Carrier | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Snow Owl Mail Carrier | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Sylvari Seed Pod Mail Carrier | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Permanent Spectre Finisher | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Permanent Pact Fleet Finisher | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Permanent Ascalonian-Leader Finisher | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Permanent Cow Finisher | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Permanent Grave Finisher | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Permanent Great Jungle Wurm Finisher | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Permanent Martial Finisher | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Permanent Honor Guard Finisher | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Permanent Thornroot Finisher | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Permanent Ley Line Finisher | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Permanent Skritt-Scavenger Finisher | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Permanent Sanctified Finisher | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Permanent Quaggan Finisher | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Permanent Avatar of Death Finisher | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Permanent Whump the Giant Finisher | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Permanent Golem Pummeler Finisher | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Permanent Wizard Lightning Finisher | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Permanent Twisted Watchwork Finisher | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Permanent Chickenado Finisher | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Permanent Guild Flag Finisher | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Permanent Vigil Megalaser Finisher | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Permanent Guild Shield Finisher | cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Permanent Toxic Offshoot Finisher | cost = 20 Black Lion Statuette}}
+|}
+
+=== Outfits ===
+{{vendor table header|showFacts=false|showLevel=false|showTP=true|itemWidth=300px|rarityWidth=70px|requirement=the respective outfit not already unlocked in the wardrobe}}
+{{vendor table row | item = Riding Clothes Outfit| cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Silk Brocade Outfit| cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Casual Clothing Outfit| cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Cherry Blossom Clothing Outfit| cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Country Lace Clothing Outfit| cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Striped Silk Clothing Outfit| cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Casual Hoodie Clothing Outfit| cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Leather Hoodie Clothing Outfit| cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Khaki Clothing Outfit| cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Layered Vest Clothing Outfit| cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Ornate Clothing Outfit| cost = 20 Black Lion Statuette}}
+{{vendor table row | item = Common Clothing Outfit| cost = 1 Black Lion Statuette}}
+|}
+&lt;/onlyinclude&gt;</text>
+      <sha1>gc7905caqqqj59ayw743yh8zpsz3cdp</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Black Lion Chest Merchant</title>
+    <ns>0</ns>
+    <id>228643</id>
+    <revision>
+      <id>2988722</id>
+      <parentid>2905037</parentid>
+      <timestamp>2025-06-23T18:04:24Z</timestamp>
+      <contributor>
+        <username>Tery3065</username>
+        <id>270948</id>
+      </contributor>
+      <minor/>
+      <origin>2988722</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="3304" sha1="dfgg3w5wt35xwwgeilhhvwvwn70wm35" xml:space="preserve">{{NPC infobox
+| icon = Black Lion Chest Merchant.png
+| location = Arborstone; Memorial Quadrant; Outer Ring; Dwayna High Road; Trader's Forum; Interdisciplinary Accessium; Reckoner's Terrace; Trade Commons; Arborstone
+| race = Human, Charr, Sylvari
+| organization = Black Lion Trading Company
+| gallery1 = Black Lion Chest Merchant (charr).jpg
+| service = Merchant
+}}
+[[Black Lion Chest Merchant]] are [[merchant]]s offering to exchange [[Black Lion Statuette]]s. They can be found in all main cities near [[Trading Post]]s. Their inventory usually changes with the release of a new [[Black Lion Chest]].
+
+== Locations ==
+;[[Cantha]]
+* [[Arborstone]]
+
+;[[Ascalon]]
+* [[Black Citadel]]
+** [[Memorial Quadrant]]
+
+;[[Horn of Maguuma]]
+* [[The Wizard's Tower]]
+** [[Outer Ring]]
+
+;[[Kryta]]
+* [[Divinity's Reach]]
+** [[Dwayna High Road]]
+** [[Plaza of Balthazar]]
+*** [[Royal Terrace]]&lt;sup&gt;1&lt;/sup&gt;
+* [[Gendarran Fields]]
+** [[Snowblind Peaks]]
+*** [[Havoc's Heir]]&lt;sup&gt;2&lt;/sup&gt;
+* [[Lion's Arch]]
+** [[Eastern Ward]] &lt;small&gt;(inside the Vaults)&lt;/small&gt;
+** [[Trader's Forum]] &lt;small&gt;(inside the Trading Post)&lt;/small&gt;
+
+;[[Maguuma Jungle]]
+* [[Rata Sum]]
+** [[Interdisciplinary Accessium]]
+
+* [[The Grove]]
+** [[Reckoner's Terrace]]
+
+;[[Shiverpeak Mountains]]
+* [[Hoelbrak]]
+** [[Trade Commons]]
+
+;[[Crystal Desert]]
+* [[Crystal Oasis]]
+** [[Bay of Elon]]
+*** [[Lily of the Elon]]&lt;sup&gt;3&lt;/sup&gt;
+
+;[[Heart of Maguuma]]
+* [[Verdant Brink]]
+** [[Noble's Folly]]&lt;sup&gt;4&lt;/sup&gt;
+
+;[[Ring of Fire]]
+* [[Ember Bay]]
+** [[Lava Lounge]]&lt;sup&gt;5&lt;/sup&gt;
+
+;[[The Mists]]
+* [[Mistlock Sanctuary]]&lt;sup&gt;6&lt;/sup&gt;
+* [[Armistice Bastion]]
+
+:&lt;sup&gt;1&lt;/sup&gt;&lt;small&gt;Only accessible with a [[Royal Pass (2 weeks)]] or [[Royal Terrace Pass]]&lt;/small&gt;
+:&lt;sup&gt;2&lt;/sup&gt;&lt;small&gt;Only accessible with a [[Captain's Airship Pass (single use)]], [[Captain's Airship Pass (2 weeks)]], or [[Captain's Airship Pass]]&lt;/small&gt;
+:&lt;sup&gt;3&lt;/sup&gt;&lt;small&gt;Only accessible with a [[Invitation to "Lily of the Elon"]]&lt;/small&gt;
+:&lt;sup&gt;4&lt;/sup&gt;&lt;small&gt;Only accessible with a [[Noble's Folly Pass (2 weeks)]] or [[Noble's Folly Pass]]&lt;/small&gt;
+:&lt;sup&gt;5&lt;/sup&gt;&lt;small&gt;Only accessible with a [[Lava Lounge Pass (2 weeks)]] or [[Lava Lounge Pass]]&lt;/small&gt;
+:&lt;sup&gt;6&lt;/sup&gt;&lt;small&gt;Only accessible with a [[Mistlock Sanctuary Passkey (2 weeks)]] or [[Mistlock Sanctuary Passkey]]&lt;/small&gt;
+
+== Items offered ==
+{{main|Black Lion Statuette/historical|label=For previous contents, see}}
+{{inventory|statuette}}
+
+== Notes ==
+* The [[Game updates/2023-02-28|February 28, 2023]] reworked the interface and adjusted the offers, lowering the price of many items. All former [[Black Lion Exclusives Chest]] items will be permanently available for purchase for statuettes once they leave the Black Lion Chest itself.
+** The update introduced three new tabs:
+*** New Black Lion Chest Exclusives: Items in this category cost 60 statuettes.
+*** Recent Black Lion Chest Exclusives: Items in this category cost 45 statuettes.
+*** Vintage Black Lion Chest Exclusives: Items in this tab are priced according to their category. For example, weapon skins cost 25 statuettes.
+** Exclusive items will move down the lists of available stock and into the next tab as new items are introduced over time.
+
+[[de:Schwarzlöwen-Truhen-Kaufmann]]
+[[es:Mercader de cofres del León Negro]]
+[[fr:Marchand de coffre du Lion noir]]</text>
+      <sha1>dfgg3w5wt35xwwgeilhhvwvwn70wm35</sha1>
+    </revision>
+  </page>
+</mediawiki>

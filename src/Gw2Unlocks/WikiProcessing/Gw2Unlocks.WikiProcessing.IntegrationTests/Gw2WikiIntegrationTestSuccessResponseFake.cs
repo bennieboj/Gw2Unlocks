@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Gw2Unlocks.WikiProcessing.IntegrationTests
 {
-    internal sealed class Gw2WikiIntegrationTestSuccessResponseFake(CachePaths cachepaths) : GenericCache(cachepaths, "."), IGw2WikiSource, IGw2WikiCache
+    internal sealed class Gw2WikiIntegrationTestSuccessResponseFake(CachePaths cachePaths) : GenericCache(cachePaths.CacheDir, "."), IGw2WikiSource, IGw2WikiCache
     {
         internal required string FileName { get; set; } = string.Empty;
 

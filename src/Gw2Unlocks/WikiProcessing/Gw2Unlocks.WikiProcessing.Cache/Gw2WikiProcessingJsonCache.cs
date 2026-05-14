@@ -5,7 +5,7 @@ using System.Threading;
 using System.Threading.Tasks;
 
 namespace Gw2Unlocks.WikiProcessing.Cache;
-internal sealed class Gw2WikiProcessingJsonCache(CachePaths cachePaths) : GenericCache(cachePaths, "wiki-processing"), IGw2WikiProcessingCache
+internal sealed class Gw2WikiProcessingJsonCache(CachePaths cachePaths) : GenericCache(cachePaths.CacheDir, "wiki-processing"), IGw2WikiProcessingCache
 {
     private const string wikiGraphFileName = "wikigraph.json";
     private const string zoneDataFileName = "zonedata.json";

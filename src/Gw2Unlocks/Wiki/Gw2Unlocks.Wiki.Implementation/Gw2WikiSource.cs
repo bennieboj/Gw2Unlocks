@@ -60,6 +60,9 @@ public sealed class Gw2WikiSource(ILogger<Gw2WikiSource> logger, Lazy<Task<WikiS
 
         if (batch.Count > 0)
         {
+            batch.Add("Template:Inventory/black lion claim ticket");
+            batch.Add("Template:Inventory/statuette");
+
             int batchCount = 0;
 
             await foreach (var pageXml in ProcessBatch(batch, http, retryPolicy, cancellationToken))
@@ -95,58 +98,6 @@ public sealed class Gw2WikiSource(ILogger<Gw2WikiSource> logger, Lazy<Task<WikiS
         }
     }
 
-    public async Task<Collection<string>> GetAllPages(CancellationToken cancellationToken)
-    {
-        using var http = new HttpClient();
-        http.DefaultRequestHeaders.UserAgent.ParseAdd("Mozilla/5.0");
-
-        var retryPolicy = Policy
-            .HandleResult<HttpResponseMessage>(r => !r.IsSuccessStatusCode)
-            .WaitAndRetryAsync(
-                retryCount: 5, // number of retries
-                sleepDurationProvider: attempt => TimeSpan.FromSeconds(Math.Pow(2, attempt)), // exponential backoff
-                onRetry: (response, timespan, retryCount, context) =>
-                {
-                    Console.WriteLine($"Request failed with {response.Result.StatusCode}. Waiting {timespan} before retry {retryCount}.");
-                });
-
-        var batch = new List<string>();
-        int batchSize = 100;
-
-        var site = await lazySite.Value;
-        var generator = new AllPagesGenerator(site)
-        {
-            NamespaceId = 0, // 0 = main
-            PaginationSize = batchSize
-        };
-
-        var xmls = new Collection<string>();
-        await foreach (var page in generator.EnumPagesAsync())
-        {
-            //if (xmls.Count > 5) break;
-
-            if (page?.Title == null) continue;
-
-            batch.Add(page.Title);
-
-            if (batch.Count >= batchSize)
-            {
-                xmls.Add(await DownloadExportBatch(http, retryPolicy, batch, cancellationToken));
-                batch.Clear();
-                logger.LogInformation("exported {count}", xmls.Count * batchSize);
-                await Task.Delay(100, cancellationToken); // be nice to the server
-            }
-
-        }
-
-        // remaining pages
-        if (batch.Count > 0)
-        {
-            xmls.Add(await DownloadExportBatch(http, retryPolicy, batch, cancellationToken));
-            logger.LogInformation("exported {count}", xmls.Count * batchSize + batch.Count);
-        }
-        return xmls;
-    }
 
     private static async Task<string> DownloadExportBatch(
     HttpClient http,

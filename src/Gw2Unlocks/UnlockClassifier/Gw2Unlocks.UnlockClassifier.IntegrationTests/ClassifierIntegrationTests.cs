@@ -1,5 +1,4 @@
-﻿using GuildWars2.Hero.Achievements;
-using GuildWars2.Hero.Achievements.Rewards;
+﻿using GuildWars2.Hero.Achievements.Rewards;
 using GuildWars2.Hero.Builds;
 using GuildWars2.Hero.Equipment.Miniatures;
 using GuildWars2.Hero.Equipment.Novelties;
@@ -12,7 +11,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -44,6 +42,20 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
         Assert.NotNull(unlock);
         Assert.NotNull(unlock.ApiData);
         Assert.IsAssignableFrom<Miniature>(unlock.ApiData);
+    }
+
+    [Fact]
+    public async Task GivenUnlockSoldInGemStoreThenShouldReturnGemStore()
+    {
+        var unlockName = "Aurene's Crystalline Claws (heavy skin)";
+        var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
+        var group = results.UnlockGroups.Single(g => g.Name == "Other");
+        var category = group.UnlockCategories.Single(c => c.Name == "Gem Store");
+        var unlock = category.Unlocks.Single(c => c.Name == unlockName);
+
+        Assert.NotNull(unlock);
+        Assert.NotNull(unlock.ApiData);
+        Assert.IsAssignableFrom<EquipmentSkin>(unlock.ApiData);
     }
 
     [Fact]
@@ -89,6 +101,37 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
     }
 
     [Theory]
+    [InlineData("Painter's Brilliance Axe")] // skin
+    [InlineData("Abaddon Axe (skin)")]
+    [InlineData("Collapsing Star Spear")] //skin
+    [InlineData("Chiroptophobia")] //skin
+    public async Task GivenSkinSoldForBlackLionClaimTicketShouldLinkToBlackLionClaimTicket(string unlockName)
+    {
+        var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
+        var group = results.UnlockGroups.Single(g => g.Name == "Other");
+        var category = group.UnlockCategories.Single(c => c.Name == "Black Lion Claim Ticket");
+        var unlock = category.Unlocks.Single(c => c.Name == unlockName);
+
+        Assert.NotNull(unlock);
+        Assert.NotNull(unlock.ApiData);
+        Assert.IsAssignableFrom<WeaponSkin>(unlock.ApiData);
+    }
+
+    [Theory]
+    [InlineData("Golden Talon")] // skin
+    [InlineData("Fuzzy Leopard Hat (heavy skin)")]
+    public async Task GivenSkinSoldForBlackLionStatuettesShouldLinkToBlackLionStatuettes(string unlockName)
+    {
+        var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
+        var group = results.UnlockGroups.Single(g => g.Name == "Other");
+        var category = group.UnlockCategories.Single(c => c.Name == "Black Lion Statuette");
+        var unlock = category.Unlocks.Single(c => c.Name == unlockName);
+
+        Assert.NotNull(unlock);
+        Assert.NotNull(unlock.ApiData);
+    }
+
+    [Theory]
     [InlineData("Great Capra (skin)", "Verdant Brink")]
     [InlineData("Ley Guard's Protector", "Auric Basin")]
     [InlineData("Ley Guard's Revolver", "Auric Basin")]
@@ -118,6 +161,62 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
         Assert.NotNull(unlock);
         Assert.NotNull(unlock.ApiData);
         Assert.IsAssignableFrom<Novelty>(unlock.ApiData);
+    }
+
+    [Fact]
+    public async Task BlueChoyaKiteIsCrystalOasis()
+    {
+        var unlockName = "Blue Choya Kite";
+        var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
+        var group = results.UnlockGroups.Single(g => g.Name == "Path of Fire");
+        var category = group.UnlockCategories.Single(c => c.Name == "Crystal Oasis");
+        var unlock = category.Unlocks.Single(c => c.Name == unlockName);
+
+        Assert.NotNull(unlock);
+        Assert.NotNull(unlock.ApiData);
+        Assert.IsAssignableFrom<Novelty>(unlock.ApiData);
+    }
+
+    [Fact]
+    public async Task MistShardVisageIsDragonFall()
+    {
+        var unlockName = "Mist Shard Visage";
+        var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
+        var group = results.UnlockGroups.Single(g => g.Name == "LW Season 4");
+        var category = group.UnlockCategories.Single(c => c.Name == "Dragonfall");
+        var unlock = category.Unlocks.Single(c => c.Name == unlockName);
+
+        Assert.NotNull(unlock);
+        Assert.NotNull(unlock.ApiData);
+        Assert.IsAssignableFrom<EquipmentSkin>(unlock.ApiData);
+    }
+
+    [Fact]
+    public async Task FuneraryAxeSkinIsDesertHighlands()
+    {
+        var unlockName = "Funerary Axe (skin)";
+        var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
+        var group = results.UnlockGroups.Single(g => g.Name == "Path of Fire");
+        var category = group.UnlockCategories.Single(c => c.Name == "Desert Highlands");
+        var unlock = category.Unlocks.Single(c => c.Name == unlockName);
+
+        Assert.NotNull(unlock);
+        Assert.NotNull(unlock.ApiData);
+        Assert.IsAssignableFrom<EquipmentSkin>(unlock.ApiData);
+    }
+
+    [Fact]
+    public async Task FlameWeaponsAreBlackCitadelIGuess()
+    {
+        var unlockName = "Flame Blade (skin)";
+        var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
+        var group = results.UnlockGroups.Single(g => g.Name == "Cities");
+        var category = group.UnlockCategories.Single(c => c.Name == "Black Citadel");
+        var unlock = category.Unlocks.Single(c => c.Name == unlockName);
+
+        Assert.NotNull(unlock);
+        Assert.NotNull(unlock.ApiData);
+        Assert.IsAssignableFrom<WeaponSkin>(unlock.ApiData);
     }
 
     [Fact]
@@ -216,10 +315,15 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
         Assert.IsAssignableFrom<Miniature>(unlock.ApiData);
     }
 
-    [Fact]
-    public async Task GivenItemWithRecipeSourceMysticForrgeShouldBeCategoryMysticForge()
+
+    [Theory]
+    // used to do this: Ardent Glorious Breastplate (skin) -> Ardent Glorious Breastplate -> Gift of Competitive Dedication -> Glob of Condensed Spirit Energy -> Spirit Shard -> Airship Cargo -> Verdant Brink
+    [InlineData("Ardent Glorious Breastplate (skin)")] //don't follow spirit shard!
+    // used to do this: Tome of the Rubicon (skin) -> Tome of the Rubicon -> Piles of Bloodstone Dust -> Grand Exalted Chest -> Auric Basin
+    [InlineData("Tome of the Rubicon (skin)")] //don't follow piles of bloodstone shard!
+    [InlineData("Abyssal Scepter (skin)")]
+    public async Task GivenItemWithRecipeSourceMysticForgeShouldBeCategoryMysticForge(string unlockName)
     {
-        var unlockName = "Abyssal Scepter (skin)";
         var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
         var group = results.UnlockGroups.Single(g => g.Name == "Other");
         var category = group.UnlockCategories.Single(c => c.Name == "Mystic Forge");

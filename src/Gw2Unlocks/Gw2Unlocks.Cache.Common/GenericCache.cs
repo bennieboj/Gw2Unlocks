@@ -20,10 +20,9 @@ namespace Gw2Unlocks.Cache.Common
             PropertyNameCaseInsensitive = true
         };
 
-        public GenericCache(CachePaths cachepaths, string cacheFolder)
+        public GenericCache(string path, string cacheFolder)
         {
-            ArgumentNullException.ThrowIfNull(cachepaths);
-            this.CacheFolder = Path.Combine(cachepaths.Root, cacheFolder);
+            CacheFolder = Path.Combine(path, cacheFolder);
             Directory.CreateDirectory(this.CacheFolder);
         }
 

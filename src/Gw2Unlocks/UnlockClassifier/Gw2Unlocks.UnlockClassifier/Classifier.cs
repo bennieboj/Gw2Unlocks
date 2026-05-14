@@ -1,6 +1,7 @@
 ﻿using GuildWars2.Hero.Achievements;
 using GuildWars2.Hero.Achievements.Bits;
 using GuildWars2.Hero.Achievements.Categories;
+using GuildWars2.Hero.Achievements.Groups;
 using GuildWars2.Hero.Achievements.Rewards;
 using GuildWars2.Hero.Achievements.Titles;
 using GuildWars2.Hero.Equipment.Miniatures;
@@ -41,6 +42,7 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
     private ClassifyConfig? classifyConfig;
 
     private readonly List<CurrencyCriteria> commonCurrencies = [new CurrencyCriteria("Coin"), new CurrencyCriteria("Karma"), new CurrencyCriteria("Research Note")];
+    private readonly List<string> itemsToIgnore = ["Spirit Shard", "Pile of Bloodstone Dust", "Dragonite Ore", "Empyreal Fragment"];
 
     private static ClassifyConfig CreateConfig()
     {
@@ -90,9 +92,9 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                     ],
                     UnlockCategories =
                     [
-                        new() { 
+                        new() {
                             Name = "Crystal Oasis",
-                            UnlockCriteria = [ 
+                            UnlockCriteria = [
                                 new ZoneCriteria("Crystal Oasis"), new CurrencyCriteria("Casino Coin")
                             ]
                         },
@@ -183,7 +185,13 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                                 new CurrencyCriteria("Antiquated Ducat"),
                                 new TokenCriteria("Raw Enchanting Stone")
                             ]
-                        }
+                        },
+                        new() { Name = "Eternity's Garden",
+                            UnlockCriteria = [
+                                new ZoneCriteria("Eternity's Garden"),
+                                new TokenCriteria("Shadowstone Fragment")
+                            ]
+                        }                        
                     ]
                 },
 
@@ -258,7 +266,7 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                 new()
                 {
                     Name = "LW Season 4",
-                    UnlockCriteria = [ 
+                    UnlockCriteria = [
                         new CurrencyCriteria("Volatile Magic")
                     ],
                     UnlockCategories =
@@ -409,19 +417,39 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                         new() { Name = "Lunar New Year", UnlockCriteria = [
                             new TokenCriteria("Token of the Dragon Ball Champion"),
                             new TokenCriteria("Token of the Celestial Champion"),
+                            new AchievementCategoryCriteria("Lunar New Year Dailies"),
+                            new AchievementCategoryCriteria("New Year's Customs"),
+                            new AchievementCategoryCriteria("Dragon Ball"),
                             ] },
                         new() { Name = "Super Adventure Box", UnlockCriteria = [
                             new TokenCriteria("Bauble"),
                             new TokenCriteria("Bauble Bubble"),
                             new TokenCriteria("Crimson Assassin Token"),
+                            new TokenCriteria("King Toad Z-1"),
+                            new TokenCriteria("King Toad Z-2"),
+                            new TokenCriteria("King Toad Z-3"),
+                            new TokenCriteria("Storm Wizard Z-1"),
+                            new TokenCriteria("Storm Wizard Z-2"),
+                            new TokenCriteria("Storm Wizard Z-3"),
+                            new AchievementCategoryCriteria("Super Adventure Box: World 1"),
+                            new AchievementCategoryCriteria("Super Adventure Box: World 2"),
+                            new AchievementCategoryCriteria("Super Adventure Box: Quality Testing"),
+                            new AchievementCategoryCriteria("Super Adventure Box: Tribulation Mode"),
+                            new AchievementCategoryCriteria("Super Adventure Box: Nostalgia"),
                             ] },
                         new() { Name = "Dragon Bash", UnlockCriteria = [
                             new TokenCriteria("Piece of Zhaitaffy"),
-                            new TokenCriteria("Jorbreaker")
+                            new TokenCriteria("Jorbreaker"),
+                            new AchievementCategoryCriteria("Dragon Bash"),
+                            new AchievementCategoryCriteria("Dragon Bash Feats"),
                             ] },
                         new() { Name = "Festival of the Four Winds", UnlockCriteria = [
                             new TokenCriteria("Festival Token"),
                             new TokenCriteria("Favor of the Festival"),
+                            new AchievementCategoryCriteria("Festival of the Four Winds"),
+                            new AchievementCategoryCriteria("Crown Pavilion"),
+                            new AchievementCategoryCriteria("The Queen's Gauntlet"),
+                            new AchievementCategoryCriteria("Four Winds Customs"),
                             ] },
                         new() { Name = "Halloween", UnlockCriteria = [
                             new TokenCriteria("Piece of Candy Corn"),
@@ -432,12 +460,17 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                             new TokenCriteria("Gibbering Skull"),
                             new TokenCriteria("Tyria's Best Nougat Center"),
                             new TokenCriteria("High-Quality Plastic Fangs"),
-                            new TokenCriteria("Tattered Bat Wing")
-                            ]
-                        },
+                            new TokenCriteria("Tattered Bat Wing"),
+                            new AchievementCategoryCriteria("Halloween Rituals"),
+                            new AchievementCategoryCriteria("Shadow of the Mad King"),
+                            new AchievementCategoryCriteria("Lunatic Wardrobe"),
+                            ] },
                         new() { Name = "Wintersday", UnlockCriteria = [
                             new TokenCriteria("Snow Diamond"),
-                            new TokenCriteria("Snowflake")
+                            new TokenCriteria("Snowflake"),
+                            new AchievementCategoryCriteria("Wintersday Traditions"),
+                            new AchievementCategoryCriteria("The Wondrous Workshop of Toymaker Tixx"),
+                            new AchievementCategoryCriteria("Winter's Presence"),
                             ] },
                     ]
                 },
@@ -468,16 +501,24 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                         new() { Name = "Guild", UnlockCriteria = [  ] },
                         new() { Name = "Mystic Forge", UnlockCriteria = [  ] },
                         new() { Name = "Crafting", UnlockCriteria = [  ] },
-                        new() { Name = "Black Lion Claim Ticket", UnlockCriteria = [  ] },
-                        new() { Name = "Black Lion Statuette", UnlockCriteria = [  ] },
+                        new() { Name = "Black Lion Claim Ticket", UnlockCriteria = [
+                            new TokenCriteria("Black Lion Claim Ticket", false),
+                            new AchievementCategoryCriteria("Black Lion Collections"),
+                            ] },
+                        new() { Name = "Black Lion Statuette", UnlockCriteria = [
+                            new TokenCriteria("Black Lion Statuette", false),
+                            ] },
                         new() { Name = "Gathering Tools", UnlockCriteria = [  ] },
-                        new() { Name = "Gem Store", UnlockCriteria = [  ] },
+                        new() { Name = "Gem Store", UnlockCriteria = [
+                            new CurrencyCriteria("Gem", false)                         
+                            ] },
                         new() { Name = "General", UnlockCriteria = [  ] },
                         new() { Name = "Fractals", UnlockCriteria = [
                             new TokenCriteria("Fractal Research Page"),
                             new TokenCriteria("Golden Fractal Relic"),
                             new TokenCriteria("Integrated Fractal Matrix"),
                             new TokenCriteria("Stabilizing Matrix"),
+                            new AchievementCategoryCriteria("Fractals of the Mists"),
                             ] },
                         new() { Name = "Wizard's Vault", UnlockCriteria = [  ] },
                     ]
@@ -492,6 +533,8 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
         ];
 
     private IEnumerable<UnlockCriteriaContext<TokenCriteria>>? tokenCriteria;
+    private IEnumerable<UnlockCriteriaContext<CurrencyCriteria>>? currencyCriteriaWithoutZoneSpecification;
+    private IEnumerable<UnlockCriteriaContext<TokenCriteria>>? tokenCriteriaWithoutZoneSpecification;
     private IEnumerable<UnlockCriteriaContext<CraftingMaterialCriteria>>? craftingMaterialCriteria;
 
     public async Task<ClassifyConfig> ClassifyUnlocks(CancellationToken cancellationToken, params string[] unlocksToLookup)
@@ -563,7 +606,6 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
             foreach (var unlock in group.Unlocks)
             {
                 FillInApiData(unlock);
-                //logger.LogInformation("    Unlock: {unlockName} ({unlockType})", unlock.Name, unlock.Node.Type);
             }
             foreach (var category in group.UnlockCategories)
             {
@@ -571,7 +613,6 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                 foreach (var unlock in category.Unlocks)
                 {
                     FillInApiData(unlock);
-                    //logger.LogInformation("    Unlock: {unlockName} ({unlockType})", unlock.Name, unlock.Node.Type);
                 }
             }
         }
@@ -710,6 +751,8 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
         }
 
         tokenCriteria = classifyConfig.GetUnlockCriteriaWithContext<TokenCriteria>();
+        currencyCriteriaWithoutZoneSpecification = classifyConfig.GetUnlockCriteriaWithContext<CurrencyCriteria>()?.Where(c => !c.Criteria.UsedInZoneSpecification);
+        tokenCriteriaWithoutZoneSpecification = classifyConfig.GetUnlockCriteriaWithContext<TokenCriteria>()?.Where(c => !c.Criteria.UsedInZoneSpecification);
         craftingMaterialCriteria = classifyConfig.GetUnlockCriteriaWithContext<CraftingMaterialCriteria>();
         var achievementCategoryCriteria = classifyConfig.GetUnlockCriteriaWithContext<AchievementCategoryCriteria>();
 
@@ -813,6 +856,10 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
         //"Arah Weapons Box",
         //"Dungeon Weapon Container",
         //"Dragon's Stand"
+        //"Piles of Bloodstone Dust",
+        //"Tome of the Rubicon",
+        //"Mistborn Mote",
+        "Funerary Axe (skin)"
     ];
 
     private sealed record SearchState(
@@ -824,6 +871,7 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
     {
         var node = unlock.Node;
         var startKey = unlock.Name;
+        logger.LogInformation("getting API data for {key} ({type})", startKey, node.Type);
         if (miniatures == null || skins == null || achievements == null || achievementCategories == null
             || titles == null || novelties == null || items == null || achievementCategoryByAchievementId == null)
         {
@@ -836,7 +884,7 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
         {
             if(node.Metadata.TryGetValue("miniature id", out var miniId) && !string.IsNullOrEmpty(miniId) && int.TryParse(miniId, out var miniIdInt))
             {
-                result = miniatures.Single(m => m.Id == miniIdInt);
+                result = miniatures.SingleOrDefault(m => m.Id == miniIdInt);
             }
             else
             {
@@ -852,20 +900,20 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
         if (node.Type == NodeType.Item && node.Metadata.TryGetValue("type", out var metadataTypeNovelty) && metadataTypeNovelty.Contains("novelty", StringComparison.OrdinalIgnoreCase)
             && node.Metadata.TryGetValue("novelty-id", out var noveltyId) && !string.IsNullOrEmpty(noveltyId) && int.TryParse(noveltyId, out var noveltyIdInt))
         {
-            result = novelties.Single(m => m.Id == noveltyIdInt);
+            result = novelties.SingleOrDefault(m => m.Id == noveltyIdInt);
         }
 
         if (node.Type == NodeType.Skin && node.Metadata.TryGetValue("id", out var skinId) && !string.IsNullOrEmpty(skinId) && int.TryParse(skinId, out var skinIdInt))
         {
-            result = skins.Single(i => i.Id == skinIdInt);
+            result = skins.SingleOrDefault(i => i.Id == skinIdInt);
         }
 
         if (node.Type == NodeType.Achievement && node.Metadata.TryGetValue("achievementId", out var achievementId) && !string.IsNullOrEmpty(achievementId) && int.TryParse(achievementId, out var achievementIdInt))
         {
-            var achievement = achievements.Single(i => i.Id == achievementIdInt);
+            var achievement = achievements.SingleOrDefault(i => i.Id == achievementIdInt);
             string? rewardName = null;
             string? rewardIcon = null;
-            if (achievement.Rewards != null) {
+            if (achievement?.Rewards != null) {
                 var reward = (achievement.Rewards is { Count: > 0 }) ? achievement.Rewards[0] : null;
                 if (reward != null)
                 {
@@ -887,7 +935,8 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                 }
             }
             var category = achievementCategoryByAchievementId.TryGetValue(achievementIdInt, out var cat) ? cat : null;
-            result = new AchievementWithReward(achievement, rewardIcon, rewardName, category?.IconUrl);
+            if(achievement != null)
+                result = new AchievementWithReward(achievement, rewardIcon, rewardName, category?.IconUrl);
         }
 
         if (result == null)
@@ -934,6 +983,11 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
 
             if (searchState.IncomingEdgeType == EdgeType.GatheredFrom
                 && current.Type == NodeType.Gw2Object && current.Metadata.TryGetValue("type", out var objectType) && objectType != "chest")
+            {
+                continue;
+            }
+
+            if (current.Type == NodeType.Item && itemsToIgnore.Contains(currentKey, StringComparer.Ordinal))
             {
                 continue;
             }
@@ -1054,8 +1108,9 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                 }
             }
 
+            var isCurrentAToken = tokenCriteria!.Any(c => c.Criteria.Matches(currentKey));
             foreach (var edge in edges)
-            {
+             {
                 if (edge.Type == EdgeType.HasIngredient && edge.Metadata != null
                     &&
                     (edge.Metadata.TryGetValue("discipline", out var discipline) && !string.IsNullOrWhiteSpace(discipline)
@@ -1076,6 +1131,10 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                     }
                 }
 
+                if((edge.Type == EdgeType.ContainedIn || edge.Type == EdgeType.SoldBy) && isCurrentAToken)
+                {
+                    continue;
+                }
 
 
                 var nextCost = searchState.Cost;
@@ -1084,6 +1143,30 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                     edge.Metadata != null && edge.Metadata.TryGetValue("cost", out var cost))
                 {
                     nextCost = cost; // overwrite or store
+
+                    var foundCurrencyCriteriaWithoutZoneSpecification = currencyCriteriaWithoutZoneSpecification!.Where(c => c.Criteria.Matches(cost));
+                    var foundTokenCriteriaWithoutZoneSpecification = tokenCriteriaWithoutZoneSpecification!.Where(c => c.Criteria.MatchesCost(cost));
+                    var combinedCriteria = foundCurrencyCriteriaWithoutZoneSpecification.Select(x => new UnlockCriteriaContext<UnlockCriteria>(x.Criteria, x.Categorization))
+                                            .Union(
+                                                foundTokenCriteriaWithoutZoneSpecification.Select(x => new UnlockCriteriaContext<UnlockCriteria>(x.Criteria, x.Categorization))
+                                            );
+                
+                    foreach (var criteria in combinedCriteria)
+                    {
+                        var groupName = criteria.Categorization!.Group?.Name;
+                        var categoryName = criteria.Categorization!.Category?.Name ?? "";
+                        var groupOfCategoryName = criteria.Categorization!.GroupOfCategoryName ?? "";
+                        if (groupName != null)
+                        {
+                            possibleClassifications.Add(new(groupName, null, BuildPath(currentKey, parent), 100));
+                            continue;
+                        }
+                        else
+                        {
+                            possibleClassifications.Add(new(groupOfCategoryName, categoryName, BuildPath(currentKey, parent), 100));
+                            continue;
+                        }
+                    }
                 }
 
                 var nextState = new SearchState(
@@ -1110,7 +1193,7 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
             possibleClassifications.Add(new("Other", "Crafting", [startKey], 50));
         }
 
-        var bestMatch = possibleClassifications
+        var orderedMatches = possibleClassifications
             .GroupBy(x => new { x.Group, x.Category })
             .Select(g => new
             {
@@ -1121,8 +1204,8 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                 Items = g.ToList()
             })
             .OrderByDescending(x => x.AverageCertainty)
-            .ThenByDescending(x => x.Count) // optional tie-breaker
-            .FirstOrDefault();
+            .ThenByDescending(x => x.Count); // optional tie-breaker
+        var bestMatch = orderedMatches.FirstOrDefault();
 
         if (bestMatch != null)
         {

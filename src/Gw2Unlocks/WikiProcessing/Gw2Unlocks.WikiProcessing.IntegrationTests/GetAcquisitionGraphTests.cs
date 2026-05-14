@@ -3,6 +3,7 @@ using Gw2Unlocks.Testing.Common;
 using Gw2Unlocks.Wiki;
 using Gw2Unlocks.WikiProcessing.Implementation;
 using Microsoft.Extensions.DependencyInjection;
+using System.Linq;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -147,10 +148,53 @@ public class GetAcquisitionGraphTests : ServiceProviderBasedTest<IGw2WikiProcess
         Assert.NotNull(areaNode);
         Assert.NotNull(zoneNode);
 
-        Assert.Contains(graph.Edges, e => e.From == item && e.To == vendor && e.Type == EdgeType.SoldBy 
+        Assert.Contains(graph.Edges, e => e.From == item && e.To == vendor && e.Type == EdgeType.SoldBy
                         && e.Metadata != null && e.Metadata.ContainsKey("cost"));
         Assert.Contains(graph.Edges, e => e.From == vendor && e.To == area && e.Type == EdgeType.LocatedIn);
         Assert.Contains(graph.Edges, e => e.From == area && e.To == zone && e.Type == EdgeType.LocatedIn);
+    }
+
+    [Fact]
+    public async Task GivenVendorContainsLocationTagSoldByShouldOnlyReturnVendorWithSpecificLocation()
+    {
+        fakeWikiApi.FileName = "VendorSpecificLocation.xml";
+        var graph = await GetSut().GetAcquisitionGraph(TestContext.Current.CancellationToken);
+
+        const string item = "Mini Awakened Archer";
+        var itemNode = graph.GetNode(item, NodeType.Item);
+        const string vendor = "Awakened Merchant";
+        var vendorNode = graph.GetNode(vendor, NodeType.NPC);
+        const string area = "Free City of Amnoon";
+        var areaNode = graph.GetNode(area, NodeType.Location);
+        const string zone = "Crystal Oasis";
+        var zoneNode = graph.GetNode(zone, NodeType.Location);
+
+        Assert.NotNull(itemNode);
+        Assert.NotNull(vendorNode);
+        Assert.NotNull(areaNode);
+        Assert.NotNull(zoneNode);
+
+        Assert.Contains(graph.Edges, e => e.From == item && e.To == vendor && e.Type == EdgeType.SoldBy
+                        && e.Metadata != null && e.Metadata.ContainsKey("cost"));
+        Assert.Contains(graph.Edges, e => e.From == vendor && e.To == area && e.Type == EdgeType.LocatedIn);
+        Assert.Contains(graph.Edges, e => e.From == area && e.To == zone && e.Type == EdgeType.LocatedIn);
+        // for selling purposes, the vendor should only be located in the specific area, not in all areas
+        Assert.Single(graph.Edges, e => e.From == vendor && e.Type == EdgeType.LocatedIn);
+    }
+
+    [Theory]
+    [InlineData("Lumps of Aurillium")]
+    [InlineData("Piles of Bloodstone Dust")]
+    public async Task RedirectShouldResolveToActualItem(string redirect)
+    {
+        fakeWikiApi.FileName = "redirects.xml";
+        var graph = await GetSut().GetAcquisitionGraph(TestContext.Current.CancellationToken);
+
+        var actualNode = graph.GetOrCreate(redirect);
+
+        Assert.NotNull(actualNode);
+        Assert.NotEqual(NodeType.None, actualNode.Type);
+        Assert.DoesNotContain(graph.Nodes, kvp => kvp.Key == redirect);
     }
 
     [Fact]
@@ -232,5 +276,112 @@ public class GetAcquisitionGraphTests : ServiceProviderBasedTest<IGw2WikiProcess
         Assert.Contains(graph.Edges, e => e.From == item && e.To == vendor && e.Type == EdgeType.SoldBy);
         Assert.Contains(graph.Edges, e => e.From == vendor && e.To == area && e.Type == EdgeType.LocatedIn);
         Assert.Contains(graph.Edges, e => e.From == area && e.To == city && e.Type == EdgeType.LocatedIn);
+    }
+
+    [Fact]
+    public async Task GemStoreDataShouldShowSoldByGemStoreVendor()
+    {
+        fakeWikiApi.FileName = "gem_store_data.xml";
+        var graph = await GetSut().GetAcquisitionGraph(TestContext.Current.CancellationToken);
+
+        const string skin = "Aurene's Crystalline Claws (heavy skin)";
+        var skinNode = graph.GetNode(skin, NodeType.Skin);
+        const string item = "Aurene's Crystalline Claws Skin";
+        var itemNode = graph.GetNode(item, NodeType.Item);
+        const string containerPack = "Aurene’s Champion Pack";
+        var containerPackNode = graph.GetNode(containerPack, NodeType.GemStoreCombo);
+        const string gemStoreVendor = "Gem Store";
+        var gemStoreVendorNode = graph.GetNode(gemStoreVendor, NodeType.NPC);
+
+
+        Assert.NotNull(skinNode);
+        Assert.NotNull(itemNode);
+        Assert.NotNull(containerPackNode);
+        Assert.NotNull(gemStoreVendorNode);
+
+        Assert.Contains(graph.Edges, e => e.From == skin && e.To == item && e.Type == EdgeType.SkinUnlock);
+        Assert.Contains(graph.Edges, e => e.From == item && e.To == containerPack && e.Type == EdgeType.ContainedIn);
+
+        Assert.Contains(graph.Edges, e => e.From == item && e.To == gemStoreVendor && e.Type == EdgeType.SoldBy
+                        && e.Metadata != null && e.Metadata.TryGetValue("cost", out string? costItem) && costItem.Contains("500 Gems", System.StringComparison.Ordinal));
+        Assert.Contains(graph.Edges, e => e.From == containerPack && e.To == gemStoreVendor && e.Type == EdgeType.SoldBy
+                        && e.Metadata != null && e.Metadata.TryGetValue("cost", out string? costItem) && costItem.Contains("1350 Gems", System.StringComparison.Ordinal));
+    }
+
+    [Fact]
+    public async Task GemStoreDataWhenAvailabilityIsHistoricalShouldNotShowSoldByGemStoreVendor()
+    {
+        fakeWikiApi.FileName = "gem_store_data.xml";
+        var graph = await GetSut().GetAcquisitionGraph(TestContext.Current.CancellationToken);
+
+        const string item = "Mini Guardian Angel Aurene";
+        var itemNode = graph.GetNode(item, NodeType.Item);
+        const string containerPack = "2019 Extra Life Donation Bundle";
+        var containerPackNode = graph.GetNode(containerPack, NodeType.GemStoreCombo);
+        const string gemStoreVendor = "Gem Store";
+        var gemStoreVendorNode = graph.GetNode(gemStoreVendor, NodeType.NPC);
+
+
+        Assert.NotNull(itemNode);
+        Assert.Null(containerPackNode); // item itself is marked as historical
+
+        Assert.DoesNotContain(graph.Edges, e => e.From == item && e.To == containerPack && e.Type == EdgeType.ContainedIn);
+        Assert.DoesNotContain(graph.Edges, e => e.From == containerPack && e.To == gemStoreVendor && e.Type == EdgeType.SoldBy);
+    }
+
+    [Theory]
+    [InlineData("Collapsing Star Spear Skin")]
+    [InlineData("Chiroptophobia Greatsword Skin")]
+    [InlineData("Painter's Brilliance Axe Skin")]
+    [InlineData("Abaddon Axe (skin)")]
+    public async Task BlackLionClaimTicketItemsShouldShowSoldByBlackLionClaimTicketVendor(string skin)
+    {
+        fakeWikiApi.FileName = "Black_Lion_Claim_Ticket_and_Statuette.xml";
+        var graph = await GetSut().GetAcquisitionGraph(TestContext.Current.CancellationToken);
+
+        const string blackLionWeaponsVendor = "Black Lion Weapons Specialist";
+        var blackLionWeaponsVendorNode = graph.GetNode(blackLionWeaponsVendor, NodeType.NPC);
+        Assert.NotNull(blackLionWeaponsVendorNode);
+
+        Assert.Contains(graph.Edges, e => e.From == skin && e.To == blackLionWeaponsVendor && e.Type == EdgeType.SoldBy
+                        && e.Metadata != null && e.Metadata.TryGetValue("cost", out string? costItem) && costItem.Contains("Black Lion Claim Ticket", System.StringComparison.Ordinal));
+    }
+
+    [Theory]
+    [InlineData("Golden Talon Longbow")]
+    [InlineData("Fuzzy Leopard Hat")]
+    public async Task BlackLionStatuetteItemsShouldShowSoldByBlackLionChestMerchantVendor(string skin)
+    {
+        fakeWikiApi.FileName = "Black_Lion_Claim_Ticket_and_Statuette.xml";
+        var graph = await GetSut().GetAcquisitionGraph(TestContext.Current.CancellationToken);
+
+        const string blackLionChestVendor = "Black Lion Chest Merchant";
+        var blackLionWeaponsVendorNode = graph.GetNode(blackLionChestVendor, NodeType.NPC);
+        Assert.NotNull(blackLionWeaponsVendorNode);
+
+        Assert.Contains(graph.Edges, e => e.From == skin && e.To == blackLionChestVendor && e.Type == EdgeType.SoldBy
+                        && e.Metadata != null && e.Metadata.TryGetValue("cost", out string? costItem) && costItem.Contains("Black Lion Statuette", System.StringComparison.Ordinal));
+    }
+
+    // the page "Free City of Amnoon" contains "redirected [[Elon River]]" which triggered the redirect logic.
+    [Fact]
+    public async Task CasinoBlitzRewardCashierLocatedInCrystalOasis()
+    {
+        fakeWikiApi.FileName = "Crystal_Oasis.xml";
+        var graph = await GetSut().GetAcquisitionGraph(TestContext.Current.CancellationToken);
+
+        const string vendor = "Casino Blitz Reward Cashier";
+        var vendorNode = graph.GetNode(vendor, NodeType.NPC);
+        const string area = "Free City of Amnoon";
+        var areaNode = graph.GetNode(area, NodeType.Location);
+        const string zone = "Crystal Oasis";
+        var zoneNode = graph.GetNode(zone, NodeType.Location);
+
+        Assert.NotNull(vendorNode);
+        Assert.NotNull(areaNode);
+        Assert.NotNull(zoneNode);
+
+        Assert.Contains(graph.Edges, e => e.From == vendor && e.To == area && e.Type == EdgeType.LocatedIn);
+        Assert.Contains(graph.Edges, e => e.From == area && e.To == zone && e.Type == EdgeType.LocatedIn);
     }
 }

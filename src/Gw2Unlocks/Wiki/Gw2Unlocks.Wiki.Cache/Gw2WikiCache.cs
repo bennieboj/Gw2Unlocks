@@ -10,7 +10,7 @@ using static System.Net.WebRequestMethods;
 namespace Gw2Unlocks.Wiki.Cache;
 
 internal sealed class Gw2WikiCache(CachePaths cachePaths)
-    : GenericCache(cachePaths, "wiki-cache"), IGw2WikiCache
+    : GenericCache(cachePaths.CacheDir, "wiki-cache"), IGw2WikiCache
 {
     private const string WikiBulkPrefix = "wikibulk_";
     private const string WikiBulkExtension = ".xml";
