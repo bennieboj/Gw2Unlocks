@@ -1,7 +1,8 @@
 ﻿using Gw2Unlocks.Api.Cache;
 using Gw2Unlocks.Cache.Common;
 using Gw2Unlocks.Common;
-using Gw2Unlocks.UnlockClassifier;
+using Gw2Unlocks.UnlockClassifier.Cache;
+using Gw2Unlocks.UnlockClassifier.Implementation;
 using Gw2Unlocks.WikiProcessing.Cache;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
@@ -16,7 +17,8 @@ builder.Services.AddJsonCacheApiSource()
                 .AddCacheDir()
                 .AddJsonCacheWikiProcessingSource();
 
-builder.Services.AddClassifier();
+builder.Services.AddClassifier()
+                .AddClassifierCache();
 
 var host = builder.Build();
 await host.RunAsync();

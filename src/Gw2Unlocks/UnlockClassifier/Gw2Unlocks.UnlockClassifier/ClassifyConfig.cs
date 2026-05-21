@@ -6,108 +6,6 @@ using System.Text.Json.Serialization;
 
 namespace Gw2Unlocks.UnlockClassifier;
 
-public static class ClassifyConfigExtensions
-{
-    internal sealed class Categorization
-    {
-        public UnlockGroup? Group { get; init; }
-        public UnlockCategory? Category { get; init; }
-        public string? GroupOfCategoryName { get; init; }
-    }
-
-    internal sealed record UnlockCriteriaContext<T>(T Criteria, Categorization Categorization) where T : UnlockCriteria
-    {
-    }
-    internal sealed record UnlockContext(Unlock Unlock, Categorization Categorization)
-    {
-    }
-
-
-
-    internal static IEnumerable<UnlockContext> GetUnlocks(this ClassifyConfig config)
-    {
-        ArgumentNullException.ThrowIfNull(config);
-        // Group-level unlocks
-        var groupUnlocks = config.UnlockGroups
-            .SelectMany(g => g.Unlocks
-                .Select(u => new UnlockContext(
-                    u,
-                    new Categorization
-                    {
-                        Group = g,
-                        Category = null,
-                        GroupOfCategoryName = null,
-                    }
-                )
-                ));
-
-        // Category-level unlocks
-        var categoryUnlocks = config.UnlockGroups
-            .SelectMany(g => g.UnlockCategories
-                .SelectMany(cat => cat.Unlocks
-                    .Select(u => new UnlockContext(
-                            u,
-                            new Categorization
-                            {
-                                Group = null,
-                                Category = cat,
-                                GroupOfCategoryName = g.Name,
-                            }
-                        )
-                    )));
-
-
-        return [.. categoryUnlocks.Union(groupUnlocks)];
-    }
-
-    internal static IEnumerable<T> GetUnlockCriteria<T>(this ClassifyConfig config) where T : UnlockCriteria
-    {
-        ArgumentNullException.ThrowIfNull(config);
-        var categoryCriteria = config.UnlockGroups.SelectMany(g => g.UnlockCategories).SelectMany(c => c.UnlockCriteria).OfType<T>();
-        var groupCriteria = config.UnlockGroups.SelectMany(c => c.UnlockCriteria).OfType<T>();
-        return categoryCriteria.Union(groupCriteria);
-    }
-
-    internal static IEnumerable<UnlockCriteriaContext<T>> GetUnlockCriteriaWithContext<T>(this ClassifyConfig config)
-    where T : UnlockCriteria
-    {
-        ArgumentNullException.ThrowIfNull(config);
-
-        // Group-level criteria
-        var groupCriteria = config.UnlockGroups
-            .SelectMany(g => g.UnlockCriteria
-                .OfType<T>()
-                .Select(c => new UnlockCriteriaContext<T>(
-                    c,
-                    new Categorization
-                    {
-                        Group = g,
-                        Category = null,
-                        GroupOfCategoryName = null,
-                    }
-                )
-            ));
-
-        // Category-level criteria
-        var categoryCriteria = config.UnlockGroups
-            .SelectMany(g => g.UnlockCategories
-                .SelectMany(cat => cat.UnlockCriteria
-                    .OfType<T>()
-                    .Select(c => new UnlockCriteriaContext<T>(
-                        c,
-                        new Categorization
-                        {
-                            Group = null,
-                            Category = cat,
-                            GroupOfCategoryName = g.Name,
-                        }
-                    )
-                )));
-
-        return groupCriteria.Concat(categoryCriteria);
-    }
-}
-
 public record ClassifyConfig
 {
     public Collection<UnlockGroup> UnlockGroups { get; init; } = [];
@@ -133,5 +31,27 @@ public class Unlock(string name, WikiProcessing.Node node)
 {
     public string Name { get; set; } = name;
     public WikiProcessing.Node Node { get; set; } = node;
-    public object? ApiData { get; set; }
+
+    public ApiData? ApiData { get; set; }
+}
+
+public class ApiData
+{
+    public int Id { get; set; }
+    public Type Type { get; set; } = Type.None;
+    public int ChatCodeId { get; set; }
+    public string Name { get; set; } = "";
+    public Uri IconUrl { get; set; } = new Uri("about:blank");
+    public string Requirement { get; set; } = "";
+    public Uri? RewardIconUrl { get; set; }
+    public string? RewardName { get; set; } = "";
+}
+
+public enum Type
+{
+    None,
+    Miniature,
+    Novelty,
+    Skin,
+    Achievement
 }

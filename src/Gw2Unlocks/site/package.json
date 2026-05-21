@@ -3,15 +3,15 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "dev": "vite --port 5000 --open",
     "build": "vite build",
-    "preview": "npm run build && vite preview --port 5555 --open"
+    "preview": "concurrently \"vite build --watch\" \"vite preview --port 5000 --open\""
   },
   "keywords": [],
   "author": "",
   "type": "module",
   "license": "ISC",
   "devDependencies": {
+    "concurrently": "^9.2.1",
     "vite": "^8.0.0"
   }
 }

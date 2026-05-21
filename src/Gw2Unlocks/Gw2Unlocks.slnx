@@ -15,7 +15,9 @@
     <File Path="Directory.Packages.props" />
   </Folder>
   <Folder Name="/UnlockClassifier/">
+    <Project Path="UnlockClassifier/Gw2Unlocks.UnlockClassifier.Cache/Gw2Unlocks.UnlockClassifier.Cache.csproj" Id="2a0808df-ca4e-403c-aef5-65cfe31ac0f1" />
     <Project Path="UnlockClassifier/Gw2Unlocks.UnlockClassifier.Host/Gw2Unlocks.UnlockClassifier.Host.csproj" Id="3ba197e0-13dc-4358-a243-1228b725ef35" />
+    <Project Path="UnlockClassifier/Gw2Unlocks.UnlockClassifier.Implementation/Gw2Unlocks.UnlockClassifier.Implementation.csproj" Id="4911d128-f122-4816-aee3-26b2ee9f08c0" />
     <Project Path="UnlockClassifier/Gw2Unlocks.UnlockClassifier.IntegrationTests/Gw2Unlocks.UnlockClassifier.IntegrationTests.csproj" Id="ac4fcd6d-a3b1-4447-9861-63b72b104ae7" />
     <Project Path="UnlockClassifier/Gw2Unlocks.UnlockClassifier/Gw2Unlocks.UnlockClassifier.csproj" Id="3c710809-5d64-470e-85a2-1ca97167230a" />
   </Folder>
@@ -36,5 +38,6 @@
   <Project Path="Gw2Unlocks.Cache.Common/Gw2Unlocks.Cache.Common.csproj" Id="56f494be-f154-4154-be20-c4c435f8f140" />
   <Project Path="Gw2Unlocks.Common/Gw2Unlocks.Common.csproj" Id="83712cb6-1e97-4a9e-a4b1-75ce2c29ed45" />
   <Project Path="Gw2Unlocks.Testing.Common/Gw2Unlocks.Testing.Common.csproj" Id="e8450391-8d74-4375-9615-35ae18a0305e" />
+  <Project Path="SiteGenerator/Gw2Unlocks.SiteGenerator/Gw2Unlocks.SiteGenerator.csproj" Id="7da81a15-d7e9-4ab9-ad7f-56293b2441cf" />
   <Project Path="Website/Website.csproj" />
 </Solution>

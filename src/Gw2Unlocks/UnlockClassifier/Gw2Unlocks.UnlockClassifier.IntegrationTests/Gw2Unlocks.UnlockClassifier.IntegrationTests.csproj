@@ -19,6 +19,7 @@
     <ProjectReference Include="..\..\Gw2Unlocks.Testing.Common\Gw2Unlocks.Testing.Common.csproj" />
     <ProjectReference Include="..\..\WikiProcessing\Gw2Unlocks.WikiProcessing.Cache\Gw2Unlocks.WikiProcessing.Cache.csproj" />
     <ProjectReference Include="..\..\Wiki\Gw2Unlocks.Wiki.Cache\Gw2Unlocks.Wiki.Cache.csproj" />
+    <ProjectReference Include="..\Gw2Unlocks.UnlockClassifier.Implementation\Gw2Unlocks.UnlockClassifier.Implementation.csproj" />
   </ItemGroup>
 
 </Project>

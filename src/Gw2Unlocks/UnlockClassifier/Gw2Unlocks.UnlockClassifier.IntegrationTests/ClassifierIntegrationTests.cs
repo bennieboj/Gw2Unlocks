@@ -1,14 +1,13 @@
-﻿using GuildWars2.Hero.Achievements.Rewards;
+﻿using GuildWars2.Hero.Achievements;
 using GuildWars2.Hero.Builds;
-using GuildWars2.Hero.Equipment.Miniatures;
-using GuildWars2.Hero.Equipment.Novelties;
-using GuildWars2.Hero.Equipment.Wardrobe;
 using Gw2Unlocks.Api.Cache;
 using Gw2Unlocks.Cache.Common;
 using Gw2Unlocks.Testing.Common;
+using Gw2Unlocks.UnlockClassifier.Implementation;
 using Gw2Unlocks.WikiProcessing.Cache;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -41,7 +40,11 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
 
         Assert.NotNull(unlock);
         Assert.NotNull(unlock.ApiData);
-        Assert.IsAssignableFrom<Miniature>(unlock.ApiData);
+        Assert.Equal(346, unlock.ApiData.Id);
+        Assert.Equal(Type.Miniature, unlock.ApiData.Type);
+        Assert.Equal("Mini Exalted Sage", unlock.ApiData.Name);
+        Assert.NotNull(unlock.ApiData.IconUrl);
+        Assert.Equal(74444, unlock.ApiData.ChatCodeId);
     }
 
     [Fact]
@@ -55,7 +58,6 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
 
         Assert.NotNull(unlock);
         Assert.NotNull(unlock.ApiData);
-        Assert.IsAssignableFrom<EquipmentSkin>(unlock.ApiData);
     }
 
     [Fact]
@@ -69,7 +71,6 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
 
         Assert.NotNull(unlock);
         Assert.NotNull(unlock.ApiData);
-        Assert.IsAssignableFrom<Novelty>(unlock.ApiData);
     }
 
     [Fact]
@@ -83,7 +84,6 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
 
         Assert.NotNull(unlock);
         Assert.NotNull(unlock.ApiData);
-        Assert.IsAssignableFrom<Miniature>(unlock.ApiData);
     }
 
     [Fact]
@@ -97,7 +97,36 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
 
         Assert.NotNull(unlock);
         Assert.NotNull(unlock.ApiData);
-        Assert.IsAssignableFrom<EquipmentSkin>(unlock.ApiData);
+    }
+
+    [Theory]
+    [InlineData("Heavy Fused Gauntlets (skin)")]
+    [InlineData("Wheel of the Lion's Champion (skin)")]
+    public async Task GivenLwS1RewardShouldBeLwS1(string unlockName)
+    {
+        var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
+        var group = results.UnlockGroups.Single(g => g.Name == "LW Season 1");
+        var category = group.UnlockCategories.Single(c => c.Name == "Season 1");
+        var unlock = category.Unlocks.Single(c => c.Name == unlockName);
+
+        Assert.NotNull(unlock);
+        Assert.NotNull(unlock.ApiData);
+    }
+
+    [Theory]
+    [InlineData("Ad Infinitum (skin)", "Mystic Forge")]
+    [InlineData("Unbound (skin)", "Crafting")]
+    [InlineData("Upper Bound (skin)", "Crafting")]
+    [InlineData("Finite Result (skin)", "Crafting")]
+    public async Task GivenItemsWithRareEssenceofLuckShouldIgnoreIt(string unlockName, string expectedCategory)
+    {
+        var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
+        var group = results.UnlockGroups.Single(g => g.Name == "Other");
+        var category = group.UnlockCategories.Single(c => c.Name == expectedCategory);
+        var unlock = category.Unlocks.Single(c => c.Name == unlockName);
+
+        Assert.NotNull(unlock);
+        Assert.NotNull(unlock.ApiData);
     }
 
     [Theory]
@@ -114,7 +143,6 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
 
         Assert.NotNull(unlock);
         Assert.NotNull(unlock.ApiData);
-        Assert.IsAssignableFrom<WeaponSkin>(unlock.ApiData);
     }
 
     [Theory]
@@ -146,7 +174,6 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
 
         Assert.NotNull(unlock);
         Assert.NotNull(unlock.ApiData);
-        Assert.IsAssignableFrom<EquipmentSkin>(unlock.ApiData);
     }
 
     [Fact]
@@ -160,7 +187,11 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
 
         Assert.NotNull(unlock);
         Assert.NotNull(unlock.ApiData);
-        Assert.IsAssignableFrom<Novelty>(unlock.ApiData);
+        Assert.Equal(186, unlock.ApiData.Id);
+        Assert.Equal(Type.Novelty, unlock.ApiData.Type);
+        Assert.Equal("Endless Exalted Caster Tonic", unlock.ApiData.Name);
+        Assert.NotNull(unlock.ApiData.IconUrl);
+        Assert.Equal(76174, unlock.ApiData.ChatCodeId);
     }
 
     [Fact]
@@ -174,7 +205,6 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
 
         Assert.NotNull(unlock);
         Assert.NotNull(unlock.ApiData);
-        Assert.IsAssignableFrom<Novelty>(unlock.ApiData);
     }
 
     [Fact]
@@ -188,7 +218,6 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
 
         Assert.NotNull(unlock);
         Assert.NotNull(unlock.ApiData);
-        Assert.IsAssignableFrom<EquipmentSkin>(unlock.ApiData);
     }
 
     [Fact]
@@ -202,7 +231,10 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
 
         Assert.NotNull(unlock);
         Assert.NotNull(unlock.ApiData);
-        Assert.IsAssignableFrom<EquipmentSkin>(unlock.ApiData);
+        Assert.Equal(7422, unlock.ApiData.Id);
+        Assert.Equal("Funerary Axe", unlock.ApiData.Name);
+        Assert.NotNull(unlock.ApiData.IconUrl);
+        Assert.Equal(7422, unlock.ApiData.Id);
     }
 
     [Fact]
@@ -216,7 +248,6 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
 
         Assert.NotNull(unlock);
         Assert.NotNull(unlock.ApiData);
-        Assert.IsAssignableFrom<WeaponSkin>(unlock.ApiData);
     }
 
     [Fact]
@@ -229,7 +260,6 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
         var unlock = category.Unlocks.Single(c => c.Name == unlockName);
         Assert.NotNull(unlock);
         Assert.NotNull(unlock.ApiData);
-        Assert.IsAssignableFrom<Miniature>(unlock.ApiData);
     }
 
     [Fact]
@@ -242,7 +272,6 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
         var unlock = category.Unlocks.Single(c => c.Name == unlockName);
         Assert.NotNull(unlock);
         Assert.NotNull(unlock.ApiData);
-        Assert.IsAssignableFrom<BackItemSkin>(unlock.ApiData);
     }
 
     [Fact]
@@ -256,7 +285,6 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
 
         Assert.NotNull(unlock);
         Assert.NotNull(unlock.ApiData);
-        Assert.IsAssignableFrom<EquipmentSkin>(unlock.ApiData);
     }
 
     [Fact]
@@ -270,7 +298,6 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
 
         Assert.NotNull(unlock);
         Assert.NotNull(unlock.ApiData);
-        Assert.IsAssignableFrom<EquipmentSkin>(unlock.ApiData);
     }
 
 
@@ -285,7 +312,6 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
 
         Assert.NotNull(unlock);
         Assert.NotNull(unlock.ApiData);
-        Assert.IsAssignableFrom<EquipmentSkin>(unlock.ApiData);
     }
 
     [Fact]
@@ -298,7 +324,6 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
 
         Assert.NotNull(unlock);
         Assert.NotNull(unlock.ApiData);
-        Assert.IsAssignableFrom<EquipmentSkin>(unlock.ApiData);
     }
 
     [Fact]
@@ -312,7 +337,6 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
 
         Assert.NotNull(unlock);
         Assert.NotNull(unlock.ApiData);
-        Assert.IsAssignableFrom<Miniature>(unlock.ApiData);
     }
 
 
@@ -331,7 +355,6 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
 
         Assert.NotNull(unlock);
         Assert.NotNull(unlock.ApiData);
-        Assert.IsAssignableFrom<EquipmentSkin>(unlock.ApiData);
     }
 
     [Fact]
@@ -348,11 +371,9 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
 
         Assert.NotNull(unlockSkin);
         Assert.NotNull(unlockSkin.ApiData);
-        Assert.IsAssignableFrom<EquipmentSkin>(unlockSkin.ApiData);
 
         Assert.NotNull(unlockAchi);
         Assert.NotNull(unlockAchi.ApiData);
-        Assert.IsAssignableFrom<AchievementWithReward>(unlockAchi.ApiData);
     }
 
     [Theory]
@@ -367,7 +388,6 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
 
         Assert.NotNull(unlock);
         Assert.NotNull(unlock.ApiData);
-        Assert.IsAssignableFrom<EquipmentSkin>(unlock.ApiData);
     }
 
     [Fact]
@@ -384,7 +404,6 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
 
         Assert.NotNull(unlockAchi);
         Assert.NotNull(unlockAchi.ApiData);
-        Assert.IsAssignableFrom<AchievementWithReward>(unlockAchi.ApiData);
 
         Assert.NotNull(unlockReward);
         Assert.NotNull(unlockReward.ApiData);
@@ -402,8 +421,22 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
 
         Assert.NotNull(unlock);
         Assert.NotNull(unlock.ApiData);
-        Assert.IsAssignableFrom<AchievementWithReward>(unlock.ApiData);
-        Assert.Equal("https://render.guildwars2.com/file/109A0AE76FCA3EBC03039BA668B90142CAB0DDA2/866109.png", ((AchievementWithReward)unlock.ApiData).IconUrl?.ToString());
+        Assert.Equal("https://render.guildwars2.com/file/109A0AE76FCA3EBC03039BA668B90142CAB0DDA2/866109.png", unlock.ApiData.IconUrl?.ToString());
+    }
+
+    [Theory]
+    [InlineData("New Kaineng City (achievements)#achievement6213")] // "Protector of Kaineng", repeatable
+    [InlineData("New Year's Customs#achievement6063")] // "(Weekly) Lunar Festivities", weekly
+    [InlineData("New Year's Customs#achievement4080")] // "(Annual) New Year's Resolution", contains "{Annual}"
+    [InlineData("Super Adventure Box: Nostalgia#achievement2843")] // "Course Load", repeatable
+    public async Task GivenAchievementsThatAreNotRepeatableShouldNotBeLinkedtoUnlockCategory(string unlockName)
+    {
+        var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
+        var groups = results.UnlockGroups.Where(g => g.Unlocks.Any(u => u.Name == unlockName)).ToList();
+        var categories = results.UnlockGroups.SelectMany(g => g.UnlockCategories).Where(c => c.Unlocks.Any(u => u.Name == unlockName)).ToList();
+
+        Assert.Empty(groups);
+        Assert.Empty(categories);
     }
 
     [Fact]
@@ -417,7 +450,6 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
 
         Assert.NotNull(unlock);
         Assert.NotNull(unlock.ApiData);
-        Assert.IsAssignableFrom<AchievementWithReward>(unlock.ApiData);
     }
 
     [Fact]
@@ -431,10 +463,12 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
 
         Assert.NotNull(unlock);
         Assert.NotNull(unlock.ApiData);
-        Assert.IsAssignableFrom<AchievementWithReward>(unlock.ApiData);
-        Assert.Equal(3221, ((AchievementWithReward)unlock.ApiData).Id);
-        Assert.Equal("Chicken Chaser", ((AchievementWithReward)unlock.ApiData).RewardName);
-        Assert.Equal("/img/icon_title.png", ((AchievementWithReward)unlock.ApiData).RewardIcon);
+        Assert.Equal(3221, unlock.ApiData.Id);
+        Assert.Equal(Type.Achievement, unlock.ApiData.Type);
+        Assert.Equal("Playing Chicken", unlock.ApiData.Name);
+        Assert.Equal("Push a chicken to its limits.", unlock.ApiData.Requirement);
+        Assert.Equal("Chicken Chaser", unlock.ApiData.RewardName);
+        Assert.Equal(new Uri("/img/icon_title.png", UriKind.Relative), unlock.ApiData.RewardIconUrl);
 
     }
 
@@ -449,9 +483,7 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
 
         Assert.NotNull(unlock);
         Assert.NotNull(unlock.ApiData);
-        Assert.IsAssignableFrom<AchievementWithReward>(unlock.ApiData);
-        Assert.Equal("Maguuma", ((AchievementWithReward)unlock.ApiData).Rewards!.OfType<MasteryPointReward>().Single().Region);
-        Assert.Equal("/img/mastery_Maguuma.png", ((AchievementWithReward)unlock.ApiData).RewardIcon);
+        Assert.Equal(new Uri("/img/mastery_Maguuma.png", UriKind.Relative), unlock.ApiData.RewardIconUrl);
     }
 
     [Fact]
@@ -465,9 +497,8 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
 
         Assert.NotNull(unlock);
         Assert.NotNull(unlock.ApiData);
-        Assert.IsAssignableFrom<AchievementWithReward>(unlock.ApiData);
-        Assert.Equal("Magic-Warped Packet", ((AchievementWithReward)unlock.ApiData).RewardName);
-        Assert.Equal("https://render.guildwars2.com/file/C399F9556A9478EF32A491345C4DA07605AD49D6/1465576.png", ((AchievementWithReward)unlock.ApiData).RewardIcon);
+        Assert.Equal("Magic-Warped Packet", unlock.ApiData.RewardName);
+        Assert.Equal(new Uri("https://render.guildwars2.com/file/C399F9556A9478EF32A491345C4DA07605AD49D6/1465576.png"), unlock.ApiData.RewardIconUrl);
     }
 
     [Fact]
@@ -481,7 +512,6 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
 
         Assert.NotNull(unlock);
         Assert.NotNull(unlock.ApiData);
-        Assert.IsAssignableFrom<AchievementWithReward>(unlock.ApiData);
-        Assert.Equal("https://render.guildwars2.com/file/136E663C59275A077ADD394C935F26091B065A51/1601931.png", ((AchievementWithReward)unlock.ApiData).IconUrl?.ToString());
+        Assert.Equal(new Uri("https://render.guildwars2.com/file/136E663C59275A077ADD394C935F26091B065A51/1601931.png"), unlock.ApiData.IconUrl);
     }
 }
