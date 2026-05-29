@@ -29,7 +29,7 @@ public class GetZoneDataTests : ServiceProviderBasedTest<IGw2WikiProcessingSourc
     [Fact]
     public async Task GetZoneDataShouldLoad()
     {
-        fakeWikiApi.FileName = "zone.xml";
+        SetFile("zone");
         var zoneData = await GetSut().GetZoneData(TestContext.Current.CancellationToken);
 
         var southsunCove = zoneData.Zones.Single(z => z.Name == "Southsun Cove");
@@ -48,5 +48,10 @@ public class GetZoneDataTests : ServiceProviderBasedTest<IGw2WikiProcessingSourc
         Assert.Contains("Inner Nayos: Heitor's Territory", innerNayos.AchievementCategories);
         Assert.Contains("Inner Nayos: Nyedra Surrounds", innerNayos.AchievementCategories);
         Assert.Contains("Inner Nayos: Citadel of Zakiros", innerNayos.AchievementCategories);
+    }
+
+    private void SetFile(string fileName)
+    {
+        fakeWikiApi.FileName = $"xmlfiles/{fileName}.xml";
     }
 }

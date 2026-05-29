@@ -1,0 +1,846 @@
+<mediawiki xmlns="http://www.mediawiki.org/xml/export-0.11/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mediawiki.org/xml/export-0.11/ http://www.mediawiki.org/xml/export-0.11.xsd" version="0.11" xml:lang="en">
+  <siteinfo>
+    <sitename>Guild Wars 2 Wiki</sitename>
+    <dbname>en_wikidb_gw2</dbname>
+    <base>https://wiki.guildwars2.com/wiki/Main_Page</base>
+    <generator>MediaWiki 1.39.17</generator>
+    <case>first-letter</case>
+    <namespaces>
+      <namespace key="-2" case="first-letter">Media</namespace>
+      <namespace key="-1" case="first-letter">Special</namespace>
+      <namespace key="0" case="first-letter" />
+      <namespace key="1" case="first-letter">Talk</namespace>
+      <namespace key="2" case="first-letter">User</namespace>
+      <namespace key="3" case="first-letter">User talk</namespace>
+      <namespace key="4" case="first-letter">Guild Wars 2 Wiki</namespace>
+      <namespace key="5" case="first-letter">Guild Wars 2 Wiki talk</namespace>
+      <namespace key="6" case="first-letter">File</namespace>
+      <namespace key="7" case="first-letter">File talk</namespace>
+      <namespace key="8" case="first-letter">MediaWiki</namespace>
+      <namespace key="9" case="first-letter">MediaWiki talk</namespace>
+      <namespace key="10" case="first-letter">Template</namespace>
+      <namespace key="11" case="first-letter">Template talk</namespace>
+      <namespace key="12" case="first-letter">Help</namespace>
+      <namespace key="13" case="first-letter">Help talk</namespace>
+      <namespace key="14" case="first-letter">Category</namespace>
+      <namespace key="15" case="first-letter">Category talk</namespace>
+      <namespace key="102" case="first-letter">Property</namespace>
+      <namespace key="103" case="first-letter">Property talk</namespace>
+      <namespace key="106" case="first-letter">Form</namespace>
+      <namespace key="107" case="first-letter">Form talk</namespace>
+      <namespace key="108" case="first-letter">Concept</namespace>
+      <namespace key="109" case="first-letter">Concept talk</namespace>
+      <namespace key="112" case="first-letter">smw/schema</namespace>
+      <namespace key="113" case="first-letter">smw/schema talk</namespace>
+      <namespace key="114" case="first-letter">Rule</namespace>
+      <namespace key="115" case="first-letter">Rule talk</namespace>
+      <namespace key="200" case="first-letter">ArenaNet</namespace>
+      <namespace key="201" case="first-letter">ArenaNet talk</namespace>
+      <namespace key="202" case="first-letter">API</namespace>
+      <namespace key="203" case="first-letter">API talk</namespace>
+      <namespace key="274" case="first-letter">Widget</namespace>
+      <namespace key="275" case="first-letter">Widget talk</namespace>
+    </namespaces>
+  </siteinfo>
+  <page>
+    <title>Lion's Arch</title>
+    <ns>0</ns>
+    <id>437</id>
+    <revision>
+      <id>3104826</id>
+      <parentid>3089922</parentid>
+      <timestamp>2026-02-06T11:09:03Z</timestamp>
+      <contributor>
+        <username>Tery3065</username>
+        <id>270948</id>
+      </contributor>
+      <minor/>
+      <origin>3104826</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="35550" sha1="pja9x2de6qbh9k8l3a99gnm9pw1ii8h" xml:space="preserve">{{otheruses|the current version of the city|the original version of the city|Memory of Old Lion's Arch|the city during [[Scarlet Briar|Scarlet's]] attack|The Battle For Lion's Arch}}
+{{Location infobox
+| objectives = y
+| type = City
+| within = Kryta
+| location tree = Tyria; Kryta
+| connections = [[Lornar's Pass]] (E)&lt;br&gt;[[Gendarran Fields]] (N)&lt;br&gt;[[Bloodtide Coast]] (S)&lt;br&gt;[[Lion's Arch Aerodrome]] (S)&lt;br&gt;[[Black Citadel]]&lt;br&gt;[[Chantry of Secrets]]&lt;br&gt;[[Crystal Oasis]]&lt;br&gt;[[Divinity's Reach]]&lt;br&gt;[[Hoelbrak]]&lt;br&gt;[[The Grove]]&lt;br&gt;[[Rata Sum]]&lt;br&gt;[[Southsun Cove]]&lt;br&gt;[[Arborstone]]&lt;br&gt;[[The Wizard's Tower]]&lt;br&gt;[[Shipwreck Strand]]
+| pets = [[Juvenile Armor Fish|Armor Fish]]&lt;br&gt;[[Juvenile Blue Jellyfish|Blue Jellyfish]]&lt;br&gt;[[Juvenile Krytan Drakehound|Krytan Drakehound]]&lt;br&gt;[[Juvenile Lynx|Lynx]]&lt;br&gt;[[Juvenile Pig|Pig]]&lt;br&gt;[[Juvenile Shark|Shark]]
+| id = 50
+| region id = 4
+| continent id = 1
+}}
+{{quotation|In-game description|Lion's Arch, built upon the wreckage of the Krytan City of the same name, has grown and prospered in the years since the rise of the Orrian Dragon. Founded by pirates and dependent on trade, the city has become a common ground for all the races of Tyria.}}
+
+[[Lion's Arch]] (sometimes shortened to '''LA''') is a coastal [[city|city zone]] in the [[Kryta]] region. It is the most diverse and cosmopolitan city in [[Tyria]], a melting pot where all [[race]]s gather and trade. It owes no allegiance to any race or nation, but stands on its own – and does so by virtue of its active navy, its financial strength, the intelligence and cunning of its leaders.
+
+Lion's Arch figures prominently in the game's storyline. One of the main themes of ''[[Guild Wars 2]]'' is bringing together disparate, even opposed groups in order to fight a greater enemy: the [[Elder Dragon]]s. Alone, no race will survive their awakening. Only together can the races of Tyria survive. Nowhere in Tyria is that belief more strongly held than the city of Lion's Arch.
+
+As the cultural and economic hub, Lion's Arch serves as the central focus of holidays and festivities such as [[Halloween]]. During Halloween, [[Mad King Thorn]] walks the streets of Lion's Arch telling jokes, and the city is full of spooky, dark, and pumpkin decor.
+
+== Getting there ==
+Note that [https://help.guildwars2.com/hc/articles/230165307 Free to play accounts] can only access Lion's Arch at level 35.
+* From [[Gendarran Fields]] — [[portal (zone)|portal]] in the southeastern part of the map, south of the {{waypoint|Cornucopian Fields Waypoint}}.
+* From [[Lornar's Pass]] — portal in the central western part of the map, south of the {{waypoint|Durmand Priory Waypoint}}.
+* From [[Bloodtide Coast]] — portal in the northern part of the map, north of the {{waypoint|Archen Foreland Waypoint}}.
+* From [[City#Capital cities|capital cities]]: 
+** [[Black Citadel]] — [[asura gate]] on the ledge northwest of the [[Imperator's Core]], near the {{waypoint|Ligacus Aquilo Waypoint}}.
+** [[Divinity's Reach]] — asura gate in the southeastern part of the [[District Promenade]], the central area of the city, near the {{waypoint|Palace Waypoint}}.
+** [[The Grove]] — asura gate in the [[Marshaling Field]] on the top layer of the city, the closest waypoint is {{waypoint|Upper Commons Waypoint}}.
+** [[Hoelbrak]] — asura gate in the [[Peeta's Gate]], western part of the city, near {{waypoint|Peeta's Waypoint}}.
+** [[Rata Sum]] — asura gate on the top level in the northern part of the city, near {{waypoint|Magustan Court Waypoint}}.
+* From [[Lion's Arch Aerodrome]] — portal in the northern part of the map.
+* From [[Memory of Old Lion's Arch]] — using the [[Lion's Pride]] [[Gizmo]] in old Lion's Arch to travel to the modern version of Lion's Arch.
+* [[Southsun Cove]] — asura gate in the southeastern part of the map, near {{waypoint|Pearl Islet Waypoint}}. 
+* [[Arborstone]] — asura gate in the southeastern part of the map, on the second level.
+* [[The Wizard's Tower]] — portal in the eastern part of the [[Outer Ring]], at {{point of interest|Lion's Arch Connector}}.
+* [[Shipwreck Strand]] — portal in the northeastern part of the map, near {{waypoint|Dark Leviathan Waypoint}}.
+* Using portals or portal managers in most of the [[lounge]]s, accessible by purchasing a pass in the [[Gem Store]].
+
+== History ==
+=== Early years ===
+{{section-stub|location|Add lore from Sea of Sorrows and Guild Wars 1.}}
+Lion's Arch went through multiple changes over the years since its days as the capital of [[Kryta]] in the original ''[[gw1:Guild Wars|Guild Wars]]'' to its current incarnation as a free city in ''[[Guild Wars 2]]''.
+
+=== City of Pirates ===
+{{section-stub|location|Add lore from personal story like Claw Island etc.}}
+[[File:Escape from Lion's Arch 1.jpg|thumb|250px|Many of the buildings in the city were made from shipwrecks.]]
+In 1219 &lt;small&gt;[[Mouvelian calendar|AE]]&lt;/small&gt;, the [[Elder Dragon]] [[Zhaitan]] woke from its slumber. The [[Rising of Orr]] created a great flood which destroyed and completely submerged the old capital. The ruins of Lion's Arch were utilized as a safe harbor by ships looking to escape the horrors of the sea.
+
+A decade later, in 1230 &lt;small&gt;AE&lt;/small&gt;, the wreckage of [[old Lion's Arch]] was slowly turned into a refuge for [[Corsair]]s and other [[pirate]]s, smugglers, and other independent vessels. Shanty towns were created, and as the waters slowly receded, a settlement formed that owed no allegiance to Kryta. This settlement was unified by a [[human]] named [[Cobiah Marriner]], who fought against the scourge of [[Ruins of Orr|Orr]] alongside [[charr]], [[asura]], [[norn]], and any other race that would lend their vessels to the cause. Out of that staunch and allied front, the city of Lion's Arch was reborn.
+
+For generations, the people of Lion's Arch were on the front line of the war with Zhaitan, the dragon of Orr. Their city was destroyed, only to be rebuilt in defiance of the Elder Dragon's power. The elite [[Lionguard]] built a fortress on [[Claw Island]], a small body of land in the harbor, in order to defend against Zhaitan's attacks. No ship sails from their docks without a wary eye south toward the dark waters of the undead. They live each day with the knowledge that they are a bastion against the destruction that the Elder Dragon would bring—regardless of whether or not the other nations of the world recognize, or care about, their ongoing struggle.
+
+For decades, Lion's Arch has been run by the [[Captain's Council]], a committee of wealthy merchants and sea captains. Those who wish to take an active hand in the city's governance must prove themselves regardless of their race and heritage. They must be respected as a noted ship commander, and they must have contributed to the city's growth or health. If they are seen as a leader in the city, then they may purchase one of the seats on the Captain's Council—when one becomes available. This system of political governance leads to a great deal of one-upmanship among the local captains and on the council itself.
+
+=== Battle for Lion's Arch ===
+{{section-stub|location|Add Season 1 lore about Mad King Thorn's invasion, Dragon Bash, murder of Theo Ashford etc.}}
+[[File:Battle for Lion's Arch screenshot 9.jpg|thumb|250px|Lion's Arch during Scarlet's attack.]]
+In 1327 &lt;small&gt;AE&lt;/small&gt;, after months of preparation, the arch-villain [[Scarlet Briar]] descended on Lion's Arch with all of her [[Scarlet's Alliance|deadly forces]]. The city was razed and the smoldering husk of the proud port city was occupied, and it was weeks before the siege was broken. After days of battle, Scarlet was slain in the skies above the city aboard her airship, ''[[the Breachmaker]]''.
+
+Word of Scarlet's demise has spread like wildfire throughout the wards of the city. With renewed vigor, the heroes of Lion's Arch, the Lionguard, and [[Order]] forces have driven out the remainder of Scarlet's armies, their morale and ranks shattered. Cheers and celebrations erupted at the refugee camps and nigh across all of Tyria. All the while, ''the Breachmaker''—the enormous airship looming over [[Sanctum Harbor]]—continued to drill uncontrollably before it mysteriously exploded a few days after hitting a magical leyline which was Scarlet's target. The resulting blast caused the pieces of the Breachmaker to be flung out across the city—mostly concentrated around the harbor but with debris landing as far out as the [[Farshore Ward]] and scarring the landscape. With the pieces being so immensely large, the resultant rebuilding of Lion's Arch was taking place around these seemingly immovable chunks of metal.
+
+=== New Lion's Arch ===
+{{section-stub|location|Add possible later developments in the city etc.}}
+Lion's Arch [[Game updates/2015-06-23|finished its rebuild]] in 1328 &lt;small&gt;AE&lt;/small&gt;. Parts of ''[[The Breachmaker]]'' were molded into new metal used to build several new structures, such as an aerodrome, a fortress, turrets, a new harbor with a shipyard amongst others. Some of the new buildings and structures are based on sea creatures and the city now has more of a maritime flair than the previous pirate flair. Several points of interest also had their names modified or replaced. The previously destroyed waypoint in Fort Marriner was restored and is now usable. Many citizens and services were moved including those for [[guild]]s that are now at [[Guild Initiative Headquarters]].
+
+In 1330 &lt;small&gt;AE&lt;/small&gt;, many [[Elona|elonian]] refugees flee to Lion's Arch due to [[Balthazar]] wages war against the Elder Dragons in the [[Crystal Desert]].
+
+== Unique features ==
+Lion's Arch is unique among the cities of Tyria since it is the central trade and cultural hub. It has features not found in other cities:
+* {{map icon|asura gate}} [[Asura gate]]s
+** To the capital [[City|cities]] of all [[playable race]]s, located in [[Coriolis Plaza]].
+** To far-flung destinations including [[Pearl Islet]] in [[Southsun Cove]], [[Arborstone]] in [[Cantha]], [[The Wizard's Tower]] in the [[Horn of Maguuma]] and [[Shipwreck Strand]] in [[Castora]], located in Coriolis Plaza.
+** To [[World versus World]], located in [[Fort Marriner]].
+** To [[Structured PvP]], located in Fort Marriner.
+* Portals exiting within or near each of the 3 [[Order]]s. Reach
+** [[Chantry of Secrets]] via the portal within the [[safe house]] at [[Order of Whispers Headquarters]].
+** [[Durmand Priory]] via the portal north-east of Cavern [[Waypoint]].
+** [[Vigil Keep]] via the portal to [[Cornucopian Fields]].
+* {{map icon|dungeon}} [[Dungeon Transportation|Connection]] to the [[Dungeons]], located in Fort Marriner.
+* {{map icon|raid}} Connection to the [[Lion's Arch Aerodrome]] and the raid portals located within.
+* {{map icon|fractals of the mists}} [[Fractals of the Mists]], located in Fort Marriner.
+* {{map icon|strike mission}} [[Old Lion's Court]], located in [[Grand Piazza]].
+* {{vendor|dungeon merchant}} [[Dungeon Armor and Weapons]], located in Fort Marriner. Sells items from all dungeons.
+* {{vendor|guild commendation}} [[Guild Commendation Trader]], located at Guild Initiative Headquarters.
+* {{vendor|ectoplasm vendor}} [[Apprentice Mekteki|Ectoplasm vendor]], located in [[White Crane Terrace]]
+* {{vendor|collections instructor}} [[Grandmaster Craftsman Hobbs|Legendary Weapons crafting vendor]] (the only one in the entire game)
+* {{vendor|collections instructor}} [[Scholar Mossi|Legendary Weapons trophy collector]] (the only one in the entire game)
+* {{icon|mystic forge}} [[Mystic Forge]], located in [[Trader's Forum]]
+* [[File:Feat chest (map icon).png|20px]] [[Tri-key Chest]], located in [[the Undermarket]]
+
+== Locations ==
+{| {{STDT|sortable pve locations}}
+{{Location table header|nolevel=1}}
+|-
+| [[Bloodcoast Ward]]
+|
+: {{map icon|wp}} Bloodcoast Ward Waypoint
+: {{map icon|vista}} 1 Vista
+|-
+| [[Commodore's Quarter]]
+|
+: {{map icon|wp}} Commodore's Quarter Waypoint
+: {{map icon|poi}} [[Captain Kiel's Office]]
+: {{map icon|poi}} [[Order of Whispers Headquarters]]
+: {{map icon|lm}} [[Consortium Headquarters]]
+|-
+| [[Eastern Ward]]
+|
+: {{map icon|wp}} Gate Hub Plaza Waypoint
+: {{map icon|poi}} [[Coriolis Plaza]]
+: {{map icon|poi}} [[The Vaults]]
+: {{map icon|asura gate}} [[Arborstone]] Asura Gate
+: {{map icon|asura gate}} [[Black Citadel]] Asura Gate
+: {{map icon|asura gate}} [[Divinity's Reach]] Asura Gate
+: {{map icon|asura gate}} [[Hoelbrak]] Asura Gate
+: {{map icon|asura gate}} [[Rata Sum]] Asura Gate
+: {{map icon|asura gate}} [[Shipwreck Strand]] Portal
+: {{map icon|asura gate}} [[Southsun Cove]] Asura Gate
+: {{map icon|asura gate}} [[The Grove]] Asura Gate
+: {{map icon|asura gate}} [[The Wizard's Tower]] Portal
+|-
+| [[Farshore Ward]]
+|
+: {{map icon|wp}} Cavern Waypoint
+: {{map icon|wp}} Farshore Waypoint
+: {{map icon|poi}} [[Tokk's Mill]]
+: {{map icon|vista}} 1 Vista
+|-
+| [[Fort Marriner]]
+|
+: {{map icon|wp}} Claw Island Portage Waypoint
+: {{map icon|wp}} Fort Marriner Waypoint
+: {{map icon|poi}} [[Mist Portals]]
+: {{map icon|poi}} [[Vigil Centerhouse]]
+: {{map icon|asura gate}} [[Heart of the Mists]] Asura Gate
+: {{map icon|asura gate}} [[Green Alpine Borderlands]] Asura Gate
+: {{map icon|asura gate}} [[Red Desert Borderlands]] Asura Gate
+: {{map icon|asura gate}} [[Blue Alpine Borderlands]] Asura Gate
+: {{map icon|asura gate}} [[Eternal Battlegrounds]] Asura Gate
+: {{map icon|asura gate}} [[Edge of the Mists]] Asura Gate
+: {{map icon|asura gate}} [[Obsidian Sanctum (zone)|Obsidian Sanctum]] Asura Gate
+: {{map icon|lm}} [[Claw Island Portage]]
+|-
+| [[Grand Piazza]]
+|
+: {{map icon|poi}} [[Lion's Court]]
+: {{map icon|vista}} 1 Vista
+|-
+| [[Hooligan's Route]]
+|
+: {{map icon|poi}} [[The Undermarket]]
+: {{map icon|vista}} 1 Vista
+|-
+| [[Inner Harbor]]
+|
+: {{map icon|poi}} [[Captain Theo Ashford Memorial Bridge]]
+: {{map icon|poi}} [[Deverol Gardens]]
+: {{map icon|vista}} 2 Vistas
+: {{map icon|jp}} [[Troll's Revenge]]
+|-
+| [[Postern Ward]]
+|
+: {{map icon|wp}} Eastern Ward Waypoint
+: {{map icon|wp}} Guild Buff Waypoint
+: {{map icon|poi}} [[Guild Initiative Headquarters]] ([[instance]])
+: {{map icon|vista}} 1 Vista
+: {{map icon|jp}} [[Urmaug's Secret]]
+: {{map icon|lm}} [[Lion's Shadow Bed and Breakfast]]
+|-
+| [[Sanctum Harbor]]
+|
+: {{map icon|poi}} [[Macha's Landing]]
+: {{map icon|poi}} [[Moorookoo Village]]
+: {{map icon|poi}} [[Moran Memorial]]
+: {{map icon|poi}} [[Old Lion's Arch]]
+: {{map icon|poi}} [[Phoenix Roost]]
+: {{map icon|poi}} [[Wreckage of the Breachmaker]]
+: {{map icon|vista}} 2 Vistas
+: {{map icon|lm}} [[Diverse Ledges]]
+: {{map icon|lm}} [[Phoenix Dawn]]
+|-
+| [[Sharkmaw Caverns]]
+|
+: {{map icon|jp}} [[Weyandt's Revenge]]
+|-
+| [[Trader's Forum]]
+|
+: {{map icon|wp}} Trader's Forum Waypoint
+: {{map icon|poi}} [[Black Lion Trading Company HQ]]
+: {{map icon|poi}} [[Frog Pond]]
+: {{map icon|poi}} [[Mystic Plaza]]
+|-
+| [[Western Ward]]
+|
+: {{map icon|wp}} Sanctum Harbor Waypoint
+: {{map icon|wp}} Western Ward Waypoint
+: {{map icon|poi}} [[Crow's Nest Tavern (Captain's Council)]]
+: {{map icon|poi}} [[The Free Market]]
+: {{map icon|vista}} 2 Vistas
+: {{map icon|lm}} [[Trader Jikk's]]
+|-
+| [[White Crane Terrace]]
+|
+: {{map icon|wp}} Diverse Ledges Waypoint
+: {{map icon|poi}} [[Durmand Priory Research Site]]
+: {{map icon|poi}} [[Field of the Fallen]]
+: {{map icon|poi}} [[Shuttered Gate]]
+: {{map icon|lm}} [[Maeva's house]]
+|}
+
+== Interactive map ==
+{{Interactive map | markers =
+    { "coord": [49100.2, 30975.9], "name": "Banker", "text": "[[Banker (NPC)|Banker]]", "icon": "Bank (map icon).png " },
+    { "coord": [49027.2, 30883.5], "name": "Mystic Forge", "text": "[[Mystic Forge]]", "icon": "Mystic Forge.png" },
+    { "coord": [49048.2, 30898.7], "name": "Mystic Forge Attendant", "text": "[[Miyani]]", "icon": "Mystic Forge.png" },
+    { "coord": [48872.8, 31199.8], "name": "Trading Post", "text": "[[Black Lion Trader]]", "icon": "Trading Post (map icon).png " },
+    { "coord": [48847.8, 31167.6], "name": "Aesthetician", "text": "[[Aesthetician]]", "icon": "Makeover Preview (map icon).png " },
+    { "coord": [49297.0, 30958.5], "name": "Black Lion Agent", "text": "[[Black Lion Agent (Gem Store)]]", "icon": "Gem Store (map icon).png" },
+    { "coord": [48888.7, 31187.8], "name": "Black Lion Weapons Specialist", "text": "[[Black Lion Weapons Specialist]]", "icon": "Weaponsmith (map icon).png " },
+    { "coord": [48894.1, 31170.4], "name": "Black Lion Exchange", "text": "[[Black Lion Exchange Specialist]]", "icon": "Guild Trader (map icon).png " },
+    { "coord": [49315.6, 30925.5], "name": "Black Lion Exchange", "text": "[[Black Lion Exchange Specialist]]", "icon": "Guild Trader (map icon).png " },
+    { "coord": [48886.4, 31162.5], "name": "Black Lion Statuette", "text": "[[Black Lion Chest Merchant]]", "icon": "Black Lion Chest Merchant.png " },
+    { "coord": [49327.5, 30940.7], "name": "Black Lion Statuette", "text": "[[Black Lion Chest Merchant]]", "icon": "Black Lion Chest Merchant.png " },
+    { "coord": [49948.9, 31223.8], "name": "Guild Banker", "text": "[[Sear Malstride]]", "icon": "Guild Banker (map icon).png " },
+    { "coord": [49956.9, 31182.8], "name": "Guild Registrar", "text": "[[Beaulieu]]", "icon": "Guild Registrar (map icon).png " },
+    { "coord": [48880.1, 31149.9], "name": "Armorsmith", "text": "[[Black Lion Trader (Armorsmith)]]", "icon": "Armorsmith (map icon).png " },
+    { "coord": [48867.4, 31154.8], "name": "Merchant", "text": "[[Black Lion Trader (Merchant)]]", "icon": "Merchant (map icon).png " },
+    { "coord": [48807.1, 31048.0], "name": "Master chef", "text": "[[Lachaidh]]", "icon": "Cooking Station (map icon).png" },
+    { "coord": [48788.8, 31010.1], "name": "Gathering Merchant", "text": "[[Barre Scorchmane]]", "icon": "Gathering Merchant (map icon).png" },
+    { "coord": [48802.1, 30975.2], "name": "Master weaponsmith", "text": "[[Frayja]]", "icon": "Weaponsmithing Station (map icon).png" },
+    { "coord": [48766.6, 30943.2], "name": "Master artificer", "text": "[[Klunn]]", "icon": "Artificing Station (map icon).png" },
+    { "coord": [48788.1, 30910.7], "name": "Master leatherworker", "text": "[[Hamil]]", "icon": "Leatherworking Station (map icon).png" },
+    { "coord": [48829.8, 30922.9], "name": "Master huntsman", "text": "[[Jraogh]]", "icon": "Huntsman's Station (map icon).png" },
+    { "coord": [48847.6, 30966.1], "name": "Legendary Vendor", "text": "[[Grandmaster Craftsman Hobbs]] and [[Scholar Mossi]]", "icon": "Legendary Crafting (map icon).png" },
+    { "coord": [48839.3, 30991.7], "name": "Master armorsmith", "text": "[[Muireall]]", "icon": "Armorsmithing Station (map icon).png" },
+    { "coord": [48887.7, 30966.2], "name": "Master jeweler", "text": "[[Isabel]]", "icon": "Jeweling Station (map icon).png" },
+    { "coord": [48880.7, 31003.0], "name": "Master tailor", "text": "[[Giita]]", "icon": "Tailoring Station (map icon).png" },
+    { "coord": [49013.6, 31086.1], "name": "Reinforce Armor", "text": "[[Anvil]]", "icon": "Reinforce Armor (map icon).png" },
+    { "coord": [48630.9, 31227.1], "name": "Reinforce Armor", "text": "[[Gommtoo]]", "icon": "Reinforce Armor (map icon).png" },
+    { "coord": [49385.9, 31971.1], "name": "Reinforce Armor", "text": "[[Anvil]]", "icon": "Reinforce Armor (map icon).png" },
+    { "coord": [48997.1, 31075.0], "name": "Merchant", "text": "[[Gravel Glittering]]", "icon": "Merchant (map icon).png" },
+    { "coord": [49589.7, 32147.5], "name": "Zone portal", "text": "[[Bloodtide Coast]]", "icon": "Asura gate starter area (map icon).png " },
+    { "coord": [48891.8, 30772.9], "name": "Zone portal", "text": "[[Gendarran Fields]]", "icon": "Asura gate starter area (map icon).png " },
+    { "coord": [50228.7, 31420.9], "name": "Zone portal", "text": "[[Lornar's Pass]]", "icon": "Asura gate starter area (map icon).png " },
+    { "coord": [49358, 31049], "name": "Asura gate", "text": "[[Divinity's Reach]]", "icon": "Asura gate (map icon).png" },
+    { "coord": [49387, 31023], "name": "Asura gate", "text": "[[Arborstone]]", "icon": "Asura gate (map icon).png" },
+    { "coord": [49415, 31044], "name": "Asura gate", "text": "[[Southsun Cove]]", "icon": "Asura gate (map icon).png" },
+    { "coord": [49432, 31061], "name": "Portal", "text": "[[The Wizard's Tower]]", "icon": "Asura gate (map icon).png" },
+    { "coord": [49450, 31082], "name": "Asura gate", "text": "[[Hoelbrak]]", "icon": "Asura gate (map icon).png" },
+    { "coord": [49433, 31186], "name": "Asura gate", "text": "[[Black Citadel]]", "icon": "Asura gate (map icon).png" },
+    { "coord": [49390, 31202], "name": "Asura gate", "text": "[[The Grove]]", "icon": "Asura gate (map icon).png" },
+    { "coord": [49317, 31144], "name": "Asura gate", "text": "[[Rata Sum]]", "icon": "Asura gate (map icon).png" },
+    { "coord": [49388, 31110], "name": "Portal", "text": "[[Shipwreck Strand]]", "icon": "Asura gate (map icon).png" },
+    { "coord": [49415.9, 31729.1], "name": "Asura gate", "text": "[[Heart of the Mists]]", "icon": "Asura gate (map icon).png" },
+    { "coord": [49468.9, 31873.1], "name": "Asura gate", "text": "[[Green Alpine Borderlands]]", "icon": "Asura gate (map icon).png" },
+    { "coord": [49470.9, 31919.1], "name": "Asura gate", "text": "[[Red Desert Borderlands]]", "icon": "Asura gate (map icon).png" },
+    { "coord": [49421.9, 31973.1], "name": "Asura gate", "text": "[[Blue Alpine Borderlands]]", "icon": "Asura gate (map icon).png" },
+    { "coord": [49344.9, 31964.1], "name": "Asura gate", "text": "[[Eternal Battlegrounds]]", "icon": "Asura gate (map icon).png" },
+    { "coord": [49308.9, 31896.1], "name": "Asura gate", "text": "[[Edge of the Mists]]", "icon": "Asura gate (map icon).png" },
+    { "coord": [49323.9, 31847.1], "name": "Asura gate", "text": "[[Obsidian Sanctum (zone)|Obsidian Sanctum]]", "icon": "Asura gate (map icon).png" },
+    { "coord": [49006.9, 31189.1], "name": "Scrying Stone", "text": "[[Old Lion's Court]]", "icon": "Strike Mission (map icon).png" },
+    { "coord": [49018.9, 31172.1], "name": "Shard Collector", "text": "[[Archeologist Vorri]]", "icon": "Shard Collector (blue) (map icon).png" },
+    { "coord": [48597.9, 30893.8], "name": "Laurel Merchant", "text": "[[Laurel Merchant]]", "icon": "Laurel Merchant.png" },
+    { "coord": [49262.9, 31869.8], "name": "Laurel Merchant", "text": "[[Laurel Merchant]]", "icon": "Laurel Merchant.png" },
+    { "coord": [49170.9, 31279.8], "name": "Activity", "text": "[[Activity Lead Cassi]]", "icon": "Activity (map icon).png" },
+    { "coord": [49918.6, 31334.2], "name": "Adventure", "text": "[[Advanced Skimmer Course]]", "icon": "Adventure (map icon).png" },
+    { "coord": [49294.4, 30910.8], "name": "Boost Enchantment Researcher", "text": "[[Boost Enchantment Researcher]]", "icon": "Merchant (map icon).png" },
+    { "coord": [49279.7, 30929.1], "name": "Aesthetician", "text": "[[Aesthetician Kristina]]", "icon": "Makeover Preview (map icon).png" },
+    { "coord": [49311.9, 30975.8], "name": "Black Lion Weapons", "text": "[[Black Lion Weapons Specialist]]", "icon": "Black Lion Weapons Specialist (The Vaults) (map icon).png" },
+    { "coord": [49295.9, 32018.8], "name": "Dungeon merchant", "text": "[[Dungeon Armor and Weapons|Armor and Weapons]]", "icon": "Dungeon Merchant (map icon).png" },
+    { "coord": [49311.9, 32022.8], "name": "Dungeons", "text": "[[Dungeon Transportation]]", "icon": "Dungeon (map icon).png" },
+    { "coord": [49399.9, 32041.8], "name": "Special Forces Training Area", "text": "Portal to [[Special Forces Training Area]]", "icon": "Raid (map icon).png" },
+    { "coord": [49884.7, 31741.4], "name": "Speed Boons", "text": "[[Tourist (speed boons)|Tourist]]", "icon": "Speed Boon.png" },
+    { "coord": [48260.9, 31800.0], "name": "Ectoplasm vendor", "text": "[[Apprentice Mekteki]]", "icon": "Ectoplasm vendor.png" },
+    { "coord": [49381.9, 31929.8], "name": "Commander Trainer", "text": "[[Commander Yaffa]]", "icon": "Commander Trainer (map icon).png" },
+    { "coord": [48763.0, 32018.0], "name": "Transport Facilitator", "text": "[[Lionguard Aircrew (Transport Facilitator)|Lionguard Aircrew]]", "icon": "Transport Facilitator (map icon).png" },
+    { "coord": [48506.9, 31140.8], "name": "Merchant", "text": "[[Scornheart]]", "icon": "HoMPS merchant (map icon).png" },
+    { "coord": [48533.9, 31272.8], "name": "Belcher's Bluff", "text": "[[Poyaqui]]", "icon": "Belcher's Bluff (map icon).png" },
+    { "coord": [48754.0, 31039.0], "name": "Music selection", "text": "[[Van Leopard Memorial]]", "icon": "Musical note (map icon).png" },
+    { "coord": [49061.9, 31013.7], "name": "Jade Bot Terminal", "text": "[[Jade Bot Terminal]]", "icon": "Jade Bot Workbench (map icon).png" },
+    { "coord": [49435.9, 31944.7], "name": "Jade Bot Terminal", "text": "[[Jade Bot Terminal]]", "icon": "Jade Bot Workbench (map icon).png" },
+    { "coord": [48652.9, 30941.8], "name": "Landmark", "text": "[[Consortium Headquarters]]", "icon": "Personal waypoint (map icon).png" },
+    { "coord": [49750.9, 30924.8], "name": "Landmark", "text": "[[Lion's Shadow Bed and Breakfast]]", "icon": "Personal waypoint (map icon).png" },
+    { "coord": [48792.9, 32006.8], "name": "Landmark", "text": "[[Phoenix Dawn]]", "icon": "Personal waypoint (map icon).png" },
+    { "coord": [49051.9, 31800.8], "name": "Landmark", "text": "[[Claw Island Portage]]", "icon": "Personal waypoint (map icon).png" },
+    { "coord": [48573.9, 31276.8], "name": "Landmark", "text": "[[Trader Jikk's]]", "icon": "Personal waypoint (map icon).png" },
+    { "coord": [48342.9, 31735.8], "name": "Landmark", "text": "[[Diverse Ledges]]", "icon": "Personal waypoint (map icon).png" },
+    { "coord": [48341.9, 31363.8], "name": "Landmark", "text": "[[Maeva's house]]", "icon": "Personal waypoint (map icon).png" },
+    { "coord": [48608.8, 30851.5], "name": "Faction Provisioner", "text": "[[Skritt Trader (Lion's Arch)|Skritt Trader]]", "icon": "Faction Provisioner (map icon).png" },
+    { "coord": [48633.7, 30866.2], "name": "Collections Instructor", "text": "[[Legendary Collector Youngblood]]", "icon": "Basic Collections.png" },
+    { "coord": [48137.9, 30868.8], "name": "Festival Merchants", "text": "[[Festival Merchant]]", "icon": "Festival Vendor (map icon).png" },
+    { "coord": [48162.9, 30865.8], "name": "Lost and Found Shinies", "text": "[[Sarettokk]]", "icon": "HoMPS merchant (map icon).png" },
+    { "coord": [48163.9, 30826.8], "name": "Birthday Vendor", "text": "[[Birthday Vendor]]", "icon": "Birthday Vendor.png" },
+    { "coord": [48164.9, 30811.8], "name": "Tri-key Chest", "text": "[[Tri-key Chest]]", "icon": "Feat chest (map icon).png" },
+}}
+
+== Pets ==
+;[[Juvenile Armor Fish]] 	
+* [[Sanctum Harbor]] (near the [[Wreckage of the Breachmaker]])
+
+;[[Juvenile Blue Jellyfish]]
+* [[Sanctum Harbor]] (southeast of [[Old Lion's Arch]])
+
+;[[Juvenile Krytan Drakehound]]
+* [[Captain Theo Ashford Memorial Bridge]] (named [[Tomme's Dog]] in the bridge's archway directly west of the PoI, appears shortly after someone has acquired [[Tomme's Cat]])
+
+;[[Juvenile Lynx]]
+* [[Captain Theo Ashford Memorial Bridge]] (named [[Tomme's Cat]] in the bridge's archway directly west of the PoI, appears shortly after someone has acquired [[Tomme's Dog]])
+
+;[[Juvenile Pig]]
+* [[Farshore Ward]] (on the farm above Cavern Waypoint)
+
+;[[Juvenile Shark]]
+* [[Sharkmaw Caverns]] (in the cave's lake)
+
+== Diving location ==
+* At the very top of the lighthouse (west of {{map icon|poi}} [[Phoenix Roost]]) right next to the Vista
+
+== [[Jumping puzzles]] ==
+* [[Troll's Revenge]]
+* [[Urmaug's Secret]]
+* [[Weyandt's Revenge]]
+
+;Historical
+* [[Troll's End]] &lt;small&gt;(available in the [[Memory of Old Lion's Arch]])&lt;/small&gt;
+
+== Gallery ==
+;Screenshots
+&lt;gallery perrow="6"&gt;
+File:Trader's Forum.jpg|Trader's Forum.
+File:Postern Ward.jpg|Postern Ward.
+FIle:Mist Portals.jpg|Fort Marriner.
+File:Inner Harbor.jpg|Inner Harbor.
+File:Guild Initiative Headquarters.jpg|Guild Initiative Headquarters.
+File:Lion's Arch Aerodrome Exterior.jpg|Lion's Arch Aerodrome.
+File:Coriolis Plaza.jpg|The Gate Hub at Coriolis Plaza.
+File:Sanctum Harbor.jpg|Sanctum Harbor.
+File:Deverol Gardens.jpg|Deverol Gardens.
+File:Commodore's Quarter.jpg|Commodore's Quarter.
+File:Old Lion's Arch.jpg|Old Lion's Arch submerged under water.
+File:Order of Whispers Headquarters.jpg|Order of Whispers Headquarters.
+&lt;/gallery&gt;
+
+;Before Living World Season 1
+{{main|Memory of Old Lion's Arch#Gallery}}
+
+;During Scarlet's attack
+{{main|The Battle For Lion's Arch#Gallery}}
+
+;During Living World Season 2 ([[Battle for Lion's Arch: Aftermath|Aftermath]])
+&lt;gallery perrow="6"&gt;
+File:Trader's Forum (aftermath).jpg|The devastated Trader's Forum.
+File:The Old Gangplank (aftermath).jpg|The destroyed Old Gangplank bridge.
+File:Breachmaker wreckage1.jpg|''Breachmaker'' parts near Lion's Gate.
+File:Saviours of Lion's Arch Memorial.jpg|The memorial dedicated to the heroes of Lion's Arch at the destroyed Gate Hub Plaza.
+File:Canal Ward.jpg|The ruined Canal Ward.
+File:Farshore Ward (aftermath).jpg|''Breachmaker'' part at Farshore Ward.
+File:The Gangplank.jpg|The damaged Gangplank bridge.
+File:Destroyed Lion's Court fountain.jpg|The destroyed fountain at Lion's Court.
+File:Fort Marriner (aftermath).jpg|The ruined Fort Marriner.
+File:Breachmaker wreckage2.jpg|''Breachmaker'' parts at Diverse Ledges.
+File:Wreckage of the Breachmaker original.jpg|Wreckage of the Breachmaker in Sanctum Harbor.
+File:Western Ward (aftermath).jpg|The wrecked Western Ward.
+File:Lion's Gate destroyed.jpg|The wreckage of Lion's Gate.
+File:Black Lion Trading Company HQ destroyed.jpg|The ruined Black Lion Trading Company auction floor.
+File:White Crane Terrace (aftermath).jpg|Cemetery at White Crane Terrace. 
+File:Breachmaker wreckage6.jpg|The destroyed Moran Memorial.
+File:Breachmaker wreckage7.jpg|The wrecked Macha's Landing.
+File:Breachmaker wreckage9.jpg|Destroyed bridge between Grand Piazza and Western Ward.
+&lt;/gallery&gt;
+
+;Concept art
+&lt;gallery perrow="6"&gt;
+File:Lions Arches concept art.jpg|Early concept.
+File:Retribution.jpg|[[Retribution (story)|Retribution]] loading screen.
+File:"Lion's Arch Auction House" concept art.jpg|Lion's Arch auction house by Levi Hopkins.
+File:"Lion's Arch Anchor Lighthouse" concept art.jpg|Lion's Arch Anchor Lighthouse by Levi Hopkins.
+File:Suspicious Activity.jpg|[[Suspicious Activity]] loading screen.
+File:Thrown Off Guard.jpg|[[Forearmed Is Forewarned (Personal Story)|Forearmed Is Forewarned]] loading screen.
+File:Pact airships above Lion's Arch.jpg|[[Pact]] [[airship]]s above Lion's Arch.
+File:Lions Arch boat gate concept art.jpg|Lion's Arch boat gate.
+File:Zhaitan attacking Lion's Arch concept art.jpg|[[Zhaitan]] attacks Lion's Arch by [[Ruan Jia]].
+File:Lion's Arch invasion plan.jpg|Invasion plan from the [[Battle for Lion's Arch/archive|Battle for Lion's Arch]].
+&lt;/gallery&gt;
+&lt;gallery&gt;
+File:Lions Arch rebuild concept art.jpg|Rebuilt Lion's Arch.
+File:Lions Arch rebuild(2) concept art.jpg|Rebuilt Lion's Arch.
+File:Lions Arch rebuild(3) concept art.jpg|Rebuilt Lion's Arch.
+&lt;/gallery&gt;
+
+;Historical loading screens
+&lt;gallery&gt;
+File:Lion's Arch loading screen (original).jpg|Original loading screen.
+File:Lion's Arch (Season 2).jpg|Throughout [[Living World Season 2]].
+File:Lion's Arch (Dragon Bash) loading screen.jpg|[[Dragon Bash 2013]].
+File:Lion's Arch (Wintersday) loading screen.jpg|[[Wintersday|Wintersday 2012, 2013]].
+File:Lion's Arch (Halloween) loading screen.jpg|[[Halloween|Halloween 2012, 2013]].
+&lt;/gallery&gt;
+
+;Holiday loading screens
+&lt;gallery&gt;
+File:Lion's Arch Halloween 2015 loading screen.png|[[Halloween]] loading screen.
+&lt;/gallery&gt;
+
+;Previous maps
+&lt;gallery&gt;
+File:Lion's Arch map (original).jpg|Map of Lion's Arch during [[Edge of the Mists (living world)]].
+File:Lion's Arch map back trading.jpg|Map of Lion's Arch during [[Living World Season 2]].
+File:Lion's Arch map aftermath.jpg|Version of the above map (likely unused ingame) but with underwater structures visible.
+File:Lion's Arch map remove parts.jpg|Map of Lion's Arch during [[Game updates/2015-05-19|reconstruction]].
+&lt;/gallery&gt;
+
+;Iconography
+&lt;gallery&gt;
+Lion's Arch emblem.png|The emblem of Lion's Arch.
+&lt;/gallery&gt;
+
+== Related achievements ==
+* {{achievement|Friends in High Places|category=Community}}
+* {{achievement|Lion's Arch Exterminator|category=Explorer}}
+
+== Notes ==
+* There was an extensive [[The Bilge|sewage system]] beneath the city previous to its rebuild in 1328 AE.
+* As this isn't a racial [[city]], there is no [[home instance]].
+* During the original Wintersday, the city was visited by [[Toymaker Tixx]], and [[Snowman (NPC)|Snowmen]] roamed the snow-covered, festively decorated city to give presents. All subsequent releases of Wintersday take place in [[Divinity's Reach]]. 
+* The map used to be able to be broken out of by going to the [[Shuttered Gate]] and relogging in the right corner of it. An invisible wall was placed along it in a bug fix introduced in autumn 2017.
+* During [[Living World Season 1]], through the original [[Escape from Lion's Arch]] and the [[Battle for Lion's Arch/archive|Battle for Lion's Arch]] episodes, the usual city services such as [[crafting station]]s and [[trading post]] access were moved to the [[Vigil Headquarters|Vigil]] and [[Durmand Priory (location)|Durmand Priory]] headquarters.
+* Map complete rewards for Lion's Arch is experience and a transmutation charge.
+*The pirate's version/second age of Lion's Arch, that was removed from the game during the 2014 [[Escape from Lion's Arch]] release, was restored in the form of the [[Memory of Old Lion's Arch]] lounge during the [[Battle for Lion's Arch]] 2022 re-release.
+
+== Trivia ==
+* Internally at ArenaNet, this area was known as "Valley_Arch."
+* The composite image in the loading screen includes parts of the [[wikipedia:Széchenyi Chain Bridge|Széchenyi Chain Bridge]] in Budapest, including one of its iconic lions.
+* Story instances from the [[Personal Story]] that take place on Lion's Arch use the original appearance of the city, prior to the events of [[Living World Season 1]]. Further, a sepia filter is added which can be disabled by turning post-processing off. This sepia filter also affects the cinematic that welcomes players to their chosen [[Order]]; players might wish to disable post-processing to watch the original cinematics without the filter.
+
+== See also ==
+* [[Memory of Old Lion's Arch]]
+* [[The Battle For Lion's Arch]]
+** [[Lion's Arch (Under Attack!)]] (Original version from [[Escape from Lion's Arch]])
+** [[Lion's Arch (Enemy Controlled)]] (Original version from [[Battle for Lion's Arch/archive|Battle for Lion's Arch]])
+* [[Sea of Sorrows (book)]]
+
+== External links ==
+{{gww}}
+* [http://web.archive.org/web/20110514121229/http://www.arena.net/blog/lions-arch-building-the-heart-of-the-city Lion's Arch: Building the Heart of the City – Archived copy of the article from ArenaNet's Blog]
+* [http://www.youtube.com/watch?v=v0MzZyZ-ty8 The City of Lion's Arch - YouTube]
+* [http://www.youtube.com/watch?v=u7VrDhEnzFQ Guild Wars 2 - Escape from Lion's Arch Destruction Cinematic - YouTube]
+* [https://www.youtube.com/watch?v=q75uHc42mo4 Guild Wars 2 - Welcome to the New Lion's Arch - YouTube]
+* [https://www.guildwars2.com/en/news/hidden-arcana-designing-the-new-lions-arch Hidden Arcana: Designing the New Lion’s Arch]
+
+{{Cities nav}}
+
+[[Category:Ghosts of Ascalon locations]]
+[[Category:Edge of Destiny locations]]
+[[Category:Sea of Sorrows locations]]
+[[de:Löwenstein]]
+[[es:Arco del León]]
+[[fr:L'Arche du lion]]</text>
+      <sha1>pja9x2de6qbh9k8l3a99gnm9pw1ii8h</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Hooligan's Route</title>
+    <ns>0</ns>
+    <id>29190</id>
+    <revision>
+      <id>2979337</id>
+      <parentid>2870775</parentid>
+      <timestamp>2025-06-10T21:20:45Z</timestamp>
+      <contributor>
+        <username>Tery3065</username>
+        <id>270948</id>
+      </contributor>
+      <comment>/* Services */</comment>
+      <origin>2979337</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="3715" sha1="66ah7oljta2j65kvpynbgtekheyi1pk" xml:space="preserve">{{otheruses|the modern area|the original version|Hooligan's Route (Memory of Old Lion's Arch)|historical information about the area|Hooligan's Route/historical}}
+{{Location infobox
+| points-of-interest = 1
+| vistas = 1
+| type = Area
+| sector id = 859
+| within = Lion's Arch
+| gallery1 = The Undermarket.jpg
+| gallery1-text = The Undermarket
+| connections = [[Commodore's Quarter]] (E)&lt;br&gt;[[White Crane Terrace]] (S)&lt;br&gt;[[Western Ward]] (SE)
+}}
+[[Hooligan's Route]] is a cave located in northwest [[Lion's Arch]], north of [[Western Ward]]. [[The Undermarket]] can be found within.
+
+== Locations ==
+;Points of Interest
+: {{map objective|point of interest|The Undermarket|id=1064}}
+
+;Vistas
+: {{map objective|vista|The Undermarket Vista|id=1396}}
+::From [[Western Ward]] Waypoint head towards the Undermarket. There are a series of stepped stalagmites sticking up from the ground. Jump to the highest stalagmite in series. Jump to the rocky platforms until you reach the vista. Note you don't actually need to jump onto the narrow vista stalagmite. If you creep forward as far as you can on the last large stalagmite then you can activate the vista from there.
+
+== NPCs ==
+=== Allies ===
+;[[Ambient creature]]s
+* [[Rat]]
+
+;[[Human]]s
+* [[Ravious]]
+
+;[[Norn]]
+* [[Sonder the Seller]]
+
+;[[Skritt]]
+* [[Pirate King Drrikk'ttikk]]
+* [[Skritt Bottle Lobber]]
+* [[Skritt Gear Lobber]]
+* [[Skritt Forager]]
+* [[Skritt Pistoleer]]
+* [[Skritt Sentry]]
+
+=== Services ===
+: {{vendor|festival}} [[April Fools' Vendor]]
+: {{vendor|birthday vendor}} [[Birthday Vendor]]
+: {{vendor|misc|Dragon Bash.png}} [[Dragon Bash Vendor]]
+: {{vendor|weaponsmith}} [[Frakktukk]]
+: {{vendor|festival}} [[Four Winds Vendor]]
+: {{vendor|festival}} [[Fortune Scrap Vendor]]
+: {{vendor|merchant}} [[Gharr Leadclaw]]
+: {{vendor|halloween}} [[Halloween Vendor]]
+: {{vendor|misc|Lunar New Year Vendor.png}} [[Lunar New Year Vendor]]
+: {{vendor|wintersday}} [[Wintersday Vendor]]
+: {{vendor|merchant}} [[Namrrokk]]
+: {{vendor|misc|HoMPS merchant (map icon).png}} [[Sarettokk]]
+: {{vendor|merchant}} [[Shiny King M'takk]]
+: {{vendor|festival}} [[Sovereign Weapon Vendor]]
+: {{vendor|SAB}} [[Super Adventure Box Trader]]
+: {{vendor|SAB}} [[Super Adventure Box Weaponsmith]]
+: {{vendor|armorsmith}} [[Uttorrchakk]]
+: {{vendor|lw merchant}} [[Zotturrikk]]
+
+== Ambient dialogue ==
+''For previous dialogue, see [[Hooligan's Route/dialogue]].''
+;Ravious tending to his rats
+:'''Ravious:''' ''Here, take it!''
+
+:'''Ravious:''' ''There you go!''
+
+== Objects ==
+* [[Tri-key Chest]]
+
+== Notes ==
+* The karma vendor [[Sarettokk]] sells/gives players [[Hall of Monuments Portal Stone]]s which enables them to visit an otherwise unreachable site in the game, the [[Hall of Monuments]].
+* After residents were evacuated during [[Escape from Lion's Arch]], [[skritt]] moved in and inhabited the area around The Undermarket. When the former residents came back and attempted to reclaim the area, the skritt chased them away, of which included:
+** A [[Blood Legion Soldier]], [[Citizen]], [[Covington Pirate]], [[Crab]], [[Pirate (NPC)|Pirate]], as well as [[Bort the Bloodless]], [[Naima Ice-veined]], [[Black Davi]], [[Gullveig the Grim]], [[Scornheart]], and [[Salty Emil]].
+* There was a karma vendor [[Gwenwyn]] who sold Pirate-styled level 40 {{rarity|rare}} weapons found here. She was removed from the game and replaced with [[First Mate Shane]] who can be found at the exit of the [[Weyandt's Revenge]] jumping puzzle.
+
+== Trivia ==
+* Was originally named "New Town Center" in [[:File:Valley Arch sectormap.jpg|early maps]] of Lion's Arch.
+
+{{Lion's Arch nav}}
+
+[[Category:Skritt culture]]
+
+[[de:Weg des Rohlings]]
+[[es:Ruta del Vándalo]]
+[[fr:Route du gredin]]</text>
+      <sha1>66ah7oljta2j65kvpynbgtekheyi1pk</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Halloween Vendor</title>
+    <ns>0</ns>
+    <id>252796</id>
+    <revision>
+      <id>3037507</id>
+      <parentid>3037468</parentid>
+      <timestamp>2025-10-07T20:25:38Z</timestamp>
+      <contributor>
+        <username>Vysnaite</username>
+        <id>270646</id>
+      </contributor>
+      <comment>/* Crafting Recipes */</comment>
+      <origin>3037507</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="6630" sha1="4eqh6nyv0zy7yiar0i153xr7vxrw5rg" xml:space="preserve">{{otheruses|the merchant selling items for [[Candy Corn]]|other festival merchants|Festival Rewards Vendor}}
+{{NPC infobox
+| image = Skritt Forager Takkiti.jpg
+| icon = Candy Corn (overhead icon).png
+| location = Hooligan's Route
+| race = skritt
+| service = Festival Merchant
+| coordinates = [48102,30858]
+| gallery1 = The Undermarket map.jpg
+}}
+[[Halloween Vendor]] is a year-round [[merchant]] that sells [[Halloween]]-themed items for [[Candy Corn]].
+
+== Location ==
+;[[Kryta]]
+* [[Lion's Arch]]
+** [[Hooligan's Route]]
+*** [[The Undermarket]]
+
+== Items offered ==
+=== Halloween Armor ===
+{{Vendor table header|showLevel=false|showFacts=false}}
+{{Vendor table row|item=Plush Zhaia Backpack|cost=5 Gibbering Skull + 5 High-Quality Plastic Fangs + 5 Tyria's Best Nougat Center + 5 Candy Corn Cob}}
+{{Vendor table row|item=Clawing Shadow Plate|cost=20 Candy Corn Cob}}
+{{Vendor table row|item=Clawing Shadow Greaves Box|cost=20 Candy Corn Cob}}
+{{Vendor table row|item=Clawing Shadow Gloves Box|cost=20 Candy Corn Cob}}
+{{Vendor table row|item=Grasping Gaze Shoulders Box|cost=20 Candy Corn Cob}}
+{{Vendor table row|item=Wanderer's Lunatic Court Cape|cost=20 Candy Corn Cob|name=Lunatic Court Cape}}
+{{Vendor table row|item=Pumpkin Crown|cost=20 Candy Corn Cob}}
+{{Vendor table row|item=Shackles of Madness Skin|cost=6 Candy Corn Cob}}
+{{Vendor table row|item=Witch's Hat|cost=30 Candy Corn Cob}}
+{{Vendor table row|item=Ghostly Racing Scarf|cost=30 Candy Corn Cob}}
+{{Vendor table row|item=Plush Zhaia|cost=10 Gibbering Skull + 10 High-Quality Plastic Fang + 10 Tyria's Best Nougat Center + 30 Candy Corn Cob}}
+|}
+
+=== Halloween Prizes ===
+{{Vendor table header|showLevel=false|showFacts=false}}
+{{Vendor table row|item=Gift of Candy Corn|cost=5 Candy Corn Cob|total=1}}
+{{Vendor table row|item=Greater Gift of Candy Corn|cost=5 Candy Corn Cob|total=1|requirement=Gift of Candy Corn}}
+{{Vendor table row|item=Recipe: Bag of Popped Candy Corn|cost=5 Candy Corn Cob}}
+{{Vendor table row|item=Essence of Halloween|quantity=4|cost=1 Candy Corn Cob}}
+{{Vendor table row|item=Endless Halloween Enchantment|cost=1 Candy Corn Cob}}
+{{Vendor table row|item=Hexed Outfit|cost=3 Candy Corn Cob}}
+{{Vendor table row|item=Halloween Pail|cost=3 Candy Corn Cob}}
+|}
+
+=== Halloween Minis ===
+{{Vendor table header|showLevel=false|showFacts=false}}
+{{Vendor table row|item=Mini Candy Core Golem|cost=15 Candy Corn Cob}}
+{{Vendor table row|item=Mini Pummel Spider|cost=15 Candy Corn Cob}}
+{{Vendor table row|item=Mini Fluffy Black Cat|cost=15 Candy Corn Cob}}
+{{Vendor table row|item=Mini Black Labrador|cost=15 Candy Corn Cob}}
+{{Vendor table row|item=Mini Madam Cookie|cost=20 Candy Corn Cob}}
+{{Vendor table row|item=Mini Haunted Candle|cost=20 Candy Corn Cob}}
+{{Vendor table row|item=Mini Halloween Gourdon|cost=20 Candy Corn Cob}}
+{{Vendor table row|item=Mini Husk-o-Lantern|cost=4 Candy Corn Cob}}
+{{Vendor table row|item=Mini Zuzu, Cat of Darkness|cost=20 Candy Corn Cob}}
+{{Vendor table row|item=Mini Candy-Corn Elemental|cost=6 Candy Corn Cob}}
+{{Vendor table row|item=Mini Bloody Prince Thorn|cost=10 Candy Corn Cob}}
+{{Vendor table row|item=Mini Ghost Carlotta|cost=10 Candy Corn Cob}}
+{{Vendor table row|item=Mini Mad Memoires|cost=5 Candy Corn Cob}}
+{{Vendor table row|item=Mini Mad Memories: Complete Edition|cost=5 Candy Corn Cob}}
+{{Vendor table row|item=Mini Mad Memories: Complete Ignition|cost=5 Candy Corn Cob}}
+{{Vendor table row|item=Mini Svelicht the Fog Raven|cost=40 Candy Corn Cob}}
+{{Vendor table row|item=Mini Altosius the Flame Raven|cost=40 Candy Corn Cob}}
+{{Vendor table row|item=Mini Derlitz the Candy Raven|cost=20 Candy Corn Cob}}
+{{Vendor table row|item=Mini Lord Humphrey Faren|cost=100 Candy Corn Cob}}
+{{Vendor table row|item=Mini Gwynefyrdd|cost=110 Candy Corn Cob}}
+{{Vendor table row|item=Mini Oxidecimus the Shadow Raven|cost=120 Candy Corn Cob}}
+|}
+
+=== Crafting Recipes ===
+* {{red|Note that homestead recipes can still be purchased by accounts without [[Guild Wars 2: Janthir Wilds|Janthir Wilds]]; however, they will not be able to consume them.}}
+{{Vendor table header|showLevel=false|showFacts=false}}
+{{Vendor table row|item=Recipe: Ominous Fortress Ruins—Right|cost=10 Piece of Candy Corn}}
+{{Vendor table row|item=Recipe: Ominous Fortress Buttress|cost=10 Piece of Candy Corn}}
+{{Vendor table row|item=Recipe: Ominous Fortress Ruins—Left|cost=10 Piece of Candy Corn}}
+{{Vendor table row|item=Recipe: Festive Fall Tent|cost=10 Piece of Candy Corn}}
+{{Vendor table row|item=Homestead Recipe Book: Halloween, Volume 10|cost=50 Piece of Candy Corn}}
+{{Vendor table row|item=Homestead Recipe Book: Halloween, Volume 9|cost=50 Piece of Candy Corn}}
+{{Vendor table row|item=Homestead Recipe Book: Halloween, Volume 8|cost=50 Piece of Candy Corn}}
+{{Vendor table row|item=Homestead Recipe Book: Halloween, Volume 7|cost=50 Piece of Candy Corn}}
+{{Vendor table row|item=Homestead Recipe Book: Halloween, Volume 6|cost=50 Piece of Candy Corn}}
+{{Vendor table row|item=Homestead Recipe Book: Halloween, Volume 5|cost=50 Piece of Candy Corn}}
+{{Vendor table row|item=Homestead Recipe Book: Halloween, Volume 4|cost=50 Piece of Candy Corn}}
+{{Vendor table row|item=Homestead Recipe Book: Halloween, Volume 3|cost=50 Piece of Candy Corn}}
+{{Vendor table row|item=Homestead Recipe Book: Halloween, Volume 2|cost=50 Piece of Candy Corn}}
+{{Vendor table row|item=Homestead Recipe Book: Halloween, Volume 1|cost=50 Piece of Candy Corn}}
+{{Vendor table row|item=Recipe: Antique Bell|cost=10 Piece of Candy Corn|status=discontinued}}
+{{Vendor table row|item=Recipe: Haunted Bell|cost=10 Piece of Candy Corn|status=discontinued}}
+{{Vendor table row|item=Recipe: Gargoyle|cost=10 Piece of Candy Corn|status=discontinued}}
+{{Vendor table row|item=Recipe: Flame-Bearing Gargoyle|cost=10 Piece of Candy Corn|status=discontinued}}
+{{Vendor table row|item=Recipe: Warclaw Rental Post|cost=10 Piece of Candy Corn|status=discontinued}}
+|}
+
+=== Refined Materials ===
+{{Vendor table header|showLevel=false|showFacts=false}}
+{{Vendor table row|item=Candy Corn Cob|cost=1000 Piece of Candy Corn}}
+{{Vendor table row|item=Gibbering Skull|cost=1000 Chattering Skull}}
+{{Vendor table row|item=Tyria's Best Nougat Center|cost=1000 Nougat Center}}
+{{Vendor table row|item=High-Quality Plastic Fangs|cost=1000 Plastic Fangs}}
+|}
+
+== Notes ==
+* Originally named Festival Rewards Vendor.
+* The [[Game updates/2024-10-08|October 8, 2024 game update]] added to the inventory many items previously only available during the duration of the Halloween festival.
+
+[[de:Händlerin für das Halloween-Fest]]
+[[es:Comerciante de Halloween]]</text>
+      <sha1>4eqh6nyv0zy7yiar0i153xr7vxrw5rg</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Plush Zhaia Backpack</title>
+    <ns>0</ns>
+    <id>403988</id>
+    <revision>
+      <id>3081841</id>
+      <parentid>3081840</parentid>
+      <timestamp>2025-12-21T00:26:36Z</timestamp>
+      <contributor>
+        <username>Arfelides</username>
+        <id>278982</id>
+      </contributor>
+      <minor/>
+      <origin>3081841</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="1090" sha1="04gxdyr00n3fjdfcw9wkt90cwtf97eo" xml:space="preserve">{{Back item infobox
+| description = {{Flavor|Everyone's other favorite stuffed dragon friend! Huggably ragged and wriggly. Meticulous about recycling.}}
+| rarity = Exotic
+| level = 80
+| skin = Plush Zhaia Backpack (skin)
+| collection = Friend of Dragons
+| prefix = selectable
+| bound = Account soul
+| id = 105395
+| gallery1 = Plush Zhaia Backpack.jpg
+}}
+
+== Acquisition ==
+{{Sold by}}
+
+== Available prefixes ==
+* The following [[Attribute combinations|prefixes]] can be selected:
+{{prefix selection|all exotic|collapsed=y}}
+
+== Notes ==
+* {{Default dye|color=4|Wine Shade Dye;Changes the body, head, top of lower body tentacles and the wings except for the membrane|Riverbed Dye;Changes the arms, patch on the chest and bottom of the lower body tentacles|Morning Sea Dye;Changes the mouth tentacles and the tips of the lower body tentacles|Midnight Rust Dye;Changes the membrane of the wings, the horns and the stitching|desc=y}}
+
+{{Plush equipment nav}}
+[[Category:Dyeable back items]]
+[[de:Plüsch-Zhaia-Rucksack]]
+[[es:Mochila de Zhaia de peluche]]
+[[fr:Sac à dos de Zhaïa en peluche]]</text>
+      <sha1>04gxdyr00n3fjdfcw9wkt90cwtf97eo</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Plush Zhaia Backpack (skin)</title>
+    <ns>0</ns>
+    <id>403989</id>
+    <revision>
+      <id>3081843</id>
+      <parentid>3042169</parentid>
+      <timestamp>2025-12-21T00:37:48Z</timestamp>
+      <contributor>
+        <username>Arfelides</username>
+        <id>278982</id>
+      </contributor>
+      <origin>3081843</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="1126" sha1="o4n75x14ff5m6fxqjb88msgppapnkdp" xml:space="preserve">{{Skin infobox
+| name = Plush Zhaia Backpack
+| icon = Plush Zhaia Backpack.png
+| description = {{Flavor|Everyone's other favorite stuffed dragon friend! Huggably ragged and wriggly. Meticulous about recycling.}}
+| collection = Friend of Dragons
+| acquisition = Obtained from the Halloween festival.
+| type = Back item
+| rarity = Exotic
+| id = 13255
+| dye channels = 4
+| gallery = Plush Zhaia Backpack.jpg
+}}
+
+[[Plush Zhaia Backpack (skin)|Plush Zhaia Backpack]] is a [[skin]] for [[back item]]s.
+
+== Acquisition ==
+{{skin list}}
+
+== Notes ==
+* {{Default dye|color=4|Wine Shade Dye;Changes the body, head, top of lower body tentacles and the wings except for the membrane|Riverbed Dye;Changes the arms, patch on the chest and bottom of the lower body tentacles|Morning Sea Dye;Changes the mouth tentacles and the tips of the lower body tentacles|Midnight Rust Dye;Changes the membrane of the wings, the horns and the stitching|desc=y}}
+
+{{Plush equipment nav}}
+[[Category:Dyeable back items]]
+
+[[de:Plüsch-Zhaia-Rucksack (Skin)]]
+[[es:Mochila de Zhaia de peluche (diseño)]]
+[[fr:Apparence de Sac à dos de Zhaïa en peluche]]</text>
+      <sha1>o4n75x14ff5m6fxqjb88msgppapnkdp</sha1>
+    </revision>
+  </page>
+</mediawiki>

@@ -5,6 +5,7 @@ using MwParserFromScratch.Nodes;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -16,19 +17,19 @@ public sealed class Gw2WikiProcessingSource(
     ILogger<Gw2WikiProcessingSource> logger,
     IGw2WikiCache wikiCache) : IGw2WikiProcessingSource
 {
-    private const string gemStorePage = "Gem Store/data";
+    private readonly List<string> gemStorePages = ["Gem Store/data", "Gem Store/data (historical)"];
 
     private const string blackLionWeaponsSpecialistNPCKey = "Black Lion Weapons Specialist";
     private readonly List<string> blackLionClaimTicketPages = ["Black Lion Weapons Specialist/historical", "Template:Inventory/black lion claim ticket", "Black Lion Weapons Specialist (Halloween)"];
     private readonly List<string> blackLionStatuettePages = ["Black Lion Statuette/historical", "Template:Inventory/statuette"];
+    private readonly WikitextParser parser = new();
 
     public async Task<AcquisitionGraph> GetAcquisitionGraph(CancellationToken cancellationToken)
     {
         var graph = new AcquisitionGraph();
-        var parser = new WikitextParser();
 
-        await RunParsingPass(graph, parser, FirstPass, cancellationToken);
-        await RunParsingPass(graph, parser, SecondPass, cancellationToken);
+        await RunParsingPass(graph, FirstPass, cancellationToken);
+        await RunParsingPass(graph, SecondPass, cancellationToken);
         ApplyBlackLion(graph);
         graph.Nodes.Where(kv => kv.Value.Type == NodeType.None)
             .ToList()
@@ -52,7 +53,7 @@ public sealed class Gw2WikiProcessingSource(
         }
     }
 
-    private async Task RunParsingPass(AcquisitionGraph graph, WikitextParser parser, Action<AcquisitionGraph, string, Wikitext> pass, CancellationToken cancellationToken)
+    private async Task RunParsingPass(AcquisitionGraph graph, Action<AcquisitionGraph, string, string, Wikitext, CancellationToken> pass, CancellationToken cancellationToken)
     {
         await foreach (var xml in wikiCache.StreamAllPages(cancellationToken))
         {
@@ -86,7 +87,7 @@ public sealed class Gw2WikiProcessingSource(
 
                         var ast = parser.Parse(textCleaned, cancellationToken);
 
-                        pass.Invoke(graph, title, ast);
+                        pass.Invoke(graph, title, text, ast, cancellationToken);
 
                         logger.LogInformation("Processed wiki page {title}", title);
                     }
@@ -104,11 +105,13 @@ public sealed class Gw2WikiProcessingSource(
     }
 
 
-    private static void FirstPass(AcquisitionGraph graph, string title, Wikitext ast)
+    private static void FirstPass(AcquisitionGraph graph, string title, string text, Wikitext ast, CancellationToken _)
     {
         ParseAndAssignRedirects(graph, title, ast);
+        ParseAndAssignTemplates(graph, title, text);
+        ParseAndAssignArmorSets(graph, title, ast);
     }
-    private void SecondPass(AcquisitionGraph graph, string title, Wikitext ast)
+    private void SecondPass(AcquisitionGraph graph, string title, string _, Wikitext ast, CancellationToken cancellationToken)
     {
         if(IsRedirect(ast))
         {
@@ -116,7 +119,7 @@ public sealed class Gw2WikiProcessingSource(
         }
 
         var infobox = ParseInfobox(ast);
-        if (title.Contains(gemStorePage, StringComparison.Ordinal))
+        if (gemStorePages.Any(pageTitle => title.Equals(pageTitle, StringComparison.Ordinal)))
         {
             ParseGemStoreEntries(graph, ast);
             return;
@@ -129,6 +132,11 @@ public sealed class Gw2WikiProcessingSource(
         else if (blackLionStatuettePages.Any(pageTitle => title.Equals(pageTitle, StringComparison.Ordinal)))
         {
             ParseBlackLionStatuetteEntries(graph, ast);
+            return;
+        }
+        else if (IsTemplate(title))
+        {
+            //gems, bltc and staettue pages contain templates
             return;
         }
         else if (infobox == null || infobox.Metadata.TryGetValue("status", out var status) && status == "historical")
@@ -155,15 +163,48 @@ public sealed class Gw2WikiProcessingSource(
         var node = graph.GetOrCreate(title, infobox.Metadata);
         node.SetType(nodeType);
 
-        ApplyRelationships(graph, title, node, ast, infobox);
+        ApplyRelationships(graph, title, node, ast, infobox, cancellationToken);
     }
 
-    private static bool ParseAndAssignRedirects(AcquisitionGraph graph, string title, Wikitext ast)
+    private static void ParseAndAssignArmorSets(AcquisitionGraph graph, string title, Wikitext ast)
+    {
+        if (IsArmorSet(ast) is Template armorSetTemplate)
+        {
+            var setName = armorSetTemplate.Arguments.FirstOrDefault(a => a.Name?.ToString().Trim() == "name")?.Value?.ToString().Trim();
+            if (setName != null)
+            {
+                //kind of a hack
+                graph.CreateRedirect(title, setName);
+            }
+        }
+    }
+
+    private static Template? IsArmorSet(Wikitext ast)
+    {
+       return ast.EnumDescendants()
+            .OfType<Template>()
+            .FirstOrDefault(t => t.Name.ToString().Trim().Equals("Armor set infobox", StringComparison.OrdinalIgnoreCase));
+    }
+
+    private static void ParseAndAssignTemplates(AcquisitionGraph graph, string title, string text)
+    {
+        if (IsTemplate(title))
+        {
+            text = text.Replace("<onlyinclude>", "", StringComparison.Ordinal);
+            graph.CreateTemplate(title, text);
+        }
+    }
+
+    private static bool IsTemplate(string title)
+    {
+        return title.StartsWith("Template:", StringComparison.OrdinalIgnoreCase);
+    }
+
+    private static void ParseAndAssignRedirects(AcquisitionGraph graph, string title, Wikitext ast)
     {
         var target = DetectRedirect(ast);
         if (target != null)
             graph.CreateRedirect(title, target);
-        return target != null;
     }
     private static bool IsRedirect(Wikitext ast)
     {
@@ -246,9 +287,10 @@ public sealed class Gw2WikiProcessingSource(
                     metadata[key] = value;
                 }
             }
-            if (itemName == null || cost == null || availability == null || availability.Equals("historical", StringComparison.OrdinalIgnoreCase))
+            if (itemName == null || cost == null || availability == null)
                 continue;
             metadata.Add("cost", cost + " Gems");
+            metadata.Add("availability", availability);
             graph.AddEdge(itemName, gemStoreNpcKey, EdgeType.SoldBy, metadata);
         }
     }
@@ -398,7 +440,8 @@ public sealed class Gw2WikiProcessingSource(
             "WEAPON" => NodeType.Weapon,
             "ARMOR" => NodeType.Armor,
             "BACK ITEM" => NodeType.BackItem,
-
+            "WEAPON SET" => NodeType.Set,
+            "ARMOR SET" => NodeType.Set,
 
             "OBJECT" => NodeType.Gw2Object,
 
@@ -443,20 +486,28 @@ public sealed class Gw2WikiProcessingSource(
     // -------------------------
     // RELATIONSHIPS
     // -------------------------
-    private static void ApplyRelationships(
+    private void ApplyRelationships(
         AcquisitionGraph graph,
         string nodeId,
         Node node,
         Wikitext ast,
-        InfoboxData info)
+        InfoboxData info,
+        CancellationToken cancellationToken)
     {
-        // 🔹 Skin page override
+        // Skin page override
         if (info.InfoBoxType.Equals("Skin", StringComparison.OrdinalIgnoreCase))
         {
             return;
         }
 
-        // 🔹 Skin link
+        // set
+        var setData = info.Get("set");
+        if (!string.IsNullOrWhiteSpace(setData))
+        {
+            graph.AddEdge(nodeId, setData, EdgeType.ContainedIn);
+        }
+
+        // Skin link
         var skinData = info.Get("skin");
         if (!string.IsNullOrWhiteSpace(skinData))
         {
@@ -472,7 +523,7 @@ public sealed class Gw2WikiProcessingSource(
                 });
         }
 
-        // 🔹 Location hierarchy
+        // Location hierarchy
         if (info.InfoBoxType.Equals("Location", StringComparison.OrdinalIgnoreCase))
         {
             var within = info.Get("within");
@@ -488,13 +539,13 @@ public sealed class Gw2WikiProcessingSource(
         }
 
 
-        // 🔹 objects
+        // objects
         if (info.InfoBoxType.Equals("Object", StringComparison.OrdinalIgnoreCase))
         {
             HandleLocation(graph, nodeId, info);
         }
 
-        // 🔹 NPC that are merchants (Vendor)
+        // NPC that are merchants (Vendor)
         if (info.InfoBoxType.Equals("NPC", StringComparison.OrdinalIgnoreCase))
         {
             string? vendorHeaderLocation = null;
@@ -509,8 +560,21 @@ public sealed class Gw2WikiProcessingSource(
             {
                 HandleLocation(graph, nodeId, info, vendorHeaderLocation);
 
-                foreach (var row in ast.EnumDescendants().OfType<Template>()
-                             .Where(t => t.Name.ToString().Contains("vendor table row", StringComparison.OrdinalIgnoreCase)))
+                static bool StartsWithTemplateKey(Template template, string key)
+                {
+                    var argsWithoutValue = template.Arguments.Where(a => a.Name == null).Select(a => a.Value);
+                    var idea = string.Join('|', argsWithoutValue);
+                    return key.Equals(template.Name.ToString().Trim() + "|" + idea, StringComparison.OrdinalIgnoreCase);
+                }
+                var templatesOnPage = ast.EnumDescendants().OfType<Template>().ToList();
+                var templatesToCheck = graph.Templates.Where(kvp => templatesOnPage.Any(t => StartsWithTemplateKey(t, kvp.Key))).ToList();
+
+                var vendorTableRows = ast.EnumDescendants().OfType<Template>().Where(t => t.Name.ToString().Contains("vendor table row", StringComparison.OrdinalIgnoreCase)).ToList();
+                foreach (var template in templatesToCheck) {
+                    var astOfTemplate = parser.Parse(template.Value, cancellationToken);
+                    vendorTableRows.AddRange(astOfTemplate.EnumDescendants().OfType<Template>().Where(t => t.Name.ToString().Contains("vendor table row", StringComparison.OrdinalIgnoreCase)));
+                }
+                foreach (var row in vendorTableRows)
                 {
                     var itemName = row.Arguments.FirstOrDefault(a => a.Name?.ToString() == "item")?.Value?.ToString();
                     var cost = row.Arguments.FirstOrDefault(a => a.Name?.ToString() == "cost")?.Value?.ToString();
@@ -529,17 +593,21 @@ public sealed class Gw2WikiProcessingSource(
             }
         }
 
-        // 🔹 Container (metadata-driven)
-        var isContainer = info.Get("type")?.Equals("Container", StringComparison.OrdinalIgnoreCase);
-        if (isContainer == true || node.Type == NodeType.GemStoreCombo)
+        // Container (metadata-driven)
+        if (info.Get("type")?.Equals("Container", StringComparison.OrdinalIgnoreCase) == true || node.Type == NodeType.GemStoreCombo)
         {
-            if(isContainer == true)
-                node.SetType(NodeType.Container);
-
             foreach (var template in ast.EnumDescendants().OfType<Template>())
             {
-                if (!template.Name.ToString().Equals("contains", StringComparison.OrdinalIgnoreCase))
+                var contains = template.Name.ToString().Equals("contains", StringComparison.OrdinalIgnoreCase);
+                var containsSet = template.Name.ToString().Equals("contains set", StringComparison.OrdinalIgnoreCase);
+                EdgeType? edgeType = null;
+                if (contains || containsSet) {
+                    edgeType = EdgeType.ContainedIn;
+                }
+                else
+                {
                     continue;
+                }
 
                 var target = template.Arguments
                     .FirstOrDefault(a => a.Name == null || string.IsNullOrWhiteSpace(a.Name.ToString()))
@@ -548,18 +616,31 @@ public sealed class Gw2WikiProcessingSource(
                 if (!string.IsNullOrWhiteSpace(target))
                 {
                     graph.GetOrCreate(target);
-                    graph.AddEdge(target, nodeId, EdgeType.ContainedIn);
+                    graph.AddEdge(target, nodeId, edgeType.Value);
                 }
             }
         }
 
-        // 🔹 Gathered from Object
+        // Gathered from Object
         if (info.InfoBoxType.Equals("Object", StringComparison.OrdinalIgnoreCase))
         {
             foreach (var template in ast.EnumDescendants().OfType<Template>())
             {
-                if (!template.Name.ToString().Equals("gather", StringComparison.OrdinalIgnoreCase))
+                var gather = template.Name.ToString().Equals("gather", StringComparison.OrdinalIgnoreCase);
+                var containsSet = template.Name.ToString().Equals("contains set", StringComparison.OrdinalIgnoreCase);
+                EdgeType? edgeType = null;
+                if (gather)
+                {
+                    edgeType = EdgeType.GatheredFrom;
+                }
+                else if (containsSet)
+                {
+                    edgeType = EdgeType.ContainedIn;
+                }
+                else
+                {
                     continue;
+                }
 
                 // first unnamed parameter = item name
                 var itemName = template.Arguments
@@ -572,7 +653,7 @@ public sealed class Gw2WikiProcessingSource(
                     graph.AddEdge(
                         itemName,
                         nodeId,
-                        EdgeType.GatheredFrom);
+                        edgeType.Value);
                 }
             }
         }
@@ -623,7 +704,7 @@ public sealed class Gw2WikiProcessingSource(
             {
                 var status = GetArg(template, "status");
 
-                // ❌ skip historical
+                // skip historical
                 if (status?.Equals("historical", StringComparison.OrdinalIgnoreCase) == true)
                     continue;
 
@@ -692,7 +773,6 @@ public sealed class Gw2WikiProcessingSource(
             if (string.IsNullOrWhiteSpace(raw))
                 continue;
 
-            // "25 Candy Cane" → "Candy Cane"
             var parts = raw.Trim().Split(' ', 2);
 
             yield return parts.Length == 2 ? parts[1] : parts[0];

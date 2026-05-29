@@ -18,18 +18,15 @@ public enum NodeType
 {
     None = 0,
 
-    // Core
     Item = 1,
     NPC = 2,
     Skin = 3,
     Location = 4,
     Gw2Object = 5,
-    // Specializations
     Weapon = 10,
     Armor = 11,
     BackItem = 12,
-    // Semantic
-    Container = 30,
+    Set = 13,
     Achievement = 40,
     GemStoreCombo = 50,
     BlackLionWeaponCollection = 51
@@ -87,7 +84,7 @@ public enum EdgeType
     Rewards = 4,
     SkinUnlock = 5,
     HasIngredient = 6,
-    GatheredFrom = 7,
+    GatheredFrom = 7
 }
 
 public sealed record Edge(
@@ -103,11 +100,15 @@ public class AcquisitionGraph
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Usage", "CA2227:Collection properties should be read only")]
     public HashSet<Edge> Edges { get; set; } = [];
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Usage", "CA2227:Collection properties should be read only")]
+    [JsonIgnore]
     public Dictionary<string, string> Redirects { get; set; } = [];
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Usage", "CA2227:Collection properties should be read only")]
+    [JsonIgnore]
+    public Dictionary<string, string> Templates { get; set; } = [];
 
     private string ResolveRedirect(string name)
     {
-        while (Redirects.TryGetValue(name, out var target))
+        while (Redirects.TryGetValue(name, out var target) && name != target)
         {
             name = target;
         }
@@ -121,6 +122,13 @@ public class AcquisitionGraph
         fromId = Normalize(fromId);
         toId = Normalize(toId);
         Redirects[fromId] = toId;
+    }
+
+    public void CreateTemplate(string name, string text)
+    {
+        ArgumentException.ThrowIfNullOrWhiteSpace(name);
+        var templatename = name.Replace("Template:", "", StringComparison.OrdinalIgnoreCase).Replace("/", "|", StringComparison.OrdinalIgnoreCase).Trim();
+        Templates[templatename] = text;
     }
 
     public Node GetOrCreate(string nodeId, Dictionary<string, string>? metadata = null)

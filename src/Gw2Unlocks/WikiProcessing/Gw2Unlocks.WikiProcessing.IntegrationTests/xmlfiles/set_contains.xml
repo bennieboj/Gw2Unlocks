@@ -1,0 +1,284 @@
+<mediawiki xmlns="http://www.mediawiki.org/xml/export-0.11/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mediawiki.org/xml/export-0.11/ http://www.mediawiki.org/xml/export-0.11.xsd" version="0.11" xml:lang="en">
+  <siteinfo>
+    <sitename>Guild Wars 2 Wiki</sitename>
+    <dbname>en_wikidb_gw2</dbname>
+    <base>https://wiki.guildwars2.com/wiki/Main_Page</base>
+    <generator>MediaWiki 1.39.17</generator>
+    <case>first-letter</case>
+    <namespaces>
+      <namespace key="-2" case="first-letter">Media</namespace>
+      <namespace key="-1" case="first-letter">Special</namespace>
+      <namespace key="0" case="first-letter" />
+      <namespace key="1" case="first-letter">Talk</namespace>
+      <namespace key="2" case="first-letter">User</namespace>
+      <namespace key="3" case="first-letter">User talk</namespace>
+      <namespace key="4" case="first-letter">Guild Wars 2 Wiki</namespace>
+      <namespace key="5" case="first-letter">Guild Wars 2 Wiki talk</namespace>
+      <namespace key="6" case="first-letter">File</namespace>
+      <namespace key="7" case="first-letter">File talk</namespace>
+      <namespace key="8" case="first-letter">MediaWiki</namespace>
+      <namespace key="9" case="first-letter">MediaWiki talk</namespace>
+      <namespace key="10" case="first-letter">Template</namespace>
+      <namespace key="11" case="first-letter">Template talk</namespace>
+      <namespace key="12" case="first-letter">Help</namespace>
+      <namespace key="13" case="first-letter">Help talk</namespace>
+      <namespace key="14" case="first-letter">Category</namespace>
+      <namespace key="15" case="first-letter">Category talk</namespace>
+      <namespace key="102" case="first-letter">Property</namespace>
+      <namespace key="103" case="first-letter">Property talk</namespace>
+      <namespace key="106" case="first-letter">Form</namespace>
+      <namespace key="107" case="first-letter">Form talk</namespace>
+      <namespace key="108" case="first-letter">Concept</namespace>
+      <namespace key="109" case="first-letter">Concept talk</namespace>
+      <namespace key="112" case="first-letter">smw/schema</namespace>
+      <namespace key="113" case="first-letter">smw/schema talk</namespace>
+      <namespace key="114" case="first-letter">Rule</namespace>
+      <namespace key="115" case="first-letter">Rule talk</namespace>
+      <namespace key="200" case="first-letter">ArenaNet</namespace>
+      <namespace key="201" case="first-letter">ArenaNet talk</namespace>
+      <namespace key="202" case="first-letter">API</namespace>
+      <namespace key="203" case="first-letter">API talk</namespace>
+      <namespace key="274" case="first-letter">Widget</namespace>
+      <namespace key="275" case="first-letter">Widget talk</namespace>
+    </namespaces>
+  </siteinfo>
+  <page>
+    <title>Weekly Quickplay Raid Cache</title>
+    <ns>0</ns>
+    <id>412610</id>
+    <revision>
+      <id>3138481</id>
+      <parentid>3115492</parentid>
+      <timestamp>2026-05-12T08:17:04Z</timestamp>
+      <contributor>
+        <username>Vilebloodqueen</username>
+        <id>284653</id>
+      </contributor>
+      <origin>3138481</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="1795" sha1="2w3w3d74bchplf7p0zf72sas9sefj3i" xml:space="preserve">{{Item infobox
+| icon = Raid Coffer.png
+| type = Container
+| rarity = Exotic
+| bound = Account
+| salvage = None
+| id = 107019
+}}
+
+== Acquisition ==
+{{achievement list|reward=Weekly Quickplay Raid Cache}}
+
+== Contents ==
+{{section-stub|item|Can likely drop most loot that already drops from the boss coffers. Possibly has a super rare chance too}}
+* {{gold|1}}
+* {{contains|Taste of Liquid Karma|chance=Guaranteed}}
+* {{contains|Piece of Rare Unidentified Gear|chance=Guaranteed|qty=1}}
+* Chance for:
+** {{contains|Ancient Deldrimor Gear}}
+** {{contains|Blessed Raven Statuette}}
+** {{contains|Frozen Spark of Life}}
+** {{contains|Pristine Fang of the Whisper}}
+* One of the following:
+
+=== General ===
+* {{contains|Piece of Rare Unidentified Gear|qty=1}}
+
+=== Old Lion's Court ===
+* {{contains|Berserker's Aetherized Vermilion Hammer}}
+* {{contains|Viper's Aetherized Arsenite Greatsword}}
+* {{contains|Zealot's Aetherized Indigo Staff}}
+
+=== Icebrood Saga ===
+* {{contains|Boneskinner Ritual Vial|qty=3}}
+* {{contains|Boneskinner's Totem}}
+* {{contains|Eitrite Ingot|qty=3}}
+* {{contains|Ice Pearl}}
+* {{contains|Reliquary of the Raven Ceremonial Bracers}}{{verify|Assumed possible}}
+* {{contains|Reliquary of the Raven Ceremonial Hood}}
+* {{contains|Reliquary of the Raven Ceremonial Gown}}
+* {{contains|Reliquary of the Raven Ceremonial Sandals}}
+
+=== End of Dragons ===
+* {{contains set|Ancient Canthan armor}}
+* {{contains set|Flame Serpent weapons}}
+* {{contains set|Living Water weapons}}
+* {{contains set|Saltspray weapons}}
+* {{contains set|Spindrift weapons}}
+
+== Notes ==
+* Drop rate research can be found [[/Drop rate|here]].
+
+[[de:Wöchentliches Schnellrunden-Schlachtzuglager]]
+[[es:Alijo de incursión de juego rápido semanal]]
+[[fr:Cache de raid en session rapide hebdomadaire]]</text>
+      <sha1>2w3w3d74bchplf7p0zf72sas9sefj3i</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Ancient Canthan armor (light)</title>
+    <ns>0</ns>
+    <id>314735</id>
+    <revision>
+      <id>3112370</id>
+      <parentid>2837297</parentid>
+      <timestamp>2026-02-28T15:04:59Z</timestamp>
+      <contributor>
+        <username>Mirhur</username>
+        <id>264587</id>
+      </contributor>
+      <origin>3112370</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="783" sha1="79dmnuqms0rzm28g6c3r3y6qxtol0ix" xml:space="preserve">{{otheruses|the [[Light armor|light]] variant of the Ancient Canthan armor set|the overview of the set|Ancient Canthan armor}}
+{{Armor set infobox
+| source = PvE
+| name = Ancient Canthan armor
+| image = Ancient Canthan armor (light) human female front.jpg
+| class = light
+| rarity = rare
+| level = 80
+| requires = eod
+}}
+[[Ancient Canthan armor (light)|Ancient Canthan armor]] is a [[light armor]] set acquired in the [[End of Dragons]] expansion.
+
+== Acquisition ==
+{{main|Ancient Canthan armor#Acquisition}}
+
+== Skin pieces ==
+{{Armor skin set table}}
+
+== Gallery ==
+{{armor galleries}}
+
+{{Ancient Canthan armor nav}}
+[[Category:Ancient Canthan armor]]
+[[Category:Light armor galleries]]
+[[de:Uraltes canthanisches Rüstungsset (Leicht)]]
+[[es:Armadura canthiana antigua (ligera)]]</text>
+      <sha1>79dmnuqms0rzm28g6c3r3y6qxtol0ix</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Chest (Secrets of the Obscure)</title>
+    <ns>0</ns>
+    <id>368324</id>
+    <revision>
+      <id>3137982</id>
+      <parentid>3080174</parentid>
+      <timestamp>2026-05-10T09:15:18Z</timestamp>
+      <contributor>
+        <username>Hazasoul</username>
+        <id>133824</id>
+      </contributor>
+      <comment>/* Contents */ no bag at low level, fix drop order, use template for sets</comment>
+      <origin>3137982</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="2019" sha1="r7ca64ghhn34kru9tfzaqng3ynjnj6k" xml:space="preserve">{{Object infobox
+| name = Chest
+| location = Heitor's Dominion; Nyedra, Dreamer's Sanctum; Southern Wizard's Tower; Spire of Dreams; The World Spire
+| type = chest
+| requires = soto
+| image = Lesser Arcane Chest.jpg
+| gallery1 = Kryptis Lesser Arcane Chest.jpg
+| gallery1-text = Chests found in Inner Nayos  
+}}
+[[Chest (Secrets of the Obscure)|Chest]]s are found in [[Horn of Maguuma]] [[zone]]s upon completing the map-wide [[meta-event]]. 
+
+== Locations ==
+;[[Horn of Maguuma]]
+* [[Skywatch Archipelago]]
+** [[Southern Wizard's Tower]] &lt;small&gt;(after a successful completion of [[Unlocking the Wizard's Tower]])&lt;/small&gt;
+
+* [[Amnytas]]
+** [[The World Spire]] &lt;small&gt;(after a successful completion of [[The Defense of Amnytas]])&lt;/small&gt;
+
+* [[Inner Nayos]]
+** [[Heitor's Dominion]] &lt;small&gt;(after a successful completion of [[The Road to Heitor]])&lt;/small&gt;
+** [[Nyedra, Dreamer's Sanctum]] &lt;small&gt;(after a successful completion of [[The Fangs That Gnash]])&lt;/small&gt;
+** [[Spire of Dreams]] &lt;small&gt;(after a successful completion of [[Into the Spider's Lair]])&lt;/small&gt;
+
+== Event involvement ==
+;Meta events
+* [[Unlocking the Wizard's Tower]]
+* [[The Defense of Amnytas]]
+* [[The Road to Heitor]]
+* [[The Fangs That Gnash]]
+* [[Into the Spider's Lair]]
+
+== Contents ==
+* {{gather|Deluxe Gear Box (Secrets of the Obscure)|id=97358|chance=Guaranteed|notes=if level 80}} &lt;small&gt;(only if level 80)&lt;/small&gt;
+* {{Universal upgrades|Chance for one of the following|template=gather}}
+* One of the following:
+** {{gather|Piece of Unidentified Gear}} &lt;small&gt;(very high chance)&lt;/small&gt;
+** {{gather|Piece of Rare Unidentified Gear}}
+** {{rarity|exotic}} [[equipment]]
+{{contains set|Eagle Eye weapons|template=gather|indent=2}}
+{{contains set|Skyforged weapons|template=gather|indent=2}}
+{{contains set|Saryx weapons|template=gather|indent=2}}
+
+== Gallery ==
+&lt;gallery&gt;
+Opened Lesser Arcane Chest.jpg|Opened chest found in Skywatch Archipelago and Amnytas
+Opened Kryptis Lesser Arcane Chest.jpg|Opened chest found in Inner Nayos  
+&lt;/gallery&gt;</text>
+      <sha1>r7ca64ghhn34kru9tfzaqng3ynjnj6k</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Skyforged weapons</title>
+    <ns>0</ns>
+    <id>364451</id>
+    <revision>
+      <id>2851378</id>
+      <parentid>2818519</parentid>
+      <timestamp>2024-08-21T07:02:54Z</timestamp>
+      <contributor>
+        <username>Arcky</username>
+        <id>215444</id>
+      </contributor>
+      <origin>2851378</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="815" sha1="4stweva3afwzwkgw09bbzzoqt359ejn" xml:space="preserve">{{Weapon set infobox
+| source = PvE
+| type = loot
+| rarity = rare
+| level = 80
+| collection = 
+| release = 2023-08-22
+| requires = soto
+}}
+[[Skyforged weapons]] are level 80 {{rarity|yellow|rare}} weapons with [[Magi]] stats.
+
+== Acquisition ==
+=== Gathered from ===
+{{Weapon set gathered from}}
+
+=== Contained in ===
+{{Weapon set contained in}}
+
+=== Rewarded by ===
+{{weapon set rewarded by}}
+* Completing events in the [[Horn of Maguuma]].
+* Possible drop from completing [[Rift Hunting|rift hunts]] and using a [[Rift essence#Rift motivations|motivation]].
+
+== Weapons ==
+{{Weapon set table}}
+
+== Gallery ==
+{{Weapon set gallery}}
+
+== See also ==
+* [[Secrets of the Obscure weapons]]
+
+{{Skyforged  weapons nav}}
+[[Category:Skyforged weapons|*]]
+
+[[de:Himmelsgeschmiedete Waffe]]
+[[es:Armas forjadas en el cielo]]</text>
+      <sha1>4stweva3afwzwkgw09bbzzoqt359ejn</sha1>
+    </revision>
+  </page>
+</mediawiki>

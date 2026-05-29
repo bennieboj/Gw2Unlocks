@@ -1,0 +1,1638 @@
+<mediawiki xmlns="http://www.mediawiki.org/xml/export-0.11/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mediawiki.org/xml/export-0.11/ http://www.mediawiki.org/xml/export-0.11.xsd" version="0.11" xml:lang="en">
+  <siteinfo>
+    <sitename>Guild Wars 2 Wiki</sitename>
+    <dbname>en_wikidb_gw2</dbname>
+    <base>https://wiki.guildwars2.com/wiki/Main_Page</base>
+    <generator>MediaWiki 1.39.17</generator>
+    <case>first-letter</case>
+    <namespaces>
+      <namespace key="-2" case="first-letter">Media</namespace>
+      <namespace key="-1" case="first-letter">Special</namespace>
+      <namespace key="0" case="first-letter" />
+      <namespace key="1" case="first-letter">Talk</namespace>
+      <namespace key="2" case="first-letter">User</namespace>
+      <namespace key="3" case="first-letter">User talk</namespace>
+      <namespace key="4" case="first-letter">Guild Wars 2 Wiki</namespace>
+      <namespace key="5" case="first-letter">Guild Wars 2 Wiki talk</namespace>
+      <namespace key="6" case="first-letter">File</namespace>
+      <namespace key="7" case="first-letter">File talk</namespace>
+      <namespace key="8" case="first-letter">MediaWiki</namespace>
+      <namespace key="9" case="first-letter">MediaWiki talk</namespace>
+      <namespace key="10" case="first-letter">Template</namespace>
+      <namespace key="11" case="first-letter">Template talk</namespace>
+      <namespace key="12" case="first-letter">Help</namespace>
+      <namespace key="13" case="first-letter">Help talk</namespace>
+      <namespace key="14" case="first-letter">Category</namespace>
+      <namespace key="15" case="first-letter">Category talk</namespace>
+      <namespace key="102" case="first-letter">Property</namespace>
+      <namespace key="103" case="first-letter">Property talk</namespace>
+      <namespace key="106" case="first-letter">Form</namespace>
+      <namespace key="107" case="first-letter">Form talk</namespace>
+      <namespace key="108" case="first-letter">Concept</namespace>
+      <namespace key="109" case="first-letter">Concept talk</namespace>
+      <namespace key="112" case="first-letter">smw/schema</namespace>
+      <namespace key="113" case="first-letter">smw/schema talk</namespace>
+      <namespace key="114" case="first-letter">Rule</namespace>
+      <namespace key="115" case="first-letter">Rule talk</namespace>
+      <namespace key="200" case="first-letter">ArenaNet</namespace>
+      <namespace key="201" case="first-letter">ArenaNet talk</namespace>
+      <namespace key="202" case="first-letter">API</namespace>
+      <namespace key="203" case="first-letter">API talk</namespace>
+      <namespace key="274" case="first-letter">Widget</namespace>
+      <namespace key="275" case="first-letter">Widget talk</namespace>
+    </namespaces>
+  </siteinfo>
+  <page>
+    <title>Mini Awakened Archer</title>
+    <ns>0</ns>
+    <id>214125</id>
+    <revision>
+      <id>2758759</id>
+      <parentid>2289168</parentid>
+      <timestamp>2023-11-10T03:21:02Z</timestamp>
+      <contributor>
+        <username>J.A.R.V.I.S.</username>
+        <id>207015</id>
+      </contributor>
+      <minor/>
+      <comment>bot edit - &gt; adding mini set to infobox/removing manual category</comment>
+      <origin>2758759</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="391" sha1="4leau9dnxn7sckbveeehav2vsw28ic2" xml:space="preserve">{{Item infobox
+| description = Double-click to summon this mini to follow you around. Only one mini may be in use at a time.
+| type = miniature
+| miniature set = Path of Fire
+| rarity = Exotic
+| bound = account
+| miniature id = 585
+| id = 83175
+| requires = pof
+}}
+
+== Acquisition ==
+{{Sold by}}
+
+[[de:Mini Erweckter Bogenschütze]]
+[[es:Miniarquero despertado]]
+[[fr:Mini-archer éveillé]]</text>
+      <sha1>4leau9dnxn7sckbveeehav2vsw28ic2</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Awakened Merchant</title>
+    <ns>0</ns>
+    <id>211794</id>
+    <revision>
+      <id>2849744</id>
+      <parentid>2849743</parentid>
+      <timestamp>2024-08-17T02:30:37Z</timestamp>
+      <contributor>
+        <username>Sol Solus</username>
+        <id>113984</id>
+      </contributor>
+      <comment>NPC is never in combat.</comment>
+      <origin>2849744</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="4390" sha1="kvilgjblyprla2j3vm1ce5gj35z7r5s" xml:space="preserve">{{NPC infobox
+| image = Awakened Mummy.jpg
+| location = Arborstone; Free City of Amnoon; Festival Promenade; Outer Ring
+| race = awakened
+| level = 80
+| service = merchant
+| coordinates = [58425,43935]
+| requires = pof, lws5, eod, soto
+}}
+[[Awakened Merchant]] is an [[Awakened]] who is attempting to sell statues of [[Palawa Joko]] north of [[Grand Sahil Casino]]. He actually sells miniatures of Palawa Joko and his Awakened.
+
+{{spoilers|The merchant is eventually revealed to be part of the [[Astral Ward]], having been assigned a monitoring role on the [[Pact Commander]]. He followed across their excursion in the [[Crystal Desert]] to stop [[Balthazar]], their battle to defeat [[Kralkatorrik]] in [[Dragonfall]], their involvement in the [[charr]] civil war leading to the destruction of [[Jormag]] and [[Primordus]], and finally their role in stopping the [[Void]] in [[Cantha]], which he all recorded in his [[Pact Commander Reconnaissance Log|log]].|''[[Guild Wars 2: Secrets of the Obscure]]''}}
+
+== Locations ==
+;[[Crystal Desert]]
+* [[Crystal Oasis]]
+** [[Free City of Amnoon]]
+
+;[[Ascalon]]
+* [[Grothmar Valley]]
+** [[Festival Promenade]]
+
+;[[Cantha]]
+* [[Arborstone]] &lt;small&gt;(north of the portal to [[Lion's Arch]], only after completing [[Globalization]] mastery)&lt;/small&gt;
+
+;[[Horn of Maguuma]]
+* [[The Wizard's Tower]]
+** [[Astral Ward Barracks]] &lt;small&gt;(in an alcove south of the PoI, behind the stairs)&lt;/small&gt;
+
+== Items offered ==
+* Only offered in the Free City of Amnoon.
+{{vendor table header|showFacts=false|showLevel=false|shownotes=true|location=Free City of Amnoon}}
+{{vendor table row|item=Mini Awakened Mummy|cost=50 Trade Contract}}
+{{vendor table row|item=Mini Awakened Archer|cost=50 Trade Contract}}
+{{vendor table row|item=Mini Palawa Joko|cost=250 Trade Contract|requirement=Mini Awakened Archer; Mini Awakened Mummy}}
+{{vendor table row|item=Joko's Crown (Replica)|cost=1 Candy Corn Cob}}
+|}
+
+== Dialogue ==
+;In the [[Free City of Amnoon]]
+:You buy?
+:{{dialogue icon|more}} ''What happened to you?''
+::Was [[awakened]] by [[Palawa Joko]]. All praise Joko! You buy statue to praise him?
+::{{dialogue icon|more}} ''Palawa Joko... Are you from [[Elona]]? You're one of his [[undead]] minions?''
+:::Yes, serve King Joko. You buy?
+:::{{dialogue icon|sell}} ''Uh, yes, "I buy."''
+:::{{dialogue icon|end}} ''No thanks.''
+::{{dialogue icon|end}} ''No thanks.''
+:{{dialogue icon|end}} ''No thanks.''
+
+;In [[Festival Promenade]]
+:Praise all [[High Legion|legions]]. You buy?
+:{{dialogue icon|more}} ''Have I seen you before?''
+::Had shop in Amnoon. Business slow. Now business travel. Buy now?
+::{{dialogue icon|end}} ''No, thanks.''
+:{{dialogue icon|end}} ''Maybe later.''
+
+;In [[Arborstone]]
+:You buy?
+:{{dialogue icon|more}} ''Have I seen you before?''
+::Had shop in Amnoon. Business slow. Now business travel. Buy now?
+::{{dialogue icon|end}} ''No, thanks.''
+:{{dialogue icon|end}} ''Maybe later.''
+
+;In [[The Wizard's Tower]]
+:You buy?
+:{{dialogue icon|more}} ''Have I seen you before?''
+::Had shop in Amnoon. Business slow. Try [[Grothmar Valley]]. No luck. Arborstone too cold. Bring wares here instead. Buy now?
+::{{dialogue icon|more}} ''Hold on a second—how, exactly, are you in the Wizard's Tower?''
+:::N-no...no understand question. You buy now? Please?
+:::{{dialogue icon|more}} ''It's time to come clean. Then, maybe, I will buy.''
+::::All right, you got me. I was tasked with keeping an eye on you for the [[Astral Ward|ward]], so I maintained this persona in order to do so. [[Isgarren]] himself put a protective spell on me to resist Joko's pull.
+::::{{dialogue icon|more}} ''Should I be impressed or insulted? But now Joko's gone, and I'm here.''
+:::::Yes, and I don't know what comes next. When word spread you were coming, I felt a weight lifted. I'm tired of traveling, but now I also feel empty. Maybe you'll see me around. Maybe you won't.
+:::::{{dialogue icon|charisma}} ''Until next time, then.''
+::::::Wayfinder. You, bye.
+::::::{{dialogue icon|end}} ''Take care.''
+:::::{{dialogue icon|end}} ''Good-bye.''
+::::{{dialogue icon|end}} ''Interesting...''
+:::{{dialogue icon|end}} ''No.''
+::{{dialogue icon|end}} ''No, thanks.''
+:{{dialogue icon|end}} ''Good-bye, for now.''
+
+== Related achievements ==
+* {{achievement|You Buy}}
+
+[[Category:Astral Ward]]
+[[de:Erweckter Kaufmann]]
+[[es:Mercader de los Despertados]]
+[[fr:Marchand éveillé]]</text>
+      <sha1>kvilgjblyprla2j3vm1ce5gj35z7r5s</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Free City of Amnoon</title>
+    <ns>0</ns>
+    <id>209143</id>
+    <revision>
+      <id>3089925</id>
+      <parentid>3000637</parentid>
+      <timestamp>2026-01-06T02:01:54Z</timestamp>
+      <contributor>
+        <username>Sunlion</username>
+        <id>225997</id>
+      </contributor>
+      <origin>3089925</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="32267" sha1="mra4kcy0o6i7datdf5vj2n2mp3ak2qq" xml:space="preserve">{{Location infobox
+| type = area
+| sector id = 1562
+| waypoints = 1
+| points-of-interest = 7
+| vistas = 2
+| within = Crystal Oasis
+| connections = [[Amnoon Farms]] (E)&lt;br&gt;[[The Sinking Ruins]] (N)&lt;br&gt;[[Mekele Bluffs]] (NE)&lt;br&gt;[[Amnoon Southern Outskirts]] (S)&lt;br&gt;[[Bay of Elon]] (W)
+| levels = 80
+| requires = Path of Fire
+}}
+The [[Free City of Amnoon]] is a port town that was once called [[gw1:The Amnoon Oasis|The Amnoon Oasis]]. Previously a tiny town that was the last refuge for adventurers before heading into the [[Crystal Desert]], it is now situated near the base of the redirected [[Elon River]] before it flows into the [[Sea of Elon]] and has become a large, bustling [[Elona|Elonian]] city. It was rebuilt by [[Corsair]]s as a city for Elonians that wished to live freely from [[Palawa Joko]]'s empire.&lt;ref&gt;[[Jehan]]&lt;/ref&gt;&lt;ref&gt;[[The Sinking Ruins#Ambient dialogue|The Sinking Ruins ambient dialogue]]&lt;/ref&gt; Ever since Joko's rise, defectors that manage to escape his walled empire have fled here to Amnoon.
+
+Over the past ten years, the citizens of Amnoon had issues with [[Branded]] to their north, but with [[Kralkatorrik]] moving southeast, the Branded began passing closer to them. The new [[Forged]] and now-fanatical [[Zaishen Order]] have also been bringing up troubles for them, as well.
+
+== Locations and objectives ==
+;Waypoints
+:{{map objective|waypoint|Amnoon Waypoint|id=2747}}
+
+;Points of Interest
+:{{map objective|point of interest|Altar of the Six Gods}}
+:{{map objective|point of interest|Amnoon Cavalier Station}}
+:{{map objective|point of interest|Amnoon Civic Center}}
+:{{map objective|point of interest|Amnoon Emporium}}
+:{{map objective|point of interest|Amnoon Harbor}}
+:{{map objective|point of interest|Grand Sahil Casino}}
+:{{map objective|point of interest|The Empty Quarter}}
+
+; Vistas
+: {{map objective|vista|Amnoon Harbor Vista|id=2692}}
+: {{map objective|vista|Free City of Amnoon Vista|id=2746}}
+
+;Mastery Insights
+: {{map icon|masterypof}} [[Pot of Soup]]
+
+;Landmarks
+:{{map objective|landmark|Lily of the Elon}}
+
+;Instances
+:[[Office of the Chief Councilor]]
+:[[Zalambur's Office]]
+
+{{area events|show header=y}}
+
+== NPCs ==
+=== Allies ===
+;[[Awakened]]
+* [[Awakened Merchant]]
+
+;[[Charr]]
+* [[Black Lion Bodyguard]]
+
+;[[Dolyak]]s
+* [[Dolyak (NPC)|Dolyak]]
+* [[Pack Dolyak]]
+
+;[[Feline]]s
+* [[Cat]]
+
+;[[Human]]s
+* [[Amin]]
+* [[Apprentice Chef]]
+* [[Barback]]
+* [[Bartender (Amnoon)|Bartender]]
+* [[Bekir Maalum]]
+* [[Black Lion Trader]]
+* [[Cafe Barista]]
+* [[Cashier]]
+* [[Cashier Talum]]
+* [[Cavalier (NPC)|Cavalier]]
+* [[Chef (NPC)|Chef]]
+* [[Child]]
+* [[Citizen]]
+* [[Councilor]]
+* [[Dealer]]
+* [[Desert Bandit]]
+* [[Dishwasher]]
+* [[Dockmaster Jonnick]]
+* [[Fisher]]
+* [[Ghali Safwah]]
+* [[Herald Kehnan]]
+* [[Injured Noble]]
+* [[Injured Villager (Free City of Amnoon)|Injured Villager]]
+* [[Jehan]]
+* [[Laundress]]
+* [[Lieutenant Nudara]]
+* [[Lieutenant Sandrine]]
+* [[Maisoora]]
+* [[Master Chef Laraib]]
+* [[Merchant (NPC)|Merchant]]
+* [[Mikaeel the Trustworthy]]
+* [[Mourner]]
+* [[Musician]]
+* [[Naomi]]
+* [[Noble]]
+* [[Off Duty Cavalier]]
+* [[Officer Yumna]]
+* [[Order of Shadows Agent]]
+* [[Patron]]
+* [[Priest of Kormir]]
+* [[Priestess of Kormir]]
+* [[Radeyah]]
+* [[Refugee (Elonian)|Refugee]]
+* [[Refugee Farmworker]]
+* [[Sailor]]
+* [[Security Officer]]
+* [[Seraph Soldier]]
+* [[Ship Captain]]
+* [[Stablehand]]
+* [[Stablemaster]]
+* [[Troublemaker]]
+* [[Veteran Doorman Laith]]
+* [[Veteran Intimidator]]
+* [[Veteran Security Officer]]
+* [[Villager]]
+* [[Waiter]]
+* [[Waitress]]
+* [[Widower]]
+* [[Worker]]
+* [[Zafeer Casino Blitz Information]]
+* [[Zoeya]]
+
+;[[Norn]]
+* [[Ketill]]
+
+;[[Ogre]]s
+* [[Ogre Hunter]]
+
+;[[Plant]]s
+* [[Choya Pup]]
+* [[Fighter (choya)|Fighter]]
+
+;[[Saurian]]s
+* [[Azzam]]
+
+;[[Skritt]]
+* [[Kilikki]]
+* [[Pirate Skritt Forager]]
+* [[Uttakkt]]
+
+;Various
+* [[Priory Explorer]]
+* [[Priory Historian]]
+* [[Priory Researcher]]
+
+==== Services ====
+: {{vendor|scout}} [[Cavalier (scout)|Cavalier]]
+: {{vendor|casino blitz reward information}} [[Casino Blitz Reward Cashier]]
+: {{vendor|merchant}} [[Dealer (merchant)|Dealer]]
+: {{vendor|misc|Profession Scholar (map icon).png|Elona Guide Ebi}} [[Elona Guide Ebi]]
+: {{vendor|merchant}} [[Kazi]]
+: {{vendor|bank}} [[Merchant (banker)|Merchant]]
+: {{vendor|trading post}} [[Merchant (Trading Post)|Merchant]]
+: {{vendor|bounty hunter}} [[Order of Shadows Agent]]
+: {{vendor|merchant}} [[Yonca]]
+: {{vendor|merchant}} [[Merchant (Crystal Oasis Fishmonger)|Merchant]] [Fishmonger]
+: {{vendor|merchant}} [[Merchant (Crystal Oasis Fishing Supplies)|Merchant]] [Fishing Supplies]
+
+=== Foes ===
+;[[Ambient creature]]s
+* [[Beetle]]
+* [[Crab]]
+* [[Crow]]
+* [[Prairie Dog]]
+* [[Rat]]
+* [[Trout]]
+* [[Vulture]]
+
+;[[Animal]]s
+* [[Sand Eel]]
+* [[Veteran Sand Eel]]
+
+;[[Bird]]s
+* [[Aggressive Vulture]]
+* [[Veteran Aggressive Vulture]]
+
+;[[Crustacean]]s
+* [[Hermit Crab]]
+* [[Sea Turtle]]
+* [[Thundershrimp]]
+
+;[[Devourer]]s
+* [[Arid Devourer]]
+* [[Veteran Arid Devourer]]
+
+;[[Drake]]s
+* [[River Drake]]
+* [[River Drake Hatchling]]
+* [[Veteran River Drake]]
+
+;[[Elemental]]s
+* [[Dust Mites]]
+
+;[[Fish]]
+* [[Barracuda]]
+* [[Salmon]]
+* [[Tuna]]
+
+;[[Human]]s
+* [[Troublemaker]]
+* [[Veteran Troublemaker]]
+
+;[[Shark]]s
+* [[Sand Shark]]
+
+== Ambient dialogue ==
+{{Section-stub|location|Casino Dealer commentates games}}
+;Near the north exit from the city
+:'''Refugee:''' ''Is there any room in the camp by the harbor?''
+:'''Cavalier:''' ''Oh, that's not a, uh... That is, the people living in those tents are citizens who were displaced by a sandstorm.''
+:'''Refugee:''' ''Oh. That explains the silk sheets and fine furnishing in their tents.''
+:'''Cavalier:''' ''I am truly sorry, for what little that's worth.''
+
+:'''Cavalier:''' ''I'm sorry we're having trouble finding room for all of you.''
+:'''Refugee:''' ''There's an unpopulated area just north of your harbor.''
+:'''Refugee:''' ''That neighborhood has outcroppings that could block the wind for our tents. We'd be out of everyone's way...''
+:'''Cavalier:''' ''I'm afraid the No—that quarter is unsafe for habitation. A major sandstorm forced us to evacuate the residents.''
+:'''Cavalier:''' ''We're hoping to dig it out and return those citizens to their homes, once we have the time and resources available.''
+
+;Near the east exit from the city
+:'''Merchant (1):''' ''Is there any profit in trading these days?''
+:'''Merchant (2):''' ''Once we only had to worry about paying our protection money to the [[Hamaseen]] and our taxes to the [[Amnoon's City Council|council]].''
+:'''Merchant (2):''' ''Then came the [[Branded]] migration across our northern trade routes.''
+:'''Merchant (1):''' ''Only the foolish waded across the [[Elon River|Elon]] and into the madness of [[Palawa Joko|King Joko]]'s tariff enforcement.''
+:'''Merchant (1):''' ''Now we have [[Forged]] closing off our trading routes in every direction.''
+:'''Merchant (2):''' ''Maybe the stories are true that [[Zalambur]] is a [[djinn]], that's just playing at being a man.''
+:'''Merchant (1):''' ''Sorcery alone could explain how he manages to move so much product under these conditions.''
+
+:'''Refugee (1):''' ''Look at the little ones, laughing and running without a care.''
+:'''Refugee (2):''' ''Let's just hope we can find real homes before they're old enough to know better.''
+
+:'''Cavalier (scout):''' ''Ahai, outlander! Let me know if you need help getting your bearings.''
+:''Cavalier waves at &lt;Character name&gt;.''
+
+;In the middle of the city
+:&lt;small&gt;(if supported independence in [[Blazing a Trail]])&lt;/small&gt;
+:'''Noble:''' ''The [[Amnoon's City Council|council]] is really stepping up recruitment for the city watch. Sounds like they intend to to reject [[Joko]]'s alliance.''
+:'''Villager:''' ''That, or they intend to crack down on [[Zalambur]]. Everything those politicians do is two-faced.''
+:'''Noble:''' ''What, and Zalambur isn't? We all know what his real business is.''
+:'''Noble:''' ''Admit it &amp;mdash; the Council stood their ground. They're stronger than you thought they were.''
+:'''Villager:''' ''We'll see.''
+
+:&lt;small&gt;(if supported the Sunspears in [[Blazing a Trail]])&lt;/small&gt;
+:'''Noble:''' ''Did you hear the news? Amnoon is to become a sanctuary for all [[Sunspear]] survivors.''
+:'''Villager:''' ''Sounds to me like our [[Amnoon's City Council|council]] is just taking on even more responsibility.''
+:'''Noble:''' ''Just a while ago you were worried they were going to invite [[Joko]] in. Now that will clearly never happen.''
+:'''Villager:''' ''I was worried the council would fail to put it's {{sic|its}} own citizens first, as [[Zalambur]] does. And they did.''
+:'''Noble:''' ''(sigh) There is really no pleasing you, is there?''
+
+;Near waypoint
+:&lt;small&gt;(if supported independence in [[Blazing a Trail]])&lt;/small&gt;
+:'''Noble (1):''' ''The [[Amnoon's City Council|Council]] made the right call. Amnoon is and always should be a free city.''
+:'''Noble (2):''' ''I can finally sleep at night.''
+
+:&lt;small&gt;(if supported independence in [[Blazing a Trail]])&lt;/small&gt;
+:'''Noble (1):''' ''I never thought I'd be happy to see so many [[cavaliers]] around the city.''
+:'''Noble (2):''' ''I can finally sleep at night.''
+
+;At the tents near the [[Amnoon Cavalier Station|Cavalier Station]]
+:'''Refugee (1):''' ''So much seafood...''
+:'''Refugee (1):''' ''I'd never seen a fish before we reached the coast; now I eat one for every meal.''
+:'''Refugee (2):''' ''I guess it's what they have in abundance to give us here.''
+:'''Refugee (1):''' ''We're fortunate to be fed at all.''
+
+:'''Priory Explorer:''' ''Ahai there. Did you happen to come from the south?''
+:'''Refugee:''' ''That's right. I came from the [[Elon Riverlands]].''
+:'''Priory Explorer:''' ''May I ask you a few questions about modern [[Elona]], on behalf of the [[Durmand Priory]]?''
+:'''Refugee:''' ''I'm afraid I won't be much help to you. My entire family was exiled from the kingdom when I was a child.''
+:'''Priory Explorer:''' ''Exiled... Am I correct in understanding that you left [[Palawa Joko]]'s dominion unwillingly?''
+:'''Refugee:''' ''My parents' sedition cost us any chance to ever be [[Awakened]]. We were sent to the work farms outside [[the Bone Wall]].''
+:'''Priory Explorer:''' ''You regret losing a chance to join an army of the [[undead]]?''
+:'''Refugee:''' ''King Joko Awakens his citizens to care for and protect their families forever. His greatest blessing, now lost to us...''
+:'''Priory Explorer:''' ''I, uh... I'm sorry to hear that. Thank you for your time.''
+
+;At a fountain at the south exit from the city
+:'''Villager (1):''' ''I heard the [[Amnoon's City Council|council]] is planning to raise water rates to make emergency infrastructure repairs.''
+:'''Villager (2):''' ''Typical. They wait until the system is falling apart before addressing any issues.''
+:'''Villager (1):''' ''I don't think that's it, not this time. There were rumors of sabotage...''
+:'''Villager (2):''' ''You really buy that? Who's crazy enough to sabotage the fresh water supply in a [[Crystal Desert|desert]]?''
+:'''Villager (1):''' ''Higher rates aside, I hope they manage to get our water running again soon.''
+:'''Villager (2):''' ''I hope it's nothing more serious than the leaks we keep hearing about.''
+
+:&lt;small&gt;(if supported Joko in [[Blazing a Trail]])&lt;/small&gt;
+:'''Citizen (1):''' ''I'll never get used to seeing [[Awakened]] in the city.''
+:'''Citizen (2):''' ''They're like vultures. Disgusting. Did you hear they trashed the [[Grand Sahil Casino|casino]]?''
+
+:&lt;small&gt;(if supported independence in [[Blazing a Trail]])&lt;/small&gt;
+:'''Citizen (1):''' ''The [[cavaliers]] can barely swing a sword, much less win a fight!''
+:'''Citizen (2):''' ''We should flee to [[Lion's Arch]] while we still can.''
+
+:&lt;small&gt;(A random combination of one line from each Citizen, if supported the Sunspears in [[Blazing a Trail]])&lt;/small&gt;
+:'''Citizen (1):''' ''[[Joko]] is probably stewing on his throne of bones somewhere.''
+
+:'''Citizen (1):''' ''There aren't enough of them. We're done for.''
+
+:'''Citizen (2):''' ''We may as well paint a giant, Sunspear-shaped target on our foreheads.''{{verify|This line only started appearing for me after finishing PoF's story. Confirm or correct?}}
+
+:'''Citizen (2):''' ''I knew allying with the Sunspears was a huge mistake.''
+
+:&lt;small&gt;Two kids following a female sylvari Priory Researcher around.&lt;/small&gt;
+:'''Child (1):''' ''What is it?''
+:'''Child (2):''' ''Look at that outlander!''
+:'''Child (2):''' ''It's like he's made out of leaves and bark.''
+:'''Child (1):''' ''Where are all these strange people coming from?''
+
+;At the aqueduct south of the city
+:'''Refugee (1):''' ''I can't get used to seeing highlanders riding their [[Springer|hopping beasts]].''
+:'''Refugee (2):''' ''What must it be like in the [[Desert Highlands|north]], that they'd consider taming those...things just to get around!''
+:'''Refugee (1):''' ''I hadn't thought about that. Must be some treacherous terrain up that way.''
+:'''Refugee (2):''' ''Great chasms, steep and jagged cliffs...''
+:'''Refugee (2):''' ''Imagine clinging to one of those beasts as it jumps up a sheer cliff wall...''
+:'''Refugee (1):''' ''Maybe we're lucky after all, to be where we are in this [[Crystal Oasis|oasis]].''
+:'''Refugee (2):''' ''Only you could find a bright side to our situation.''
+
+:'''Refugee (3):''' ''If we ever want to be self-reliant, we'll need to find work.''
+:'''Refugee (4):''' ''Will these people even let us work, without citizenship?''
+:'''Refugee (3):''' ''I hear there's a great need for laborers in the [[Grand Sahil Casino|casino]], the farms, the [[Talatat Quarry|quarry]]...''
+:'''Refugee (4):''' ''There's also the Hamaseen. They've been recruiting around here...''
+:'''Refugee (3):''' ''After all that [[Kormir]]'s [[Church of Kormir|priesthood]] has done for us, how could any of our people disrespect them like that?''
+
+:'''Child:''' ''Poor dolyaks, stuck in that dumb old pen.''
+:'''Child:''' ''I'm gonna go play with them again. (giggle)''
+
+;At the harbor
+:'''Child:''' ''Mama, are we refugees now?''
+:'''Noble:''' ''No, love. We just... have to live in tents until they can dig out our homes again.''
+:'''Child:''' ''But the refugees are living in tents too, just like us.''
+:'''Noble:''' ''We're just temporarily inconvenienced. They're going to dig our homes out for us soon, you'll see.''
+
+:'''Noble (1):''' ''This waiting around is unbearable. Our precious family heirlooms are somewhere in our home, under all that sand.''
+:'''Noble (2):''' ''We seem to be a lesser priority to our [[Amnoon's City Council|council]] than those...refugees.''
+:'''Noble (1):''' ''Oh, I plan to petition our Chief Councilor and remind her who funded and furnished those posh offices of hers.''
+:'''Noble (2):''' ''Do you think [[Chief Councilor Imann|Imann]] will actually respond?''
+:'''Noble (1):''' ''She will, or I'll know why. I don't understand how she could have forgotten she's one of us.''
+
+:'''Noble:''' ''Why is there still no plan to get rid of all the sand burying our homes?''
+:'''Cavalier:''' ''I'm afraid that's a question for our [[Amnoon's City Council|city council]], but sandstorm damage to your quarters was worse than initial estimates.''
+:'''Cavalier:''' ''Amnoon's agencies and services are currently strained by multiple crises. Please try to remain patient.''
+:'''Noble:''' ''My patience is running out. My taxes fund our council. Why are they wasting our resources on indigent refugees?''
+:'''Noble:''' ''Why can't we set them up with some shovels; get them to work off their debt to us?''
+:'''Cavalier:''' ''Why not bring your suggestion to [[Kormir]]'s [[Church of Kormir|priesthood]]? You'll find them caring for our less fortunate guests.''
+:'''Noble:''' ''(grumble)''
+
+:'''Priory Magister:''' ''Before each of you splits off in pursuit of your pet research subject, let's make sure we coordinate our efforts.''
+:'''Priory Scholar:''' ''My thesis is on comparative governance. Should I start with Amnoon's councilors, or nomadic tribal chiefs up north?''
+:'''Priory Magister:''' ''Well, let's give that some thought. What if—''
+:'''Priory Scholar:''' ''Oh, but there are also the clan marshals to the south. Could there still be merchant princes in [[Palawa Joko]]'s [[Domain of Vabbi|Vabbi]]?''
+:'''Priory Historian:''' ''Well, I'm off to [[Augury Rock]] to see if anyone is still seeking [[Ascension]] there.''
+:'''Priory Magister:''' ''(growl) None of you are going anywhere until I—''
+:'''Priory Explorer:''' ''I need to see for myself where [[Glint]] fell and inspired her [[Zephyrites|Zephyrite]] followers to take to the skies.''
+:'''Priory Magister:''' ''(sigh) Fine. I'll make sure to record your intended destinations, so we can notify your next of kin.''
+
+:'''Priory Researcher:''' ''These people have some refreshingly divergent ideas about ship design. Look at the draft on that hull.''
+:'''Priory Historian:''' ''I see more than a bit of corsair influence.''
+:'''Priory Researcher:''' ''I'd be interested to hear the advantage to those sail shapes.''
+:'''Priory Historian:''' ''Think we could arrange a ride aboard one of these?''
+
+:&lt;small&gt;(if supported independence in [[Blazing a Trail]])&lt;/small&gt;
+:'''Citizen:''' ''[[Captain Rahim|Rahim]]'s [[cavaliers]] are too green. They'll get us all killed!''
+:'''Fisher:''' ''We should flee to [[Lion's Arch]] while we still can.''
+
+:'''Citizen:''' ''We should've asked [[Joko]] for help instead of relying on the [[cavaliers]]. We're done for!''
+:'''Fisher:''' ''Yeah, we're totally going to die.''
+
+:'''Citizen:''' ''The cavaliers can barely swing a [[sword]], much less win a fight!''
+:'''Fisher:''' ''Yeah, we're totally going to die.''
+
+:'''Fisher:''' ''[[Joko]] is probably stewing on his throne of bones somewhere.''
+:'''Citizen:''' ''First Joko will kill the [[Order of the Sunspears|Sunspears]], then us.''
+
+;Under the big fish in the harbor
+:'''Naomi:''' ''Nice catch, gentlemen. As fine a fish as I've ever seen.''
+:'''Fisher (1):''' ''Wasn't easy. She fought me all the way in.''
+:'''Fisher (2):''' ''There were five of us out on that boat with you, fighting that fish.''
+:'''Fisher (2):''' ''If anything, you almost lost us the fish, when you dropped the gaff.''
+:'''Naomi:''' ''Moving on—if you'll just stand by your catch there, I can capture this moment of pride for you. Yes?''
+:'''Naomi:''' ''That's it. You both look heroic. Just hold still, if you would...''
+
+:'''Fisher (1):''' ''Can we move yet? I didn't know this would take so long.''
+:'''Naomi:''' ''No, please don't move yet.''
+:'''Fisher (1):''' ''...Uh, do you have a bucket?''
+
+:'''Fisher (2):''' ''Are you almost done?''
+:'''Naomi:''' ''I'm finished. Thank you for your patience.''
+:'''Fisher (2):''' ''(grumble)
+
+:'''Naomi:''' ''Who else wants their portrait painted with this fearsome sea dweller?''
+:'''Child:''' ''Ooh! Mama, can I?''
+:'''Villager:''' ''No. No, I don't think so, sweetie.''
+:'''Child:''' ''Look, Mama&amp;mdash;bet it could eat me right up!''
+:'''Villager:''' ''Come away from that awful thing, right now.''
+:'''Child:''' ''Yes, Mama.''
+:'''Naomi:''' ''It would only take me a moment to paint her...''
+
+;When leaving the harbor to the north
+:'''Cavalier:''' ''Enter at your own risk, outlander.''
+:'''Cavalier:''' ''The quarter was evacuated after a recent sandstorm.''
+:'''Cavalier:''' ''Nothing to see but sand and predators.''
+
+;At the merchant stand near the [[Grand Sahil Casino|Casino]]
+:'''Priory Scholar:''' ''Excuse me sir, can you speak?''
+:'''[[Awakened]] Merchant:''' ''Praise [[Joko]]. You buy?''
+:'''Priory Scholar:''' ''I may do just that, but may I ask a few questions first?''
+:'''Awakened Merchant:''' ''You buy.''
+:'''Priory Scholar:''' ''You praised Palawa Joko just now. For granting you awareness, reanimating you?''
+:'''Awakened Merchant:''' ''You buy.''
+:'''Priory Scholar:''' ''I see. What brought you all the way here from [[Elona]] to ply your wares?''
+:'''Awakened Merchant:''' ''You buy now.''
+:'''Priory Scholar:''' ''Yes, of course. Uh... would it be possible to get a receipt of purchase, so that I can expense it to the [[Priory]]?''
+:'''Awakened Merchant:''' ''No.''
+
+;Near [[Grand Sahil Casino]]
+:&lt;small&gt;(if supported independence in [[Blazing a Trail]])&lt;/small&gt;
+:'''Citizen (1):''' ''We should've asked [[Joko]] for help instead of relying on the [[cavaliers]]. We're done for!''
+:'''Citizen (2):''' ''Doesn't matter. Soon enough we'll either be bowing to [[Balthazar]] or kissing Joko's wrinkly behind. Pick your future master.''
+:'''Citizen (2):''' ''Better to stay independent than to bed down with the likes of Joko.''
+:'''Citizen (2):''' ''We're in [[Captain Rahim]]'s capable hands. His cavaliers will protect us.''
+
+:'''Citizen (1):''' ''I never thought I'd be happy to see so many [[cavaliers]] around the city.''
+:'''Citizen (2):''' ''We're in [[Captain Rahim]]'s capable hands. His cavaliers will protect us.''
+
+;At Grand Sahil Casino
+:'''Patron:''' ''Another [[harpy]]. I'm out.''
+:'''Patron:''' ''I swear this game is rigged.''
+
+:'''Patron:''' ''(groan)''
+:'''Patron:''' ''[[Grenth]] take me. What was I thinking?''
+:'''Patron:''' ''One last round. I can’t lose every time.''
+
+:'''Dealer:''' ''Draw your cards, ladies and gentlemen.''
+:'''Dealer:''' ''Pyramid. Broken spear. And...the [[dragon]].''
+:'''Dealer:''' ''Dragon consumes all. House wins.''
+
+:'''Dealer:''' ''Any last bets? No?''
+:'''Dealer:''' ''Let's see what we have. Crystal. [[Hydra]]. Oh, and there's a [[Joko]].''
+:'''Dealer:''' ''Joko conquers. Thank you for playing.''
+
+:'''Ogre Hunter (1):''' ''These creatures have spirit. Think [[choya]] could make good [[pet]]s?''
+:'''Ogre Hunter (2):''' ''(laugh) Not a chance.''
+:'''Ogre Hunter (3):''' ''Nasty, foul pests. Easier to tame the [[Branded]].''
+:'''Ogre Hunter (2):''' ''They say choya will eat their own.''
+:'''Ogre Hunter (3):''' ''Also, they explode when they die.''
+:'''Ogre Hunter (1):''' ''Guess you're right. They'd just foul up our [[kraal]].''
+
+:'''Veteran Intimidator:''' ''How's recruitment going in the camps?''
+:'''Troublemaker:''' ''It was going better before we had competition from the [[Zaishen Order|Zaishen]].''
+:'''Veteran Intimidator:''' ''It's true—[[Balthazar]]'s fanatics are out there trying to conscript our talent now.''
+:'''Veteran Intimidator:''' ''(groan) Bad enough that fool [[Chief Councilor Imann|Imann]] invited Joko's Awakened filth here. Now we have to chase off the false [[Six Human Gods|god]]'s zealots!''
+:&lt;small&gt;'''If asura:'''&lt;/small&gt;
+::'''Veteran Intimidator:''' ''Hold on—I think the little outlander is listening to us.''
+:&lt;small&gt;'''If human:'''&lt;/small&gt;
+::'''Veteran Intimidator:''' ''Hold on—I think the outlander is listening to us.''
+:&lt;small&gt;'''If sylvari:'''&lt;/small&gt;
+::'''Veteran Intimidator:''' ''Hold on—I think the outlander freak is listening to us.''
+:&lt;small&gt;'''If norn:'''&lt;/small&gt;
+::'''Veteran Intimidator:''' ''Hold on—I think the outlander brute is listening to us.''
+:&lt;small&gt;'''If charr:'''&lt;/small&gt;
+::'''Veteran Intimidator:''' ''Hold on—I think the charr outlander is listening to us.''
+
+:'''Veteran Intimidator:''' ''So all is well, then?''
+:'''Troublemaker (1):''' ''That's right. Our trading partners seem happy.''
+:'''Troublemaker (2):''' ''Nothing out of the ordinary to report.''
+:'''Veteran Intimidator:''' ''Good, good. Glad to hear it.''
+
+;At Amnoon Civic Center
+:'''Villager''': ''Maybe with all these outlanders arriving, the council won't need to beg [[Joko]] to defend us.''
+:'''Noble''': ''What are you talking about? Our [[Amnoon's City Council|council]]'s kept this city free all these years—why would they betray us now?''
+:'''Noble''': ''You've been listening to too much of [[Zalambur]]'s nonsense.''
+:'''Noble''': ''Any good he manages to do is just for public relations. We have to trust [[Chief Councilor Imann|Imann]] and our council.''
+:'''Villager''': ''Your family and friends lost your homes to the sandstorm, and she's yet to do anything for any of you.''
+:'''Noble''': ''Our situation can wait. There are others in greater need right now.''
+
+:&lt;small&gt;(if supported Joko in [[Blazing a Trail]])&lt;/small&gt;
+:'''Noble''': ''I...I can hardly believe it. This can't be true.''
+:'''Villager:''' ''You're not seeing things. Our city is plastered with the banners of the [[Awakened]].''
+:'''Villager:''' ''I told you this would happen. Only [[Zalambur]] stands against [[Joko]] now. [[Chief Councilor Imann|Imann]]'s council was too weak.''
+:'''Noble''': ''Well, it's not all bad. With Awakened help, we'll finally be able to deal with all our crises.''
+:'''Noble''': ''Yes, yes. Imann is making the hard choices, but she is still looking out for our best interests.''
+:'''Villager:''' ''You're hopeless.''
+
+;At Amnoon Emporium
+:&lt;small&gt;(if supported Joko in [[Blazing a Trail]])&lt;/small&gt;
+:'''Noble (1):''' ''Oddly enough, I feel safer with the [[Awakened]] around.''
+:'''Noble (2):''' ''War makes strange bedfellows. We can trust them—for now.''
+
+:&lt;small&gt;(if supported the Sunspears in [[Blazing a Trail]], a random combination of one line from each Noble)&lt;/small&gt;
+:'''Noble (1):''' ''Allying with the [[Sunspear]]s gives us all a fighting chance.''
+
+:'''Noble (1):''' ''The [[Amnoon's City Council|Council]] made the right call.''
+
+:'''Noble (1):''' ''The Sunspears aren't much of an army, but they are an inspiration.''
+
+:'''Noble (2):''' ''Anything is better than relying on [[Joko]].''
+
+:'''Noble (2):''' ''At least the [[Church of Kormir|priesthood]] can look after the refugees.''
+
+:'''Noble (2):''' ''Hey, one Sunspear is worth ten [[cavaliers]]. Just don't tell [[Captain Rahim|Rahim]] I said that.''
+
+:&lt;small&gt;(if supported independence in Blazing a Trail)&lt;/small&gt;
+:'''Noble (1):''' ''The Council made the right call. Amnoon is and always should be a free city.''
+:'''Noble (2):''' ''We're in Captain Rahim's capable hands. His cavaliers will protect us''
+
+;Inside Amnoon Emporium when [[Help Talib recover his escaped sand shark pups]] [[Dynamic event|event]] is active
+:'''Herald Kehnan:''' ''Free people of Amnoon, a fellow citizen needs your help!''
+:'''Herald Kehnan:''' ''[[Talib]] asks your help rounding up [[Sand Shark Pup|sand-shark pups]] that escaped his exotic animal ranch.''
+:'''Herald Kehnan:''' ''Until the pups can be recovered, protect your toes when crossing the sands.''
+
+;Inside Amnoon Emporium when [[Stop the stampede of choya before they break down the gate]] [[Dynamic event|event]] is active
+:'''Herald Kehnan:''' ''[[Choya]] are storming our eastern gate! The [[cavalier]] guards need reinforcements.''
+
+;Inside Amnoon Emporium when [[Recover the sunken Consortium cargo polluting Amnoon's harbor]] [[Dynamic event|event]] is active
+:'''Herald Kehnan:''' ''Free citizens of Amnoon, your council needs you!''
+:'''Herald Kehnan:''' ''A foreign ship has spilled cargo in our harbor, and your help is needed with the cleanup effort.''
+:'''Herald Kehnan:''' ''Come speak with me for more information.''
+
+;Inside Amnoon Emporium when [[Defend the Water Authority facility workers as they repair damaged water pipes]] [[Dynamic event|event]] is active
+:'''Herald Kehnan:''' ''Free citizens of Amnoon, your council needs you!''
+:'''Herald Kehnan:''' ''Your council is concerned for the safety of our brave [[Amnoon Water Authority|Water Authority]] employees who are working hard on facility repairs.''
+:'''Herald Kehnan:''' ''Come speak with me for more information.''
+
+;Inside Amnoon Emporium when [[Defend the Amnoon farm workers from the Forged]] event is active
+:'''Herald Kehnan:''' ''Free citizens of Amnoon, your council needs you!''
+:'''Herald Kehnan:''' ''We're hearing reports of [[Forged]] attacks on our farm workers out in the fields.''
+:'''Herald Kehnan:''' ''Come speak with me for more information.''
+
+;Inside Amnoon Emporium when [[Help Salima gather stone and protect quarriers from the choya]] event is active
+:'''Herald Kehnan:''' ''Free citizens of Amnoon, your council needs you!''
+:'''Herald Kehnan:''' ''To address our recent population explosion, the philanthropist [[Zalambur]] has pledged funding for new public housing.''
+:'''Herald Kehnan:''' ''Stone is being quarried in the north for this project, despite hazardous working conditions posed by [[choya]].''
+:'''Herald Kehnan:''' ''Come speak with me for more information.''
+
+;Inside Amnoon Cavalier Station
+:'''Cavalier:''' ''Get out, you! Go on.''
+:'''Cavalier:''' ''Pop up around here again, and I'll have to arrest you!''
+
+:'''Prisoner:''' ''Might as well let me out. I won't be in here long, anyway.''
+:'''Cavalier:''' ''You were caught stealing [[Raptor (NPC)|raptor]]s. You're going to be in there for a while.''
+:'''Prisoner:''' ''You're making a big mistake.''
+:'''Prisoner:''' ''I have powerful friends. You don't want to cross the [[Hamaseen]].''
+:'''Cavalier:''' ''If you were with the Hamaseen, you wouldn't be in here in the first place.''
+:'''Prisoner:''' ''[[Zalambur]] will make you sorry for disrespecting me like this.''
+:'''Cavalier:''' ''Oh. Well, if you're willing to go on record tying Zalambur to the Hamaseen, maybe we can work something out after all...''
+:'''Prisoner:''' ''W-wait, now. I— I never said anything like that. I'm fine. I'm fine in here for now.''
+:'''Cavalier:''' ''Really? I thought you'd say that.''
+
+;Near Bounty Board
+:'''Order of Shadows Agent:''' ''Reports of creatures driven insane by [[Ley line|ley energy]] are coming from all over. Are you going to help?''
+
+:'''Order of Shadows Agent:''' ''The [[iboga]] [[Champion Tazula Mindclouder|Tazula Mindclouder]] is infamous. Who will erase its name from our board?''
+
+:'''Order of Shadows Agent:''' ''They call him the [[Champion Forged Maverick|Forged Maverick]]. Track him down and save countless lives.''
+
+:'''Order of Shadows Agent:''' ''Ley-crazed [[Champion Zelke the Shameless|Zelke]] is the last thug I'd want to meet in a dark alley. How about you? ''
+
+:'''Order of Shadows Agent:''' ''Need something to brag about? Tell your friends about the time you took down the [[Champion Man-Eater|Man-Eater]].''
+
+:'''Order of Shadows Agent:''' ''Are you strong? Fearless? Take the bounty on [[Champion Braek Baredfang|Braek Baredfang]] and prove it.''
+
+:'''Order of Shadows Agent:''' ''A [[Legendary Distraught Choya|legendary bounty]] just went up. Bring your choya-fighting gear.''
+
+== Objects ==
+* [[Apple Pie (object)|Apple Pie]]
+* [[Bleached Bones]]
+* [[Burnt Wood]]
+* [[Cactus Meat]]
+* [[Chicken Stock]]
+* [[Coconuts]]
+* [[Cowrie League Trade Cache]]
+* [[Flour]]
+* [[Glorious Elonian Chest]]
+* [[Hamaseen Trade Cache]]
+* [[Honey]]
+* [[Iboga Petals (object)|Iboga Petals]]
+* [[Jar of Wolf Pheromones (object)|Jar of Wolf Pheromones]]
+* [[Lost Chest]]
+* [[Marinated Shark Meat]]
+* [[Memorial to Deputy Qais]] &lt;small&gt;''(Only after finishing [[Eye of the Brandstorm]])''&lt;/small&gt;
+* [[Orrian Gulper]]
+* [[Pot of Soup]]
+* [[Roasted Meat]]
+* [[Secret Sauce]]
+* [[Ship to Istan]]
+* [[Shiverpeak Salmon]]
+* [[Slab of Boar Meat]]
+* [[Spiky Fruit (object)|Spiky Fruit]]
+* [[Water (Crystal Desert)|Water]]
+* [[Yellowfin Tuna]]
+
+== Crafting resources ==
+;Fishing nodes
+: {{gathering node|Desert Fish}}
+
+;Resource nodes
+: {{gathering node|Mithril Ore (node)|Mithril Ore}}
+: {{gathering node|Orichalcum Ore (node)|Orichalcum Ore}}
+: {{gathering node|Mebahya Sapling}}
+: {{gathering node|Ancient Sapling}}
+: {{gathering node|Cluster of Desert Herbs}}
+: {{gathering node|Desert Vegetables}}
+: {{gathering node|Lentils}}
+
+;Bulk ingredients
+: {{icon|chef}} [[Cemil]]
+:: {{item icon|Basil Leaves in Bulk}}
+:: {{item icon|Bell Peppers in Bulk}}
+:: {{item icon|Buttermilk in Bulk}}
+:: {{item icon|Cheese Wedges in Bulk}}
+:: {{item icon|Ginger Root in Bulk}}
+:: {{item icon|Rice in Bulk}}
+:: {{item icon|Sour Cream in Bulk}}
+:: {{item icon|Tomatoes in Bulk}}
+:: {{item icon|Yeast in Bulk}}
+
+== Gallery ==
+&lt;gallery&gt;
+Amnoon emblem.png|The emblem of Amnoon, as seen on a banner at a [[Tyrian Alliance]] [[Prologue: The Tyrian Alliance|meeting]].
+&lt;/gallery&gt;
+
+== Trivia ==
+{{gww|The Amnoon Oasis}}
+* A [[gww:Guild Wars Prophecies|Guild Wars Prophecies]] song can be heard while in the city. The soundtrack is Crystal Oasis.
+
+== References ==
+&lt;references/&gt;
+
+{{Crystal Oasis nav}}
+[[Category:Free City of Amnoon|*]]
+
+[[de:Freie Stadt Amnoon]]
+[[es:Ciudad Libre de Amnoon]]
+[[fr:Ville libre d'Amnoon]]</text>
+      <sha1>mra4kcy0o6i7datdf5vj2n2mp3ak2qq</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Crystal Oasis</title>
+    <ns>0</ns>
+    <id>208712</id>
+    <revision>
+      <id>3066926</id>
+      <parentid>2998879</parentid>
+      <timestamp>2025-11-22T10:57:12Z</timestamp>
+      <contributor>
+        <username>Chieftain Alex</username>
+        <id>28878</id>
+      </contributor>
+      <minor/>
+      <comment>/* Events */</comment>
+      <origin>3066926</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="12668" sha1="46z79gt8vh1gkod9qcmhevstpj18ddh" xml:space="preserve">{{otheruses|the zone|the achievement category|Crystal Oasis (achievements)}}
+{{Location infobox
+| hearts = 4
+| waypoints = 3
+| points-of-interest = 30
+| hero challenges = 5
+| vistas = 10
+| levels = 80
+| within = Crystal Desert
+| location tree = Elona; Crystal Desert
+| type = zone
+| objectives = y
+| id = 1210
+| region id = 12
+| continent id = 1
+| pets = [[Juvenile Sand Lion|Sand Lion]]
+| requires = pof
+| connections = [[Desert Highlands]] (NE)&lt;br&gt; [[Elon Riverlands]] (SE)
+}}
+
+The [[Crystal Oasis]] is a [[zone]] in the [[Crystal Desert]]. It was once a desert but since the diversion of the [[Elon River]] into the Crystal Desert, the vegetation has grown and life in the oasis is now prosperous. The area is inhabited by [[Elona|Elonians]] who have escaped the yoke of the Kingdom of [[Palawa Joko]] and have founded the [[Free City of Amnoon]], as well as a [[Temple of Kormir]]. Several pyramids can be seen in the landscape, among them [[the Teratohedron]], whose origin is unknown.
+
+== Getting there ==
+* Complete the [[Story]] mission [[Sparking the Flame]] from [[Path of Fire]] (The ship will stay there after in [[Lion's Arch]] near [[Phoenix Roost]] for later use).
+* The [[Lionguard Aircrew (Transport Facilitator)|Lionguard Aircrew]] at [[Sanctum Harbor]] in [[Lion's Arch]] will take here any character who has already unlocked this zone through the storyline.
+* Use the [[Gem Store]] item {{item icon|Invitation to "Lily of the Elon"}}.
+
+== Map completion ==
+* Chance at one of the following:
+** {{rewards item|Black Lion Chest Key|chance=chance}}
+** {{rewards item|Transmutation Charge (item)|chance=chance}}
+* One of the following, depending on your profession:
+** {{rewards item|Firebrand's Cache|profession=Guardian}}
+** {{rewards item|Renegade's Cache|profession=Revenant}}
+** {{rewards item|Spellbreaker's Cache|profession=Warrior}}
+** {{rewards item|Holosmith's Cache|profession=Engineer}}
+** {{rewards item|Soulbeast's Cache|profession=Ranger}}
+** {{rewards item|Deadeye's Cache|profession=Thief}}
+** {{rewards item|Weaver's Cache|profession=Elementalist}}
+** {{rewards item|Mirage's Cache|profession=Mesmer}}
+** {{rewards item|Scourge's Cache|profession=Necromancer}}
+* 8001 {{experience}}
+
+== Locations ==
+{| {{STDT|sortable pve locations}}
+{{Location table header}}
+|-
+| [[Amnoon Farms]]
+| align=center| 80
+|
+: {{map icon|heart}} [[Give aid to the refugees at Marifa Camp]]
+: {{map icon|poi}} [[Amnoon Bazaar]]
+: {{map icon|poi}} [[Marifa Refugee Camp]]
+: {{map icon|adventure}} [[Refugee Supply Run]]
+: {{map icon|masterypof}} [[Crystal Oasis Insight: Amnoon Bazaar]]
+|-
+| [[Amnoon Southern Outskirts]]
+| align=center| 80
+|
+: {{map icon|poi}} [[Amnoon Water Authority]]
+: {{map icon|hero}} [[Veteran Confessor Opeyemi]]
+|-
+| [[Bay of Elon]]
+| align=center| 80
+|
+: {{map icon|poi}} [[Old Amnoon]]
+: {{map icon|poi}} [[Tawla Rock]]
+: {{map icon|lm}} [[Imed's Grotto]]
+: {{map icon|masterypof}} [[Crystal Oasis Insight: Imed's Grotto]]
+: {{map icon|masterypof}} [[Crystal Oasis Insight: Old Amnoon]]
+|-
+| [[Destiny's Ascent]]
+| align=center| 80
+|
+: {{map icon|poi}} [[Squaross Kraal]]
+|-
+| [[Destiny's Gorge]]
+| align=center| 80
+|
+: {{map icon|wp}} Destiny's Gorge Waypoint
+: {{map icon|heart}} [[Aid the villagers of Zephyr's Trace]]
+: {{map icon|poi}} [[Zephyr's Trace]]
+: {{map icon|vista}} Destiny's Gorge Vista
+: {{map icon|bounty board}} [[Bounty Board]]
+|-
+| [[Diviner's Passage]]
+| align=center| 80
+|
+: {{map icon|vista}} Diviner's Passage Vista
+|-
+| [[Elona Reach]]
+| align=center| 80
+|
+: {{map icon|wp}} Temple of Kormir Waypoint
+: {{map icon|heart}} [[Aid the Temple of Kormir]]
+: {{map icon|poi}} [[Village of Kweli]] &lt;!--[&amp;BOUKAAA=]--&gt;
+: {{map icon|poi}} [[Temple of Kormir]] &lt;!--[&amp;BHUKAAA=]--&gt;
+: {{map icon|vista}} Elona Reach Vista
+: {{map icon|adventure}} [[Crystal Oasis Griffon Expert]]
+: {{map icon|bounty board}} [[Bounty Board]]
+: {{map icon|griffon roost}} [[Griffon Roost]]
+|-
+| [[Forged Foothold]]
+| align=center| 80
+|
+: {{map icon|poi}} [[Crucible of Consecration]]
+|-
+| [[Free City of Amnoon]]
+| align=center| 80
+|
+: {{map icon|wp}} Amnoon Waypoint
+: {{map icon|poi}} [[Altar of the Six Gods]]
+: {{map icon|poi}} [[Amnoon Cavalier Station]]
+: {{map icon|poi}} [[Amnoon Civic Center]]
+: {{map icon|poi}} [[Amnoon Emporium]]
+: {{map icon|poi}} [[Amnoon Harbor]]
+: {{map icon|poi}} [[Grand Sahil Casino]]
+: {{map icon|poi}} [[The Empty Quarter]]
+: {{map icon|masterypof}} [[Pot of Soup]]
+: {{map icon|vista}} Amnoon Harbor Vista
+: {{map icon|vista}} Free City of Amnoon Vista
+: [[Office of the Chief Councilor]] (instance)
+: [[Zalambur's Office]] (instance)
+: {{map icon|lm}} [[Lily of the Elon]]
+: {{map icon|bounty board}} [[Bounty Board]]
+|-
+| [[Glint's Legacy]]
+| align=center| 80
+|
+: {{map icon|poi}} [[Fortunate Strike]]
+: {{map icon|masterypof}} [[Crystal Oasis Insight: Glint's Legacy]]
+|-
+| [[Hatari Tablelands]]
+| align=center| 80
+|
+: {{map icon|poi}} [[Altar of Silence]]
+: {{map icon|poi}} [[Temple of Atar]]
+: {{map icon|hero}} [[Unearthed Ruins]]
+: {{map icon|masterypof}} [[Pahan]]
+: {{map icon|vista}} Hatari Tablelands Vista
+|-
+| [[Kusini Crossing]]
+| align=center| 80
+|
+: {{map icon|poi}} [[Southern Way Station]]
+: {{map icon|poi}} [[Kusini Water Hole]]
+: {{map icon|poi}} [[Sanctum of Nabkha]]
+: {{map icon|masterypof}} [[Crystal Oasis Insight: Sanctum of Nabkha]]
+: {{map icon|explorer}} [[Sanctum of Nabkha (mini-dungeon)|Sanctum of Nabkha]]
+|-
+| [[Maculate Fringe]]
+| align=center| 80
+|
+: {{map icon|poi}} [[The Teratohedron]]
+: {{map icon|hero}} [[Branded Pyramid]]
+|-
+| [[Mekele Bluffs]]
+| align=center| 80
+|
+: {{map icon|poi}} [[Talatat Quarry]]
+: {{map icon|vista}} Mekele Bluffs Vista
+|-
+| [[Omiramba Sand Sea]]
+| align=center| 80
+|
+: {{map icon|poi}} [[Retreat of the Resolute]]
+: {{map icon|poi}} [[Northern Way Station]]
+: {{map icon|vista}} Northern Way Station Vista
+: {{map icon|vista}} Omiramba Sand Sea Vista
+|-
+| [[Sifuri Sand Sea]]
+| align=center| 80
+|
+: {{map icon|poi}} [[Shattered Templar]]
+: {{map icon|hero}} [[Wind-Worn Bottle]]
+: {{map icon|masterypof}} [[Crystal Oasis Insight: Sifuri Quicksand]]
+|-
+| [[The Sinking Ruins]]
+| align=center| 80
+|
+: {{map icon|heart}} [[Help Aksim care for and train raptors]]
+: {{map icon|poi}} [[Seeker's Village]]
+: {{map icon|poi}} [[Tomb of the Abandoned]]
+: {{map icon|hero}} [[Abandoned Forged Ore]]
+: {{map icon|vista}} The Sinking Ruins Vista
+: {{map icon|adventure}} [[Crystal Oasis Griffon Master]]
+: {{map icon|raptor}} [[Raptor|Mount: Raptor]]
+|}
+
+== Interactive map ==
+{{Interactive map}}
+
+== Events ==
+{{Event timer|pof-co}}
+;Meta events
+* [[Casino Blitz]]
+** {{event|Collect as many casino coins as possible before time runs out!}} '''Round 1'''
+*** {{event|Clear out the gang of troublemakers to recover stolen coins}}
+** {{event|Collect as many casino coins as possible before time runs out!}} '''Round 2'''
+*** {{event|Clear out the gang of troublemakers to recover stolen coins}}
+** {{event|Collect as many casino coins as possible before time runs out!}} '''Round 3'''
+*** {{event|Clear out the gang of troublemakers to recover stolen coins}}
+** {{event|Stop the choya piñata before it gets away!}}
+
+;Bounties
+* {{event|Defeat the champion bounty (Champion Braek Baredfang)|Defeat the champion bounty (Champion Braek Baredfang)}}
+* {{event|Defeat the champion bounty (Champion Butch)|Defeat the champion bounty (Champion Butch)}}
+* {{event|Defeat the champion bounty (Champion Chaotic Leyspark)|Defeat the champion bounty (Champion Chaotic Leyspark)}}
+* {{event|Defeat the champion bounty (Champion Chief Kronon)|Defeat the champion bounty (Champion Chief Kronon)}}
+* {{event|Defeat the champion bounty (Champion Forged Ambusher)|Defeat the champion bounty (Champion Forged Ambusher)}}
+* {{event|Defeat the champion bounty (Champion Forged Maverick)|Defeat the champion bounty (Champion Forged Maverick)}}
+* {{event|Defeat the champion bounty (Champion Forged Punisher)|Defeat the champion bounty (Champion Forged Punisher)}}
+* {{event|Defeat the champion bounty (Champion Forged Sorcerer)|Defeat the champion bounty (Champion Forged Sorcerer)}}
+* {{event|Defeat the champion bounty (Champion Man-Eater)|Defeat the champion bounty (Champion Man-Eater)}}
+* {{event|Defeat the champion bounty (Champion Scragglebeard)|Defeat the champion bounty (Champion Scragglebeard)}}
+* {{event|Defeat the champion bounty (Champion Shardcrest)|Defeat the champion bounty (Champion Shardcrest)}}
+* {{event|Defeat the champion bounty (Champion Tazula Mindclouder)|Defeat the champion bounty (Champion Tazula Mindclouder)}}
+* {{event|Defeat the champion bounty (Champion Uussh Visshta)|Defeat the champion bounty (Champion Uussh Visshta)}}
+* {{event|Defeat the champion bounty (Champion Xedra Tahz Tahom)|Defeat the champion bounty (Champion Xedra Tahz Tahom)}}
+* {{event|Defeat the champion bounty (Champion Zelke the Shameless)|Defeat the champion bounty (Champion Zelke the Shameless)}}
+* {{event|Defeat the Legendary bounty (Legendary Distraught Choya)|Defeat the Legendary bounty (Legendary Distraught Choya)}}
+* {{event|Defeat the Legendary bounty (Legendary Queen Yidaxu)|Defeat the Legendary bounty (Legendary Queen Yidaxu)}}
+* {{event|Defeat the Legendary bounty (Legendary Corrupted Facet)|Defeat the Legendary bounty (Legendary Corrupted Facet)}}
+
+;Other events
+* {{event|Defeat the champion (Champion Wurm Queen)}}
+* {{event|Defeat the Champion Branded hydra}}
+* {{event|Defeat the Forged raiding party}}
+* {{event|Defend the Amnoon farm workers from the Forged}}
+* {{event|Defend the refugee caravan}}
+* {{event|Defend the village of Kweli from the Forged}}
+** {{event|Reclaim the village of Kweli from the Forged}}
+** {{event|Stop the Zaishen from desecrating the Temple of Kormir}}
+* {{event|Defend the Water Authority facility workers as they repair damaged water pipes}}
+* {{event|Defend the Water Authority plant from Hamaseen saboteurs}}
+* {{event|Disrupt the Forged ritual and destroy the crucible}}
+** {{event|Kill the Forged commander}}
+* {{event|Drive back Balthazar's forces before they wear down the makeshift militia}}
+* {{event|Escort refugees from the Temple of Kormir to the southern way station}}
+* {{event|Help Ashwah search for his missing daughter in the Brand}}
+* {{event|Help Nasim gather fish from the bay}}
+* {{event|Help Olaf recover buried artifacts}}
+* {{event|Help Priest Bashshar get healers and medical supplies to refugees at the Temple of Kormir}}
+* {{event|Help repair leaks in the Amnoon Water Authority pipes}}
+* {{event|Help Salima gather stone and protect quarriers from the choya}}
+* {{event|Help Talib recover his escaped sand shark pups}}
+* {{event|Help the emboldened refugees reach the oasis settlement}}
+* {{event|Mount up and herd the stray cattle back to their pen}}
+* {{event|Prepare for a race around the desert}}
+** {{event|Reach the finish line! (Crystal Oasis)}}
+* {{event|Recover the sunken Consortium cargo polluting Amnoon's harbor}}
+* {{event|Rescue refugees forced into labor in the Zephyrite mine}}
+* {{event|Scavenge supplies from the clifftop Zephyrite ruins}}
+* {{event|See the refugees safely through to Amnoon}}
+* {{event|Stop the caffeinated skritt burglar before it escapes with the treasure}}
+* {{event|Stop the stampede of choya before they break down the gate}}
+
+;[[Priory Historian Elisa]]'s events
+* {{event|Gather wood for the fire for an Experience boost}}
+* {{event|Gather wood for the fire for a Karma boost}}
+* {{event|Gather wood for the fire for a Magic Find boost}}
+
+== Map bonus rewards ==
+{{map bonus reward}}
+
+== Pets ==
+;[[Juvenile Sand Lion]]
+* [[Kusini Crossing]] — East of the [[Southern Way Station]]
+* [[Mekele Bluffs]]
+* [[Omiramba Sand Sea]] — Southwest of the [[Northern Way Station]] near a group of trees
+* [[Sifuri Sand Sea]] — Below a tree west of the [[Wind-Worn Bottle]] hero challenge
+
+== Crafting resources ==
+;Resource nodes
+: {{gathering icon|plant}} [[Mussels]]
+: {{gathering icon|plant}} [[Lentils]]
+: {{gathering icon|plant}} [[Clam]]
+: {{gathering icon|plant}} [[Desert Vegetables]]
+: {{gathering icon|plant}} [[Cluster of Desert Herbs]]
+: {{gathering icon|plant}} [[Flax]]
+: {{gathering icon|plant}} [[Coral]]
+: {{gathering icon|plant}} [[Potato]]
+: {{gathering icon|wood}} [[Ancient Sapling]]
+: {{gathering icon|wood}} [[Mebahya Sapling]]
+: {{gathering icon|mine}} [[Mithril Ore (node)|Mithril Ore]]
+: {{gathering icon|mine}} [[Orichalcum Ore (node)|Orichalcum Ore]]
+: {{gathering icon|mine}} [[Granite Lode|Rich Granite Lode]]
+
+== Trivia ==
+* "Crystal Oasis" is the name of a piece from the original ''Guild Wars'' [[soundtrack]].
+
+{{Zone nav}}
+
+[[de:Kristalloase]]
+[[es:Oasis de Cristal]]
+[[fr:Oasis de cristal]]</text>
+      <sha1>46z79gt8vh1gkod9qcmhevstpj18ddh</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Outer Ring</title>
+    <ns>0</ns>
+    <id>364515</id>
+    <revision>
+      <id>3109549</id>
+      <parentid>3082910</parentid>
+      <timestamp>2026-02-17T18:33:26Z</timestamp>
+      <contributor>
+        <username>Tery3065</username>
+        <id>270948</id>
+      </contributor>
+      <minor/>
+      <origin>3109549</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="12789" sha1="o01ct6h3kunesrlw6tu87i8r57urh2l" xml:space="preserve">{{Location infobox
+| waypoints = 1
+| points-of-interest = 9
+| vistas = 1
+| type = Area
+| within = The Wizard's Tower
+| levels = 80
+| connections = [[Open Sky]] (N)&lt;br&gt;[[Outer Sanctorium]] (S)
+| sector id = 1976
+| requires = Soto
+}}
+The [[Outer Ring]] is an area located within [[The Wizard's Tower]]. And it is where the [[Mystic Forge]], the [[Crafting]]s, the [[bank]] and among other services are located. Likewise, there are the portals that lead to [[Amnytas]], the city of [[Lion's Arch]] and the [[Inner Nayos]].
+
+== Locations and objectives ==
+;Waypoints
+: {{Map objective|waypoint|Tower Courtyard Waypoint|id=3615}}
+
+;Points of Interest
+: {{Map objective|point of interest|Amnytas Connector|id=3558}}
+: {{Map objective|point of interest|Astral Ward Barracks|id=3664}}
+: {{Map objective|point of interest|Empyrean Plaza|id=3564}}
+: {{Map objective|point of interest|Forge of Timelessness|id=3599}}
+: {{Map objective|point of interest|Isgarren's Hidden Library|id=3580}}
+: {{Map objective|point of interest|Lion's Arch Connector|id=3527}}
+: {{Map objective|point of interest|Memory's Gaze|id=3658}}
+: {{Map objective|point of interest|Skyscale Stables|id=3506}}
+: {{Map objective|point of interest|Dream Connector|id=3617}}
+
+;Vistas
+: {{Map objective|vista|Outer Ring Vista|id=3568}}
+:: &lt;!--&lt;short description of how to get to vista&gt;--&gt;
+
+;Adventures
+: {{map objective|adventure|Skyscale Target Practice in the Wizard's Tower}}
+
+{{Area events|show header=y}}
+
+== NPCs ==
+=== Allies ===
+;[[Ambient creature]]s
+* [[Dust Mites]]
+* [[Spark]]
+* [[Will-o-the-Wisp]]
+
+;[[Animals]]
+* [[Griffon (NPC)]]
+* [[Grown Skyscale]]
+* [[Mr. Wrench]]
+* [[Rabbit]]
+* [[Scaly]] &lt;!-- no overhead name skyscale hatchling --&gt;
+* [[Young Skyscale]]
+
+;[[Astral Ward]] (Various races)
+* [[Astral Ward Apprentice]]
+* [[Astral Ward Chef]]
+* [[Astral Ward Equilibrist]]
+* [[Astral Ward Foot Soldier]]
+* [[Astral Ward Forester]]
+* [[Astral Ward Mage (NPC)|Astral Ward Mage]]
+* [[Scholar of Balance]]
+* [[Scholar of Balance Mentor]]
+* [[Astral Ward Protector (NPC)|Astral Ward Protector]]
+* [[Astral Ward Skirmisher (NPC)|Astral Ward Skirmisher]]
+
+;[[Asura]]
+* [[Astral Ward Trainee Rossi]]
+
+;[[Chak]]
+* [[Sky-Chak Drone]]
+* [[Sky-Chak Slinger]]
+* [[Sky-Chak Zapper]]
+
+;[[Charr]]
+* [[Legendary Astral Ward Protector]]
+
+;[[Construct]]s
+* [[Construct of Galdra]]
+
+;[[Demon]]s &lt;small&gt;(after completing [[Sovereign of Nayos]])&lt;/small&gt;
+* [[Hungry Kryptis Delegate]]
+
+;[[Dwarf|Dwarves]]
+* [[Droknar's Forge Survivor]]
+* [[Lyhr]]
+
+;[[Human]]s
+* [[Astral Ward Instructor Wyntor]]
+* [[Foot Soldier Beau]]
+* [[Legendary Astral Ward Mage]]
+* [[Sky-Chak Wrangler]]
+* [[Unknown (NPC)|???]]
+
+;[[Norn]]
+* [[Legendary Astral Ward Skirmisher]]
+
+;[[Rift Hunters]] (Various races)
+* [[Rift Hunter Warrior]] &lt;small&gt;(Some are mounted on Skyscale)&lt;/small&gt;
+
+;[[Sylvari]]
+* [[Astral Ward Foot Soldier Gormal]]
+* [[Astral Cartographer Trevyn]]
+
+;[[Snowman]]
+* [[Icy]]
+
+;[[Tengu]]
+* [[Astral Ward Kiana]]
+
+=== Services ===
+: {{vendor|merchant}} [[Archivist Ikur]]
+: {{vendor|master armorsmith}} [[Armorer Pearl]]
+: {{vendor|merchant}} [[Astral Ward Mage (Outfitter)|Astral Ward Mage]]
+: {{vendor|bank}} [[Begonia]]
+: {{vendor|master huntsman}} [[Bert]]
+: {{vendor|master leatherworker}} [[Cedar]]
+: {{vendor|trading post}} [[Cleo (Astral Ward)|Cleo]]
+: {{vendor|master jeweler}} [[Ellena]]
+: {{vendor|master weaponsmith}} [[Forgemaster Jak]]
+: {{vendor|master chef}} [[Head Chef Jacqueline]]
+: {{vendor|merchant}} [[Jade Bot (Merchant)|Jade Bot]]
+: {{vendor|merchant}} [[Kettil]]
+: {{vendor|laurel merchant}} [[Kriss]]
+: {{vendor|legendary crafting}} [[Lyhr]]
+: {{vendor|master tailor}} [[Maya]]
+: {{vendor|black lion chest merchant}} [[Mezzar Richmire]]
+: {{vendor|mystic forge attendant}} [[Mystic Forge Attendant]]
+: {{vendor|master artificer}} [[Oline]]
+: {{vendor|faction provisioner}} [[Rend Scorchmaul]]
+: {{vendor|guild bank}} [[Svas Silvasdottir]]
+: {{vendor|merchant}} [[Sven Edson]]
+
+=== Foes ===
+;[[Ambient creature]]s
+* [[Deer]]
+* [[Dust Mites]]
+* [[Hawk]]
+* [[Osprey]]
+* [[Spark]]
+* [[Will-o-the-Wisp]]
+
+;[[Chak]]
+* [[Sky-Chak Drone]] (80)
+* [[Sky-Chak Slinger]] (80)
+* [[Sky-Chak Zapper]] (80)
+
+== Ambient dialogue ==
+{{section-stub|dialogue|May still be missing dialogue.}}
+;By the charging station and jade tech protocols
+:'''Astral Ward Protector:''' ''Careful. The tower is easy to get lost in. Might step through a door and end up in [[Kirin Peak]].''
+
+:'''Astral Ward Protector:''' ''Our medics can help if the height is making you uneasy.''
+
+:'''Astral Ward Protector:''' ''If you're looking for [[Wizard's Court|wizards]], [[Dagda]] should be upstairs, and Lyhr by the forge.''
+
+;Far east on ground floor near [[Astral Ward Barracks]]
+:'''Astral Ward Protector (1):''' ''Everything was...damp and warm? Her voice was so piercing; my head is still... (groans)''
+:'''Astral Ward Protector (2):''' ''We don't have to talk about it if you're not ready.''
+:'''Astral Ward Protector (1):''' ''There was so much blood on my hands when I woke up. Was it...was it mine? Did I hurt anyone?''
+
+;Far east on middle floor near Astral Ward Barracks
+:'''Astral Ward Instructor Wyntor:''' ''Grabbed a little something special before we left the bastion...''
+:'''Astral Ward Instructor Wyntor:''' ''Pure [[bloodstone]]. Will send you flying.''
+:'''Astral Ward Kiana:''' ''Who...even kept that? [[Mabon]]? I thought bloodstone was sealed in the vault.''
+:'''Astral Ward Instructor Wyntor:''' ''Just don't drop it. But feel that weight!''
+:'''Astral Ward Trainee Rossi:''' ''(groans)''
+
+;Far east on one of the alcoves near Astral Ward Barracks
+:'''???:''' ''We're in the wrong place!''
+:''(??? enter a rift and disappear.)''
+
+;By the northeastern exit
+:'''Astral Ward Protector:''' ''Our medics can help if the height is making you uneasy.''
+
+;By [[Skyscale Stables]]
+:'''[[Astral Ward Skirmisher (NPC)|Astral Ward Skirmisher]]:''' ''Mr. Wrench, is that you?''
+:'''[[Astral Ward Foot Soldier Gormal]]:''' ''Well fed and rested. Not a scratch on her.''
+:'''[[Mr. Wrench]]:''' ''(chirps)''
+:'''Astral Ward Skirmisher:''' ''How you doing, girl? Did you keep the tower safe all on your own?''
+:'''Astral Ward Foot Soldier Gormal:''' ''Managed to wiggle her way into the food stores. Had a bit of a bellyache, but no harm.''
+:'''Astral Ward Skirmisher:''' ''Of course you did.''
+
+;By second to last southwestern exit, north from [[Skyscale Stables]]
+:'''[[Scholar of Balance]]:''' ''I do wonder, sometimes... Had [[Vass]] and [[Akeem]] lived, how do you think we'd be faring right now?''
+:'''[[Scholar of Balance Mentor]]:''' ''I don't think we can know. It was likely their residual energies following death that allowed [[Isgarren]] to expel the [[Kryptis]].''
+:'''Scholar of Balance:''' ''Well, the dragons played their own role in destabilizing the [[magic]]al ecosystem. That could've affected it...''
+:'''Scholar of Balance:''' ''But if Vass and Akeem survived, maybe they could've killed [[Eparch]]. This war would've been prevented—many wars would have.''
+:'''Scholar of Balance Mentor:''' ''There he is. [[Lyhr]] will beam with pride when he sees your debate prowess this refined.''
+:'''Scholar of Balance:''' ''Do you think so...? I'm still not sure about that ending—the [[Elder Dragon]]s are such a challenging variable.''
+
+;By a shadowy door
+:'''&lt;Captive behind door&gt;:''' ''As my shackles weaken, I hear the song of every living [[Tyria (world)|Tyrian]]...waiting for my claws to pierce tender flesh.''
+:'''Astral Ward Apprentice Bleutuft:''' ''Oh, yeah?''
+:'''&lt;Captive behind door&gt;:''' ''Just you wait, little shrub. The world will crumble under the darkness of my eclipse. We will rise...''
+:'''Astral Ward Apprentice Bleutuft:''' ''And there. All done. Should keep you still for another hundred years.''
+:'''&lt;Captive behind door&gt;:''' ''Vile creature. When I wake again, your leaves will be coated in the blood of your loved ones.''
+:'''&lt;Captive behind door&gt;:''' ''Send me back to the [[Mad King's Realm|Mad Realm]]. At least the company was more exciting.''
+
+;At the cooking station
+:'''Astral Ward Skirmisher:''' ''Boiled bog moss again. That's all we got...?''
+:'''Astral Ward Chef:''' ''Be glad we have a warm meal at all. This is a small blessing in the middle of war.''
+:'''Astral Ward Skirmisher:''' ''Bet Lyhr's sitting on a king's ransom of snacks... Have you seen his quarters?''
+:'''Astral Ward Chef:''' ''The wizards are eating the same as us: boiled bog moss.''
+
+;By the [[Forge of Timelessness]]
+:'''Lyhr:''' ''Gets chilly up here sometimes. Come! Warm yourself by the forge.''
+
+:'''Lyhr:''' ''Spend most of my days threading time and balance. Returning to my roots—molten cast iron—calms my soul.''
+
+;Near the Forge of Timelessness
+:'''Astral Ward Protector:''' ''Wow. That's quality armor.''
+:'''Legendary Astral Ward Mage:''' ''Thanks.''
+:'''Legendary Astral Ward Protector:''' ''Thanks.''
+:'''Legendary Astral Ward Skirmisher:''' ''Thanks.''
+
+;By the [[Dream Connector]]{{verify|Check when these characters have dialogue for accounts that have not begun Through the Veil or The Realm of Dreams or if they are permanent dialogues regardless of story progress.}}
+:'''Corporal Kiona:''' ''Greetings, [[Wayfinder]].''
+
+:'''Corporal Kiona:''' ''Make sure Balkin is behaving himself, will you?''
+
+;By the Dream Connector after completing [[Sovereign of Nayos]]
+:'''Astral Ward Lieutenant Murkprowl:''' ''I'm not convinced [[Peitha]] can keep the Kryptis in line.''
+:'''Rift Hunter Dahlvig:''' ''Lady Peitha—KING Peitha—is different.''
+:'''Astral Ward Lieutenant Murkprowl:''' ''Different how? She and the Kryptis are still demons. They've always believed in ruling through strength.''
+:'''Astral Ward Lieutenant Murkprowl:''' ''And whether it's Peitha or [[Eparch]] or whoever, doesn't change the fact that they have to feed.''
+:'''Astral Ward Lieutenant Murkprowl:''' ''Someone always suffers for them to live.''
+:'''Rift Hunter Dahlvig:''' ''Look, she had the [[The Eleventh Hour|chance to take Eparch's essence]] and become maybe the most powerful being in existence!''
+:'''Rift Hunter Dahlvig:''' ''Imagine the willpower it would take to turn that down. And she didn't hesitate!''
+:'''Rift Hunter Dahlvig:''' ''What more proof could you possibly need that she believes in her own cause?''
+:'''Astral Ward Lieutenant Murkprowl:''' ''I'll let you know if I ever see it.''
+
+;At the wall near the Dream Connector{{verify|Verify if they appear there with dialogue after beginning [[Duress]] chapter or if they only appear later.}}
+:'''Astral Ward Researcher:''' ''Oh, I am just beaming. I can't stop smiling.''
+:'''Astral Ward Researcher:''' ''We are, to my knowledge, going to be the first researchers to spend meaningful time on non-Tyrian soil.... If [[Nayos]] even has soil!''
+:'''Astral Ward Researcher:''' ''I've packed my most critical essentials: notebooks, tuning materials, rations for a little bit of exploration.''
+:'''Astral Ward Researcher:''' ''Do you think eighty-three vials is going to be enough...?''
+
+;South of the Dream Connector{{verify|Verify if they appear there with dialogue after beginning [[Duress]] chapter or if they only appear later.}}
+:'''Astral Ward Engineer:''' ''Made up your mind on whether or not you're joining the wayfinder in Nayos?''
+:'''Astral Ward Alchemist:''' ''Dangerous, perhaps, but what kind of researchers would we be if we bristled at the chance to study another realm of existence?''
+:'''Astral Ward Engineer:''' ''Smart ones. You saw those things? Just imagine what their home is like. Fleshy, and bloody...''
+:'''Astral Ward Engineer:''' ''What do they even eat? Each other?''
+
+;Northwest outside the wall{{verify|Verify if they appear there with dialogue after beginning [[Duress]] chapter or if they only appear later.}}
+:'''Astral Ward Scout:''' ''Have you heard the news? [[Arina]]'s alive.''
+:'''Astral Ward Medic:''' ''R-really? Thank the [[Six Human Gods|Six]]... How did they...? In Nayos?''
+:'''Astral Ward Scout:''' ''Lady Peitha found them. [[Isgarren]] is working to establish a [[The Mists|Mists]] gate between the tower and their [[Astral Ward Camp|camp]].''
+:'''Astral Ward Medic:''' ''I suppose not all Kryptis want us dead...''
+
+== Objects ==
+* [[Astral Ward Memorial]]
+* [[Lost Journal]]
+* [[Updraft Generator (object)|Updraft Generator]]
+* [[Pact Commander Reconnaissance Log]]
+* [[Armorsmithing Station]]
+* [[Artificing Station]]
+* [[Cooking Station]]
+* [[Huntsman's Station]]
+* [[Jeweling Station]]
+* [[Leatherworking Station]]
+* [[Scribing Station]]
+* [[Tailoring Station]]
+* [[Weaponsmithing Station]]
+* [[Mystic Forge]]
+* [[Veil of Visions]]
+* [[Legendary Armor Station]]
+
+;Resource nodes
+: {{gathering node|Thornsprout Bloom}}
+
+{{The Wizard's Tower nav}}
+[[de:Äußerer Ring]]
+[[es:Anillo exterior]]
+[[fr:Cercle extérieur]]</text>
+      <sha1>o01ct6h3kunesrlw6tu87i8r57urh2l</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>The Wizard's Tower</title>
+    <ns>0</ns>
+    <id>361990</id>
+    <revision>
+      <id>3080915</id>
+      <parentid>3066923</parentid>
+      <timestamp>2025-12-19T15:38:54Z</timestamp>
+      <contributor>
+        <username>Tery3065</username>
+        <id>270948</id>
+      </contributor>
+      <minor/>
+      <origin>3080915</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="10016" sha1="cwhjkyog2wg16jdbh72rph1dz0bghyy" xml:space="preserve">{{otheruses|the city in [[Guild Wars 2: Secrets of the Obscure|Secrets of the Obscure]]|the landmark in [[Kessex Hills]]|Wizard's Tower|the achievement category|The Wizard's Tower (achievements)}}
+{{Location infobox
+| hearts = 
+| waypoints = 1
+| points-of-interest = 24
+| vistas = 3
+| levels = 80
+| type = City
+| within = Horn of Maguuma
+| location tree = Tyria; Horn of Maguuma
+| connections = [[Skywatch Archipelago]] (S) &lt;br&gt; [[Amnytas]] (N) &lt;br&gt; [[Inner Nayos]] &lt;br&gt; [[Lion's Arch]]
+| loading-screen = The Wizard's Tower loading screen.png
+| gallery1 = The Wizard's Tower.jpg
+| requires = soto
+| id = 1509
+| region id = 48
+| continent id = 1
+}}
+{{Quotation|Official site|Find the truth behind ancient mysteries as you unlock the secrets of the Wizard's Tower, a castle that floated peacefully above the Krytan landscape since before the time of the original [[Guild Wars]]©—until it abruptly disappeared one day.}}
+
+[[The Wizard's Tower]] is a [[zone]] in the [[Horn of Maguuma]] region introduced with the ''[[Guild Wars 2: Secrets of the Obscure]]'' [[expansion]]. It serves as a [[City#Lobby|lobby]] for the expansion's [[Strike Mission]]s and [[Convergence: Outer Nayos‎]], and hosts a number of [[vendor]]s and [[service]]s. The Wizard's Tower belongs to the wizard [[Isgarren]], and previously stood above the town of [[Garenhoff]].
+
+== Getting there ==
+All options require the ''[[Guild Wars 2: Secrets of the Obscure]]'' [[expansion]]:
+* Finishing the sixth [[Secrets of the Obscure]] story chapter [[Tower of Secrets]] will lead to this map.
+* Portal from [[Lion's Arch]], unlocked after finishing [[Tower of Secrets]] story mission on at least one [[character]].&lt;ref&gt;[[Game_updates/2023-11-28#Update_-_November_28,_2023|Game updates/2023-11-28]]
+:Updated the portals in Skywatch Archipelago and Lion's Arch that transport players to the Wizard's Tower to appear for all characters on an account once the owner has completed the Chapter 6: Tower of Secrets story achievement.
+:Previously, this required each character to complete Chapter 6: Tower of Secrets of the Guild Wars 2: Secrets of the Obscure storyline.
+:This change means that once any character has finished Chapter 6, all characters on that account can travel to the Wizard's Tower via either Skywatch Archipelago or Lion's Arch.&lt;/ref&gt;&lt;/small&gt;
+* Portal from [[Amnytas]] near {{waypoint|Bastion of the Natural Waypoint}}
+* Reusable {{item icon|Wizard's Tower Teleportation Scroll}}, rewarded by completing the [[Secrets Obscured]] collection.
+* Using {{item icon|Teleport to Friend}}.
+* Using {{item icon|World Boss Portal Device}} when [[Convergence: Outer Nayos‎]] are active or will soon be active to teleport to Convergence (teleports you to the Wizard Tower near the Convergence portal).
+* Portal from [[Hearth's Glow]].
+
+== Map completion ==
+* 8802 {{experience}} at level 80
+
+== History ==
+{{section-stub|location}}
+{{see|Wizard's Tower}}
+
+== Locations ==
+{| {{STDT|sortable pve locations}}
+{{Location table header|nolevel=1}}
+|-
+| [[Inner Sanctorium]]
+|
+: {{map icon|poi}} [[Dagda's Quarters]]
+: {{map icon|poi}} [[Isgarren's Quarters]]
+: {{map icon|poi}} [[Lyhr's Quarters]]
+: {{map icon|poi}} [[Mabon's Quarters]]
+: {{map icon|poi}} [[Mystic Passage]]
+: {{map icon|poi}} [[The Reliquary]]
+: {{map icon|poi}} [[The Wizard's Court]]
+: {{map icon|poi}} [[War Room (The Wizard's Tower)|War Room]]
+: {{map icon|vista}} Inner Sanctorium Vista
+: {{map icon|adventure}} [[Wizard's Tower: Fly by Night]]
+|-
+| [[Open Sky]]
+|
+: {{map icon|poi}} [[Wizard's Respite]]
+: {{map icon|vista}} Open Sky Vista
+: {{map icon|masterysoto}} [[Tower Insight: The Apex]]
+|-
+| [[Outer Ring]]
+|
+: {{map icon|wp}} Tower Courtyard Waypoint
+: {{map icon|poi}} [[Amnytas Connector]]
+: {{map icon|poi}} [[Astral Ward Barracks]]
+: {{map icon|poi}} [[Empyrean Plaza]]
+: {{map icon|poi}} [[Forge of Timelessness]]
+: {{map icon|poi}} [[Lion's Arch Connector]]
+: {{map icon|poi}} [[Isgarren's Hidden Library]]
+: {{map icon|poi}} [[Memory's Gaze]]
+: {{map icon|poi}} [[Dream Connector]]
+: {{map icon|poi}} [[Skyscale Stables]]
+: {{map icon|vista}} Outer Ring Vista
+: {{map icon|adventure}} [[Skyscale Target Practice in the Wizard's Tower]]
+|-
+| [[Outer Sanctorium]]
+|
+: {{map icon|poi}} [[Hall of Gallantry]]
+: {{map icon|poi}} [[Refugee Clinic]]
+: {{map icon|poi}} [[Rift Hunter Lounge]]
+: {{map icon|poi}} [[Training Platform]]
+: {{map icon|poi}} [[Wizard's Trial]]
+: {{map icon|poi}} [[Wizard's Vault (point of interest)|Wizard's Vault]]
+: {{map icon|adventure}} [[Wizard's Tower: Gauntlet Challenge]]
+: {{Map icon|masterysoto}} [[Tower Insight: A Bird's Eye View]]
+|}
+
+== Interactive map ==
+{{Interactive map | map = 1509 | markers =
+ { "coord": [24126.91, 22258.94], "text": "[[Begonia]]", "name": "Bank", "icon": "Bank (map icon).png" },
+ { "coord": [24159.91, 22258.94], "text": "[[Cleo (Astral Ward)]]", "name": "Trading Post", "icon": "Trading Post (map icon).png" },
+ { "coord": [24102.91, 22289.94], "text": "[[Mystic Forge Attendant]]", "name": "Mystic Forge Attendant",  "icon": "Mystic Forge.png" },
+ { "coord": [24049.91, 22284.94], "text": "[[Ellena]]",  "name": "Master jeweler", "icon": "Jeweling Station (map icon).png" },
+ { "coord": [24052.91, 22319.94], "text": "[[Armorer Pearl]]", "name": "Master armorsmith", "icon": "Armorsmithing Station (map icon).png" },
+ { "coord": [24017.91, 22291.94], "text": "[[Cedar]]", "name": "Master leatherworker", "icon": "Leatherworking Station (map icon).png" },
+ { "coord": [24028.91, 22313.94], "text": "[[Forgemaster Jak]]", "name": "Master weaponsmith", "icon": "Weaponsmithing Station (map icon).png" },
+ { "coord": [24076.91, 22346.94], "text": "[[Bert]]", "name": "Master huntsman", "icon": "Huntsman's Station (map icon).png" },
+ { "coord": [24182.91, 22288.94], "text": "[[Maya]]", "name": "Master tailor", "icon": "Tailoring Station (map icon).png" },
+ { "coord": [24151.91, 22286.94], "text": "[[Oline]]", "name": "Master artificer", "icon": "Artificing Station (map icon).png" },
+ { "coord": [24172.91, 22331.94], "text": "[[Head Chef Jacqueline]]", "name": "Master chef", "icon": "Cooking Station (map icon).png" },
+ { "coord": [24121.91, 22345.94], "text": "[[Rend Scorchmaul]]", "name": "Faction Provisioner", "icon": "Faction Provisioner (map icon).png" },
+ { "coord": [24059.91, 22373.94], "text": "[[Astral Ward Mage (Outfitter)]]", "name": "Merchant", "icon": "Merchant (map icon).png" },
+ { "coord": [24170.91, 22318.94], "text": "[[Sven Edson]]", "name": "Merchant", "icon": "Merchant (map icon).png" },
+ { "coord": [24146.91, 22312.94], "text": "[[Kettil]]", "name": "Merchant", "icon": "Merchant (map icon).png" },
+ { "coord": [24021.91, 22418.94], "text": "[[First Hunter Rian]]", "name": "Rift Hunting", "icon": "First Hunter Rian.png" },
+ { "coord": [24065.91, 22416.94], "text": "[[Natto]]", "name": "Merchant", "icon": "Merchant (map icon).png" },
+ { "coord": [24152.91, 22489.94], "text": "[[Nikki the Lost]]", "name": "Shard Collector", "icon": "Shard Collector (green) (map icon).png" },
+ { "coord": [24136.91, 22427.94], "text": "[[Anvil]]", "name": "Reinforce Armor", "icon": "Reinforce Armor (map icon).png" },
+ { "coord": [24170.91, 22414.94], "text": "[[Strike Missions (object)|Strike Missions]]", "name": "Strike Missions", "icon": "Strike Mission (map icon).png" },
+ { "coord": [24045.21, 22414.94], "text": "[[Convergences (portal)|Convergences ]]", "name": "Convergences", "icon": "Strike Mission (map icon).png" },
+ { "coord": [23632.91, 22320.94], "text": "Portal to [[Inner Nayos]]", "name": "Portal", "icon": "Asura gate (map icon).png" },
+ { "coord": [24100.91, 22059.94], "text": "Portal to [[Amnytas]]", "name": "Portal", "icon": "Asura gate (map icon).png" },
+ { "coord": [24568.91, 22327.94], "text": "Portal to [[Lion's Arch]]", "name": "Portal", "icon": "Asura gate (map icon).png" },
+ { "coord": [24100.91, 22625.78], "text": "Portal to the [[Skywatch Archipelago|Beacon of Ages]]", "name": "Portal", "icon": "Asura gate (map icon).png" },
+ { "coord": [24090, 22379], "text": "[[Lyhr]]", "name": "Lyhr", "icon": "Legendary Crafting.png" },
+}}
+
+== Events ==
+{{event timer|soto-wt}}
+
+* {{event|Help the Astral Ward collect the objects falling out of the portal}}
+* {{event|A Wizard's Trial Race is starting soon!}}
+** {{event|Reach the finish line! (Wizard's Trial)}}
+
+== Ambient dialogue ==
+:{{whisper|'''Peitha:''' ''To imagine him in this place, as bright as it is...''}}
+:'''&lt;Character name&gt;:''' ''Did [[Eparch]]...live here?''
+:{{whisper|'''Peitha:''' ''Long enough to be hungry for more. You should ask your [[Wizard's Court|wizards]]. [[Isgarren]] and Eparch have a long history.''}}
+
+== Crafting resources ==
+;Gathering nodes
+: {{gathering node|Thornsprout Bloom}}
+;Fishing nodes
+: {{gathering node|Deep Tower Fish}}
+
+== Gallery ==
+;Screenshots and concept art
+&lt;gallery&gt;
+Secrets of the Obscure story background.jpg|[[Kryptis]] looming over the Wizard's Tower.
+SotO screenshot 07.jpg|The Wizard's Tower.
+SotO screenshot 12.jpg|
+The Wizard's Court 2.jpg|[[The Wizard's Court]].
+Empyrean Plaza.jpg|[[Empyrean Plaza]].
+Southern Wizard's Tower.jpg|[[Southern Wizard's Tower]].
+Hall of Confluence.jpg|[[Hall of Confluence]].
+Wizard's Tower.jpg|The [[Wizard's Tower]] seen from the town of [[Garenhoff]].
+Map art concept.jpg|Concept art.
+Travel Room concept art.jpg|
+&lt;/gallery&gt;
+
+;Maps
+&lt;gallery&gt;
+The Wizard's Tower map (complete).jpg|Full The Wizard's Tower Map
+&lt;/gallery&gt;
+
+== Notes ==
+* The southern half of the tower, [[Southern Wizard's Tower]] located in [[Skywatch Archipelago]], is blocked off from the actual lobby. It can only be partially accessed after successful completion of the [[Unlocking the Wizard's Tower]] [[meta event]] in Skywatch Archipelago and during [[The Missing Facet]] story chapter, and it is fully accessible during the [[Tower of Secrets]] story chapter.
+	
+== References ==
+&lt;references /&gt;
+
+{{Cities nav}}
+{{Secrets of the Obscure content}}
+[[de:Der Turm des Zauberers]]
+[[es:La torre del brujo]]
+[[fr:La Tour du sorcier]]</text>
+      <sha1>cwhjkyog2wg16jdbh72rph1dz0bghyy</sha1>
+    </revision>
+  </page>
+</mediawiki>

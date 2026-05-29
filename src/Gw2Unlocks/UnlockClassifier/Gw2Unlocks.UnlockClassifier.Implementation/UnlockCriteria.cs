@@ -62,9 +62,10 @@ internal sealed class CraftingMaterialCriteria(string craftingMaterialName) : Un
     }
 }
 
-internal sealed class CurrencyCriteria(string CurrencyName, bool UsedInZoneSpecification = true) : UnlockCriteria
+internal sealed class CurrencyCriteria(string CurrencyName, bool UsedInZoneSpecification = true, bool allowHistorical = false) : UnlockCriteria
 {
     public bool UsedInZoneSpecification { get; } = UsedInZoneSpecification;
+    public override bool AllowHistorical { get; } = allowHistorical;
 
     public override bool Matches(string cost)
     {

@@ -22,25 +22,49 @@ public sealed class Gw2WikiSource(ILogger<Gw2WikiSource> logger, Lazy<Task<WikiS
         [EnumeratorCancellation] CancellationToken cancellationToken)
     {
         var site = await lazySite.Value;
-        var generator = new AllPagesGenerator(site) { NamespaceId = 0, PaginationSize = 100 };
+
         using var http = new HttpClient();
         http.DefaultRequestHeaders.UserAgent.ParseAdd("Mozilla/5.0");
 
-        var batch = new List<string>();
         var retryPolicy = Policy
             .HandleResult<HttpResponseMessage>(r => !r.IsSuccessStatusCode)
             .WaitAndRetryAsync(5, attempt => TimeSpan.FromSeconds(Math.Pow(2, attempt)));
 
         int totalPages = 0;
 
-        await foreach (var page in generator.EnumPagesAsync())
+        // Search here to find the namepace ids: https://wiki.guildwars2.com/wiki/Special:AllPages
+        foreach (var namespaceId in new[] { 0, 10 }) // Main, Templates
         {
-            cancellationToken.ThrowIfCancellationRequested();
-            if (page?.Title == null) continue;
+            var generator = new AllPagesGenerator(site) { NamespaceId = namespaceId, PaginationSize = 100 };
 
-            batch.Add(page.Title);
+            var batch = new List<string>();
 
-            if (batch.Count >= 100)
+            await foreach (var page in generator.EnumPagesAsync())
+            {
+                cancellationToken.ThrowIfCancellationRequested();
+                if (page?.Title == null) continue;
+
+                batch.Add(page.Title);
+
+                if (batch.Count >= 100)
+                {
+                    int batchCount = 0;
+
+                    await foreach (var pageXml in ProcessBatch(batch, http, retryPolicy, cancellationToken))
+                    {
+                        batchCount++;
+                        yield return pageXml;
+                    }
+
+                    totalPages += batchCount;
+
+                    logger.LogInformation("Exported {Count} pages so far", totalPages);
+
+                    batch.Clear();
+                }
+            }
+
+            if (batch.Count > 0)
             {
                 int batchCount = 0;
 
@@ -53,28 +77,10 @@ public sealed class Gw2WikiSource(ILogger<Gw2WikiSource> logger, Lazy<Task<WikiS
                 totalPages += batchCount;
 
                 logger.LogInformation("Exported {Count} pages so far", totalPages);
-
-                batch.Clear();
             }
         }
 
-        if (batch.Count > 0)
-        {
-            batch.Add("Template:Inventory/black lion claim ticket");
-            batch.Add("Template:Inventory/statuette");
-
-            int batchCount = 0;
-
-            await foreach (var pageXml in ProcessBatch(batch, http, retryPolicy, cancellationToken))
-            {
-                batchCount++;
-                yield return pageXml;
-            }
-
-            totalPages += batchCount;
-
-            logger.LogInformation("Exported {Count} pages total", totalPages);
-        }
+        logger.LogInformation("Export complete. Exported {Count} pages total", totalPages);
     }
 
     private static async IAsyncEnumerable<string> ProcessBatch(

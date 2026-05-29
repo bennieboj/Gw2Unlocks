@@ -1,0 +1,563 @@
+<mediawiki xmlns="http://www.mediawiki.org/xml/export-0.11/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mediawiki.org/xml/export-0.11/ http://www.mediawiki.org/xml/export-0.11.xsd" version="0.11" xml:lang="en">
+  <siteinfo>
+    <sitename>Guild Wars 2 Wiki</sitename>
+    <dbname>en_wikidb_gw2</dbname>
+    <base>https://wiki.guildwars2.com/wiki/Main_Page</base>
+    <generator>MediaWiki 1.39.17</generator>
+    <case>first-letter</case>
+    <namespaces>
+      <namespace key="-2" case="first-letter">Media</namespace>
+      <namespace key="-1" case="first-letter">Special</namespace>
+      <namespace key="0" case="first-letter" />
+      <namespace key="1" case="first-letter">Talk</namespace>
+      <namespace key="2" case="first-letter">User</namespace>
+      <namespace key="3" case="first-letter">User talk</namespace>
+      <namespace key="4" case="first-letter">Guild Wars 2 Wiki</namespace>
+      <namespace key="5" case="first-letter">Guild Wars 2 Wiki talk</namespace>
+      <namespace key="6" case="first-letter">File</namespace>
+      <namespace key="7" case="first-letter">File talk</namespace>
+      <namespace key="8" case="first-letter">MediaWiki</namespace>
+      <namespace key="9" case="first-letter">MediaWiki talk</namespace>
+      <namespace key="10" case="first-letter">Template</namespace>
+      <namespace key="11" case="first-letter">Template talk</namespace>
+      <namespace key="12" case="first-letter">Help</namespace>
+      <namespace key="13" case="first-letter">Help talk</namespace>
+      <namespace key="14" case="first-letter">Category</namespace>
+      <namespace key="15" case="first-letter">Category talk</namespace>
+      <namespace key="102" case="first-letter">Property</namespace>
+      <namespace key="103" case="first-letter">Property talk</namespace>
+      <namespace key="106" case="first-letter">Form</namespace>
+      <namespace key="107" case="first-letter">Form talk</namespace>
+      <namespace key="108" case="first-letter">Concept</namespace>
+      <namespace key="109" case="first-letter">Concept talk</namespace>
+      <namespace key="112" case="first-letter">smw/schema</namespace>
+      <namespace key="113" case="first-letter">smw/schema talk</namespace>
+      <namespace key="114" case="first-letter">Rule</namespace>
+      <namespace key="115" case="first-letter">Rule talk</namespace>
+      <namespace key="200" case="first-letter">ArenaNet</namespace>
+      <namespace key="201" case="first-letter">ArenaNet talk</namespace>
+      <namespace key="202" case="first-letter">API</namespace>
+      <namespace key="203" case="first-letter">API talk</namespace>
+      <namespace key="274" case="first-letter">Widget</namespace>
+      <namespace key="275" case="first-letter">Widget talk</namespace>
+    </namespaces>
+  </siteinfo>
+  <page>
+    <title>Polychromatic Heavy Breastplate</title>
+    <ns>0</ns>
+    <id>384945</id>
+    <revision>
+      <id>2861926</id>
+      <parentid>2861254</parentid>
+      <timestamp>2024-08-27T09:08:28Z</timestamp>
+      <contributor>
+        <username>Myriada</username>
+        <id>215477</id>
+      </contributor>
+      <minor/>
+      <origin>2861926</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="603" sha1="q45pc5itadhsgzfnnpme2u5se03dyvt" xml:space="preserve">{{Armor infobox
+| icon = Polychromatic Chest.png
+| type = Chest
+| rarity = Exotic
+| level = 80
+| skin = Polychromatic Heavy Breastplate (skin)
+| set = Polychromatic armor (heavy)
+| prefix = selectable
+| defense = 363
+| class = Heavy
+| bound = Account soul
+| id = 102700
+| requires = jw
+}}
+
+== Acquisition ==
+{{Contained in}}
+
+== Available prefixes ==
+* The following [[Attribute combinations|prefixes]] can be selected:
+{{prefix selection|All Exotic|collapsed=y}}
+
+{{Polychromatic armor nav}}
+
+[[de:Leichte polychromatische Brustplatte]]
+[[es:Peto pesado policromático]]
+[[fr:Harnois lourd polychrome]]</text>
+      <sha1>q45pc5itadhsgzfnnpme2u5se03dyvt</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Polychromatic Coat Box</title>
+    <ns>0</ns>
+    <id>384912</id>
+    <revision>
+      <id>2860958</id>
+      <timestamp>2024-08-26T15:57:06Z</timestamp>
+      <contributor>
+        <username>Kvothe</username>
+        <id>215889</id>
+      </contributor>
+      <comment>New page: '{{Item infobox | icon = Massive Achievement Chest.png | description = Double-click to open.&lt;br&gt;Choose a weight class of Polychromatic armor. (This will unlock the skin on all weights.) | type = Container | rarity = Exotic | bound = Account | id = 102443 | requires = jw }}  == Acquisition == {{Sold by}}  == Contents == * Choose one of the following: ** {{Contains|Polychromatic Light Regalia|chance=Choice}} ** {{Contains|Polychromatic Medium Jacket|chance=Choice}} ** {{Contains|Po...'</comment>
+      <origin>2860958</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="646" sha1="gfy4j7k2vlw7a20pabm5mp9ktvgfrmz" xml:space="preserve">{{Item infobox
+| icon = Massive Achievement Chest.png
+| description = Double-click to open.&lt;br&gt;Choose a weight class of Polychromatic armor. (This will unlock the skin on all weights.)
+| type = Container
+| rarity = Exotic
+| bound = Account
+| id = 102443
+| requires = jw
+}}
+
+== Acquisition ==
+{{Sold by}}
+
+== Contents ==
+* Choose one of the following:
+** {{Contains|Polychromatic Light Regalia|chance=Choice}}
+** {{Contains|Polychromatic Medium Jacket|chance=Choice}}
+** {{Contains|Polychromatic Heavy Breastplate|chance=Choice}}
+
+[[de:Kiste mit polychromatischen Wämsern]]
+[[es:Caja de abrigo policromático]]
+[[fr:Boîte de manteau polychrome]]</text>
+      <sha1>gfy4j7k2vlw7a20pabm5mp9ktvgfrmz</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Deft Lahar</title>
+    <ns>0</ns>
+    <id>380720</id>
+    <revision>
+      <id>3137977</id>
+      <parentid>3137881</parentid>
+      <timestamp>2026-05-10T08:34:45Z</timestamp>
+      <contributor>
+        <username>Tery3065</username>
+        <id>270948</id>
+      </contributor>
+      <minor/>
+      <comment>/* Items offered */</comment>
+      <origin>3137977</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="15952" sha1="67wwlfr2d2nf5x844u0e33vp9102vim" xml:space="preserve">{{NPC infobox
+| icon = Homestead Instructions.png
+| image = Brown Lowland Kodan (hammer).jpg
+| location = Hearth's Glow; Autumn's Vale; Might and Main; Bazaar Docks; Grand Piazza; The Crown Pavilion; Creator's Commons; Hub
+| race = Kodan
+| organization = Lowland Kodan, Lowland Kodan Council
+| level = 80
+| rank = legendary
+| service = Homestead Instructions, Homestead Recipes
+| coordinates = [34410.5, 20862.7, 81]
+| requires = jw
+}}
+[[Deft Lahar]] is the Homestead Master of the [[Lowland Kodan]] [[Lowland Kodan Council|Council]] who provides instructions on how to maintain the [[homestead]]. During [[festival]]s, he can be found in a [[city]] related to that festival, selling [[Handiworker#Recipe sheets|recipe sheet]]s for homestead [[decoration]]s.
+
+== Locations ==
+;[[Janthir]]
+* [[Hearth's Glow]]
+
+* [[Lowland Shore]]
+** [[Autumn's Vale]]
+*** [[Deft Lahar's Abode]]
+
+;[[Kryta]]
+* [[Divinity's Reach]]
+** [[The Crown Pavilion]] {{during|festival=the [[festival]]s [[Lunar New Year]] and [[Wintersday]]}}
+
+* [[Lion's Arch]]
+** [[Grand Piazza]] {{during|festival=the festival [[Halloween]]}}
+
+;[[Maguuma Jungle]]
+* [[Labyrinthine Cliffs]]
+** [[Bazaar Docks]] {{during|festival=the [[Festival of the Four Winds]]}}
+* [[Rata Sum]] {{during|festival=the festival [[Super Adventure Festival]]}}
+** [[Creator's Commons]]
+** [[Super Adventure Box]]
+*** [[Hub]]
+
+;[[Shiverpeak Mountains]]
+* [[Hoelbrak]] {{during|festival=the festival [[Dragon Bash]]}}
+** [[Might and Main]]
+
+== Story involvement ==
+=== [[Janthir Wilds story]] ===
+* Act 1
+** [[Unknown Territory]]
+** [[Home Sweet Home]]
+
+== Items offered ==
+
+=== Homestead Master (Hearth's Glow) ===
+{{Inventory|homestead master|location=Hearth's Glow}}
+
+=== Homestead Recipes (festivals) ===
+* {{red|Note that homestead recipes can still be purchased by accounts without [[Guild Wars 2: Janthir Wilds|Janthir Wilds]]; however, you will not be able to consume them.}}
+&lt;div style="overflow: hidden;"&gt;&lt;div style="float:left;margin-right:1em;"&gt;
+==== Halloween ====
+;Crafting Recipes
+{{Vendor table header|showType=false|showFacts=false|showLevel=false|location=Grand Piazza|requirement=the [[festival]] [[Halloween]]}}
+{{Vendor table row|item=Recipe: Ominous Fortress Ruins—Right|cost=10 Piece of Candy Corn}}
+{{Vendor table row|item=Recipe: Ominous Fortress Buttress|cost=10 Piece of Candy Corn}}
+{{Vendor table row|item=Recipe: Ominous Fortress Ruins—Left|cost=10 Piece of Candy Corn}}
+{{Vendor table row|item=Recipe: Festive Fall Tent|cost=10 Piece of Candy Corn}}
+{{Vendor table row|item=Homestead Recipe Book: Halloween, Volume 10|cost=50 Piece of Candy Corn}}
+{{Vendor table row|item=Homestead Recipe Book: Halloween, Volume 9|cost=50 Piece of Candy Corn}}
+{{Vendor table row|item=Homestead Recipe Book: Halloween, Volume 8|cost=50 Piece of Candy Corn}}
+{{Vendor table row|item=Homestead Recipe Book: Halloween, Volume 7|cost=50 Piece of Candy Corn}}
+{{Vendor table row|item=Homestead Recipe Book: Halloween, Volume 6|cost=50 Piece of Candy Corn}}
+{{Vendor table row|item=Homestead Recipe Book: Halloween, Volume 5|cost=50 Piece of Candy Corn}}
+{{Vendor table row|item=Homestead Recipe Book: Halloween, Volume 4|cost=50 Piece of Candy Corn}}
+{{Vendor table row|item=Homestead Recipe Book: Halloween, Volume 3|cost=50 Piece of Candy Corn}}
+{{Vendor table row|item=Homestead Recipe Book: Halloween, Volume 2|cost=50 Piece of Candy Corn}}
+{{Vendor table row|item=Homestead Recipe Book: Halloween, Volume 1|cost=50 Piece of Candy Corn}}
+|}&lt;/div&gt;
+
+&lt;div style="float:left; margin-right:1em;"&gt;
+==== Wintersday ====
+;Crafting Recipes
+{{Vendor table header|showType=false|showFacts=false|showLevel=false|location=The Crown Pavilion|requirement=the [[festival]] [[Wintersday]]}}
+{{Vendor table row|item=Recipe: Jorms Plush|cost=10 Snowflake}}
+{{Vendor table row|item=Recipe: Light-Blue Wintersday Gift|cost=10 Snowflake}}
+{{Vendor table row|item=Recipe: Gift Barrel|cost=10 Snowflake}}
+{{Vendor table row|item=Recipe: Gift Levitator|cost=10 Snowflake}}
+{{Vendor table row|item=Homestead Recipe Book: Wintersday, Volume 10|cost=50 Snowflake}}
+{{Vendor table row|item=Homestead Recipe Book: Wintersday, Volume 9|cost=50 Snowflake}}
+{{Vendor table row|item=Homestead Recipe Book: Wintersday, Volume 8|cost=50 Snowflake}}
+{{Vendor table row|item=Homestead Recipe Book: Wintersday, Volume 7|cost=50 Snowflake}}
+{{Vendor table row|item=Homestead Recipe Book: Wintersday, Volume 6|cost=50 Snowflake}}
+{{Vendor table row|item=Homestead Recipe Book: Wintersday, Volume 5|cost=50 Snowflake}}
+{{Vendor table row|item=Homestead Recipe Book: Wintersday, Volume 4|cost=50 Snowflake}}
+{{Vendor table row|item=Homestead Recipe Book: Wintersday, Volume 3|cost=50 Snowflake}}
+{{Vendor table row|item=Homestead Recipe Book: Wintersday, Volume 2|cost=50 Snowflake}}
+{{Vendor table row|item=Homestead Recipe Book: Wintersday, Volume 1|cost=50 Snowflake}}
+|}&lt;/div&gt;
+
+&lt;div style="float:left; margin-right:1em;"&gt;
+==== Lunar New Year ====
+;Crafting Recipes
+{{Vendor table header|showType=false|showFacts=false|showLevel=false|location=The Crown Pavilion|requirement=the [[festival]] [[Lunar New Year]]}} 
+{{Vendor table row|item=Recipe: Golden Horse Statue|cost=1 Exotic Essence of Luck}}
+{{Vendor table row|item=Recipe: Horse Statue|cost=1 Exotic Essence of Luck}}
+{{Vendor table row|item=Recipe: Stable Fence|cost=1 Exotic Essence of Luck}}
+{{Vendor table row|item=Recipe: Stable Pen|cost=1 Exotic Essence of Luck}}
+{{Vendor table row|item=Recipe: Mordy Plush|cost=1 Exotic Essence of Luck}}
+{{Vendor table row|item=Homestead Recipe Book: Lunar New Year, Volume 1|cost=5 Exotic Essence of Luck}}
+{{Vendor table row|item=Homestead Recipe Book: Lunar New Year Celestials|cost=5 Exotic Essence of Luck}}
+|}&lt;/div&gt;&lt;/div&gt;
+
+[[File:Bear (Super Adventure Box).jpg|250px|thumb|right|His Super Adventure Box appearance.]]
+&lt;div style="overflow: hidden;"&gt;&lt;div style="float:left;margin-right:1em;"&gt;
+==== Super Adventure Box ====
+;Festival Decorations
+{{Vendor table header|showType=false|showFacts=false|showLevel=false|location=Creator's Commons; Hub|requirement=the [[festival]] [[Super Adventure Festival]]}} 
+{{Vendor table row|item=Recipe: Super Bridge Plank|cost=8 Bauble + 400 coin}}
+{{Vendor table row|item=Recipe: Super Rapids Flowing Water|cost=8 Bauble + 400 coin}}
+{{Vendor table row|item=Recipe: Plush Ess|cost=8 Bauble + 400 coin}}
+{{Vendor table row|item=Recipe: Super Rapids Pillar|cost=8 Bauble + 400 coin}}
+{{Vendor table row|item=Recipe: Super Rapids Plateau|cost=8 Bauble + 400 coin}}
+{{Vendor table row|item=Homestead Recipe Book: Super Adventure Box, Volume 10|cost=32 Bauble + 0 coin}}
+{{Vendor table row|item=Homestead Recipe Book: Super Adventure Box, Volume 9|cost=32 Bauble + 0 coin}}
+{{Vendor table row|item=Homestead Recipe Book: Super Adventure Box, Volume 8|cost=32 Bauble + 0 coin}}
+{{Vendor table row|item=Homestead Recipe Book: Super Adventure Box, Volume 7|cost=32 Bauble + 0 coin}}
+{{Vendor table row|item=Homestead Recipe Book: Super Adventure Box, Volume 6|cost=32 Bauble + 0 coin}}
+{{Vendor table row|item=Homestead Recipe Book: Super Adventure Box, Volume 5|cost=32 Bauble + 0 coin}}
+{{Vendor table row|item=Homestead Recipe Book: Super Adventure Box, Volume 4|cost=32 Bauble + 0 coin}}
+{{Vendor table row|item=Homestead Recipe Book: Super Adventure Box, Volume 3|cost=32 Bauble + 0 coin}}
+{{Vendor table row|item=Homestead Recipe Book: Super Adventure Box, Volume 2|cost=32 Bauble + 0 coin}}
+{{Vendor table row|item=Homestead Recipe Book: Super Adventure Box, Volume 1|cost=32 Bauble + 0 coin}}
+|}&lt;/div&gt;
+
+&lt;div style="float:left; margin-right:1em;"&gt;
+==== Dragon Bash ====
+;Crafting Recipes
+{{Vendor table header|showType=false|showFacts=false|showLevel=false|location=Might and Main|requirement=the [[festival]] [[Dragon Bash]]}} 
+{{Vendor table row|item=Recipe: Norn Brazier|cost=5 Piece of Zhaitaffy}}
+{{Vendor table row|item=Recipe: Norn Stone Structure|cost=5 Piece of Zhaitaffy}}
+{{Vendor table row|item=Recipe: Norn Structure|cost=5 Piece of Zhaitaffy}}
+{{Vendor table row|item=Recipe: Norn Stair|cost=5 Piece of Zhaitaffy}}
+{{Vendor table row|item=Recipe: Raven Hall|cost=5 Piece of Zhaitaffy}}
+{{Vendor table row|item=Homestead Recipe Book: Dragon Bash, Volume 6|cost=20 Piece of Zhaitaffy}}
+{{Vendor table row|item=Homestead Recipe Book: Dragon Bash, Volume 5|cost=20 Piece of Zhaitaffy}}
+{{Vendor table row|item=Homestead Recipe Book: Dragon Bash, Volume 4|cost=20 Piece of Zhaitaffy}}
+{{Vendor table row|item=Homestead Recipe Book: Dragon Bash, Volume 3|cost=20 Piece of Zhaitaffy}}
+{{Vendor table row|item=Homestead Recipe Book: Dragon Bash, Volume 2|cost=20 Piece of Zhaitaffy}}
+{{Vendor table row|item=Homestead Recipe Book: Dragon Bash, Volume 1|cost=20 Piece of Zhaitaffy}}
+|}&lt;/div&gt;
+
+&lt;div style="float:left; margin-right:1em;"&gt;
+==== Festival of the Four Winds ====
+;Four Winds Homestead Recipes
+{{Vendor table header|showType=false|showFacts=false|showLevel=false|location=Bazaar Docks|requirement=the [[festival]] [[Festival of the Four Winds]]}} 
+{{Vendor table row|item=Recipe: Lightning Aspect Crystal|cost=10 Festival Token}}
+{{Vendor table row|item=Recipe: Sun Aspect Crystal|cost=10 Festival Token}}
+{{Vendor table row|item=Recipe: Wind Aspect Crystal|cost=10 Festival Token}}
+{{Vendor table row|item=Recipe: Zephyrite Display Stand|cost=10 Festival Token}}
+{{Vendor table row|item=Recipe: Siege Turtle Rental Post|cost=10 Festival Token}}
+{{Vendor table row|item=Homestead Recipe Book: Four Winds, Volume 1|cost=50 Festival Token}}
+{{Vendor table row|item=Homestead Recipe Book: Four Winds, Volume 2|cost=50 Festival Token}}
+{{Vendor table row|item=Homestead Recipe Book: Four Winds, Volume 3|cost=50 Festival Token}}
+{{Vendor table row|item=Homestead Recipe Book: Four Winds, Volume 4|cost=50 Festival Token}}
+{{Vendor table row|item=Homestead Recipe Book: Four Winds, Volume 5|cost=50 Festival Token}}
+{{Vendor table row|item=Homestead Recipe Book: Four Winds, Volume 6|cost=50 Festival Token}}
+{{Vendor table row|item=Homestead Recipe Book: Four Winds, Volume 7|cost=50 Festival Token}}
+|}&lt;/div&gt;&lt;/div&gt;
+
+=== Historical ===
+{{main|Deft Lahar/historical}}
+
+== Combat abilities ==
+=== Janthir ===
+;Abilities
+* Council Member
+* Homestead Master
+
+;Effects
+{{defiance}} &lt;br&gt;{{chain}}'''[[Stun (defiance)|Stun]]''' — {{skill description|Stun (defiance)}}
+* {{effect|Unnamed effect (Deft Lahar)}} &lt;small&gt;(2s)&lt;/small&gt; &lt;small&gt;(after choosing the time of day or movement options in Hearth's Glow)&lt;/small&gt;
+* {{effect|Dragon Vigor}} &lt;small&gt;(30m)&lt;/small&gt; — {{effect description|Dragon Vigor}} &lt;small&gt;(After enabling fall damage in Hearth's Glow)&lt;/small&gt;
+
+=== Festivals ===
+;Abilities
+* Homestead Master
+* Festive
+
+;Effects
+{{defiance}} &lt;br&gt;{{chain}}'''[[Stun (defiance)|Stun]]''' — {{skill description|Stun (defiance)}}
+
+== Dialogue ==
+;In [[Hearth's Glow]] after completing [[Home Sweet Home]]
+{{main|Homestead Master}}
+
+;At [[Deft Lahar's Abode]]
+:Hrum? What do you need?
+:&lt;small&gt;'''(During [[Home Sweet Home]], during the step "Use Your Warclaw to Topple Trees and Collect Lumber")'''&lt;/small&gt;
+:{{dialogue icon|story}} ''If I help supply materials for you, would you tell me more about crafting?''
+::You scratch my back, I scratch yours—that it? Well, fine. We need logs, but the trees won't fell themselves.
+::{{dialogue icon|end}} ''Deal. I'll be back soon.''
+:&lt;small&gt;'''(During [[Home Sweet Home]], during the step "Return to your homestead with materials for making a traditional kodan bed.")'''&lt;/small&gt;
+:{{dialogue icon|story}} ''What materials do I need to gather to craft this bed?''
+::You'll need a good amount of wood for this kind of project. But if you use higher-quality logs, it won't take as many to refine what you need.
+::{{dialogue icon|story}} ''How do I refine wood?''
+:::You can refine wood and other materials at your homestead. Refined materials are the key to quality decorations you can take pride in.
+:::{{dialogue icon|story}} ''What else do I need?''
+::::Some wool for the padding and blankets. And honey flowers are a key component of the traditional dying process Willow taught you.
+::::{{dialogue icon|story}} ''Where can I find honey flowers?''
+:::::They grow wild throughout the delta. Keep an eye out; I'm sure you'll have enough gathered in no time.
+:::::{{dialogue icon|end}} ''Thank you!''
+::::{{dialogue icon|end}} ''Thank you!''
+:::{{dialogue icon|end}} ''Thank you!''
+::{{dialogue icon|end}} ''Noted. Thank you.''
+:&lt;small&gt;'''(If [[Jug of Wildflower Cyser]] is in inventory and haven't completed [[Home Sweet Home#Achievements|Returning Kindness]])'''&lt;/small&gt;
+:{{dialogue icon|give}} ''I wanted to bring you and Willow a gift for helping make my house a home.''
+::Well, now. Seems I was too hard on you when you first came to me for help.
+::{{dialogue icon|more}} ''I thought you might like it.''
+:::'''Patient Willow:''' Well, aren't you as sweet as the drink itself. Thank you! We'll put that to good use tonight, won't we, Har?
+:::{{dialogue icon|end}} ''(chuckles) You're welcome.''
+:{{dialogue icon|end}} ''Never mind.''
+
+;During [[Lunar New Year]] in [[Divinity's Reach]]
+:Hrum, what a style—the [[Kodan Cub|cubs]] in [[Janthir]] wouldn't know what to gawk at first. I've adapted a number of [[decoration]]s for your [[homestead]]—I just need a pinch of [[Luck]] in trade.
+:{{dialogue icon|sell}} ''Show me your wares.''
+:{{dialogue icon|end}} ''Too bad there's no year of the [[bear]], eh?''
+
+;During [[Super Adventure Festival]] in [[Rata Sum]]
+:Most cubs think these things are super, though they're a touch sharp for my taste. I've adapted a number of decorations for your homestead—I just need a few [[bauble]]s. For the cubs.
+:{{dialogue icon|sell}} ''Show me your wares.''
+:{{dialogue icon|end}} ''Another time might be super.''
+
+;During [[Dragon Bash]] in [[Hoelbrak]]
+:This fiery decor may just fly off the shelves. I've adapted a number of [[decoration]]s for your [[homestead]]—I just need [[zhaitaffy]] in trade. Hrm... For the missus's stockpile.
+:{{dialogue icon|sell}} ''Show me your wares.''
+:{{dialogue icon|end}} ''I fear [[Elder Dragons|dragons]] may not fit well within my homestead.''
+
+;During [[Festival of the Four Winds]] in [[Labyrinthine Cliffs]]
+:I see the [[Zephyrites]] are no strangers to the appeal of a well-kept home. I've adapted a number of [[decoration]]s for your [[homestead]]—for a small trade, you can bring some souvenirs back home.
+:{{dialogue icon|sell}} ''Show me your wares.''
+:{{dialogue icon|end}} ''Hold on, I need to budget carefully before a shopping spree.''
+
+;During [[Halloween]] in [[Lion's Arch]]
+:Hrm... The aesthetic here's a little dark for my taste, but I can see the appeal. I've adapted a number of decorations for your Homestead—I just need a bit of [[Piece of Candy Corn|candy]] in trade. For the folks back home.
+:{{dialogue icon|sell}} ''Show me your wares.''
+:{{dialogue icon|end}} ''I don't know... It's a bit spooky for me.''
+
+;During [[Wintersday]] in [[Divinity's Reach]]
+:Not bad. I can see the celebratory changes across the whole [[city]]. I've adapted a number of decorations for your homestead—I just need a few [[snowflake]]s in trade. For the missus's crafts.
+:{{dialogue icon|sell}} ''Show me your wares.''
+:{{dialogue icon|end}} ''I don't know if I could handle Wintersday year-round.''
+
+== Related achievements ==
+* {{achievement|Councilbear Courtesy}}
+* {{achievement|Returning Kindness}}
+
+== Notes ==
+{{bug|The disabled movement options are only for the homestead owner, visitors can still use mounts, gliders, and receive no fall damage regardless of options selected.}}
+
+== Trivia ==
+* He will simply nod his head after the player asks him to set the time of day.
+
+[[Category: Story characters]]
+[[Category:Lunar New Year]]
+[[Category:Super Adventure Box NPCs]]
+[[Category:Dragon Bash]]
+[[Category:Festival of the Four Winds]]
+[[Category:Halloween]]
+[[Category:Wintersday]]
+
+[[de:Hurtiger Lahar]]
+[[es:Lahar Hábil]]
+[[fr:Lahar habile]]</text>
+      <sha1>67wwlfr2d2nf5x844u0e33vp9102vim</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Template:Inventory/homestead master</title>
+    <ns>10</ns>
+    <id>405167</id>
+    <revision>
+      <id>3137981</id>
+      <parentid>3137880</parentid>
+      <timestamp>2026-05-10T08:54:42Z</timestamp>
+      <contributor>
+        <username>Tery3065</username>
+        <id>270948</id>
+      </contributor>
+      <minor/>
+      <origin>3137981</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="11457" sha1="7dwmk0kvvz2i42tnj7j6ey5enmtz71o" xml:space="preserve">{{Inventory/Vendor subpage header}}
+&lt;onlyinclude&gt;&lt;div style="overflow: hidden;"&gt;&lt;div style="float:left;margin-right:1em;"&gt;
+;Resources
+{{vendor table header|showFacts=false|showLevel=false|showTP=true|location={{#if:{{{location|}}}|{{{location}}}}}}}
+{{vendor table row | item = Hard Wood Logging Node | cost = 100 Black Lion Statuette}}
+{{vendor table row | item = Ancient Wood Logging Node | cost = 100 Black Lion Statuette}}
+{{vendor table row | item = Elder Wood Logging Node | cost = 100 Black Lion Statuette}}
+{{vendor table row | item = Mithril Mining Node | cost = 100 Black Lion Statuette}}
+{{vendor table row | item = Orichalcum Mining Node | cost = 100 Black Lion Statuette}}
+{{vendor table row | item = Iron Ore Mining Node | cost = 100 Black Lion Statuette}}
+{{vendor table row | item = Platinum Mining Node | cost = 100 Black Lion Statuette}}
+{{vendor table row | item = Snow Truffle Harvesting Node | cost = 100 Black Lion Statuette}}
+{{vendor table row | item = Omnomberry Harvesting Node | cost = 100 Black Lion Statuette}}
+{{vendor table row | item = Orrian Truffle Harvesting Node | cost = 100 Black Lion Statuette}}
+{{vendor table row | item = Flaxseed Harvesting Node | cost = 100 Black Lion Statuette}}
+{{vendor table row | item = Ghost Pepper Harvesting Node | cost = 100 Black Lion Statuette}}
+{{vendor table row | item = Lotus Harvesting Node | cost = 100 Black Lion Statuette}}
+{{vendor table row | item = Fused Molten Sickle | cost = 45 Black Lion Statuette}}
+{{vendor table row | item = Fused Molten Logging Axe | cost = 45 Black Lion Statuette}}
+{{vendor table row | item = Molten Alliance Mining Pick | cost = 45 Black Lion Statuette}}
+{{vendor table row | item = Reap-r-Tron | cost = 45 Black Lion Statuette}}
+{{vendor table row | item = Log-r-Tron | cost = 45 Black Lion Statuette}}
+{{vendor table row | item = Mine-r-Tron | cost = 45 Black Lion Statuette}}
+|}&lt;/div&gt;
+
+&lt;div style="float:left; margin-right:1em;"&gt;
+;Homestead Harvesting Upgrades
+{{vendor table header|showFacts=false|showLevel=false|location={{#if:{{{location|}}}|{{{location}}}}}}}
+{{vendor table row|item=Tub of Wood Glue|cost=2000 coin + 5 Ursus Oblige}}
+{{vendor table row|item=Bag of Mortar|cost=112 coin}}
+{{vendor table row|item=Lump of Tin|quantity=10|cost=80 coin}}
+{{vendor table row|item=Lump of Coal|quantity=10|cost=160 coin}}
+{{vendor table row|item=Spool of Jute Thread|quantity=10|cost=80 coin}}
+{{vendor table row|item=Spool of Wool Thread|quantity=10|cost=160 coin}}
+{{vendor table row|item=Spool of Cotton Thread|quantity=10|cost=240 coin}}
+{{vendor table row|item=Spool of Linen Thread|quantity=10|cost=320 coin}}
+{{vendor table row|item=Spool of Silk Thread|quantity=10|cost=480 coin}}
+{{vendor table row|item=Spool of Gossamer Thread|quantity=10|cost=640 coin}}
+{{vendor table row|item=Jar of Vegetable Oil|quantity=10|cost=80 coin}}
+{{vendor table row|item=Jug of Water|quantity=10|cost=80 coin}}
+|}&lt;/div&gt;&lt;/div&gt;
+
+;Homesteading Mastery Rewards
+{{vendor table header|showFacts=false|showLevel=false|showNotes=true|location={{#if:{{{location|}}}|{{{location}}}}}}}
+{{vendor table row|item=Homestead Decoration Limit Increase|cost=250 Ursus Oblige + 100000 coin|total=1}}
+{{vendor table row|item=Homestead Decoration Limit Increase|cost=50 Curious Lowland Honeycomb + 100000 coin|total=1}}
+{{vendor table row|item=Homestead Decoration Limit Increase|cost=50 Curious Mursaat Currency + 100000 coin|total=1}}
+{{vendor table row|item=Homestead Decoration Limit Increase|cost=50 Curious Mursaat Ruin Shard + 100000 coin|total=1}}
+{{vendor table row|item=Homestead Decoration Limit Increase|cost=50 Shard of the Homestead + 100000 coin|total=1}}
+{{vendor table row|item=Honey Flower Home Instance Node|cost=1000 Ursus Oblige + 122500 Karma + 500000 coin}}
+{{vendor table row|item=Lowland Pine Sapling Home Instance Node|cost=1000 Ursus Oblige + 122500 Karma + 500000 coin}}
+{{vendor table row|item=Charged Titan Ore Home Instance Node|cost=1000 Ursus Oblige + 122500 Karma + 500000 coin}}
+{{vendor table row|item=Rotted Titan Amber Home Instance Node|cost=1000 Ursus Oblige + 122500 Karma + 500000 coin}}
+{{vendor table row|item=Mursaat Obsidian Home Instance Node|cost=1000 Ursus Oblige + 122500 Karma + 500000 coin}}
+{{vendor table row|item=Titan Heatstone Home Instance Node|cost=1000 Ursus Oblige + 122500 Karma + 500000 coin}}
+{{vendor table row|item=Relic of Reunification|cost=250 Ursus Oblige + 500 Research Note|requirement=Adept Handiworker Crafting}}
+{{vendor table row|item=Polychromatic Boot Box|cost=75 Ursus Oblige + 150 Research Note|requirement=Novice Handiworker Crafting and Homestead Expansion}}
+{{vendor table row|item=Polychromatic Glove Box|cost=75 Ursus Oblige + 150 Research Note|requirement=Novice Handiworker Crafting and Homestead Expansion}}
+{{vendor table row|item=Polychromatic Shoulders Box|cost=75 Ursus Oblige + 150 Research Note|requirement=Initiate Handiworker Crafting and Homestead Expansion}}
+{{vendor table row|item=Polychromatic Headgear Box|cost=100 Ursus Oblige + 225 Research Note|requirement=Initiate Handiworker Crafting and Homestead Expansion}}
+{{vendor table row|item=Polychromatic Leggings Box|cost=200 Ursus Oblige + 375 Research Note|requirement=Journeyman Handiworker Crafting and Collection Boxes}}
+{{vendor table row|item=Polychromatic Coat Box|cost=225 Ursus Oblige + 450 Research Note|requirement=Journeyman Handiworker Crafting and Collection Boxes}}
+|}
+
+&lt;div style="overflow: hidden;"&gt;&lt;div style="float:left;margin-right:1em;"&gt;
+;Homestead Decoration Recipes
+{{vendor table header|showType=false|showRarity=false|showFacts=false|showLevel=false|location={{#if:{{{location|}}}|{{{location}}}}}}}
+{{vendor table row|item=Recipe: Mordremoth Mandible|cost=1 Mordremoth Mandible Piece}}
+{{vendor table row|item=Recipe: Bronze Mordremoth Trophy|cost=1 Mordremoth Mandible Piece}}
+{{vendor table row|item=Recipe: Silver Mordremoth Trophy|cost=1 Mordremoth Mandible Piece}}
+{{vendor table row|item=Recipe: Gold Mordremoth Trophy|cost=1 Mordremoth Mandible Piece}}
+{{vendor table row|item=Recipe: Tequatl Tailbone|cost=1 Tequatl Tail Piece}}
+{{vendor table row|item=Recipe: Bronze Tequatl Trophy|cost=1 Tequatl Tail Piece}}
+{{vendor table row|item=Recipe: Silver Tequatl Trophy|cost=1 Tequatl Tail Piece}}
+{{vendor table row|item=Recipe: Gold Tequatl Trophy|cost=1 Tequatl Tail Piece}}
+{{vendor table row|item=Recipe: Chak Gerent Eye|cost=1 Chak Gerent Eye Piece}}
+{{vendor table row|item=Recipe: Bronze Chak Gerent Trophy|cost=1 Chak Gerent Eye Piece}}
+{{vendor table row|item=Recipe: Silver Chak Gerent Trophy|cost=1 Chak Gerent Eye Piece}}
+{{vendor table row|item=Recipe: Gold Chak Gerent Trophy|cost=1 Chak Gerent Eye Piece}}
+{{vendor table row|item=Recipe: Shatterer Crystal|cost=1 Shatterer Crystal Piece}}
+{{vendor table row|item=Recipe: Bronze Shatterer Trophy|cost=1 Shatterer Crystal Piece}}
+{{vendor table row|item=Recipe: Silver Shatterer Trophy|cost=1 Shatterer Crystal Piece}}
+{{vendor table row|item=Recipe: Gold Shatterer Trophy|cost=1 Shatterer Crystal Piece}}
+{{vendor table row|item=Recipe: Triple Trouble Tooth|cost=1 Triple Trouble Tooth Piece}}
+{{vendor table row|item=Recipe: Bronze Triple Trouble Trophy|cost=1 Triple Trouble Tooth Piece}}
+{{vendor table row|item=Recipe: Silver Triple Trouble Trophy|cost=1 Triple Trouble Tooth Piece}}
+{{vendor table row|item=Recipe: Gold Triple Trouble Trophy|cost=1 Triple Trouble Tooth Piece}}
+{{vendor table row|item=Recipe: Basic Pedestal|cost=2400 coin}}
+|}&lt;/div&gt;
+
+&lt;div style="float:left; margin-right:1em;"&gt;
+;Homestead Decoration Recipes Concierge Service
+* The following items can be acquired by completing the respective [[Home Sweet Homestead]] achievements or [[Acknowledgement to Deft Lahar|agree to Deft Lahar's terms]], then decide to spend gold.
+{{vendor table header|showType=false|showRarity=false|showFacts=false|showLevel=false|showNotes=true|location={{#if:{{{location|}}}|{{{location}}}}}}}
+{{vendor table row|item=Acknowledgement to Deft Lahar|cost=7 karma|total=1}}
+{{vendor table row|item=Homestead Recipe Book: Amnytas, Volume 1|cost=100000 coin|requirement=Acknowledgement to Deft Lahar}}
+{{vendor table row|item=Homestead Recipe Book: Auric Basin, Volume 1|cost=100000 coin|requirement=Acknowledgement to Deft Lahar}}
+{{vendor table row|item=Homestead Recipe Book: Awakened, Volume 1|cost=100000 coin|requirement=Acknowledgement to Deft Lahar}}
+{{vendor table row|item=Homestead Recipe Book: Dragon's End, Volume 1|cost=100000 coin|requirement=Acknowledgement to Deft Lahar}}
+{{vendor table row|item=Homestead Recipe Book: Dragon's Stand, Volume 1|cost=100000 coin|requirement=Acknowledgement to Deft Lahar}}
+{{vendor table row|item=Homestead Recipe Book: Fractals of the Mists, Volume 2|cost=100000 coin|requirement=Acknowledgement to Deft Lahar}}
+{{vendor table row|item=Homestead Recipe Book: Grothmar Valley, Volume 1|cost=100000 coin|requirement=Acknowledgement to Deft Lahar}}
+{{vendor table row|item=Homestead Recipe Book: Inner Nayos, Volume 1|cost=100000 coin|requirement=Acknowledgement to Deft Lahar}}
+{{vendor table row|item=Homestead Recipe Book: Kryta, Volume 1|cost=100000 coin|requirement=Acknowledgement to Deft Lahar}}
+{{vendor table row|item=Homestead Recipe Book: Lion Statues, Volume 1|cost=100000 coin|requirement=Acknowledgement to Deft Lahar}}
+{{vendor table row|item=Homestead Recipe Book: Skywatch Archipelago, Volume 1|cost=100000 coin|requirement=Acknowledgement to Deft Lahar}}
+{{vendor table row|item=Homestead Recipe: Beetletun Statue Fragments|cost=50000 coin|requirement=Acknowledgement to Deft Lahar}}
+{{vendor table row|item=Homestead Recipe: Branded Spire|cost=50000 coin|requirement=Acknowledgement to Deft Lahar}}
+{{vendor table row|item=Homestead Recipe: Canthan Nian Statue|cost=50000 coin|requirement=Acknowledgement to Deft Lahar}}
+{{vendor table row|item=Homestead Recipe: Jade Tech Microwave|cost=50000 coin|requirement=Acknowledgement to Deft Lahar}}
+{{vendor table row|item=Homestead Recipe: Kaineng City Umbrella|cost=50000 coin|requirement=Acknowledgement to Deft Lahar}}
+{{vendor table row|item=Homestead Recipe: Statue of Joko the Fearsome|cost=50000 coin|requirement=Acknowledgement to Deft Lahar}}
+{{vendor table row|item=Homestead Recipe: Statue of Joko the Indomitable|cost=50000 coin|requirement=Acknowledgement to Deft Lahar}}
+{{vendor table row|item=Homestead Recipe: Statue of Joko the Majestic|cost=50000 coin|requirement=Acknowledgement to Deft Lahar}}
+{{vendor table row|item=Homestead Recipe: Statue of Joko the Powerful|cost=50000 coin|requirement=Acknowledgement to Deft Lahar}}
+{{vendor table row|item=Homestead Recipe: Statue of Joko the Victorious|cost=50000 coin|requirement=Acknowledgement to Deft Lahar}}
+{{vendor table row|item=Homestead Recipe Book: Books|cost=50000 coin|requirement=Acknowledgement to Deft Lahar}}
+{{vendor table row|item=Recipe: Charr Tank|cost=50000 coin|requirement=Acknowledgement to Deft Lahar}}
+|}&lt;/div&gt;&lt;/div&gt;
+
+;Legendary Components
+{{vendor table header|showFacts=false|showLevel=false|showNotes=true|location={{#if:{{{location|}}}|{{{location}}}}}}}
+{{vendor table row|item=Shard of the Homestead|cost=5 Refined Homestead Metal + 5 Refined Homestead Fiber + 5 Refined Homestead Wood + 1050 karma|requirement=Adept Handiworker Crafting}}
+{{vendor table row|item=Shadowfruit Seeds|requirement=Salvation's Cost|cost=250000 coin + 0 Karma|per day=1}}
+|}&lt;/onlyinclude&gt;&lt;/div&gt;&lt;!-- closes &lt;div&gt; from the header template --&gt;</text>
+      <sha1>7dwmk0kvvz2i42tnj7j6ey5enmtz71o</sha1>
+    </revision>
+  </page>
+</mediawiki>

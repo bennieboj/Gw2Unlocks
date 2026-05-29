@@ -234,6 +234,71 @@
       height: 14px;
       vertical-align: middle;
       }
+
+      @media (max-width: 768px) {
+        .controls {
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 10px;
+        }
+
+        .controls input {
+        width: 100%;
+        box-sizing: border-box;
+        }
+
+        .layout {
+        flex-direction: column;
+        }
+
+        .sidebar {
+        width: auto;
+        height: auto;
+        position: static;
+        border-right: none;
+        border-bottom: 1px solid #333;
+        max-height: 240px;
+        }
+
+        .content {
+        padding: 14px;
+        }
+
+        .grid {
+        grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+        gap: 10px;
+        }
+
+        .icon-wrap,
+        .icon-wrap img {
+        width: 56px;
+        height: 56px;
+        }
+
+        .reward-badge img {
+        width: 20px;
+        height: 20px;
+        }
+
+        .item-name {
+        font-size: 0.75rem;
+        }
+
+        .modal {
+        width: calc(100vw - 32px);
+        padding: 18px;
+        }
+
+        .modal-actions {
+        flex-direction: column;
+        }
+
+        .modal-actions a,
+        .modal-actions button {
+        width: 100%;
+        box-sizing: border-box;
+        }
+      }
     </style>
   </head>
 

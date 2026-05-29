@@ -29,7 +29,7 @@ public class GetAcquisitionGraphTests : ServiceProviderBasedTest<IGw2WikiProcess
     [Fact]
     public async Task HistoricalItemsShouldNotBeIncludedInTheGraph()
     {
-        fakeWikiApi.FileName = "historical.xml";
+        SetFile("historical");
         var graph = await GetSut().GetAcquisitionGraph(TestContext.Current.CancellationToken);
 
         Assert.Empty(graph.Nodes);
@@ -38,7 +38,7 @@ public class GetAcquisitionGraphTests : ServiceProviderBasedTest<IGw2WikiProcess
     [Fact]
     public async Task NamedExoticWeaponsShouldBeTaggedAsSuch()
     {
-        fakeWikiApi.FileName = "named_exotic_weapons.xml";
+        SetFile("named_exotic_weapons");
         var graph = await GetSut().GetAcquisitionGraph(TestContext.Current.CancellationToken);
         const string weapon = "Anura";
         var weaponNode = graph.GetNode(weapon, NodeType.Weapon);
@@ -49,9 +49,30 @@ public class GetAcquisitionGraphTests : ServiceProviderBasedTest<IGw2WikiProcess
     }
 
     [Fact]
+    public async Task HomesteadUnlocksShouldLinkToDeftLahar()
+    {
+        SetFile("homestead");
+        var graph = await GetSut().GetAcquisitionGraph(TestContext.Current.CancellationToken);
+        const string armor = "Polychromatic Heavy Breastplate";
+        var armorNode = graph.GetNode(armor, NodeType.Armor);
+        const string container = "Polychromatic Coat Box";
+        var containerNode = graph.GetNode(container, NodeType.Item);
+        const string vendor = "Deft Lahar";
+        var vendorNode = graph.GetNode(vendor, NodeType.NPC);
+
+        Assert.NotNull(armorNode);
+        Assert.NotNull(containerNode);
+        Assert.NotNull(vendorNode);
+
+        Assert.Contains(graph.Edges, e => e.From == armor && e.To == container && e.Type == EdgeType.ContainedIn);
+        Assert.Contains(graph.Edges, e => e.From == container && e.To == vendor && e.Type == EdgeType.SoldBy
+                && e.Metadata != null && e.Metadata.ContainsKey("cost"));
+    }
+
+    [Fact]
     public async Task AchievementsShouldBeParsedProperly()
     {
-        fakeWikiApi.FileName = "achievements.xml";
+        SetFile("achievements");
         var graph = await GetSut().GetAcquisitionGraph(TestContext.Current.CancellationToken);
         const int highestGearAchiId = 2292;
         var highestGearNode = graph.GetAchievementNode(highestGearAchiId);
@@ -71,7 +92,7 @@ public class GetAcquisitionGraphTests : ServiceProviderBasedTest<IGw2WikiProcess
     [Fact]
     public async Task MultipleSkinUnlocksShouldBeSplitProperly()
     {
-        fakeWikiApi.FileName = "skin_multiple_unlock.xml";
+        SetFile("skin_multiple_unlock");
         var graph = await GetSut().GetAcquisitionGraph(TestContext.Current.CancellationToken);
 
         const string item = "Acclaimed Militia Chestpiece Skin";
@@ -96,7 +117,7 @@ public class GetAcquisitionGraphTests : ServiceProviderBasedTest<IGw2WikiProcess
     [Fact]
     public async Task CraftingRecipeShouldLookAtIngredientsAndObjectShouldGoToZone()
     {
-        fakeWikiApi.FileName = "AB_map.xml";
+        SetFile("AB_map");
         var graph = await GetSut().GetAcquisitionGraph(TestContext.Current.CancellationToken);
 
         const string skin = "Auric Axe (skin)";
@@ -131,7 +152,7 @@ public class GetAcquisitionGraphTests : ServiceProviderBasedTest<IGw2WikiProcess
     [Fact]
     public async Task SoldByShouldReturnVendorWithLocation()
     {
-        fakeWikiApi.FileName = "AB_map.xml";
+        SetFile("AB_map");
         var graph = await GetSut().GetAcquisitionGraph(TestContext.Current.CancellationToken);
 
         const string item = "Mini Exalted Sage";
@@ -157,7 +178,7 @@ public class GetAcquisitionGraphTests : ServiceProviderBasedTest<IGw2WikiProcess
     [Fact]
     public async Task GivenVendorContainsLocationTagSoldByShouldOnlyReturnVendorWithSpecificLocation()
     {
-        fakeWikiApi.FileName = "VendorSpecificLocation.xml";
+        SetFile("VendorSpecificLocation");
         var graph = await GetSut().GetAcquisitionGraph(TestContext.Current.CancellationToken);
 
         const string item = "Mini Awakened Archer";
@@ -187,7 +208,7 @@ public class GetAcquisitionGraphTests : ServiceProviderBasedTest<IGw2WikiProcess
     [InlineData("Piles of Bloodstone Dust")]
     public async Task RedirectShouldResolveToActualItem(string redirect)
     {
-        fakeWikiApi.FileName = "redirects.xml";
+        SetFile("redirects");
         var graph = await GetSut().GetAcquisitionGraph(TestContext.Current.CancellationToken);
 
         var actualNode = graph.GetOrCreate(redirect);
@@ -200,7 +221,7 @@ public class GetAcquisitionGraphTests : ServiceProviderBasedTest<IGw2WikiProcess
     [Fact]
     public async Task ShouldFindSoldbyBFmap()
     {
-        fakeWikiApi.FileName = "BF_map.xml";
+        SetFile("BF_map");
         var graph = await GetSut().GetAcquisitionGraph(TestContext.Current.CancellationToken);
 
         const string skin = "Blood Ruby Backpack (skin)";
@@ -229,7 +250,7 @@ public class GetAcquisitionGraphTests : ServiceProviderBasedTest<IGw2WikiProcess
     [Fact]
     public async Task ContainedInShouldRecurseToVendor()
     {
-        fakeWikiApi.FileName = "Arah_contains.xml";
+        SetFile("Arah_contains");
         var graph = await GetSut().GetAcquisitionGraph(TestContext.Current.CancellationToken);
 
         const string item = "Axe of the Dragon's Deep";
@@ -251,7 +272,7 @@ public class GetAcquisitionGraphTests : ServiceProviderBasedTest<IGw2WikiProcess
     [Fact]
     public async Task SkinShouldRecurseThroughItems()
     {
-        fakeWikiApi.FileName = "LA_halloween.xml";
+        SetFile("LA_halloween");
         var graph = await GetSut().GetAcquisitionGraph(TestContext.Current.CancellationToken);
 
         const string skin = "Plush Zhaia Backpack (skin)";
@@ -281,7 +302,7 @@ public class GetAcquisitionGraphTests : ServiceProviderBasedTest<IGw2WikiProcess
     [Fact]
     public async Task GemStoreDataShouldShowSoldByGemStoreVendor()
     {
-        fakeWikiApi.FileName = "gem_store_data.xml";
+        SetFile("gem_store_data");
         var graph = await GetSut().GetAcquisitionGraph(TestContext.Current.CancellationToken);
 
         const string skin = "Aurene's Crystalline Claws (heavy skin)";
@@ -309,24 +330,81 @@ public class GetAcquisitionGraphTests : ServiceProviderBasedTest<IGw2WikiProcess
     }
 
     [Fact]
-    public async Task GemStoreDataWhenAvailabilityIsHistoricalShouldNotShowSoldByGemStoreVendor()
+    public async Task GemStoreDataWhenAvailabilityIsHistoricalShouldShowSoldByGemStoreVendorWithHistocalAvailability()
     {
-        fakeWikiApi.FileName = "gem_store_data.xml";
+        SetFile("gem_store_data");
         var graph = await GetSut().GetAcquisitionGraph(TestContext.Current.CancellationToken);
 
-        const string item = "Mini Guardian Angel Aurene";
+        const string skin = "Aetherblade Heavy Warhelm";
+        var skinNode = graph.GetNode(skin, NodeType.Skin);
+        const string item = "Aetherblade Heavy Warhelm Skin";
         var itemNode = graph.GetNode(item, NodeType.Item);
-        const string containerPack = "2019 Extra Life Donation Bundle";
-        var containerPackNode = graph.GetNode(containerPack, NodeType.GemStoreCombo);
+        const string container = "Aetherblade Heavy Armor Skin";
+        var containerNode = graph.GetNode(container, NodeType.Item);
         const string gemStoreVendor = "Gem Store";
         var gemStoreVendorNode = graph.GetNode(gemStoreVendor, NodeType.NPC);
 
 
+        Assert.NotNull(skinNode);
         Assert.NotNull(itemNode);
-        Assert.Null(containerPackNode); // item itself is marked as historical
+        Assert.NotNull(containerNode);
+        Assert.NotNull(gemStoreVendorNode);
 
-        Assert.DoesNotContain(graph.Edges, e => e.From == item && e.To == containerPack && e.Type == EdgeType.ContainedIn);
-        Assert.DoesNotContain(graph.Edges, e => e.From == containerPack && e.To == gemStoreVendor && e.Type == EdgeType.SoldBy);
+        Assert.Contains(graph.Edges, e => e.From == skin && e.To == item && e.Type == EdgeType.SkinUnlock);
+        Assert.Contains(graph.Edges, e => e.From == item && e.To == container && e.Type == EdgeType.ContainedIn);
+        Assert.Contains(graph.Edges, e => e.From == container && e.To == gemStoreVendor && e.Type == EdgeType.SoldBy
+                        && e.Metadata != null 
+                        && e.Metadata.TryGetValue("cost", out string? costItem) && costItem.Contains("800 Gems", System.StringComparison.Ordinal)
+                        && e.Metadata.TryGetValue("availability", out string? avaiabilityItem) && avaiabilityItem.Contains("historical", System.StringComparison.Ordinal)
+                        );
+    }
+
+    [Theory]
+    [InlineData("Magi's Skyforged Axe", NodeType.Weapon, "Skyforged weapons")]
+    [InlineData("Sinister Saryx Axe", NodeType.Weapon, "Saryx weapons")]
+    [InlineData("Ritualist's Ancient Canthan Light Shoulderpads", NodeType.Armor, "Ancient Canthan armor")]
+    [InlineData("Ritualist's Ancient Canthan Medium Shoulderpads", NodeType.Armor, "Ancient Canthan armor")]
+    public async Task SetsShouldWork(string item, NodeType itemType, string set)
+    {
+        SetFile("sets");
+        var graph = await GetSut().GetAcquisitionGraph(TestContext.Current.CancellationToken);
+
+        var itemNode = graph.GetNode(item, itemType);
+        Assert.NotNull(itemNode);
+
+        var setNode = graph.GetNode(set, NodeType.Set);
+        Assert.NotNull(setNode);
+
+        Assert.Contains(graph.Edges, e => e.From == item && e.To == set && e.Type == EdgeType.ContainedIn);
+    }
+
+    [Fact]
+    public async Task SetsAndRedirectsShouldNotHaveInfiniteLoops()
+    {
+        string item = "Flamewalker armor";
+        SetFile("sets_infinite_loop");
+        var graph = await GetSut().GetAcquisitionGraph(TestContext.Current.CancellationToken);
+
+        var itemNode = graph.GetNode(item, NodeType.Set);
+        Assert.NotNull(itemNode);
+    }
+
+    [Theory]
+    [InlineData("Chest (Secrets of the Obscure)", NodeType.Gw2Object, "Skyforged weapons")]
+    [InlineData("Weekly Quickplay Raid Cache", NodeType.Item, "Ancient Canthan armor")]
+
+    public async Task SetContainsShouldWork(string chestOrContainer, NodeType chestOrContainerType, string set)
+    {
+        SetFile("set_contains");
+        var graph = await GetSut().GetAcquisitionGraph(TestContext.Current.CancellationToken);
+
+        var chestOrContainerNode = graph.GetNode(chestOrContainer, chestOrContainerType);
+        Assert.NotNull(chestOrContainerNode);
+
+        var setNode = graph.GetNode(set, NodeType.Set);
+        Assert.NotNull(setNode);
+
+        Assert.Contains(graph.Edges, e => e.From == set && e.To == chestOrContainer && e.Type == EdgeType.ContainedIn);
     }
 
     [Theory]
@@ -336,7 +414,7 @@ public class GetAcquisitionGraphTests : ServiceProviderBasedTest<IGw2WikiProcess
     [InlineData("Abaddon Axe (skin)")]
     public async Task BlackLionClaimTicketItemsShouldShowSoldByBlackLionClaimTicketVendor(string skin)
     {
-        fakeWikiApi.FileName = "Black_Lion_Claim_Ticket_and_Statuette.xml";
+        SetFile("Black_Lion_Claim_Ticket_and_Statuette");
         var graph = await GetSut().GetAcquisitionGraph(TestContext.Current.CancellationToken);
 
         const string blackLionWeaponsVendor = "Black Lion Weapons Specialist";
@@ -352,7 +430,7 @@ public class GetAcquisitionGraphTests : ServiceProviderBasedTest<IGw2WikiProcess
     [InlineData("Fuzzy Leopard Hat")]
     public async Task BlackLionStatuetteItemsShouldShowSoldByBlackLionChestMerchantVendor(string skin)
     {
-        fakeWikiApi.FileName = "Black_Lion_Claim_Ticket_and_Statuette.xml";
+        SetFile("Black_Lion_Claim_Ticket_and_Statuette");
         var graph = await GetSut().GetAcquisitionGraph(TestContext.Current.CancellationToken);
 
         const string blackLionChestVendor = "Black Lion Chest Merchant";
@@ -367,7 +445,7 @@ public class GetAcquisitionGraphTests : ServiceProviderBasedTest<IGw2WikiProcess
     [Fact]
     public async Task CasinoBlitzRewardCashierLocatedInCrystalOasis()
     {
-        fakeWikiApi.FileName = "Crystal_Oasis.xml";
+        SetFile("Crystal_Oasis");
         var graph = await GetSut().GetAcquisitionGraph(TestContext.Current.CancellationToken);
 
         const string vendor = "Casino Blitz Reward Cashier";
@@ -383,5 +461,10 @@ public class GetAcquisitionGraphTests : ServiceProviderBasedTest<IGw2WikiProcess
 
         Assert.Contains(graph.Edges, e => e.From == vendor && e.To == area && e.Type == EdgeType.LocatedIn);
         Assert.Contains(graph.Edges, e => e.From == area && e.To == zone && e.Type == EdgeType.LocatedIn);
+    }
+
+    private void SetFile(string fileName)
+    {
+        fakeWikiApi.FileName = $"xmlfiles/{fileName}.xml";
     }
 }

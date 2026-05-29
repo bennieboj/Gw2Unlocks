@@ -1,0 +1,450 @@
+<mediawiki xmlns="http://www.mediawiki.org/xml/export-0.11/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mediawiki.org/xml/export-0.11/ http://www.mediawiki.org/xml/export-0.11.xsd" version="0.11" xml:lang="en">
+  <siteinfo>
+    <sitename>Guild Wars 2 Wiki</sitename>
+    <dbname>en_wikidb_gw2</dbname>
+    <base>https://wiki.guildwars2.com/wiki/Main_Page</base>
+    <generator>MediaWiki 1.39.17</generator>
+    <case>first-letter</case>
+    <namespaces>
+      <namespace key="-2" case="first-letter">Media</namespace>
+      <namespace key="-1" case="first-letter">Special</namespace>
+      <namespace key="0" case="first-letter" />
+      <namespace key="1" case="first-letter">Talk</namespace>
+      <namespace key="2" case="first-letter">User</namespace>
+      <namespace key="3" case="first-letter">User talk</namespace>
+      <namespace key="4" case="first-letter">Guild Wars 2 Wiki</namespace>
+      <namespace key="5" case="first-letter">Guild Wars 2 Wiki talk</namespace>
+      <namespace key="6" case="first-letter">File</namespace>
+      <namespace key="7" case="first-letter">File talk</namespace>
+      <namespace key="8" case="first-letter">MediaWiki</namespace>
+      <namespace key="9" case="first-letter">MediaWiki talk</namespace>
+      <namespace key="10" case="first-letter">Template</namespace>
+      <namespace key="11" case="first-letter">Template talk</namespace>
+      <namespace key="12" case="first-letter">Help</namespace>
+      <namespace key="13" case="first-letter">Help talk</namespace>
+      <namespace key="14" case="first-letter">Category</namespace>
+      <namespace key="15" case="first-letter">Category talk</namespace>
+      <namespace key="102" case="first-letter">Property</namespace>
+      <namespace key="103" case="first-letter">Property talk</namespace>
+      <namespace key="106" case="first-letter">Form</namespace>
+      <namespace key="107" case="first-letter">Form talk</namespace>
+      <namespace key="108" case="first-letter">Concept</namespace>
+      <namespace key="109" case="first-letter">Concept talk</namespace>
+      <namespace key="112" case="first-letter">smw/schema</namespace>
+      <namespace key="113" case="first-letter">smw/schema talk</namespace>
+      <namespace key="114" case="first-letter">Rule</namespace>
+      <namespace key="115" case="first-letter">Rule talk</namespace>
+      <namespace key="200" case="first-letter">ArenaNet</namespace>
+      <namespace key="201" case="first-letter">ArenaNet talk</namespace>
+      <namespace key="202" case="first-letter">API</namespace>
+      <namespace key="203" case="first-letter">API talk</namespace>
+      <namespace key="274" case="first-letter">Widget</namespace>
+      <namespace key="275" case="first-letter">Widget talk</namespace>
+    </namespaces>
+  </siteinfo>
+  <page>
+    <title>Magi's Skyforged Axe</title>
+    <ns>0</ns>
+    <id>364957</id>
+    <revision>
+      <id>2818518</id>
+      <parentid>2735982</parentid>
+      <timestamp>2024-05-07T21:32:08Z</timestamp>
+      <contributor>
+        <username>Aylia</username>
+        <id>196297</id>
+      </contributor>
+      <origin>2818518</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="772" sha1="72b9by8zobw6vahj73e75jhdgqdpdh2" xml:space="preserve">{{Weapon infobox
+| icon = Skyforged Axe.png
+| salvage = Standard
+| type = axe
+| bound = use
+| collection = Skyforged Weapon Collector
+| set = Skyforged weapons
+| gallery1 = Skyforged Axe.jpg
+| rarity = rare
+| level = 80
+| prefix = magi
+| value = 198
+| skin = Skyforged Axe
+| id = 100603
+}}
+
+== Acquisition ==
+=== Gathered from ===
+{{Gathered from}}
+
+=== Contained in ===
+{{Contained in}}
+
+=== Other ===
+* Completing events in the [[Horn of Maguuma]].
+
+== Notes ==
+* Unlocking this skin in the [[wardrobe]] will unlock the ability to purchase the corresponding [[Stormforged Axe]] recipe from [[Lyhr]] in the [[The Wizard's Tower]].
+
+{{Skyforged weapons nav}}
+
+[[de:Magische Himmelsgeschmiedete Axt]]
+[[es:Hacha forjada en el cielo de magi]]
+[[fr:Hache de forge-ciel mage]]</text>
+      <sha1>72b9by8zobw6vahj73e75jhdgqdpdh2</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Skyforged weapons</title>
+    <ns>0</ns>
+    <id>364451</id>
+    <revision>
+      <id>2851378</id>
+      <parentid>2818519</parentid>
+      <timestamp>2024-08-21T07:02:54Z</timestamp>
+      <contributor>
+        <username>Arcky</username>
+        <id>215444</id>
+      </contributor>
+      <origin>2851378</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="815" sha1="4stweva3afwzwkgw09bbzzoqt359ejn" xml:space="preserve">{{Weapon set infobox
+| source = PvE
+| type = loot
+| rarity = rare
+| level = 80
+| collection = 
+| release = 2023-08-22
+| requires = soto
+}}
+[[Skyforged weapons]] are level 80 {{rarity|yellow|rare}} weapons with [[Magi]] stats.
+
+== Acquisition ==
+=== Gathered from ===
+{{Weapon set gathered from}}
+
+=== Contained in ===
+{{Weapon set contained in}}
+
+=== Rewarded by ===
+{{weapon set rewarded by}}
+* Completing events in the [[Horn of Maguuma]].
+* Possible drop from completing [[Rift Hunting|rift hunts]] and using a [[Rift essence#Rift motivations|motivation]].
+
+== Weapons ==
+{{Weapon set table}}
+
+== Gallery ==
+{{Weapon set gallery}}
+
+== See also ==
+* [[Secrets of the Obscure weapons]]
+
+{{Skyforged  weapons nav}}
+[[Category:Skyforged weapons|*]]
+
+[[de:Himmelsgeschmiedete Waffe]]
+[[es:Armas forjadas en el cielo]]</text>
+      <sha1>4stweva3afwzwkgw09bbzzoqt359ejn</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Sinister Saryx Axe</title>
+    <ns>0</ns>
+    <id>371365</id>
+    <revision>
+      <id>2817604</id>
+      <parentid>2757526</parentid>
+      <timestamp>2024-04-30T17:24:01Z</timestamp>
+      <contributor>
+        <username>Aylia</username>
+        <id>196297</id>
+      </contributor>
+      <origin>2817604</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="748" sha1="hc5f8wliqmy53xkwt1wa9mwls33inti" xml:space="preserve">{{Weapon infobox
+| icon = Saryx Axe.png
+| salvage = Standard
+| type = axe
+| bound = use
+| collection = Saryx Weapon Collector
+| set = Saryx weapons
+| gallery1 = Saryx Axe.jpg
+| rarity = rare
+| level = 80
+| prefix = Sinister
+| value = 198
+| skin = Saryx Axe
+| id = 100714
+}}
+
+== Acquisition ==
+=== Gathered from ===
+{{Gathered from}}
+
+=== Contained in ===
+{{Contained in}}
+
+=== Other ===
+* Completing events in [[Inner Nayos]].
+
+== Notes ==
+* Unlocking this skin in the [[wardrobe]] will unlock the ability to purchase the corresponding [[Consecrated Saryx Axe]] recipe from [[Faction Provisioner|Faction Provisioners]] in [[Inner Nayos]].
+
+{{Saryx weapons nav}}
+
+[[de:Finstere Saryx-Axt]]
+[[es:Hacha saryx siniestra]]
+[[fr:Hache de Saryx sinistre]]</text>
+      <sha1>hc5f8wliqmy53xkwt1wa9mwls33inti</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Saryx weapons</title>
+    <ns>0</ns>
+    <id>370836</id>
+    <revision>
+      <id>2851379</id>
+      <parentid>2817640</parentid>
+      <timestamp>2024-08-21T07:03:11Z</timestamp>
+      <contributor>
+        <username>Arcky</username>
+        <id>215444</id>
+      </contributor>
+      <comment>/* Other */</comment>
+      <origin>2851379</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="928" sha1="98qizrx5efoowoqovja01xqf99brymj" xml:space="preserve">{{Weapon set infobox
+| type = loot
+| rarity = rare 
+| level = 80
+| requires = soto
+| collection = Saryx Weapon Collector
+| release = 2023-11-07
+}}
+[[Saryx  weapons]] are level 80 {{rarity|yellow|rare}} weapons with [[Sinister]] stats.
+
+Unlocking a Saryx weapon skin in the [[wardrobe]] will unlock the purchasing of the corresponding [[Consecrated Saryx weapons|Consecrated Saryx weapon]] recipes from [[Faction Provisioner]]s in [[Inner Nayos]].
+
+== Acquisition ==
+=== Gathered from ===
+{{Weapon set gathered from}}
+
+=== Contained in ===
+{{Weapon set contained in}}
+
+=== Other ===
+* Completing events in [[Inner Nayos]].
+* Possible drop from completing [[Rift Hunting|rift hunts]] and using a [[Rift essence#Rift motivations|motivation]].
+
+== Weapons ==
+{{weapon set table}}
+
+== Gallery ==
+{{weapon set gallery}}
+
+== See also ==
+* [[Secrets of the Obscure weapons]]
+
+{{Saryx weapons nav}}
+
+[[de:Saryx-Waffe]]
+[[es:Armas saryx]]</text>
+      <sha1>98qizrx5efoowoqovja01xqf99brymj</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Ritualist's Ancient Canthan Light Shoulderpads</title>
+    <ns>0</ns>
+    <id>314756</id>
+    <revision>
+      <id>2698190</id>
+      <parentid>2548641</parentid>
+      <timestamp>2023-07-16T08:50:29Z</timestamp>
+      <contributor>
+        <username>AWB Alex</username>
+        <id>102516</id>
+      </contributor>
+      <minor/>
+      <comment>/* top */+Add salvage parameter</comment>
+      <origin>2698190</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="663" sha1="hoskdj8dslf037v3aul6xh18xnkfdt7" xml:space="preserve">{{Armor infobox
+| icon = Ancient Canthan Light Shoulderpads.png
+| prefix = Ritualist's
+| class = Light
+| type = Shoulders
+| skin = Ancient Canthan Light Shoulderpads
+| set = Ancient Canthan armor (light)
+| level = 80
+| rarity = Rare
+| value = 218
+| bound = Use
+| salvage = Standard
+| id = 95855
+| requires = eod
+}}
+
+== Acquisition ==
+=== Gathered from ===
+{{Gathered from}}
+
+=== Contained in ===
+{{contained in}}
+
+=== Sold by ===
+{{sold by}}
+
+{{Ancient Canthan armor nav}}
+
+[[de:Ritualisten- Uralte canthanische leichte Schulterpolster]]
+[[es:Protegehombros ligeros canthianos antiguos de ritualista]]
+[[fr:Protège-épaules légers canthiens anciens ritualiste]]</text>
+      <sha1>hoskdj8dslf037v3aul6xh18xnkfdt7</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Ancient Canthan armor (light)</title>
+    <ns>0</ns>
+    <id>314735</id>
+    <revision>
+      <id>3112370</id>
+      <parentid>2837297</parentid>
+      <timestamp>2026-02-28T15:04:59Z</timestamp>
+      <contributor>
+        <username>Mirhur</username>
+        <id>264587</id>
+      </contributor>
+      <origin>3112370</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="783" sha1="79dmnuqms0rzm28g6c3r3y6qxtol0ix" xml:space="preserve">{{otheruses|the [[Light armor|light]] variant of the Ancient Canthan armor set|the overview of the set|Ancient Canthan armor}}
+{{Armor set infobox
+| source = PvE
+| name = Ancient Canthan armor
+| image = Ancient Canthan armor (light) human female front.jpg
+| class = light
+| rarity = rare
+| level = 80
+| requires = eod
+}}
+[[Ancient Canthan armor (light)|Ancient Canthan armor]] is a [[light armor]] set acquired in the [[End of Dragons]] expansion.
+
+== Acquisition ==
+{{main|Ancient Canthan armor#Acquisition}}
+
+== Skin pieces ==
+{{Armor skin set table}}
+
+== Gallery ==
+{{armor galleries}}
+
+{{Ancient Canthan armor nav}}
+[[Category:Ancient Canthan armor]]
+[[Category:Light armor galleries]]
+[[de:Uraltes canthanisches Rüstungsset (Leicht)]]
+[[es:Armadura canthiana antigua (ligera)]]</text>
+      <sha1>79dmnuqms0rzm28g6c3r3y6qxtol0ix</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Ritualist's Ancient Canthan Medium Shoulderpads</title>
+    <ns>0</ns>
+    <id>314760</id>
+    <revision>
+      <id>2698195</id>
+      <parentid>2548640</parentid>
+      <timestamp>2023-07-16T08:50:39Z</timestamp>
+      <contributor>
+        <username>AWB Alex</username>
+        <id>102516</id>
+      </contributor>
+      <minor/>
+      <comment>/* top */+Add salvage parameter</comment>
+      <origin>2698195</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="668" sha1="4qig3wpuiy2detj9txsvcoc10zvwbeo" xml:space="preserve">{{Armor infobox
+| icon = Ancient Canthan Medium Shoulderpads.png
+| prefix = Ritualist's
+| class = Medium
+| type = Shoulders
+| skin = Ancient Canthan Medium Shoulderpads
+| set = Ancient Canthan armor (medium)
+| level = 80
+| rarity = Rare
+| value = 218
+| bound = Use
+| salvage = Standard
+| id = 96572
+| requires = eod
+}}
+
+== Acquisition ==
+=== Gathered from ===
+{{Gathered from}}
+
+=== Contained in ===
+{{contained in}}
+
+=== Sold by ===
+{{sold by}}
+
+{{Ancient Canthan armor nav}}
+
+[[de:Ritualisten- Uralte canthanische mittlere Schulterpolster]]
+[[es:Hombros medios canthianos antiguos de ritualista]]
+[[fr:Protège-épaules intermédiaires canthiens anciens ritualiste]]</text>
+      <sha1>4qig3wpuiy2detj9txsvcoc10zvwbeo</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Ancient Canthan armor (medium)</title>
+    <ns>0</ns>
+    <id>314504</id>
+    <revision>
+      <id>3112372</id>
+      <parentid>2837311</parentid>
+      <timestamp>2026-02-28T15:10:45Z</timestamp>
+      <contributor>
+        <username>Mirhur</username>
+        <id>264587</id>
+      </contributor>
+      <origin>3112372</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="789" sha1="7w9guszrfocp8q4q3y4ygxr9fqwz0n0" xml:space="preserve">{{otheruses|the [[medium armor|medium]] variant of the Ancient Canthan armor set|the overview of the set|Ancient Canthan armor}}
+{{Armor set infobox
+| source = PvE
+| name = Ancient Canthan armor
+| image = Ancient Canthan armor (medium) norn female front.jpg
+| class = medium
+| rarity = rare
+| level = 80
+| requires = eod
+}}
+[[Ancient Canthan armor (medium)|Ancient Canthan armor]] is a [[medium armor]] set acquired in the [[End of Dragons]] expansion.
+
+== Acquisition ==
+{{main|Ancient Canthan armor#Acquisition}}
+
+== Skin pieces ==
+{{Armor skin set table}}
+
+== Gallery ==
+{{armor galleries}}
+
+{{Ancient Canthan armor nav}}
+[[Category:Ancient Canthan armor]]
+[[Category:Medium armor galleries]]
+
+[[de:Uraltes canthanisches Rüstungsset (Mittel)]]
+[[es:Armadura canthiana antigua (media)]]</text>
+      <sha1>7w9guszrfocp8q4q3y4ygxr9fqwz0n0</sha1>
+    </revision>
+  </page>
+</mediawiki>

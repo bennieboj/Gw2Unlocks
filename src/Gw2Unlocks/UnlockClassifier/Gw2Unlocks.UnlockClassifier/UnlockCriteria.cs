@@ -5,4 +5,5 @@ namespace Gw2Unlocks.UnlockClassifier;
 public abstract class UnlockCriteria
 {
     public abstract bool Matches(string unlock);
+    public virtual bool AllowHistorical => false;
 }

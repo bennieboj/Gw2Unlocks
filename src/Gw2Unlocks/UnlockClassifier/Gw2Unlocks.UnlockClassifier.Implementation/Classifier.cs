@@ -40,7 +40,20 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
     private ClassifyConfig? classifyConfig;
 
     private readonly List<CurrencyCriteria> commonCurrencies = [new CurrencyCriteria("Coin"), new CurrencyCriteria("Karma"), new CurrencyCriteria("Research Note")];
-    private readonly List<string> itemsToIgnore = ["Spirit Shard", "Pile of Bloodstone Dust", "Dragonite Ore", "Empyreal Fragment", "Rare Essence of Luck"];
+    private readonly List<string> itemsToIgnore = [
+        "Spirit Shard",
+        "Pile of Bloodstone Dust",
+        "Dragonite Ore",
+        "Empyreal Fragment",
+        "Rare Essence of Luck"
+    ];
+    private readonly List<string> npcsToIgnore = [
+        "Black Lion Exchange Specialist", "Black Lion Representative (Exchange Specialist)"
+    ];
+    private readonly List<string> containersToIgnore = [
+        "Cold-Forged Exotic Weapon",
+        "Unidentified Gear"
+    ];
 
     private static ClassifyConfig CreateConfig()
     {
@@ -512,15 +525,15 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                         new() { Name = "Mystic Forge", UnlockCriteria = [  ] },
                         new() { Name = "Crafting", UnlockCriteria = [  ] },
                         new() { Name = "Black Lion Claim Ticket", UnlockCriteria = [
-                            new TokenCriteria("Black Lion Claim Ticket", false),
+                            new TokenCriteria("Black Lion Claim Ticket", UsedInZoneSpecification: false),
                             new AchievementCategoryCriteria("Black Lion Collections"),
                             ] },
                         new() { Name = "Black Lion Statuette", UnlockCriteria = [
-                            new TokenCriteria("Black Lion Statuette", false),
+                            new TokenCriteria("Black Lion Statuette", UsedInZoneSpecification: false),
                             ] },
                         new() { Name = "Gathering Tools", UnlockCriteria = [  ] },
                         new() { Name = "Gem Store", UnlockCriteria = [
-                            new CurrencyCriteria("Gem", false)                         
+                            new CurrencyCriteria("Gem", UsedInZoneSpecification: false, allowHistorical: true)                         
                             ] },
                         new() { Name = "General", UnlockCriteria = [  ] },
                         new() { Name = "Fractals", UnlockCriteria = [
@@ -536,11 +549,6 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
             ]
         };
     }
-
-    private readonly List<string> containersToIgnore = [
-        "Cold-Forged Exotic Weapon",
-        "Unidentified Gear"
-        ];
 
     private IEnumerable<UnlockCriteriaContext<TokenCriteria>>? tokenCriteria;
     private IEnumerable<UnlockCriteriaContext<CurrencyCriteria>>? currencyCriteriaWithoutZoneSpecification;
@@ -632,9 +640,10 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
     {
         List<Categorization> possibleClassifications = [];
         var achievement = achievements!.SingleOrDefault(a => a.Id == achievementIdInt);
-        if(achievement != null && (achievement.Flags.Daily || achievement.Flags.Weekly || achievement.Flags.Repeatable || achievement.Name.Contains("(Annual)", StringComparison.InvariantCulture)))
+        if(achievement != null && (achievement.Flags.Daily || achievement.Flags.Weekly || achievement.Name.Contains("(Annual)", StringComparison.InvariantCulture)))
         {
-            return;
+            //filter out
+            //return;
         }
         if (achievementCriteriaByAchievementId!.TryGetValue(achievementIdInt, out var foundAchievementCategoryCriteria))
         {
@@ -802,7 +811,7 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
             var key = kvp.Key;
             var node = kvp.Value;
 
-            var nodetypes = new List<NodeType> { NodeType.Item, NodeType.BackItem, NodeType.Weapon, NodeType.Armor, NodeType.Container };
+            var nodetypes = new List<NodeType> { NodeType.Item, NodeType.BackItem, NodeType.Weapon, NodeType.Armor };
 
             if (node.Type == NodeType.Skin &&
                 node.Metadata.TryGetValue("id", out var skinId) &&
@@ -856,12 +865,14 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
     };
 
     private readonly List<string> debugtitles = [
-        "Fused Shoulders"
+        "Fused Shoulders",
+        "Skyforged weapons"
     ];
 
     private sealed record SearchState(
         string Key,
         string? Cost,
+        bool? IsCostHistorical,
         EdgeType? IncomingEdgeType);
 
     private void FillInApiData(Unlock unlock)
@@ -1002,7 +1013,7 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
         if (startNode == null)
             return null;
 
-        var startState = new SearchState(startKey, null, null);
+        var startState = new SearchState(startKey, null, null, null);
         TryVisit(visited, startKey, null);
         queue.Enqueue(startState);
         parent[startKey] = null;
@@ -1028,6 +1039,11 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
             }
 
             if (current.Type == NodeType.Item && itemsToIgnore.Contains(currentKey, StringComparer.Ordinal))
+            {
+                continue;
+            }
+
+            if (current.Type == NodeType.NPC && npcsToIgnore.Contains(currentKey, StringComparer.Ordinal))
             {
                 continue;
             }
@@ -1178,11 +1194,18 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
 
 
                 var nextCost = searchState.Cost;
+                var nextIsHistoricalCost = searchState.IsCostHistorical;
                 // If SoldBy → capture cost
                 if (edge.Type == EdgeType.SoldBy &&
                     edge.Metadata != null && edge.Metadata.TryGetValue("cost", out var cost))
                 {
                     nextCost = cost; // overwrite or store
+                    bool? isHistoricalCost = null;
+                    if(edge.Metadata.TryGetValue("availability", out var availability))
+                    {
+                        isHistoricalCost = availability.Equals("historical", StringComparison.OrdinalIgnoreCase);
+                        nextIsHistoricalCost = isHistoricalCost;
+                    }
 
                     var foundCurrencyCriteriaWithoutZoneSpecification = currencyCriteriaWithoutZoneSpecification!.Where(c => c.Criteria.Matches(cost));
                     var foundTokenCriteriaWithoutZoneSpecification = tokenCriteriaWithoutZoneSpecification!.Where(c => c.Criteria.MatchesCost(cost));
@@ -1196,14 +1219,17 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                         var groupName = criteria.Categorization!.Group?.Name;
                         var categoryName = criteria.Categorization!.Category?.Name ?? "";
                         var groupOfCategoryName = criteria.Categorization!.GroupOfCategoryName ?? "";
+                        int certainty = 100;
+                        if (criteria.Criteria.AllowHistorical && isHistoricalCost == true)
+                            certainty = 20;
                         if (groupName != null)
                         {
-                            possibleClassifications.Add(new(groupName, null, BuildPath(currentKey, parent), 100));
+                            possibleClassifications.Add(new(groupName, null, BuildPath(currentKey, parent), certainty));
                             continue;
                         }
                         else
                         {
-                            possibleClassifications.Add(new(groupOfCategoryName, categoryName, BuildPath(currentKey, parent), 100));
+                            possibleClassifications.Add(new(groupOfCategoryName, categoryName, BuildPath(currentKey, parent), certainty));
                             continue;
                         }
                     }
@@ -1212,6 +1238,7 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                 var nextState = new SearchState(
                     edge.To,
                     nextCost,
+                    nextIsHistoricalCost,
                     edge.Type);
 
                 if (TryVisit(visited, edge.To, nextCost))

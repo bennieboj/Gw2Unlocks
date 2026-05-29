@@ -1,0 +1,3133 @@
+<mediawiki xmlns="http://www.mediawiki.org/xml/export-0.11/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mediawiki.org/xml/export-0.11/ http://www.mediawiki.org/xml/export-0.11.xsd" version="0.11" xml:lang="en">
+  <siteinfo>
+    <sitename>Guild Wars 2 Wiki</sitename>
+    <dbname>en_wikidb_gw2</dbname>
+    <base>https://wiki.guildwars2.com/wiki/Main_Page</base>
+    <generator>MediaWiki 1.39.17</generator>
+    <case>first-letter</case>
+    <namespaces>
+      <namespace key="-2" case="first-letter">Media</namespace>
+      <namespace key="-1" case="first-letter">Special</namespace>
+      <namespace key="0" case="first-letter" />
+      <namespace key="1" case="first-letter">Talk</namespace>
+      <namespace key="2" case="first-letter">User</namespace>
+      <namespace key="3" case="first-letter">User talk</namespace>
+      <namespace key="4" case="first-letter">Guild Wars 2 Wiki</namespace>
+      <namespace key="5" case="first-letter">Guild Wars 2 Wiki talk</namespace>
+      <namespace key="6" case="first-letter">File</namespace>
+      <namespace key="7" case="first-letter">File talk</namespace>
+      <namespace key="8" case="first-letter">MediaWiki</namespace>
+      <namespace key="9" case="first-letter">MediaWiki talk</namespace>
+      <namespace key="10" case="first-letter">Template</namespace>
+      <namespace key="11" case="first-letter">Template talk</namespace>
+      <namespace key="12" case="first-letter">Help</namespace>
+      <namespace key="13" case="first-letter">Help talk</namespace>
+      <namespace key="14" case="first-letter">Category</namespace>
+      <namespace key="15" case="first-letter">Category talk</namespace>
+      <namespace key="102" case="first-letter">Property</namespace>
+      <namespace key="103" case="first-letter">Property talk</namespace>
+      <namespace key="106" case="first-letter">Form</namespace>
+      <namespace key="107" case="first-letter">Form talk</namespace>
+      <namespace key="108" case="first-letter">Concept</namespace>
+      <namespace key="109" case="first-letter">Concept talk</namespace>
+      <namespace key="112" case="first-letter">smw/schema</namespace>
+      <namespace key="113" case="first-letter">smw/schema talk</namespace>
+      <namespace key="114" case="first-letter">Rule</namespace>
+      <namespace key="115" case="first-letter">Rule talk</namespace>
+      <namespace key="200" case="first-letter">ArenaNet</namespace>
+      <namespace key="201" case="first-letter">ArenaNet talk</namespace>
+      <namespace key="202" case="first-letter">API</namespace>
+      <namespace key="203" case="first-letter">API talk</namespace>
+      <namespace key="274" case="first-letter">Widget</namespace>
+      <namespace key="275" case="first-letter">Widget talk</namespace>
+    </namespaces>
+  </siteinfo>
+  <page>
+    <title>Auric Basin (achievements)</title>
+    <ns>0</ns>
+    <id>201527</id>
+    <revision>
+      <id>3090025</id>
+      <parentid>3040129</parentid>
+      <timestamp>2026-01-06T19:00:04Z</timestamp>
+      <contributor>
+        <username>Sime</username>
+        <id>143985</id>
+      </contributor>
+      <origin>3090025</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="16332" sha1="ghecohsn6sp8pnn9wbp5um6nayi26el" xml:space="preserve">{{otheruses|the achievement category|the zone|Auric Basin}}
+{{Achievement category infobox
+| icon = Auric Basin.png
+| description = Completing challenges in [[Auric Basin]].
+| group = Heart of Thorns
+| order = 2
+| mastery = Heart of Thorns
+| requires = hot
+| id = 111
+}}
+[[Auric Basin (achievements)|Auric Basin]] is an [[achievement]] category for achievements earned in [[Auric Basin]].
+
+{{achievement table header}}
+{{Achievement table row
+| id = 2565
+| name = "Endurance" Strongbox
+| page = "Endurance" Strongbox
+| description = Search in the [[Griffonfall (Auric Basin)|Griffonfall]] area for the strongbox from the "Endurance."
+| tiers = Found the strongbox from the "Endurance.";2
+| mastery = Heart of Thorns
+| mastery id = 130
+}}
+{{Achievement table row
+| id = 2512
+| name = "Obsidian Triumph" Strongbox
+| page = "Obsidian Triumph" Strongbox
+| description = Search in the [[Bristleback Chasm]] area for the strongbox from the "Obsidian Triumph."
+| tiers = Found the strongbox from the "Obsidian Triumph.";2
+| mastery = Heart of Thorns
+| mastery id = 72
+}}
+{{Achievement table row
+| id = 2583
+| name = "Slice of Sky" Strongbox
+| page = "Slice of Sky" Strongbox
+| description = Search in the [[Lastgear Standing]] area for the strongbox from the "Slice of Sky."
+| tiers = Found the strongbox from the "Slice of Sky.";2
+| mastery = Heart of Thorns
+| mastery id = 104
+}}
+{{Achievement table row
+| id = 2617
+| name = "Straight and Narrow" Strongbox
+| page = "Straight and Narrow" Strongbox
+| description = Search in the [[Tarnished Treetop]] area for the strongbox from the "Straight and Narrow."
+| tiers = Found the strongbox from the "Straight and Narrow.";2
+| mastery = Heart of Thorns
+| mastery id = 102
+}}
+{{Achievement table row
+| id = 2240
+| name = "Vengeance Rising" Strongbox
+| page = "Vengeance Rising" Strongbox
+| description = Search in the [[Eastwatch Bluff]] area for the strongbox from the "Vengeance Rising."
+| tiers = Found the strongbox from the "Vengeance Rising.";2
+| mastery = Heart of Thorns
+| mastery id = 27
+}}
+{{Achievement table row
+| id = 2607
+| name = A Fungus Among Us: Gold
+| page = A Fungus Among Us
+| description = Bounce your way though the checkpoints and across the finish line!
+| tiers = You earned this.;1
+| mastery = Heart of Thorns
+| mastery id = 159
+}}
+{{Achievement table row
+| id = 2188
+| name = A Fungus Among Us: Silver
+| page = A Fungus Among Us
+| description = Bounce your way though the checkpoints and across the finish line!
+| tiers = You earned this.;1
+| mastery = Heart of Thorns
+| mastery id = 178
+}}
+{{Achievement table row
+| id = 2373
+| name = A Study in Gold
+| page = A Study in Gold
+| description = Speak to [[Sage Laural]] at Westgate to receive an [[Auric Viewer|auric viewer]], then scan the tablets in the city for clues to Herta's location.
+| tiers = 1 Tablet Found;1
+2 Tablets Found;1
+3 Tablets Found;1
+4 Tablets Found;1
+5 Tablets Found;1
+6 Tablets Found;1
+7 Tablets Found;1
+8 Tablets Found;1
+9 Tablets Found;1
+10 Tablets Found;1
+11 Tablets Found;1
+12 Tablets Found;1
+13 Tablets Found;1
+14 Tablets Found;1
+15 Tablets Found;1
+16 Tablets Found;1
+17 Tablets Found;4
+| location = Auric Basin
+| reward = Deciphered Clues
+| objectives = Westgate: Next to Sage Laural
+Legacy Pillars: Southwest
+Legacy Pillars: Southeast
+Legacy Pillars: Northwest
+Northgate: Where Water Flows Vertically
+Eastgate: Where the Falls End and Nature Begins
+Eastgate: A Great View of a Mighty Tree
+Southgate: Tucked Away Southwest
+Westgate: The Way Has Decayed Unless You Fly
+Southgate: Entrance
+Northgate: Entrance
+Southgate: You'll Only Be Able to Reach This from Very High Up
+Luminate's Throne: The Jungle Grows Even Up Here
+Northgate: Where We Lay Our Masks to Rest
+Trial Rooms: Heavy Foliage Hides This One
+Trial Rooms: Glint's Words Guide Us
+Inner Chamber: One Day There Will Be Another
+}}
+{{Achievement table row
+| id = 2618
+| name = Ba-Boom
+| description = Participate in the assault on the southern [[octovine]] during the Battle in Tarir.
+| flavor = Giant explosive? Check.
+| tiers = 1 Octovine Assaulted;3
+}}
+{{Achievement table row
+| id = 2417
+| name = Droppin' Bombs
+| description = Participate in the assault on the eastern [[octovine]] during the Battle in Tarir.
+| flavor = You showed that ugly octovine who's boss when you dropped bombs all over it.
+| tiers = 1 Octovine Assaulted;1
+| mastery = Heart of Thorns
+| mastery id = 141
+}}
+{{Achievement table row
+| id = 2263
+| name = Egg Bearer
+| page = Egg Bearer
+| description = Complete the jumping puzzle.
+| flavor = Get to the top of the inner chamber in Tarir.
+| tiers = Puzzle Achievement;5
+}}
+{{Achievement table row
+| id = 2406
+| name = Fallen Masks: Gold
+| page = Fallen Masks
+| description = Sooth the tormented spirits of fallen Exalted.
+| tiers = You earned this.;1
+| mastery = Heart of Thorns
+| mastery id = 181
+}}
+{{Achievement table row
+| id = 2200
+| name = Fallen Masks: Silver
+| page = Fallen Masks
+| description = Sooth the tormented spirits of fallen Exalted.
+| tiers = You earned this.;1
+| mastery = Heart of Thorns
+| mastery id = 196
+}}
+{{Achievement table row
+| id = 2568
+| name = Forgotten City Arches
+| page = Forgotten City Arches
+| description = Glide through 3 arches below the waterfall on the eastern side of Tarir.
+| flavor = Use your glider to experience the beauty of Tarir.
+| tiers = Navigated through 1 Arch by Glider;1
+Navigated through 2 Arches by Glider;1
+Navigated through 3 Arches by Glider;1
+| objectives = Glide below the highest set of arches.
+Glide below the medium set of arches.
+Glide below the lowest set of arches.
+| mastery = Heart of Thorns
+| mastery id = 63
+}}
+{{Achievement table row
+| id = 2216
+| name = Hidden Amphibian
+| description = Defeat the [[Veteran Witzel|irritable Itzel]] who's hiding out and whittling in his favorite spot.
+| flavor = All he wanted was a break...
+| tiers = Defeat Witzel;5
+}}
+{{Achievement table row
+| id = 2292
+| name = Highest Gear
+| page = Highest Gear
+| description = Complete the jumping puzzle.
+| flavor = Watch out for those ancient chess golems. They're known to cheat.
+| tiers = Puzzle Achievement;5
+}}
+{{Achievement table row
+| id = 2614
+| name = Invisible King
+| description = Find and hit 1 [[Mushroom King Tyranus|mushroom king]] hiding in the lower [[Tarnished Treetop]].
+| flavor = Use your mastery skill to spot invasive fungi.
+| tiers = Tracked 1 Mushroom King in the Lower Canopy;1
+| mastery = Heart of Thorns
+| mastery id = 39
+}}
+{{Achievement table row
+| id = 2594
+| name = Mordrem Begone
+| description = Participate in the assault on the northern [[octovine]] during the Battle in Tarir.
+| flavor = Spray those Mordrem until they stop moving. Then spray some more.
+| tiers = 1 Octovine Assaulted;3
+}}
+{{Achievement table row
+| id = 2342
+| name = Mushroom Power
+| description = Participate in the assault on the western [[octovine]] during the Battle in Tarir.
+| flavor = Somebody's got to do it.
+| tiers = 1 Octovine Assaulted;3
+}}
+{{Achievement table row
+| id = 2602
+| name = No Mask Left Behind
+| page = No Mask Left Behind
+| description = Locate and collect all of the Exalted masks left behind by vinetooths in Auric Basin
+| flavor = Collect the masks of fallen Exalted throughout Auric Basin
+| reward = Aurillium Node
+| tiers = Found 1 Exalted Mask;1
+Found 2 Exalted Masks;1
+Found 3 Exalted Masks;1
+Found 4 Exalted Masks;1
+Found 5 Exalted Masks;1
+Found 6 Exalted Masks;1
+Found 7 Exalted Masks;1
+Found 8 Exalted Masks;1
+Found 9 Exalted Masks;1
+Found 10 Exalted Masks;1
+Found 11 Exalted Masks;1
+Found 12 Exalted Masks;1
+Found 13 Exalted Masks;1
+Found 14 Exalted Masks;1
+Found 15 Exalted Masks;1
+Found 16 Exalted Masks;1
+Found 17 Exalted Masks;1
+Found 18 Exalted Masks;1
+Found 19 Exalted Masks;1
+Found 20 Exalted Masks;1
+Found 21 Exalted Masks;1
+Found 22 Exalted Masks;1
+Found 23 Exalted Masks;1
+Found 24 Exalted Masks;1
+Found 25 Exalted Masks;1
+| objectives = [[Northwatch Descent]]: Deep underground below the outpost.
+[[Bristleback Chasm]]: Somewhere up high in Vinetooth's Den.
+[[Eastwatch Bluff]]: Overlooking an Eastwatch pylon where an Exalted sage is pulled from his duties.
+[[Griffonfall]]: Hidden at the bottom of a secret waterfall.
+[[Chak Hollow]]: Overlooking a razed Nuhoch village.
+[[Morwood Wilds]]: Behind the vine wall, but be aware that timing is everything!
+[[Bristleback Chasm]]: Across the falls, stuck on a tree.
+[[Eastwatch Bluff]]: Look behind the various waterfalls.
+[[The Falls]]: Check every southern-side tree branch leading down to the falls.
+[[The Falls]]: Somewhere behind the expansive wall of water.
+[[Westwatch Patch]]: Within the upper walls of the golden ooze cavern.
+[[Tarnished Treetop]]: Look on the southern-canopy tree branches for this mask.
+[[Northwatch Descent]]: On a southwestern ledge with an amazing view of the outpost.
+[[Maguuma Shallows]]: On an upper perch near where creatures grow big.
+[[Burnisher Quarry]]: Within the waters at the top of the waterfall.
+[[Mossheart Walk]]: Within a small cave opposite wyvern's pylon.
+[[Chak Hollow]]: Located within a southern alcove with a good view to the entrance of Tangled Depths.
+[[Morwood Wilds]]: In the sky overlooking one of the blighted saplings.
+[[Balthazar's Rest]]: On a rock with a clear view of the temple door.
+[[Southwatch Creep]]: Look behind the northwestern wall that faces the outpost itself.
+[[Southwatch Creep]]: Look to the east by the top of the Tarir entrance.
+[[Southwatch Creep]]: Check the top roots when heading east on your way to the crash site.
+[[Tarnished Treetop]]: Keep an eye out on the lower canopy near fungi royalty.
+[[Lastgear Standing]]: On the outskirts of the cave entrance.
+[[Arrowhead Vale]]: Overlooking the northern entrance to Tarir.
+}}
+{{Achievement table row
+| id = 2445
+| name = On Wings of Gold: Gold
+| page = On Wings of Gold
+| description = Deliver collected shield anomalies by gliding near the collection device.
+| tiers = You earned this.;1
+| mastery = Heart of Thorns
+| mastery id = 160
+}}
+{{Achievement table row
+| id = 2252
+| name = On Wings of Gold: Silver
+| page = On Wings of Gold
+| description = Deliver collected shield anomalies by gliding near the collection device.
+| tiers = You earned this.;1
+| mastery = Heart of Thorns
+| mastery id = 175
+}}
+{{Achievement table row
+| id = 2427
+| name = Powered Up
+| description = Participate in powering up each of the outposts around Auric Basin.
+| flavor = These outposts won't start themselves.
+| tiers = Unlocked 1 Outpost;1
+Unlocked 2 Outposts;1
+Unlocked 3 Outposts;1
+| objectives = Southwatch Creep
+Westwatch Patch
+Northwatch Descent
+}}
+{{Achievement table row
+| id = 2382
+| name = Sanctum Scramble: Gold
+| page = Sanctum Scramble
+| description = Jump, launch, and glide your way though the checkpoints and across the finish line!
+| tiers = You earned this.;1
+| mastery = Heart of Thorns
+| mastery id = 152
+}}
+{{Achievement table row
+| id = 2633
+| name = Sanctum Scramble: Silver
+| page = Sanctum Scramble
+| description = Jump, launch, and glide your way though the checkpoints and across the finish line!
+| tiers = You earned this.;1
+| mastery = Heart of Thorns
+| mastery id = 194
+}}
+{{Achievement table row
+| id = 2622
+| name = Saving the City of Gold
+| description = Partake in 100 [[Battle in Tarir|battles for Tarir]], and save the city.
+| flavor = Help save the great city of Tarir by fending off invading Mordrem.
+| tiers = Participated in 1 Successful Retakes of Tarir;1
+Participated in 25 Successful Retakes of Tarir;3
+Participated in 50 Successful Retakes of Tarir;5
+Participated in 75 Successful Retakes of Tarir;8
+Participated in 100 Successful Retakes of Tarir;10
+| title = The Golden Child
+}}
+{{Achievement table row
+| id = 2634
+| name = Tarir Challenge Winner
+| description = Place first in 1 of the Tarir [[Trial by Fire|challenges]].
+| flavor = Win one of the challenges during the Invasion of Tarir.
+| tiers = Won 1 Tarir Challenge;1
+| mastery = Heart of Thorns
+| mastery id = 87
+}}
+{{Achievement table row
+| id = 2549
+| name = Tarnished Traitor
+| page = Tarnished Traitor
+| description = Summon and defeat 1 tarnished traitor.
+| flavor = Find this lost Exalted below the city of Tarir.
+| tiers = Defeat 1 Tarnished Traitor;1
+}}
+{{Achievement table row
+| id = 2331
+| name = The Floor Is Lava?: Gold
+| page = The Floor Is Lava
+| description = Kick rockvine fruit and retrieve as many spores as you can before time runs out!
+| tiers = You earned this.;1
+| mastery = Heart of Thorns
+| mastery id = 150
+}}
+{{Achievement table row
+| id = 2484
+| name = The Floor Is Lava?: Silver
+| page = The Floor Is Lava
+| description = Kick rockvine fruit and retrieve as many spores as you can before time runs out!
+| tiers = You earned this.;1
+| mastery = Heart of Thorns
+| mastery id = 154
+}}
+{{Achievement table row
+| id = 2283
+| name = The Golden Chicken
+| page = The Golden Chicken
+| description = Find a gold chicken in Tarir.
+| flavor = If a gold chicken exists, where would it hide in a golden city?
+| tiers = Found a Golden Chicken;3
+}}
+{{Achievement table row
+| id = 2574
+| name = Treetop Retriever
+| page = Treetop Retriever
+| description = Locate the 10 lost Priory corpses in the Tarnished Treetop of Auric Basin.
+| flavor = They made the ultimate sacrifice.
+| tiers = 1 Priory Seal Recovered;1
+2 Priory Seals Recovered;1
+3 Priory Seals Recovered;1
+4 Priory Seals Recovered;1
+5 Priory Seals Recovered;1
+6 Priory Seals Recovered;1
+7 Priory Seals Recovered;1
+8 Priory Seals Recovered;1
+9 Priory Seals Recovered;1
+10 Priory Seals Recovered;1
+| objectives = A female asura researcher was last seen north of Wanderer's Waypoint.
+Since he went to an upper ledge to examine the Exalted portal, the asura researcher hasn't been heard from.
+Someone overheard the Zintl boasting about finding the remains of a female charr explorer.
+Echoes of a male charr explorer fighting a large colony of vampire beasts filled the canopy the other night.
+A human explorer bailed from the airship too early. She was lost near Capitzel Grounds.
+Heading east, the explorer was cornered by a jaguar. The human never made it down from the canopy.
+An injured norn historian held off the bonebreaker so others could escape. Her sacrifice won't be forgotten.
+A lower ledge broke his fall, but then the norn explorer was surrounded by Tengu scouts.
+A sylvari historian got trapped along the northern cliffside of Tarnished Treetop. She had little chance to survive.
+An explorer tried to find his way south and down from the canopy. The sylvari only found a Coztic ambush.
+}}
+{{Achievement table row
+| id = 2555
+| name = Ultimate Challenge Winner
+| description = Place first in all the outpost  [[Trial by Fire|challenges]] around Auric Basin
+| flavor = You won all the outpost challenges around Auric Basin
+| tiers = Won 1 Outpost Challenge;1
+Won 2 Outpost Challenges;1
+Won 3 Outpost Challenges;1
+Won 4 Outpost Challenges;1
+}}
+{{Achievement table row
+| id = 2194
+| name = Vinetooth Hunter
+| description = Find and [[Defeat Vinetooth Prime|defeat]] [[Legendary Vinetooth Prime|Vinetooth Prime]] in its [[Vinetooth Den|lair]].
+| flavor = There's a predator lurking in the jungle, chasing anything that isn't Mordrem.
+| tiers = Defeated 1 Vinetooth Prime;1
+| mastery = Heart of Thorns
+| mastery id = 37
+}}
+{{Achievement table row
+| id = 2516
+| name = Where Exalted Dare
+| description = Go to the [[Vinetooth Den|vinetooth den]] to find [[Herta]].
+| tiers = Found Herta in the Vinetooth Den;1
+| prerequisite = [[A Study in Gold]]
+| reward = Herta
+| location = Auric Basin
+| notes = Interact with Herta's remains on the ground in [[Vinetooth Den]], it is near the [[Speed Boost Mushroom]].
+}}
+|}
+
+== Notes ==
+&lt;references /&gt;
+* For the most of the Octovine participation achievements, the meta does not need to succeed for these to be awarded. Only '''Saving the City of Gold''' requires it to be successful to be obtained.
+* If the [[Where Exalted Dare]] achievement is unlocked you can complete it by interacting with the unmarked glowing pile of remains a few steps due south of the [[Vinetooth Den]] POI marker. The [[Remains]] at the entrance to the cave do '''not''' complete the achievement.
+
+== Trivia ==
+* [[Where Exalted Dare]] is a reference to the 1968 WW2 action-adventure film [[w:Where Eagles Dare|Where Eagles Dare]].
+
+{{Achievement nav}}
+
+[[de:Güldener Talkessel (Erfolge)]]
+[[es:Valle Áurico (logros)]]
+[[fr:Bassin aurique (succès)]]</text>
+      <sha1>ghecohsn6sp8pnn9wbp5um6nayi26el</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Basic Collections</title>
+    <ns>0</ns>
+    <id>130250</id>
+    <revision>
+      <id>3119408</id>
+      <parentid>3051265</parentid>
+      <timestamp>2026-03-23T02:08:38Z</timestamp>
+      <contributor>
+        <username>Ventaurion</username>
+        <id>79904</id>
+      </contributor>
+      <minor/>
+      <comment>rm \n</comment>
+      <origin>3119408</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="73668" sha1="0kav84vnppjws6kp2x7himywd7dxhgw" xml:space="preserve">{{Achievement category infobox
+| description = Using various [[consumable]]s and collecting [[miniature]]s, sets of [[equipment]] and other items.
+| group = Collections
+| order = 1
+| mastery = Central Tyria
+| requires = hot, pof, soto, jw, voe
+| id = 77
+}}
+[[Basic Collections]] is a category of [[Collections]] [[achievement]]s.
+
+{{TOCright}}
+
+&lt;div style="display:none;"&gt;&lt;h3&gt;Achievements&lt;/h3&gt;&lt;/div&gt;
+{{Achievement table header|hide collection items=true}}
+{{Achievement table row
+| name = Agent's Pack
+| page = Agent's Pack (achievement)
+| description = Collect all 8 items to create your [[Agent's Pack]].
+| reward = Agent's Pack
+| unlock = Initiate's Pack
+| tiers = Collected 1 item.;1
+Collected 4 items.;1
+Collected 8 items.;1
+| id = 2227
+| collection = Initiate's Pack (skin)
+Order of Whispers Maintenance Oil
+Resilient Whispers Belt
+Order of Whispers Backplate
+Golden Whispers Buckle
+Order of Whispers Honing Crystal
+Waterproof Whispers Padding
+Dragonvine Whispers Strap
+}}
+{{Achievement table row
+| name = Alpha Crafter
+| page = Alpha Crafter
+| description = Unlock all 36 fine and masterwork crafted armor skins in your wardrobe.
+| reward = Glob of Ectoplasm
+| quantity = 5
+| tiers = Unlocked 1 Fine or Masterwork Crafted Armor Skin;1
+Unlocked 18 Fine and Masterwork Crafted Armor Skins;1
+Unlocked 36 Fine and Masterwork Crafted Armor Skins;1
+| id = 1750
+| collection = Chain Boots (skin)
+Chain Coat (skin)
+Chain Gauntlets (skin)
+Chain Helm (skin)
+Chain Legs (skin)
+Chain Pauldrons (skin)
+Seeker Boots (skin)
+Seeker Coat (skin)
+Seeker Gloves (skin)
+Seeker Mask (skin)
+Seeker Pants (skin)
+Seeker Shoulders (skin)
+Scale Boots (skin)
+Scale Coat (skin)
+Scale Gauntlets (skin)
+Scale Helm (skin)
+Scale Legs (skin)
+Scale Pauldrons (skin)
+Outlaw Boots (skin)
+Outlaw Coat (skin)
+Outlaw Gloves (skin)
+Outlaw Mask (skin)
+Outlaw Pants (skin)
+Outlaw Shoulders (skin)
+Student Shoes (skin)
+Student Coat (skin)
+Student Gloves (skin)
+Student Circlet (skin)
+Student Leggings (skin)
+Student Mantle (skin)
+Embroidered Sandals (skin)
+Embroidered Coat (skin)
+Embroidered Wristguards (skin)
+Embroidered Mask (skin)
+Embroidered Pants (skin)
+Embroidered Mantle (skin)
+}}
+{{Achievement table row
+| name = Ascalonian Catacombs Collector
+| page = Ascalonian Catacombs Collector
+| description = Use [[Tale of Dungeon Delving|tales of dungeon delving]] from [[Ascalonian Catacombs]] to unlock all 37 [[Royal Ascalonian weapon|weapon]] and [[Ascalonian Catacombs armor|armor skins]] in your wardrobe.
+| reward = Magnificent Ascalonian Chest
+| tiers = Unlocked 1 Weapon or Armor Skin;1
+Unlocked 18 Weapon and Armor Skins;1
+Unlocked 37 Weapon and Armor Skins;1
+| id = 1725
+| hidden = yes
+| collection = Ascalonian Protector Greaves (skin)
+Ascalonian Protector Breastplate (skin)
+Ascalonian Protector Gauntlets (skin)
+Ascalonian Protector Helm (skin)
+Ascalonian Protector Legguards (skin)
+Ascalonian Protector Pauldrons (skin)
+Ascalonian Performer Shoes (skin)
+Ascalonian Performer Vestments (skin)
+Ascalonian Performer Gloves (skin)
+Ascalonian Performer Mask (skin)
+Ascalonian Performer Pants (skin)
+Ascalonian Performer Mantle (skin)
+Ascalonian Sentry Boots (skin)
+Ascalonian Sentry Chestguard (skin)
+Ascalonian Sentry Gloves (skin)
+Ascalonian Sentry Hat (skin)
+Ascalonian Sentry Leggings (skin)
+Ascalonian Sentry Shoulderguards (skin)
+Royal Ascalonian Axe (skin)
+Royal Ascalonian Hammer (skin)
+Royal Ascalonian Scepter (skin)
+Royal Ascalonian Staff (skin)
+Royal Ascalonian Sword (skin)
+Royal Ascalonian Longbow (skin)
+Royal Ascalonian Dagger (skin)
+Royal Ascalonian Greatsword (skin)
+Royal Ascalonian Short Bow (skin)
+Royal Ascalonian Focus (skin)
+Royal Ascalonian Harpoon (skin)
+Royal Ascalonian Mace (skin)
+Royal Ascalonian Pistol (skin)
+Royal Ascalonian Rifle (skin)
+Royal Ascalonian Speargun (skin)
+Royal Ascalonian Torch (skin)
+Royal Ascalonian Trident (skin)
+Royal Ascalonian Warhorn (skin)
+Royal Ascalonian Shield (skin)
+}}
+{{Achievement table row
+| name = Auric Weapons
+| page = Auric Weapons
+| description = Unlock all 16 [[Auric weapons|Auric weapon skins]] in your wardrobe.
+| reward = Auric Backplate
+| tiers = Unlocked 5 Auric Weapon Skins;1
+Unlocked 10 Auric Weapon Skins;1
+Unlocked 16 Auric Weapon Skins;3
+| id = 2262
+| collection = Auric Axe (skin)
+Auric Longbow (skin)
+Auric Short Bow (skin)
+Auric Dagger (skin)
+Auric Focus (skin)
+Auric Greatsword (skin)
+Auric Hammer (skin)
+Auric Mace (skin)
+Auric Pistol (skin)
+Auric Rifle (skin)
+Auric Scepter (skin)
+Auric Shield (skin)
+Auric Staff (skin)
+Auric Sword (skin)
+Auric Torch (skin)
+Auric Warhorn (skin)
+}}
+{{Achievement table row
+| name = Bandit Weapons Specialist
+| page = Bandit Weapons Specialist
+| description = Unlock all 19 [[bandit weapons]] in your wardrobe.
+| unlock = Bandit Combat Journal
+| reward = Bandit Coin Purse
+| tiers = Unlocked 1 Bandit Weapon Skin;1
+Unlocked 10 Bandit Weapon Skins;1
+Unlocked 19 Bandit Weapon Skins;1
+| id = 1780
+| collection = Bandit Cleaver (skin)
+Bandit Shiv (skin)
+Bandit Focus (skin)
+Bandit Sunderer (skin)
+Bandit Demolisher (skin)
+Bandit Harpoon Gun (skin)
+Bandit Longbow (skin)
+Bandit Mallet (skin)
+Bandit Revolver (skin)
+Bandit Musket (skin)
+Bandit Baton (skin)
+Bandit Ward (skin)
+Bandit Short Bow (skin)
+Bandit Spear (skin)
+Bandit Spire (skin)
+Bandit Slicer (skin)
+Bandit Torch (skin)
+Bandit Trident (skin)
+Bandit Bugle (skin)
+}}
+{{Achievement table row
+| name = Bladed Armor
+| page = Bladed Armor (achievement)
+| description = Unlock all 18 [[Bladed armor]] skins in your wardrobe.
+| reward = Transmutation Charge (item)
+| quantity = 3
+| tiers = 1 Armor Skin Unlocked;1
+9 Armor Skins Unlocked;1
+18 Armor Skins Unlocked;1
+| id = 2407
+| collection = Bladed Greaves (skin)
+Bladed Breastplate (skin)
+Bladed Gauntlets (skin)
+Bladed Helmet (skin)
+Bladed Tassets (skin)
+Bladed Pauldrons (skin)
+Bladed Shoes (skin)
+Bladed Vestments (skin)
+Bladed Gloves (skin)
+Bladed Cowl (skin)
+Bladed Pants (skin)
+Bladed Mantle (skin)
+Bladed Boots (skin)
+Bladed Jerkin (skin)
+Bladed Vambraces (skin)
+Bladed Mask (skin)
+Bladed Leggings (skin)
+Bladed Shoulderpads (skin)
+}}
+{{Achievement table row
+| name = Brewmaster
+| page = Brewmaster
+| description = Consume various ales from around Tyria.
+| unlock = Observational Zymology Manual
+| reward = Metabolic Primer
+| tiers = Consumed 1 Ale;1
+Consumed 9 Ales;1
+Consumed 18 Ales;1
+| id = 1710
+| collection = Monk's Beer Stein
+Stein of Ale
+Stein of Hearty Ale
+Stein of Brackwater Ale
+Stein of Light Ale
+Stein of Ancient Dwarven Ale
+Stein of Darkbrown Ale
+Stein of Amber Ale
+Stein of Hunter's Ale
+Stein of Highlander Beer
+Stein of Halla's Mighty Brew
+Stein of Golden Ale
+Stein of Celebratory Beer
+Stein of Cold Beer
+Bottle of Spider Brew
+Flask of Recovered Brew
+Bottle of Remi-Trundle Lager
+Ambrosia (skin)
+}}
+{{Achievement table row
+| name = Caudecus's Manor Collector
+| page = Caudecus's Manor Collector
+| description = Use [[Tale of Dungeon Delving|tales of dungeon delving]] from [[Caudecus's Manor]] to unlock all 37 [[Golden Wing weapons|weapon]] and [[Caudecus's Manor armor|armor skins]] in your wardrobe.
+| reward = Magnificent Nobleman's Chest
+| tiers = Unlocked 1 Weapon or Armor Skin;1
+Unlocked 18 Weapon and Armor Skins;1
+Unlocked 37 Weapon and Armor Skins;1
+| id = 1723
+| hidden = yes
+| collection = Golden Wing Axe (skin)
+Golden Wing Short Bow (skin)
+Golden Wing Dagger (skin)
+Golden Wing Focus (skin)
+Golden Wing Greatsword (skin)
+Golden Wing Hammer (skin)
+Golden Wing Harpoon (skin)
+Golden Wing Mace (skin)
+Golden Wing Pistol (skin)
+Golden Wing Rifle (skin)
+Golden Wing Scepter (skin)
+Golden Wing Speargun (skin)
+Golden Wing Sword (skin)
+Golden Wing Torch (skin)
+Golden Wing Trident (skin)
+Golden Wing Warhorn (skin)
+Golden Wing Longbow (skin)
+Golden Wing Shield (skin)
+Golden Wing Staff (skin)
+Council Guard Greaves (skin)
+Council Guard Breastplate (skin)
+Council Guard Gauntlets (skin)
+Council Guard Helm (skin)
+Council Guard Legguards (skin)
+Council Guard Pauldrons (skin)
+Council Ministry Shoes (skin)
+Council Ministry Vestments (skin)
+Council Ministry Gloves (skin)
+Council Ministry Circlet (skin)
+Council Ministry Hose (skin)
+Council Ministry Mantle (skin)
+Council Watch Boots (skin)
+Council Watch Chestguard (skin)
+Council Watch Gloves (skin)
+Council Watch Faceguard (skin)
+Council Watch Leggings (skin)
+Council Watch Shoulderguards (skin)
+}}
+{{Achievement table row
+| id = 8966
+| name = Chromatic Resin Weapon Collector
+| page = Chromatic Resin Weapon Collector
+| description = Unlock all Chromatic Resin weapon skins by completing events in Castora or by purchasing them from the Trading Post and binding them to you.
+| tiers = Unlocked 1 Skin; 1
+Unlocked 8 Skins; 1
+Unlocked 17 Skins; 1
+| collection = Chromatic Resin Axe
+Chromatic Resin Dagger
+Chromatic Resin Focus
+Chromatic Resin Greatsword
+Chromatic Resin Hammer
+Chromatic Resin Longbow
+Chromatic Resin Mace
+Chromatic Resin Pistol
+Chromatic Resin Rifle
+Chromatic Resin Scepter
+Chromatic Resin Shield
+Chromatic Resin Short Bow
+Chromatic Resin Spear
+Chromatic Resin Staff
+Chromatic Resin Sword
+Chromatic Resin Torch
+Chromatic Resin Warhorn
+}}
+{{Achievement table row
+| name = Citadel of Flame Collector
+| page = Citadel of Flame Collector
+| description = Use [[Tale of Dungeon Delving|tales of dungeon delving]] from [[Citadel of Flame]] to unlock all 37 [[Molten weapons|weapon]] and [[Citadel of Flame armor|armor skins]] in your wardrobe.
+| reward = Magnificent Flame Legion Chest
+| tiers = Unlocked 1 Weapon or Armor Skin;1
+Unlocked 18 Weapon and Armor Skins;1
+Unlocked 37 Weapon and Armor Skins;1
+| id = 1714
+| hidden = yes
+| collection = Flame Legion Greaves (skin)
+Flame Legion Breastplate (skin)
+Flame Legion Gauntlets (skin)
+Flame Legion Helm (heavy skin)
+Flame Legion Legguards (skin)
+Flame Legion Pauldrons (skin)
+Flame Legion Shoes (skin)
+Flame Legion Vestments (skin)
+Flame Legion Wraps (skin)
+Flame Legion Mask (skin)
+Flame Legion Pants (skin)
+Flame Legion Epaulets (skin)
+Flame Legion Boots (skin)
+Flame Legion Coat (skin)
+Flame Legion Gloves (skin)
+Flame Legion Helm (medium skin)
+Flame Legion Leggings (skin)
+Flame Legion Shoulders (skin)
+Molten Axe (skin)
+Molten Longbow (skin)
+Molten Short Bow (skin)
+Molten Dagger (skin)
+Molten Focus (skin)
+Molten Greatsword (skin)
+Molten Harpoon (skin)
+Molten Mace (skin)
+Molten Rifle (skin)
+Molten Scepter (skin)
+Molten Speargun (skin)
+Molten Staff (skin)
+Molten Sword (skin)
+Molten Torch (skin)
+Molten Trident (skin)
+Molten Warhorn (skin)
+Molten Pistol (skin)
+Molten Shield (skin)
+Molten Hammer (skin)
+}}
+{{Achievement table row
+| name = Crucible of Eternity Collector
+| page = Crucible of Eternity Collector
+| description = Use [[Tale of Dungeon Delving|tales of dungeon delving]] from [[Crucible of Eternity]] to unlock all 37 [[Inquest weapons|weapon]] and [[Crucible of Eternity armor|armor skins]] in your wardrobe.
+| reward = Magnificent Inquest Chest
+| tiers = Unlocked 1 Weapon or Armor Skin;1
+Unlocked 18 Weapon and Armor Skins;1
+Unlocked 37 Weapon and Armor Skins;1
+| id = 1719
+| hidden = yes
+| collection = Inquest Greaves (skin)
+Inquest Breastplate (skin)
+Inquest Gauntlets (skin)
+Inquest Helm (skin)
+Inquest Legguards (skin)
+Inquest Pauldrons (skin)
+Inquest Shoes (skin)
+Inquest Vest (skin)
+Inquest Wraps (skin)
+Inquest Circlets (skin)
+Inquest Breeches (skin)
+Inquest Mantle (skin)
+Inquest Boots (skin)
+Inquest Guise (skin)
+Inquest Bracers (skin)
+Inquest Hood (skin)
+Inquest Leggings (skin)
+Inquest Shoulders (skin)
+Inquest Axe (skin)
+Inquest Longbow (skin)
+Inquest Short Bow (skin)
+Inquest Dagger (skin)
+Inquest Focus (skin)
+Inquest Greatsword (skin)
+Inquest Hammer (skin)
+Inquest Harpoon (skin)
+Inquest Mace (skin)
+Inquest Pistol (skin)
+Inquest Rifle (skin)
+Inquest Scepter (skin)
+Inquest Shield (skin)
+Inquest Speargun (skin)
+Inquest Staff (skin)
+Inquest Sword (skin)
+Inquest Torch (skin)
+Inquest Trident (skin)
+Inquest Warhorn (skin)
+}}
+{{Achievement table row
+| name = Crusader's Pack
+| page = Crusader's Pack (achievement)
+| description = Collect all 8 items to create your [[Crusader's Pack]].
+| reward = Crusader's Pack
+| unlock = Recruit's Pack
+| tiers = Collected 1 item.;1
+Collected 4 items.;1
+Collected 8 items.;1
+| id = 2360
+| collection = Recruit's Pack (skin)
+Vigil Maintenance Oil
+Resilient Vigil Belt
+Vigil Backplate
+Golden Vigil Buckle
+Vigil Honing Crystal
+Waterproof Vigil Padding
+Dragonvine Vigil Strap
+}}
+{{Achievement table row
+| name = Destroyer Weapons
+| page = Destroyer Weapons (achievement)
+| description = Collect all 20 [[Destroyer weapons|Destroyer weapon skins]] in your wardrobe.
+| reward = Great Destroyer's Talon
+| unlock = Destroyer Weapon Crate
+| tiers = Unlocked 1 Destroyer Weapon Skin;1
+Unlocked 10 Destroyer Weapon Skins;1
+Unlocked 20 Destroyer Weapon Skins;1
+| id = 3098
+| collection = Destroyer Axe (skin)
+Destroyer Dagger (skin)
+Destroyer Focus (skin)
+Destroyer Greatsword (skin)
+Destroyer Maul (skin)
+Destroyer Harpoon Gun (skin)
+Destroyer Longbow (skin)
+Destroyer Mace (skin)
+Destroyer Pistol (skin)
+Destroyer Rifle (skin)
+Destroyer Scepter (skin)
+Destroyer Shield (skin)
+Destroyer Short Bow (skin)
+Destroyer Pike (skin)
+Destroyer Staff (skin)
+Destroyer Sword (skin)
+Destroyer Torch (skin)
+Destroyer Trident (skin)
+Destroyer Warhorn (skin)
+Pulsating Destroyer Heart
+}}
+{{Achievement table row
+| id = 3635
+| name = Dress Rehearsal
+| page = Dress Rehearsal
+| icon = Crystal Desert Basic Collections.png
+| description = Recover all Elonian armor pieces through completing the Personal Story.
+| flavor = {{flavor|The rich fabrics and detailed patterns found throughout the Crystal Desert speak to the mix of cultures and nations that have called this land their home.}}
+| tiers = Recovered 1 piece of Elonian armor.;1
+Recovered 9 pieces of Elonian armor.;1
+Recovered 12 pieces of Elonian armor.;1
+Recovered 18 pieces of Elonian armor.;1
+| reward = Crate of the First Spear
+| collection = Elonian Greaves (skin)
+Elonian Boots (skin)
+Elonian Shoes (skin)
+Elonian Breastplate (skin)
+Elonian Jerkin (skin)
+Elonian Vestments (skin)
+Elonian Gauntlets (skin)
+Elonian Vambraces (skin)
+Elonian Gloves (skin)
+Elonian Helmet (skin)
+Elonian Mask (skin)
+Elonian Cowl (skin)
+Elonian Tassets (skin)
+Elonian Leggings (skin)
+Elonian Pants (skin)
+Elonian Pauldrons (skin)
+Elonian Shoulderpads (skin)
+Elonian Mantle (skin)
+}}
+{{Achievement table row
+| id = 7110
+| name = Eagle Eye Weapon Collector
+| page = Eagle Eye Weapon Collector
+| description = Unlock all [[Eagle Eye weapons|Eagle Eye weapon skins]] by completing events and looting chests in [[Skywatch Archipelago]] or purchasing them from the trading post and binding them to you.
+| tiers = 1 skin unlocked; 1
+8 skins unlocked; 1
+16 skins unlocked; 1
+| collection = Eagle Eye Axe
+Eagle Eye Dagger
+Eagle Eye Focus
+Eagle Eye Greatsword
+Eagle Eye Hammer
+Eagle Eye Longbow
+Eagle Eye Mace
+Eagle Eye Pistol
+Eagle Eye Rifle
+Eagle Eye Scepter
+Eagle Eye Shield
+Eagle Eye Short Bow
+Eagle Eye Staff
+Eagle Eye Sword
+Eagle Eye Torch
+Eagle Eye Warhorn
+}}
+{{Achievement table row
+| name = Eldvin Monastery Brew of the Month Club
+| page = Eldvin Monastery Brew of the Month Club
+| description = Each month, [[Eldvin Monastery]] sends out a finely crafted beer to members of the Brew of the Month Club.&lt;br&gt;Each beer's availability is limited to that particular month. After a new months{{sic|month}} begins, visit a major city to receive your package from Eldvin Monastery.
+| unlock = Eldvin Monastery Brew of the Month Membership
+| reward = Eldvin Monastery VIP Package
+| title = Finely Crafted
+| tiers = Collected 12 Items;3
+| id = 2811
+| collection = Bottle of Empyreal Stout
+Bottle of Dragon Bash Barley Wine
+Bottle of Pale Tree Pilsner
+Bottle of Rytlager Brimstout
+Bottle of Eldvin Abbey Ale
+Bottle of Bloodstone Orange Summer Ale
+Bottle of Istan Pale Ale
+Bottle of Queen's Jubilale
+Bottle of Black Lion's Reserve
+Bottle of Mad King's Pumpkin Porter
+Bottle of Barrel-Aged Ascalonian Amber
+Bottle of Stonehealer Stout
+}}
+{{Achievement table row
+| name = Exotic Attire
+| page = Exotic Attire
+| description = Unlock these 18 crafted exotic armor skins in your wardrobe.
+| reward = Regal Bag of Goods
+| tiers = Unlocked 1 Exotic Armor Skin;1
+Unlocked 9 Exotic Armor Skins;1
+Unlocked 18 Exotic Armor Skins;1
+| id = 1731
+| collection = Draconic Boots (skin)
+Draconic Coat (skin)
+Draconic Gauntlets (skin)
+Draconic Helm (skin)
+Draconic Legs (skin)
+Draconic Pauldrons (skin)
+Exalted Boots (skin)
+Exalted Coat (skin)
+Exalted Gloves (skin)
+Exalted Masque (skin)
+Exalted Pants (skin)
+Exalted Mantle (skin)
+Emblazoned Boots (skin)
+Emblazoned Coat (skin)
+Emblazoned Gloves (skin)
+Emblazoned Helm (skin)
+Emblazoned Pants (skin)
+Emblazoned Shoulders (skin)
+}}
+{{Achievement table row
+| name = Fine Dining
+| page = Fine Dining
+| description = Consume 14 various steaks from around Tyria.
+| reward = Metabolic Primer
+| tiers = Consumed 1 Steak;1
+Consumed 7 Steaks;1
+Consumed 14 Steaks;1
+| id = 1727
+| hidden = yes
+| collection = Plate of Orrian Steak Frittes
+Seared Beef Steak
+Grilled Steak
+Spicy Flank Steak
+Pepper Steak
+Minotaur Steak
+Spicier Flank Steak
+Spicy Lime Steak
+Celebratory Steak
+Plate of Steak and Asparagus Dinner
+Plate of Truffle Steak
+Plate of Fire Flank Steak
+Feast of Truffle Steak Dinner
+Feast of Spicy Lime Steaks
+}}
+{{Achievement table row
+| name = Fine Wining
+| page = Fine Wining
+| description = Consume various wines from around Tyria.
+| unlock = Vintner's Guide
+| reward = Metabolic Primer
+| tiers = Consumed 1 Bottle of Wine;1
+Consumed 4 Bottles of Wine;1
+Consumed 9 Bottles of Wine;1
+| id = 1728
+| collection = Bottle of Red Wine
+Bottle of Vintage Wine
+Bottle of Victoria's Red Wine
+Bottle of Sunken Wine
+Bottle of Rice Wine
+Bottle of Putrid Wine
+Bottle of Barradin Family Wine
+Bottle of Standard Research Issue Aged Wine
+Courage (skin)
+}}
+{{Achievement table row
+| name = Full Moon Weapon Collector
+| page = Full Moon Weapon Collector
+| description = Unlock all 17 [[Full Moon weapons|Full Moon weapon skins]] by completing events in [[Janthir Syntri]] or by purchasing them from the Trading Post and binding them to you.
+| tiers = 1 of 17 skins unlocked; 1
+8 of 17 skins unlocked; 1
+17 of 17 skins unlocked; 1
+| collection = Full Moon Axe
+Full Moon Dagger
+Full Moon Focus
+Full Moon Greatsword
+Full Moon Hammer
+Full Moon Longbow
+Full Moon Mace
+Full Moon Pistol
+Full Moon Rifle
+Full Moon Scepter
+Full Moon Shield
+Full Moon Short Bow
+Full Moon Spear
+Full Moon Staff
+Full Moon Sword
+Full Moon Torch
+Full Moon Warhorn
+| id = 8466
+}}
+{{Achievement table row
+| name = Grawl Archaeological Study
+| page = Grawl Archaeological Study
+| description = Unlock all of the [[Godskull weapons|grawl weapons]] in your wardrobe, and collect a [[Grawl Paw]] to learn more about their day-to-day lives.
+| reward = Grawl Supply Sack
+| flavor = {{flavor|You never know what you can learn from someone that's been around longer than you have.}}
+| unlock = Grawl Paw
+| tiers = Unlocked Grawl Paw;1
+Unlocked 10 Grawl Items;1
+Unlocked 20 Grawl Items;1
+| id = 1745
+| collection = Grawl Paw
+Godskull Sickle (skin)
+Godskull Kris (skin)
+Godskull Effigy (skin)
+Godskull Slayer (skin)
+Godskull Crusher (skin)
+Godskull Longbow (skin)
+Godskull Warclub (skin)
+Godskull Flintlock (skin)
+Godskull Musket (skin)
+Godskull Cesta (skin)
+Godskull Targe (skin)
+Godskull Short Bow (skin)
+Godskull Impaler (skin)
+Godskull Crosier (skin)
+Godskull Edge (skin)
+Godskull Brazier (skin)
+Godskull Trihorn (skin)
+Godskull Trumpet (skin)
+Godskull Harpoon Gun (skin)
+}}
+&lt;!--{{Achievement table row
+| name = Hero of the People
+| page = Hero of the People
+| description = Collect and open all five tiers of the [[Centaur]], [[Flame Legion]], [[Svanir]], [[Nightmare Court]], and [[Inquest]] [[Champion loot bag|loot bag]]s.
+| flavor = Many champions roam the land looking for blood. Thankfully, you were there.
+| reward = Champion Slayer's Chest
+| tiers = Opened 1 Champion Bags;1
+Opened 12 Champion Bags;1
+Opened 25 Champion Bags;1
+}}--&gt;
+{{Achievement table row
+| name = Hivemaster
+| page = Hivemaster
+| description = Collect all 26 items and skins.
+| reward = Mini Chak Gerent
+| tiers = Collected 1 Item or Skin;1
+Collected 9 Items and Skins;1
+Collected 18 Items and Skins;1
+Collected 26 Items and Skins;2
+| title = Hivemaster
+| id = 2236
+| collection = Chak Axe (skin)
+Chak Longbow (skin)
+Chak Short Bow (skin)
+Chak Dagger (skin)
+Chak Focus (skin)
+Chak Greatsword (skin)
+Chak Hammer (skin)
+Chak Mace (skin)
+Chak Pistol (skin)
+Chak Rifle (skin)
+Chak Scepter (skin)
+Chak Shield (skin)
+Chak Staff (skin)
+Chak Sword (skin)
+Chak Torch (skin)
+Chak Warhorn (skin)
+Crystallized Power Core
+Crystallized Iron Gear
+Crystallized Tadpole
+Crystallized Training Whistle
+Chak Pearl
+Beetle Feast: Silver
+The Ley-Line Run: Silver
+Drone Race: Silver
+Haywire Punch-o-Matic Battle: Silver
+Scrap Rifle Field Test: Silver
+}}
+{{Achievement table row
+| name = Honor of the Waves Collector
+| page = Honor of the Waves Collector
+| description = Use [[Tale of Dungeon Delving|tales of dungeon delving]] from [[Honor of the Waves]] to unlock all 37 [[Kodan weapons|weapon]] and [[Honor of the Waves armor|armor skins]] in your wardrobe.
+| reward = Magnificent Kodan Chest
+| tiers = Unlocked 1 Weapon or Armor Skin;1
+Unlocked 18 Weapon and Armor Skins;1
+Unlocked 37 Weapon and Armor Skins;1
+| id = 1718
+| hidden = yes
+| collection = Kodan Axe (skin)
+Kodan Longbow (skin)
+Kodan Short Bow (skin)
+Kodan Dagger (skin)
+Kodan Focus (skin)
+Kodan Greatsword (skin)
+Kodan Hammer (skin)
+Kodan Harpoon (skin)
+Kodan Mace (skin)
+Kodan Pistol (skin)
+Kodan Rifle (skin)
+Kodan Scepter (skin)
+Kodan Shield (skin)
+Kodan Speargun (skin)
+Kodan Staff (skin)
+Kodan Sword (skin)
+Kodan Torch (skin)
+Kodan Trident (skin)
+Kodan Warhorn (skin)
+Paws of Koda (skin)
+Brawn of Koda (skin)
+Claws of Koda (skin)
+Head of Koda (skin)
+Body of Koda (skin)
+Burden of Koda (skin)
+Path of Koda (skin)
+Soul of Koda (skin)
+Arms of Koda (skin)
+Mind of Koda (skin)
+Way of Koda (skin)
+Mantle of Koda (skin)
+Tracks of Koda (skin)
+Heart of Koda (skin)
+Force of Koda (skin)
+Visage of Koda (skin)
+Stride of Koda (skin)
+Duty of Koda (skin)
+}}
+{{Achievement table row
+| name = Hylek Historian
+| page = Hylek Historian
+| description = Unlock all of the [[Beaded weapons|hylek weapons]] in your wardrobe, and collect a [[Hylek Tongue]].
+| unlock = Hylek Tongue
+| reward = Hylek Maintenance Kit
+| tiers = Unlocked Hylek Tongue;1
+Unlocked 10 Hylek Items;1
+Unlocked 20 Hylek Items;1
+| id = 1717
+| collection = Hylek Tongue
+Beaded Greataxe (skin)
+Beaded Spike (skin)
+Beaded Icon (skin)
+Beaded Claymore (skin)
+Beaded Crusher (skin)
+Beaded Harpoon Shooter (skin)
+Beaded Stinger (skin)
+Beaded Morning Star (skin)
+Beaded Firearm (skin)
+Beaded Shooter (skin)
+Beaded Wand (skin)
+Beaded Bastion (skin)
+Beaded Needler (skin)
+Beaded Lancea (skin)
+Beaded Warstaff (skin)
+Beaded Lacerator (skin)
+Beaded Torch (skin)
+Beaded Trident (skin)
+Beaded Caller (skin)
+}}
+{{Achievement table row
+| name = Koutalophile
+| page = Koutalophile
+| description = [[Collectible Spoon Box|Collect]] all of the spoon [[trinket]]s of [[Tyria]].
+| flavor = {{flavor|They are so much more than cutlery!}}
+| unlock = Collectible Spoon Box
+| reward = Bag of Mentor's Supplies
+| tiers = Collected 1 Spoon;1
+Collected 10 Spoons;1
+Collected 21 Spoons;1
+| mastery = Central Tyria
+| id = 1754
+| mastery id = 241
+| collection = Ancient Emerald Orrian Spoon#item1
+Ancient Emerald Orrian Spoon#item2
+Imperial Chef Yileng's Golden Spoon
+Ancient Orrian Spoon#item1
+Ancient Orrian Spoon#item2
+Rosko's Campsite's Famous Bean Spoon#item2
+Rosko's Campsite's Famous Bean Spoon#item1
+Ogre Gruel Spoon#item1
+Ogre Gruel Spoon#item2
+Commemorative First Haven Metal Spoon
+Commemorative First Haven Silver Spoon
+Measuring Spoon
+Meatoberfest Souvenir Spoon#item1
+Meatoberfest Souvenir Spoon#item2
+Cooking Spoon#item1
+Cooking Spoon#item2
+Travelen's Lodge Commemorative Spoon#item1
+Travelen's Lodge Commemorative Spoon#item2
+Carved Bone Spoon
+Fractal Spoon
+Siege Commander's Spoon
+}}
+{{Achievement table row
+| name = Krait Antiquarianism Study
+| page = Krait Antiquarianism Study
+| description = Unlock all of the [[krait weapons]] in your wardrobe, and collect a [[Krait Scale]].
+| unlock = Krait Scale
+| reward = Krait Tuning Kit
+| tiers = Unlocked Krait Scale;1
+Unlocked 10 Krait Items;1
+Unlocked 20 Krait Items;1
+| id = 1726
+| collection = Krait Scale
+Krait Battleaxe (skin)
+Krait Ripper (skin)
+Krait Star (skin)
+Krait Slayer (skin)
+Krait Warhammer (skin)
+Krait Harpoon Gun (skin)
+Krait Recurve Bow (skin)
+Krait Morning Star (skin)
+Krait Handgun (skin)
+Krait Shooter (skin)
+Krait Wand (skin)
+Krait Shell (skin)
+Krait Short Bow (skin)
+Krait Pilum (skin)
+Krait Crook (skin)
+Krait Machete (skin)
+Krait Brazier (skin)
+Krait Trident (skin)
+Krait Whelk (skin)
+}}
+{{Achievement table row
+| name = Leystone Armor
+| page = Leystone Armor (achievement)
+| description = Unlock all 18 [[leystone armor]] skins in your wardrobe.
+| reward = Ascended Armor Chest
+| tiers = Unlocked 6 Skins;1
+12 Armor Skins Unlocked;1
+18 Armor Skins Unlocked;3
+| id = 2190
+| collection = Leystone Greaves
+Leystone Breastplate
+Leystone Gauntlets
+Leystone Helmet
+Leystone Tassets
+Leystone Pauldrons
+Leystone Shoes
+Leystone Vestments
+Leystone Gloves
+Leystone Cowl
+Leystone Pants
+Leystone Mantle
+Leystone Boots
+Leystone Jerkin
+Leystone Vambraces
+Leystone Mask
+Leystone Leggings
+Leystone Shoulderpads
+}}
+{{Achievement table row
+| name = Lightbringer's Pack
+| page = Lightbringer's Pack (achievement)
+| description = Collect all 10 items to create your [[Lightbringer's Pack]].
+| reward = Lightbringer's Pack
+| unlock = Agent's Pack
+| tiers = 1 Item Collected;1
+5 Items Collected;1
+10 Items Collected;3
+| id = 2643
+| collection = Agent's Pack (skin)
+Whisper's Secret
+Order of Whispers Rations
+Janthir's Gaze
+Chak-Shell Clasp
+Itzel Guide to Waterproofing
+Auric Whispers Buckle
+Itzel Tracking Lesson
+Nuhoch Tracking Lesson
+Recovered Order of Whispers Seal
+}}
+{{Achievement table row
+| name = Luminescent Coat
+| page = Luminescent Coat
+| description = Collect the 10 parts required to assemble a Luminescent Coat.
+| reward = Luminescent Coat Skin
+| tiers = Collected 1 Part;1
+Collected 5 Parts;1
+Collected 10 Parts;3
+| id = 2052
+| collection = Mordrem Teragriff Kidney
+Mordrem Husk Kidney
+Mordrem Troll Kidney
+Mordrem Thrasher Kidney
+Luminescent Belt
+Imbued Skull
+Caithe's Remorse
+Carapace Breastplate (skin)
+Carapace Jerkin (skin)
+Carapace Vestments (skin)
+}}
+{{Achievement table row
+| name = Luminescent Footwear
+| page = Luminescent Footwear
+| description = Collect the 10 parts required to assemble Luminescent Boots
+| reward = Luminescent Boots Skin
+| tiers = Collected 1 Part;1
+Collected 5 Parts;1
+Collected 10 Parts;3
+| id = 1779
+| collection = Mordrem Teragriff Spleen
+Mordrem Husk Spleen
+Mordrem Troll Spleen
+Mordrem Thrasher Spleen
+Luminescent Laces
+Imbued Beetle Shell
+Wynne's Locket
+Carapace Greaves (skin)
+Carapace Boots (skin)
+Carapace Shoes (skin)
+}}
+{{Achievement table row
+| name = Luminescent Gloves
+| page = Luminescent Gloves
+| description = Collect the 10 parts required to assemble Luminescent Gloves
+| reward = Luminescent Gloves Skin
+| tiers = Collected 1 Part;1
+Collected 5 Parts;1
+Collected 10 Parts;3
+| id = 1814
+| collection = Mordrem Teragriff Fang
+Mordrem Husk Fang
+Mordrem Troll Fang
+Mordrem Thrasher Fang
+Luminescent Glove Lining
+Illuminated Truffle
+Plague Signet (ring)
+Carapace Gauntlets (skin)
+Carapace Vambraces (skin)
+Carapace Gloves (skin)
+}}
+{{Achievement table row
+| name = Luminescent Headgear
+| page = Luminescent Headgear
+| description = Collect the 10 parts required to assemble a piece of Luminescent headgear.
+| reward = Luminescent Helm Skin
+| tiers = Collected 1 Part;1
+Collected 5 Parts;1
+Collected 10 Parts;3
+| id = 2051
+| collection = Mordrem Teragriff Eye
+Mordrem Husk Eye
+Mordrem Troll Eye
+Mordrem Thrasher Eye
+Luminescent Chinstrap
+Radiant Dragonfly Wings
+Jurah's Jewel
+Carapace Helmet (skin)
+Carapace Mask (skin)
+Carapace Cowl (skin)
+}}
+{{Achievement table row
+| name = Luminescent Leggings
+| page = Luminescent Leggings
+| description = Collect the 10 parts required to assemble Luminescent Leggings
+| reward = Luminescent Leggings Skin
+| tiers = Collected 1 Part;1
+Collected 5 Parts;1
+Collected 10 Parts;3
+| id = 1825
+| collection = Mordrem Teragriff Bladder
+Mordrem Husk Bladder
+Mordrem Troll Bladder
+Mordrem Thrasher Gas Bladder
+Luminescent Seams
+Glowing Venom Sac
+Verata's Seared Ring
+Carapace Tassets (skin)
+Carapace Leggings (skin)
+Carapace Pants (skin)
+}}
+{{Achievement table row
+| name = Luminescent Shoulderguard
+| page = Luminescent Shoulderguard
+| description = Collect the 10 parts required to assemble Luminescent Shoulderguard
+| reward = Luminescent Shoulders Skin
+| tiers = Collected 1 Part;1
+Collected 5 Parts;1
+Collected 10 Parts;3
+| id = 1781
+| collection = Mordrem Teragriff Tendon
+Mordrem Husk Tendon
+Mordrem Troll Tendon
+Mordrem Thrasher Tendon
+Luminescent Strap
+Imbued Firefly Luminescence
+Carapace Pauldrons (skin)
+Carapace Shoulderpads (skin)
+Carapace Mantle (skin)
+Caithe's Blossom
+}}
+{{Achievement table row
+| name = Machined Axe
+| page = Machined Axe (achievement)
+| description = Collect all 6 items to forge your Machined Axe
+| reward = Machined Axe
+| unlock = Plated Axe
+| tiers = Collected 1 Item;1
+Collected 3 Items;1
+Collected 6 Items;1
+| id = 2569
+| hidden = yes
+| collection = Plated Axe (skin)
+Airship-Grade Axe Gear
+Auric Axe Shielding
+Ley-Line Axe Core
+Charged Axe Blade
+Machined Axe Handle
+}}
+{{Achievement table row
+| name = Machined Dagger
+| page = Machined Dagger (achievement)
+| description = Collect all 6 items to forge your Machined Dagger
+| reward = Machined Dagger
+| unlock = Plated Dagger
+| tiers = Collected 1 Item;1
+Collected 3 Items;1
+Collected 6 Items;1
+| id = 2404
+| hidden = yes
+| collection = Plated Dagger (skin)
+Airship-Grade Dagger Gear
+Auric Dagger Shielding
+Ley-Line Dagger Core
+Charged Dagger Blade
+Machined Dagger Hilt
+}}
+{{Achievement table row
+| name = Machined Focus
+| page = Machined Focus (achievement)
+| description = Collect all 6 items to forge your Machined Focus
+| reward = Machined Focus
+| unlock = Plated Focus
+| tiers = Collected 1 Item;1
+Collected 3 Items;1
+Collected 6 Items;1
+| id = 2545
+| hidden = yes
+| collection = Plated Focus (skin)
+Airship-Grade Focus Gear
+Auric Focus Shielding
+Ley-Line Focus Core
+Charged Focus Core
+Machined Focus Casing
+}}
+{{Achievement table row
+| name = Machined Greatsword
+| page = Machined Greatsword (achievement)
+| description = Collect all 6 items to forge your Machined Greatsword
+| reward = Machined Greatsword
+| unlock = Plated Greatsword
+| tiers = Collected 1 Item;1
+Collected 3 Items;1
+Collected 6 Items;1
+| id = 2300
+| hidden = yes
+| collection = Plated Greatsword (skin)
+Airship-Grade Greatsword Gear
+Auric Greatsword Shielding
+Ley-Line Greatsword Core
+Charged Greatsword Blade
+Machined Greatsword Hilt
+}}
+{{Achievement table row
+| name = Machined Hammer
+| page = Machined Hammer (achievement)
+| description = Collect all 6 items to forge your Machined Hammer
+| reward = Machined Hammer
+| unlock = Plated Hammer
+| tiers = Collected 1 Item;1
+Collected 3 Items;1
+Collected 6 Items;1
+| id = 2629
+| hidden = yes
+| collection = Plated Hammer (skin)
+Airship-Grade Hammer Gear
+Auric Hammer Shielding
+Ley-Line Hammer Core
+Charged Hammer Head
+Machined Hammer Handle
+}}
+{{Achievement table row
+| name = Machined Longbow
+| page = Machined Longbow (achievement)
+| description = Collect all 6 items to forge your Machined Longbow
+| reward = Machined Longbow
+| unlock = Plated Longbow
+| tiers = Collected 1 Item;1
+Collected 3 Items;1
+Collected 6 Items;1
+| id = 2332
+| hidden = yes
+| collection = Plated Longbow (skin)
+Airship-Grade Longbow Gear
+Auric Longbow Shielding
+Ley-Line Longbow Core
+Charged Longbow Stave
+Machined Longbow String
+}}
+{{Achievement table row
+| name = Machined Mace
+| page = Machined Mace (achievement)
+| description = Collect all 6 items to forge your Machined Mace
+| reward = Machined Mace
+| unlock = Plated Mace
+| tiers = Collected 1 Item;1
+Collected 3 Items;1
+Collected 6 Items;1
+| id = 2359
+| hidden = yes
+| collection = Plated Mace (skin)
+Airship-Grade Mace Gear
+Auric Mace Shielding
+Ley-Line Mace Core
+Charged Mace Head
+Machined Mace Handle
+}}
+{{Achievement table row
+| name = Machined Pistol
+| page = Machined Pistol (achievement)
+| description = Collect all 6 items to forge your Machined Pistol
+| reward = Machined Pistol
+| unlock = Plated Pistol
+| tiers = Collected 1 Item;1
+Collected 3 Items;1
+Collected 6 Items;1
+| id = 2641
+| hidden = yes
+| collection = Plated Pistol (skin)
+Airship-Grade Pistol Gear
+Auric Pistol Shielding
+Ley-Line Pistol Core
+Charged Pistol Barrel
+Machined Pistol Frame
+}}
+{{Achievement table row
+| name = Machined Rifle
+| page = Machined Rifle (achievement)
+| description = Collect all 6 items to forge your Machined Rifle
+| reward = Machined Rifle
+| unlock = Plated Rifle
+| tiers = Collected 1 Item;1
+Collected 3 Items;1
+Collected 6 Items;1
+| id = 2454
+| hidden = yes
+| collection = Plated Rifle (skin)
+Airship-Grade Rifle Gear
+Auric Rifle Shielding
+Ley-Line Rifle Core
+Charged Rifle Barrel
+Machined Rifle Stock
+}}
+{{Achievement table row
+| name = Machined Scepter
+| page = Machined Scepter (achievement)
+| description = Collect all 6 items to forge your Machined Scepter
+| reward = Machined Scepter
+| unlock = Plated Scepter
+| tiers = Collected 1 Item;1
+Collected 3 Items;1
+Collected 6 Items;1
+| id = 2290
+| hidden = yes
+| collection = Plated Scepter (skin)
+Airship-Grade Scepter Gear
+Auric Scepter Shielding
+Ley-Line Scepter Core
+Charged Scepter Core
+Machined Scepter Rod
+}}
+{{Achievement table row
+| name = Machined Shield
+| page = Machined Shield (achievement)
+| description = Collect all 6 items to forge your Machined Shield
+| reward = Machined Shield
+| unlock = Plated Shield
+| tiers = Collected 1 Item;1
+Collected 3 Items;1
+Collected 6 Items;1
+| id = 2192
+| hidden = yes
+| collection = Plated Shield (skin)
+Airship-Grade Shield Gear
+Auric Shield Shielding
+Ley-Line Shield Core
+Charged Shield Boss
+Machined Shield Backing
+}}
+{{Achievement table row
+| name = Machined Short Bow
+| page = Machined Short Bow (achievement)
+| description = Collect all 6 items to forge your Machined Shortbow
+| reward = Machined Short Bow
+| unlock = Plated Short Bow
+| tiers = Collected 1 Item;1
+Collected 3 Items;1
+Collected 6 Items;1
+| id = 2325
+| hidden = yes
+| collection = Plated Short Bow (skin)
+Airship-Grade Short Bow Gear
+Auric Short Bow Shielding
+Ley-Line Short Bow Core
+Charged Short Bow Stave
+Machined Short Bow String
+}}
+{{Achievement table row
+| name = Machined Staff
+| page = Machined Staff (achievement)
+| description = Collect all 6 items to forge your Machined Staff
+| reward = Machined Staff
+| unlock = Plated Staff
+| tiers = Collected 1 Item;1
+Collected 3 Items;1
+Collected 6 Items;1
+| id = 2282
+| hidden = yes
+| collection = Plated Staff (skin)
+Airship-Grade Staff Gear
+Auric Staff Shielding
+Ley-Line Staff Core
+Charged Staff Head
+Machined Staff Shaft
+}}
+{{Achievement table row
+| name = Machined Sword
+| page = Machined Sword (achievement)
+| description = Collect all 6 items to forge your Machined Sword
+| reward = Machined Sword
+| unlock = Plated Sword
+| tiers = Collected 1 Item;1
+Collected 3 Items;1
+Collected 6 Items;1
+| id = 2609
+| hidden = yes
+| collection = Plated Sword (skin)
+Airship-Grade Sword Gear
+Auric Sword Shielding
+Ley-Line Sword Core
+Charged Sword Blade
+Machined Sword Hilt
+}}
+{{Achievement table row
+| name = Machined Torch
+| page = Machined Torch (achievement)
+| description = Collect all 6 items to forge your Machined Torch
+| reward = Machined Torch
+| unlock = Plated Torch
+| tiers = Collected 1 Item;1
+Collected 3 Items;1
+Collected 6 Items;1
+| id = 2235
+| hidden = yes
+| collection = Plated Torch (skin)
+Airship-Grade Torch Gear
+Auric Torch Shielding
+Ley-Line Torch Core
+Charged Torch Head
+Machined Torch Handle
+}}
+{{Achievement table row
+| name = Machined Warhorn
+| page = Machined Warhorn (achievement)
+| description = Collect all 6 items to forge your Machined Warhorn
+| reward = Machined Warhorn
+| unlock = Plated Warhorn
+| tiers = Collected 1 Item;1
+Collected 3 Items;1
+Collected 6 Items;1
+| id = 2508
+| hidden = yes
+| collection = Plated Warhorn (skin)
+Airship-Grade Warhorn Gear
+Auric Warhorn Shielding
+Ley-Line Warhorn Core
+Charged Warhorn Horn
+Machined Warhorn Mouthpiece
+}}
+{{Achievement table row
+| name = Magister's Pack
+| page = Magister's Pack (achievement)
+| description = Collect all 10 items to create your [[Magister's Pack]].
+| reward = Magister's Pack
+| unlock = Scholar's Pack
+| tiers = Collected 1 item.;1
+Collected 5 items.;1
+Collected 10 items.;3
+| id = 2628
+| collection = Scholar's Pack (skin)
+Priory's History
+Priory Rations
+Sun, Moon, and Stars
+Airship Cargo Strap
+Exalted Guide to Rust Prevention
+Auric Priory Buckle
+Itzel Language Lesson
+Nuhoch Language Lesson
+Recovered Priory Seal
+}}
+{{Achievement table row
+| name = Mini Collection—Janthir Wilds
+| page = Mini Collection—Janthir Wilds
+| description = Collect  minis.
+| flavor = Fuzzy felines, bees, and bearkin!
+| tiers = Collected 6 Minis; 7
+Collected 12 Minis; 7
+Collected 18 Minis; 7
+Collected 25 Minis; 9
+Collected 26 Minis; 0
+| title = Janthir Wildkin
+| collection = Mini Janthiri Bee
+Mini Stoic Alder
+Mini Poised Arrow
+Mini Malice Swordshadow
+Mini Lucid Boulder
+Mini Ruinshard Mauler
+Mini Waiting Sorrow
+Mini Mr. Ribbington
+Mini Bog Queen
+Mini Hot Springs Bearkin (Blue)
+Mini Hot Springs Bearkin (Yellow)
+Mini Biege Warclaw Cub
+Mini Grey Journeykin
+Mini Orange Journeykin
+Mini White Journeykin
+Mini Barbed Vale
+Mini Janthir Warg
+Mini Yagon
+Mini Rhianwyn
+Mini Vigilant Geode
+Mini Beige Journeykit
+Mini Gray Journeykit
+Mini Orange Journeykit
+Mini White Journeykit
+Mini Fumaroller
+Mini Janthiri Floppy Fish
+|custombits=9,14,12,11,10,13,4,0,1,2,3,5,6,7,8,15,16,17,18,25,19,20,21,22,23,24
+| id = 8745
+}}
+{{Achievement table row
+| id = 8048
+| name = Mini Collection—Secrets of the Obscure
+| page = Mini Collection—Secrets of the Obscure
+| description = Collect  minis.
+| flavor = I went to the Horn of Maguuma, and all I got were these minis.
+| tiers = Collected 6 Minis; 7
+Collected 12 Minis; 7
+Collected 18 Minis; 7
+Collected 26 Minis; 9
+| title = Secret of the Miniscule
+| collection = Mini Avatar of Malice
+Mini Avatar of Despair
+Mini Avatar of Envy
+Mini Avatar of Gluttony
+Mini Avatar of Rage
+Mini Avatar of Regret
+Mini Kryptis Skyscale
+Mini Sky-Chak Drone
+Mini Frode
+Mini R'tchikk
+Mini Lyhr
+Mini Galrath
+Mini Isgarren
+Mini Zizel
+Mini Construct of Galdra
+Mini Mabon
+Mini Dagda
+Mini Cerus
+Mini Narcisse
+Mini Uenno
+Mini Incarnation of Terror
+Mini Corrupted
+Mini Judgment
+Mini Astral Ward Livia
+Mini Kryptis
+Mini Zakiros Wyvern
+Mini Peitha
+Mini Eparch
+}}
+{{Achievement table row
+| name = Mini Collection—Set I
+| page = Mini Collection—Set I
+| description = Collect 54 [[miniature]]s.
+| flavor = Master of miniature mayhem.
+| title = Miniature Collector
+| tiers = 20 In Collection;10
+40 In Collection;10
+50 In Collection;10
+54 In Collection;10
+| id = 1709
+| hidden collection = Mini Bandit Bruiser
+Mini Big Nose Ted
+Mini Brown Bear
+Mini Polar Bear
+Mini Frost Drake
+Mini River Drake Broodmother
+Mini Minotaur
+Mini Skale Blighter
+Mini Air Elemental
+Mini Eir Stegalkin
+Mini Ice Elemental
+Mini Fire Imp
+Mini Storm Imp
+Mini Shade
+Mini Wind Rider
+Mini Devourer
+Mini Forest Grub
+Mini Chromatic Ooze
+Mini Forest Spider
+Mini Frost Spider
+Mini Oakheart
+Mini Snow Troll
+Mini Vampire Bat
+Mini Snow Leopard
+Mini Jungle Stalker
+Mini Colocal
+Mini Jack-a-lop
+Mini Green Moa
+Mini Pink Moa
+Mini White Moa
+Mini Undead Chicken
+Mini Wasp
+Mini Modniir Berserker
+Mini Flame Shaman
+Mini Dredge Mining Suit
+Mini Dredge Excavator
+Mini Comrade Molechev
+Mini Ettin
+Mini Ascalonian Mage
+Mini Harpy Warrior
+Mini Yaotl the Fierce
+Mini Hylek Nahualli
+Mini Mark I Assault Golem
+Mini Krait Witch
+Mini Krait Slaver
+Mini PK 632Z
+Mini Icebrood Quaggan
+Mini Seraph Heavy Guard
+Mini Seraph Mage
+Mini Logan Thackeray
+Mini Skritt Forager
+Mini Svanir Berserker
+Mini Svanir Icebreaker
+Mini Orrian Wraith
+}}
+{{Achievement table row
+| name = Mini Collection—Set II
+| page = Mini Collection—Set II
+| description = Collect 44 [[miniature]]s.
+| flavor = Master of miniature mayhem.
+| tiers = 11 In Collection;10
+22 In Collection;10
+33 In Collection;10
+44 In Collection;10
+| id = 1708
+| hidden collection = Mini Bandit Saboteur
+Mini Bandit Scout
+Mini Bandit Cutpurse
+Mini Frost Fang
+Mini River Drake
+Mini Swamp Drake
+Mini Brackish Skale
+Mini Black Wind Rider
+Mini Swamp Spider
+Mini Eelob Poisonfang
+Mini Lynx
+Mini Black Moa
+Mini Modniir Ice Sage
+Mini Skarn Darkhoof
+Mini Harathi Sharpshooter
+Mini Tamini Warrior
+Mini Twisted Nightmare
+Mini Enraged Twisted Nightmare
+Mini Twisted Horror
+Mini Twisted Mender
+Mini Twisted Reaver
+Mini Dredge Resonator
+Mini Dredge Strazar
+Mini Hylek Tlamatini
+Mini Hylek Cuicani
+Mini Hylek Amini
+Mini Ice Imp
+Mini High Inquisitor Maut
+Mini Inquest Golemcaster
+Mini Inquest Extinguisher
+Mini Inquest Technician
+Mini Peacemaker Shocktrooper
+Mini Zojja
+Mini Peacemaker Sharpshot
+Mini Peacemaker Soldier
+Mini Seraph Juggernaut
+Mini Seraph Medic
+Mini Seraph Archer
+Mini Seraph Recruit
+Mini Ragar Shardhammer
+Mini Shaman Of Jormag
+Mini Svanir Hunter
+Mini Wolfborn Berserker
+Mini Wolfborn Shaman
+Mini Wolfborn Hunter
+Mini Wolfborn
+}}
+{{Achievement table row
+| name = Mini Collection—Set III
+| page = Mini Collection—Set III
+| description = Collect 49 [[miniature]]s.
+| flavor = Master of miniature mayhem.
+| tiers = 20 In Collection;10
+35 In Collection;10
+45 In Collection;10
+49 In Collection;10
+| id = 1707
+| hidden collection = Mini Aetherblade Elementalist
+Mini Aetherblade Taskmaster
+Mini Aetherblade Thug
+Mini Bandit Bomber
+Mini Blue Moa
+Mini Cave Troll
+Mini Consortium Pacifier
+Mini Ember
+Mini Faolain
+Mini Flame Legion Effigy
+Mini Freshwater Crab
+Mini Grawl Berserker
+Mini Hazmat Suit
+Mini Icebrood Goliath
+Mini Iron Legion Soldier
+Mini Jotun
+Mini King Adelbern
+Mini Kodan Icehammer
+Mini Krait Damoss
+Mini Largos
+Mini Lionguard
+Mini Lord Faren
+Mini Ministry Guard
+Mini Mosquito
+Mini Mossheart
+Mini Ogre
+Mini Poobadoo
+Mini Priory Explorer
+Mini Priory Historian
+Mini Priory Researcher
+Mini Salamander Drake
+Mini Destroyer Crab
+Mini Risen Drake Broodmother
+Mini Skritt Bottle Lobber
+Mini Toxic Spider Queen
+Mini Aetherblade Swashbuckler
+Mini Sylvan Pup
+Mini Toxic Courtier
+Mini Toxic Knight
+Mini Toxic Skale
+Mini Tsuru Whitewing
+Mini Tybalt
+Mini Vigil Marksman
+Mini Vigil Tactician
+Mini Vigil Warmaster
+Mini Vulture Raptor
+Mini Whispers Creator
+Mini Whispers Keeper
+Mini Whispers Lightbringer
+}}
+{{Achievement table row
+| name = Ogre Expert
+| page = Ogre Expert
+| description = Unlock all of the [[ogre weapons]] in your wardrobe, and collect an [[Ogre Tooth]].
+| unlock = Ogre Tooth
+| reward = Ogre Sharpening Kit
+| tiers = Unlocked Ogre Tooth;1
+Unlocked 10 Ogre Items;1
+Unlocked 20 Ogre Items;1
+| id = 1713
+| collection = Ogre Tooth
+Ogre Cleaver (skin)
+Ogre Dirk (skin)
+Ogre Effigy (skin)
+Ogre Longsword (skin)
+Ogre Breaker (skin)
+Ogre Harpoon Gun (skin)
+Ogre Hornbow (skin)
+Ogre Bludgeoner (skin)
+Ogre Flintlock (skin)
+Ogre Blaster (skin)
+Ogre Truncheon (skin)
+Ogre Bulwark (skin)
+Ogre Short Bow (skin)
+Ogre Javelin (skin)
+Ogre Warstaff (skin)
+Ogre Scimitar (skin)
+Ogre Blaze (skin)
+Ogre Trident (skin)
+Ogre Harbinger (skin)
+}}
+{{Achievement table row
+| name = Old Tom
+| page = Old Tom (achievement)
+| description = Unlock 4 cat golem miniatures.
+| reward = Mini Old Tom
+| tiers = 4 Miniatures Unlocked;3
+| id = 2548
+| collection = Mini Professor Mew
+Mini Mister Mittens
+Mini Baron von Scrufflebutt
+Mini Snuggles
+}}
+{{Achievement table row
+| id = 8243
+| name = Polychromatic Armor Collector
+| page = Polychromatic Armor Collector
+| description = Purchase the [[Polychromatic armor|Polychromatic Armor]] set from [[Deft Lahar]] in your [[homestead]].&lt;br&gt;Unlocking one skin's weight unlocks the other weights' skins.
+| flavor = Form meets function meets fashion.
+| reward = Prismatic Spear (weapon)
+| tiers = Unlocked 2 Skins; 3
+Unlocked 4 Skins; 3
+Unlocked 6 Skins; 4
+| collection = Polychromatic Heavy Helmet (skin)
+Polychromatic Heavy Pauldrons (skin)
+Polychromatic Heavy Breastplate (skin)
+Polychromatic Heavy Gauntlets (skin)
+Polychromatic Heavy Cuisses (skin)
+Polychromatic Heavy Greaves (skin)
+}}
+{{Achievement table row
+| name = Priory's History
+| page = Priory's History (achievement)
+| description = Unlock all 37 Priory {{sic|Priory's}} Historical weapon and armor skins.
+| reward = Priory's History
+| unlock = Priory Equipment Guide
+| tiers = Unlocked 37 Skins;3
+| id = 2285
+| collection = Priory's Historical Greaves (skin)
+Priory's Historical Breastplate (skin)
+Priory's Historical Gauntlets (skin)
+Priory's Historical Helmet (skin)
+Priory's Historical Tassets (skin)
+Priory's Historical Pauldrons (skin)
+Priory's Historical Shoes (skin)
+Priory's Historical Vestments (skin)
+Priory's Historical Gloves (skin)
+Priory's Historical Cowl (skin)
+Priory's Historical Pants (skin)
+Priory's Historical Mantle (skin)
+Priory's Historical Boots (skin)
+Priory's Historical Jerkin (skin)
+Priory's Historical Vambraces (skin)
+Priory's Historical Mask (skin)
+Priory's Historical Leggings (skin)
+Priory's Historical Shoulderpads (skin)
+Priory's Historical Longbow (skin)
+Priory's Historical Short Bow (skin)
+Priory's Historical Dagger (skin)
+Priory's Historical Focus (skin)
+Priory's Historical Greatsword (skin)
+Priory's Historical Hammer (skin)
+Priory's Historical Pistol (skin)
+Priory's Historical Rifle (skin)
+Priory's Historical Harpoon (skin)
+Priory's Historical Torch (skin)
+Priory's Historical Axe (skin)
+Priory's Historical Scepter (skin)
+Priory's Historical Speargun (skin)
+Priory's Historical Staff (skin)
+Priory's Historical Sword (skin)
+Priory's Historical Trident (skin)
+Priory's Historical Warhorn (skin)
+Priory's Historical Mace (skin)
+Priory's Historical Shield (skin)
+}}
+{{Achievement table row
+| id = 3842
+| name = Raise the Banners: Amnoon Arbitrator
+| page = Raise the Banners: Amnoon Arbitrator
+| icon = Crystal Desert Basic Collections.png
+| description = Collect all items to unlock this piece of equipment.
+| flavor = You explored all possible paths for Amnoon to take in its time of crisis.
+| reward = Sagacious Banners of Dynastic Reckoning
+| tiers = Collected 1 Item;1
+Collected 2 Items;1
+Collected 4 Items;1
+| title = Friend of the Vabbians
+| hidden = yes
+| collection = Banners of Dynastic Reckoning
+Rising Banners of the Sunspear
+Dreaded Banners of King Palawa Joko I
+Ensign Banners of Amnoon
+}}
+{{Achievement table row
+| name = Raise the Banners: Amnoon Independence
+| page = Raise the Banners: Amnoon Independence
+| icon = Crystal Desert Basic Collections.png
+| description = Collect all 14 items to unlock this piece of equipment.
+| flavor = You advised Amnoon's council to assert their city's freedom from regional control.
+| reward = Ensign Banners of Amnoon
+| title = Friend of Amnoon
+| tiers = Collected 1 Item;1
+Collected 5 Items;2
+Collected 14 Items;2
+| id = 3579
+| hidden = yes
+| collection = Banners of Amnoon
+Amnoon Council Seal
+Show of Support: Highjump Ranch
+Show of Support: Skimmer Ranch
+Threat: Zelke the Shameless
+Threat: Xedra Tahz Tahom
+Water Station Parts
+Glorious Frame
+Reinforced Tack
+Precision Blocks
+Well-Cut Jib
+Hatched Batten
+Resilient Beam
+Lateen Sail
+}}
+{{Achievement table row
+| id = 3560
+| name = Raise the Banners: Salute to Palawa Joko
+| page = Raise the Banners: Salute to Palawa Joko
+| icon = Crystal Desert Basic Collections.png
+| description = Collect all 14 items to unlock this piece of equipment.
+| flavor = You advised Amnoon's council to accept King Joko's offer of military aid.
+| reward = Dreaded Banners of King Palawa Joko I
+| title = Supporter of the Kingdom
+| tiers = Collected 1 Item;1
+Collected 7 Items;2
+Collected 14 Items;2
+| hidden = yes
+| collection = Banners of King Palawa Joko I
+Ancient Family Crest
+Show of Support: Vehjin Palace
+Show of Support: Garden Theatre
+Threat: Snap Spinecrack
+Threat: Lord Hanif
+Stolen Agricultural Shipment
+Turquoise Scarab Heart
+Gilded Scarab Shell
+Elonian Standard (trophy)
+Mourning Shroud
+Corrosive Bond
+Necrotic Graft
+Palawa's Personal Tapestry
+}}
+{{Achievement table row
+| name = Raise the Banners: Sunspear Support
+| page = Raise the Banners: Sunspear Support
+| icon = Crystal Desert Basic Collections.png
+| description = Collect all 14 items to unlock this piece of equipment.
+| flavor = You advised Amnoon's council to defy King Joko and fly the standard of his Sunspear enemies.
+| reward = Rising Banners of the Sunspear
+| title = Ally of the Sunspears
+| tiers = Collected 1 Item;1
+Collected 7 Items;2
+Collected 14 Items;2
+| id = 3846
+| hidden = yes
+| collection = Banners of the Sunspear
+Sunspear Order Emblem
+Show of Support: Augury Rock
+Show of Support: Sand Jackal Run
+Threat: Zawadi the Turncoat
+Threat: The Terror of the Sands
+Kormir Prayer Books
+Magnificent Brace
+Luxurious Royal Fabric
+Winged Frame
+Mysterious Etchings
+Brass Airfoil
+Radiant Charge
+Embroidered Sunspear Sigil
+}}
+{{Achievement table row
+| name = Rare Regalia
+| page = Rare Regalia
+| description = Unlock all 18 crafted rare armor skins in your wardrobe.
+| reward = Lesser Vision Crystal
+| tiers = Unlocked 1 Crafted Rare Armor Skin;1
+Unlocked 9 Crafted Rare Armor Skins;1
+Unlocked 18 Crafted Rare Armor Skins;1
+| id = 1751
+| collection = Gladiator Boots (skin)
+Gladiator Chestplate (skin)
+Gladiator Gauntlets (skin)
+Gladiator Helm (skin)
+Gladiator Legplates (skin)
+Gladiator Pauldrons (skin)
+Masquerade Boots (skin)
+Masquerade Raiments (skin)
+Masquerade Gloves (skin)
+Masquerade Mask (skin)
+Masquerade Leggings (skin)
+Masquerade Mantle (skin)
+Noble Boots (skin)
+Noble Coat (skin)
+Noble Gloves (skin)
+Noble Mask (skin)
+Noble Pants (skin)
+Noble Shoulders (skin)
+}}
+{{Achievement table row
+| id = 3954
+| name = Recovered Resplendence
+| page = Recovered Resplendence
+| icon = Crystal Desert Basic Collections.png
+| description = Unlock 18 [[Spearmarshal's armor|Spearmarshal's skins]] in your wardrobe by crafting or using the Trading Post.&lt;br&gt;Recipes can be purchased from renown vendors in the Crystal Desert after unlocking [[Elonian armor]] skins.
+| reward = Nadijeh's Royal Armor Cache
+| tiers = 1 skin unlocked;1
+6 skins unlocked;1
+12 skins unlocked;1
+18 skins unlocked;2
+| hidden = yes
+| collection = Spearmarshal's Greaves (skin)
+Spearmarshal's Breastplate (skin)
+Spearmarshal's Gauntlets (skin)
+Spearmarshal's Helmet (skin)
+Spearmarshal's Tassets (skin)
+Spearmarshal's Pauldrons (skin)
+Spearmarshal's Shoes (skin)
+Spearmarshal's Vestments (skin)
+Spearmarshal's Gloves (skin)
+Spearmarshal's Cowl (skin)
+Spearmarshal's Pants (skin)
+Spearmarshal's Mantle (skin)
+Spearmarshal's Boots (skin)
+Spearmarshal's Jerkin (skin)
+Spearmarshal's Vambraces (skin)
+Spearmarshal's Mask (skin)
+Spearmarshal's Leggings (skin)
+Spearmarshal's Shoulderpads (skin)
+}}
+{{Achievement table row
+| name = Scholar's Pack
+| page = Scholar's Pack (achievement)
+| description = Collect all 8 items to create your [[Scholar's Pack]].
+| reward = Scholar's Pack
+| unlock = Novice's Pack
+| tiers = Collected 1 item.;1
+Collected 4 items.;1
+Collected 8 items.;1
+| id = 2461
+| collection = Novice's Pack (skin)
+Priory Maintenance Oil
+Resilient Priory Belt
+Priory Backplate
+Golden Priory Buckle
+Priory Honing Crystal
+Waterproof Priory Padding
+Dragonvine Priory Strap
+}}
+{{Achievement table row
+| name = Seeker of Lost Homework
+| page = Seeker of Lost Homework
+| description = Collect 21 junk items from [[Fractal Encryption]]s awarded in the [[Fractals of the Mists]].
+| flavor = {{flavor|"Math? Of course I know math! What kind of things are they teaching you kids these days? Bah!"&lt;br&gt;—[[Councillor Phlunt]]}}
+| title = Professor
+| reward = Fractal Encryption Key
+| quantity = 5
+| tiers = Collected 1 Junk Item From Fractal Encryptions;1
+Collected 6 Junk Items From Fractal Encryptions;1
+Collected 11 Junk Items From Fractal Encryptions;1
+Collected 16 Junk Items From Fractal Encryptions;1
+Collected 21 Junk Items From Fractal Encryptions;1
+| id = 2402
+| collection = Proof of Bask's Theorem
+Proof of Neta's Square Inversion Law
+Proof of Gott's Integral Derivation
+Proof of Drik's Transformations
+Proof of Gali's Proportional Traversal
+Proof of Dekin's Rational Cuts
+Manuscript of 'Halfway There and...'
+Manuscript of 'This Book Is False'
+Manuscript of 'Proposal for a 1:1 Scale Map of Tyria'
+Postulate of Construction
+Postulate of Continuity
+Postulate of Diameter
+Postulate of Rectitude
+Postulate of Parallels
+Postulate of Superposition
+Treatise on Convergence
+Treatise on Divergence
+Treatise on Equivalence
+Treatise on Symmetry
+Treatise on Iteration
+Treatise on Commensurability
+}}
+{{Achievement table row
+| name = Slumbering Lightborne Weapon Collector
+| page = Slumbering Lightborne Weapon Collector
+| description = Bind all 17 Slumbering Lightborne weapon skins. These weapons are earned in Bava Nisos or by purchasing them from the Trading Post.
+| tiers = Unlocked 1 of 17 Skins; 1
+Unlocked 8 of 17 Skins; 1
+Unlocked 17 of 17 Skins; 1
+| collection = Slumbering Lightborne Axe (skin)
+Slumbering Lightborne Dagger (skin)
+Slumbering Lightborne Focus (skin)
+Slumbering Lightborne Greatsword (skin)
+Slumbering Lightborne Hammer (skin)
+Slumbering Lightborne Longbow (skin)
+Slumbering Lightborne Mace (skin)
+Slumbering Lightborne Pistol (skin)
+Slumbering Lightborne Rifle (skin)
+Slumbering Lightborne Scepter (skin)
+Slumbering Lightborne Shield (skin)
+Slumbering Lightborne Short Bow (skin)
+Slumbering Lightborne Spear (skin)
+Slumbering Lightborne Staff (skin)
+Slumbering Lightborne Sword (skin)
+Slumbering Lightborne Torch (skin)
+Slumbering Lightborne Warhorn (skin)
+| id = 8741
+}}
+{{Achievement table row
+| name = Sorrow's Embrace Collector
+| page = Sorrow's Embrace Collector
+| description = Use [[Tale of Dungeon Delving|tales of dungeon delving]] from [[Sorrow's Embrace]] to unlock all 37 [[Dark Asuran weapons|weapon]] and [[Sorrow's Embrace armor|armor skins]] in your wardrobe.
+| reward = Magnificent Dredge Chest
+| tiers = Unlocked 1 Weapon or Armor Skin;1
+Unlocked 18 Weapon and Armor Skins;1
+Unlocked 37 Weapon and Armor Skins;1
+| id = 1722
+| hidden = yes
+| collection = Forgeman Greaves (skin)
+Forgeman Breastplate (skin)
+Forgeman Gauntlets (skin)
+Forgeman Helmet (skin)
+Forgeman Tassets (skin)
+Forgeman Pauldrons (skin)
+Forgeman Shoes (skin)
+Forgeman Raiment (skin)
+Forgeman Wristguards (skin)
+Forgeman Mask (skin)
+Forgeman Leggings (skin)
+Forgeman Mantle (skin)
+Forgeman Boots (skin)
+Forgeman Jacket (skin)
+Forgeman Gloves (skin)
+Forgeman Headguard (skin)
+Forgeman Breeches (skin)
+Forgeman Shoulders (skin)
+Dark Asuran Focus (skin)
+Dark Asuran Mace (skin)
+Dark Asuran Pistol (skin)
+Dark Asuran Sword (skin)
+Dark Asuran Axe (skin)
+Dark Asuran Longbow (skin)
+Dark Asuran Short Bow (skin)
+Dark Asuran Dagger (skin)
+Dark Asuran Greatsword (skin)
+Dark Asuran Hammer (skin)
+Dark Asuran Harpoon (skin)
+Dark Asuran Rifle (skin)
+Dark Asuran Scepter (skin)
+Dark Asuran Shield (skin)
+Dark Asuran Speargun (skin)
+Dark Asuran Staff (skin)
+Dark Asuran Torch (skin)
+Dark Asuran Trident (skin)
+Dark Asuran Warhorn (skin)
+}}
+{{Achievement table row
+| name = Style Guide
+| page = Style Guide
+| description = Collect and review various written works of Tyria.
+| reward = Wylenn's Manual of Style
+| tiers = Reviewed 1 Literary Work;1
+Reviewed 7 Literary Works;1
+Reviewed 14 Literary Works;1
+| id = 1715
+| hidden = yes
+| collection = Anthology of Heroes
+Tome of Knowledge
+Koss on Koss (skin)
+Dredge Manifesto (Level 75)#item2
+Durmand Priory Field Guide to Skritt#item2
+Priory Granite Citadel History#item2
+Scriptures of Dwayna
+Ebonhawke Cease-Fire Agreement#item1
+Letter Home#item1
+Seraph Trebuchet User's Manual#item2
+Memoirs of Captain Greywind, Unabridged
+Ash Legion Covert Demolition Field Guide FM-29B#item2
+Arcanus Obscurus (skin)
+Godswalk Enchiridion (skin)
+}}
+{{Achievement table row
+| id = 3951
+| name = The Main Thrust
+| page = The Main Thrust
+| icon = Crystal Desert Basic Collections.png
+| description = Unlock 16 [[Sunspear weapons|Sunspear skins]] in your wardrobe by crafting or using the Trading Post.&lt;br&gt;Recipes can be purchased from renown vendors in the Crystal Desert after unlocking [[Elonian weapons|Elonian weapon]] skins.
+| reward = Nadijeh's Royal Arms Cache
+| tiers = 1 skin unlocked;1
+5 skins unlocked;1
+10 skins unlocked;1
+16 skins unlocked;2
+| hidden = yes
+| collection = Sunspear Warsickle (skin)
+Sunspear Carver (skin)
+Sunspear Runestone (skin)
+Sunspear Greatblade (skin)
+Sunspear Smasher (skin)
+Sunspear Recurve (skin)
+Sunspear Thrasher (skin)
+Sunspear Sidearm (skin)
+Sunspear Matchlock (skin)
+Sunspear Rod (skin)
+Sunspear Wallshield (skin)
+Sunspear Pocketbow (skin)
+Sunspear Standard (skin)
+Sunspear Cutlass (skin)
+Sunspear Firelight (skin)
+Sunspear Horn (skin)
+}}
+{{Achievement table row
+| name = The Ruined City of Arah Collector
+| page = The Ruined City of Arah Collector
+| description = Use [[Tale of Dungeon Delving|tales of dungeon delving]] from [[The Ruined City of Arah]] to unlock all 37 [[Weapons of the Dragon's Deep|weapon]] and [[Arah armor|armor skins]] in your wardrobe.
+| reward = Magnificent Orrian Chest
+| tiers = Unlocked 1 Weapon or Armor Skin;1
+Unlocked 18 Weapon and Armor Skins;1
+Unlocked 37 Weapon and Armor Skins;1
+| id = 1724
+| hidden = yes
+| collection = Shield of the Dragon's Deep (skin)
+Sword of the Dragon's Deep (skin)
+Axe of the Dragon's Deep (skin)
+Longbow of the Dragon's Deep (skin)
+Short Bow of the Dragon's Deep (skin)
+Dagger of the Dragon's Deep (skin)
+Focus of the Dragon's Deep (skin)
+Greatsword of the Dragon's Deep (skin)
+Hammer of the Dragon's Deep (skin)
+Harpoon of the Dragon's Deep (skin)
+Mace of the Dragon's Deep (skin)
+Pistol of the Dragon's Deep (skin)
+Rifle of the Dragon's Deep (skin)
+Scepter of the Dragon's Deep (skin)
+Speargun of the Dragon's Deep (skin)
+Staff of the Dragon's Deep (skin)
+Torch of the Dragon's Deep (skin)
+Trident of the Dragon's Deep (skin)
+Warhorn of the Dragon's Deep (skin)
+Grasping Dead Greaves (skin)
+Grasping Dead Breastplate (skin)
+Grasping Dead Gauntlets (skin)
+Grasping Dead Visage (skin)
+Grasping Dead Legguards (skin)
+Grasping Dead Pauldrons (skin)
+Walkers of the Lich (skin)
+Vestments of the Lich (skin)
+Wrappings of the Lich (skin)
+Gaze of the Lich (skin)
+Trappings of the Lich (skin)
+Mantle of the Lich (skin)
+Accursed Treads (skin)
+Accursed Guise (skin)
+Accursed Vambraces (skin)
+Accursed Visage (skin)
+Accursed Leggings (skin)
+Accursed Shoulders (skin)
+}}
+{{Achievement table row
+| name = Tip of the Spear
+| page = Tip of the Spear
+| icon = Crystal Desert Basic Collections.png
+| description = Recover all Elonian weapons by completing events, looting chests, and identifying items in renown regions of the Crystal Desert.
+| flavor = {{flavor|In addition to being a cultured and educated populace, the peoples of Elona are notably adept in ways of combat.}}
+| reward = Chest of the First Spear
+| title = Sunspear Recruit
+| tiers = Recoverd 1 Elonian Weapon;1
+Recoverd 8 Elonian Weapons;1
+Recoverd 16 Elonian Weapons;1
+| id = 3895
+| collection = Elonian Warsickle (skin)
+Elonian Recurve (skin)
+Elonian Pocketbow (skin)
+Elonian Carver (skin)
+Elonian Runestone (skin)
+Elonian Greatblade (skin)
+Elonian Smasher (skin)
+Elonian Thrasher (skin)
+Elonian Sidearm (skin)
+Elonian Matchlock (skin)
+Elonian Rod (skin)
+Elonian Wallshield (skin)
+Elonian Standard (skin)
+Elonian Cutlass (skin)
+Elonian Firelight (skin)
+Elonian Horn (skin)
+}}
+{{Achievement table row
+| id = 8331
+| name = Titanplate Armor Collector
+| page = Titanplate Armor Collector
+| description = Unlock 6 pieces of the Titanplate armor set by crafting them or purchasing them from the Trading Post and binding them to you.&lt;br&gt;Unlocking one weight's skin unlocks the other weights' skins.
+| flavor = Now with 100% less desire to consume bloodstones.
+| tiers = Unlocked 2 Skins; 3
+Unlocked 4 Skins; 3
+Unlocked 6 Skins; 4
+| collection = Titanplate Heavy Helmet (skin)
+Titanplate Heavy Pauldrons (skin)
+Titanplate Heavy Breastplate (skin)
+Titanplate Heavy Gauntlets (skin)
+Titanplate Heavy Cuisses (skin)
+Titanplate Heavy Greaves (skin)
+}}
+{{Achievement table row
+| name = Trash Collector
+| page = Trash Collector
+| description = Collect these 51 [[junk item]]s throughout Tyria.
+| reward = Big Bag of Junk
+| flavor = {{flavor|There must be something valuable in all that junk...}}
+| tiers = Collected 1 Junk Item;1
+Collected 25 Junk Items;1
+Collected 51 Junk Items;1
+| title = Honorary Skritt
+| id = 1730
+| collection = Mangled Talon
+Talon
+Sharp Talon
+Pebble
+Gravel
+Stone
+Needle
+Barb
+Spike
+Spider Leg
+Hairy Spider Leg
+Prickly Spider Leg
+Seashell
+Shell
+Spiral Shell
+Shattered Lockpick
+Broken Lockpick
+Bent Lockpick
+Hoof (2 copper)
+Hoof (9 copper)
+Hoof (16 copper)
+Glob of Globby Goo
+Glob of Globby Goop
+Glob of Globby Gloop
+Cog
+Gear (trophy)
+Sprocket
+Patch of Fur
+Scrap of Fur
+Clump of Fur
+Fin
+Dorsal Fin
+Tail Fin
+Broken Fang
+Dull Fang
+Chipped Fang
+Broken Claw
+Dull Claw
+Dark Stained Claw
+Brittle Bone
+Crumbling Bone
+Porous Bone
+Buzzing Crystal
+Charged Crystal
+Shocking Crystal
+Warm Stone
+Hot Stone
+Fire Stone
+Cool Stone
+Cold Stone
+Ice Stone
+}}
+{{Achievement table row
+| name = True Sight Armor Collector
+| page = True Sight Armor Collector
+| description = Unlock 6 pieces of the True Sight armor set by crafting them or purchasing them from the Trading Post and binding them to you.&lt;br &gt;&lt;br &gt;Unlocking one weight's skin unlocks the other weights' skins.
+| flavor = Does not come with spectral agony.
+| tiers = Unlocked 2 Skins; 3
+Unlocked 4 Skins; 3
+Unlocked 6 Skins; 4
+| collection = True Sight Light Mask (skin)
+True Sight Light Shoulders (skin)
+True Sight Light Coat (skin)
+True Sight Light Gloves (skin)
+True Sight Light Leggings (skin)
+True Sight Light Boots (skin)
+| id = 8544
+}}
+{{Achievement table row
+| name = Twilight Arbor Collector
+| page = Twilight Arbor Collector
+| description = Use [[Tale of Dungeon Delving|tales of dungeon delving]] from [[Twilight Arbor]] to unlock all 37 [[Nightmare weapons|weapon]] and [[Twilight Arbor armor|armor skins]] in your wardrobe.
+| reward = Magnificent Nightmare Court Chest
+| tiers = Unlocked 1 Weapon or Armor Skin;1
+Unlocked 18 Weapon and Armor Skins;1
+Unlocked 37 Weapon and Armor Skins;1
+| id = 1721
+| hidden = yes
+| collection = Nightmare Axe (skin)
+Nightmare Longbow (skin)
+Nightmare Short Bow (skin)
+Nightmare Dagger (skin)
+Nightmare Focus (skin)
+Nightmare Greatsword (skin)
+Nightmare Hammer (skin)
+Nightmare Harpoon (skin)
+Nightmare Mace (skin)
+Nightmare Pistol (skin)
+Nightmare Rifle (skin)
+Nightmare Scepter (skin)
+Nightmare Shield (skin)
+Nightmare Speargun (skin)
+Nightmare Staff (skin)
+Nightmare Sword (skin)
+Nightmare Torch (skin)
+Nightmare Trident (skin)
+Nightmare Warhorn (skin)
+Nightmare Court Greaves (skin)
+Nightmare Court Breastplate (skin)
+Nightmare Court Gauntlets (skin)
+Nightmare Court Helmet (skin)
+Nightmare Court Legguards (skin)
+Nightmare Court Pauldrons (skin)
+Nightmare Court Footwraps (skin)
+Nightmare Court Robes (skin)
+Nightmare Court Gloves (skin)
+Nightmare Court Regalia (skin)
+Nightmare Court Sarong (skin)
+Nightmare Court Mantle (skin)
+Nightmare Court Boots (skin)
+Nightmare Court Guise (skin)
+Nightmare Court Armguards (skin)
+Nightmare Court Faceguard (skin)
+Nightmare Court Leggings (skin)
+Nightmare Court Collar (skin)
+}}
+{{Achievement table row
+| name = Uncanny Canner
+| page = Uncanny Canner
+| description = Collect all 11 jarred [[trinket]]s from vendors around Tyria.
+| reward = Uncanny Jar
+| tiers = Collected 1 Jarred Trinket;1
+Collected 5 Jarred Trinkets;1
+Collected 11 Jarred Trinkets;1
+| id = 1720
+| collection = Jar of Bees
+Frog in a Jar#item1
+Frog in a Jar#item2
+Firefly in a Jar
+Undead Ash in a Jar#item1
+Undead Ash in a Jar#item2
+Empty Honey Pot
+Jar of Ooze
+Lightning Jar
+Jar of Lost Souls
+Twister in a Jar
+}}
+{{Achievement table row
+| name = Ursan Ornamented Weapon Collector
+| page = Ursan Ornamented Weapon Collector
+| description = Unlock all 17 Ursan Ornamented weapon skins by completing events in Lowland Shore or by purchasing them from the Trading Post and binding them to you.
+| tiers = 1 of 17 skins unlocked; 1
+8 of 17 skins unlocked; 1
+17 of 17 skins unlocked; 1
+| collection = Ursan Ornamented Axe
+Ursan Ornamented Dagger
+Ursan Ornamented Focus
+Ursan Ornamented Greatsword
+Ursan Ornamented Hammer
+Ursan Ornamented Longbow
+Ursan Ornamented Mace
+Ursan Ornamented Pistol
+Ursan Ornamented Rifle
+Ursan Ornamented Scepter
+Ursan Ornamented Shield
+Ursan Ornamented Short Bow
+Ursan Ornamented Spear
+Ursan Ornamented Staff
+Ursan Ornamented Sword
+Ursan Ornamented Torch
+Ursan Ornamented Warhorn
+| id = 8475
+}}
+{{Achievement table row
+| name = Utility Utilizer
+| page = Utility Utilizer
+| description = Use one of each of these 6 [[utility item|utility boost]] items.
+| reward = Utility Primer
+| tiers = Used 1 Utility Boost;1
+Used 3 Utility Boosts;1
+Used 6 Utility Boosts;1
+| id = 1729
+| collection = Master Tuning Crystal
+Master Maintenance Oil
+Superior Sharpening Stone
+Toxic Focusing Crystal
+Toxic Maintenance Oil
+Toxic Sharpening Stone
+}}
+{{Achievement table row
+| name = Vigil's Honor
+| page = Vigil's Honor (achievement)
+| description = Unlock all 37 Vigil's Honor weapon and armor skins.
+| reward = Vigil's Honor
+| unlock = Vigil Equipment Guide
+| tiers = Unlocked 37 Skins;3
+| id = 2273
+| collection = Vigil's Honor Greaves (skin)
+Vigil's Honor Breastplate (skin)
+Vigil's Honor Gauntlets (skin)
+Vigil's Honor Helmet (skin)
+Vigil's Honor Tassets (skin)
+Vigil's Honor Pauldrons (skin)
+Vigil's Honor Footwear (skin)
+Vigil's Honor Vest (skin)
+Vigil's Honor Gloves (light skin)
+Vigil's Honor Circlet (skin)
+Vigil's Honor Leggings (light skin)
+Vigil's Honor Mantle (skin)
+Vigil's Honor Boots (skin)
+Vigil's Honor Jerkin (skin)
+Vigil's Honor Gloves (medium skin)
+Vigil's Honor Headguard (skin)
+Vigil's Honor Leggings (medium skin)
+Vigil's Honor Shoulderguards (skin)
+Vigil's Honor Pistol (skin)
+Vigil's Honor Shield (skin)
+Vigil's Honor Axe (skin)
+Vigil's Honor Short Bow (skin)
+Vigil's Honor Dagger (skin)
+Vigil's Honor Focus (skin)
+Vigil's Honor Greatsword (skin)
+Vigil's Honor Speargun (skin)
+Vigil's Honor Mace (skin)
+Vigil's Honor Rifle (skin)
+Vigil's Honor Harpoon (skin)
+Vigil's Honor Sword (skin)
+Vigil's Honor Torch (skin)
+Vigil's Honor Trident (skin)
+Vigil's Honor Warhorn (skin)
+Vigil's Honor Hammer (skin)
+Vigil's Honor Longbow (skin)
+Vigil's Honor Scepter (skin)
+Vigil's Honor Staff (skin)
+}}
+{{Achievement table row
+| name = Warmaster's Pack
+| page = Warmaster's Pack (achievement)
+| description = Collect all 10 items to create your [[Warmaster's Pack]].
+| reward = Warmaster's Pack
+| unlock = Crusader's Pack
+| tiers = 1 Item Collected;1
+5 Items Collected;1
+10 Items Collected;3
+| id = 2572
+| collection = Crusader's Pack (skin)
+Vigil's Honor
+Vigil Rations
+Abaddon's Cowl
+Gold Backpack Frame
+Nuhoch Guide to Waterproofing
+Auric Vigil Buckle
+Itzel Combat Lesson
+Nuhoch Combat Lesson
+Recovered Vigil Seal
+}}
+{{Achievement table row
+| name = Whisper's Secret
+| page = Whisper's Secret (achievement)
+| description = Unlock all 36 Whisper's Secret weapon and armor skins.
+| reward = Whisper's Secret
+| unlock = Order of Whispers Equipment Guide
+| tiers = Unlocked 36 Skins;3
+| id = 2495
+| collection = Whisper's Secret Greaves (skin)
+Whisper's Secret Breastplate (skin)
+Whisper's Secret Gauntlets (skin)
+Whisper's Secret Helmet (skin)
+Whisper's Secret Tassets (skin)
+Whisper's Secret Pauldrons (skin)
+Whisper's Secret Footwear (skin)
+Whisper's Secret Robes (skin)
+Whisper's Secret Gloves (light skin)
+Whisper's Secret Cowl (skin)
+Whisper's Secret Leggings (light skin)
+Whisper's Secret Boots (skin)
+Whisper's Secret Longvest (skin)
+Whisper's Secret Hood (skin)
+Whisper's Secret Leggings (medium skin)
+Whisper's Secret Gloves (medium skin)
+Whisper's Secret Shoulderguards (skin)
+Whisper's Secret Focus (skin)
+Whisper's Secret Harpoon (skin)
+Whisper's Secret Trident (skin)
+Whisper's Secret Longbow (skin)
+Whisper's Secret Short Bow (skin)
+Whisper's Secret Dagger (skin)
+Whisper's Secret Hammer (skin)
+Whisper's Secret Pistol (skin)
+Whisper's Secret Scepter (skin)
+Whisper's Secret Shield (skin)
+Whisper's Secret Speargun (skin)
+Whisper's Secret Warhorn (skin)
+Whisper's Secret Axe (skin)
+Whisper's Secret Greatsword (skin)
+Whisper's Secret Mace (skin)
+Whisper's Secret Torch (skin)
+Whisper's Secret Rifle (skin)
+Whisper's Secret Staff (skin)
+Whisper's Secret Sword (skin)
+}}
+{{Achievement table row
+| id = 8166
+| name = Woad Armor Collector
+| page = Woad Armor Collector
+| description = Unlock the [[Woad armor]] set. Pieces can be obtained from skirmish supervisors, from the Janthir Wilds reward track, or from Rift Researcher Adam in Lowland Shore. Each armor weight's pieces must be unlocked individually.
+| flavor = Shrouded by the strength of the wilds.
+| tiers = Unlocked 6 Skins; 3
+Unlocked 12 Skins; 3
+Unlocked 18 Skins; 4
+| collection = Woad Heavy Helm (skin)
+Woad Heavy Shoulders (skin)
+Woad Heavy Coat (skin)
+Woad Heavy Gloves (skin)
+Woad Heavy Leggings (skin)
+Woad Heavy Boots (skin)
+Woad Medium Boots (skin)
+Woad Medium Coat (skin)
+Woad Medium Gloves (skin)
+Woad Medium Helm (skin)
+Woad Medium Leggings (skin)
+Woad Medium Shoulders (skin)
+Woad Light Boots (skin)
+Woad Light Coat (skin)
+Woad Light Gloves (skin)
+Woad Light Helm (skin)
+Woad Light Leggings (skin)
+Woad Light Shoulders (skin)
+}}
+{{Achievement table row
+| name = Zinn's Prize Student
+| page = Zinn's Prize Student
+| description = Collect all 13 books to compile [[Zinn's Study Guide]].
+| reward = Mini Holographic Zinn
+| tiers = Collected 1 Book;1
+Collected 6 Books;1
+Collected 13 Books;1
+| id = 2234
+| hidden = yes
+| collection = Extinguished: The Rise and Fall of the Flame Legion, Vol. 1
+Extinguished: The Rise and Fall of the Flame Legion, Vol. 2
+Extinguished: The Rise and Fall of the Flame Legion, Vol. 3
+Extinguished: The Rise and Fall of the Flame Legion, Vol. 4
+Elona: Land of the Golden Sun
+The Human Gods
+The Norn: Legends and Legacies
+Prince Rurik: Heir Today, Gone Tomorrow
+Shiro Tagachi: Legacy of the Betrayer, Vol. 1
+Shiro Tagachi: Legacy of the Betrayer, Vol. 2
+The Spirits of the Wild
+There with Yakkington: A Travelers Tale Prologue
+Zinn's Study Guide
+}}
+{{Achievement table row
+| id = 7005
+| name = Skyforged Weapon Collector
+| page = Skyforged Weapon Collector
+| description = Unlock all [[Skyforged weapons|Skyforged weapon skins]] by completing events and looting chests in [[Amnytas]] or purchasing them from the trading post and binding them to you.
+| tiers = 1 skin unlocked; 1
+8 skins unlocked; 1
+16 skins unlocked; 1
+| collection = Skyforged Axe
+Skyforged Dagger
+Skyforged Focus
+Skyforged Greatsword
+Skyforged Hammer
+Skyforged Longbow
+Skyforged Mace
+Skyforged Pistol
+Skyforged Rifle
+Skyforged Scepter
+Skyforged Shield
+Skyforged Short Bow
+Skyforged Staff
+Skyforged Sword
+Skyforged Torch
+Skyforged Warhorn
+}}
+{{Achievement table row
+| id = 7665
+| name = Saryx Weapon Collector
+| page = Saryx Weapon Collector
+| description = Unlock all 16 [[Saryx weapons|Saryx weapon skins]] by completing events and looting chests in [[Inner Nayos]] or purchasing them from the trading post and binding them to you.
+| tiers = 1 skin unlocked; 0
+4 skins unlocked; 0
+8 skins unlocked; 1
+12 skins unlocked; 1
+16 skins unlocked; 1
+| tier rewards = 2;Large Calcified Gasp;1
+3;Large Calcified Gasp;1
+4;Large Calcified Gasp;1
+5;Large Calcified Gasp;2
+5;Abomination Weapon Box;1
+| collection = Saryx Axe
+Saryx Dagger
+Saryx Focus
+Saryx Greatsword
+Saryx Hammer
+Saryx Longbow
+Saryx Mace
+Saryx Pistol
+Saryx Rifle
+Saryx Scepter
+Saryx Shield
+Saryx Short Bow
+Saryx Staff
+Saryx Sword
+Saryx Torch
+Saryx Warhorn
+}}
+|}
+
+== Notes ==
+=== Unlocking collections ===
+There are three ways to unlock collections:
+* '''Unlocked and visible''': these collections are automatically unlocked.
+* '''Hidden''': these collections are automatically unlocked, but hidden from view until the player binds or consumes at least one of the required items within the collection.
+* '''Locked''': players cannot add to these collections until they have unlocked them by acquiring a specific item:
+
+=== List of collections unlocked by an item ===
+{| {{STDT|mech1}}
+! Collection || Unlocked by || Source
+|-
+| [[Bandit Weapons Specialist]] || {{item icon|Bandit Combat Journal}} || [[Bandit Crest]] collectors in [[The Silverwastes]]
+|-
+| [[Brewmaster]] || {{item icon|Observational Zymology Manual}} || [[Bartender]]s
+|-
+| [[Eldvin Monastery Brew of the Month Club]] || {{item icon|Eldvin Monastery Brew of the Month Membership}} || [[Master Brewer Desch]] in [[Eldvin Monastery]]
+|-
+| [[Fine Wining]] || {{item icon|Vintner's Guide}} || [[Gastronome Plikk]] in [[Rata Sum]]
+|-
+| [[Grawl Archaeological Study]] || {{item icon|Grawl Paw}} || Rare drop from [[grawl]]
+|-
+| [[Hylek Historian]] || {{item icon|Hylek Tongue}} || Rare drop from [[hylek]]
+|-
+| [[Koutalophile]] || {{item icon|Collectible Spoon Box}} || [[Legendary Collector Youngblood]] in [[Lion's Arch]]
+|-
+| [[Krait Antiquarianism Study]] || {{item icon|Krait Scale}} || Rare drop from [[krait]]
+|-
+| [[Ogre Expert]] || {{item icon|Ogre Tooth}} || Rare drop from [[ogre]]s
+|-
+| [[Priory's History (achievement)|Priory's History]] || {{item icon|Priory Equipment Guide}} || Bought from Priory weapon and armor merchants in [[Durmand Priory]]
+|-
+| [[Vigil's Honor (achievement)|Vigil's Honor]] || {{item icon|Vigil Equipment Guide}} || Bought from Vigil weapon and armor merchants in [[Vigil Headquarters]]
+|-
+| [[Whisper's Secret (achievement)|Whisper's Secret]] || {{item icon|Order of Whispers Equipment Guide}} || Bought from Order of Whispers weapon and armor merchants in the [[Chantry of Secrets]]
+|}
+
+== Trivia ==
+* Miniature Collection - [[Miniature Collection—Set I|Sets I]], [[Miniature Collection—Set II|II]], and [[Miniature Collection—Set III|III]] were moved to this category from [[Community]] with the [[Game updates/2015-02-24|February 24, 2015 update]].
+
+{{Achievement nav}}
+
+[[de:Einfache Sammlungen]]
+[[es:Colecciones básicas]]
+[[fr:Collections basiques]]</text>
+      <sha1>0kav84vnppjws6kp2x7himywd7dxhgw</sha1>
+    </revision>
+  </page>
+</mediawiki>

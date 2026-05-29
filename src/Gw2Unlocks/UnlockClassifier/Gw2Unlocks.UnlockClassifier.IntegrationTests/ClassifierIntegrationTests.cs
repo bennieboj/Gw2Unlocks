@@ -61,6 +61,45 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
     }
 
     [Fact]
+    public async Task GivenUnlockSoldByExchangeSpecialistThenShouldPrioritizeGemStoreOverBlackLionExchangeSpecialist()
+    {
+        var unlockName = "Frying Pan (toy)";
+        var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
+        var group = results.UnlockGroups.Single(g => g.Name == "Other");
+        var category = group.UnlockCategories.Single(c => c.Name == "Gem Store");
+        var unlock = category.Unlocks.Single(c => c.Name == unlockName);
+
+        Assert.NotNull(unlock);
+        Assert.NotNull(unlock.ApiData);
+    }
+
+    [Fact]
+    public async Task ItemsReferenceByASetShouldBeLInkedCorrectly()
+    {
+        var unlockName = "Skyforged Axe";
+        var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
+        var group = results.UnlockGroups.Single(g => g.Name == "Secrets of the Obscure");
+        var category = group.UnlockCategories.Single(c => c.Name == "Inner Nayos");
+        var unlock = category.Unlocks.Single(c => c.Name == unlockName);
+
+        Assert.NotNull(unlock);
+        Assert.NotNull(unlock.ApiData);
+    }
+
+    [Fact]
+    public async Task GivenUnlockSoldForBlackLionStatuetteAndHistoricalInGemStoreThenShouldPrioritizeBlackLionStatuetteOverGemStore()
+    {
+        var unlockName = "Aetherblade Heavy Warhelm";
+        var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
+        var group = results.UnlockGroups.Single(g => g.Name == "Other");
+        var category = group.UnlockCategories.Single(c => c.Name == "Black Lion Statuette");
+        var unlock = category.Unlocks.Single(c => c.Name == unlockName);
+
+        Assert.NotNull(unlock);
+        Assert.NotNull(unlock.ApiData);
+    }
+    
+    [Fact]
     public async Task GivenUnlockSoldByVendorForTokenInZoneWhenClassifyingUnlockThenShouldReturnZone()
     {
         var unlockName = "Endless Spotted Beetle Tonic";
@@ -425,7 +464,7 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
     }
 
     [Theory]
-    [InlineData("New Kaineng City (achievements)#achievement6213")] // "Protector of Kaineng", repeatable
+    [InlineData("New Kaineng City (achievements)#achievement6213")] // "Protector of Kaineng", repeatable, ideally I want this still!
     [InlineData("New Year's Customs#achievement6063")] // "(Weekly) Lunar Festivities", weekly
     [InlineData("New Year's Customs#achievement4080")] // "(Annual) New Year's Resolution", contains "{Annual}"
     [InlineData("Super Adventure Box: Nostalgia#achievement2843")] // "Course Load", repeatable

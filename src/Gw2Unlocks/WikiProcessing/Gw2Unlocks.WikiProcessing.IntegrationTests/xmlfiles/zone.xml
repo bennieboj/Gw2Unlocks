@@ -1,0 +1,1082 @@
+<mediawiki xmlns="http://www.mediawiki.org/xml/export-0.11/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mediawiki.org/xml/export-0.11/ http://www.mediawiki.org/xml/export-0.11.xsd" version="0.11" xml:lang="en">
+  <siteinfo>
+    <sitename>Guild Wars 2 Wiki</sitename>
+    <dbname>en_wikidb_gw2</dbname>
+    <base>https://wiki.guildwars2.com/wiki/Main_Page</base>
+    <generator>MediaWiki 1.39.17</generator>
+    <case>first-letter</case>
+    <namespaces>
+      <namespace key="-2" case="first-letter">Media</namespace>
+      <namespace key="-1" case="first-letter">Special</namespace>
+      <namespace key="0" case="first-letter" />
+      <namespace key="1" case="first-letter">Talk</namespace>
+      <namespace key="2" case="first-letter">User</namespace>
+      <namespace key="3" case="first-letter">User talk</namespace>
+      <namespace key="4" case="first-letter">Guild Wars 2 Wiki</namespace>
+      <namespace key="5" case="first-letter">Guild Wars 2 Wiki talk</namespace>
+      <namespace key="6" case="first-letter">File</namespace>
+      <namespace key="7" case="first-letter">File talk</namespace>
+      <namespace key="8" case="first-letter">MediaWiki</namespace>
+      <namespace key="9" case="first-letter">MediaWiki talk</namespace>
+      <namespace key="10" case="first-letter">Template</namespace>
+      <namespace key="11" case="first-letter">Template talk</namespace>
+      <namespace key="12" case="first-letter">Help</namespace>
+      <namespace key="13" case="first-letter">Help talk</namespace>
+      <namespace key="14" case="first-letter">Category</namespace>
+      <namespace key="15" case="first-letter">Category talk</namespace>
+      <namespace key="102" case="first-letter">Property</namespace>
+      <namespace key="103" case="first-letter">Property talk</namespace>
+      <namespace key="106" case="first-letter">Form</namespace>
+      <namespace key="107" case="first-letter">Form talk</namespace>
+      <namespace key="108" case="first-letter">Concept</namespace>
+      <namespace key="109" case="first-letter">Concept talk</namespace>
+      <namespace key="112" case="first-letter">smw/schema</namespace>
+      <namespace key="113" case="first-letter">smw/schema talk</namespace>
+      <namespace key="114" case="first-letter">Rule</namespace>
+      <namespace key="115" case="first-letter">Rule talk</namespace>
+      <namespace key="200" case="first-letter">ArenaNet</namespace>
+      <namespace key="201" case="first-letter">ArenaNet talk</namespace>
+      <namespace key="202" case="first-letter">API</namespace>
+      <namespace key="203" case="first-letter">API talk</namespace>
+      <namespace key="274" case="first-letter">Widget</namespace>
+      <namespace key="275" case="first-letter">Widget talk</namespace>
+    </namespaces>
+  </siteinfo>
+  <page>
+    <title>Zone</title>
+    <ns>0</ns>
+    <id>28294</id>
+    <revision>
+      <id>3106879</id>
+      <parentid>3106877</parentid>
+      <timestamp>2026-02-09T12:14:06Z</timestamp>
+      <contributor>
+        <username>Tery3065</username>
+        <id>270948</id>
+      </contributor>
+      <minor/>
+      <comment>/* Raids */</comment>
+      <origin>3106879</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="49134" sha1="c3vessxg4j026x5d3yjs3vyffjqw8a8" xml:space="preserve">{{otheruses|the explorable locations in the world|the user interface element and interactive map|Map}}
+[[File:Zones.jpg|thumb|right|Map of zones in the [[Tyria (world)|world of Tyria]].]]
+[[File:Mastery region map.jpg|thumb|right|Guild Wars 2 mastery regions based on the experience gains.]]
+A [[zone]], also referred to as a "map", is the primary division of the [[open world]] or a [[instance|playable instance]], and allows open-ended travel and exploration within it. Zone as a type of [[location]] is comprised of a number of smaller [[area]]s; multiple zones form a [[region]]. Moving between zones is possible either through [[Portal (zone)|portals]] that connect neighboring zones, or by using [[waypoint]]s.
+
+All zones in ''[[Guild Wars 2]]'' are located either in the [[Tyria (world)|world of Tyria]] or somewhere in [[the Mists]].
+
+== Exploration ==
+Each zone comes with its own set of activities and objectives. In addition to the [[dynamic event]]s populated in its borders, five measures of completion can be specifically associated with a zone:
+
+* {{map icon|hero}} [[Hero challenge|Hero Challenges]] often present a puzzle or a Veteran foe to a character, completion of which earns another [[Hero point]].
+* {{map icon|heart}} [[Renown Heart]]s ask characters to complete tasks in their environs.
+* {{map icon|poi}} [[Point of Interest|Points of Interest]] mark out special locations to be explored.
+* {{map icon|wp}} [[Waypoint]]s provide instant, safe travel to places previously discovered - for a price.
+* {{map icon|vista}} [[Vista]]s provide a graphical showcase of given locations in the environment.
+
+Bringing up the world [[map]] will show a breakdown of the character's progress for the current zone. Upon [[map completion]], the character receives a reward of some items and [[crafting material]]s, [[experience]], and [[coin]]. This milestone is also acknowledged by the [[Tyrian Explorers Society]] with a letter of recognition.
+
+== List of zones ==
+Historical zones are not listed here. For the differences between mechanical and geographical regions, see [[Region]].
+
+=== Open world ===
+''Open world'' refers to persistent public [[Player versus Environment|PvE]] zones where you can randomly encounter other players. Every open world zone has a recommended difficulty range, expressed as the recommended level player characters should reach before traveling there. The monsters and the recommended level for [[renown heart]]s and [[dynamic event]]s in an area will be between the given levels. The [[dynamic level adjustment]] in the game will put characters at the recommended level for an area if their current level exceeds it. Recommended levels are generally expressed in multiples of 5.
+
+==== Original release zones ====
+[[File:Zones (Core Tyria).jpg|thumb|right|Core Guild Wars 2 zones for [[Map completion#World completion|World completion]].]]
+All zones available in ''[[Guild Wars 2]]'' on release contribute to [[File:Zone icon.png|24px|Counts towards world completion|link=]] [[world completion]] and are available to every account.
+
+{| {{STDT|location sortable}}
+|-
+! class="unsortable" | Loading screen !! Zone !! Levels !! Mechanical region !! Geographical region
+{{Original zone table row|Caledon Forest|geographical=Tarnished Coast}}
+{{Original zone table row|Metrica Province|geographical=Tarnished Coast}}
+{{Original zone table row|Plains of Ashford}}
+{{Original zone table row|Queensdale}}
+{{Original zone table row|Wayfarer Foothills}}
+{{Original zone table row|Brisban Wildlands|geographical=Tarnished Coast;Maguuma Wastes}}
+{{Original zone table row|Diessa Plateau}}
+{{Original zone table row|Kessex Hills}}
+{{Original zone table row|Snowden Drifts}}
+{{Original zone table row|Gendarran Fields}}
+{{Original zone table row|Lornar's Pass|geographical=Shiverpeak Mountains;Steamspur Mountains}}
+{{Original zone table row|Fields of Ruin}}
+{{Original zone table row|Harathi Hinterlands}}
+{{Original zone table row|Blazeridge Steppes}}
+{{Original zone table row|Dredgehaunt Cliffs}}
+{{Original zone table row|Bloodtide Coast|geographical=Kryta;Sea of Sorrows}}
+{{Original zone table row|Iron Marches}}
+{{Original zone table row|Timberline Falls|geographical=Shiverpeak Mountains;Steamspur Mountains}}
+{{Original zone table row|Sparkfly Fen|geographical=Steamspur Mountains;Sea of Sorrows}}
+{{Original zone table row|Fireheart Rise}}
+{{Original zone table row|Mount Maelstrom|geographical=Steamspur Mountains}}
+{{Original zone table row|Straits of Devastation|geographical=Ruins of Orr;Steamspur Mountains}}
+{{Original zone table row|Frostgorge Sound}}
+{{Original zone table row|Malchor's Leap|geographical=Ruins of Orr;Strait of Malchor}}
+{{Original zone table row|Cursed Shore}}
+|}
+
+===== Cities =====
+[[City|Cities]] are special zones without any hostile [[NPC]]s or combat areas, which primarily function as central hubs for trade and [[crafting]].
+{| {{STDT|location sortable}}
+|-
+! class="unsortable" | Loading screen !! City !! Mechanical region !! Geographical region !! Notes
+
+|- class="line-bottom"
+| style="padding:0" | [[File:Black Citadel loading screen.jpg|150px|link=Black Citadel]]
+! [[Black Citadel]]
+| [[Ascalon]]
+| [[Ascalon]]
+| Capital city of the [[charr]]
+
+|- class="line-bottom"
+| style="padding:0" | [[File:Divinity's Reach loading screen.jpg|150px|link=Divinity's Reach]]
+! [[Divinity's Reach]]
+| [[Kryta]]
+| [[Kryta]]
+| Capital city of the [[human]]s
+
+|- class="line-bottom"
+| style="padding:0" | [[File:Hoelbrak loading screen.jpg|150px|link=Hoelbrak]]
+! [[Hoelbrak]]
+| [[Shiverpeak Mountains]]
+| [[Shiverpeak Mountains]]
+| Capital city of the [[norn]]
+
+|- class="line-bottom"
+| style="padding:0" | [[File:Lion's Arch loading screen.jpg|150px|link=Lion's Arch]]
+! [[Lion's Arch]]
+| [[Kryta]]
+| [[Kryta]]
+| Central hub for [[Tyria]]
+
+|- class="line-bottom"
+| style="padding:0" | [[File:Rata Sum loading screen.jpg|150px|link=Rata Sum]]
+! [[Rata Sum]]
+| [[Maguuma Jungle]]
+| [[Tarnished Coast]]
+| Capital city of the [[asura]]
+
+|- class="line-bottom"
+| style="padding:0" | [[File:The Grove loading screen.jpg|150px|link=The Grove]]
+! [[The Grove]]
+| [[Maguuma Jungle]]
+| [[Tarnished Coast]]
+| Capital city of the [[sylvari]]
+
+|}
+
+==== Post-launch zones ====
+All zones added to the game through various [[release]]s and [[expansion]]s after the original game's launch are scaled for level 80. Most of them require having a specific expansion or [[Living World]] episode unlocked, and have one or more [[achievement]] categories connected to it.
+
+{| {{STDT|location sortable}}
+|-
+! class="unsortable" | Loading screen !! Zone !! Access requirement !! Mechanical region !! Geographical region !! [[File:Arenanet Points.png|link=Achievement|24px]] Achievements
+{{Post-launch zone table row|Southsun Cove|lws1|geographical=Sea of Sorrows|achievements=none}}
+{{Post-launch zone table row|Dry Top|lws2}}
+{{Post-launch zone table row|The Silverwastes|lws2}}
+{{Post-launch zone table row|Verdant Brink|hot|geographical=Heart of Maguuma;Maguuma Wastes}}
+{{Post-launch zone table row|Auric Basin|hot}}
+{{Post-launch zone table row|Tangled Depths|hot}}
+{{Post-launch zone table row|Dragon's Stand|hot}}
+{{Post-launch zone table row|Bloodstone Fen|lws3|Out of the Shadows}}
+{{Post-launch zone table row|Ember Bay|lws3|Rising Flames|geographical=Ring of Fire}}
+{{Post-launch zone table row|Bitterfrost Frontier|lws3|A Crack in the Ice|geographical=Shiverpeak Mountains;Far Shiverpeaks}}
+{{Post-launch zone table row|Lake Doric|lws3|The Head of the Snake}}
+{{Post-launch zone table row|Draconis Mons|lws3|Flashpoint}}
+{{Post-launch zone table row|Siren's Landing|lws3|One Path Ends}}
+{{Post-launch zone table row|Crystal Oasis|pof}}
+{{Post-launch zone table row|Desert Highlands|pof|geographical=Crystal Desert;Deldrimor Front}}
+{{Post-launch zone table row|Elon Riverlands|pof|geographical=Crystal Desert;Elon River}}
+{{Post-launch zone table row|The Desolation|pof|geographical=Sulfurous Wastelands;Elon River}}
+{{Post-launch zone table row|Domain of Vabbi|pof|geographical=Vabbi (region)!Vabbi}}
+{{Post-launch zone table row|Domain of Istan|lws4|Daybreak|geographical=Isle of Istan}}
+{{Post-launch zone table row|Sandswept Isles|lws4|A Bug in the System|geographical=Dajkah}}
+{{Post-launch zone table row|Domain of Kourna|lws4|Long Live the Lich|geographical=Kourna (region)!Kourna}}
+{{Post-launch zone table row|Jahai Bluffs|lws4|A Star to Guide Us|geographical=Kourna (region)!Kourna;Vabbi (region)!Vabbi}}
+{{Post-launch zone table row|Thunderhead Peaks|lws4|All or Nothing|geographical=Deldrimor Front}}
+{{Post-launch zone table row|Dragonfall|lws4|War Eternal|geographical=Unending Ocean}}
+{{Post-launch zone table row|Grothmar Valley|lws5|Prologue: Bound by Blood|geographical=Blood Legion Homelands;Far Shiverpeaks}}
+{{Post-launch zone table row|Bjora Marches|lws5|Whisper in the Dark;Shadow in the Ice|geographical=Far Shiverpeaks}}
+{{Post-launch zone table row|Drizzlewood Coast|lws5|No Quarter;Jormag Rising|geographical=Woodland Cascades;Far Shiverpeaks}}
+{{Post-launch zone table row|Seitung Province|eod|geographical=Shing Jea Island}}
+{{Post-launch zone table row|New Kaineng City|eod|geographical=New Kaineng;Drowned Kaineng;The Echovald Forest}}
+{{Post-launch zone table row|The Echovald Wilds|eod|geographical=The Echovald Forest}}
+{{Post-launch zone table row|Dragon's End|eod|geographical=The Jade Sea}}
+{{Post-launch zone table row|Gyala Delve|eod|achievements=Delve into the Haze;What Lies Within (achievements)|geographical=The Jade Sea}}
+{{Post-launch zone table row|Skywatch Archipelago|soto}}
+{{Post-launch zone table row|Amnytas|soto}}
+{{Post-launch zone table row|Inner Nayos|soto|achievements=Inner Nayos: Heitor's Territory (achievements);Inner Nayos: Nyedra Surrounds (achievements);Inner Nayos: Citadel of Zakiros (achievements)|geographical=Nayos}}
+{{Post-launch zone table row|Lowland Shore|jw|achievements=Lowland Shore (achievements)|geographical=Janthir Bay;Woodland Cascades}}
+{{Post-launch zone table row|Janthir Syntri|jw|achievements=Janthir Syntri (achievements)|geographical=The Isles}}
+{{Post-launch zone table row|Mistburned Barrens|jw|achievements=Mistburned Barrens (achievements)|geographical=The Isles}}
+{{Post-launch zone table row|Bava Nisos|jw|achievements=Bava Nisos (achievements)|geographical=The Isles}}
+{{Post-launch zone table row|Shipwreck Strand|voe|achievements=Shipwreck Strand (achievements)}}
+{{Post-launch zone table row|Starlit Weald|voe|achievements=Starlit Weald (achievements)}}
+|}
+
+===== Lobbies and outposts =====
+Similarly to [[City|cities]], lobbies and outposts are mostly combat-free open-world areas with various [[service]]s. However, they are often smaller, they often don't have map completion, and they tend to serve as staging points for specific game modes or activities. The main permanently available lobbies and outposts in PvE are:
+
+{| {{STDT|location sortable}}
+|-
+! class="unsortable" | Loading screen !! Lobby !! Access requirement !! Mechanical region !! Geographical region !! Notes
+
+|- class="line-bottom"
+| style="padding:0" | [[File:Memory of Old Lion's Arch loading screen.png|150px|link=Memory of Old Lion's Arch]]
+! [[Memory of Old Lion's Arch]]
+| &lt;div style="display: flex; align-items: center"&gt;[[File:Living World logo.png|30px|link=Living World Season 1]] &lt;div style="padding-left: 6px"&gt;Requires [[Lion's Pride]] from the {{achievement icon|page=Lion's Memory}} achievement.&lt;br&gt;&lt;small&gt;(Released in [[Living World Season 1]] re-release)&lt;/small&gt;&lt;/div&gt;&lt;/div&gt;
+| [[Kryta]]
+| [[Kryta]]
+| Vision of the version of [[Lion's Arch]] from the game's launch.
+
+|- class="line-bottom"
+| style="padding:0" | [[File:Dragon's Stand loading screen.jpg|150px|link=Dragon's Stand (Heart of Thorns)]]
+! [[Dragon's Stand (Heart of Thorns)]]
+| &lt;div style="display: flex; align-items: center"&gt;{{HoT}} &lt;div style="padding-left: 6px"&gt;[[Guild Wars 2: Heart of Thorns|Heart of Thorns]]&lt;/div&gt;&lt;/div&gt;
+| [[Heart of Maguuma]]
+| [[Heart of Maguuma]]
+| Lobby for the [[Hearts and Minds|final Heart of Thorns story mission]].
+
+|- class="line-bottom"
+| style="padding:0" | [[File:Lion's Arch Aerodrome Loading Screen.jpg|150px|link=Lion's Arch Aerodrome]]
+! [[Lion's Arch Aerodrome]]
+| &lt;div style="display: flex; align-items: center"&gt;[[File:Living World Season 3 logo.png|30px|link=Living World Season 3]] &lt;div style="padding-left: 6px"&gt;''None''&lt;br&gt;&lt;small&gt;(Released before [[Living World Season 3]])&lt;/small&gt;&lt;/div&gt;&lt;/div&gt;
+| [[Kryta]]
+| [[Kryta]]
+| Lobby and staging ground for [[raid]]s. Can be upgraded by purchases through vendors.
+
+|- class="line-bottom"
+| style="padding:0" | [[File:Eye of the North loading screen.jpg|150px|link=Eye of the North]]
+! [[Eye of the North]]
+| &lt;div style="display: flex; align-items: center"&gt;[[File:Living World Season 5 logo.png|30px|link=The Icebrood Saga]] &lt;div style="padding-left: 6px"&gt;''None''&lt;br&gt;&lt;small&gt;(Released in [[The Icebrood Saga]])&lt;/small&gt;&lt;/div&gt;&lt;/div&gt;
+| [[Shiverpeak Mountains]]
+| [[Far Shiverpeaks]]
+| Staging ground for the story, related [[raid encounter]]s and [[Dragon Response Mission|dragon response missions]] in [[the Icebrood Saga]] and group instances from [[Living World Season 1]].&lt;br&gt;Can be upgraded by purchases through vendors.
+
+|- class="line-bottom"
+| style="padding:0" | [[File:Arborstone loading screen.png|150px|link=Arborstone]]
+! [[Arborstone]]
+| &lt;div style="display: flex; align-items: center"&gt;{{EoD}} &lt;div style="padding-left: 6px"&gt;[[Guild Wars 2: End of Dragons|End of Dragons]]&lt;/div&gt;&lt;/div&gt;
+| [[Cantha]]
+| [[The Echovald Forest]]
+| Hub for ''[[Guild Wars 2: End of Dragons]]'' and staging ground for related [[raid encounter]]s.&lt;br&gt;Can be upgraded by training the [[End of Dragons mastery tracks#Arborstone Revitalization|Arborstone Revitalization]] [[mastery]] track, and it has an associated achievement category {{achievement icon|Arborstone (achievements)}}.
+
+|- class="line-bottom"
+| style="padding:0" | [[File:The Wizard's Tower loading screen.png|150px|link=The Wizard's Tower]]
+! [[The Wizard's Tower]]
+| &lt;div style="display: flex; align-items: center"&gt;{{SotO}} &lt;div style="padding-left: 6px"&gt;[[Guild Wars 2: Secrets of the Obscure|Secrets of the Obscure]]&lt;/div&gt;&lt;/div&gt;
+| [[Horn of Maguuma]]
+| [[Horn of Maguuma]]
+| Hub for ''[[Guild Wars 2: Secrets of the Obscure]]'' and staging ground for related [[raid encounter]]s.&lt;br&gt;Has map completion rewards. Can be slightly upgraded by training the [[Secrets of the Obscure mastery tracks#Astral Ward|Astral Ward]] [[mastery]] track, and it has an associated achievement category {{achievement icon|The Wizard's Tower (achievements)}}.
+
+|}
+
+===== Public instances =====
+[[Public instance]]s are special large-scale instances which can be entered in two distinct versions. ''Public'' versions function similarly to open-world zones, where you can enter them and will be randomly matched up with other players, but they tend to only be open for entry this way at [[Event timers|specific times]] during the day. Alternatively, a [[squad]] can at any time open a ''private'' version that cannot be entered by other players. These zones typically revolve around completing a series of events and killing a boss. This system is used for some [[#Raids|raid encounters]] and [[#Dragon Response Missions|Dragon Response Missions]], as well as the following zones:
+
+{| {{STDT|location sortable}}
+|-
+! class="unsortable" | Loading screen !! Zone !! Access requirement !! Mechanical region !! Geographical region !! [[File:Arenanet Points.png|link=Achievement|24px]] Achievements
+
+|- class="line-bottom"
+| style="padding:0" | [[File:Tower of Nightmares loading screen.jpg|150px|link=The Tower of Nightmares]]
+! [[The Tower of Nightmares]]
+| &lt;div style="display: flex; align-items: center"&gt;[[File:Living World logo.png|30px|link=Living World Season 1]] &lt;div style="padding-left: 6px"&gt;''None''&lt;br&gt;&lt;small&gt;(Released in [[Living World Season 1]] re-release)&lt;/small&gt;&lt;/div&gt;&lt;/div&gt;
+| [[Kryta]]
+| [[Kryta]]
+| {{achievement icon|Tower of Nightmares (achievements)}}&lt;br&gt;{{achievement icon|The Nightmares Within (achievements)}}
+
+|- class="line-bottom"
+| style="padding:0" | [[File:The Twisted Marionette loading screen.jpg|150px|link=The Twisted Marionette]]
+! [[The Twisted Marionette]]
+| &lt;div style="display: flex; align-items: center"&gt;[[File:Living World Season 5 logo.png|30px|link=The Icebrood Saga]] &lt;div style="padding-left: 6px"&gt;''None''&lt;br&gt;&lt;small&gt;(Released in [[The Icebrood Saga]])&lt;/small&gt;&lt;/div&gt;&lt;/div&gt;
+| [[Shiverpeak Mountains]]
+| [[Shiverpeak Mountains]]
+| {{achievement icon|The Origins of Madness (achievements)}}&lt;br&gt;{{achievement icon|Revenge of the Marionette}}
+
+|- class="line-bottom"
+| style="padding:0" | [[File:The Battle for Lion's Arch loading screen.png|150px|link=The Battle for Lion's Arch]]
+! [[The Battle for Lion's Arch]]
+| &lt;div style="display: flex; align-items: center"&gt;[[File:Living World logo.png|30px|link=Living World Season 1]] &lt;div style="padding-left: 6px"&gt;''None''&lt;br&gt;&lt;small&gt;(Released in [[Living World Season 1]] re-release)&lt;/small&gt;&lt;/div&gt;&lt;/div&gt;
+| [[Kryta]]
+| [[Kryta]]
+| {{achievement icon|Escape from Lion's Arch (achievements)}}&lt;br&gt;{{achievement icon|The Battle for Lion's Arch (achievements)}}
+
+|- class="line-bottom"
+| style="padding:0" | [[File:Dragonstorm loading screen.jpg|150px|link=Dragonstorm]]
+! [[Dragonstorm]]
+| &lt;div style="display: flex; align-items: center"&gt;[[File:Living World Season 5 logo.png|30px|link=The Icebrood Saga]] &lt;div style="padding-left: 6px"&gt;[[The Icebrood Saga]]&lt;/div&gt;&lt;/div&gt;
+| [[Shiverpeak Mountains]]
+| [[Shiverpeak Mountains]]
+| {{achievement icon|Dragonstorm (achievements)}}
+
+|- class="line-bottom"
+| style="padding:0" | [[File:Convergences loading screen.png|150px|link=Convergence: Outer Nayos]]
+! [[Convergence: Outer Nayos]]
+| &lt;div style="display: flex; align-items: center"&gt;{{SotO}} &lt;div style="padding-left: 6px"&gt;[[Guild Wars 2: Secrets of the Obscure|Secrets of the Obscure]]&lt;/div&gt;&lt;/div&gt;
+| [[The Mists]]
+| [[Nayos]]
+| {{achievement icon|Convergences: Outer Nayos}}
+
+|- class="line-bottom"
+| style="padding:0" | [[File:Mount Balrior loading screen.png|150px|link=Convergence: Mount Balrior]]
+! [[Convergence: Mount Balrior]]
+| &lt;div style="display: flex; align-items: center"&gt;{{JW}} &lt;div style="padding-left: 6px"&gt;[[Guild Wars 2: Janthir Wilds|Janthir Wilds]]&lt;/div&gt;&lt;/div&gt;
+| [[Janthir]]
+| [[The Isles]]
+| {{achievement icon|Convergences: Mount Balrior}}
+
+|}
+
+===== Festival zones =====
+These open-world zones are only available during specific [[festival]]s.
+
+{| {{STDT|location sortable}}
+|-
+! class="unsortable" | Loading screen !! Zone !! Festival !! Mechanical region !! Geographical region !! Notes
+
+|- class="line-bottom"
+| style="padding:0" | [[File:Labyrinthine Cliffs loading screen.jpg|150px|link=Labyrinthine Cliffs]]
+! [[Labyrinthine Cliffs]]
+| &lt;div style="display: flex; align-items: center"&gt;[[File:Special event (map icon).png|20px|link=]] &lt;div style="padding-left: 6px"&gt;[[Festival of the Four Winds]]&lt;/div&gt;&lt;/div&gt;
+| [[Maguuma Jungle]]
+| [[Steamspur Mountains]],&lt;br&gt;[[Deldrimor Front]]
+|
+
+|- class="line-bottom"
+| style="padding:0" | [[File:Mad King's Labyrinth loading screen.jpg|150px|link=Mad King's Labyrinth]]
+! [[Mad King's Labyrinth]]
+| &lt;div style="display: flex; align-items: center"&gt;[[File:Special event (map icon).png|20px|link=]] &lt;div style="padding-left: 6px"&gt;[[Halloween]]&lt;/div&gt;&lt;/div&gt;
+| [[Mad King's Realm]]
+| [[Mad King's Realm]],&lt;br&gt;[[The Mists]]
+| Also connects to the [[Mad King's Raceway]].
+
+|- class="line-bottom"
+| style="padding:0" | [[File:The Crown Pavilion loading screen.jpg|150px|link=The Crown Pavilion (zone)]]
+! [[The Crown Pavilion (zone)|The Crown Pavilion]]
+| &lt;div style="display: flex; align-items: center"&gt;[[File:Special event (map icon).png|20px|link=]] &lt;div style="padding-left: 6px"&gt;[[Festival of the Four Winds]]&lt;/div&gt;&lt;/div&gt;
+| [[Kryta]]
+| [[Kryta]]
+| 
+
+|- class="line-bottom"
+| style="padding:0" | [[File:Super Adventure Box loading screen.jpg|150px|link=Hub]]
+! [[Hub]]
+| &lt;div style="display: flex; align-items: center"&gt;[[File:Special event (map icon).png|20px|link=]] &lt;div style="padding-left: 6px"&gt;[[Super Adventure Festival]]&lt;/div&gt;&lt;/div&gt;
+| [[Super Adventure Box]]
+| Virtual reality,&lt;br&gt;[[Tarnished Coast]]
+| Lobby and staging ground for [[Super Adventure Box]].
+
+|}
+
+===== Lounges =====
+[[Lounge]]s are exclusive convenience areas with various services and portals to other areas. They usually require an item purchased from the {{gem}} [[Gem Store]] to enter. Most lounges are located within other zones but some have their own instances. (See [[Lounge]] for their full list and comparison.)
+{| {{STDT|location sortable}}
+|-
+! class="unsortable" | Loading screen !! Zone !! Mechanical region !! Geographical region !! Notes
+
+|- class="line-bottom"
+| style="padding:0" | [[File:Armistice Bastion.jpg|150px|link=Armistice Bastion]]
+! [[Armistice Bastion]]
+| [[World versus World]]
+| [[The Mists]]
+| 
+
+|- class="line-bottom"
+| style="padding:0" | [[File:Fractals of the Mists loading screen.jpg|150px|link=Mistlock Sanctuary]]
+! [[Mistlock Sanctuary]]
+| [[Fractals of the Mists]]
+| [[The Mists]], [[Fractals of the Mists]]
+| Also serves as a lobby and staging ground for [[Fractals of the Mists]].
+
+|- class="line-bottom"
+| style="padding:0" | [[File:Shing Jea concept art 03.jpg|150px|link=Thousand Seas Pavilion]]
+! [[Thousand Seas Pavilion]]
+| [[Cantha]]
+| [[The Mists]]
+| 
+
+|}
+
+===== Miscellaneous open-world zones =====
+{| {{STDT|location sortable}}
+|-
+! class="unsortable" | Loading screen !! Zone !! Access requirement !! Mechanical region !! Geographical region !! Notes
+
+|- class="line-bottom"
+| style="padding:0" | [[File:The Charge loading screen 2.jpg|150px|link=Mists Rift]]
+! [[Mists Rift]]
+| &lt;div style="display: flex; align-items: center"&gt;[[File:Living World Season 4 logo.png|20px|link=Living World Season 4]] &lt;div style="padding-left: 6px"&gt;''None'' &lt;small&gt;(Released in [[Living World Season 4]])&lt;/small&gt;&lt;/div&gt;&lt;/div&gt;
+| [[Mad King's Realm]]
+| [[The Mists]]
+| Accessed during [[Rift Barrier|Rift]] events throughout Tyria.
+
+|}
+
+==== Map level caption ====
+The recommended level for the zone is expressed as a caption on world map, below the zone name. The caption is color coded based on the difference between player's current level and the zone's recommended level, as follow:
+
+{| {{STDT|location}}
+|-
+! colspan="19" | Level difference &lt;ref&gt;https://forum-en.gw2archive.eu/forum/game/players/Level-colour/page/1#post4647939&lt;/ref&gt;
+|-
+! -8 or less !! -7 !! -6 !! -5 !! -4 !! -3 !! -2 !! -1 !! 0 !! +1 !! +2 !! +3 !! +4 !! +5 !! +6 !! +7 !! +8 !! +9 !! +10 or more
+|- style="text-align: center;" |
+| style="font-weight:bold; background-color:gray;" | Grey
+| colspan="2" style="font-weight:bold; background-color:green; color:white;" | Green
+| colspan="2" style="font-weight:bold; background-color:limegreen" | Light Green
+| colspan="2" style="font-weight:bold; background-color:lightgreen;" | Greenish White
+| colspan="3" style="font-weight:bold; background-color:white;" | White
+| colspan="2" style="font-weight:bold; background-color:pink;" | Light Pink
+| colspan="2" style="font-weight:bold; background-color:lightpink;" | Pink
+| colspan="2" style="font-weight:bold; background-color:lightcoral;" | Light Red
+| style="font-weight:bold; background-color:red; color:white;" | Red
+| style="font-weight:bold; background-color:darkred; color:white;" | Deep Red
+| style="font-weight:bold; background-color:magenta; color:white;" | Magenta
+|}
+&lt;references/&gt;
+
+=== Instances ===
+[[Instance]]s are zones that are opened for a specific [[party]], [[squad]] or [[guild]], or entered alone without other players.
+
+==== Story ====
+{{main|Story Journal|Knight of the Thorn}}
+Many story steps of [[personal story]], [[expansion]]s, [[Living World]] or [[Side Stories]] take place in separate zones. Some of these zones are located in otherwise unreachable places despite appearing on the world map, most notably:
+{| {{STDT|location sortable}}
+|-
+! Loading screen !! Story zone !! Mechanical region !! Geographical region
+|-
+| style="padding:0" | [[File:Retribution.jpg|150px|link=Claw Island]]
+! [[Claw Island]]
+| [[Kryta]]
+| [[Sea of Sorrows]]
+|-
+| style="padding:0" | [[File:The First City loading screen.jpg|150px|link=Fahranur, the First City]]
+! [[Fahranur, the First City]] 
+| [[Crystal Desert]]
+| [[Isle of Istan]]
+|-
+| style="padding:0" | [[File:Mount Balrior loading screen.png|150px|link=Mount Balrior (zone)]]
+! [[Mount Balrior (zone)|Mount Balrior]]
+| [[Janthir]]
+| [[The Isles]]
+|-
+| style="padding:0" | [[File:Foundry of Failed Creations loading screen.png|150px|link=Foundry of Failed Creations]]
+! [[Foundry of Failed Creations]]
+| [[Janthir]]
+| [[The Mists]]
+|}
+
+==== Home instances ====
+[[Home instance]]s are personal instances located in each of the major cities, although they can be entered in a party. They will change depending on progress in [[personal story]], certain achievements and account-wide unlocks. They can be accessed by all accounts.
+{| {{STDT|location sortable}}
+|-
+! Loading screen !! Home instance !! Mechanical region !! Geographical region
+|-
+| style="padding:0" | [[File:Applied Development Lab loading screen.jpg|150px|link=Applied Development Lab]]
+! [[Applied Development Lab]]
+| [[Maguuma Jungle]]
+| [[Tarnished Coast]]
+|-
+| style="padding:0" | [[File:Dreamer's Terrace loading screen.jpg|150px|link=Dreamer's Terrace]]
+! [[Dreamer's Terrace]]
+| [[Maguuma Jungle]]
+| [[Tarnished Coast]]
+|-
+| style="padding:0" | [[File:Hero's Canton loading screen.jpg|150px|link=Hero's Canton]]
+! [[Hero's Canton]]
+| [[Ascalon]]
+| [[Ascalon]]
+|-
+| style="padding:0" | [[File:Hunter's Hearth loading screen.jpg|150px|link=Hunter's Hearth]]
+! [[Hunter's Hearth]]
+| [[Shiverpeak Mountains]]
+| [[Shiverpeak Mountains]]
+|-
+| style="padding:0" | [[File:Salma District loading screen.jpg|150px|link=Salma District]]
+! [[Salma District]]
+| [[Kryta]]
+| [[Kryta]]
+|}
+
+==== Homesteads ====
+[[Homestead]]s are personal instances where a player can decorate and cultivate.
+{| {{STDT|location sortable}}
+|-
+! Loading screen !! Homestead !! Access requirement !! Mechanical region !! Geographical region
+|-
+| style="padding:0" | [[File:Hearth's Glow loading screen.png|150px|link=Hearth's Glow]]
+! [[Hearth's Glow]]
+| &lt;div style="display: flex; align-items: center"&gt;{{JW}} &lt;div style="padding-left: 6px"&gt;[[Guild Wars 2: Janthir Wilds|Janthir Wilds]]&lt;/div&gt;&lt;/div&gt;
+| [[Janthir]]
+| [[Janthir Bay]]
+|-
+| style="padding:0" | [[File:Comosus Isle loading screen.png|150px|link=Comosus Isle]]
+! [[Comosus Isle]]
+| &lt;div style="display: flex; align-items: center"&gt;{{JW}} &lt;div style="padding-left: 6px"&gt;[[Guild Wars 2: Janthir Wilds|Janthir Wilds]] ''and''&lt;/div&gt;&lt;/div&gt;
+&lt;div style="display: flex; align-items: center"&gt;{{VoE}} &lt;div style="padding-left: 6px"&gt;[[Guild Wars 2: Visions of Eternity|Visions of Eternity]]&lt;/div&gt;&lt;/div&gt;
+| [[Castora]]
+| [[Castora]]
+|}
+
+==== Guild instances ====
+; Guild Halls
+[[Guild hall]]s are zones owned by a [[guild]] where its members can meet and socialize. They must be captured by the guild first, and afterwards they can be upgraded and decorated. They also appear on the world map.
+
+Players taking part in the capture event must have their respective expansion unlocked, but afterwards they can be accessed by all accounts.
+{| {{STDT|location sortable}}
+|-
+! Loading screen !! Guild hall !! Capture requirement !! Mechanical region !! Geographical region
+|-
+| style="padding:0" | [[File:Gilded Hollow loading screen.jpg|150px|link=Gilded Hollow]]
+! [[Gilded Hollow]]
+| &lt;div style="display: flex; align-items: center"&gt;{{HoT}} &lt;div style="padding-left: 6px"&gt;[[Guild Wars 2: Heart of Thorns|Heart of Thorns]]&lt;/div&gt;&lt;/div&gt;
+| [[Heart of Maguuma]]
+| [[Heart of Maguuma]]
+|-
+| style="padding:0" | [[File:Lost Precipice loading screen.jpg|150px|link=Lost Precipice]]
+! [[Lost Precipice]]
+| &lt;div style="display: flex; align-items: center"&gt;{{HoT}} &lt;div style="padding-left: 6px"&gt;[[Guild Wars 2: Heart of Thorns|Heart of Thorns]]&lt;/div&gt;&lt;/div&gt;
+| [[Heart of Maguuma]]
+| [[Maguuma Wastes]]
+|-
+| style="padding:0" | [[File:Windswept Haven loading screen.jpg|150px|link=Windswept Haven]]
+! [[Windswept Haven]]
+| &lt;div style="display: flex; align-items: center"&gt;{{PoF}} &lt;div style="padding-left: 6px"&gt;[[Guild Wars 2: Path of Fire|Path of Fire]]&lt;/div&gt;&lt;/div&gt;
+| [[Crystal Desert]]
+| [[Vabbi (region)|Vabbi]]
+|-
+| style="padding:0" | [[File:Isle of Reflection loading screen.png|150px|link=Isle of Reflection]]
+! [[Isle of Reflection]]
+| &lt;div style="display: flex; align-items: center"&gt;{{EoD}} &lt;div style="padding-left: 6px"&gt;[[Guild Wars 2: End of Dragons|End of Dragons]]&lt;/div&gt;&lt;/div&gt;
+| [[Cantha]]
+| [[Shing Jea Island]]
+|}
+
+; Guild Challenges
+[[Guild Challenge]]s are a type of instanced [[guild mission]]s.
+{| {{STDT|location sortable}}
+|-
+! Guild Challenge !! Mechanical region !! Geographical region
+|-
+! [[Blightwater Shatterstrike]]
+| [[Ascalon]]
+| [[Ascalon]]
+|-
+! [[Branded for Termination]]
+| [[Ascalon]]
+| [[Ascalon]]
+|-
+! [[Deep Trouble]]
+| [[Maguuma Jungle]]
+| [[Steamspur Mountains]]
+|-
+! [[Save Our Supplies]]
+| [[Ascalon]]
+| [[Ascalon]]
+|-
+! [[Scratch Sentry Defense]]
+| [[Shiverpeak Mountains]]
+| [[Shiverpeak Mountains]]
+|-
+! [[Southsun Crab Toss]]
+| [[Kryta]]
+| [[Sea of Sorrows]]
+|}
+
+; Guild Puzzle
+[[Guild Puzzle]]s are a type of instanced [[guild mission]]s.
+{| {{STDT|location sortable}}
+|-
+! Guild Puzzle!! Mechanical region !! Geographical region
+|-
+! [[Angvar's Trove (guild puzzle)|Angvar's Trove]]
+| [[Shiverpeak Mountains]]
+| [[Shiverpeak Mountains]]
+|-
+! [[Langmar Estate (guild puzzle)|Langmar Estate]]
+| [[Ascalon]]
+| [[Ascalon]]
+|-
+! [[Proxemics Lab (guild puzzle)|Proxemics Lab]]
+| [[Maguuma Jungle]]
+| [[Maguuma Wastes]]
+|}
+
+==== Dungeons ====
+[[Dungeon]]s are instances intended for a party. They feature [[dynamic level adjustment]] down to the dungeon path's level, and they include [[map completion]] objectives that don't count towards world completion.
+{| {{STDT|location sortable}}
+|-
+! Dungeon !! Access requirement !! Mechanical region !! Geographical region
+|-
+! [[Ascalonian Catacombs]]
+| ''None''
+| [[Ascalon]]
+| [[Ascalon]]
+|-
+! [[Caudecus's Manor]]
+| ''None''
+| [[Kryta]]
+| [[Kryta]]
+|-
+! [[Twilight Arbor]]
+| ''None''
+| [[Maguuma Jungle]]
+| [[Tarnished Coast]]
+|-
+! [[Sorrow's Embrace]]
+| ''None''
+| [[Shiverpeak Mountains]]
+| [[Shiverpeak Mountains]]
+|-
+! [[Citadel of Flame]]
+| ''None''
+| [[Ascalon]]
+| [[Ascalon]]
+|-
+! [[Honor of the Waves]]
+| ''None''
+| [[Shiverpeak Mountains]]
+| [[Shiverpeak Mountains]]
+|-
+! [[Crucible of Eternity]]
+| ''None''
+| [[Maguuma Jungle]]
+| [[Steamspur Mountains]]
+|-
+! [[The Ruined City of Arah]]
+| ''None''
+| [[Ruins of Orr]]
+| [[Ruins of Orr]]
+|-
+! [[Fractals of the Mists]]
+| ''None''
+| [[Fractals of the Mists]]
+| [[The Mists]]
+|-
+! [[Ascent to Madness]]
+| &lt;div style="display: flex; align-items: center"&gt;[[File:Special event (map icon).png|20px|link=]] &lt;div style="padding-left: 6px"&gt;[[Halloween]]&lt;/div&gt;&lt;/div&gt;
+| [[Mad King's Realm]]
+| [[Mad King's Realm]], [[The Mists]]
+|-
+! [[Tixx's Infinirarium]]
+| &lt;div style="display: flex; align-items: center"&gt;[[File:Special event (map icon).png|20px|link=]] &lt;div style="padding-left: 6px"&gt;[[Wintersday]]&lt;/div&gt;&lt;/div&gt;
+| [[Wintersday Celebration]]
+| [[Kryta]]
+|}
+
+==== Raids ====
+[[Raid]]s are difficult instances intended for a squad of level 80 characters, and they include [[map completion]] objectives that don't count towards world completion.
+{| {{STDT|location sortable}}
+|-
+! Raid !! Access requirement !! Mechanical region !! Geographical region
+|-
+! [[Secret Lair of the Snowmen]]
+| &lt;div style="display: flex; align-items: center"&gt;[[File:Special event (map icon).png|20px|link=]] &lt;div style="padding-left: 6px"&gt;[[Wintersday]]&lt;/div&gt;&lt;/div&gt;
+| [[Shiverpeak Mountains]]
+| [[Shiverpeak Mountains]]
+|-
+! [[Old Lion's Court]]
+| &lt;div style="display: flex; align-items: center"&gt;[[File:Living World logo.png|20px|link=Living World Season 1]] &lt;div style="padding-left: 6px"&gt;''None'' &lt;small&gt;(Released in [[Living World Season 1]] re-release)&lt;/small&gt;&lt;/div&gt;&lt;/div&gt;
+| [[Kryta]]
+| [[Kryta]]
+|-
+! [[Spirit Vale]]
+| &lt;div style="display: flex; align-items: center"&gt;{{HoT|20px}} &lt;div style="padding-left: 6px"&gt;[[Guild Wars 2: Heart of Thorns|Heart of Thorns]]&lt;/div&gt;&lt;/div&gt;
+| [[Heart of Maguuma]]
+| [[Heart of Maguuma]]
+|-
+! [[Salvation Pass]]
+| &lt;div style="display: flex; align-items: center"&gt;{{HoT|20px}} &lt;div style="padding-left: 6px"&gt;[[Guild Wars 2: Heart of Thorns|Heart of Thorns]]&lt;/div&gt;&lt;/div&gt;
+| [[Heart of Maguuma]]
+| [[Heart of Maguuma]]
+|-
+! [[Stronghold of the Faithful]]
+| &lt;div style="display: flex; align-items: center"&gt;{{HoT|20px}} &lt;div style="padding-left: 6px"&gt;[[Guild Wars 2: Heart of Thorns|Heart of Thorns]]&lt;/div&gt;&lt;/div&gt;
+| [[Heart of Maguuma]]
+| [[Heart of Maguuma]]
+|-
+! [[Bastion of the Penitent]]
+| &lt;div style="display: flex; align-items: center"&gt;{{HoT|20px}} &lt;div style="padding-left: 6px"&gt;[[Guild Wars 2: Heart of Thorns|Heart of Thorns]]&lt;/div&gt;&lt;/div&gt;
+| [[Heart of Maguuma]]
+| [[Woodland Cascades]]
+|-
+! [[Hall of Chains]]
+| &lt;div style="display: flex; align-items: center"&gt;{{PoF|20px}} &lt;div style="padding-left: 6px"&gt;[[Guild Wars 2: Path of Fire|Path of Fire]]&lt;/div&gt;&lt;/div&gt;
+| [[Crystal Desert]]
+| [[The Mists]]
+|-
+! [[Mythwright Gambit]]
+| &lt;div style="display: flex; align-items: center"&gt;{{PoF|20px}} &lt;div style="padding-left: 6px"&gt;[[Guild Wars 2: Path of Fire|Path of Fire]]&lt;/div&gt;&lt;/div&gt;
+| [[Crystal Desert]]
+| [[Mystic Forge]]
+|-
+! [[The Key of Ahdashim]]
+| &lt;div style="display: flex; align-items: center"&gt;{{PoF|20px}} &lt;div style="padding-left: 6px"&gt;[[Guild Wars 2: Path of Fire|Path of Fire]]&lt;/div&gt;&lt;/div&gt;
+| [[Crystal Desert]]
+| [[Vabbi (region)|Vabbi]]
+|-
+! [[Shiverpeaks Pass]]
+| &lt;div style="display: flex; align-items: center"&gt;[[File:Living World Season 5 logo.png|20px|link=The Icebrood Saga]] &lt;div style="padding-left: 6px"&gt;[[Guild Wars 2: Path of Fire|Path of Fire]] &lt;small&gt;(Released in [[The Icebrood Saga]])&lt;/small&gt;&lt;/div&gt;&lt;/div&gt;
+| [[Ascalon]]
+| [[Far Shiverpeaks]]
+|-
+! [[Voice of the Fallen and Claw of the Fallen]]
+| &lt;div style="display: flex; align-items: center"&gt;[[File:Living World Season 5 logo.png|20px|link=The Icebrood Saga]] &lt;div style="padding-left: 6px"&gt;[[Guild Wars 2: Path of Fire|Path of Fire]] &lt;small&gt;(Released in [[The Icebrood Saga]])&lt;/small&gt;&lt;/div&gt;&lt;/div&gt;
+| [[Shiverpeak Mountains]]
+| [[Far Shiverpeaks]]
+|-
+! [[Fraenir of Jormag]]
+| &lt;div style="display: flex; align-items: center"&gt;[[File:Living World Season 5 logo.png|20px|link=The Icebrood Saga]] &lt;div style="padding-left: 6px"&gt;[[Guild Wars 2: Path of Fire|Path of Fire]] &lt;small&gt;(Released in [[The Icebrood Saga]])&lt;/small&gt;&lt;/div&gt;&lt;/div&gt;
+| [[Shiverpeak Mountains]]
+| [[Far Shiverpeaks]]
+|-
+! [[Boneskinner]]
+| &lt;div style="display: flex; align-items: center"&gt;[[File:Living World Season 5 logo.png|20px|link=The Icebrood Saga]] &lt;div style="padding-left: 6px"&gt;[[Guild Wars 2: Path of Fire|Path of Fire]] &lt;small&gt;(Released in [[The Icebrood Saga]])&lt;/small&gt;&lt;/div&gt;&lt;/div&gt;
+| [[Shiverpeak Mountains]]
+| [[Far Shiverpeaks]]
+|-
+! [[Whisper of Jormag]]
+| &lt;div style="display: flex; align-items: center"&gt;[[File:Living World Season 5 logo.png|20px|link=The Icebrood Saga]] &lt;div style="padding-left: 6px"&gt;[[Guild Wars 2: Path of Fire|Path of Fire]] &lt;small&gt;(Released in [[The Icebrood Saga]])&lt;/small&gt;&lt;/div&gt;&lt;/div&gt;
+| [[Shiverpeak Mountains]]
+| [[Far Shiverpeaks]]
+|-
+! [[Forging Steel]]
+| &lt;div style="display: flex; align-items: center"&gt;[[File:Living World Season 5 logo.png|20px|link=The Icebrood Saga]] &lt;div style="padding-left: 6px"&gt;[[Guild Wars 2: Path of Fire|Path of Fire]] &lt;small&gt;(Released in [[The Icebrood Saga]])&lt;/small&gt;&lt;/div&gt;&lt;/div&gt;
+| [[Shiverpeak Mountains]]
+| [[Blood Legion Homelands]], [[Far Shiverpeaks]]
+|-
+! [[Cold War]]
+| &lt;div style="display: flex; align-items: center"&gt;[[File:Living World Season 5 logo.png|20px|link=The Icebrood Saga]] &lt;div style="padding-left: 6px"&gt;[[Guild Wars 2: Path of Fire|Path of Fire]] &lt;small&gt;(Released in [[The Icebrood Saga]])&lt;/small&gt;&lt;/div&gt;&lt;/div&gt;
+| [[Shiverpeak Mountains]]
+| [[Woodland Cascades]]
+|-
+! [[Aetherblade Hideout]]
+| &lt;div style="display: flex; align-items: center"&gt;{{EoD|20px}} &lt;div style="padding-left: 6px"&gt;[[Guild Wars 2: End of Dragons|End of Dragons]]&lt;/div&gt;&lt;/div&gt;
+| [[Cantha]]
+| [[Shing Jea Island]]
+|-
+! [[Xunlai Jade Junkyard]]
+| &lt;div style="display: flex; align-items: center"&gt;{{EoD|20px}} &lt;div style="padding-left: 6px"&gt;[[Guild Wars 2: End of Dragons|End of Dragons]]&lt;/div&gt;&lt;/div&gt;
+| [[Cantha]]
+| [[The Echovald Forest]]
+|-
+! [[Kaineng Overlook]]
+| &lt;div style="display: flex; align-items: center"&gt;{{EoD|20px}} &lt;div style="padding-left: 6px"&gt;[[Guild Wars 2: End of Dragons|End of Dragons]]&lt;/div&gt;&lt;/div&gt;
+| [[Cantha]]
+| [[New Kaineng]]
+|-
+! [[Harvest Temple]]
+| &lt;div style="display: flex; align-items: center"&gt;{{EoD|20px}} &lt;div style="padding-left: 6px"&gt;[[Guild Wars 2: End of Dragons|End of Dragons]]&lt;/div&gt;&lt;/div&gt;
+| [[Cantha]]
+| [[The Jade Sea]]
+|-
+! [[Cosmic Observatory]]
+| &lt;div style="display: flex; align-items: center"&gt;{{SotO|20px}} &lt;div style="padding-left: 6px"&gt;[[Guild Wars 2: Secrets of the Obscure|Secrets of the Obscure]]&lt;/div&gt;&lt;/div&gt;
+| [[Horn of Maguuma]]
+| [[Horn of Maguuma]]
+|-
+! [[Temple of Febe]]
+| &lt;div style="display: flex; align-items: center"&gt;{{SotO|20px}} &lt;div style="padding-left: 6px"&gt;[[Guild Wars 2: Secrets of the Obscure|Secrets of the Obscure]]&lt;/div&gt;&lt;/div&gt;
+| [[Horn of Maguuma]]
+| [[Nayos]]
+|-
+! [[Mount Balrior]]
+| &lt;div style="display: flex; align-items: center"&gt;{{JW|20px}} &lt;div style="padding-left: 6px"&gt;[[Guild Wars 2: Janthir Wilds|Janthir Wilds]]&lt;/div&gt;&lt;/div&gt;
+| [[Janthir]]
+| [[The Isles]]
+|-
+! [[Guardian's Glade]]
+| &lt;div style="display: flex; align-items: center"&gt;{{VoE|20px}} &lt;div style="padding-left: 6px"&gt;[[Guild Wars 2: Visions of Eternity|Visions of Eternity]]&lt;/div&gt;&lt;/div&gt;
+| [[Castora]]
+| [[Castora]]
+|}
+
+==== Dragon Response Missions ====
+[[Dragon Response Mission]]s are instances intended for a party of level 80 characters. Dragon Response Missions are also available in a [[#Public instances|public version]], where players will be matched up randomly similarly to open-world zones.
+{| {{STDT|location sortable}}
+|-
+! Dragon Response Mission !! Access requirement !! Mechanical region !! Geographical region
+|-
+! [[Dragon Response Mission: Metrica Province|Metrica Province]]
+| &lt;div style="display: flex; align-items: center"&gt;[[File:Living World Season 5 logo.png|30px|link=The Icebrood Saga]] &lt;div style="padding-left: 6px"&gt;[[Champions]] &lt;small&gt;([[The Icebrood Saga]])&lt;/small&gt;&lt;/div&gt;&lt;/div&gt;
+| [[Maguuma Jungle]]
+| [[Tarnished Coast]]
+|-
+! [[Dragon Response Mission: Brisban Wildlands|Brisban Wildlands]]
+| &lt;div style="display: flex; align-items: center"&gt;[[File:Living World Season 5 logo.png|30px|link=The Icebrood Saga]] &lt;div style="padding-left: 6px"&gt;[[Champions]] &lt;small&gt;([[The Icebrood Saga]])&lt;/small&gt;&lt;/div&gt;&lt;/div&gt;
+| [[Maguuma Jungle]]
+| [[Tarnished Coast]]
+|-
+! [[Dragon Response Mission: Gendarran Fields|Gendarran Fields]]
+| &lt;div style="display: flex; align-items: center"&gt;[[File:Living World Season 5 logo.png|30px|link=The Icebrood Saga]] &lt;div style="padding-left: 6px"&gt;[[Champions]] &lt;small&gt;([[The Icebrood Saga]])&lt;/small&gt;&lt;/div&gt;&lt;/div&gt;
+| [[Kryta]]
+| [[Kryta]]
+|-
+! [[Dragon Response Mission: Fields of Ruin|Fields of Ruin]]
+| &lt;div style="display: flex; align-items: center"&gt;[[File:Living World Season 5 logo.png|30px|link=The Icebrood Saga]] &lt;div style="padding-left: 6px"&gt;[[Champions]] &lt;small&gt;([[The Icebrood Saga]])&lt;/small&gt;&lt;/div&gt;&lt;/div&gt;
+| [[Ascalon]]
+| [[Ascalon]]
+|-
+! [[Dragon Response Mission: Thunderhead Peaks|Thunderhead Peaks]]
+| &lt;div style="display: flex; align-items: center"&gt;[[File:Living World Season 5 logo.png|30px|link=The Icebrood Saga]] &lt;div style="padding-left: 6px"&gt;[[Champions]] &lt;small&gt;([[The Icebrood Saga]])&lt;/small&gt;&lt;/div&gt;&lt;/div&gt;
+| [[Shiverpeak Mountains]]
+| [[Deldrimor Front]]
+|-
+! [[Dragon Response Mission: Lake Doric|Lake Doric]]
+| &lt;div style="display: flex; align-items: center"&gt;[[File:Living World Season 5 logo.png|30px|link=The Icebrood Saga]] &lt;div style="padding-left: 6px"&gt;[[Champions]] &lt;small&gt;([[The Icebrood Saga]])&lt;/small&gt;&lt;/div&gt;&lt;/div&gt;
+| [[Kryta]]
+| [[Kryta]]
+|-
+! [[Dragon Response Mission: Snowden Drifts|Snowden Drifts]]
+| &lt;div style="display: flex; align-items: center"&gt;[[File:Living World Season 5 logo.png|30px|link=The Icebrood Saga]] &lt;div style="padding-left: 6px"&gt;[[Champions]] &lt;small&gt;([[The Icebrood Saga]])&lt;/small&gt;&lt;/div&gt;&lt;/div&gt;
+| [[Shiverpeak Mountains]]
+| [[Shiverpeak Mountains]]
+|-
+! [[Dragon Response Mission: Caledon Forest|Caledon Forest]]
+| &lt;div style="display: flex; align-items: center"&gt;[[File:Living World Season 5 logo.png|30px|link=The Icebrood Saga]] &lt;div style="padding-left: 6px"&gt;[[Champions]] &lt;small&gt;([[The Icebrood Saga]])&lt;/small&gt;&lt;/div&gt;&lt;/div&gt;
+| [[Maguuma Jungle]]
+| [[Tarnished Coast]]
+|-
+! [[Dragon Response Mission: Bloodtide Coast|Bloodtide Coast]]
+| &lt;div style="display: flex; align-items: center"&gt;[[File:Living World Season 5 logo.png|30px|link=The Icebrood Saga]] &lt;div style="padding-left: 6px"&gt;[[Champions]] &lt;small&gt;([[The Icebrood Saga]])&lt;/small&gt;&lt;/div&gt;&lt;/div&gt;
+| [[Kryta]]
+| [[Kryta]]
+|-
+! [[Dragon Response Mission: Fireheart Rise|Fireheart Rise]]
+| &lt;div style="display: flex; align-items: center"&gt;[[File:Living World Season 5 logo.png|30px|link=The Icebrood Saga]] &lt;div style="padding-left: 6px"&gt;[[Champions]] &lt;small&gt;([[The Icebrood Saga]])&lt;/small&gt;&lt;/div&gt;&lt;/div&gt;
+| [[Ascalon]]
+| [[Ascalon]]
+|}
+
+==== Miscellaneous instances ====
+{| {{STDT|location sortable}}
+|-
+! Zone !! Access requirement !! Mechanical region !! Geographical region !! Notes
+|-
+! [[Chantry of Secrets]]
+| ''None''
+| [[Kryta]]
+| [[Kryta]]
+| [[Order of Whispers]]' base of operations within [[Bloodtide Coast]].
+|-
+! [[Cragstead]]
+| &lt;div style="display: flex; align-items: center"&gt;[[File:Living World logo.png|20px|link=Living World Season 1]] &lt;div style="padding-left: 6px"&gt;[[Flame and Frost]] &lt;small&gt;([[Living World Season 1]])&lt;/small&gt;&lt;/div&gt;&lt;/div&gt;
+| [[Shiverpeak Mountains]]
+| [[Shiverpeak Mountains]]
+| A village northeast in the [[Wayfarer Foothills]] and [[Braham]]'s home.
+|-
+! [[North Nolan Hatchery]]
+| &lt;div style="display: flex; align-items: center"&gt;[[File:Living World logo.png|20px|link=Living World Season 1]] &lt;div style="padding-left: 6px"&gt;[[Flame and Frost]] &lt;small&gt;([[Living World Season 1]])&lt;/small&gt;&lt;/div&gt;&lt;/div&gt;
+| [[Ascalon]]
+| [[Ascalon]]
+| Training and hatching facility operated by the [[Blood Legion]] in the [[Diessa Plateau]].
+|-
+! [[Scarlet's Secret Lair]]
+| &lt;div style="display: flex; align-items: center"&gt;[[File:Living World logo.png|20px|link=Living World Season 1]] &lt;div style="padding-left: 6px"&gt;[[The Origins of Madness]] &lt;small&gt;([[Living World Season 1]])&lt;/small&gt;&lt;/div&gt;&lt;/div&gt;
+| [[Shiverpeak Mountains]]
+| [[Shiverpeak Mountains]]
+| One of [[Scarlet Briar]]'s many hidden workshops. It's located under the [[Durmand Priory]] in [[Lornar's Pass]].
+|-
+! [[Special Forces Training Area]]
+| &lt;div style="display: flex; align-items: center"&gt;[[File:Living World Season 3 logo.png|20px|link=Living World Season 3]] &lt;div style="padding-left: 6px"&gt;Any [[expansion]] &lt;small&gt;(Released before [[Living World Season 3]])&lt;/small&gt;&lt;/div&gt;&lt;/div&gt;
+| [[Kryta]]
+| [[Kryta]]
+| Training area for raid [[squad]]s.
+|-
+! [[Sun's Refuge]]
+| &lt;div style="display: flex; align-items: center"&gt;[[File:Living World Season 4 logo.png|20px|link=Living World Season 4]] &lt;div style="padding-left: 6px"&gt;[[A Star to Guide Us]] &lt;small&gt;([[Living World Season 4]])&lt;/small&gt;&lt;/div&gt;&lt;/div&gt;
+| [[Crystal Desert]]
+| [[Kourna (region)|Kourna]]
+| Upgradable instanced story hub.
+|-
+! [[Super Adventure Box]]
+| &lt;div style="display: flex; align-items: center"&gt;[[File:Special event (map icon).png|20px|link=]] &lt;div style="padding-left: 6px"&gt;[[Super Adventure Festival]]&lt;/div&gt;&lt;/div&gt;
+| [[Super Adventure Box]]
+| Virtual reality, [[Tarnished Coast]]
+| Special activity focused on [[jumping puzzle]]s with pixelated graphics. See [[Super Adventure Box]] for a list of its sub-zones.
+|-
+! [[The Durmand Priory (instance)|The Durmand Priory]]
+| ''None''
+| [[Shiverpeak Mountains]]
+| [[Shiverpeak Mountains]]
+| The inner sanctum of the [[Durmand Priory]]'s [[Durmand Priory (location)|monastery]]. Sometimes also connects to the [[Hidden Arcana (zone)|Hidden Arcana]] instance.
+|}
+
+See also [[#Public instances|public instances]], which are available both in public open-world versions and private squad instances.
+
+=== PvP zones ===
+==== World versus World ====
+[[File:Eternal Battlegrounds loading screen.jpg|thumb|right|Eternal Battlegrounds loading screen]]
+All [[World versus World]] zones are located in the [[World vs. World]] region of [[The Mists]]. These zones include [[map completion]] objectives but don't count towards world completion. All players here are [[Dynamic level adjustment|scaled]] to level 80.
+{| {{STDT|location sortable}}
+|-
+! Zone !! Notes
+|-
+! [[Eternal Battlegrounds]]
+| Central core combat map
+|-
+! [[Blue Alpine Borderlands]]
+| Eastern core combat map
+|-
+! [[Red Desert Borderlands]]
+| Northern core combat map
+|-
+! [[Green Alpine Borderlands]]
+| Western core combat map
+|-
+! [[Obsidian Sanctum (zone)|Obsidian Sanctum]]
+| [[Jumping puzzle]] combat map
+|-
+! [[Edge of the Mists]]
+| Special combat map
+|-
+! [[Armistice Bastion]]
+| [[Lounge]], entry requires purchase of a lounge pass
+|}
+
+==== Structured PvP ====
+[[File:Heart of the Mists loading screen.jpg|thumb|right|Heart of the Mists loading screen]]
+All [[structured PvP]] zones are located in the [[Player vs. Player]] region of [[The Mists]]. All players here are [[Dynamic level adjustment|scaled]] to level 80 and use special PvP-only equipment.
+{| {{STDT|location sortable}}
+|-
+! Zone !! Notes
+|-
+! [[Heart of the Mists]]
+| Lobby
+|-
+! [[Asura Arena]]
+| [[Team Deathmatch]] arena
+|-
+! [[Auric Span]]
+| [[Team Deathmatch]] arena
+|-
+! [[Battle of Champion's Dusk]]
+| [[Stronghold]] arena
+|-
+! [[Battle of Kyhlo]]
+| [[Conquest]] arena
+|-
+! [[Courtyard]]
+| [[Murderball]] and [[Team Deathmatch]] arena
+|-
+! [[Djinn's Dominion]]
+| [[Conquest]] arena
+|-
+! [[Eternal Coliseum]]
+| [[Conquest]] arena
+|-
+! [[Forest of Niflhel]]
+| [[Conquest]] arena
+|-
+! [[Hall of the Mists]]
+| [[Team Deathmatch]] arena
+|-
+! [[Legacy of the Foefire]]
+| [[Conquest]] arena
+|-
+! [[Revenge of the Capricorn]]
+| [[Conquest]] arena
+|-
+! [[Skyhammer]]
+| [[Conquest]] arena
+|-
+! [[Spirit Watch]]
+| [[Conquest]] arena
+|-
+! [[Temple of the Silent Storm]]
+| [[Conquest]] arena
+|}
+
+==== Activities ====
+[[Activity|Activities]] are small mini-games. Most activities feature some sort of PvP, or at least a competitive scoreboard.
+{| {{STDT|location sortable}}
+|-
+! Zone !! Access requirement !! Mechanical region !! Geographical region
+|-
+! [[Crab Toss]]
+| ''None''
+| [[Kryta]]
+| [[Sea of Sorrows]]
+|-
+! [[Keg Brawl]]
+| ''None''
+| [[Shiverpeak Mountains]]
+| [[Shiverpeak Mountains]]
+|-
+! [[Sanctum Sprint]]
+| ''None''
+| [[Maguuma Jungle]]
+| [[Steamspur Mountains]]
+|-
+! [[Southsun Survival]]
+| ''None''
+| [[Kryta]]
+| [[Sea of Sorrows]]
+|-
+! [[Dragon Arena]]
+| &lt;div style="display: flex; align-items: center"&gt;[[File:Special event (map icon).png|20px|link=]] &lt;div style="padding-left: 6px"&gt;[[Dragon Bash]]&lt;/div&gt;&lt;/div&gt;
+| [[Kryta]]
+| [[Kryta]]
+|-
+! [[Lunatic Inquisition]]
+| &lt;div style="display: flex; align-items: center"&gt;[[File:Special event (map icon).png|20px|link=]] &lt;div style="padding-left: 6px"&gt;[[Halloween]]&lt;/div&gt;&lt;/div&gt;
+| [[Mad King's Realm]]
+| [[Mad King's Realm]], [[The Mists]]
+|-
+! [[Mad King's Clock Tower]]
+| &lt;div style="display: flex; align-items: center"&gt;[[File:Special event (map icon).png|20px|link=]] &lt;div style="padding-left: 6px"&gt;[[Halloween]]&lt;/div&gt;&lt;/div&gt;
+| [[Mad King's Realm]]
+| [[Mad King's Realm]], [[The Mists]]
+|-
+! [[Reaper's Rumble]]
+| &lt;div style="display: flex; align-items: center"&gt;[[File:Special event (map icon).png|20px|link=]] &lt;div style="padding-left: 6px"&gt;[[Halloween]]&lt;/div&gt;&lt;/div&gt;
+| [[Mad King's Realm]]
+| [[Mad King's Realm]], [[The Mists]]
+|-
+! [[Winter Wonderland]]
+| &lt;div style="display: flex; align-items: center"&gt;[[File:Special event (map icon).png|20px|link=]] &lt;div style="padding-left: 6px"&gt;[[Wintersday]]&lt;/div&gt;&lt;/div&gt;
+| [[Wintersday Celebration]]
+| [[Kryta]]
+|-
+! [[Bell Choir Ensemble]]
+| &lt;div style="display: flex; align-items: center"&gt;[[File:Special event (map icon).png|20px|link=]] &lt;div style="padding-left: 6px"&gt;[[Wintersday]]&lt;/div&gt;&lt;/div&gt;
+| [[Wintersday Celebration]]
+| [[Kryta]]
+|-
+! [[Snowball Mayhem]]
+| &lt;div style="display: flex; align-items: center"&gt;[[File:Special event (map icon).png|20px|link=]] &lt;div style="padding-left: 6px"&gt;[[Wintersday]]&lt;/div&gt;&lt;/div&gt;
+| [[Wintersday Celebration]]
+| [[Kryta]]
+|-
+! [[Toypocalypse]]
+| &lt;div style="display: flex; align-items: center"&gt;[[File:Special event (map icon).png|20px|link=]] &lt;div style="padding-left: 6px"&gt;[[Wintersday]]&lt;/div&gt;&lt;/div&gt;
+| [[Wintersday Celebration]]
+| [[Kryta]]
+|-
+! [[Dragon Ball Arena]]
+| &lt;div style="display: flex; align-items: center"&gt;[[File:Special event (map icon).png|20px|link=]] &lt;div style="padding-left: 6px"&gt;[[Lunar New Year]]&lt;/div&gt;&lt;/div&gt;
+| [[Kryta]]
+| [[Kryta]]
+|-
+! [[Celestial Challenge]]
+| &lt;div style="display: flex; align-items: center"&gt;[[File:Special event (map icon).png|20px|link=]] &lt;div style="padding-left: 6px"&gt;[[Lunar New Year]]&lt;/div&gt;&lt;/div&gt;
+| [[Kryta]]
+| [[Kryta]]
+|}
+
+== See also ==
+* [[Region]]
+
+{{zone nav}}
+
+[[Category:Locations]]
+[[de:Gebiet]]
+[[es:Zona]]
+[[fr:Zone explorable]]</text>
+      <sha1>c3vessxg4j026x5d3yjs3vyffjqw8a8</sha1>
+    </revision>
+  </page>
+</mediawiki>

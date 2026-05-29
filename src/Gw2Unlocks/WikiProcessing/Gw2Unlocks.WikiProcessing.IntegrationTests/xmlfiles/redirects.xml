@@ -1,0 +1,218 @@
+<mediawiki xmlns="http://www.mediawiki.org/xml/export-0.11/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mediawiki.org/xml/export-0.11/ http://www.mediawiki.org/xml/export-0.11.xsd" version="0.11" xml:lang="en">
+  <siteinfo>
+    <sitename>Guild Wars 2 Wiki</sitename>
+    <dbname>en_wikidb_gw2</dbname>
+    <base>https://wiki.guildwars2.com/wiki/Main_Page</base>
+    <generator>MediaWiki 1.39.17</generator>
+    <case>first-letter</case>
+    <namespaces>
+      <namespace key="-2" case="first-letter">Media</namespace>
+      <namespace key="-1" case="first-letter">Special</namespace>
+      <namespace key="0" case="first-letter" />
+      <namespace key="1" case="first-letter">Talk</namespace>
+      <namespace key="2" case="first-letter">User</namespace>
+      <namespace key="3" case="first-letter">User talk</namespace>
+      <namespace key="4" case="first-letter">Guild Wars 2 Wiki</namespace>
+      <namespace key="5" case="first-letter">Guild Wars 2 Wiki talk</namespace>
+      <namespace key="6" case="first-letter">File</namespace>
+      <namespace key="7" case="first-letter">File talk</namespace>
+      <namespace key="8" case="first-letter">MediaWiki</namespace>
+      <namespace key="9" case="first-letter">MediaWiki talk</namespace>
+      <namespace key="10" case="first-letter">Template</namespace>
+      <namespace key="11" case="first-letter">Template talk</namespace>
+      <namespace key="12" case="first-letter">Help</namespace>
+      <namespace key="13" case="first-letter">Help talk</namespace>
+      <namespace key="14" case="first-letter">Category</namespace>
+      <namespace key="15" case="first-letter">Category talk</namespace>
+      <namespace key="102" case="first-letter">Property</namespace>
+      <namespace key="103" case="first-letter">Property talk</namespace>
+      <namespace key="106" case="first-letter">Form</namespace>
+      <namespace key="107" case="first-letter">Form talk</namespace>
+      <namespace key="108" case="first-letter">Concept</namespace>
+      <namespace key="109" case="first-letter">Concept talk</namespace>
+      <namespace key="112" case="first-letter">smw/schema</namespace>
+      <namespace key="113" case="first-letter">smw/schema talk</namespace>
+      <namespace key="114" case="first-letter">Rule</namespace>
+      <namespace key="115" case="first-letter">Rule talk</namespace>
+      <namespace key="200" case="first-letter">ArenaNet</namespace>
+      <namespace key="201" case="first-letter">ArenaNet talk</namespace>
+      <namespace key="202" case="first-letter">API</namespace>
+      <namespace key="203" case="first-letter">API talk</namespace>
+      <namespace key="274" case="first-letter">Widget</namespace>
+      <namespace key="275" case="first-letter">Widget talk</namespace>
+    </namespaces>
+  </siteinfo>
+  <page>
+    <title>Pile of Bloodstone Dust</title>
+    <ns>0</ns>
+    <id>101461</id>
+    <revision>
+      <id>3019143</id>
+      <parentid>2904107</parentid>
+      <timestamp>2025-08-24T18:02:18Z</timestamp>
+      <contributor>
+        <username>J.A.R.V.I.S.</username>
+        <id>207015</id>
+      </contributor>
+      <minor/>
+      <comment>/* Recipe */ bot edit - &gt;  fixing redirects</comment>
+      <origin>3019143</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="1433" sha1="m2bwryu572iybugzdawsdemerb99jfi" xml:space="preserve">{{Item infobox
+| description = Refine into [[Bloodstone Brick|bloodstone brick]]s.
+| type = crafting material
+| material type = ascended
+| tier = 7
+| material storage = Ascended Materials
+| rarity = ascended
+| bound = account
+| id = 46731
+}}
+[[Pile of Bloodstone Dust]] is a [[crafting material]] used in the process of [[crafting]] [[ascended]] gear.
+
+== Acquisition ==
+=== Gathered from ===
+{{gathered from}}
+
+=== Contained in ===
+==== Guaranteed ====
+{{contained in|columns=3|chance=Guaranteed}}
+
+==== Chance ====
+{{Contained in|columns=3|chance=Chance}}
+
+=== Recipe ===
+[[Bloodstone Brick]]s can be demoted through the [[Mystic Forge]].
+{{recipe
+| source = Mystic Forge
+| quantity = 100
+| type = Demotion
+| ingredient1 = 1 Bloodstone Brick
+| ingredient2 = 1 Pile of Bloodstone Dust
+| ingredient3 = 1 Fine Essence of Luck
+| ingredient4 = 1 Mystic Coin
+}}
+
+=== Rewarded by ===
+{{rewarded by}}
+
+== Used in ==
+{{recipe list by discipline}}
+
+=== Other ===
+* Completing [[The Bifrost I: The Experimental Staff]] collection requires 900 Piles of Bloodstone Dust.
+
+== Currency for ==
+{{see|Converter}}
+{{Vendor query table|currency=Pile of Bloodstone Dust}}
+
+== Notes ==
+* [[Seimur Oxbone]] is the only chef that uses bloodstone dust to make food.
+
+== See also ==
+* {{item icon|Dragonite Ore}}
+* {{item icon|Empyreal Fragment}}
+
+[[de:Haufen Blutsteinstaub]]
+[[es:Montón de polvo de hematites]]
+[[fr:Tas de poussière de pierre de sang]]</text>
+      <sha1>m2bwryu572iybugzdawsdemerb99jfi</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Piles of Bloodstone Dust</title>
+    <ns>0</ns>
+    <id>102251</id>
+    <redirect title="Pile of Bloodstone Dust" />
+    <revision>
+      <id>673341</id>
+      <timestamp>2013-09-06T20:04:48Z</timestamp>
+      <contributor>
+        <username>Somohexual</username>
+        <id>84645</id>
+      </contributor>
+      <comment>Redirected page to [[Pile of Bloodstone Dust]]</comment>
+      <origin>673341</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="37" sha1="n2tjn8mh0i9aipu2aj0c3b4w4rmicnw" xml:space="preserve">#REDIRECT [[Pile of Bloodstone Dust]]</text>
+      <sha1>n2tjn8mh0i9aipu2aj0c3b4w4rmicnw</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Lumps of Aurillium</title>
+    <ns>0</ns>
+    <id>187246</id>
+    <redirect title="Lump of Aurillium" />
+    <revision>
+      <id>1239832</id>
+      <timestamp>2016-08-04T18:35:46Z</timestamp>
+      <contributor>
+        <username>Idris</username>
+        <id>160673</id>
+      </contributor>
+      <comment>Creating redirect.</comment>
+      <origin>1239832</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="62" sha1="kixtyv5e9efxn8jay14b7kvt3q3h8dn" xml:space="preserve">#REDIRECT [[Lump of Aurillium]]
+
+[[Category:Plural redirects]]</text>
+      <sha1>kixtyv5e9efxn8jay14b7kvt3q3h8dn</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Lump of Aurillium</title>
+    <ns>0</ns>
+    <id>160409</id>
+    <revision>
+      <id>2859600</id>
+      <parentid>2494258</parentid>
+      <timestamp>2024-08-25T11:50:08Z</timestamp>
+      <contributor>
+        <username>Sunlion</username>
+        <id>225997</id>
+      </contributor>
+      <origin>2859600</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="1331" sha1="0ngw4lzb6a6e2gz70utz3a8kk82caai" xml:space="preserve">{{Item infobox
+| type = Service
+| rarity = Rare
+| bound = Account
+| id = 75012
+| requires = hot
+}}
+&lt;small&gt;As wallet currency:&lt;/small&gt;
+{{Quotation|game|Earned and spent in Auric Basin. Train the Exalted Acceptance Mastery line to trade with Exalted merchants for auric weapon recipes and other goods.}}
+[[Lump of Aurillium]] is a [[currency]] earned by participating in events in [[Auric Basin]]. They are stored in the [[Currency|Account Wallet]] and can be spent at merchants within the Auric Basin.
+
+== Acquisition ==
+=== Gathered from ===
+{{gathered from}}
+
+=== Contained in ===
+{{contained in}}
+
+=== Events ===
+* Rewarded for completing [[:Category:Auric Basin events|events]] in [[Auric Basin]].
+
+== Used in ==
+{{recipe list}}
+
+== Vendors ==
+* The [[Priory Explorer (aurillium collector)|Aurillium Collector]] at the Pact Camp in [[Tarnished Treetop]] sells [[Exalted Key]]s and recipes for crafting Viper's prefix gear.
+* The [[Exalted Mastery Vendor]] in [[Tarir, the Forgotten City]] provides a wide variety of goods.
+* Used to purchase [[Machete]]s from the [[Whispers Keeper]] at the Pact Base Camp in [[Dragon's Stand]].
+* Can be used in the appropriately upgraded [[Ley-Energy Matter Converter]] to purchase 1 container daily.
+
+{{Currencies nav}}
+
+[[de:Aurilliumklumpen]]
+[[es:Trozo de aurilio]]
+[[fr:Bloc d'aurillium]]</text>
+      <sha1>0ngw4lzb6a6e2gz70utz3a8kk82caai</sha1>
+    </revision>
+  </page>
+</mediawiki>
