@@ -85,10 +85,34 @@
       border-right: 1px solid #333;
       padding: 16px;
       overflow-y: auto;
-      position: sticky;
+      position: fixed;
       top: 70px;
+      left: 0;
       height: calc(100vh - 70px);
       background: #151515;
+      z-index: 900;
+      transform: translateX(-100%);
+      transition: transform 0.2s ease;
+      }
+
+      .sidebar.open {
+      transform: translateX(0);
+      }
+
+      .menu-toggle {
+      background: #333;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 8px 12px;
+      cursor: pointer;
+      font-size: 1rem;
+      }
+
+      .content {
+      flex: 1;
+      padding: 20px;
+      width: 100%;
       }
 
       .content {
@@ -234,88 +258,89 @@
       }
 
       @media (max-width: 768px) {
-        .controls {
-        flex-wrap: wrap;
-        gap: 10px;
-        padding: 10px;
-        }
+      .controls {
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 10px;
+      }
 
-        .controls input {
-        width: 100%;
-        box-sizing: border-box;
-        }
+      .controls input {
+      width: 100%;
+      box-sizing: border-box;
+      }
 
-        .layout {
-        flex-direction: column;
-        }
+      .layout {
+      flex-direction: column;
+      }
 
-        .sidebar {
-        width: auto;
-        height: auto;
-        position: static;
-        border-right: none;
-        border-bottom: 1px solid #333;
-        max-height: 240px;
-        }
+      .sidebar {
+      width: 260px;
+      max-width: 80vw;
+      border-right: 1px solid #333;
+      border-bottom: none;
+      max-height: none;
 
-        .content {
-        padding: 14px;
-        }
+      top: 70px;
+      height: calc(100vh - 70px);
 
-        .grid {
-        grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
-        gap: 10px;
-        }
+      z-index: 900;
+      }
 
-        .icon-wrap,
-        .icon-wrap img {
-        width: 56px;
-        height: 56px;
-        }
+      .content {
+      padding: 14px;
+      }
 
-        .reward-badge img {
-        width: 20px;
-        height: 20px;
-        }
+      .grid {
+      grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+      gap: 10px;
+      }
 
-        .item-name {
-        font-size: 0.75rem;
-        }
+      .icon-wrap,
+      .icon-wrap img {
+      width: 56px;
+      height: 56px;
+      }
 
-        .modal {
-        width: calc(100vw - 32px);
-        padding: 18px;
-        }
+      .reward-badge img {
+      width: 20px;
+      height: 20px;
+      }
 
-        .modal-actions {
-        flex-direction: column;
-        }
+      .item-name {
+      font-size: 0.75rem;
+      }
 
-        .modal-actions a,
-        .modal-actions button {
-        width: 100%;
-        box-sizing: border-box;
-        }
+      .modal {
+      width: calc(100vw - 32px);
+      padding: 18px;
+      }
+
+      .modal-actions {
+      flex-direction: column;
+      }
+
+      .modal-actions a,
+      .modal-actions button {
+      width: 100%;
+      box-sizing: border-box;
+      }
       }
     </style>
   </head>
 
   <body>
     <div class="controls">
-      API Key:
+      <button id="menu-toggle" class="menu-toggle" aria-label="Toggle menu">
+        ☰
+      </button>
+      <span>API Key:</span>
       <input
         id="apikey"
         type="text"
         size="50"
         autocomplete="off"
         aria-label="Guild Wars 2 API Key"
-    />
-      <button id="savekey">
-        Save
-      </button>
-      <button id="refresh">
-        Refresh API Data
-      </button>
+        />
       <span id="status"></span>
       <div style="margin-left:auto; display:flex; gap:8px;">
         <a
@@ -5184,16 +5209,9 @@
       const wikiLink = document.getElementById("wiki-link");
 
       const apiInput = document.getElementById("apikey");
-      const saveBtn = document.getElementById("savekey");
-      const refreshBtn = document.getElementById("refresh");
       const statusEl = document.getElementById("status");
 
       apiInput.value = localStorage.getItem(STORAGE_KEYS.apiKey) || "";
-
-      saveBtn.addEventListener("click", () => {
-      localStorage.setItem(STORAGE_KEYS.apiKey, apiInput.value);
-      setStatus("API key saved");
-      });
 
       function setStatus(text) {
       statusEl.textContent = text;
@@ -5282,7 +5300,35 @@
       }
       });
 
-      refreshBtn.addEventListener("click", refreshApi);
+      apiInput.value = localStorage.getItem(STORAGE_KEYS.apiKey) || "";
+      
+      const menuToggle = document.getElementById("menu-toggle");
+      const sidebar = document.getElementById("sidebar");
+
+      menuToggle.addEventListener("click", () => {
+      sidebar.classList.toggle("open");
+      });
+
+      apiInput.addEventListener("input", async () => {
+      const key = apiInput.value.trim();
+
+      if (key.length !== 72) {
+      return;
+      }
+
+      const currentSaved =
+      localStorage.getItem(STORAGE_KEYS.apiKey);
+
+      if (currentSaved === key) {
+      return;
+      }
+
+      localStorage.setItem(STORAGE_KEYS.apiKey, key);
+
+      setStatus("API key saved");
+
+      await refreshApi();
+      });
 
       async function refreshApi() {
 
@@ -5403,6 +5449,11 @@
 
     updateUnlockStates();
     updateSidebar();
+    const existingKey = localStorage.getItem(STORAGE_KEYS.apiKey);
+
+    if (existingKey && existingKey.length === 72) {
+      refreshApi();
+    }
 
     </script>
   </body>

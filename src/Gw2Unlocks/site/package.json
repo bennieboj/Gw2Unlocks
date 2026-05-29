@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "build": "vite build",
-    "preview": "concurrently \"vite build --watch\" \"vite preview --port 5000 --open\""
+    "preview": "concurrently \"vite build --watch\" \"vite preview --port 5000 --open --host\""
   },
   "keywords": [],
   "author": "",
