@@ -1,6 +1,5 @@
-﻿using GuildWars2.Hero.Equipment.Outfits;
-using Gw2Unlocks.Cache.Common;
-using Gw2Unlocks.UnlockClassifier;
+﻿using Gw2Unlocks.UnlockClassifier;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Scriban;
@@ -20,6 +19,7 @@ namespace Gw2Unlocks.Website;
 internal sealed class SiteGeneratorService(
     ILogger<SiteGeneratorService> logger,
     IClassifierCache classifierCache,
+    IHostEnvironment env,
     IHostApplicationLifetime hostApplicationLifetime) : BackgroundService
 {
     private FileSystemWatcher? _watcher;
@@ -36,23 +36,7 @@ internal sealed class SiteGeneratorService(
     {
         try
         {
-            _watcher = new FileSystemWatcher("WebsiteTemplates")
-            {
-                IncludeSubdirectories = true,
-                NotifyFilter = NotifyFilters.LastWrite | NotifyFilters.FileName
-            };
-
-            _watcher.Changed += OnChanged;
-            _watcher.Created += OnChanged;
-            _watcher.Deleted += OnChanged;
-            _watcher.Renamed += OnChanged;
-
-            _watcher.EnableRaisingEvents = true;
-
-            logger.LogInformation("Template watcher started");
-
-            // keep service alive
-            await Task.Delay(Timeout.Infinite, stoppingToken);
+            await DoWork(stoppingToken);
         }
         catch (OperationCanceledException)
         {
@@ -66,6 +50,33 @@ internal sealed class SiteGeneratorService(
         {
             hostApplicationLifetime.StopApplication();
         }
+    }
+
+    private async Task DoWork(CancellationToken stoppingToken)
+    {
+        if (!env.IsDevelopment())
+        {
+            await GenerateSite(stoppingToken);
+            return;
+        }
+
+        _watcher = new FileSystemWatcher("WebsiteTemplates")
+        {
+            IncludeSubdirectories = true,
+            NotifyFilter = NotifyFilters.LastWrite | NotifyFilters.FileName
+        };
+
+        _watcher.Changed += OnChanged;
+        _watcher.Created += OnChanged;
+        _watcher.Deleted += OnChanged;
+        _watcher.Renamed += OnChanged;
+
+        _watcher.EnableRaisingEvents = true;
+
+        logger.LogInformation("Template watcher started");
+
+        // keep service alive
+        await Task.Delay(Timeout.Infinite, stoppingToken);
     }
 
     private void OnChanged(object sender, FileSystemEventArgs e)
