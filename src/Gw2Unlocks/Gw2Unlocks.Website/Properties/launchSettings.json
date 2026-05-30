@@ -5,9 +5,9 @@
       "launchBrowser": true,
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development", //used to not run website generation in build pipeline
-        "DOTNET_ENVIRONMENT": "Development"      //used to not run website generation in build pipeline
+        "DOTNET_ENVIRONMENT": "Development" //used to not run website generation in build pipeline
       },
-      "applicationUrl": "http://localhost:5000"
+      "applicationUrl": "http://localhost:5000/heart-of-thorns/verdant-brink/"
     }
   }
 }
