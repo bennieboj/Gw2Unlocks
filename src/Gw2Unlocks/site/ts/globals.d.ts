@@ -1,1 +1,0 @@
-declare const __VITE_MODE__: "development" | "production" | string;

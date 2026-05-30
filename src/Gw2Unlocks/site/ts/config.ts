@@ -1,1 +1,0 @@
-export const DATASET_URL = '/data/classifier-config.json';

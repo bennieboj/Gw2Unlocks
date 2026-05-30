@@ -1,0 +1,13 @@
+{
+  "profiles": {
+    "Gw2Unlocks.Website": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development", //used to not run website generation in build pipeline
+        "DOTNET_ENVIRONMENT": "Development"      //used to not run website generation in build pipeline
+      },
+      "applicationUrl": "http://localhost:5000"
+    }
+  }
+}
