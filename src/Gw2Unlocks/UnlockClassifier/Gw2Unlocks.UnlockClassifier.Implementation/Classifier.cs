@@ -520,7 +520,9 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                     UnlockCriteria = [  ],
                     UnlockCategories =
                     [
-                        new() { Name = "Elite Specializations", UnlockCriteria = [  ] },
+                        new() { Name = "Elite Specializations", UnlockCriteria = [ 
+                            new AchievementCategoryCriteria("Specializations"),
+                            ] },
                         new() { Name = "Guild", UnlockCriteria = [  ] },
                         new() { Name = "Mystic Forge", UnlockCriteria = [  ] },
                         new() { Name = "Crafting", UnlockCriteria = [  ] },
