@@ -535,7 +535,6 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                         new() { Name = "Gem Store", UnlockCriteria = [
                             new CurrencyCriteria("Gem", UsedInZoneSpecification: false, allowHistorical: true)                         
                             ] },
-                        new() { Name = "General", UnlockCriteria = [  ] },
                         new() { Name = "Fractals", UnlockCriteria = [
                             new TokenCriteria("Fractal Research Page"),
                             new TokenCriteria("Golden Fractal Relic"),
@@ -544,6 +543,7 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                             new AchievementCategoryCriteria("Fractals of the Mists"),
                             ] },
                         new() { Name = "Wizard's Vault", UnlockCriteria = [  ] },
+                        new() { Name = "General", UnlockCriteria = [  ] },
                     ]
                 },
             ]
