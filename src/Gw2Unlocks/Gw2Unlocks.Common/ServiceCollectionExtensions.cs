@@ -2,7 +2,9 @@
 using Microsoft.Extensions.Logging;
 using Serilog;
 using Serilog.Events;
+using System;
 using System.Globalization;
+using System.IO;
 
 namespace Gw2Unlocks.Common;
 
