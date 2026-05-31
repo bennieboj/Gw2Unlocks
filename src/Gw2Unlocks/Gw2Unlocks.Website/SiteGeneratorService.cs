@@ -345,6 +345,13 @@ internal sealed class SiteGeneratorService(
 
         File.WriteAllText(outputPath, result);
     }
+    private static readonly Dictionary<UnlockClassifier.Type, string> TypeGroupLabels =
+        new() {
+            { UnlockClassifier.Type.Achievement, "Achievements" },
+            { UnlockClassifier.Type.Miniature, "Miniatures" },
+            { UnlockClassifier.Type.Skin, "Skins" },
+            { UnlockClassifier.Type.Novelty, "Novelties" }
+        };
 
     private static List<TypeGroupModel> BuildTypeGroups(List<Unlock> unlocks)
     {
@@ -354,7 +361,7 @@ internal sealed class SiteGeneratorService(
             .Select(g => new TypeGroupModel
             {
                 Type = g.Key,
-                Label = g.Key + "s",
+                Label = TypeGroupLabels.TryGetValue(g.Key, out string? label) == true ? label : throw new ArgumentException("TypeGroupLabels"),
                 Total = g.Count(),
                 Unlocked = null, // JS fills this
                 Unlocks = [.. g.Select(u => new UnlockRenderModel
