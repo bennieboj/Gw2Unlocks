@@ -13,6 +13,7 @@ internal sealed class ClassifierService(
     ILogger<ClassifierService> logger,
     IClassifier classifier,
     IClassifierCache classifierCache,
+    IHostEnvironment env,
     IHostApplicationLifetime hostApplicationLifetime) : BackgroundService
 {
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
@@ -25,11 +26,15 @@ internal sealed class ClassifierService(
             var newConfig = await classifier.ClassifyUnlocks(stoppingToken);
 
             await PrintDiffAsync(logger, oldConfig, newConfig);
+            var input = "";
+            var isDev = env.IsDevelopment();
+            if (isDev)
+            {
+                Console.Write("Press y to continue");
+                input = Console.ReadLine();
+            }
 
-            Console.Write("Press y to continue");
-            var input = Console.ReadLine();
-
-            if (input is { Length: 1 } && (input[0] == 'y' || input[0] == 'Y'))
+            if (!isDev || input is { Length: 1 } && (input[0] == 'y' || input[0] == 'Y'))
             {
                 await classifierCache.SaveClassifierConfigToCacheAsync(
                     newConfig,
