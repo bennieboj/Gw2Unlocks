@@ -1,8 +1,8 @@
-name: Wiki_Processing
+name: 2_Wiki_Processing
 
 on:
   workflow_run:
-    workflows: ["Cache_Updater"]
+    workflows: ["1_Cache_Updater"]
     types:
       - completed
 

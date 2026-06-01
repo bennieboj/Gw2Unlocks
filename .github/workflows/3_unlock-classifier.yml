@@ -1,8 +1,8 @@
-name: Unlock_Classifier
+name: 3_Unlock_Classifier
 
 on:
   workflow_run:
-    workflows: ["Wiki_Processing"]
+    workflows: ["2_Wiki_Processing"]
     types:
       - completed
 

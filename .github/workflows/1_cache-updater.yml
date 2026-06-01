@@ -1,4 +1,4 @@
-name: Cache_Updater
+name: 1_Cache_Updater
 
 on:
   workflow_dispatch:

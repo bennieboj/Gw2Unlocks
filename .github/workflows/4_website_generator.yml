@@ -1,8 +1,8 @@
-name: Website_Generator
+name: 4_Website_Generator
 
 on:
   workflow_run:
-    workflows: ["Unlock_Classifier"]
+    workflows: ["3_Unlock_Classifier"]
     types:
       - completed
 
