@@ -36,9 +36,7 @@ jobs:
         with:
           dotnet-version: 10.0.x
 
-      # - run: dotnet run --no-launch-profile --project src/Gw2Unlocks/Gw2Unlocks.Website
-
-      - run: touch fake-4-websitegenerator-ran.txt
+      - run: dotnet run --no-launch-profile --project src/Gw2Unlocks/Gw2Unlocks.Website
 
       - name: Commit changes
         run: |

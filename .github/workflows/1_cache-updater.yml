@@ -31,10 +31,8 @@ jobs:
         with:
           dotnet-version: 10.0.x
 
-      # - run: dotnet run --no-launch-profile --project src/Gw2Unlocks/CacheUpdater/Gw2Unlocks.CacheUpdater.Host
+      - run: dotnet run --no-launch-profile --project src/Gw2Unlocks/CacheUpdater/Gw2Unlocks.CacheUpdater.Host
       
-      - run: touch fake-1-cacheupdater-ran.txt
-
       - name: Commit changes
         run: |
           git config user.name "github-actions"
