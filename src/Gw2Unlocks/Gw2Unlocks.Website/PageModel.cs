@@ -13,8 +13,6 @@ internal sealed class PageModel
 
     public string Url { get; set; } = "";
 
-    public bool NoIndex { get; set; }
-
     public List<Unlock> Unlocks { get; set; } = [];
 
     public List<SidebarGroupModel> Sidebar { get; set; } = [];

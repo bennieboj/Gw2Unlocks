@@ -39,5 +39,4 @@
   <Project Path="Gw2Unlocks.Common/Gw2Unlocks.Common.csproj" Id="83712cb6-1e97-4a9e-a4b1-75ce2c29ed45" />
   <Project Path="Gw2Unlocks.Testing.Common/Gw2Unlocks.Testing.Common.csproj" Id="e8450391-8d74-4375-9615-35ae18a0305e" />
   <Project Path="Gw2Unlocks.Website/Gw2Unlocks.Website.csproj" Id="fa397677-ab4f-4586-b835-8f2f89a74f10" />
-  <Project Path="Website/Website.csproj" />
 </Solution>

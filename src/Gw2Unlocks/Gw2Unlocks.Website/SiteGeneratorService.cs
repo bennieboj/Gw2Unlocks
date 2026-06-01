@@ -59,6 +59,9 @@ internal sealed class SiteGeneratorService(
             await GenerateSite(stoppingToken);
             return;
         }
+        
+        //generate once
+        await GenerateSite(stoppingToken);
 
         _watcher = new FileSystemWatcher("WebsiteTemplates")
         {
@@ -169,7 +172,6 @@ internal sealed class SiteGeneratorService(
             TypeGroups = BuildTypeGroups(allUnlocks),
             Sidebar = sidebar,
             UnlockMapJson = unlockMapJson,
-            NoIndex = true
         },
         Path.Combine(wwwRootTempPath, "index.html")
     );
@@ -317,7 +319,7 @@ internal sealed class SiteGeneratorService(
     }
     static void GeneratePage(PageModel model, string outputPath)
     {
-        var templateText = File.ReadAllText("WebsiteTemplates/page.sbn");
+        var templateText = File.ReadAllText("WebsiteTemplates/page.html");
 
         var template = Template.Parse(templateText);
 
