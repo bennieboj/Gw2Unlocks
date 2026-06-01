@@ -1,9 +1,9 @@
 name: 1_Cache_Updater
 
-on:
-  workflow_dispatch:
-  schedule:
-    - cron: '0 3 * * *'  # ~04:00 Brussels (adjust if needed)
+# on:
+  # workflow_dispatch:
+  # schedule:
+    # - cron: '0 3 * * *'  # ~04:00 Brussels (adjust if needed)
 
 permissions:
   contents: write
