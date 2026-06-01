@@ -1,0 +1,47 @@
+name: Cache_Updater
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 3 * * *'  # ~04:00 Brussels (adjust if needed)
+
+permissions:
+  contents: write
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Compute branch
+        run: |
+          export TZ=Europe/Brussels
+          echo "BRANCH=daily/$(date +%F)" >> $GITHUB_ENV
+
+      - name: Checkout branch
+        run: |
+          git fetch origin
+          git checkout $BRANCH || git checkout -b $BRANCH
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.0.x
+
+      # - run: dotnet run --no-launch-profile --project src/Gw2Unlocks/CacheUpdater/Gw2Unlocks.CacheUpdater.Host
+      
+      - run: touch fake-1-cacheupdater-ran.txt
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+
+          git add .
+          git diff --cached --quiet && exit 0
+
+          git commit -m "Cache Updater update"
+          git push origin HEAD

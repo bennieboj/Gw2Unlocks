@@ -1,0 +1,52 @@
+name: Wiki_Processing
+
+on:
+  workflow_run:
+    workflows: ["Cache_Updater"]
+    types:
+      - completed
+
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  run:
+    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Compute branch
+        run: |
+          export TZ=Europe/Brussels
+          echo "BRANCH=daily/$(date +%F)" >> $GITHUB_ENV
+
+      - name: Checkout branch
+        run: |
+          git fetch origin
+          git checkout $BRANCH
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.0.x
+
+      # - run: dotnet run --no-launch-profile --project src/Gw2Unlocks/WikiProcessing/Gw2Unlocks.WikiProcessing.Host
+
+      - run: touch fake-2-wikiprocessing-ran.txt
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+
+          git add .
+          git diff --cached --quiet && exit 0
+
+          git commit -m "Wiki Processing update"
+          git push origin HEAD

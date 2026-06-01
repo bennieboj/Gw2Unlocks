@@ -1,0 +1,52 @@
+name: Website_Generator
+
+on:
+  workflow_run:
+    workflows: ["Unlock_Classifier"]
+    types:
+      - completed
+
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  run:
+    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Compute branch
+        run: |
+          export TZ=Europe/Brussels
+          echo "BRANCH=daily/$(date +%F)" >> $GITHUB_ENV
+
+      - name: Checkout branch
+        run: |
+          git fetch origin
+          git checkout $BRANCH
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.0.x
+
+      # - run: dotnet run --no-launch-profile --project src/Gw2Unlocks/Gw2Unlocks.Website
+
+      - run: touch fake-4-websitegenerator-ran.txt
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+
+          git add .
+          git diff --cached --quiet && exit 0
+
+          git commit -m "Website Generator update"
+          git push origin HEAD
