@@ -50,6 +50,13 @@
               background: #72A5F2;
           }
       
+          .top-btn img {
+              width: 16px;
+              height: 16px;
+              vertical-align: middle;
+              margin-right: 6px;
+          }
+      
           .layout {
               display: flex;
               min-height: 100vh;
@@ -115,14 +122,14 @@
           }
       
           .api-input-group label {
-              display: block;
-              margin: 0;
+              display: flex;
+              flex-direction: column;
+              gap: 2px;
           }
       
           .api-requirements {
               color: #aaa;
-              font-size: 0.60rem;
-              margin-left: 6px;
+              font-size: 0.70rem;
           }
       
           .api-input-group input {
@@ -324,6 +331,20 @@
                   padding: 10px 14px;
               }
       
+              @keyframes pulseAttention {
+                  0%   { transform: scale(1); box-shadow: 0 0 0 rgba(255,255,255,0.0); }
+                  50%  { transform: scale(1.08); box-shadow: 0 0 12px rgba(255,255,255,0.4); }
+                  100% { transform: scale(1); box-shadow: 0 0 0 rgba(255,255,255,0.0); }
+              }
+      
+              .menu-toggle.attention {
+                  animation: pulseAttention 1.2s ease-in-out infinite;
+              }
+      
+              .api-row {
+                  padding-left: 48px;
+              }
+      
               .sidebar {
                   width: 100vw;
                   max-width: none;
@@ -399,14 +420,14 @@
                      target="_blank"
                      rel="noopener noreferrer"
                      class="top-btn github">
-                      Report Issue
+                      <img src="/img/bug.png" alt="bug_icon" /> Report Issue
                   </a>
 
                   <a href="https://ko-fi.com/bennieboj"
                      target="_blank"
                      rel="noopener noreferrer"
                      class="top-btn kofi">
-                      ☕ Support Bennieboj
+                      <img src="/img/kofi_symbol.svg" alt="kofi_icon" /> Support me on Ko-Fi
                   </a>
               </div>
 
@@ -7322,6 +7343,15 @@
           refreshApi();
           startApiLoop();
           startUiTicker();
+      } else {
+          const menuToggle = document.getElementById("menu-toggle");
+          const isMobile = window.getComputedStyle(menuToggle).display !== "none";
+          if (isMobile) {
+              menuToggle.classList.add("attention");
+              menuToggle.addEventListener("click", () => {
+                  menuToggle.classList.remove("attention");
+              });
+          }
       }
       </script>
   </body>

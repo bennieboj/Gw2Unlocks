@@ -353,4 +353,13 @@ if (existingKey && existingKey.length === 72) {
     refreshApi();
     startApiLoop();
     startUiTicker();
+} else {
+    const menuToggle = document.getElementById("menu-toggle");
+    const isMobile = window.getComputedStyle(menuToggle).display !== "none";
+    if (isMobile) {
+        menuToggle.classList.add("attention");
+        menuToggle.addEventListener("click", () => {
+            menuToggle.classList.remove("attention");
+        });
+    }
 }
