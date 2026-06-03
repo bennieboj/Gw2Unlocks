@@ -32,138 +32,150 @@
   </head>
 
   <body>
-    <div class="controls">
       <button id="menu-toggle" class="menu-toggle" aria-label="Toggle menu">
-        ☰
+          ☰
       </button>
-      <span>API Key:</span>
-      <input
-        id="apikey"
-        type="text"
-        size="50"
-        autocomplete="off"
-        aria-label="Guild Wars 2 API Key"
-        />
-      <span id="status"></span>
-      <div style="margin-left:auto; display:flex; gap:8px;">
-        <a
-          href="https://github.com/bennieboj/Gw2Unlocks/issues"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="top-btn github">
-          Report Issue
-        </a>
-        <a
-          href="https://ko-fi.com/bennieboj"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="top-btn kofi">
-          ☕ Support Bennieboj
-        </a>
-      </div>
-    </div>
-    <div class="layout">
-      <div class="sidebar" id="sidebar">
-        <div class="group-link" data-group="all">
-          <a href="/">
-            All Unlocks
-            (<span class="sidebar-unlocked">?</span> / <span class="sidebar-total">total</span>)
-          </a>
-        </div>
-        {{ for group in Sidebar }}
-        <div class="group-link" data-group="{{ group.Slug }}">
-          <a href="{{ group.Url }}">
-            {{ group.Name }}
-            (<span class="sidebar-unlocked">?</span> / <span class="sidebar-total">total</span>)
-            {{ if group.IsWip }}
-            <img
-              class="wip-icon"
-              src="/img/wip.png"
-              alt="Work in progress"
-              title="Work in progress" />
-            {{ end }}
-          </a>
-        </div> 
+      <div class="layout">
+          <div class="sidebar" id="sidebar">
+              <div class="api-row">
+                  <div class="api-input-group">
+                      <label for="apikey">
+                          <a href="https://account.arena.net/applications"
+                             target="_blank"
+                             rel="noopener noreferrer">
+                              GW2 API Key
+                          </a>
 
-        {{ for category in group.Categories }}
-        <div class="category-link" data-category="{{ category.Slug }}">
-          <a href="{{ category.Url }}">
-            {{ category.Name }}
-            (<span class="sidebar-unlocked">?</span> / <span class="sidebar-total">total</span>)
-            {{ if category.IsWip }}
-            <img
-              class="wip-icon"
-              src="/img/wip.png"
-              alt="Work in progress"
-              title="Work in progress" />
-            {{ end }}
-          </a>
-        </div>
-        {{ end }}
-        {{ end }}
-      </div>
-      <div class="content">
-        <h1>{{ Title }}</h1>
-        {{ for type in TypeGroups }}
-        <div
-          class="type-title"
-          data-total="{{ type.Total }}">
-          {{ type.Label }}
-          (<span class="type-unlocked">?</span> / {{ type.Total }}) <span class="type-percent">0%</span>
-        </div>
-        <div class="grid">
-          {{ for u in type.Unlocks }}
-          <div
-            class="item"
-            tabindex="0"
-            role="button"
-            aria-label="{{ u.Name | html.escape }}"
-            data-id="{{ u.Id }}"
-            data-icon="{{ u.IconUrl }}"
-            data-type="{{ u.Type }}"
-            data-name="{{ u.Name | html.escape }}"
-            data-requirement="{{ u.Requirement | html.escape }}"
-            data-wiki="{{ u.WikiUrl }}">
-            <div class="icon-wrap">
-              <img src="{{ u.IconUrl }}" alt="{{ u.Name | html.escape }}" />
-              {{ if u.RewardIcon != null }}
-              <div class="reward-badge">
-                <img
-                  src="{{ u.RewardIcon }}"
-                  alt="{{ u.RewardName | html.escape }}"
-                  title="{{ u.RewardName | html.escape }}" />
+                          <span class="api-requirements">
+                              (requires Unlocks + Progression)
+                          </span>
+                      </label>
+                  </div>
+
+                  <div class="api-status">
+                      <img id="status-icon"
+                           src="/img/wait_a_bit.png"
+                           alt="Waiting" />
+                  </div>
+              </div>
+
+              <input id="apikey"
+                     type="text"
+                     autocomplete="off"
+                     aria-label="Guild Wars 2 API Key" />
+
+              <div class="sidebar-actions">
+                  <a href="https://github.com/bennieboj/Gw2Unlocks/issues"
+                     target="_blank"
+                     rel="noopener noreferrer"
+                     class="top-btn github">
+                      Report Issue
+                  </a>
+
+                  <a href="https://ko-fi.com/bennieboj"
+                     target="_blank"
+                     rel="noopener noreferrer"
+                     class="top-btn kofi">
+                      ☕ Support Bennieboj
+                  </a>
+              </div>
+
+
+              <div class="group-link" data-group="all">
+                  <a href="/">
+                      All Unlocks
+                      (<span class="sidebar-unlocked">?</span> / <span class="sidebar-total">total</span>)
+                  </a>
+              </div>
+              {{ for group in Sidebar }}
+              <div class="group-link" data-group="{{ group.Slug }}">
+                  <a href="{{ group.Url }}">
+                      {{ group.Name }}
+                      (<span class="sidebar-unlocked">?</span> / <span class="sidebar-total">total</span>)
+                      {{ if group.IsWip }}
+                      <img class="wip-icon"
+                           src="/img/wip.png"
+                           alt="Work in progress"
+                           title="Work in progress" />
+                      {{ end }}
+                  </a>
+              </div>
+
+              {{ for category in group.Categories }}
+              <div class="category-link" data-category="{{ category.Slug }}">
+                  <a href="{{ category.Url }}">
+                      {{ category.Name }}
+                      (<span class="sidebar-unlocked">?</span> / <span class="sidebar-total">total</span>)
+                      {{ if category.IsWip }}
+                      <img class="wip-icon"
+                           src="/img/wip.png"
+                           alt="Work in progress"
+                           title="Work in progress" />
+                      {{ end }}
+                  </a>
               </div>
               {{ end }}
-            </div>
-            <div class="item-name">
-              {{ u.Name | html.escape}}
-            </div>
+              {{ end }}
           </div>
-          {{ end }}
-        </div>
-        {{ end }}
+          <div class="content">
+              <h1>{{ Title }}</h1>
+              {{ for type in TypeGroups }}
+              <div class="type-title"
+                   data-total="{{ type.Total }}">
+                  {{ type.Label }}
+                  (<span class="type-unlocked">?</span> / {{ type.Total }}) <span class="type-percent">0%</span>
+              </div>
+              <div class="grid">
+                  {{ for u in type.Unlocks }}
+                  <div class="item"
+                       tabindex="0"
+                       role="button"
+                       aria-label="{{ u.Name | html.escape }}"
+                       data-id="{{ u.Id }}"
+                       data-icon="{{ u.IconUrl }}"
+                       data-type="{{ u.Type }}"
+                       data-name="{{ u.Name | html.escape }}"
+                       data-requirement="{{ u.Requirement | html.escape }}"
+                       data-wiki="{{ u.WikiUrl }}">
+                      <div class="icon-wrap">
+                          <img src="{{ u.IconUrl }}" alt="{{ u.Name | html.escape }}" />
+                          {{ if u.RewardIcon != null }}
+                          <div class="reward-badge">
+                              <img src="{{ u.RewardIcon }}"
+                                   alt="{{ u.RewardName | html.escape }}"
+                                   title="{{ u.RewardName | html.escape }}" />
+                          </div>
+                          {{ end }}
+                      </div>
+                      <div class="item-name">
+                          {{ u.Name | html.escape}}
+                      </div>
+                  </div>
+                  {{ end }}
+              </div>
+              {{ end }}
+          </div>
       </div>
-    </div>
-    <div class="modal-backdrop" id="modal">
-      <div class="modal">
-        <h2 id="modal-name"></h2>
-        <img id="modal-icon" alt="" />
-        <div id="modal-requirement"></div>
-        <div class="modal-actions">
-          <a id="wiki-link" target="_blank" rel="noopener noreferrer">
-            Open Wiki
-          </a>
-          <button id="close-modal">
-            Close
-          </button>
-        </div>
+      <div class="modal-backdrop" id="modal">
+          <div class="modal">
+              <h2 id="modal-name"></h2>
+              <img id="modal-icon" alt="" />
+              <div id="modal-requirement"></div>
+              <div class="modal-actions">
+                  <a id="wiki-link" target="_blank" rel="noopener noreferrer">
+                      Open Wiki
+                  </a>
+                  <button id="close-modal">
+                      Close
+                  </button>
+              </div>
+          </div>
       </div>
-    </div>
-    <script id="unlock-map" type="application/json">
+      <script id="unlock-map" type="application/json">
       {{ UnlockMapJson }}
-    </script>
-    <script>
+      </script>
+      <script>
       {{ Js }}
-    </script>
+      </script>
   </body>
 </html>

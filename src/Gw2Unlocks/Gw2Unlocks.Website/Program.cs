@@ -3,6 +3,7 @@ using Gw2Unlocks.Common;
 using Gw2Unlocks.UnlockClassifier.Cache;
 using Gw2Unlocks.Website;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -27,6 +28,7 @@ if (env.Equals("Development", StringComparison.OrdinalIgnoreCase))
 
     ConfigureServices(builder.Logging, builder.Services, builder.Configuration);
 
+    //builder.WebHost.UseUrls("http://*:5000"); // uncomment to host on local network, view on other device
     var app = builder.Build();
     app.UseDefaultFiles();
     app.UseStaticFiles();

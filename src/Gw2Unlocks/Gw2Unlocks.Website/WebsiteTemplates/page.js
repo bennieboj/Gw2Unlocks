@@ -16,7 +16,38 @@ const STORAGE_KEYS = {
 
 loadAccountState();
 
-const REFRESH_COOLDOWN = 5 * 60 * 1000;
+const REFRESH_INTERVAL = 5 * 60 * 1000;
+let uiTimer = null;
+let apiTimer = null;
+let nextRefreshAt = 0;
+
+function startUiTicker() {
+    if (uiTimer) return;
+
+    uiTimer = setInterval(() => {
+        const remaining = Math.ceil((nextRefreshAt - Date.now()) / 1000);
+
+        if (remaining > 0) {
+            setStatus(`Refresh in ${remaining}s`, "/img/wait_a_bit.png");
+        } else {
+            setStatus("Refreshing...", "/img/wait_a_bit.png");
+        }
+    }, 5000);
+}
+
+function startApiLoop() {
+    if (apiTimer) return;
+
+    async function loop() {
+        nextRefreshAt = Date.now() + REFRESH_INTERVAL;
+
+        await refreshApi();
+
+        apiTimer = setTimeout(loop, REFRESH_INTERVAL);
+    }
+
+    loop();
+}
 
 const unlockMap = JSON.parse(
   document.getElementById("unlock-map").textContent
@@ -30,12 +61,28 @@ const closeModal = document.getElementById("close-modal");
 const wikiLink = document.getElementById("wiki-link");
 
 const apiInput = document.getElementById("apikey");
-const statusEl = document.getElementById("status");
 
 apiInput.value = localStorage.getItem(STORAGE_KEYS.apiKey) || "";
 
-function setStatus(text) {
-  statusEl.textContent = text;
+const statusIcon = document.getElementById("status-icon");
+function setStatus(text, image = null) {
+
+    if (image) {
+        statusIcon.src = image;
+    }
+
+    statusIcon.alt = text;
+    statusIcon.title = text;
+}
+
+function setApiKeyValid(valid) {
+
+    if (valid) {
+        apiInput.classList.remove("invalid");
+    }
+    else {
+        apiInput.classList.add("invalid");
+    }
 }
 
 function loadAccountState() {
@@ -127,7 +174,12 @@ const menuToggle = document.getElementById("menu-toggle");
 const sidebar = document.getElementById("sidebar");
 
 menuToggle.addEventListener("click", () => {
-  sidebar.classList.toggle("open");
+    sidebar.classList.toggle("open");
+
+    document.body.classList.toggle(
+        "sidebar-open",
+        sidebar.classList.contains("open")
+    );
 });
 
 apiInput.addEventListener("input", async () => {
@@ -146,34 +198,32 @@ apiInput.addEventListener("input", async () => {
 
   localStorage.setItem(STORAGE_KEYS.apiKey, key);
 
-  setStatus("API key saved");
+    setStatus(
+        "API key saved",
+        "/img/wait_a_bit.png"
+    );
 
   await refreshApi();
 });
 
 async function refreshApi() {
-
-  const last = localStorage.getItem(STORAGE_KEYS.lastRefresh);
-
-  if (last && Date.now() - parseInt(last) < REFRESH_COOLDOWN) {
-    const remaining = Math.ceil(
-      (REFRESH_COOLDOWN - (Date.now() - parseInt(last))) / 1000
-    );
-
-    setStatus(`Please wait ${remaining}s before refreshing again`);
-
-    return;
-  }
-
   const apiKey =
     localStorage.getItem(STORAGE_KEYS.apiKey);
 
   if (!apiKey) {
-    setStatus("No API key set");
+      setStatus(
+          "No API key configured",
+          "/img/wait_a_bit.png"
+      );
     return;
-  }
+    }
 
-  setStatus("Refreshing API data...");
+
+
+    setStatus(
+        "Refreshing API data...",
+        "/img/wait_a_bit.png"
+    );
 
   try {
 
@@ -188,6 +238,30 @@ async function refreshApi() {
       fetch(`https://api.guildwars2.com/v2/account/novelties?access_token=${apiKey}`),
       fetch(`https://api.guildwars2.com/v2/account/achievements?access_token=${apiKey}`)
     ]);
+
+      if (
+          minisRes.status !== 200 ||
+          skinsRes.status !== 200 ||
+          noveltiesRes.status !== 200 ||
+          achievementsRes.status !== 200
+      ) {
+
+          setApiKeyValid(false);
+
+          setStatus(
+              "Invalid API key",
+              "/img/failure.png"
+          );
+
+          return;
+      }
+
+      setApiKeyValid(true);
+
+      setStatus(
+          "API data refreshed",
+          "/img/success.png"
+      );
 
     const minis = await minisRes.json();
     const skins = await skinsRes.json();
@@ -214,7 +288,10 @@ async function refreshApi() {
   }
   catch (e) {
     console.error(e);
-    setStatus("API refresh failed");
+    setStatus(
+        "API refresh failed",
+        "/img/failure.png"
+      );
   }
 }
 
@@ -273,5 +350,7 @@ updateSidebar();
 const existingKey = localStorage.getItem(STORAGE_KEYS.apiKey);
 
 if (existingKey && existingKey.length === 72) {
-  refreshApi();
+    refreshApi();
+    startApiLoop();
+    startUiTicker();
 }
