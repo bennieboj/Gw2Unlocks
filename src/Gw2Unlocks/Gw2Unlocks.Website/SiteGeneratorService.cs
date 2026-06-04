@@ -22,7 +22,8 @@ internal sealed class SiteGeneratorService(
     IHostEnvironment env,
     IHostApplicationLifetime hostApplicationLifetime) : BackgroundService
 {
-    private FileSystemWatcher? _watcher;
+    private FileSystemWatcher? _watcherTemplates;
+    private FileSystemWatcher? _watcherStaticFiles;
     private CancellationTokenSource? _debounceCts;
     private readonly SemaphoreSlim _buildLock = new(1, 1);
 
@@ -63,18 +64,27 @@ internal sealed class SiteGeneratorService(
         //generate once
         await GenerateSite(stoppingToken);
 
-        _watcher = new FileSystemWatcher("WebsiteTemplates")
+        _watcherTemplates = new FileSystemWatcher("WebsiteTemplates")
         {
             IncludeSubdirectories = true,
             NotifyFilter = NotifyFilters.LastWrite | NotifyFilters.FileName
         };
+        _watcherTemplates.Changed += OnChanged;
+        _watcherTemplates.Created += OnChanged;
+        _watcherTemplates.Deleted += OnChanged;
+        _watcherTemplates.Renamed += OnChanged;
+        _watcherTemplates.EnableRaisingEvents = true;
 
-        _watcher.Changed += OnChanged;
-        _watcher.Created += OnChanged;
-        _watcher.Deleted += OnChanged;
-        _watcher.Renamed += OnChanged;
-
-        _watcher.EnableRaisingEvents = true;
+        _watcherStaticFiles = new FileSystemWatcher("WebsiteTemplates")
+        {
+            IncludeSubdirectories = true,
+            NotifyFilter = NotifyFilters.LastWrite | NotifyFilters.FileName
+        };
+        _watcherStaticFiles.Changed += OnChanged;
+        _watcherStaticFiles.Created += OnChanged;
+        _watcherStaticFiles.Deleted += OnChanged;
+        _watcherStaticFiles.Renamed += OnChanged;
+        _watcherStaticFiles.EnableRaisingEvents = true;
 
         logger.LogInformation("Template watcher started");
 
@@ -117,15 +127,25 @@ internal sealed class SiteGeneratorService(
 
     public override void Dispose()
     {
-        if (_watcher != null)
+        if (_watcherTemplates != null)
         {
-            _watcher.EnableRaisingEvents = false;
-            _watcher.Changed -= OnChanged;
-            _watcher.Created -= OnChanged;
-            _watcher.Deleted -= OnChanged;
-            _watcher.Renamed -= OnChanged;
+            _watcherTemplates.EnableRaisingEvents = false;
+            _watcherTemplates.Changed -= OnChanged;
+            _watcherTemplates.Created -= OnChanged;
+            _watcherTemplates.Deleted -= OnChanged;
+            _watcherTemplates.Renamed -= OnChanged;
 
-            _watcher.Dispose();
+            _watcherTemplates.Dispose();
+        }
+        if (_watcherStaticFiles != null)
+        {
+            _watcherStaticFiles.EnableRaisingEvents = false;
+            _watcherStaticFiles.Changed -= OnChanged;
+            _watcherStaticFiles.Created -= OnChanged;
+            _watcherStaticFiles.Deleted -= OnChanged;
+            _watcherStaticFiles.Renamed -= OnChanged;
+
+            _watcherStaticFiles.Dispose();
         }
 
         _debounceCts?.Cancel();

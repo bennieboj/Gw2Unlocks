@@ -1,67 +1,38 @@
 # GW2 Unlocks
 
+https://gw2unlocks.com/
+
 ## Development Guide
+This section describes how to run and develop the **GW2 Unlocks** project locally.
 
-This document describes how to run and develop the **GW2 Unlocks** project locally.
+### How it all works
 
----
+There are 4 steps, each their own dotnet program host that are ran seperately.
 
-### Requirements
+Each program interacts with data in `src/cache-root`.
+Each steps reads the data from the previous step (if any/needed) and updates the data in their own folder.
+The data is stored locally in order to replay the processing in an easy way without overloading the server or slowing down the process.
 
-* **Node.js** (recommended: ≥ 18)
-* **npm** (comes with Node)
+1. CacheUpdater: stores all relevant data coming from GW2 API (json) and GW2 Wiki (xml) into `src/cache-root/api-cache` and `src/cache-root/wiki-cache`.
+2. WikiProcessing: processes the data coming from GW2 Wiki into a graph and zone data in `src/cache-root/wiki-processing`.
+3. UnlockClassifier: does the actual classification, produces a `ClassifyConfig`, containing all classified unlocks in `src/cache-root/classifier-cache`.
+   - It will display the differences between the existing and the newly generated `ClassifyConfig` in order to see if the algorithm changes don't break anything.
+   - Running locally will ask for confirmation
+4. WebsiteGenerator: generates the static pages, one per `UnlockGroup` and `UnlockGroup/UnlockCategory` combination.
+   - Running locally will run a local static files server `http://localhost:5000` with hot reload.
+   - Running in production mode will just generate the static files, this will be used in the build pipeline.
 
-Verify installation, install dependencies, and run the dev server:
+Each program is  tested from a black box perspective, mainly using integration tests, using the data in the `src/cache-root`.
 
-```bash
-node -v
-npm -v
-cd src/site/
-npm install
-npm run dev
-```
 
-This will start a local server at `http://localhost:5000` with hot reload.
+## Tools and libraries
+- https://github.com/sliekens/gw2sdk
+- https://github.com/cxuesong/WikiClientLibrary
+- https://search.gw2dat.com/
 
----
 
-### Project Scripts (from package.json)
-
-```bash
-# Start the development server
-npm run dev
-
-# Build production bundle
-npm run build
-
-# Build and preview production bundle locally
-npm run preview
-```
+## Legal
+©2010–2026 ArenaNet, LLC. All rights reserved. Guild Wars, Guild Wars 2, Guild Wars 2: Heart of Thorns, Guild Wars 2: Path of Fire, Guild Wars 2: End of Dragons, Guild Wars 2: Secrets of the Obscure, Guild Wars 2: Janthir Wilds, Guild Wars 2: Visions of Eternity, ArenaNet, NCSOFT, the Interlocking NC Logo, and all associated logos and designs are trademarks or registered trademarks of NCSOFT Corporation. All other trademarks are the property of their respective owners.
 
 ---
-
-### Development and Production Behavior
-
-* **Dataset** is served from `public/data/data.json`.
-
-  * Works in both development (`vite dev`) and production (`vite build` → Netlify).
-  * Fetch in code:
-
-```ts
-const DATASET_URL = '/data/data.json';
-const res = await fetch(DATASET_URL);
-const unlockData = await res.json();
-```
-
-* **Page title**:
-
-  * `[DEV]` is appended in development mode.
-  * Normal title in production.
-
----
-
-### Notes
-
-* Static assets in `public/` are copied into the build output (`dist/`) automatically.
-* No external CDN or jsDelivr fetch is required; all data is served locally and via Netlify’s CDN in production.
-* `vite.config.js` only configures the front-end build — no changes are needed for Node scripts or other jobs.
+Made with ![Love](/readme/love.png) and ![Technology](/readme/tech.png) in Tyria.
