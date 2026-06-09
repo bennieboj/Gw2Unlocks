@@ -37,14 +37,21 @@ jobs:
           dotnet-version: 10.0.x
 
       - run: dotnet run --no-launch-profile --project src/Gw2Unlocks/Gw2Unlocks.Website
+      
+      - name: Publish to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy wwwroot --project-name=gw2unlocks
 
-      - name: Commit changes
-        run: |
-          git config user.name "github-actions"
-          git config user.email "github-actions@github.com"
+      # - name: Commit changes
+        # run: |
+          # git config user.name "github-actions"
+          # git config user.email "github-actions@github.com"
 
-          git add .
-          git diff --cached --quiet && exit 0
+          # git add .
+          # git diff --cached --quiet && exit 0
 
-          git commit -m "Website Generator update"
-          git push origin HEAD
+          # git commit -m "Website Generator update"
+          # git push origin HEAD
