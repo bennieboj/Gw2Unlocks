@@ -30,7 +30,8 @@ jobs:
       - name: Checkout branch
         run: |
           git fetch origin
-          git checkout $BRANCH
+          # git checkout $BRANCH
+          git checkout master
 
       - uses: actions/setup-dotnet@v5
         with:
