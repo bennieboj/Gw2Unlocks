@@ -1,6 +1,10 @@
 name: 4_Website_Generator
 
 on:
+  push:
+    branches:
+      - main
+      
   workflow_run:
     workflows: ["3_Unlock_Classifier"]
     types:
