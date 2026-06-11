@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Api\Gw2Unlocks.Api.Cache\Gw2Unlocks.Api.Cache.csproj" />
+    <ProjectReference Include="..\..\IconSpriteSheet\Gw2Unlocks.IconSpriteSheet.Cache\Gw2Unlocks.IconSpriteSheet.Cache.csproj" />
     <ProjectReference Include="..\..\UnlockClassifier\Gw2Unlocks.UnlockClassifier\Gw2Unlocks.UnlockClassifier.csproj" />
     <ProjectReference Include="..\..\Gw2Unlocks.Testing.Common\Gw2Unlocks.Testing.Common.csproj" />
     <ProjectReference Include="..\..\WikiProcessing\Gw2Unlocks.WikiProcessing.Cache\Gw2Unlocks.WikiProcessing.Cache.csproj" />

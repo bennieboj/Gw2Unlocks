@@ -23,6 +23,6 @@ internal sealed class Gw2WikiProcessingJsonCache(CachePaths cachePaths) : Generi
             LoadFromFileAsync<ZoneData>(zoneDataFileName, cancellationToken)))
         .Value;
 
-    public Task SaveAcquisitionGraphToCacheAsync(AcquisitionGraph data, CancellationToken cancellationToken) => SaveToCacheAsync(wikiGraphFileName, data, cancellationToken);
-    public Task SaveZoneDataToCacheAsync(ZoneData data, CancellationToken cancellationToken) => SaveToCacheAsync(zoneDataFileName, data, cancellationToken);
+    public Task SaveAcquisitionGraphToCacheAsync(AcquisitionGraph data, CancellationToken cancellationToken) => SaveToCacheJsonAsync(wikiGraphFileName, data, cancellationToken);
+    public Task SaveZoneDataToCacheAsync(ZoneData data, CancellationToken cancellationToken) => SaveToCacheJsonAsync(zoneDataFileName, data, cancellationToken);
 }

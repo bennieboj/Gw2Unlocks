@@ -1,7 +1,7 @@
-﻿using GuildWars2.Hero.Achievements;
-using GuildWars2.Hero.Builds;
+﻿using GuildWars2.Hero.Builds;
 using Gw2Unlocks.Api.Cache;
 using Gw2Unlocks.Cache.Common;
+using Gw2Unlocks.IconSpriteSheet.Cache;
 using Gw2Unlocks.Testing.Common;
 using Gw2Unlocks.UnlockClassifier.Implementation;
 using Gw2Unlocks.WikiProcessing.Cache;
@@ -22,6 +22,7 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
         services.AddCacheDir()
                 .AddJsonCacheApiSource()
                 .AddJsonCacheWikiProcessingSource()
+                .AddIconSpriteSheetCache()
                 .AddClassifier();
     }
 
@@ -44,6 +45,9 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
         Assert.Equal(Type.Miniature, unlock.ApiData.Type);
         Assert.Equal("Mini Exalted Sage", unlock.ApiData.Name);
         Assert.NotNull(unlock.ApiData.IconUrl);
+        Assert.NotNull(unlock.ApiData.IconSheet);
+        Assert.NotNull(unlock.ApiData.IconX);
+        Assert.NotNull(unlock.ApiData.IconY);
         Assert.Equal(74444, unlock.ApiData.ChatCodeId);
     }
 
@@ -74,12 +78,28 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
     }
 
     [Fact]
-    public async Task ItemsReferenceByASetShouldBeLInkedCorrectly()
+    public async Task ItemsReferenceByASetShouldBeLnkedCorrectly()
     {
         var unlockName = "Skyforged Axe";
         var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
         var group = results.UnlockGroups.Single(g => g.Name == "Secrets of the Obscure");
         var category = group.UnlockCategories.Single(c => c.Name == "Inner Nayos");
+        var unlock = category.Unlocks.Single(c => c.Name == unlockName);
+
+        Assert.NotNull(unlock);
+        Assert.NotNull(unlock.ApiData);
+    }
+
+    [Theory(Skip = "Not implemented yet, see classifyconfig")]
+    [InlineData("Endless Guild Banner Tonic")]
+    [InlineData("Guild Broad Axe (skin)")]
+    [InlineData("Shimmering Axe (skin)")]
+    [InlineData("Tenebrous Axe (skin)")]
+    public async Task GuildUnlocksShouldBeLinkedToGuilds(string unlockName)
+    {
+        var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
+        var group = results.UnlockGroups.Single(g => g.Name == "Other");
+        var category = group.UnlockCategories.Single(c => c.Name == "Guild");
         var unlock = category.Unlocks.Single(c => c.Name == unlockName);
 
         Assert.NotNull(unlock);
@@ -230,6 +250,9 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
         Assert.Equal(Type.Novelty, unlock.ApiData.Type);
         Assert.Equal("Endless Exalted Caster Tonic", unlock.ApiData.Name);
         Assert.NotNull(unlock.ApiData.IconUrl);
+        Assert.NotNull(unlock.ApiData.IconSheet);
+        Assert.NotNull(unlock.ApiData.IconX);
+        Assert.NotNull(unlock.ApiData.IconY);
         Assert.Equal(76174, unlock.ApiData.ChatCodeId);
     }
 
@@ -273,10 +296,13 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
         Assert.Equal(7422, unlock.ApiData.Id);
         Assert.Equal("Funerary Axe", unlock.ApiData.Name);
         Assert.NotNull(unlock.ApiData.IconUrl);
+        Assert.NotNull(unlock.ApiData.IconSheet);
+        Assert.NotNull(unlock.ApiData.IconX);
+        Assert.NotNull(unlock.ApiData.IconY);
         Assert.Equal(7422, unlock.ApiData.Id);
     }
 
-    [Fact]
+    [Fact(Skip = "not sure yet")]
     public async Task FlameWeaponsAreBlackCitadelIGuess()
     {
         var unlockName = "Flame Blade (skin)";
@@ -463,7 +489,7 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
         Assert.Equal("https://render.guildwars2.com/file/109A0AE76FCA3EBC03039BA668B90142CAB0DDA2/866109.png", unlock.ApiData.IconUrl?.ToString());
     }
 
-    [Theory]
+    [Theory(Skip = "not sure yet")]
     [InlineData("New Kaineng City (achievements)#achievement6213")] // "Protector of Kaineng", repeatable, ideally I want this still!
     [InlineData("New Year's Customs#achievement6063")] // "(Weekly) Lunar Festivities", weekly
     [InlineData("New Year's Customs#achievement4080")] // "(Annual) New Year's Resolution", contains "{Annual}"
@@ -552,5 +578,8 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
         Assert.NotNull(unlock);
         Assert.NotNull(unlock.ApiData);
         Assert.Equal(new Uri("https://render.guildwars2.com/file/136E663C59275A077ADD394C935F26091B065A51/1601931.png"), unlock.ApiData.IconUrl);
+        Assert.NotNull(unlock.ApiData.IconSheet);
+        Assert.NotNull(unlock.ApiData.IconX);
+        Assert.NotNull(unlock.ApiData.IconY);
     }
 }

@@ -128,10 +128,6 @@ body {
     display: block;
     margin-top: 16px;
     text-align: center;
-/*    max-width: 220px;
-    margin-left: auto;
-    margin-right: auto;
-    line-height: 1.4;*/
 }
 
 .sidebar-actions {
@@ -206,6 +202,12 @@ body {
 
 .item.unlocked {
     opacity: 1;
+}
+
+.atlasicon {
+    width: 64px;
+    height: 64px;
+    background-repeat: no-repeat;
 }
 
 .icon-wrap {

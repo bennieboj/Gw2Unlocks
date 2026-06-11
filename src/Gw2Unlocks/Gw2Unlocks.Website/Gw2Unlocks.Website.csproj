@@ -11,6 +11,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Gw2Unlocks.Common\Gw2Unlocks.Common.csproj" />
+    <ProjectReference Include="..\IconSpriteSheet\Gw2Unlocks.IconSpriteSheet.Cache\Gw2Unlocks.IconSpriteSheet.Cache.csproj" />
     <ProjectReference Include="..\UnlockClassifier\Gw2Unlocks.UnlockClassifier.Cache\Gw2Unlocks.UnlockClassifier.Cache.csproj" />
     <ProjectReference Include="..\UnlockClassifier\Gw2Unlocks.UnlockClassifier\Gw2Unlocks.UnlockClassifier.csproj" />
   </ItemGroup>

@@ -1,4 +1,6 @@
-﻿using Gw2Unlocks.UnlockClassifier;
+﻿using Gw2Unlocks.IconSpriteSheet;
+using Gw2Unlocks.IconSpriteSheet.Cache;
+using Gw2Unlocks.UnlockClassifier;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
@@ -13,12 +15,14 @@ using System.Text;
 using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Gw2Unlocks.Website;
 
 internal sealed class SiteGeneratorService(
     ILogger<SiteGeneratorService> logger,
     IClassifierCache classifierCache,
+    IIconSpriteSheetCache iconSpriteSheetCache,
     IHostEnvironment env,
     IHostApplicationLifetime hostApplicationLifetime) : BackgroundService
 {
@@ -179,6 +183,7 @@ internal sealed class SiteGeneratorService(
             Directory.CreateDirectory(wwwRootTempPath);
         }
         CopyDirectoryContents("WebsiteStaticFiles", wwwRootTempPath);
+        CopyDirectoryContents(iconSpriteSheetCache.GetIconSpreadSheetsPath(), Path.Combine(wwwRootTempPath, "icon-sprite-sheets"));
 
         GeneratePage(
         new PageModel
@@ -391,6 +396,7 @@ internal sealed class SiteGeneratorService(
                     Id = u.ApiData!.Id,
                     Name = u.ApiData.Name,
                     IconUrl = u.ApiData.IconUrl?.ToString() ?? "",
+                    IconAtlasStyleCss = u.ApiData.IconSheet != null && unlocks.Count > 5000 ? $"background-image: url('/icon-sprite-sheets/icons_{u.ApiData.IconSheet}.webp');background-position: -{u.ApiData.IconX}px -{u.ApiData.IconY}px;" : null,
                     Requirement = u.ApiData.Requirement ?? "",
                     RewardIcon = u.ApiData.RewardIconUrl?.ToString(),
                     RewardName = u.ApiData.RewardName,

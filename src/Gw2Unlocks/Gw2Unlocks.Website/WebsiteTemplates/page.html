@@ -140,7 +140,13 @@
                        data-requirement="{{ u.Requirement | html.escape }}"
                        data-wiki="{{ u.WikiUrl }}">
                       <div class="icon-wrap">
-                          <img src="{{ u.IconUrl }}" alt="{{ u.Name | html.escape }}" />
+                          {{ if u.IconAtlasStyleCss != null }}
+                          <div class="atlasicon"
+                               style="{{ u.IconAtlasStyleCss }}">
+                          </div>
+                          {{ else }}
+                            <img src="{{ u.IconUrl }}" alt="{{ u.Name | html.escape }}" />
+                          {{ end }}
                           {{ if u.RewardIcon != null }}
                           <div class="reward-badge">
                               <img src="{{ u.RewardIcon }}"

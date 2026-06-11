@@ -1,6 +1,7 @@
 ﻿using Gw2Unlocks.Api.Cache;
 using Gw2Unlocks.Cache.Common;
 using Gw2Unlocks.Common;
+using Gw2Unlocks.IconSpriteSheet.Cache;
 using Gw2Unlocks.UnlockClassifier.Cache;
 using Gw2Unlocks.UnlockClassifier.Implementation;
 using Gw2Unlocks.WikiProcessing.Cache;
@@ -15,7 +16,8 @@ builder.Logging.AddConfiguration(builder.Configuration.GetSection("Logging"));
 builder.Logging.SetupLogging(builder.Configuration);
 builder.Services.AddJsonCacheApiSource()
                 .AddCacheDir()
-                .AddJsonCacheWikiProcessingSource();
+                .AddJsonCacheWikiProcessingSource()
+                .AddIconSpriteSheetCache();
 
 builder.Services.AddClassifier()
                 .AddClassifierCache();

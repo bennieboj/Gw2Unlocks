@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Gw2Unlocks.IconSpriteSheet\Gw2Unlocks.IconSpriteSheet.csproj" />
+    <ProjectReference Include="..\..\Gw2Unlocks.Cache.Common\Gw2Unlocks.Cache.Common.csproj" />
+  </ItemGroup>
+  
+</Project>

@@ -10,6 +10,13 @@
     <Project Path="CacheUpdater/Gw2Unlocks.CacheUpdater.Tests/Gw2Unlocks.CacheUpdater.Tests.csproj" Id="dab9e2fc-0d22-4802-b1fe-923b9070e668" />
     <Project Path="CacheUpdater/Gw2Unlocks.CacheUpdater/Gw2Unlocks.CacheUpdater.csproj" Id="1c8d60ce-c89a-4a91-b378-5b2c1171ec6b" />
   </Folder>
+  <Folder Name="/IconSpriteSheet/">
+    <Project Path="IconSpriteSheet/Gw2Unlocks.IconSpriteSheet.Cache/Gw2Unlocks.IconSpriteSheet.Cache.csproj" Id="f6d47d09-ded1-41e2-b9d8-16e9b78338fe" />
+    <Project Path="IconSpriteSheet/Gw2Unlocks.IconSpriteSheet.Implementation/Gw2Unlocks.IconSpriteSheet.Implementation.csproj" />
+    <Project Path="IconSpriteSheet/Gw2Unlocks.IconSpriteSheet.Testing/Gw2Unlocks.IconSpriteSheet.Testing.csproj" Id="4e1d4d94-82a6-47b7-88e8-869c7960800e" />
+    <Project Path="IconSpriteSheet/Gw2Unlocks.IconSpriteSheet.Tests/Gw2Unlocks.IconSpriteSheet.Tests.csproj" Id="f38132d8-1c2c-49ef-bc2a-a37eea31702f" />
+    <Project Path="IconSpriteSheet/Gw2Unlocks.IconSpriteSheet/Gw2Unlocks.IconSpriteSheet.csproj" Id="71a06e97-49a2-45be-90cd-26a0a24093c1" />
+  </Folder>
   <Folder Name="/Solution Items/">
     <File Path="Directory.Build.props" />
     <File Path="Directory.Packages.props" />

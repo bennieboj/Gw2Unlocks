@@ -8,6 +8,8 @@ using GuildWars2.Items;
 using Gw2Unlocks.Api;
 using Gw2Unlocks.Api.Testing;
 using Gw2Unlocks.Api.Testing.Builders;
+using Gw2Unlocks.IconSpriteSheet.Implementation;
+using Gw2Unlocks.IconSpriteSheet.Testing;
 using Gw2Unlocks.Testing.Common;
 using Gw2Unlocks.Wiki.Testing;
 using Microsoft.Extensions.DependencyInjection;
@@ -36,6 +38,12 @@ public class UpdaterTransientFailureTests : ServiceProviderBasedTest<IUpdater>
                 .AddFakeWikiSourceSuccess()
                 .AddFakeWikiCacheSuccess()
                 .AddUpdater();
+ 
+        services.AddIconSpriteSheetGenerator()
+                .AddFakeIconSpriteSheetCache()
+                .AddFakeIconSpriteSheetHttpMessagehandler()
+                .AddIconSpriteSheetGeneratorHttpClient()
+                .AddFakeHttpMessageHandler();
     }
 
     [Theory]

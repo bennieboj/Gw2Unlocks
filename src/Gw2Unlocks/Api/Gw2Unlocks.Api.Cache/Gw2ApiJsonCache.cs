@@ -67,11 +67,11 @@ internal sealed class Gw2ApiJsonCache(CachePaths cachePaths) : GenericCache(cach
         .Value;
 
 
-    public Task SaveItemsToCacheAsync(Collection<Item> data, CancellationToken cancellationToken) => SaveToCacheAsync(itemsFileName, data, cancellationToken);
-    public Task SaveSkinsToCacheAsync(Collection<EquipmentSkin> data, CancellationToken cancellationToken) => SaveToCacheAsync(skinsFileName, data, cancellationToken);
-    public Task SaveAchievementsToCacheAsync(Collection<Achievement> data, CancellationToken cancellationToken) => SaveToCacheAsync(achievementsFileName, data, cancellationToken);
-    public Task SaveAchievementCategoriesToCacheAsync(Collection<AchievementCategory> data, CancellationToken cancellationToken) => SaveToCacheAsync(achievementCategoriesFileName, data, cancellationToken);
-    public Task SaveMiniaturesToCacheAsync(Collection<Miniature> data, CancellationToken cancellationToken) => SaveToCacheAsync(miniaturesFileName, data, cancellationToken);
-    public Task SaveNoveltiesToCacheAsync(Collection<Novelty> data, CancellationToken cancellationToken) => SaveToCacheAsync(noveltiesFileName, data, cancellationToken);
-    public Task SaveTitlesToCacheAsync(Collection<Title> data, CancellationToken cancellationToken) => SaveToCacheAsync(titlesFileName, data, cancellationToken);
+    public Task SaveItemsToCacheAsync(Collection<Item> data, CancellationToken cancellationToken) => SaveToCacheJsonAsync(itemsFileName, data, cancellationToken);
+    public Task SaveSkinsToCacheAsync(Collection<EquipmentSkin> data, CancellationToken cancellationToken) => SaveToCacheJsonAsync(skinsFileName, data, cancellationToken);
+    public Task SaveAchievementsToCacheAsync(Collection<Achievement> data, CancellationToken cancellationToken) => SaveToCacheJsonAsync(achievementsFileName, data, cancellationToken);
+    public Task SaveAchievementCategoriesToCacheAsync(Collection<AchievementCategory> data, CancellationToken cancellationToken) => SaveToCacheJsonAsync(achievementCategoriesFileName, data, cancellationToken);
+    public Task SaveMiniaturesToCacheAsync(Collection<Miniature> data, CancellationToken cancellationToken) => SaveToCacheJsonAsync(miniaturesFileName, data, cancellationToken);
+    public Task SaveNoveltiesToCacheAsync(Collection<Novelty> data, CancellationToken cancellationToken) => SaveToCacheJsonAsync(noveltiesFileName, data, cancellationToken);
+    public Task SaveTitlesToCacheAsync(Collection<Title> data, CancellationToken cancellationToken) => SaveToCacheJsonAsync(titlesFileName, data, cancellationToken);
 }

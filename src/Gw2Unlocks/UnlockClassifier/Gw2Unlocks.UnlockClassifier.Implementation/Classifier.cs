@@ -8,6 +8,7 @@ using GuildWars2.Hero.Equipment.Novelties;
 using GuildWars2.Hero.Equipment.Wardrobe;
 using GuildWars2.Items;
 using Gw2Unlocks.Api;
+using Gw2Unlocks.IconSpriteSheet;
 using Gw2Unlocks.WikiProcessing;
 using Microsoft.Extensions.Logging;
 using System;
@@ -21,7 +22,7 @@ using Node = Gw2Unlocks.WikiProcessing.Node;
 
 namespace Gw2Unlocks.UnlockClassifier.Implementation;
 
-public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiProcessingSource, ILogger<Classifier> logger) : IClassifier
+public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiProcessingSource, IIconSpriteSheetCache iconSpriteSheetCache, ILogger<Classifier> logger) : IClassifier
 {
     private AcquisitionGraph? graph;
     private Collection<Miniature>? miniatures;
@@ -31,6 +32,7 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
     private Collection<AchievementCategory>? achievementCategories;
     private Collection<Title>? titles;
     private Collection<Novelty>? novelties;
+    private Dictionary<string, IconSpriteSheetInventoryItem>? iconSpriteSheetInventory;
     private Dictionary<int, List<UnlockCriteriaContext<AchievementCategoryCriteria>>>? achievementCriteriaByAchievementId;
     private Dictionary<int, AchievementCategory>? achievementCategoryByAchievementId;
     private Dictionary<int, string>? skinLookup;
@@ -523,7 +525,10 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                         new() { Name = "Elite Specializations", UnlockCriteria = [ 
                             new AchievementCategoryCriteria("Specializations"),
                             ] },
-                        new() { Name = "Guild", UnlockCriteria = [  ] },
+                        new() { Name = "Guild", UnlockCriteria = [ 
+                            //new CurrencyCriteria("Guild Commendation", UsedInZoneSpecification: false),
+                            ]
+                        },
                         new() { Name = "Mystic Forge", UnlockCriteria = [  ] },
                         new() { Name = "Crafting", UnlockCriteria = [  ] },
                         new() { Name = "Black Lion Claim Ticket", UnlockCriteria = [
@@ -753,6 +758,7 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
         achievementCategories ??= await apiSource.GetAchievementCategoriesAsync(cancellationToken);
         titles ??= await apiSource.GetTitlesAsync(cancellationToken);
         novelties ??= await apiSource.GetNoveltiesAsync(cancellationToken);
+        iconSpriteSheetInventory = (await iconSpriteSheetCache.GetIconSpriteSheetInventory(cancellationToken)).Inventory;
 
         classifyConfig = CreateConfig();
 
@@ -883,7 +889,8 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
         var startKey = unlock.Name;
         logger.LogInformation("getting API data for {key} ({type})", startKey, node.Type);
         if (miniatures == null || skins == null || achievements == null || achievementCategories == null
-            || titles == null || novelties == null || items == null || achievementCategoryByAchievementId == null)
+            || titles == null || novelties == null || items == null || achievementCategoryByAchievementId == null 
+            || iconSpriteSheetInventory == null)
         {
             logger.LogWarning("API data not initialized when trying to get API data for {key} ({type})", startKey, node.Type);
             return;
@@ -893,9 +900,14 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
         if (node.Type == NodeType.Item && node.Metadata.TryGetValue("type", out var metadataTypeMini) && metadataTypeMini.Equals("miniature", StringComparison.OrdinalIgnoreCase))
         {
             Miniature? mini = null;
+            IconSpriteSheetInventoryItem? miniInvItem = null;
             if(node.Metadata.TryGetValue("miniature id", out var miniId) && !string.IsNullOrEmpty(miniId) && int.TryParse(miniId, out var miniIdInt))
             {
                 mini = miniatures.SingleOrDefault(m => m.Id == miniIdInt);
+                if(iconSpriteSheetInventory.TryGetValue($"Miniature/{miniIdInt}", out var miniInvTmp))
+                {
+                    miniInvItem = miniInvTmp;
+                }
             }
             else
             {
@@ -914,6 +926,9 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                     Id = mini.Id,
                     Name = mini.Name,
                     IconUrl = mini.IconUrl,
+                    IconSheet = miniInvItem?.Sheet,
+                    IconX = miniInvItem?.X,
+                    IconY = miniInvItem?.Y,
                     ChatCodeId = mini.ItemId
                 };
             }
@@ -922,6 +937,11 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
             && node.Metadata.TryGetValue("novelty-id", out var noveltyId) && !string.IsNullOrEmpty(noveltyId) && int.TryParse(noveltyId, out var noveltyIdInt))
         {
             var novelty = novelties.SingleOrDefault(m => m.Id == noveltyIdInt);
+            IconSpriteSheetInventoryItem? noveltyInvItem = null;
+            if (iconSpriteSheetInventory.TryGetValue($"Novelty/{noveltyIdInt}", out var noveltyInvTmp))
+            {
+                noveltyInvItem = noveltyInvTmp;
+            }
             if (novelty != null)
             {
                 result = new()
@@ -929,7 +949,10 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                     Type = Type.Novelty,
                     Id = novelty.Id,
                     Name = novelty.Name,
-                    IconUrl = novelty.IconUrl ?? new Uri("about:blank"),
+                    IconUrl = novelty.IconUrl,
+                    IconSheet = noveltyInvItem?.Sheet,
+                    IconX = noveltyInvItem?.X,
+                    IconY = noveltyInvItem?.Y,
                     ChatCodeId = novelty.UnlockItemIds?[0] ?? 0
                 };
             }
@@ -937,6 +960,11 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
         else if (node.Type == NodeType.Skin && node.Metadata.TryGetValue("id", out var skinId) && !string.IsNullOrEmpty(skinId) && int.TryParse(skinId, out var skinIdInt))
         {
             var skin = skins.SingleOrDefault(i => i.Id == skinIdInt);
+            IconSpriteSheetInventoryItem? skinInvItem = null;
+            if (iconSpriteSheetInventory.TryGetValue($"Skin/{skinIdInt}", out var skinInvTmp))
+            {
+                skinInvItem = skinInvTmp;
+            }
             if (skin != null)
             {
                 result = new()
@@ -945,6 +973,9 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                     Id = skin.Id,
                     Name = skin.Name,
                     IconUrl = skin.IconUrl ?? new Uri("about:blank"),
+                    IconSheet = skinInvItem?.Sheet,
+                    IconX = skinInvItem?.X,
+                    IconY = skinInvItem?.Y,
                     ChatCodeId = skin.Id
                 };
             }
@@ -976,7 +1007,12 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                 }
             }
             var category = achievementCategoryByAchievementId.TryGetValue(achievementIdInt, out var cat) ? cat : null;
-            if(achievement != null)
+            IconSpriteSheetInventoryItem? achievementCategoryInvItem = null;
+            if (category != null && iconSpriteSheetInventory.TryGetValue($"AchievementCategory/{category.Id}", out var achievementCategoryInvTmp))
+            {
+                achievementCategoryInvItem = achievementCategoryInvTmp;
+            }
+            if (achievement != null)
             {
                 result = new()
                 {
@@ -985,6 +1021,9 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                     Name = achievement.Name,
                     Requirement = achievement.Requirement,
                     IconUrl = category?.IconUrl ?? new Uri("about:blank"),
+                    IconSheet = achievementCategoryInvItem?.Sheet,
+                    IconX = achievementCategoryInvItem?.X,
+                    IconY = achievementCategoryInvItem?.Y,
                     ChatCodeId = achievement.Id,
                     RewardName = rewardName,
                     RewardIconUrl = rewardIcon

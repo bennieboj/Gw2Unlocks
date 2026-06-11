@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Api\Gw2Unlocks.Api\Gw2Unlocks.Api.csproj" />
+    <ProjectReference Include="..\..\IconSpriteSheet\Gw2Unlocks.IconSpriteSheet\Gw2Unlocks.IconSpriteSheet.csproj" />
     <ProjectReference Include="..\..\WikiProcessing\Gw2Unlocks.WikiProcessing\Gw2Unlocks.WikiProcessing.csproj" />
     <ProjectReference Include="..\Gw2Unlocks.UnlockClassifier\Gw2Unlocks.UnlockClassifier.csproj" />
   </ItemGroup>

@@ -113,11 +113,17 @@ namespace Gw2Unlocks.Cache.Common
         }
 
         // --- Generic helper to save JSON from caller-provided data ---
-        public async Task SaveToCacheAsync<T>(string fileName, T data, CancellationToken cancellationToken)
+        public async Task SaveToCacheJsonAsync<T>(string fileName, T data, CancellationToken cancellationToken)
         {
             var path = Path.Combine(CacheFolder, fileName);
             var json = JsonSerializer.Serialize(data, JsonOptions);
             await File.WriteAllTextAsync(path, json, cancellationToken);
+        }
+
+        public async Task SaveToCacheBytesAsync(string fileName, Byte[] data, CancellationToken cancellationToken)
+        {
+            var path = Path.Combine(CacheFolder, fileName);
+            await File.WriteAllBytesAsync(path, data, cancellationToken);
         }
     }
 }

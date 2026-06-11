@@ -1,8 +1,11 @@
-﻿using Gw2Unlocks.Api.Cache;
+﻿using GuildWars2.Items;
+using Gw2Unlocks.Api.Cache;
 using Gw2Unlocks.Api.Implementation;
 using Gw2Unlocks.Cache.Common;
 using Gw2Unlocks.CacheUpdater;
 using Gw2Unlocks.Common;
+using Gw2Unlocks.IconSpriteSheet.Cache;
+using Gw2Unlocks.IconSpriteSheet.Implementation;
 using Gw2Unlocks.Wiki.Cache;
 using Gw2Unlocks.Wiki.Implementation;
 using Microsoft.Extensions.Hosting;
@@ -19,6 +22,10 @@ builder.Services.AddApiSource()
                 .AddCacheDir()
                 .AddWikiSource()
                 .AddCacheWikiAsCache();
+
+builder.Services.AddIconSpriteSheetGenerator()
+                .AddIconSpriteSheetCache()
+                .AddIconSpriteSheetGeneratorHttpClient();
 
 builder.Services.AddUpdater();
 

@@ -1,5 +1,6 @@
 ﻿using Gw2Unlocks.Cache.Common;
 using Gw2Unlocks.Common;
+using Gw2Unlocks.IconSpriteSheet.Cache;
 using Gw2Unlocks.UnlockClassifier.Cache;
 using Gw2Unlocks.Website;
 using Microsoft.AspNetCore.Builder;
@@ -18,6 +19,7 @@ static void ConfigureServices(ILoggingBuilder loggingBuilder, IServiceCollection
 
     services.AddCacheDir()
             .AddClassifierCache()
+            .AddIconSpriteSheetCache()
             .AddHostedService<SiteGeneratorService>();
 }
 

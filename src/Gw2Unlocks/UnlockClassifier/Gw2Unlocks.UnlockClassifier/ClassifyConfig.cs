@@ -42,6 +42,10 @@ public class ApiData
     public int ChatCodeId { get; set; }
     public string Name { get; set; } = "";
     public Uri IconUrl { get; set; } = new Uri("about:blank");
+    public int? IconSheet { get; set; }
+    public int? IconX { get; set; }
+    public int? IconY { get; set; }
+
     public string Requirement { get; set; } = "";
     public Uri? RewardIconUrl { get; set; }
     public string? RewardName { get; set; } = "";

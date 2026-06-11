@@ -45,9 +45,22 @@ internal sealed class UnlockRenderModel
 
     public string Name { get; set; } = "";
     public string IconUrl { get; set; } = "";
+    public string? IconAtlasStyleCss { get; set; }
+
+    public int AtlasSheet { get; set; }
+
+    public int AtlasX { get; set; }
+
+    public int AtlasY { get; set; }
     public string Requirement { get; set; } = "";
 
     public string? RewardIcon { get; set; } = "";
+
+    public int RewardAtlasSheet { get; set; }
+
+    public int RewardAtlasX { get; set; }
+
+    public int RewardAtlasY { get; set; }
     public string? RewardName { get; set; } = "";
 
     public string WikiUrl { get; set; } = "";
