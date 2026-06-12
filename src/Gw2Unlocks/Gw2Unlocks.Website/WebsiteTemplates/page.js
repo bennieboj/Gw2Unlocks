@@ -6,12 +6,13 @@ const accountState = {
 };
 
 const STORAGE_KEYS = {
-  apiKey: "gw2_api_key",
-  minis: "gw2_account_minis",
-  skins: "gw2_account_skins",
-  novelties: "gw2_account_novelties",
-  achievements: "gw2_account_achievements",
-  lastRefresh: "gw2_last_refresh"
+    apiKey: "gw2_api_key",
+    minis: "gw2_account_minis",
+    skins: "gw2_account_skins",
+    novelties: "gw2_account_novelties",
+    achievements: "gw2_account_achievements",
+    lastRefresh: "gw2_last_refresh",
+    filter_unlocked: "gw2_filter_unlocked"
 };
 
 loadAccountState();
@@ -140,6 +141,59 @@ function updateUnlockStates() {
     title.style.color = getColor(percent);
   });
 }
+
+function applyFilter() {
+    document.querySelectorAll(".item").forEach(item => {
+
+        const id = Number(item.dataset.id);
+        const type = item.dataset.type;
+
+        const unlocked = isUnlocked(id, type);
+
+        let visible = true;
+
+        localStorage.setItem(STORAGE_KEYS.filter_unlocked, currentFilter);
+
+        if (currentFilter === "unlocked") {
+            visible = unlocked;
+        }
+        else if (currentFilter === "locked") {
+            visible = !unlocked;
+        }
+
+        item.style.display = visible ? "" : "none";
+    });
+
+    // hide empty sections
+    document.querySelectorAll(".grid").forEach(grid => {
+
+        const visibleItems =
+            grid.querySelectorAll('.item:not([style*="display: none"])');
+
+        const title = grid.previousElementSibling;
+
+        const hasVisibleItems = visibleItems.length > 0;
+
+        grid.style.display = hasVisibleItems ? "grid" : "none";
+        title.style.display = hasVisibleItems ? "" : "none";
+    });
+}
+
+document.querySelectorAll(".filter-btn").forEach(btn => {
+
+    btn.addEventListener("click", () => {
+
+        currentFilter = btn.dataset.filter;
+
+        document
+            .querySelectorAll(".filter-btn")
+            .forEach(x => x.classList.remove("active"));
+
+        btn.classList.add("active");
+
+        applyFilter();
+    });
+});
 
 document.querySelectorAll(".item").forEach(item => {
 
@@ -285,6 +339,7 @@ async function refreshApi() {
 
     updateUnlockStates();
     updateSidebar();
+    applyFilter();
   }
   catch (e) {
     console.error(e);
@@ -345,8 +400,18 @@ function updateSidebar() {
   }
 }
 
+let currentFilter = localStorage.getItem(STORAGE_KEYS.filter_unlocked) || "all";
+document.querySelectorAll(".filter-btn").forEach(btn => {
+    btn.classList.toggle(
+        "active",
+        btn.dataset.filter === currentFilter
+    );
+});
+
+
 updateUnlockStates();
 updateSidebar();
+applyFilter();
 const existingKey = localStorage.getItem(STORAGE_KEYS.apiKey);
 
 if (existingKey && existingKey.length === 72) {
