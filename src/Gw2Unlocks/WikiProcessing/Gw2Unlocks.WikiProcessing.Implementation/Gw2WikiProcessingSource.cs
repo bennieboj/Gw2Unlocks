@@ -73,7 +73,8 @@ public sealed class Gw2WikiProcessingSource(
                             //"Plush Zhaia Backpack (skin)",
                             "Piles of Bloodstone Dust",
                             "Pile of Bloodstone Dust",
-                            "Abaddon's Axe"
+                            "Abaddon's Axe",
+                            "Illustrious Breastplate"
                             ];
 
                         //logger.LogInformation(
@@ -494,12 +495,6 @@ public sealed class Gw2WikiProcessingSource(
         InfoboxData info,
         CancellationToken cancellationToken)
     {
-        // Skin page override
-        if (info.InfoBoxType.Equals("Skin", StringComparison.OrdinalIgnoreCase))
-        {
-            return;
-        }
-
         // set
         var setData = info.Get("set");
         if (!string.IsNullOrWhiteSpace(setData))

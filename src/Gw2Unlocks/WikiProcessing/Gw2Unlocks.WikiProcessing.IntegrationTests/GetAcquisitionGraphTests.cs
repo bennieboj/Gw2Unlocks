@@ -364,6 +364,8 @@ public class GetAcquisitionGraphTests : ServiceProviderBasedTest<IGw2WikiProcess
     [InlineData("Sinister Saryx Axe", NodeType.Weapon, "Saryx weapons")]
     [InlineData("Ritualist's Ancient Canthan Light Shoulderpads", NodeType.Armor, "Ancient Canthan armor")]
     [InlineData("Ritualist's Ancient Canthan Medium Shoulderpads", NodeType.Armor, "Ancient Canthan armor")]
+    [InlineData("Illustrious Breastplate", NodeType.Skin, "Illustrious armor")]
+    [InlineData("Illustrious Doublet", NodeType.Skin, "Illustrious armor")]
     public async Task SetsShouldWork(string item, NodeType itemType, string set)
     {
         SetFile("sets");

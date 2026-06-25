@@ -447,4 +447,163 @@ Unlocking a Saryx weapon skin in the [[wardrobe]] will unlock the purchasing of 
       <sha1>7w9guszrfocp8q4q3y4ygxr9fqwz0n0</sha1>
     </revision>
   </page>
+  <page>
+    <title>Illustrious Breastplate</title>
+    <ns>0</ns>
+    <id>147663</id>
+    <revision>
+      <id>2822507</id>
+      <parentid>2781870</parentid>
+      <timestamp>2024-05-19T17:27:58Z</timestamp>
+      <contributor>
+        <username>AWB Alex</username>
+        <id>102516</id>
+      </contributor>
+      <minor/>
+      <comment>/* top */+Add skin acquisition text from CSV.</comment>
+      <origin>2822507</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="421" sha1="4h4d6m3npoxx6qsg0ihteahvio4ky49" xml:space="preserve">{{Skin infobox
+| type = Chest
+| class = Heavy
+| set = Illustrious armor (heavy)
+| collection = Ascended Accoutrement
+| dye channels = 3
+| acquisition = Obtained through crafting.
+| id = 107
+}}
+[[Illustrious Breastplate]] is a [[skin]] that is part of the [[Illustrious armor (heavy)|Illustrious armor]] set.
+
+== Acquisition ==
+{{skin list}}
+
+{{collection nav|skin=only}}
+
+[[de:Glorreiche Brustplatte]]
+[[es:Peto ilustre]]</text>
+      <sha1>4h4d6m3npoxx6qsg0ihteahvio4ky49</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Illustrious armor (heavy)</title>
+    <ns>0</ns>
+    <id>111472</id>
+    <revision>
+      <id>2669212</id>
+      <parentid>1733868</parentid>
+      <timestamp>2023-03-26T11:32:18Z</timestamp>
+      <contributor>
+        <username>Myriada</username>
+        <id>215477</id>
+      </contributor>
+      <minor/>
+      <origin>2669212</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="711" sha1="lgfmwkju7756nqzoh882uqqw8mkib6i" xml:space="preserve">{{otheruses|the heavy armor skins|the other skin sets|Illustrious armor}}
+{{Armor set infobox
+| source = PvE
+| name = Illustrious armor
+| image = Illustrious armor (heavy) human female front.jpg
+| class = heavy
+}}
+[[File:Ascended_armor_concept_art1.jpg |thumb|200px|concept art.]]
+[[File:Ascended_armor_concept_art2.jpg |thumb|200px|concept art.]]
+[[Illustrious armor (heavy)|Illustrious armor]] is a [[heavy armor]] [[skin]] set acquired from [[crafting]] [[ascended armor]].
+
+== Skin pieces ==
+{{armor skin set table}}
+
+== Gallery ==
+{{armor galleries}}
+
+{{crafted armor nav}}
+
+[[Category:Ascended armor]]
+[[Category:Heavy armor galleries]]
+[[de:Glorreiche Rüstung (Schwer)]]
+[[es:Armadura ilustre (pesada)]]</text>
+      <sha1>lgfmwkju7756nqzoh882uqqw8mkib6i</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Illustrious Doublet</title>
+    <ns>0</ns>
+    <id>134373</id>
+    <revision>
+      <id>2822509</id>
+      <parentid>2781698</parentid>
+      <timestamp>2024-05-19T17:28:02Z</timestamp>
+      <contributor>
+        <username>AWB Alex</username>
+        <id>102516</id>
+      </contributor>
+      <minor/>
+      <comment>/* top */+Add skin acquisition text from CSV.</comment>
+      <origin>2822509</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="416" sha1="ra55rjn7v91va5lqx86dk1tox4n1q1a" xml:space="preserve">{{Skin infobox
+| type = Chest
+| class = Light
+| set = Illustrious armor (light)
+| collection = Ascended Accoutrement
+| dye channels = 3
+| acquisition = Obtained through crafting.
+| id = 109
+}}
+[[Illustrious Doublet]] is a [[skin]] that is part of the [[Illustrious armor (light)|Illustrious armor]] set.
+
+== Acquisition ==
+{{skin list}}
+
+{{collection nav|skin=only}}
+
+[[de:Glorreiches Doublet]]
+[[es:Jubón ilustre]]</text>
+      <sha1>ra55rjn7v91va5lqx86dk1tox4n1q1a</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Illustrious armor (light)</title>
+    <ns>0</ns>
+    <id>111470</id>
+    <revision>
+      <id>2669165</id>
+      <parentid>1733866</parentid>
+      <timestamp>2023-03-26T11:04:46Z</timestamp>
+      <contributor>
+        <username>Myriada</username>
+        <id>215477</id>
+      </contributor>
+      <minor/>
+      <origin>2669165</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="644" sha1="07m454699iczx44ca9jge6ljbcmgooy" xml:space="preserve">{{otheruses|the light armor skins|the other skin sets|Illustrious armor}}
+{{Armor set infobox
+| source = PvE
+| name = Illustrious armor
+| image = Illustrious armor (light) human female front.jpg
+| class = light
+}}
+[[File:Ascended_armor_concept_art4.jpg |thumb|200px|concept art.]]
+[[Illustrious armor (light)|Illustrious armor]] is a [[light armor]] [[skin]] set acquired from [[crafting]] [[ascended armor]].
+
+== Skin pieces ==
+{{armor skin set table}}
+
+== Gallery ==
+{{armor galleries}}
+
+{{crafted armor nav}}
+
+[[Category:Ascended armor]]
+[[Category:Light armor galleries]]
+[[de:Glorreiche Rüstung (Leicht)]]
+[[es:Armadura ilustre (ligera)]]</text>
+      <sha1>07m454699iczx44ca9jge6ljbcmgooy</sha1>
+    </revision>
+  </page>
 </mediawiki>
