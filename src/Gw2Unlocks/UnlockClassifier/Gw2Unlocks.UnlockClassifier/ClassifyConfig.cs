@@ -1,7 +1,11 @@
-﻿using System;
+﻿using GuildWars2.Items;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Globalization;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
+using System.Text;
 using System.Text.Json.Serialization;
 
 namespace Gw2Unlocks.UnlockClassifier;
@@ -18,6 +22,20 @@ public record UnlockGroup()
 
     public Collection<UnlockCategory> UnlockCategories { get; init; } = [];
     public Collection<Unlock> Unlocks { get; init; } = [];
+
+    public override string ToString()
+    {
+        var sb = new StringBuilder();
+
+        sb.Append(CultureInfo.InvariantCulture, $"{Name}: {Unlocks.Count}");
+
+        foreach (var category in UnlockCategories.Where(c => c.Unlocks.Count > 0))
+        {
+            sb.Append(CultureInfo.InvariantCulture, $", {category.Name}: {category.Unlocks.Count}");
+        }
+
+        return sb.ToString();
+    }
 }
 public record UnlockCategory()
 {
@@ -25,6 +43,11 @@ public record UnlockCategory()
     [JsonIgnore]
     public Collection<UnlockCriteria> UnlockCriteria { get; init; } = [];
     public Collection<Unlock> Unlocks { get; init; } = [];
+
+    public override string ToString()
+    {
+        return $"{Name}: {Unlocks.Count}";
+    }
 }
 
 public class Unlock(string name, WikiProcessing.Node node)
@@ -33,6 +56,11 @@ public class Unlock(string name, WikiProcessing.Node node)
     public WikiProcessing.Node Node { get; set; } = node;
 
     public ApiData? ApiData { get; set; }
+
+    public override string ToString()
+    {
+        return Name;
+    }
 }
 
 public class ApiData

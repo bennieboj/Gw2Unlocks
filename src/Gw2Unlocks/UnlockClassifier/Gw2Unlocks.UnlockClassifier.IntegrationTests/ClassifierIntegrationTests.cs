@@ -77,6 +77,37 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
         Assert.NotNull(unlock.ApiData);
     }
 
+    // Bag of Jewels used to link to guild commendation
+    [Fact]
+    public async Task GobletOfKingsShouldBeMysticForge()
+    {
+        var unlockName = "Goblet of Kings (skin)";
+        var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
+        var group = results.UnlockGroups.Single(g => g.Name == "Other");
+        var category = group.UnlockCategories.Single(c => c.Name == "Mystic Forge");
+        var unlock = category.Unlocks.Single(c => c.Name == unlockName);
+
+        Assert.NotNull(unlock);
+        Assert.NotNull(unlock.ApiData);
+    }
+
+    [Theory]
+    [InlineData("Bolt (skin)")]
+    [InlineData("Frostfang (skin)")]
+    [InlineData("Tooth of Frostfang (skin)")]
+    [InlineData("Corrupted Skeggox")]
+    [InlineData("Tooth of Frostfang Experiment (skin)")]
+    public async Task LegendaryShouldBeLegendary(string unlockName)
+    {
+        var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
+        var group = results.UnlockGroups.Single(g => g.Name == "Other");
+        var category = group.UnlockCategories.Single(c => c.Name == "Legendary");
+        var unlock = category.Unlocks.Single(c => c.Name == unlockName);
+
+        Assert.NotNull(unlock);
+        Assert.NotNull(unlock.ApiData);
+    }
+
     [Fact]
     public async Task ItemsReferenceByASetShouldBeLnkedCorrectly()
     {
@@ -90,7 +121,7 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
         Assert.NotNull(unlock.ApiData);
     }
 
-    [Theory(Skip = "Not implemented yet, see classifyconfig")]
+    [Theory]
     [InlineData("Endless Guild Banner Tonic")]
     [InlineData("Guild Broad Axe (skin)")]
     [InlineData("Shimmering Axe (skin)")]
@@ -100,6 +131,34 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
         var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
         var group = results.UnlockGroups.Single(g => g.Name == "Other");
         var category = group.UnlockCategories.Single(c => c.Name == "Guild");
+        var unlock = category.Unlocks.Single(c => c.Name == unlockName);
+
+        Assert.NotNull(unlock);
+        Assert.NotNull(unlock.ApiData);
+    }
+
+    [Theory]
+    [InlineData("Unbreakable Choir Bell")]
+    [InlineData("Candy Cane Axe")]
+    public async Task WintersdayUnlocksShouldBeLinkedToWintersday(string unlockName)
+    {
+        var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
+        var group = results.UnlockGroups.Single(g => g.Name == "Festivals");
+        var category = group.UnlockCategories.Single(c => c.Name == "Wintersday");
+        var unlock = category.Unlocks.Single(c => c.Name == unlockName);
+
+        Assert.NotNull(unlock);
+        Assert.NotNull(unlock.ApiData);
+    }
+
+    [Theory]
+    [InlineData("Cobalt Antique Artifact")]
+    [InlineData("Illustrious Breastplate")]
+    public async Task AscendedCraftingSkinsShouldBeCrafting(string unlockName)
+    {
+        var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
+        var group = results.UnlockGroups.Single(g => g.Name == "Other");
+        var category = group.UnlockCategories.Single(c => c.Name == "Crafting");
         var unlock = category.Unlocks.Single(c => c.Name == unlockName);
 
         Assert.NotNull(unlock);
@@ -302,19 +361,6 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
         Assert.Equal(7422, unlock.ApiData.Id);
     }
 
-    [Fact(Skip = "not sure yet")]
-    public async Task FlameWeaponsAreBlackCitadelIGuess()
-    {
-        var unlockName = "Flame Blade (skin)";
-        var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
-        var group = results.UnlockGroups.Single(g => g.Name == "Cities");
-        var category = group.UnlockCategories.Single(c => c.Name == "Black Citadel");
-        var unlock = category.Unlocks.Single(c => c.Name == unlockName);
-
-        Assert.NotNull(unlock);
-        Assert.NotNull(unlock.ApiData);
-    }
-
     [Fact]
     public async Task GivenUnlockHavingRecipeWithTokenAsIngredientShouldLinkToCategory()
     {
@@ -436,6 +482,38 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
 
         Assert.NotNull(unlockSkin);
         Assert.NotNull(unlockSkin.ApiData);
+
+        Assert.NotNull(unlockAchi);
+        Assert.NotNull(unlockAchi.ApiData);
+    }
+
+    [Fact]
+    public async Task ItemsRequiredForAchievementShouldCategorizeCorrectly2()
+    {
+        var unlocksInMf = new List<string> {
+            "Icy Dragon Sword (skin)",
+            "Jormag's Needle(skin)",
+        };
+        var unlocksCrafting= new List<string> {
+            "Corrupted Shard (skin)",
+            "Corrupted Artifact",
+            "Corrupted Avenger",
+            "Corrupted Sledgehammer",
+            "Corrupted Harpoon Gun",
+            "Corrupted Greatbow",
+            "Corrupted Cudgel",
+            "Corrupted Revolver",
+            "Corrupted Blaster",
+        };
+        var unlocksLegendary = new List<string> { 
+            "Corrupted Skeggox" // legendary
+        };
+        var unlockAchiName = "Rare Collections#achievement1744";
+        var unlocks =  unlocksLegendary.Append(unlockAchiName).Concat(unlocksInMf).Concat(unlocksCrafting).ToArray();
+        var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlocks);
+        var group = results.UnlockGroups.Single(g => g.Name == "Other");
+        var category = group.UnlockCategories.Single(c => c.Name == "Crafting");
+        var unlockAchi = category.Unlocks.Single(c => c.Name == unlockAchiName);
 
         Assert.NotNull(unlockAchi);
         Assert.NotNull(unlockAchi.ApiData);

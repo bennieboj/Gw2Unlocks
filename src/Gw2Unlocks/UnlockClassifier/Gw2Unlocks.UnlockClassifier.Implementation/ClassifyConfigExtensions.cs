@@ -7,7 +7,7 @@ namespace Gw2Unlocks.UnlockClassifier.Implementation;
 
 public static class ClassifyConfigExtensions
 {
-    internal sealed class Categorization
+    internal sealed record Categorization
     {
         public UnlockGroup? Group { get; init; }
         public UnlockCategory? Category { get; init; }
@@ -59,7 +59,7 @@ public static class ClassifyConfigExtensions
         return [.. categoryUnlocks.Union(groupUnlocks)];
     }
 
-    internal static IEnumerable<T> GetUnlockCriteria<T>(this ClassifyConfig config) where T : UnlockCriteria
+    internal static IEnumerable<T> GetUnlockCriteria<T>(this ClassifyConfig config) where T : class
     {
         ArgumentNullException.ThrowIfNull(config);
         var categoryCriteria = config.UnlockGroups.SelectMany(g => g.UnlockCategories).SelectMany(c => c.UnlockCriteria).OfType<T>();

@@ -47,7 +47,8 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
         "Pile of Bloodstone Dust",
         "Dragonite Ore",
         "Empyreal Fragment",
-        "Rare Essence of Luck"
+        "Rare Essence of Luck",
+        "Bag of Jewels"
     ];
     private readonly List<string> npcsToIgnore = [
         "Black Lion Exchange Specialist", "Black Lion Representative (Exchange Specialist)"
@@ -100,8 +101,12 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                         new CraftingMaterialCriteria("Ley-Infused Sand"),
                         new CraftingMaterialCriteria("Powdered Rose Quartz"),
                         new CraftingMaterialCriteria("Eye of Kormir"),
+                        //new CraftingMaterialCriteria("Inscription of the Spearmarshal"),
                         new CurrencyCriteria("Trade Contract"),
                         new CurrencyCriteria("Elegy Mosaic"),
+                        new SetCriteria("Elonian weapons"),
+                        new SetCriteria("Awakened weapons"),
+                        new SetCriteria("Bounty Hunter's armor"),
                     ],
                     UnlockCategories =
                     [
@@ -204,7 +209,7 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                                 new ZoneCriteria("Eternity's Garden"),
                                 new TokenCriteria("Shadowstone Fragment")
                             ]
-                        }                        
+                        }
                     ]
                 },
 
@@ -217,7 +222,7 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                         new() { Name = "Season 1", UnlockCriteria = [
                             new ZoneCriteria("The Battle For Lion's Arch"),
                             new TokenCriteria("Found Heirloom"),
-                            new TokenCriteria("Fused Gauntlet Ticket", false),
+                            new TokenCriteria("Fused Gauntlet Ticket", 0, false),
                             new AchievementCategoryCriteria("Flame and Frost"),
                             new AchievementCategoryCriteria("Lion's Memory"),
                             new AchievementCategoryCriteria("Sky Pirates"),
@@ -329,7 +334,8 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                         new() { Name = "Dragonfall",
                             UnlockCriteria = [
                                 new ZoneCriteria("Dragonfall"),
-                                new TokenCriteria("Mistborn Mote")
+                                new TokenCriteria("Mistborn Mote"),
+                                new SetCriteria("Mist Shard armor")
                             ]
                         },
                     ]
@@ -493,6 +499,7 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                         new() { Name = "Wintersday", UnlockCriteria = [
                             new TokenCriteria("Snow Diamond"),
                             new TokenCriteria("Snowflake"),
+                            new TokenCriteria("Personalized Wintersday Gift"),
                             new AchievementCategoryCriteria("Wintersday Traditions"),
                             new AchievementCategoryCriteria("The Wondrous Workshop of Toymaker Tixx"),
                             new AchievementCategoryCriteria("Winter's Presence"),
@@ -506,13 +513,80 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                     UnlockCriteria = [  ],
                     UnlockCategories =
                     [
-                        new() { Name = "Divinity's Reach", UnlockCriteria = [  ] },
-                        new() { Name = "The Grove", UnlockCriteria = [  ] },
-                        new() { Name = "Hoelbrak", UnlockCriteria = [  ] },
-                        new() { Name = "Rata Sum", UnlockCriteria = [  ] },
-                        new() { Name = "Black Citadel", UnlockCriteria = [  ] },
-                        new() { Name = "Lion's Arch", UnlockCriteria = [  ] },
-                        new() { Name = "Eye of the North", UnlockCriteria = [  ] },
+                        new() { Name = "Divinity's Reach", UnlockCriteria = [
+                            new SetCriteria("Krytan weapons"),
+                            new SetCriteria("Aureate weapons"),
+                            new SetCriteria("Seraph weapons"),
+                            new SetCriteria("Researcher's armor"),
+                            new SetCriteria("Scout's armor"),
+                            new SetCriteria("Commander's armor"),
+                            new SetCriteria("Aristocrat's armor"),
+                            new SetCriteria("Falconer's armor"),
+                            new SetCriteria("Avenger's armor"),
+                            new SetCriteria("Sorcerer's armor"),
+                            new SetCriteria("Assassin's armor"),
+                            new SetCriteria("Protector's armor"),
+                        ] },
+                        new() { Name = "The Grove", UnlockCriteria = [
+                            new SetCriteria("Glyphic weapons"),
+                            new SetCriteria("Verdant weapons"),
+                            new SetCriteria("Warden weapons"),
+                            new SetCriteria("Snapdragon armor"),
+                            new SetCriteria("Evergreen armor"),
+                            new SetCriteria("Arborist armor"),
+                            new SetCriteria("Orchid armor"),
+                            new SetCriteria("Nightshade armor"),
+                            new SetCriteria("Warden armor"),
+                            new SetCriteria("Dryad armor"),
+                            new SetCriteria("Firstborn armor"),
+                            new SetCriteria("Oaken armor"),
+                        ] },
+                        new() { Name = "Hoelbrak", UnlockCriteria = [
+                            new SetCriteria("Shiverpeak weapons"),
+                            new SetCriteria("Norn weapons"),
+                            new SetCriteria("Wolfborn weapons"),
+                            new SetCriteria("Sheepskin armor"),
+                            new SetCriteria("Wolfborn armor"),
+                            new SetCriteria("Dolyak armor"),
+                            new SetCriteria("Havroun armor"),
+                            new SetCriteria("Predatory armor"),
+                            new SetCriteria("Eagle armor"),
+                            new SetCriteria("Lupine armor"),
+                            new SetCriteria("Wolf armor"),
+                            new SetCriteria("Stag armor"),
+                        ] },
+                        new() { Name = "Rata Sum", UnlockCriteria = [
+                            new SetCriteria("Peacemaker's weapons"),
+                            new SetCriteria("Adept armor"),
+                            new SetCriteria("Protean armor"),
+                            new SetCriteria("Galvanic armor"),
+                            new SetCriteria("Genius armor"),
+                            new SetCriteria("Auxiliary Powered armor"),
+                            new SetCriteria("Electroplated armor"),
+                            new SetCriteria("Savant armor"),
+                            new SetCriteria("Prototype armor"),
+                            new SetCriteria("Electromagnetic armor"),
+                        ] },
+                        new() { Name = "Black Citadel", UnlockCriteria = [
+                            new SetCriteria("Steam weapons"),
+                            new SetCriteria("Flame weapons"),
+                            new SetCriteria("Adamant Guard weapons"),
+                            new SetCriteria("Invoker's armor"),
+                            new SetCriteria("Drover armor"),
+                            new SetCriteria("Warband armor"),
+                            new SetCriteria("Archon armor"),
+                            new SetCriteria("Wrangler armor"),
+                            new SetCriteria("Legion armor"),
+                            new SetCriteria("Magus armor"),
+                            new SetCriteria("Trapper armor"),
+                            new SetCriteria("Dreadnought armor"),
+                        ] },
+                        new() { Name = "Lion's Arch", UnlockCriteria = [
+                            new SetCriteria("Pirate weapons"),
+                            new SetCriteria("Lionguard weapons"),
+                            ] },
+                        new() { Name = "Eye of the North", UnlockCriteria = [
+                            ] },
                     ]
                 },
 
@@ -522,25 +596,41 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                     UnlockCriteria = [  ],
                     UnlockCategories =
                     [
-                        new() { Name = "Elite Specializations", UnlockCriteria = [ 
+                        new() { Name = "Elite Specializations", UnlockCriteria = [
                             new AchievementCategoryCriteria("Specializations"),
                             ] },
-                        new() { Name = "Guild", UnlockCriteria = [ 
-                            //new CurrencyCriteria("Guild Commendation", UsedInZoneSpecification: false),
+                        new() { Name = "Guild", UnlockCriteria = [
+                            new CurrencyCriteria("Guild Commendation", UsedInZoneSpecification: false),
                             ]
                         },
                         new() { Name = "Mystic Forge", UnlockCriteria = [  ] },
-                        new() { Name = "Crafting", UnlockCriteria = [  ] },
+                        new() { Name = "Crafting", UnlockCriteria = [
+                            new SetCriteria("Illustrious armor"),
+                            new SetCriteria("Cobalt Antique weapons"),
+                            new SetCriteria("Terracotta Antique weapons"),
+                            ] },
+                        new() { Name = "Legendary", UnlockCriteria = [
+                            new SetCriteria("Experimental weapons"),
+                            new SetCriteria("Perfected weapons"),
+                            new SetCriteria("Precursor weapon"), // redirect Precursor weapons -> Precursor weapon
+                            new SetCriteria("Obsidian armor"),
+                            new SetCriteria("Perfected Envoy armor"),
+                            new SetCriteria("Ardent Glorious armor"),
+                            new SetCriteria("Glorious Hero's armor"),
+                            new SetCriteria("Mistforged Glorious Hero's armor"),
+                            new SetCriteria("Triumphant Hero's armor"),
+                            new SetCriteria("Mistforged Triumphant Hero's armor"),
+                            ] },
                         new() { Name = "Black Lion Claim Ticket", UnlockCriteria = [
                             new TokenCriteria("Black Lion Claim Ticket", UsedInZoneSpecification: false),
                             new AchievementCategoryCriteria("Black Lion Collections"),
                             ] },
                         new() { Name = "Black Lion Statuette", UnlockCriteria = [
-                            new TokenCriteria("Black Lion Statuette", UsedInZoneSpecification: false),
+                            new TokenCriteria("Black Lion Statuette", priority: 90, UsedInZoneSpecification: false),
                             ] },
                         new() { Name = "Gathering Tools", UnlockCriteria = [  ] },
                         new() { Name = "Gem Store", UnlockCriteria = [
-                            new CurrencyCriteria("Gem", UsedInZoneSpecification: false, allowHistorical: true)                         
+                            new CurrencyCriteria("Gem", UsedInZoneSpecification: false, allowHistorical: true)
                             ] },
                         new() { Name = "Fractals", UnlockCriteria = [
                             new TokenCriteria("Fractal Research Page"),
@@ -561,6 +651,7 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
     private IEnumerable<UnlockCriteriaContext<CurrencyCriteria>>? currencyCriteriaWithoutZoneSpecification;
     private IEnumerable<UnlockCriteriaContext<TokenCriteria>>? tokenCriteriaWithoutZoneSpecification;
     private IEnumerable<UnlockCriteriaContext<CraftingMaterialCriteria>>? craftingMaterialCriteria;
+    private IEnumerable<UnlockCriteriaContext<SetCriteria>>? setCriteria;
 
     public async Task<ClassifyConfig> ClassifyUnlocks(CancellationToken cancellationToken, params string[] unlocksToLookup)
     {
@@ -571,7 +662,8 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
         {
             nodes = [.. nodes.Where(n => unlocksToLookup.Contains(n.Key, StringComparer.OrdinalIgnoreCase))];
         }
-        var achievementNodes = nodes.Where(n => n.Value.Type == NodeType.Achievement);
+        var achievementNodes = nodes.Where(n => n.Value.Type == NodeType.Achievement).ToList();
+        nodes = [.. nodes.Where(n => n.Value.Type != NodeType.Achievement)];
         if (unlocksToLookup != null && unlocksToLookup.Length > 0)
         {
             achievementNodes = [.. achievementNodes.Where(n => unlocksToLookup.Contains(n.Key, StringComparer.OrdinalIgnoreCase))];
@@ -621,7 +713,7 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
 
             ClassifyAchievement(unlockByName, keyAchi, nodeAchi, achievementIdInt);
             iAchi++;
-            logger.LogInformation("achi {progress}/{total}", iAchi, nodes.Count);
+            logger.LogInformation("achi {progress}/{total}", iAchi, achievementNodes.Count);
         }
 
         foreach (var group in classifyConfig!.UnlockGroups)
@@ -645,7 +737,7 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
 
     private void ClassifyAchievement(Dictionary<string, UnlockContext> unlocksByName, string keyAchi, Node nodeAchi, int achievementIdInt)
     {
-        List<Categorization> possibleClassifications = [];
+        List<(Categorization categorization, string unlockName) > possibleClassifications = [];
         var achievement = achievements!.SingleOrDefault(a => a.Id == achievementIdInt);
         if(achievement != null && (achievement.Flags.Daily || achievement.Flags.Weekly || achievement.Name.Contains("(Annual)", StringComparison.InvariantCulture)))
         {
@@ -654,7 +746,10 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
         }
         if (achievementCriteriaByAchievementId!.TryGetValue(achievementIdInt, out var foundAchievementCategoryCriteria))
         {
-            possibleClassifications.AddRange(foundAchievementCategoryCriteria.Select(c => c.Categorization).OfType<Categorization>());
+            possibleClassifications.AddRange(
+                foundAchievementCategoryCriteria
+                             .Where(kvp => kvp.Categorization is not null)
+                             .Select(kvp => (categorization: kvp.Categorization!, unlockName: "achiCategoryCriteria")));
         }
         else if (achievement != null && achievement.Bits != null)
         {
@@ -667,24 +762,35 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                 .Where(x => x is not null)
                 .ToHashSet();
 
-            possibleClassifications.AddRange(unlocksByName.Where(kvp => skinNames.Contains(kvp.Key)).Select(kvp => kvp.Value.Categorization).OfType<Categorization>());
+            possibleClassifications.AddRange(
+                unlocksByName.Where(kvp => skinNames.Contains(kvp.Key))
+                             .Where(kvp => kvp.Value.Categorization is not null)
+                             .Select(kvp => (categorization: kvp.Value.Categorization!, unlockName: kvp.Key)));
         }
 
-        var bestClassificationGroup = possibleClassifications
-            .GroupBy(x => x)
+        var orderedClassifications = possibleClassifications
+            .GroupBy(x => x.categorization)           
             .Select(g => new
             {
                 g.Key,
-                Count = g.Count(),
-                Items = g.ToList()
+                Count = g.Distinct().Count(),
+                Unlocks = g.Distinct().ToList().Select(c => c.unlockName)
             })
-            .OrderByDescending(x => x.Count)
+            .OrderByDescending(x => x.Count).ToList();
+
+        logger.LogInformation("Considered:");
+        foreach (var classification in orderedClassifications)
+        {
+            logger.LogInformation("{name}  -> {considered}", classification.Key, classification.Unlocks);
+        }
+
+        var bestClassificationGroup = orderedClassifications
             .FirstOrDefault();
         if (bestClassificationGroup == null)
         {
             return;
         }
-        Categorization bestClassification = bestClassificationGroup.Key;
+        Categorization bestClassification = bestClassificationGroup.Key!;
         
         List<Unlock> unlocksToClassify = [];
         if (achievement?.Rewards != null)
@@ -737,14 +843,15 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
         var result = Classify(graph!, unlock);
         if (result != null)
         {
-            var zone = result.Value;
-            logger.LogInformation("{zone.Key} ({zone.Node.Type})", zone.Key, zone.Node?.Type);
+            var unlockResult = result.Value;
+            logger.LogInformation("{zone.Key} ({zone.Node.Type})", unlockResult.Key, unlockResult.Node?.Type);
 
             logger.LogInformation("Path:");
-            foreach (var step in zone.Path)
+            foreach (var step in unlockResult.Path)
             {
                 logger.LogInformation("  -> {step}", step);
             }
+            logger.LogInformation("{selectedGroupAndCategory}", unlockResult.SelectedGroupAndCategory);
         }
     }
 
@@ -761,6 +868,9 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
         iconSpriteSheetInventory = (await iconSpriteSheetCache.GetIconSpriteSheetInventory(cancellationToken)).Inventory;
 
         classifyConfig = CreateConfig();
+
+        var x = classifyConfig.GetUnlockCriteria<IItemOrCurrencyCriteria>().Select(x => x.GetIItemOrCurrency()).ToHashSet();
+        graph.Edges.RemoveWhere(edge => x.Contains(edge.From) && x.Contains(edge.To));
 
         var zoneData = await wikiProcessingSource.GetZoneData(cancellationToken);
 
@@ -783,6 +893,7 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
         currencyCriteriaWithoutZoneSpecification = classifyConfig.GetUnlockCriteriaWithContext<CurrencyCriteria>()?.Where(c => !c.Criteria.UsedInZoneSpecification);
         tokenCriteriaWithoutZoneSpecification = classifyConfig.GetUnlockCriteriaWithContext<TokenCriteria>()?.Where(c => !c.Criteria.UsedInZoneSpecification);
         craftingMaterialCriteria = classifyConfig.GetUnlockCriteriaWithContext<CraftingMaterialCriteria>();
+        setCriteria = classifyConfig.GetUnlockCriteriaWithContext<SetCriteria>();
         var achievementCategoryCriteria = classifyConfig.GetUnlockCriteriaWithContext<AchievementCategoryCriteria>();
 
         achievementCriteriaByAchievementId = [];
@@ -874,7 +985,8 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
 
     private readonly List<string> debugtitles = [
         "Fused Shoulders",
-        "Skyforged weapons"
+        "Skyforged weapons",
+        "Tooth of Frostfang (skin)"
     ];
 
     private sealed record SearchState(
@@ -1040,7 +1152,7 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
         unlock.ApiData = result;
     }
 
-    private (string? Key, Node? Node, List<string> Path)? Classify(
+    private (string? Key, Node? Node, List<string> Path, string SelectedGroupAndCategory)? Classify(
         AcquisitionGraph graph,
         string startKey)
     {
@@ -1089,13 +1201,33 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                 continue;
             }
 
+            if (current.Type == NodeType.Set)
+            {
+                var criteria = setCriteria!.Where(s => s.Criteria.Matches(currentKey)).ToList();
+                if(criteria.Count > 0)
+                {
+                    var groupName = criteria[0].Categorization!.Group?.Name;
+                    var categoryName = criteria[0].Categorization!.Category?.Name ?? "";
+                    var groupOfCategoryName = criteria[0].Categorization!.GroupOfCategoryName ?? "";
+                    if (groupName != null)
+                    {
+                        possibleClassifications.Add(new(groupName, null, BuildPath(currentKey, parent), criteria[0].Criteria.Priority));
+                    }
+                    else
+                    {
+                        possibleClassifications.Add(new(groupOfCategoryName, categoryName, BuildPath(currentKey, parent), criteria[0].Criteria.Priority));
+                    }
+                }
+            }
+
             if (current.Type == NodeType.Item && current.Metadata.TryGetValue("type", out var itemType))
             {
-                var isCraftingMaterial = itemType.Equals("crafting material", StringComparison.OrdinalIgnoreCase);
+                var isCraftingMaterial = itemType.Contains("crafting material", StringComparison.OrdinalIgnoreCase);
+                var isUpgradeComponent= itemType.Contains("upgrade component", StringComparison.OrdinalIgnoreCase);
                 var isThrophy = itemType.Equals("trophy", StringComparison.OrdinalIgnoreCase);
                 var isInMaterialStorage = current.Metadata.TryGetValue("material storage", out var materialStorage) && !string.IsNullOrWhiteSpace(materialStorage);
                 var isMysticMaterial = current.Metadata.TryGetValue("material type", out var materialType) && materialType.Equals("mystic", StringComparison.OrdinalIgnoreCase);
-                if ((isCraftingMaterial || isThrophy) && (isInMaterialStorage || isMysticMaterial ))
+                if ((isCraftingMaterial || isUpgradeComponent || isThrophy) && (isInMaterialStorage || isMysticMaterial ))
                 {
                     var matchingCraftingMaterials = craftingMaterialCriteria!.Where(c => c.Criteria.Matches(currentKey)).ToList();
                     if (matchingCraftingMaterials.Count == 0)
@@ -1111,11 +1243,11 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                             var groupOfCategoryName = criteria.Categorization!.GroupOfCategoryName ?? "";
                             if (groupName != null)
                             {
-                                possibleClassifications.Add(new(groupName, null, BuildPath(currentKey, parent), 100));
+                                possibleClassifications.Add(new(groupName, null, BuildPath(currentKey, parent), criteria.Criteria.Priority));
                             }
                             else
                             {
-                                possibleClassifications.Add(new(groupOfCategoryName, categoryName, BuildPath(currentKey, parent), 100));
+                                possibleClassifications.Add(new(groupOfCategoryName, categoryName, BuildPath(currentKey, parent), criteria.Criteria.Priority));
                             }
                         }
                         continue;
@@ -1197,11 +1329,11 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                 var groupOfCategoryName = criteria.Categorization!.GroupOfCategoryName ?? "";
                 if (groupName != null)
                 {
-                    possibleClassifications.Add(new(groupName, null, BuildPath(currentKey, parent), 100));
+                    possibleClassifications.Add(new(groupName, null, BuildPath(currentKey, parent), criteria.Criteria.Priority));
                 }
                 else
                 {
-                    possibleClassifications.Add(new(groupOfCategoryName, categoryName, BuildPath(currentKey, parent), 100));
+                    possibleClassifications.Add(new(groupOfCategoryName, categoryName, BuildPath(currentKey, parent), criteria.Criteria.Priority));
                 }
             }
 
@@ -1260,7 +1392,7 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                         var groupName = criteria.Categorization!.Group?.Name;
                         var categoryName = criteria.Categorization!.Category?.Name ?? "";
                         var groupOfCategoryName = criteria.Categorization!.GroupOfCategoryName ?? "";
-                        int certainty = 100;
+                        int certainty = criteria.Criteria.Priority;
                         if (criteria.Criteria.AllowHistorical && isHistoricalCost == true)
                             certainty = 20;
                         if (groupName != null)
@@ -1307,18 +1439,18 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
             {
                 g.Key.Group,
                 g.Key.Category,
-                AverageCertainty = g.Average(x => x.CertaintyPercentage),
+                MaxPriority = g.Max(x => x.Priority),
                 Count = g.Count(),
                 Items = g.ToList()
             })
-            .OrderByDescending(x => x.AverageCertainty)
+            .OrderByDescending(x => x.MaxPriority)
             .ThenByDescending(x => x.Count); // optional tie-breaker
         var bestMatch = orderedMatches.FirstOrDefault();
 
         if (bestMatch != null)
         {
             Categorize(bestMatch.Group, bestMatch.Category, startKey, startNode);
-            return (startKey, startNode, bestMatch.Items.First().Path);
+            return (startKey, startNode, bestMatch.Items.First().Path, $"{bestMatch.Group}:{bestMatch.Category}");
         }
 
         return null;
@@ -1370,10 +1502,10 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
     }
 }
 
-internal sealed class PossibleClassification(string group, string? category, List<string> path, int certaintyPercentage)
+internal sealed class PossibleClassification(string group, string? category, List<string> path, int priority)
 {
     public string Group { get; internal set; } = group;
     public string? Category { get; internal set; } = category;
     public List<string> Path { get; internal set; } = path;
-    public int CertaintyPercentage { get; internal set; } = certaintyPercentage;
+    public int Priority { get; internal set; } = priority;
 }
