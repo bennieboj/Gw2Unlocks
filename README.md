@@ -2,6 +2,9 @@
 
 https://gw2unlocks.com/
 
+![homepage](readme/homepage.png "homepage")
+
+
 ## Development Guide
 This section describes how to run and develop the **GW2 Unlocks** project locally.
 
@@ -16,7 +19,7 @@ The data is stored locally in order to replay the processing in an easy way with
 1. CacheUpdater: stores all relevant data coming from GW2 API (json) and GW2 Wiki (xml) into `src/cache-root/api-cache` and `src/cache-root/wiki-cache`.
 2. WikiProcessing: processes the data coming from GW2 Wiki into a graph and zone data in `src/cache-root/wiki-processing`.
 3. UnlockClassifier: does the actual classification, produces a `ClassifyConfig`, containing all classified unlocks in `src/cache-root/classifier-cache`.
-   - It will display the differences between the existing and the newly generated `ClassifyConfig` in order to see if the algorithm changes don't break anything.
+   - It will display the differences between the existing and the newly generated `ClassifyConfig`. The user is asked to confirm in order to see if the classification algorithm changes don't break anything.
    - Running locally will ask for confirmation
 4. WebsiteGenerator: generates the static pages, one per `UnlockGroup` and `UnlockGroup/UnlockCategory` combination.
    - Running locally will run a local static files server `http://localhost:5000` with hot reload.
