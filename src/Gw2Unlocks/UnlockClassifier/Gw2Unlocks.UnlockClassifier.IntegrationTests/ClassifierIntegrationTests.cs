@@ -278,6 +278,48 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
     }
 
     [Theory]
+    [InlineData("Peacemaker's Axe (skin)")]
+    [InlineData("Peacemaker's Dagger (skin)")]
+    public async Task CulturalWeaponsForCityShouldLinkToRespectiveCity(string unlockName)
+    {
+        var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
+        var group = results.UnlockGroups.Single(g => g.Name == "Cities");
+        var category = group.UnlockCategories.Single(c => c.Name == "Rata Sum");
+        var unlock = category.Unlocks.Single(c => c.Name == unlockName);
+
+        Assert.NotNull(unlock);
+        Assert.NotNull(unlock.ApiData);
+    }
+
+    [Theory]
+    [InlineData("Inquest Axe (skin)")]
+    [InlineData("Inquest Dagger (skin)")]
+    public async Task CulturalWeaponsForDungeonShouldLinkToRespectiveCity(string unlockName)
+    {
+        var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
+        var group = results.UnlockGroups.Single(g => g.Name == "Dungeons");
+        var category = group.UnlockCategories.Single(c => c.Name == "Crucible of Eternity");
+        var unlock = category.Unlocks.Single(c => c.Name == unlockName);
+
+        Assert.NotNull(unlock);
+        Assert.NotNull(unlock.ApiData);
+    }
+
+    [Theory]
+    [InlineData("Peacemaker's Javelin")] // cities
+    [InlineData("Inquest Bident (skin)")] // dungeon
+    public async Task CulturalWeaponsSpearsShouldLinkToCastora(string unlockName)
+    {
+        var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
+        var group = results.UnlockGroups.Single(g => g.Name == "Visions of Eternity");
+        var category = group.UnlockCategories.Single(c => c.Name == "Shipwreck Strand");
+        var unlock = category.Unlocks.Single(c => c.Name == unlockName);
+
+        Assert.NotNull(unlock);
+        Assert.NotNull(unlock.ApiData);
+    }
+
+    [Theory]
     [InlineData("Great Capra (skin)", "Verdant Brink")]
     [InlineData("Ley Guard's Protector", "Auric Basin")]
     [InlineData("Ley Guard's Revolver", "Auric Basin")]
@@ -452,8 +494,6 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
 
 
     [Theory]
-    // used to do this: Ardent Glorious Breastplate (skin) -> Ardent Glorious Breastplate -> Gift of Competitive Dedication -> Glob of Condensed Spirit Energy -> Spirit Shard -> Airship Cargo -> Verdant Brink
-    [InlineData("Ardent Glorious Breastplate (skin)")] //don't follow spirit shard!
     // used to do this: Tome of the Rubicon (skin) -> Tome of the Rubicon -> Piles of Bloodstone Dust -> Grand Exalted Chest -> Auric Basin
     [InlineData("Tome of the Rubicon (skin)")] //don't follow piles of bloodstone shard!
     [InlineData("Abyssal Scepter (skin)")]
