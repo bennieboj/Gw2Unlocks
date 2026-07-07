@@ -107,7 +107,7 @@ internal sealed class IconSpriteSheetGenerator : IIconSpriteSheetGenerator
                 int x = col * IconSize;
                 int y = row * IconSize;
 
-                canvas.DrawBitmap(resizedBitmap, x, y);
+                canvas.DrawBitmap(resizedBitmap, x, y, SKSamplingOptions.Default);
 
                 inventoryData.Inventory.Add($"{input.Type}/{input.Id}", new IconSpriteSheetInventoryItem(sheet, x, y));
 
