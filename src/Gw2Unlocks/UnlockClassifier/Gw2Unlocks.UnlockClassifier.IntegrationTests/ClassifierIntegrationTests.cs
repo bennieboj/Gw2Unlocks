@@ -162,6 +162,24 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
         Assert.NotNull(unlock.ApiData);
     }
 
+
+
+    [Theory]
+    [InlineData("Empowered Boneskinner's Spine (skin)")]
+    [InlineData("Empowered Boneskinner's Rib (skin)")]
+    [InlineData("Boneskinner's Totem (skin)")]
+    [InlineData("Empowered Boneskinner's Totem (skin)")]
+    public async Task BoneskinnerItemsShouldBeBoneSkinner(string unlockName)
+    {
+        var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
+        var group = results.UnlockGroups.Single(g => g.Name == "Raids Icebrood Saga");
+        var category = group.UnlockCategories.Single(c => c.Name == "Boneskinner");
+        var unlock = category.Unlocks.Single(c => c.Name == unlockName);
+
+        Assert.NotNull(unlock);
+        Assert.NotNull(unlock.ApiData);
+    }
+
     [Theory]
     [InlineData("Iron Legion Flamesaw (skin)")]
     //[InlineData("Mini Ryland Steelcatcher")]

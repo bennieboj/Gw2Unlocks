@@ -510,7 +510,7 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                     [
                         new() { Name = "Voice of the Fallen and Claw of the Fallen", UnlockCriteria = [new ZoneCriteria("Voice of the Fallen and Claw of the Fallen")] },
                         new() { Name = "Fraenir of Jormag", UnlockCriteria = [new ZoneCriteria("Fraenir of Jormag")] },
-                        new() { Name = "Boneskinner", UnlockCriteria = [new ZoneCriteria("Boneskinner")] },
+                        new() { Name = "Boneskinner", UnlockCriteria = [new ZoneCriteria("Boneskinner"), new TokenCriteria("Boneskinner Ritual Vial", 100)] },
                         new() { Name = "Whisper of Jormag", UnlockCriteria = [new ZoneCriteria("Whisper of Jormag")] },
                         new() { Name = "Forging Steel", UnlockCriteria = [new ZoneCriteria("Forging Steel")] },
                         new() { Name = "Cold War", UnlockCriteria = [new ZoneCriteria("Cold War")] },
