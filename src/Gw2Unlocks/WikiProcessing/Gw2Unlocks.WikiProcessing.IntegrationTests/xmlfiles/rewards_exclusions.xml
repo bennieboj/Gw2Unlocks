@@ -1,0 +1,241 @@
+<mediawiki xmlns="http://www.mediawiki.org/xml/export-0.11/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mediawiki.org/xml/export-0.11/ http://www.mediawiki.org/xml/export-0.11.xsd" version="0.11" xml:lang="en">
+  <siteinfo>
+    <sitename>Guild Wars 2 Wiki</sitename>
+    <dbname>en_wikidb_gw2</dbname>
+    <base>https://wiki.guildwars2.com/wiki/Main_Page</base>
+    <generator>MediaWiki 1.39.17</generator>
+    <case>first-letter</case>
+    <namespaces>
+      <namespace key="-2" case="first-letter">Media</namespace>
+      <namespace key="-1" case="first-letter">Special</namespace>
+      <namespace key="0" case="first-letter" />
+      <namespace key="1" case="first-letter">Talk</namespace>
+      <namespace key="2" case="first-letter">User</namespace>
+      <namespace key="3" case="first-letter">User talk</namespace>
+      <namespace key="4" case="first-letter">Guild Wars 2 Wiki</namespace>
+      <namespace key="5" case="first-letter">Guild Wars 2 Wiki talk</namespace>
+      <namespace key="6" case="first-letter">File</namespace>
+      <namespace key="7" case="first-letter">File talk</namespace>
+      <namespace key="8" case="first-letter">MediaWiki</namespace>
+      <namespace key="9" case="first-letter">MediaWiki talk</namespace>
+      <namespace key="10" case="first-letter">Template</namespace>
+      <namespace key="11" case="first-letter">Template talk</namespace>
+      <namespace key="12" case="first-letter">Help</namespace>
+      <namespace key="13" case="first-letter">Help talk</namespace>
+      <namespace key="14" case="first-letter">Category</namespace>
+      <namespace key="15" case="first-letter">Category talk</namespace>
+      <namespace key="102" case="first-letter">Property</namespace>
+      <namespace key="103" case="first-letter">Property talk</namespace>
+      <namespace key="106" case="first-letter">Form</namespace>
+      <namespace key="107" case="first-letter">Form talk</namespace>
+      <namespace key="108" case="first-letter">Concept</namespace>
+      <namespace key="109" case="first-letter">Concept talk</namespace>
+      <namespace key="112" case="first-letter">smw/schema</namespace>
+      <namespace key="113" case="first-letter">smw/schema talk</namespace>
+      <namespace key="114" case="first-letter">Rule</namespace>
+      <namespace key="115" case="first-letter">Rule talk</namespace>
+      <namespace key="200" case="first-letter">ArenaNet</namespace>
+      <namespace key="201" case="first-letter">ArenaNet talk</namespace>
+      <namespace key="202" case="first-letter">API</namespace>
+      <namespace key="203" case="first-letter">API talk</namespace>
+      <namespace key="274" case="first-letter">Widget</namespace>
+      <namespace key="275" case="first-letter">Widget talk</namespace>
+    </namespaces>
+  </siteinfo>
+  <page>
+    <title>Catalyst's Stamp</title>
+    <ns>0</ns>
+    <id>314298</id>
+    <revision>
+      <id>2906261</id>
+      <parentid>2799508</parentid>
+      <timestamp>2024-12-04T18:29:43Z</timestamp>
+      <contributor>
+        <username>Sylnara</username>
+        <id>272145</id>
+      </contributor>
+      <origin>2906261</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="583" sha1="fsfcl3d34lpb40v67yfn38esjnzm5r5" xml:space="preserve">{{Item infobox
+| icon = Vindicator's Stamp.png
+| description = Double-click to gain collection progress.
+| hint = As a [[elementalist]], complete the [[Seitung Province]] [[Aetherblade Assault|meta-event]].
+| type = Service
+| level = 80
+| rarity = Exotic
+| collection = Gravity (achievement)
+| bound = Account
+| id = 96251
+| requires = eod
+}}
+
+Part of the [[catalyst]] [[elite specialization]] collection achievement [[Gravity (achievement)]].
+
+== Acquisition ==
+{{rewarded by}}
+
+{{Collection nav}}
+
+[[de:Katalysierer-Stempel]]
+[[es:Sello de catalizador]]
+[[fr:Cachet de catalyseur]]</text>
+      <sha1>fsfcl3d34lpb40v67yfn38esjnzm5r5</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Defeat Renyak!</title>
+    <ns>0</ns>
+    <id>313222</id>
+    <revision>
+      <id>3116073</id>
+      <parentid>3033547</parentid>
+      <timestamp>2026-03-12T17:23:20Z</timestamp>
+      <contributor>
+        <username>Hazasoul</username>
+        <id>133824</id>
+      </contributor>
+      <comment>/* Rewards */ add other bucket, fix chance, hide "unsure" drops</comment>
+      <origin>3116073</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="7403" sha1="on8idk2h4x180lcuw69r8fzsegb1e52" xml:space="preserve">{{Event infobox
+| location = Haiju Plains
+| type = group event
+| indicator = red boss
+| level = 80
+| meta event = Aetherblade Assault
+| previous = Defeat the Aetherblade leader
+| coordinates = [23189.4, 100848]
+| requires = eod
+}}
+[[Defeat Renyak!]] is a level 80 [[Dynamic event|group event]] that occurs within the hidden [[Aetherblade Refuge]] in [[Haiju Plains]], and is the final [[boss]] event of the [[Aetherblade Assault]] [[meta event]] in [[Seitung Province]].
+
+== Objectives ==
+* [[Renyak, Munitions Expert]]&lt;br&gt;{{event bar}} {{event icon|boss}}
+* Time until Renyak wins: 10:00
+
+== Rewards ==
+{{Event rewards}}
+
+* One bouncy chest &lt;small&gt;'''(once per day)'''&lt;/small&gt;
+** {{rewards item|Seitung Province: Hero's Choice Chest}}
+** One of the following:
+*** {{rewards item|Drip of Liquid Karma|chance=chance}}
+*** {{rewards item|Shred of Sea of Jade Mastery|chance=chance}}
+** {{rewards item|Writ of Seitung Province|qty=5}}
+** One of the following:
+*** {{rewards item|Discarded Garment|chance=chance|qty=3}}
+&lt;!--*** {{rewards item|Piece of Common Unidentified Gear|chance=chance}} &lt;!-- unsure --&gt;
+*** {{rewards item|Pieces of Unidentified Gear|chance=chance|qty=1-3}}
+*** {{rewards item|Piece of Rare Unidentified Gear|chance=chance}}
+&lt;!--*** {{rewards item|Salvageable Hide}} &lt;!-- unsure --&gt;
+*** [[Flame Serpent weapons]]
+** {{rewards item|Bounty of Seitung Province}}
+** {{rewards item|Imperial Favor|qty=20-35}}
+** If the corresponding [[Specialization Collections|elite specialization collection]] is active:
+*** {{rewards item|Catalyst's Stamp|profession=Elementalist}}
+*** {{rewards item|Specter's Stamp|profession=Thief}}
+*** {{rewards item|Untamed's Stamp|profession=Ranger}}
+*** {{rewards item|Virtuoso's Authorization Papers|profession=Mesmer}}
+*** {{rewards item|Willbender's Authorization Papers|profession=Guardian}}
+** {{rewards item|Turret Power Unit|collection=Turtle Unlock: Suiting Up}}
+* [[Magnificent Chest (End of Dragons)|Magnificent Chest]]
+* Four [[Chest (Cantha Meta)|small chests]]
+
+== Walkthrough ==
+The bossfight area presents several environmental hazards: electrified flooring that will cause heavy damage when stood upon an active panel, spinning laser traps, that [[stun]] and cause damage, as well as shielded cannons and destructible [[Hologram Generator]]s summoning backup.
+
+[[Renyak]] himself will summon several gyros with different effects:
+* Bulwark Gyros, which shield him, making him immune to damage until the gyros are destroyed.
+* Shredder Gyros, that can be destroyed to avoid their '''Shredding Blades''' attacks.
+* Blast Gyros, that'll cause damage via their shockwave attack ''' Blast Detonation''' unless destroyed.
+
+In addition to the Shield Phase, in which the Bulwark Gyros have to be destroyed, Renyak is also immune to attacks during the Channeling Phase. To avoid a devastating lightning attack and continue damaging Renyak, a [[defiance bar]] has to be broken with [[CC]]. {{vendor|misc|Mastery Tutor Icebrood Saga (map icon).png|United Legions Waystation}} [[United Legions Waystation]]s providing access to {{skill icon|Electromagical Pulse 2.0}} can be useful here. Both phases are telegraphed by a visible shield bubble surrounding Renyak and announced by voicelines from the allied NPCs.
+
+== NPCs ==
+=== Allies ===
+* [[Gwan-Soon]]
+* [[Tai-Young]]
+* [[Mr. Bots]]
+
+=== Foes ===
+* [[Blast Gyro (Renyak)|Blast Gyro]]
+* [[Bulwark Gyro (Renyak)|Bulwark Gyro]]
+* [[Holographic Pistoleer]]
+* [[Holographic Striker]]
+* [[Holographic Taskmaster]]
+* [[Holographic Thug]]
+* [[Renyak|Renyak, Munitions Expert]]
+* [[Shredder Gyro (Renyak)|Shredder Gyro]]
+
+== Objects ==
+* [[Aetherblade Cannon]]
+* [[Hologram Generator]]
+
+== Dialogue ==
+;Event start{{verify|Verify order of dialogue lines}}
+:'''Tai-Young:''' ''What's going on here? just where are you taking our things?''
+:'''Renyak, Munitions Expert:''' ''What's it to ya? Figured you wouldn't mind sharing. A little hospitality.''
+:'''Gwan-Soon:''' ''More than a little. you crooks have been at it all day.''
+:'''Renyak, Munitions Expert:''' ''Only what we need. But we're a needy bunch.''
+:'''Mr. Bots:''' ''What exactly do you need a holo-projector for? A plow? You will return what's rightfully ours!''
+:'''Renyak, Munitions Expert:''' ''You snitches take yourselves far too seriously. Should consider yanking those sticks outta your butts.''
+:'''Renyak, Munitions Expert:''' ''If I gave a damn about what's "rightfully yours," I wouldn't be too good at my job, would I?''
+:'''Renyak, Munitions Expert:''' ''When life doesn't give you what you need, you just gotta take it yourself. Life's not fair, so why play by its rules?''
+:'''Gwan-Soon:''' ''Course it's not fair. Doesn't give you carte blanche to make it harder for other people.''
+
+;Imminent [[CC]] phase
+:&lt;small&gt;'''One of the following'''&lt;/small&gt;
+:'''Gwan-Soon:''' ''Lightning! Stun him before he attacks!''
+:'''Tai-Young:''' ''Gwan-Soon, watch out!''
+
+:'''Mr. Bots:''' ''We cannot harm him this way! We must stop him from charging!''
+
+:'''Mr. Bots:''' ''It's no use! We cannot hurt him unless we break that charge of his!''
+
+;Renyak is shielded
+:&lt;small&gt;'''One of the following'''&lt;/small&gt;
+:'''Mr. Bots:''' ''Focus on the gyros! That should help us destroy his shield.''
+
+:'''Mr. Bots:''' ''Gyros. We'll get nowhere with those shielding him. Aim for them first!''
+
+:'''Mr. Bots:''' ''If we break those gyros, that should break his shield as well.''
+
+;Event success
+:'''Tai-Young:''' ''That's it, he's down! Keep your thieving booty out of here!''
+:'''Tai-Young:''' ''Now, in accordance with legal code seven, section fourteen, I'll coordinate returning these items to their owners.''
+:'''Mr. Bots''' ''I for one am going to celebrate with a good recharge and relaxing polish...''
+:'''Gwan-Soon:''' ''Guess I'll begin repairs. Sooner I start, sooner my village will be back to normal.''
+:'''Mr. Bots''' ''Say, Gwan-Soon. I know that Master has quite some pull over at the ministry...''
+:'''Mr. Bots''' ''Perhaps I can chat with him about a relief bill. Certainly there are some spare funds lying around.''
+:'''Gwan-Soon:''' ''Thank you, Mr. Bots. We would all appreciate that. You know, my friend Ae-Ri is a machinist...''
+:'''Gwan-Soon:''' ''She's famous for giving bots the emperor's treatment during tune-ups. Even uses a buffer.''
+:'''Mr. Bots''' ''Oh, I haven't been buffed in ages! I would love to drop by. It's about time I visited Haiju Shore.''
+
+;Optional dialogue if interact with Tai-Young
+:'''Tai-Young:''' ''Getting bills approved wouldn't be as grueling if officials weren't so divided.''
+:'''Tai-Young:''' ''Some want to charge headfirst into the future of jade tech. Others are planted in the past.''
+:'''Tai-Young:''' ''I think we should respect both. But not everyone sees it that way.''
+
+;Event failure
+{{Section-stub|event|Missing dialogue}}
+
+== Related achievements ==
+* {{achievement|Eternal Seitung Province Meta-Event}}
+* {{achievement|Seitung Province Meta-Event}}
+* {{achievement|Weekly Seitung Province Jade Treasure Recovery}}
+* {{collection achievement|Turret Power Unit}}
+* {{collection achievement|Untamed's Stamp}}
+* {{collection achievement|Catalyst's Stamp}}
+* {{collection achievement|Specter's Stamp}}
+* {{collection achievement|Virtuoso's Authorization Papers}}
+* {{collection achievement|Willbender's Authorization Papers}}
+
+[[de:Bezwingt Renyak]]
+[[es:¡Derrota a Renyak!]]
+[[fr:Battez Renyak !]]</text>
+      <sha1>on8idk2h4x180lcuw69r8fzsegb1e52</sha1>
+    </revision>
+  </page>
+</mediawiki>

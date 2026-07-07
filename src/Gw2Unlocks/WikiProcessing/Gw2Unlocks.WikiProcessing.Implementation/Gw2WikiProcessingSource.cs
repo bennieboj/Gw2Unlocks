@@ -444,6 +444,8 @@ public sealed class Gw2WikiProcessingSource(
             "WEAPON SET" => NodeType.Set,
             "ARMOR SET" => NodeType.Set,
 
+            "EVENT" => NodeType.Event,
+
             "OBJECT" => NodeType.Gw2Object,
 
             _ => NodeType.None
@@ -584,6 +586,22 @@ public sealed class Gw2WikiProcessingSource(
 
                         graph.AddEdge(itemName, nodeId, EdgeType.SoldBy, metadata);
                     }
+                }
+            }
+        }
+
+        if (info.InfoBoxType.Equals("NPC", StringComparison.OrdinalIgnoreCase) || 
+            info.InfoBoxType.Equals("Event", StringComparison.OrdinalIgnoreCase)) { }
+        {
+            var rewardsItemTemplates = ast.EnumDescendants().OfType<Template>().Where(t => t.Name.ToString().Contains("Rewards item", StringComparison.OrdinalIgnoreCase)).ToList();
+            foreach (var rewardItemTemplate in rewardsItemTemplates)
+            {
+                var forbidden = new List<string>() { "profession" };
+                var itemName = rewardItemTemplate.Arguments.FirstOrDefault()?.Value?.ToString();
+                var anyContainsForbiddenArgument = rewardItemTemplate.Arguments.Any(a => a.Name != null && forbidden.Any(f => f.Contains(a.Name.ToString().Trim(), StringComparison.OrdinalIgnoreCase)));
+                if (itemName != null && !anyContainsForbiddenArgument)
+                {
+                    graph.AddEdge(itemName, nodeId, EdgeType.RewardedBy);
                 }
             }
         }

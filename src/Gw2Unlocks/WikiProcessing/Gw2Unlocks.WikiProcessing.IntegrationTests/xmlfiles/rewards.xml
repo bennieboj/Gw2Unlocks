@@ -1,0 +1,515 @@
+<mediawiki xmlns="http://www.mediawiki.org/xml/export-0.11/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mediawiki.org/xml/export-0.11/ http://www.mediawiki.org/xml/export-0.11.xsd" version="0.11" xml:lang="en">
+  <siteinfo>
+    <sitename>Guild Wars 2 Wiki</sitename>
+    <dbname>en_wikidb_gw2</dbname>
+    <base>https://wiki.guildwars2.com/wiki/Main_Page</base>
+    <generator>MediaWiki 1.39.17</generator>
+    <case>first-letter</case>
+    <namespaces>
+      <namespace key="-2" case="first-letter">Media</namespace>
+      <namespace key="-1" case="first-letter">Special</namespace>
+      <namespace key="0" case="first-letter" />
+      <namespace key="1" case="first-letter">Talk</namespace>
+      <namespace key="2" case="first-letter">User</namespace>
+      <namespace key="3" case="first-letter">User talk</namespace>
+      <namespace key="4" case="first-letter">Guild Wars 2 Wiki</namespace>
+      <namespace key="5" case="first-letter">Guild Wars 2 Wiki talk</namespace>
+      <namespace key="6" case="first-letter">File</namespace>
+      <namespace key="7" case="first-letter">File talk</namespace>
+      <namespace key="8" case="first-letter">MediaWiki</namespace>
+      <namespace key="9" case="first-letter">MediaWiki talk</namespace>
+      <namespace key="10" case="first-letter">Template</namespace>
+      <namespace key="11" case="first-letter">Template talk</namespace>
+      <namespace key="12" case="first-letter">Help</namespace>
+      <namespace key="13" case="first-letter">Help talk</namespace>
+      <namespace key="14" case="first-letter">Category</namespace>
+      <namespace key="15" case="first-letter">Category talk</namespace>
+      <namespace key="102" case="first-letter">Property</namespace>
+      <namespace key="103" case="first-letter">Property talk</namespace>
+      <namespace key="106" case="first-letter">Form</namespace>
+      <namespace key="107" case="first-letter">Form talk</namespace>
+      <namespace key="108" case="first-letter">Concept</namespace>
+      <namespace key="109" case="first-letter">Concept talk</namespace>
+      <namespace key="112" case="first-letter">smw/schema</namespace>
+      <namespace key="113" case="first-letter">smw/schema talk</namespace>
+      <namespace key="114" case="first-letter">Rule</namespace>
+      <namespace key="115" case="first-letter">Rule talk</namespace>
+      <namespace key="200" case="first-letter">ArenaNet</namespace>
+      <namespace key="201" case="first-letter">ArenaNet talk</namespace>
+      <namespace key="202" case="first-letter">API</namespace>
+      <namespace key="203" case="first-letter">API talk</namespace>
+      <namespace key="274" case="first-letter">Widget</namespace>
+      <namespace key="275" case="first-letter">Widget talk</namespace>
+    </namespaces>
+  </siteinfo>
+  <page>
+    <title>Mini Gorseval the Multifarious</title>
+    <ns>0</ns>
+    <id>168033</id>
+    <revision>
+      <id>2758592</id>
+      <parentid>2289333</parentid>
+      <timestamp>2023-11-10T03:01:32Z</timestamp>
+      <contributor>
+        <username>J.A.R.V.I.S.</username>
+        <id>207015</id>
+      </contributor>
+      <minor/>
+      <comment>bot edit - &gt; adding mini set to infobox/removing manual category</comment>
+      <origin>2758592</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="540" sha1="4jcyedpnjxmltmgnqi7hmbbept2fv5j" xml:space="preserve">{{Item infobox
+| description = Double-click to summon this mini to follow you around. Only one mini may be in use at a time.
+| type = miniature
+| miniature set = Raid
+| rarity = exotic
+| bound = account
+| miniature id = 372
+| id = 77296
+| requires = hot
+}}
+
+== Acquisition ==
+=== Sold by ===
+{{Sold by}}
+
+=== Rewarded by ===
+{{rewarded by}}
+
+== Currency for ==
+{{Vendor query table|currency=Mini Gorseval the Multifarious}}
+
+[[de:Mini Gorseval der Facettenreiche]]
+[[es:Miniatura de Gorseval el Múltiple]]
+[[fr:Mini-Gorseval le Disparate]]</text>
+      <sha1>4jcyedpnjxmltmgnqi7hmbbept2fv5j</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Gorseval the Multifarious</title>
+    <ns>0</ns>
+    <id>167723</id>
+    <revision>
+      <id>3113676</id>
+      <parentid>3106764</parentid>
+      <timestamp>2026-03-04T23:28:37Z</timestamp>
+      <contributor>
+        <username>Hazasoul</username>
+        <id>133824</id>
+      </contributor>
+      <minor/>
+      <comment>/* Drops */</comment>
+      <origin>3113676</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="12720" sha1="o5p41bvnuk1ks0q16srgnhb6m1b4jmt" xml:space="preserve">{{spoiler|[[Spirit Vale]]}}
+{{NPC infobox
+| location = Gorseval's Perch
+| organization = Bloodstone ghosts
+| race = Ghost
+| level = 80
+| rank = Legendary
+| coordinates = [36932,29245]
+| requires = hot
+}}
+{{quotation|[[Spirit Vale|Gorseval the Multifarious]]|We fight together! And we will have our revenge!}}
+
+[[Gorseval the Multifarious]] is  the second boss in the [[Spirit Vale]] [[raid]] wing. It is a soul construct&lt;ref name="Souls"&gt;[[Scholar Glenna (Mount Balrior)]]
+:'''&lt;Character name&gt;:''' Not the first soul construct we've seen, yeah?
+:'''Scholar Glenna:''' Oh! Right! Gorseval.
+:'''Scholar Glenna:''' Hard to choose which I'd rather bump into: souls melded in the fires of torment...
+:'''Scholar Glenna:''' ...or the spectral amalgam of those deemed unworthy for sacrifice.&lt;/ref&gt; formed from the angered [[Bloodstone ghost|ghosts]] trapped within the [[Spirit Woods]].
+
+== Biography ==
+=== Early history ===
+After establishing a foothold in the [[Forsaken Thicket]] in their exile from [[Kryta]], the [[White Mantle]] ordered their [[bandit]] allies to capture people, and those who were deemed [[magic]]ally potent were sacrificed atop the Maguuma [[Bloodstone]] for dark rituals over two centuries. The bandits of [[Spirit Vale]] left the bodies of the unworthy prisoners to rot in the [[Spirit Woods]]. The [[Elder Dragon]] [[Mordremoth]]'s [[Hearts and Minds|demise]] caused a magical shockwave in 1328 &lt;small&gt;[[Mouvelian calendar|AE]]&lt;/small&gt;, however, which hit the Forsaken Thicket and released some of the spirits trapped in the Maguuma Bloodstone.&lt;ref&gt;[[Spirit Vale]]
+:'''&lt;Character name&gt;:''' These spirits are old. These people died a long time ago–well before the war.&lt;/ref&gt;&lt;ref&gt;[[Glenna's Field Journal]]
+:They were stopped in their tracks by a huge beast made of frightened, vengeful souls whom I'd later find out were shocked free from the Maguuma Bloodstone. Confused and agitated, they sought revenge.&lt;/ref&gt;
+
+The freed [[Bloodstone ghost|ghosts]], having forgotten their cause of death at first, alternated between being confused and scared to becoming angry and bloodthirsty when memories of their suffering periodically returned. The bandits quickly learned not to leave more bodies in shallow graves or piles within the woods as the restless spirits increased in number and attacked anyone they came across. When threatened, the ghosts learned to merge together into a single, monstrous entity which the bandits eventually named Gorseval. Some bandits even thought of entertaining themselves by leaving helpless prisoners in the woods and watch them be devoured by Gorseval.&lt;ref&gt;[[Journal Entry]]&lt;/ref&gt;
+
+=== [[Forsaken Thicket]] ===
+Later in 1328 &lt;small&gt;AE&lt;/small&gt;, a squad of raiders assisting the [[Pact]] ventured into the Spirit Vale in search of a missing squad which the bandits had captured earlier. The raiders encountered Gorseval in the woods and heard it voicing its desire for both revenge and merging the souls of more beings into its mass to grow in power. Gorseval was ultimately defeated after a fierce clash, and the raiders conjectured that the ghosts forming Gorseval might have been slaughtered and bound by the bandit leader [[Sabetha the Saboteur]]. This conjecture was proven untrue later when the Pact discovered more evidence of the bandit and White Mantle activities in the region, however. [[Scholar Glenna]], the raiders' associate, recorded Gorseval's true origins in her [[Glenna's Field Journal|field journal]] for posterity.
+
+=== [[Guild Wars 2: Janthir Wilds|Janthir Wilds]] ===
+In 1338 &lt;small&gt;AE&lt;/small&gt;, the Pact Commander encountered a being similar to Gorseval—[[Lextalion the Merciless]], another soul construct naturally formed from souls, unlike other soul constructs encountered by the Commander, such as the [[titan]]s forged in the [[Foundry of Failed Creations]].&lt;ref name="Souls"/&gt;
+
+== Location ==
+;[[Heart of Maguuma]]
+* [[Forsaken Thicket]]
+** [[Spirit Vale]]
+*** [[Gorseval's Perch]]
+
+== Walkthrough ==
+{{main|Spirit Vale#Gorseval the Multifarious}}
+
+== Combat abilities ==
+;Abilities
+* Many Become One
+
+;Behavior
+* '''Spectral Darkness''' - Gorseval summons spectral orbs which slowly create an expanding AoE. Players who enter this field are afflicted with 10 stacks of the {{effect|Spectral Darkness}} debuff. Destruction of a Spectral Darkness orb leaves behind two small golden energy orbs which persist for a short time. Each golden orb removes 5 stacks of the Spectral Darkness debuff from an ''affected'' player when they walk over them and is consumed.
+** If not destroyed, Spectral Darkness orbs can grow to cover about a quarter of the arena before naturally timing out.
+* '''Updrafts and Spirit Barrier''' - During Gorseval's World Eater attack, players have the choice to either phase Gorseval (bring him to either 66%, 33%, or 0% health) in order to interrupt the attack; or must destroy a [[Spirit Barrier]] wall at the edge of the arena to access an {{map icon|misc|Updraft (map icon).png|Updraft (object)}} [[updraft (object)|updraft]], gliding up to avoid the attack, then return to the arena.
+** The fight begins with four updrafts. Once an updraft is used, it disappears. Each updraft is marked on the minimap with a {{map icon|misc|Updraft (map icon).png|Updraft (object)}} icon.
+** Disappearance of updrafts is activated by player proximity, with each disappearing 15 seconds after a player moves close to it (very edge of the platform).
+** Note that if Gorseval has walked away from the center of the arena then upon being phased he must walk back to the center before World Eater will cancel.
+
+;Effects
+{{defiance}} &lt;small&gt;(unlocked while channeling '''Ghastly Rampage'''; inflicts knockdown for 3 seconds when broken)&lt;/small&gt;&lt;/small&gt;&lt;br&gt;{{chain}}'''[[Defiance skill (Gorseval)|Unnamed defiance skill]]''' — {{skill description|Defiance skill (Gorseval)}}
+* {{effect|Protective Shadow}} - {{effect description|Protective Shadow}}
+* {{effect|Spirited Fusion}} - {{effect description|Spirited Fusion}}
+** Note that Bloom was the previous name for World Eater
+* {{effect|Vivid Echo}} - {{effect description|Vivid Echo}}
+
+;Skills
+* '''[[Ghastly Prison]]''' - {{skill description|Ghastly Prison}}
+** Encases players in an egg-like prison that can be broken through a combination of other player's attacks and the special action skill [[Rebel]] the captured player receives.
+* '''[[Ghastly Rampage]]''' - {{skill description|Ghastly Rampage}}
+** Gorseval gains {{effect|Vivid Echo}} and slams the ground repeatedly, creating patterns of black, ghastly material on the floor. After 3 seconds, the black material detonates and damages players while applying 25 stacks of {{vulnerability}} to them. Breaking Gorseval's breakbar interrupts this skill.
+* '''[[Haunting Aura]]''' - {{skill description|Haunting Aura}}
+** A passive damage dealing effect which comes into effect as soon as Gorseval is engaged into combat.
+* '''[[Spectral Impact]]''' - {{skill description|Spectral Impact}}
+** Gorseval slams its fist into the ground damaging {{knockback|knocking back}} nearby players and applying {{torment}}.
+* '''[[Wicked Swipe]]''' - {{skill description|Wicked Swipe}}
+* '''[[World Eater]]''' - {{skill description|World Eater}}
+** Slow casting Area of Effect (AoE) which fills the arena; once fully cast, it will kill any player still standing in the arena. This skill also consumes any remaining spirits in the arena applying one stack of {{effect|Spirited Fusion}} to Gorseval per spirit consumed.
+
+;[[Angered Spirit]] Skills
+{{stub|skill|Missing skills for Angered and Enraged spirits}}
+* '''[[Ectoplasm (Angered Spirit)|Ectoplasm]]''' - {{skill description|Ectoplasm (Angered Spirit)}}
+* '''[[Ectoplasmic Blob (Angered Spirit)|Ectoplasmic Blob]]''' - {{skill description|Ectoplasmic Blob (Angered Spirit)}}
+* '''[[Slash (Angered Spirit)|Slash]]''' - {{skill description|Slash (Angered Spirit)}}
+
+;[[Enraged Spirit]] Skills
+* '''[[Kick (Enraged Spirit)|Kick]]''' - {{skill description|Kick (Enraged Spirit)}}
+* '''[[Slash (Enraged Spirit)|Slash]]''' - {{skill description|Slash (Enraged Spirit)}}
+* '''[[Slice (Enraged Spirit)|Slice]]''' - {{skill description|Slice (Enraged Spirit)}}
+
+;Stolen skills
+* {{stolen skill|Unstable Artifact}}
+
+== Stats of encounter relevant enemies ==
+{| {{STDT|pve}}
+|-
+! Enemy
+! Health
+! Defiance Bar
+|-
+| Gorseval
+| align="right" |21,628,200
+| align="right" |4,500
+|-
+| Charged Soul
+| align="right" |567,864
+|
+|-
+| Enraged Spirit
+| align="right" |220,836
+|
+|-
+| Angered Spirit
+| align="right" |176,669
+|
+|-
+| Spectral Prison (egg)
+| align="right" |119,520
+|
+|-
+| Spectral Darkness (orb)
+| align="right" |29,880
+|
+|}
+
+== Drops ==
+* [[Gorseval's Chest]]
+
+;Event rewards
+* {{coin|20000}}
+* {{exp|200025}}
+* {{karma|10000}}
+* {{Rewards item|Magnetite Shard|qty=8}}
+* {{Rewards item|Gorseval's Coffer}}
+* {{Rewards item|Compendium of Knowledge}} &lt;small&gt;(with {{effect|Call of the Mists (raid effect)}} active)&lt;/small&gt;
+* {{Rewards item|The Lost Art of Armor Crafting}} &lt;small&gt;(drops if the [[Envoy Armor I: Experimental Armor]] collection hasn't yet been unlocked)&lt;/small&gt;
+* {{Rewards item|Spirit Thread}} &lt;small&gt;(only if the [[Envoy Armor I: Experimental Armor]] [[collection]] is unlocked and the item is still needed for the collection)&lt;/small&gt;
+* 1 random piece of [[equipment]] of {{rarity|Exotic}} [[Item#Rarity|rarity]]
+* A chance at the following unique drops (more than one can drop at a time):
+** {{Rewards item|Assaulter's Spirit Branch|chance=chance}}
+** {{Rewards item|Defender's Spirit Branch|chance=chance}}
+** {{Rewards item|Healer's Spirit Branch|chance=chance}}
+** {{Rewards item|Malicious Spirit Branch|chance=chance}}
+** {{Rewards item|Assaulter's Spirit Ward|chance=chance}}
+** {{Rewards item|Defender's Spirit Ward|chance=chance}}
+** {{Rewards item|Healer's Spirit Ward|chance=chance}}
+** {{Rewards item|Malicious Spirit Ward|chance=chance}}
+** {{Rewards item|Chest of Gorseval Leggings|chance=chance}}
+** {{Rewards item|Spectral Balm|chance=chance}}
+** {{Rewards item|Spectral Juju|chance=chance}}
+** {{Rewards item|Spectral Talisman|chance=chance}}
+** {{Rewards item|Spectral Ward|chance=chance}}
+** {{Rewards item|Ghostly Infusion#itemct77366|id=77366|chance=chance}} &lt;!-- Condition Damage --&gt;
+** {{Rewards item|Ghostly Infusion#itemct77274|id=77274|chance=chance}} &lt;!-- Healing Power --&gt;
+** {{Rewards item|Ghostly Infusion#itemct77310|id=77310|chance=chance}} &lt;!-- Power --&gt;
+** {{Rewards item|Ghostly Infusion#itemct77316|id=77316|chance=chance}} &lt;!-- Precision --&gt;
+** {{Rewards item|Ghostly Infusion#itemct77394|id=77394|chance=chance}} &lt;!-- Toughness --&gt;
+** {{Rewards item|Ghostly Infusion#itemct77303|id=77303|chance=chance}} &lt;!-- Vitality --&gt;
+** {{Rewards item|Mini Gorseval the Multifarious|chance=chance}}
+
+== Gallery ==
+&lt;gallery&gt;
+File:Spirit Vale wallpaper.jpg|Gorseval concept art.
+&lt;/gallery&gt;
+
+== Related achievements ==
+* {{achievement|Anger Management}}
+* {{achievement|Denied}}
+* {{achievement|Put to Rest}}
+* {{achievement|Spectral Anomaly}}
+* {{collection achievement|Spirit Weave}}
+
+== Notes ==
+* Gorseval has 2597 [[Armor (attribute)|armor]] (1374 toughness and 1223 defense).
+* Gorseval has a 250 range diameter [[hitbox]], which is considered large.
+* Gorseval has an [[Enraged (200%)|enrage timer]] of 7 minutes.
+* Gorseval will focus on the player with the highest [[toughness]] attribute of squad members still alive.
+* [[Spirit Thread]] (for [[Perfected Envoy armor|Perfected Envoy]] [[legendary armor]] collection) will only drop once per weekly reset, making the spirit weave time-gate of five weeks.
+
+== Trivia ==
+* "[https://soundcloud.com/arenanet/gw2-heart-of-thorns-gorseval Gorseval]", a combat [[Soundtrack|track]] composed by [[Maclaine Diemer]], is named after the entity.
+* Gorseval is built on the [[wyvern]] rig. Originally, it used the same bipedal minotaur rig as [[Slothasor]] does.&lt;ref&gt;[https://www.guildwars2.com/en/news/animation-in-guild-wars-2-a-summary/ Animation in Guild Wars 2: A Summary], GuildWars2.com
+:Jason said that Gorseval—which is now built on a wyvern rig—originally used the same bipedal minotaur rig that Slothasor uses.&lt;/ref&gt;
+
+== See also ==
+* [[Angered Spirit]]
+* [[Charged Soul]]
+* [[Deranged Spirit]]
+* [[Enraged Spirit]]
+
+;Associated items
+* {{item icon|Mini Gorseval the Multifarious}}
+* {{item icon|Spectral Juju}}
+* {{item icon|Spectral Talisman}}
+* {{item icon|Spectral Ward}}
+* {{item icon|Assaulter's Spirit Branch (skin)|Spirit Branch}}
+* {{item icon|Assaulter's Spirit Ward (skin)|Spirit Ward}}
+
+== References ==
+&lt;references /&gt;
+
+{{Raid nav}}
+
+[[Category:Raid bosses]]
+[[Category:Story characters]]
+[[de:Gorseval der Facettenreiche]]
+[[es:Gorseval el Múltiple]]
+[[fr:Gorseval le Disparate]]</text>
+      <sha1>o5p41bvnuk1ks0q16srgnhb6m1b4jmt</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Destroy the ravenous wanderer</title>
+    <ns>0</ns>
+    <id>360895</id>
+    <revision>
+      <id>3116937</id>
+      <parentid>2962868</parentid>
+      <timestamp>2026-03-15T21:39:20Z</timestamp>
+      <contributor>
+        <username>Hazasoul</username>
+        <id>133824</id>
+      </contributor>
+      <comment>/* Rewards */ unmentioned rewards</comment>
+      <origin>3116937</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="9590" sha1="inps4brbc4t3i6ykqq2ixo9hgaypt2y" xml:space="preserve">{{stub|event}}
+{{Event infobox
+| location = Gyala Delve
+| type = Meta event
+| level = 80
+| id = 
+| previous = Escape the Deep! 
+| success =  Exploring Gyala Delve
+| requires = eod
+}}
+[[Destroy the ravenous wanderer]] is the third [[meta event]] in [[Gyala Delve]], starting immediately after the previous one. Finally on the surface, face a formidable foe with the help of your allies. Successfully completing the meta grants [[Exploring Gyala Delve|a grace period for exploring the map]].
+
+== Dynamic events ==
+* ''Use available equipment to break the ravenous wanderer's defiance.''&lt;br&gt;Legendary Ravenous Wanderer&lt;br&gt;{{event bar}} {{event icon | boss}}&lt;br&gt;{{Event bar|color=defiance}}
+** {{event|Power up the rifle vantage point}}
+** {{event|Resupply the jade behemoth}}
+* ''Destroy the haze hearts to damage the ravenous wanderer before it can recover.&lt;br&gt;{{event bar}} {{event icon | boss}}&lt;br&gt;{{Event bar|color=defiance}}&lt;br&gt;''Haze hearts are vulnerable for: 1:00''
+** {{event|Destroy the south haze heart!}}
+** {{event|Destroy the eastern haze heart}}
+** {{event|Destroy the northwestern haze heart}}
+* ''Use available equipment to break the ravenous wanderer's defiance.''&lt;br&gt;Legendary Ravenous Wanderer&lt;br&gt;{{event bar}} {{event icon | boss}}&lt;br&gt;{{Event bar|color=defiance}}
+** {{event|Power up the rifle vantage point}}
+** {{event|Resupply the jade behemoth}}
+* ''Destroy the haze hearts to damage the ravenous wanderer before it can recover.&lt;br&gt;{{event bar empty}} {{event icon | boss}}&lt;br&gt;{{Event bar empty|color=defiance}}&lt;br&gt;''Haze hearts are vulnerable for: 1:00''
+** {{event|Destroy the south haze heart!}}
+** {{event|Destroy the eastern haze heart}}
+** {{event|Destroy the northwestern haze heart}}
+
+== Walkthrough ==
+=== Overview ===
+The [[Legendary Ravenous Wanderer]] has [[Haze-Made Form]] which renders it nearly immune to regular damage. The only way to significantly harm it is by destroying [[Haze Heart]]s. The boss's defiance bar must be depleted to spawn them, and there are two ways to do so: [[Battery-Charged Rifles]], and the [[Jade Behemoth]]. While players attempt to utilise the equipment, the boss will be throwing AoE fields across the central area, raising walls and making shockwave attacks. It will also have a dangerous haze aura while it maintains its haze form, however this and the other attacks serve only as obstacles than any real threat (the haze aura will kill you if stay within it long enough).
+
+Each equipment for depleting the defiance bar requires fully charging a battery before it can be unleashed. As with the previous events, players mounted on {{map icon|siege turtle}} [[Siege Turtle]]s can collect [[Unbound Ley-Line Energy]]—players without a turtle may borrow one from one of the rental NPCs nearby, for free. The [[Jade Wall]]s that the boss summons contain quite a few of the energy orbs, and [[Corrupted Jade]] can also be shattered (but take a few more hits to do so). To deliver their charges to a battery, players must be inside the battery's charge zone. However, any enemies inside this zone will prevent the battery taking charges.
+
+=== Snipers ===
+To the west of the boss is a platform where a [[Battery-Charged Rifles|rifle bundle]] can be equipped. The first two skills are ineffective against the boss, but can be used to help shatter jade for turtles to collect ley energy. The third skill, High-Charge Round, does defiance damage to the boss, although it has a 300 second cooldown. Once charged, the battery will create an AoE at the platform edge where High-Charge Round's cooldown will rapidly reduce (becoming effectively ~5 seconds). These shots will drain the battery until empty before allowing it to be recharged again.
+
+=== Behemoth ===
+To the east is a Mysterious Shipment. After an initial battery charge it will release the [[Jade Behemoth]] to attack the boss. It will do a set amount of defiance damage (around 35%) before retreating to recharge. 10 seconds after being fully charged, two battery charge zones will appear/reappear. Though both zones must be clear before either can take a charge, both batteries pool the charges. Upon fully charging, the behemoth will be able to attack again.
+
+=== Hearts ===
+After utilising any means to deplete the boss's defiance, three [[Haze Heart]]s will be ejected. These land below the sniper platform, outside the exit of the tunnel, and north-east of the boss (towards the behemoth). Players have a short window of time (60 seconds) to destroy the hearts, each of which will damage the boss for every 25% depleted. After all three are destroyed (or the timer expires) the boss returns to the previous phase of depleting its defiance.
+
+Once the boss reaches 0%, any remaining hearts vanish and the boss loses the haze form, collapsing before the players. The boss recovers 5% health, but without its haze form players can easily put a final end to the boss with regular attacks.
+
+== Rewards ==
+* [[Bonus Chest]]:
+** {{rewards item|Gyala Delve: Hero's Choice Chest|notes=once per day}}
+* [[Event Rewards]]:
+** {{rewards item|Piece of Rare Unidentified Gear}}
+** {{exp|74676}}
+** {{rewards item|Imperial Favor|qty=24}} {{verify|Range}}
+* {{rewards item|Jade Miner's Keycard|qty=10}}
+* [[Perfectly Preserved Mining Cache]] &lt;small&gt;(Once per day per character, auto-looted)&lt;/small&gt;
+* [[Ancient Outcast's Mining Cache]] (10)
+* [[Cleansed Mining Cache]] (35)
+* Items for the [[Manifest weapons]] collections &lt;small&gt;(upon completion)&lt;/small&gt;:
+** {{gather|Self-Assembling Staff Fragment}} - For the staff [[The Fury That Remains]], if the collection [[Fury Manifest]] is active
+** {{gather|Self-Assembling Dagger Fragment}} - For the dagger [[The Hunger That Renews]], if the collection [[Hunger Manifest]] is active
+** {{gather|Self-Assembling Longbow Fragment}} - For the longbow [[The Terror That Grows]], if the collection [[Terror Manifest]] is active
+** {{gather|Self-Assembling Sword Fragment}} - For the sword [[The Anguish That Festers]], if the collection [[Anguish Manifest]] is active
+** {{gather|Self-Assembling Axe Fragment}} - For the axe [[The Bloodthirst That Lingers]], if the collection [[Bloodthirst Manifest]] is active
+
+== Dialogue ==
+;Event start
+:'''Chul-Moo:''' ''I'm back! Nothin' to see here. Just had to take care of some—''
+:'''Chul-Moo:''' ''What the...? The hell did it do? Did it get bigger? And uglier?''
+:'''Chul-Moo:''' ''In my experience, the guys who gotta act big and tough are always the most scared. Let's see if this is one of 'em!''
+
+:'''Chul-Moo:''' ''The plan's still on: Spread out! Turtles, you work on charging up the batteries. The rest of you, grab those rifles!''
+:'''Chul-Moo:''' ''Snipers, shoot the big guy. That should give us an in, do some major damage.''
+:'''Chul-Moo:''' ''And snipe some of that [[Haze (lore)|haze]] crap while you're up there. Our turtles can use that to supply power.''
+
+;During event
+:'''Chul-Moo:''' ''Keep getting that energy to the railyard and overlook! Got a little susprise for our guest here.''
+:'''Chul-Moo:''' ''Remember, we got that [[Jade Behemoth|"new shipment"]] over at the railyard, ready to be charged up!''
+:'''Chul-Moo:''' ''These batteries need some juice. Charge 'em up!''
+:'''Chul-Moo:''' ''Give those batteries a good charge!''
+:'''Chul-Moo:''' ''Turtles, get that energy to the batteries!''
+
+:&lt;small&gt; (Interacting with [[Battery-Charged Rifles]])&lt;/small&gt;
+:'''Chul-Moo:''' ''Go ahead and overcharge those rifles! We've got enough spares to keep us going. Leave 'em hooked up to the batteries.''
+:'''Chul-Moo:''' ''Leave those rifles charging! I wouldn't normally overcharge 'em, but we need all the power we can get.''
+
+:&lt;small&gt;(Successfully powering up a [[Jade Behemoth]])&lt;/small&gt;
+:'''Chul-Moo:''' ''Ha! That's what I'm talking about! Beat that fool to a pulp!''
+:'''Chul-Moo:''' ''Hell yeah! That's what ya get when you mess with the [[Jade Brotherhood|Brotherhood]]!''
+
+;Walking over [[Unbound Ley-Line Energy]] without [[Siege Turtle]]
+:'''Chul-Moo:''' ''Whoa, hold on. You need the turtle's jade reactor if you wanna carry that.''
+:'''Chul-Moo:''' ''What are you doing? You can't carry that yourself. You need the turtle's jade reactor.''
+
+;Boss becomes vulnerable to normal attacks
+:'''Chul-Moo:''' ''Here we go! Got it right where we want it. Let's deal with this once and for all!''
+:'''Chul-Moo:''' ''It's time!''
+
+;Event success
+:'''Chul-Moo:''' ''That did it. We did it. And that's why you don't mess with the Brotherhood...''
+:'''Chul-Moo:''' ''Or our associates. Thanks for the help.''
+
+== Notes ==
+* One of the limiting factors of the fight is clearing the charge zones quickly. Since ley energy charges remain on the player (and can be delivered) after dismounting, it is recommended to do so to speed up clearing the zones (most players can out-dps the turtle's slam). Another tactic (more easily done for the behemoth) is to intercept enemies before they enter the zones and/or lure melee enemies out, allowing charging to begin before all the enemies are slain.
+
+== Related achievements ==
+* {{achievement|Fast Break}}
+* {{achievement|Jumpy Adventurer}}
+* {{achievement|Let Them Fight}}
+* {{achievement|Loaded for Demon}}
+* {{achievement|The Beast Is Down!}}
+* {{achievement|Top-Tier Turtle Pilot}}
+* {{achievement|Triple Bypass}}
+* {{achievement|Turtle-Powered Demolitions}}
+* {{achievement|Anguish Manifest}}
+* {{achievement|Bloodthirst Manifest}}
+* {{achievement|Fury Manifest}}
+* {{achievement|Hunger Manifest}}
+* {{achievement|Terror Manifest}}
+
+{{Gyala Delve nav}}
+
+[[es:Destruye al trotamundos voraz]]
+[[fr:Détruire le voyageur vorace]]</text>
+      <sha1>inps4brbc4t3i6ykqq2ixo9hgaypt2y</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Gyala Delve: Hero's Choice Chest</title>
+    <ns>0</ns>
+    <id>360683</id>
+    <revision>
+      <id>2962094</id>
+      <parentid>2848345</parentid>
+      <timestamp>2025-05-06T18:54:13Z</timestamp>
+      <contributor>
+        <username>Asuaka</username>
+        <id>128597</id>
+      </contributor>
+      <comment>/* Acquisition */</comment>
+      <origin>2962094</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="1426" sha1="2kjoxvrj0sx9zj7ye907ajjlcfah4ar" xml:space="preserve">{{Item infobox
+| icon = Deluxe Gear Box (End of Dragons).png
+| description = Awards your choice of items. Double-click to open.
+| type = Container
+| rarity = Exotic
+| bound = account
+| id = 99704
+| requires = eod
+}}
+
+[[Gyala Delve: Hero's Choice Chest]] is a [[container]] awarded once per day per account for completing a [[meta event]] in [[Gyala Delve]].
+
+== Acquisition ==
+=== Achievements ===
+{{Achievement list|reward=Gyala Delve: Hero's Choice Chest}}
+
+=== Rewarded by ===
+{{Rewarded by}}
+
+== Contents ==
+* {{contains|Piece of Rare Unidentified Gear|qty=3|chance=Guaranteed}}
+* Choose one of the following:
+** {{contains|Jade Runestone|chance=Choice}}
+** {{contains|Amalgamated Gemstone|chance=Choice}}
+** {{contains|Imperial Favor|qty=100|chance=Choice}}
+** {{contains|Suun's Weapon Recipe Book|chance=Choice}}
+
+== Notes ==
+* The prices of the items on the [[Trading Post]] are as follows:
+{{Item tp header}}
+{{Item tp row|Piece of Rare Unidentified Gear|quantity=3}}
+{{Item tp row|Jade Runestone}}
+{{Item tp row|Amalgamated Gemstone}}
+|}
+
+== See also ==
+* {{item icon|Seitung Province: Hero's Choice Chest}}
+* {{item icon|Echovald Wilds: Hero's Choice Chest}}
+* {{item icon|New Kaineng City: Hero's Choice Chest}}
+* {{item icon|Dragon's End: Hero's Choice Chest}}
+
+[[de:Gyala-Senke: Truhe der Helden-Auswahl]]
+[[es:Hondonada de Gyala: Cofre de elección del héroe]]
+[[fr:Fosse de Gyala : coffre au choix du Héros]]</text>
+      <sha1>2kjoxvrj0sx9zj7ye907ajjlcfah4ar</sha1>
+    </revision>
+  </page>
+</mediawiki>

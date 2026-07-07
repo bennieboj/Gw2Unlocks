@@ -141,7 +141,10 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                 new()
                 {
                     Name = "Secrets of the Obscure",
-                    UnlockCriteria = [ new CurrencyCriteria("Ancient Coin") ],
+                    UnlockCriteria = [ 
+                        new CurrencyCriteria("Ancient Coin"),
+                        new SetCriteria("Skyforged weapons", 100)
+                    ],
                     UnlockCategories =
                     [
                         new() { Name = "Skywatch Archipelago", UnlockCriteria = [ new ZoneCriteria("Skywatch Archipelago"), new CurrencyCriteria("Static Charge") ] },
@@ -335,7 +338,8 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                             UnlockCriteria = [
                                 new ZoneCriteria("Dragonfall"),
                                 new TokenCriteria("Mistborn Mote"),
-                                new SetCriteria("Mist Shard armor")
+                                new SetCriteria("Mist Shard armor"),
+                                //new TokenCriteria("Gift of Aurene (container)")
                             ]
                         },
                     ]
@@ -356,7 +360,8 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                         new() { Name = "Bjora Marches",
                             UnlockCriteria = [
                                 new ZoneCriteria("Bjora Marches"),
-                                new TokenCriteria("Eternal Ice Shard")
+                                new TokenCriteria("Eternal Ice Shard"),
+                                //new TokenCriteria("Drakkar's Hoard (container)")
                             ]
                         },
                         new() { Name = "Drizzlewood Coast",
@@ -461,7 +466,9 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                 new()
                 {
                     Name = "PvP / WvW",
-                    UnlockCriteria = [  ],
+                    UnlockCriteria = [
+                        new TokenCriteria("Kurzick Weapon Chest")
+                    ],
                     UnlockCategories =
                     [
                         new() { Name = "PvP", UnlockCriteria = [
@@ -674,7 +681,14 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                             new AchievementCategoryCriteria("Fractals of the Mists"),
                             ] },
                         new() { Name = "Wizard's Vault", UnlockCriteria = [  ] },
-                        new() { Name = "General", UnlockCriteria = [  ] },
+                        new() { Name = "General", UnlockCriteria = [
+                            new SetCriteria("Ceremonial weapons", 90),
+                            new SetCriteria("Legionnaire weapons", 90),
+                            new SetCriteria("Orrian weapons", 90),
+                            new SetCriteria("Tribal weapons", 90),
+                            new SetCriteria("Etched weapons", 90),
+                            new TokenCriteria("Tequatl's Hoard"),
+                        ] },
                     ]
                 },
             ]
@@ -885,7 +899,7 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
             {
                 logger.LogInformation("  -> {step}", step);
             }
-            logger.LogInformation("{selectedGroupAndCategory}", unlockResult.SelectedGroupAndCategory);
+            logger.LogInformation("{selectedGroupAndCategory} {priority}", unlockResult.SelectedGroupAndCategory, unlockResult.priority);
         }
     }
 
@@ -1186,7 +1200,7 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
         unlock.ApiData = result;
     }
 
-    private (string? Key, Node? Node, List<string> Path, string SelectedGroupAndCategory)? Classify(
+    private (string? Key, Node? Node, List<string> Path, string SelectedGroupAndCategory, int priority)? Classify(
         AcquisitionGraph graph,
         string startKey)
     {
@@ -1458,7 +1472,7 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
 
             if (current.Type == NodeType.Weapon && current.Metadata.TryGetValue("IsNamedExoticWeapon", out var rarity) && rarity.Equals("true", StringComparison.OrdinalIgnoreCase))
             {
-                possibleClassifications.Add(new("Other", "General", BuildPath(currentKey, parent), 60));
+                possibleClassifications.Add(new("Other", "General", BuildPath(currentKey, parent), 90));
             }
         }
 
@@ -1484,7 +1498,7 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
         if (bestMatch != null)
         {
             Categorize(bestMatch.Group, bestMatch.Category, startKey, startNode);
-            return (startKey, startNode, bestMatch.Items.First().Path, $"{bestMatch.Group}:{bestMatch.Category}");
+            return (startKey, startNode, bestMatch.Items.First().Path, $"{bestMatch.Group}:{bestMatch.Category}", bestMatch.MaxPriority);
         }
 
         return null;

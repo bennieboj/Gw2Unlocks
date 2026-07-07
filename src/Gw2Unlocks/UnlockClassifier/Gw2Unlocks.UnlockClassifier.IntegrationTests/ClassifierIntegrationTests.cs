@@ -109,13 +109,12 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
     }
 
     [Fact]
-    public async Task ItemsReferenceByASetShouldBeLnkedCorrectly()
+    public async Task ItemsReferenceByASetShouldBeLinkedCorrectly()
     {
         var unlockName = "Skyforged Axe";
         var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
         var group = results.UnlockGroups.Single(g => g.Name == "Secrets of the Obscure");
-        var category = group.UnlockCategories.Single(c => c.Name == "Inner Nayos");
-        var unlock = category.Unlocks.Single(c => c.Name == unlockName);
+        var unlock = group.Unlocks.Single(c => c.Name == unlockName);
 
         Assert.NotNull(unlock);
         Assert.NotNull(unlock.ApiData);
@@ -278,13 +277,15 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
     }
 
     [Theory]
-    [InlineData("Peacemaker's Axe (skin)")]
-    [InlineData("Peacemaker's Dagger (skin)")]
-    public async Task CulturalWeaponsForCityShouldLinkToRespectiveCity(string unlockName)
+    [InlineData("Peacemaker's Axe (skin)", "Rata Sum")]
+    [InlineData("Peacemaker's Dagger (skin)", "Rata Sum")]
+    [InlineData("Aureate Sconce (skin)", "Divinity's Reach")]
+    [InlineData("Aureate Spear (skin)", "Divinity's Reach")]
+    public async Task CulturalWeaponsForCityShouldLinkToRespectiveCity(string unlockName, string city)
     {
         var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
         var group = results.UnlockGroups.Single(g => g.Name == "Cities");
-        var category = group.UnlockCategories.Single(c => c.Name == "Rata Sum");
+        var category = group.UnlockCategories.Single(c => c.Name == city);
         var unlock = category.Unlocks.Single(c => c.Name == unlockName);
 
         Assert.NotNull(unlock);

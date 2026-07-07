@@ -48,6 +48,37 @@ public class GetAcquisitionGraphTests : ServiceProviderBasedTest<IGw2WikiProcess
         Assert.Equal("true", weaponNode.Metadata["IsNamedExoticWeapon"]);
     }
 
+    [Theory]
+    [InlineData("Mini Gorseval the Multifarious", "Gorseval the Multifarious", NodeType.NPC)]
+    [InlineData("Gyala Delve: Hero's Choice Chest", "Destroy the ravenous wanderer", NodeType.Event)]
+    public async Task RewardItemShouldLinkToRewardSource(string reward, string rewardSource, NodeType sourceNodeType)
+    {
+        SetFile("rewards");
+        var graph = await GetSut().GetAcquisitionGraph(TestContext.Current.CancellationToken);
+        var rewardNode = graph.GetNode(reward, NodeType.Item);
+        var rewardSourceNode = graph.GetNode(rewardSource, sourceNodeType);
+
+        Assert.NotNull(rewardNode);
+        Assert.NotNull(rewardSourceNode);
+
+        Assert.Contains(graph.Edges, e => e.From == reward && e.To == rewardSource && e.Type == EdgeType.RewardedBy);
+    }
+
+    [Theory]
+    [InlineData("Catalyst's Stamp", "Defeat Renyak!", NodeType.Event)]
+    public async Task RewardItemWhenProfessionRequirementShouldNotLinkToRewardSource(string reward, string rewardSource, NodeType sourceNodeType)
+    {
+        SetFile("rewards_exclusions");
+        var graph = await GetSut().GetAcquisitionGraph(TestContext.Current.CancellationToken);
+        var rewardNode = graph.GetNode(reward, NodeType.Item);
+        var rewardSourceNode = graph.GetNode(rewardSource, sourceNodeType);
+
+        Assert.NotNull(rewardNode);
+        Assert.NotNull(rewardSourceNode);
+
+        Assert.DoesNotContain(graph.Edges, e => e.From == reward && e.To == rewardSource && e.Type == EdgeType.RewardedBy);
+    }
+
     [Fact]
     public async Task HomesteadUnlocksShouldLinkToDeftLahar()
     {

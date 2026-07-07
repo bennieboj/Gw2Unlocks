@@ -27,6 +27,7 @@ public enum NodeType
     Armor = 11,
     BackItem = 12,
     Set = 13,
+    Event = 30,
     Achievement = 40,
     GemStoreCombo = 50,
     BlackLionWeaponCollection = 51
@@ -81,7 +82,7 @@ public enum EdgeType
     SoldBy = 1,
     LocatedIn = 2,
     ContainedIn = 3,
-    Rewards = 4,
+    RewardedBy = 4,
     SkinUnlock = 5,
     HasIngredient = 6,
     GatheredFrom = 7
