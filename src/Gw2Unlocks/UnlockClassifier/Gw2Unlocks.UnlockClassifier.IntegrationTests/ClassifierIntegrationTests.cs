@@ -52,6 +52,19 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
     }
 
     [Fact]
+    public async Task StellarWeaponsShouldReturnDomainOfIstan()
+    {
+        var unlockName = "Stellar Cleaver";
+        var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
+        var group = results.UnlockGroups.Single(g => g.Name == "LW Season 4");
+        var category = group.UnlockCategories.Single(c => c.Name == "Domain of Istan");
+        var unlock = category.Unlocks.Single(c => c.Name == unlockName);
+
+        Assert.NotNull(unlock);
+        Assert.NotNull(unlock.ApiData);
+    }
+
+    [Fact]
     public async Task GivenUnlockSoldInGemStoreThenShouldReturnGemStore()
     {
         var unlockName = "Aurene's Crystalline Claws (heavy skin)";
@@ -77,11 +90,22 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
         Assert.NotNull(unlock.ApiData);
     }
 
+    [Theory]
+    //Destabilized Magic stuff
+    [InlineData("Shiny Pistol (skin)")]
+    [InlineData("Shiny Rifle (skin)")]
+    [InlineData("Shiny Short Bow (skin)")]
+    [InlineData("Shiny Staff (skin)")]
+    [InlineData("Shiny Torch (skin)")]
+    [InlineData("Ultra Shiny Pistol (skin)")]
+    [InlineData("Ultra Shiny Rifle (skin)")]
+    [InlineData("Ultra Shiny Short Bow (skin)")]
+    [InlineData("Ultra Shiny Staff (skin)")]
+    [InlineData("Ultra Shiny Torch (skin)")]
     // Bag of Jewels used to link to guild commendation
-    [Fact]
-    public async Task GobletOfKingsShouldBeMysticForge()
+    [InlineData("Goblet of Kings (skin)")]
+    public async Task IgnoreCertainItemsBecauseMysticForgeStuffShouldBeMysticForge(string unlockName)
     {
-        var unlockName = "Goblet of Kings (skin)";
         var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
         var group = results.UnlockGroups.Single(g => g.Name == "Other");
         var category = group.UnlockCategories.Single(c => c.Name == "Mystic Forge");
@@ -106,6 +130,66 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
 
         Assert.NotNull(unlock);
         Assert.NotNull(unlock.ApiData);
+    }
+
+
+    [Theory]
+    [InlineData("Wintergreen Dagger", "Raids Core", "Secret Lair of the Snowmen")]  //skin
+    [InlineData("Aetherized Indigo Staff", "Raids Core", "Old Lion's Court")] //skin
+    [InlineData("Mini Vermilion Assault Knight", "Raids Core",  "Old Lion's Court")]
+    [InlineData("Assaulter's Sparking Dagger (skin)", "Raids Heart of Thorns", "Spirit Vale")]
+    public async Task RaidShouldBeRaidCategory(string unlockName, string groupName, string raidName)
+    {
+        var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
+        var group = results.UnlockGroups.Single(g => g.Name == groupName);
+        var category = group.UnlockCategories.Single(c => c.Name == raidName);
+        var unlock = category.Unlocks.Single(c => c.Name == unlockName);
+
+        Assert.NotNull(unlock);
+        Assert.NotNull(unlock.ApiData);
+    }
+
+    [Theory]
+    [InlineData("Living Water Axe (skin)", "Raids End of Dragons")]
+    [InlineData("Envy's Bite (skin)", "Raids Secrets of the Obscure")]
+    public async Task RaidShouldBeRaidGroup(string unlockName, string groupName)
+    {
+        var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
+        var group = results.UnlockGroups.Single(g => g.Name == groupName);
+        var unlock = group.Unlocks.Single(c => c.Name == unlockName);
+
+        Assert.NotNull(unlock);
+        Assert.NotNull(unlock.ApiData);
+    }
+
+    [Theory]
+    [InlineData("Iron Legion Flamesaw (skin)")]
+    //[InlineData("Mini Ryland Steelcatcher")]
+    [InlineData("Visions of the Past: Steel and Fire (achievements)#achievement5188")]
+    public async Task IceBroodSagaShouldBeIceBroodSaga(string unlockName)
+    {
+        var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
+        var group = results.UnlockGroups.Single(g => g.Name == "Icebrood Saga");
+        var unlock = group.Unlocks.Single(c => c.Name == unlockName);
+
+        Assert.NotNull(unlock);
+        Assert.NotNull(unlock.ApiData);
+    }
+
+    [Fact]
+    public async Task IceBroodSagaMiniWithAchiShouldBeIceBroodSaga()
+    {
+        var achiName = "Visions of the Past: Steel and Fire (achievements)#achievement5188"; //Minis of Steel
+        var unlockName = "Iron Legion Flamesaw (skin)";
+        var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, achiName, unlockName);
+        var group = results.UnlockGroups.Single(g => g.Name == "Icebrood Saga");
+        var unlock = group.Unlocks.Single(c => c.Name == unlockName);
+        var achi = group.Unlocks.Single(c => c.Name == unlockName);
+
+        Assert.NotNull(unlock);
+        Assert.NotNull(unlock.ApiData);
+        Assert.NotNull(achi);
+        Assert.NotNull(achi.ApiData);
     }
 
     [Fact]

@@ -48,10 +48,17 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
         "Dragonite Ore",
         "Empyreal Fragment",
         "Rare Essence of Luck",
-        "Bag of Jewels"
+        "Bag of Jewels",
+        //Destabilized Magic stuff
+        "Djinn Energy Cluster",
+        "Azure Condensed Ley-Line Essence",
+        "Crimson Condensed Ley-Line Essence",
+        "Emerald Condensed Ley-Line Essence",
+        "Saffron Condensed Ley-Line Essence",
     ];
     private readonly List<string> npcsToIgnore = [
-        "Black Lion Exchange Specialist", "Black Lion Representative (Exchange Specialist)"
+        "Black Lion Exchange Specialist", "Black Lion Representative (Exchange Specialist)",
+        "Archaeologist Vorri", "Raid Encounters Magnetite Exchange Operative", "Zazzl"
     ];
     private readonly List<string> containersToIgnore = [
         "Cold-Forged Exotic Weapon",
@@ -143,14 +150,40 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                     Name = "Secrets of the Obscure",
                     UnlockCriteria = [ 
                         new CurrencyCriteria("Ancient Coin"),
-                        new SetCriteria("Skyforged weapons", 100)
+                        new SetCriteria("Skyforged weapons", 100),
+                        new SetCriteria("Eagle Eye weapons", 100)
                     ],
                     UnlockCategories =
                     [
-                        new() { Name = "Skywatch Archipelago", UnlockCriteria = [ new ZoneCriteria("Skywatch Archipelago"), new CurrencyCriteria("Static Charge") ] },
-                        new() { Name = "The Wizard's Tower", UnlockCriteria = [ new ZoneCriteria("The Wizard's Tower") ] },
-                        new() { Name = "Amnytas", UnlockCriteria = [ new ZoneCriteria("Amnytas"), new CurrencyCriteria("Pinch of Stardust") ] },
-                        new() { Name = "Inner Nayos", UnlockCriteria = [ new ZoneCriteria("Inner Nayos"), new CurrencyCriteria("Calcified Gasp") ] },
+                        new() {
+                            Name = "Skywatch Archipelago",
+                            UnlockCriteria = [
+                                new ZoneCriteria("Skywatch Archipelago"),
+                                new CurrencyCriteria("Static Charge"),
+                                new SetCriteria("Storm's Eye weapons", 100)
+                            ] 
+                        },
+                        new() { 
+                            Name = "The Wizard's Tower", 
+                            UnlockCriteria = [ 
+                                new ZoneCriteria("The Wizard's Tower")
+                            ]
+                        },
+                        new() { 
+                            Name = "Amnytas", 
+                            UnlockCriteria = [
+                                new ZoneCriteria("Amnytas"),
+                                new CurrencyCriteria("Pinch of Stardust")
+                            ]
+                        },
+                        new() { 
+                            Name = "Inner Nayos", 
+                            UnlockCriteria = [
+                                new ZoneCriteria("Inner Nayos"), 
+                                new CurrencyCriteria("Calcified Gasp"),
+                                new SetCriteria("Abomination weapons", 100)
+                            ]
+                        },
                     ]
                 },
 
@@ -307,7 +340,8 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                         new() { Name = "Domain of Istan",
                             UnlockCriteria = [
                                 new ZoneCriteria("Domain of Istan"),
-                                new TokenCriteria("Kralkatite Ore")
+                                new TokenCriteria("Kralkatite Ore"),
+                                new SetCriteria("Stellar weapons")
                             ]
                         },
                         new() { Name = "Sandswept Isles",
@@ -348,7 +382,10 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                 new()
                 {
                     Name = "Icebrood Saga",
-                    UnlockCriteria = [  ],
+                    UnlockCriteria = [ 
+                        new SetCriteria("Steel Warband weapons"),
+                        new AchievementCategoryCriteria("Visions of the Past: Steel and Fire"),
+                    ],
                     UnlockCategories =
                     [
                         new() { Name = "Grothmar Valley",
@@ -425,41 +462,108 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
 
                 new()
                 {
-                    Name = "Raid Encounters",
-                    UnlockCriteria = [  ],
+                    Name = "Raids Core",
+                    UnlockCriteria = [
+                        new SetCriteria("Assaulter's weapons"),
+                    ],
                     UnlockCategories =
                     [
-                        new() { Name = "Old Lion's Court", UnlockCriteria = [  ] },
-                        new() { Name = "Shiverpeaks Pass", UnlockCriteria = [  ] },
-                        new() { Name = "Voice of the Fallen and Claw of the Fallen", UnlockCriteria = [  ] },
-                        new() { Name = "Fraenir of Jormag", UnlockCriteria = [  ] },
-                        new() { Name = "Boneskinner", UnlockCriteria = [  ] },
-                        new() { Name = "Whisper of Jormag", UnlockCriteria = [  ] },
-                        new() { Name = "Forging Steel", UnlockCriteria = [  ] },
-                        new() { Name = "Cold War", UnlockCriteria = [  ] },
-                        new() { Name = "Aetherblade Hideout", UnlockCriteria = [  ] },
-                        new() { Name = "Xunlai Jade Junkyard", UnlockCriteria = [  ] },
-                        new() { Name = "Kaineng Overlook", UnlockCriteria = [  ] },
-                        new() { Name = "Harvest Temple", UnlockCriteria = [  ] },
-                        new() { Name = "Cosmic Observatory", UnlockCriteria = [  ] },
-                        new() { Name = "Temple of Febe", UnlockCriteria = [  ] },
-                        new() { Name = "Guardian's Glade", UnlockCriteria = [  ] },
+                        new() { Name = "Secret Lair of the Snowmen", UnlockCriteria = [new ZoneCriteria("Secret Lair of the Snowmen")] },
+                        new() { Name = "Old Lion's Court", UnlockCriteria = [new ZoneCriteria("Old Lion's Court")] },
                     ]
                 },
 
                 new()
                 {
-                    Name = "Raids",
-                    UnlockCriteria = [  ],
+                    Name = "Raids Heart of Thorns",
+                    UnlockCriteria = [
+                    ],
                     UnlockCategories =
                     [
-                        new() { Name = "Spirit Vale", UnlockCriteria = [  ] },
-                        new() { Name = "Salvation Pass", UnlockCriteria = [  ] },
-                        new() { Name = "Stronghold of the Faithful", UnlockCriteria = [  ] },
-                        new() { Name = "Bastion of the Penitent", UnlockCriteria = [  ] },
-                        new() { Name = "Hall of Chains", UnlockCriteria = [  ] },
-                        new() { Name = "Mythwright Gambit", UnlockCriteria = [  ] },
-                        new() { Name = "The Key of Ahdashim", UnlockCriteria = [  ] },
+                        new() { Name = "Spirit Vale", UnlockCriteria = [new ZoneCriteria("Spirit Vale")] },
+                        new() { Name = "Salvation Pass", UnlockCriteria = [new ZoneCriteria("Salvation Pass")] },
+                        new() { Name = "Stronghold of the Faithful", UnlockCriteria = [new ZoneCriteria("Stronghold of the Faithful")] },
+                        new() { Name = "Bastion of the Penitent", UnlockCriteria = [new ZoneCriteria("Bastion of the Penitent")] },
+                    ]
+                },
+
+                new()
+                {
+                    Name = "Raids Path of Fire",
+                    UnlockCriteria = [
+                    ],
+                    UnlockCategories =
+                    [
+                        new() { Name = "Hall of Chains", UnlockCriteria = [new ZoneCriteria("Hall of Chains")] },
+                        new() { Name = "Mythwright Gambit", UnlockCriteria = [new ZoneCriteria("Mythwright Gambit")] },
+                        new() { Name = "The Key of Ahdashim", UnlockCriteria = [new ZoneCriteria("The Key of Ahdashim")] },
+                        new() { Name = "Shiverpeaks Pass", UnlockCriteria = [new ZoneCriteria("Shiverpeaks Pass")] },
+                    ]
+                },
+
+                new()
+                {
+                    Name = "Raids Icebrood Saga",
+                    UnlockCriteria = [
+                    ],
+                    UnlockCategories =
+                    [
+                        new() { Name = "Voice of the Fallen and Claw of the Fallen", UnlockCriteria = [new ZoneCriteria("Voice of the Fallen and Claw of the Fallen")] },
+                        new() { Name = "Fraenir of Jormag", UnlockCriteria = [new ZoneCriteria("Fraenir of Jormag")] },
+                        new() { Name = "Boneskinner", UnlockCriteria = [new ZoneCriteria("Boneskinner")] },
+                        new() { Name = "Whisper of Jormag", UnlockCriteria = [new ZoneCriteria("Whisper of Jormag")] },
+                        new() { Name = "Forging Steel", UnlockCriteria = [new ZoneCriteria("Forging Steel")] },
+                        new() { Name = "Cold War", UnlockCriteria = [new ZoneCriteria("Cold War")] },
+                    ]
+                },
+
+                new()
+                {
+                    Name = "Raids End of Dragons",
+                    UnlockCriteria = [
+                        new SetCriteria("Living Water weapons")
+                    ],
+                    UnlockCategories =
+                    [
+                        new() { Name = "Aetherblade Hideout", UnlockCriteria = [new ZoneCriteria("Aetherblade Hideout")] },
+                        new() { Name = "Xunlai Jade Junkyard", UnlockCriteria = [new ZoneCriteria("Xunlai Jade Junkyard")] },
+                        new() { Name = "Kaineng Overlook", UnlockCriteria = [new ZoneCriteria("Kaineng Overlook")] },
+                        new() { Name = "Harvest Temple", UnlockCriteria = [new ZoneCriteria("Harvest Temple")] },
+                    ]
+                },
+
+                new()
+                {
+                    Name = "Raids Secrets of the Obscure",
+                    UnlockCriteria = [
+                        new SetCriteria("Sinful weapons")
+                    ],
+                    UnlockCategories =
+                    [
+                        new() { Name = "Cosmic Observatory", UnlockCriteria = [new ZoneCriteria("Cosmic Observatory")] },
+                        new() { Name = "Temple of Febe", UnlockCriteria = [new ZoneCriteria("Temple of Febe")] },
+                    ]
+                },
+
+                new()
+                {
+                    Name = "Raids Janthir Wilds",
+                    UnlockCriteria = [
+                    ],
+                    UnlockCategories =
+                    [
+                        new() { Name = "Mount Balrior", UnlockCriteria = [new ZoneCriteria("Mount Balrior")] },
+                    ]
+                },
+
+                new()
+                {
+                    Name = "Raids Visions of Eternity",
+                    UnlockCriteria = [
+                    ],
+                    UnlockCategories =
+                    [
+                        new() { Name = "Guardian's Glade", UnlockCriteria = [new ZoneCriteria("Guardian's Glade")] },
                     ]
                 },
 
@@ -655,6 +759,8 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                             new SetCriteria("Perfected weapons"),
                             new SetCriteria("Precursor weapon"), // redirect Precursor weapons -> Precursor weapon
                             new SetCriteria("Obsidian armor"),
+                            new SetCriteria("Experimental Envoy armor"),
+                            new SetCriteria("Refined Envoy armor"),
                             new SetCriteria("Perfected Envoy armor"),
                             new SetCriteria("Ardent Glorious armor"),
                             new SetCriteria("Glorious Hero's armor"),
@@ -1331,7 +1437,8 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
             if (current.Type == NodeType.Location &&
                 current.Metadata.TryGetValue("type", out var value) &&
                 (value.Equals("Zone", StringComparison.OrdinalIgnoreCase) ||
-                 value.Equals("City", StringComparison.OrdinalIgnoreCase)))
+                 value.Equals("City", StringComparison.OrdinalIgnoreCase) ||
+                 value.Equals("Raid", StringComparison.OrdinalIgnoreCase)))
             {
                 var zone = currentKey;
                 foreach (var group in classifyConfig!.UnlockGroups)
