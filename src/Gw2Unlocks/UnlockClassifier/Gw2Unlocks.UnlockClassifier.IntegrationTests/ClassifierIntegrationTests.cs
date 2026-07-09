@@ -182,13 +182,12 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
 
     [Theory]
     [InlineData("Iron Legion Flamesaw (skin)")]
-    //[InlineData("Mini Ryland Steelcatcher")]
-    [InlineData("Visions of the Past: Steel and Fire (achievements)#achievement5188")]
     public async Task IceBroodSagaShouldBeIceBroodSaga(string unlockName)
     {
         var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
-        var group = results.UnlockGroups.Single(g => g.Name == "Icebrood Saga");
-        var unlock = group.Unlocks.Single(c => c.Name == unlockName);
+        var group = results.UnlockGroups.Single(g => g.Name == "Cities");
+        var category = group.UnlockCategories.Single(g => g.Name == "Eye of the North");
+        var unlock = category.Unlocks.Single(c => c.Name == unlockName);
 
         Assert.NotNull(unlock);
         Assert.NotNull(unlock.ApiData);
@@ -198,11 +197,12 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
     public async Task IceBroodSagaMiniWithAchiShouldBeIceBroodSaga()
     {
         var achiName = "Visions of the Past: Steel and Fire (achievements)#achievement5188"; //Minis of Steel
-        var unlockName = "Iron Legion Flamesaw (skin)";
+        var unlockName = "Mini Ryland Steelcatcher";
         var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, achiName, unlockName);
-        var group = results.UnlockGroups.Single(g => g.Name == "Icebrood Saga");
-        var unlock = group.Unlocks.Single(c => c.Name == unlockName);
-        var achi = group.Unlocks.Single(c => c.Name == unlockName);
+        var group = results.UnlockGroups.Single(g => g.Name == "Cities");
+        var category = group.UnlockCategories.Single(g => g.Name == "Eye of the North");
+        var unlock = category.Unlocks.Single(c => c.Name == unlockName);
+        var achi = category.Unlocks.Single(c => c.Name == achiName);
 
         Assert.NotNull(unlock);
         Assert.NotNull(unlock.ApiData);

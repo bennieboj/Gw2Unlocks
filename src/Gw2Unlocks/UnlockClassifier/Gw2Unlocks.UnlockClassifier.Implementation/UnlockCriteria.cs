@@ -7,7 +7,7 @@ internal interface IItemOrCurrencyCriteria
     string GetIItemOrCurrency();
 }
 
-internal sealed class ZoneCriteria(string ZoneName) : UnlockCriteria
+internal sealed class ZoneCriteria(string ZoneName, int priority = 80) : UnlockCriteria
 {
     public override bool Matches(string unlock)
     {
@@ -17,6 +17,7 @@ internal sealed class ZoneCriteria(string ZoneName) : UnlockCriteria
             ZoneName,
             StringComparison.OrdinalIgnoreCase);
     }
+    public override int Priority { get; } = priority;
 }
 
 

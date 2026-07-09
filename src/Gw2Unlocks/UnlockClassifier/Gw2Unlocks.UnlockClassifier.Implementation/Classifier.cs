@@ -383,8 +383,6 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                 {
                     Name = "Icebrood Saga",
                     UnlockCriteria = [ 
-                        new SetCriteria("Steel Warband weapons"),
-                        new AchievementCategoryCriteria("Visions of the Past: Steel and Fire"),
                     ],
                     UnlockCategories =
                     [
@@ -729,9 +727,12 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                         new() { Name = "Lion's Arch", UnlockCriteria = [
                             new SetCriteria("Pirate weapons", 90),
                             new SetCriteria("Lionguard weapons", 90),
-                            ] },
+                        ] },
                         new() { Name = "Eye of the North", UnlockCriteria = [
-                            ] },
+                            new ZoneCriteria("Eye of the North", 60),
+                            new SetCriteria("Steel Warband weapons"),
+                            new AchievementCategoryCriteria("Visions of the Past: Steel and Fire"),
+                        ] },
                     ]
                 },
 
@@ -753,6 +754,9 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                             new SetCriteria("Illustrious armor"),
                             new SetCriteria("Cobalt Antique weapons"),
                             new SetCriteria("Terracotta Antique weapons"),
+                            new SetCriteria("Calcite Antique weapons", 79),
+                            new SetCriteria("Citrine Antique weapons", 79),
+                            new SetCriteria("Viridian Antique weapons", 79),
                             ] },
                         new() { Name = "Legendary", UnlockCriteria = [
                             new SetCriteria("Experimental weapons"),
@@ -1446,11 +1450,11 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                     foreach (var category in group.UnlockCategories)
                     {
                         // Does the category have a ZoneCriteria that matches this zone?
-                        var hasZone = category.UnlockCriteria
+                        var zoneCriteria = category.UnlockCriteria
                             .OfType<ZoneCriteria>()
-                            .Any(z => z.Matches(zone));
+                            .Where(z => z.Matches(zone)).ToList();
 
-                        if (!hasZone)
+                        if (zoneCriteria.Count == 0)
                             continue;
 
 
@@ -1463,13 +1467,13 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                         var cost = searchState.Cost;
                         if (cost == null || (validCurrencies.Count == 0 && validTokens.Count == 0))
                         {
-                            possibleClassifications.Add(new(group.Name, category.Name, BuildPath(currentKey, parent), 80));
+                            possibleClassifications.Add(new(group.Name, category.Name, BuildPath(currentKey, parent), zoneCriteria.First().Priority));
                         }
                         else
                         {
                             var countOfValidCurrencies = validCurrencies.Count(c => c.Matches(cost));
                             var countofValidTokens = validTokens.Count(t => t.MatchesCost(cost));
-                            possibleClassifications.Add(new(group.Name, category.Name, BuildPath(currentKey, parent), 80 + countOfValidCurrencies * 5 + countofValidTokens * 5));
+                            possibleClassifications.Add(new(group.Name, category.Name, BuildPath(currentKey, parent), zoneCriteria.First().Priority + countOfValidCurrencies * 5 + countofValidTokens * 5));
                         }
                     }
                 }
