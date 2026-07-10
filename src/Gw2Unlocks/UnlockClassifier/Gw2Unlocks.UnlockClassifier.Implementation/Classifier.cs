@@ -58,7 +58,8 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
     ];
     private readonly List<string> npcsToIgnore = [
         "Black Lion Exchange Specialist", "Black Lion Representative (Exchange Specialist)",
-        "Archaeologist Vorri", "Raid Encounters Magnetite Exchange Operative", "Zazzl"
+        "Archaeologist Vorri", "Raid Encounters Magnetite Exchange Operative", "Zazzl",
+        "Gharr Leadclaw"
     ];
     private readonly List<string> containersToIgnore = [
         "Cold-Forged Exotic Weapon",
@@ -430,7 +431,7 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                             new SetCriteria("Golden Wing weapons", 90),
                         ] },
                         new() { Name = "Twilight Arbor", UnlockCriteria = [
-                            new SetCriteria("Nightmare Court armor", 90),
+                            new SetCriteria("Twilight Arbor armor", 90),
                             new SetCriteria("Nightmare weapons", 90),
                         ] },
                         new() { Name = "Sorrow's Embrace", UnlockCriteria = [
@@ -438,11 +439,11 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                             new SetCriteria("Dark Asuran weapons", 90),
                         ] },
                         new() { Name = "Citadel of Flame", UnlockCriteria = [
-                            new SetCriteria("Flame Legion armor", 90),
+                            new SetCriteria("Citadel of Flame armor", 90),
                             new SetCriteria("Molten weapons", 90),
                         ] },
                         new() { Name = "Honor of the Waves", UnlockCriteria = [
-                            new SetCriteria("Armor of Koda", 90),
+                            new SetCriteria("Honor of the Waves armor", 90),
                             new SetCriteria("Kodan weapons", 90),
                         ] },
                         new() { Name = "Crucible of Eternity", UnlockCriteria = [
@@ -612,6 +613,7 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                             new ZoneCriteria("Edge of the Mists"),
                             new ZoneCriteria("Obsidian Sanctum"),
                             new ZoneCriteria("Eternal Battlegrounds"),
+                            new ZoneCriteria("World vs. World", 70),
                             new CurrencyCriteria("Badge of Honor"),
                             new CurrencyCriteria("WvW Skirmish Claim Ticket"),
                             new CraftingMaterialCriteria("Memory of Battle"),
@@ -1480,6 +1482,7 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                 current.Metadata.TryGetValue("type", out var value) &&
                 (value.Equals("Zone", StringComparison.OrdinalIgnoreCase) ||
                  value.Equals("City", StringComparison.OrdinalIgnoreCase) ||
+                 value.Equals("Region", StringComparison.OrdinalIgnoreCase) ||
                  value.Equals("Raid", StringComparison.OrdinalIgnoreCase)))
             {
                 var zone = currentKey;

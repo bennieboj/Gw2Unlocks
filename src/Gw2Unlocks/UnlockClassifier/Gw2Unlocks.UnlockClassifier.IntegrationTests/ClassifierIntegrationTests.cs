@@ -379,6 +379,19 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
     }
 
     [Theory]
+    [InlineData("Mini Dolyak")]
+    public async Task MiniDolyakShouldLinkToWvW(string unlockName)
+    {
+        var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
+        var group = results.UnlockGroups.Single(g => g.Name == "PvP / WvW");
+        var category = group.UnlockCategories.Single(c => c.Name == "WvW");
+        var unlock = category.Unlocks.Single(c => c.Name == unlockName);
+
+        Assert.NotNull(unlock);
+        Assert.NotNull(unlock.ApiData);
+    }
+
+    [Theory]
     [InlineData("Peacemaker's Axe (skin)", "Rata Sum")]
     [InlineData("Peacemaker's Dagger (skin)", "Rata Sum")]
     [InlineData("Aureate Sconce (skin)", "Divinity's Reach")]
@@ -395,13 +408,17 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
     }
 
     [Theory]
-    [InlineData("Inquest Axe (skin)")]
-    [InlineData("Inquest Dagger (skin)")]
-    public async Task CulturalWeaponsForDungeonShouldLinkToRespectiveCity(string unlockName)
+    [InlineData("Inquest Axe (skin)", "Crucible of Eternity")]
+    [InlineData("Inquest Dagger (skin)", "Crucible of Eternity")]
+    [InlineData("Arms of Koda (skin)", "Honor of the Waves")]
+    [InlineData("Flame Legion Boots (skin)", "Citadel of Flame")]
+    [InlineData("Nightmare Court Armguards (skin)", "Twilight Arbor")]
+    [InlineData("Forgeman Mantle (skin)", "Sorrow's Embrace")]
+    public async Task CulturalWeaponsForDungeonShouldLinkToRespectiveDungeon(string unlockName, string dungeonName)
     {
         var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
         var group = results.UnlockGroups.Single(g => g.Name == "Dungeons");
-        var category = group.UnlockCategories.Single(c => c.Name == "Crucible of Eternity");
+        var category = group.UnlockCategories.Single(c => c.Name == dungeonName);
         var unlock = category.Unlocks.Single(c => c.Name == unlockName);
 
         Assert.NotNull(unlock);

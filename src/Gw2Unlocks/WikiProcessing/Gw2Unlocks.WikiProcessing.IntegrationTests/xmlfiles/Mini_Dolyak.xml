@@ -1,0 +1,493 @@
+<mediawiki xmlns="http://www.mediawiki.org/xml/export-0.11/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mediawiki.org/xml/export-0.11/ http://www.mediawiki.org/xml/export-0.11.xsd" version="0.11" xml:lang="en">
+  <siteinfo>
+    <sitename>Guild Wars 2 Wiki</sitename>
+    <dbname>en_wikidb_gw2</dbname>
+    <base>https://wiki.guildwars2.com/wiki/Main_Page</base>
+    <generator>MediaWiki 1.39.17</generator>
+    <case>first-letter</case>
+    <namespaces>
+      <namespace key="-2" case="first-letter">Media</namespace>
+      <namespace key="-1" case="first-letter">Special</namespace>
+      <namespace key="0" case="first-letter" />
+      <namespace key="1" case="first-letter">Talk</namespace>
+      <namespace key="2" case="first-letter">User</namespace>
+      <namespace key="3" case="first-letter">User talk</namespace>
+      <namespace key="4" case="first-letter">Guild Wars 2 Wiki</namespace>
+      <namespace key="5" case="first-letter">Guild Wars 2 Wiki talk</namespace>
+      <namespace key="6" case="first-letter">File</namespace>
+      <namespace key="7" case="first-letter">File talk</namespace>
+      <namespace key="8" case="first-letter">MediaWiki</namespace>
+      <namespace key="9" case="first-letter">MediaWiki talk</namespace>
+      <namespace key="10" case="first-letter">Template</namespace>
+      <namespace key="11" case="first-letter">Template talk</namespace>
+      <namespace key="12" case="first-letter">Help</namespace>
+      <namespace key="13" case="first-letter">Help talk</namespace>
+      <namespace key="14" case="first-letter">Category</namespace>
+      <namespace key="15" case="first-letter">Category talk</namespace>
+      <namespace key="102" case="first-letter">Property</namespace>
+      <namespace key="103" case="first-letter">Property talk</namespace>
+      <namespace key="106" case="first-letter">Form</namespace>
+      <namespace key="107" case="first-letter">Form talk</namespace>
+      <namespace key="108" case="first-letter">Concept</namespace>
+      <namespace key="109" case="first-letter">Concept talk</namespace>
+      <namespace key="112" case="first-letter">smw/schema</namespace>
+      <namespace key="113" case="first-letter">smw/schema talk</namespace>
+      <namespace key="114" case="first-letter">Rule</namespace>
+      <namespace key="115" case="first-letter">Rule talk</namespace>
+      <namespace key="200" case="first-letter">ArenaNet</namespace>
+      <namespace key="201" case="first-letter">ArenaNet talk</namespace>
+      <namespace key="202" case="first-letter">API</namespace>
+      <namespace key="203" case="first-letter">API talk</namespace>
+      <namespace key="274" case="first-letter">Widget</namespace>
+      <namespace key="275" case="first-letter">Widget talk</namespace>
+    </namespaces>
+  </siteinfo>
+  <page>
+    <title>Mini Dolyak</title>
+    <ns>0</ns>
+    <id>105080</id>
+    <revision>
+      <id>2289269</id>
+      <parentid>2212367</parentid>
+      <timestamp>2021-07-10T13:48:10Z</timestamp>
+      <contributor>
+        <username>AWB Alex</username>
+        <id>102516</id>
+      </contributor>
+      <minor/>
+      <comment>/* Sold by */+Update template name.</comment>
+      <origin>2289269</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="451" sha1="iolzq1am5dgfy9cwpk6jhz1dzz01h7p" xml:space="preserve">{{otheruses|the [[miniature]]|the NPC|Mini Dolyak (NPC)}}
+{{Item infobox
+| description = Double-click to summon this mini to follow you around. Only one mini may be in use at a time.
+| type = Miniature
+| rarity = rare
+| bound = account
+| miniature id = 204
+| id = 48761
+}}
+
+== Acquisition ==
+=== Sold by ===
+{{Sold by}}
+
+=== Contained in ===
+{{contained in}}
+
+[[de:Mini Dolyak]]
+[[es:Minidolyak]]
+[[fr:Mini-dolyak]]
+[[Category:PvP and WvW miniatures]]</text>
+      <sha1>iolzq1am5dgfy9cwpk6jhz1dzz01h7p</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Skirmish Supervisor</title>
+    <ns>0</ns>
+    <id>204981</id>
+    <revision>
+      <id>3139492</id>
+      <parentid>2996739</parentid>
+      <timestamp>2026-05-13T17:46:15Z</timestamp>
+      <contributor>
+        <username>Tery3065</username>
+        <id>270948</id>
+      </contributor>
+      <comment>subpages</comment>
+      <origin>3139492</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="2086" sha1="ih7z964glcb02iazxlbgxkgx5quodya" xml:space="preserve">{{NPC infobox
+| icon = Battle Historian.png
+| location = World vs. World
+| race = Norn
+| level = 80
+| service = Skirmish Merchant
+}}
+The [[Skirmish Supervisor]] is a [[merchant]] who accepts [[WvW Skirmish Claim Ticket]]s that can be found in every [[World versus World]] map.
+
+== Locations ==
+;[[The Mists]]
+* [[Blue Alpine Borderlands]]
+** [[Blue World Citadel]]
+** [[Green World Border]]
+** [[Red World Border]]
+* [[Edge of the Mists]]
+** [[Badlands Docks]]
+** [[Frostreach Docks]]
+** [[Overgrown Docks]]
+* [[Eternal Battlegrounds]]
+** [[Blue World Hill]]
+** [[Green World Hill]]
+** [[Red World Hill]]
+* [[Green Alpine Borderlands]]
+** [[Blue World Border]]
+** [[Green World Citadel]]
+** [[Red World Border]]
+* [[Obsidian Sanctum]]
+** [[Zraith's Beacon]]
+* [[Red Desert Borderlands]]
+** [[Blue World Border]]
+** [[Green World Border]]
+** [[Red World Citadel]]
+
+== Items offered ==
+{{notice|Due to the substantial number of offers possibly available from Skirmish Supervisor, the inventory has been split across multiple pages.}}
+{{main|Skirmish Supervisor/Armor}}
+:* Exotic Armor
+:* Triumphant Ascended Armor
+:* Mistforged Triumphant Ascended Armor
+
+{{main|Skirmish Supervisor/Weapons}}
+:* Exotic Weapons
+:* Ascended Weapons
+
+{{main|Skirmish Supervisor/Others}}
+:* Ascended Vendor Recipes
+:* Ascended Trinkets
+:* Infusions
+:* Miscellaneous
+:* Historical
+
+== Related achievements ==
+*{{achievement|Infinite Arrow Cart}}
+*{{achievement|Infinite Ballista}}
+*{{achievement|Infinite Catapult}}
+*{{achievement|Infinite Flame Ram}}
+*{{achievement|Infinite Shield Generator}}
+*{{achievement|Infinite Siege Golem}}
+*{{achievement|Infinite Trebuchet}}
+
+== Notes ==
+* It takes {{token|wvw sct|1310}} [[WvW Skirmish Claim Ticket]]s in total to obtain a full set of [[Triumphant Hero's armor|Triumphant Hero's Ascended Armor]] and {{token|wvw sct|2620}} [[WvW Skirmish Claim Ticket]]s in total to obtain a full set of [[Mistforged Triumphant Hero's armor|Mistforged Triumphant Hero's Ascended Armor]].
+
+[[de:Gefecht-Aufseherin]]
+[[es:Supervisora de escaramuzas]]
+[[fr:Superviseuse d'escarmouche]]</text>
+      <sha1>ih7z964glcb02iazxlbgxkgx5quodya</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Skirmish Supervisor/Others</title>
+    <ns>0</ns>
+    <id>415781</id>
+    <revision>
+      <id>3139511</id>
+      <parentid>3139495</parentid>
+      <timestamp>2026-05-13T17:54:17Z</timestamp>
+      <contributor>
+        <username>Tery3065</username>
+        <id>270948</id>
+      </contributor>
+      <minor/>
+      <origin>3139511</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="456" sha1="mvazj0r0aarb4z95ae9gzeqiy6iwp1d" xml:space="preserve">{{#set:Has canonical name=Skirmish Supervisor|Has game icon=File:Battle Historian.png|Has context=NPC|Has availability=Current|Is historical=false|Located in=World vs. World|Located in tree=The Mists; World vs. World}}
+{{notice|Due to the substantial number of offers possibly available from Skirmish Supervisor, the inventory has been split across multiple pages.}}
+{{TOCright}}
+{{inventory|skirmish merchant 3}}
+
+[[Category: Vendor merchandise subpages]]</text>
+      <sha1>mvazj0r0aarb4z95ae9gzeqiy6iwp1d</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Template:Inventory/skirmish merchant 3</title>
+    <ns>10</ns>
+    <id>415778</id>
+    <revision>
+      <id>3155283</id>
+      <parentid>3155278</parentid>
+      <timestamp>2026-06-04T08:08:40Z</timestamp>
+      <contributor>
+        <username>Tery3065</username>
+        <id>270948</id>
+      </contributor>
+      <minor/>
+      <comment>/* Historical */</comment>
+      <origin>3155283</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="12397" sha1="8ry6hkvqypd9czf1j8ntwjcezh3x50r" xml:space="preserve">{{Inventory/Vendor subpage header}}
+&lt;onlyinclude&gt;
+=== Ascended Vendor Recipes ===
+{{vendor table header|showLevel=false|showFacts=false|section=Ascended Vendor Recipes|itemWidth=320px|typeWidth=100px|rarityWidth=75px|costWidth=130px}}
+{{vendor table row|item=Recipe: Grandmaster Tailor's Mark|cost=25 WvW Skirmish Claim Ticket + 10 Memory of Battle}}
+{{vendor table row|item=Recipe: Grandmaster Huntsman's Mark|cost=25 WvW Skirmish Claim Ticket + 10 Memory of Battle}}
+{{vendor table row|item=Recipe: Grandmaster Armorsmith's Mark|cost=25 WvW Skirmish Claim Ticket + 10 Memory of Battle}}
+{{vendor table row|item=Recipe: Grandmaster Artificer's Mark|cost=25 WvW Skirmish Claim Ticket + 10 Memory of Battle}}
+{{vendor table row|item=Recipe: Grandmaster Leatherworker's Mark|cost=25 WvW Skirmish Claim Ticket + 10 Memory of Battle}}
+{{vendor table row|item=Recipe: Grandmaster Weaponsmith's Mark|cost=25 WvW Skirmish Claim Ticket + 10 Memory of Battle}}
+{{vendor table row|item=Recipe Book: Grandmaster Craftsman's Components|cost=25 WvW Skirmish Claim Ticket + 10 Memory of Battle}}
+|}
+
+=== Ascended Trinkets ===
+{{vendor table header|showLevel=false|showFacts=false|section=Ascended Trinkets|itemWidth=320px|typeWidth=100px|rarityWidth=75px|costWidth=130px}}
+{{vendor table row|item=Mist Talisman|cost=175 WvW Skirmish Claim Ticket + 250 Memory of Battle}}
+{{vendor table row|item=Mist Pendant|cost=260 WvW Skirmish Claim Ticket + 250 Memory of Battle}}
+{{vendor table row|item=Mist Band (Infused)|cost=350 WvW Skirmish Claim Ticket + 250 Memory of Battle}}
+{{vendor table row|item=Mist Capacitor|cost=0 WvW Skirmish Claim Ticket + 250 Memory of Battle}}
+{{vendor table row|item=Mists-Charged Jade Talisman|cost=75 Testimony of Castoran Heroics + 115 WvW Skirmish Claim Ticket + 250 Memory of Battle}}
+{{vendor table row|item=Mists-Charged Jade Pendant|cost=100 Testimony of Castoran Heroics + 150 WvW Skirmish Claim Ticket + 250 Memory of Battle}}
+{{vendor table row|item=Mists-Charged Jade Band (Infused)|cost=125 Testimony of Castoran Heroics + 175 WvW Skirmish Claim Ticket + 250 Memory of Battle}}
+|}
+
+=== Infusions ===
+{{vendor table header|showLevel=false|showFacts=false|section=Infusions|itemWidth=320px|typeWidth=100px|rarityWidth=75px|costWidth=130px}}
+{{vendor table row|item=Healing WvW Infusion|cost=45 WvW Skirmish Claim Ticket + 20 Memory of Battle}}
+{{vendor table row|item=Resilient WvW Infusion|cost=45 WvW Skirmish Claim Ticket + 20 Memory of Battle}}
+{{vendor table row|item=Vital WvW Infusion|cost=45 WvW Skirmish Claim Ticket + 20 Memory of Battle}}
+{{vendor table row|item=Concentration WvW Infusion|cost=45 WvW Skirmish Claim Ticket + 20 Memory of Battle}}
+{{vendor table row|item=Malign WvW Infusion|cost=45 WvW Skirmish Claim Ticket + 20 Memory of Battle}}
+{{vendor table row|item=Mighty WvW Infusion|cost=45 WvW Skirmish Claim Ticket + 20 Memory of Battle}}
+{{vendor table row|item=Precise WvW Infusion|cost=45 WvW Skirmish Claim Ticket + 20 Memory of Battle}}
+{{vendor table row|item=Expertise WvW Infusion|cost=45 WvW Skirmish Claim Ticket + 20 Memory of Battle}}
+|}
+
+=== Miscellaneous ===
+{{vendor table header|showLevel=false|showFacts=false|section=Miscellaneous|itemWidth=320px|typeWidth=100px|rarityWidth=75px|costWidth=130px}}
+{{vendor table row|item=Improvement and Tactic Pack|cost=10 WvW Skirmish Claim Ticket + 5 Memory of Battle}}
+{{vendor table row|item=WvW Siege Decoration Case|cost=10 WvW Skirmish Claim Ticket + 5 Memory of Battle}}
+{{vendor table row|item=Siege Blueprint Case|quantity=2|cost=10 WvW Skirmish Claim Ticket + 5 Memory of Battle}}
+{{vendor table row|item=Tricks and Traps Capsule|cost=10 WvW Skirmish Claim Ticket + 5 Memory of Battle}}
+{{vendor table row|item=Canned Food Crate|cost=10 WvW Skirmish Claim Ticket + 5 Memory of Battle}}
+{{vendor table row|item=Memory Gobbler|cost=350 WvW Skirmish Claim Ticket + 250 Memory of Battle}}
+{{vendor table row|item=Endless Dolyak Calf Tonic|cost=350 WvW Skirmish Claim Ticket + 250 Memory of Battle}}
+{{vendor table row|item=Mini Dolyak|cost=260 WvW Skirmish Claim Ticket + 250 Memory of Battle}}
+{{vendor table row|item=Obsidian Shard|quantity=15|cost=45 WvW Skirmish Claim Ticket + 20 Memory of Battle}}
+{{vendor table row
+| item=Ascended Salvage Tool
+| cost=10 WvW Skirmish Claim Ticket + 20 Memory of Battle &lt;!-- 10, 20 each --&gt;
+}}
+{{vendor table row
+| item=Ascended Salvage Kit (5 uses) &lt;!-- 5, 15 each --&gt;
+| cost=15 WvW Skirmish Claim Ticket + 75 Memory of Battle
+}}
+{{vendor table row
+| item=Ascended Salvage Kit &lt;!-- 1.25, 12.5 each --&gt;
+| cost=25 WvW Skirmish Claim Ticket + 250 Memory of Battle
+}}
+{{vendor table row|item=Box of Grandmaster Marks|cost=10 Grandmaster Mark Shard}}
+{{vendor table row|item=Grandmaster Mark Shard|quantity=10|cost=1 Box of Grandmaster Marks}}
+{{vendor table row|item=Mist-Infused Jade Catalyst|cost=125 Testimony of Castoran Heroics + 250 Badge of Honor + 50 WvW Skirmish Claim Ticket + 50 Memory of Battle}}
+{{vendor table row|item=Flax Fiber Container|cost=1 Desert Crafting Material Coffer}}
+{{vendor table row|item=Desert-Spiced Coffee Container|cost=1 Desert Crafting Material Coffer}}
+{{vendor table row|item=Tofu Container|cost=1 Canthan Crafting Material Coffer}}
+{{vendor table row|item=Pile of Soybeans|quantity=8|cost=1 Canthan Crafting Material Coffer}}
+{{vendor table row|id=74339|quantity=2|cost=1 Heart of Thorns Currency Choice}}
+{{vendor table row|item=Bag of Aurillium (25)|quantity=2|cost=1 Heart of Thorns Currency Choice}}
+{{vendor table row|item=Bag of Ley-Line Crystals (rare)|quantity=2|cost=1 Heart of Thorns Currency Choice}}
+{{vendor table row|item=Pile of Recycled Flame Rams|cost=100 Pile of Recycled Siege Equipment|total=1}}
+{{vendor table row|item=Flame Ram Mechanism|cost=5000 Badge of Honor + 3000 WvW Skirmish Claim Ticket + 1000 Testimony of Castoran Heroics + 25 Grandmaster Mark Shard|total=1}}
+{{vendor table row|item=Pile of Recycled Catapults|cost=100 Pile of Recycled Siege Equipment|total=1}}
+{{vendor table row|item=Catapult Mechanism|cost=5000 Badge of Honor + 3000 WvW Skirmish Claim Ticket + 1000 Testimony of Castoran Heroics + 25 Grandmaster Mark Shard|total=1}}
+{{vendor table row|item=Pile of Recycled Siege Golems|cost=100 Pile of Recycled Siege Equipment|total=1}}
+{{vendor table row|item=Siege Golem Mechanism|cost=5000 Badge of Honor + 3000 WvW Skirmish Claim Ticket + 1000 Testimony of Castoran Heroics + 25 Grandmaster Mark Shard|total=1}}
+{{vendor table row|item=Pile of Recycled Trebuchets|cost=100 Pile of Recycled Siege Equipment|total=1}}
+{{vendor table row|item=Trebuchet Mechanism|cost=5000 Badge of Honor + 3000 WvW Skirmish Claim Ticket + 1000 Testimony of Castoran Heroics + 25 Grandmaster Mark Shard|total=1}}
+{{vendor table row|item=Pile of Recycled Ballistae|cost=100 Pile of Recycled Siege Equipment|total=1}}
+{{vendor table row|item=Ballista Mechanism|cost=5000 Badge of Honor + 3000 WvW Skirmish Claim Ticket + 1000 Testimony of Castoran Heroics + 25 Grandmaster Mark Shard|total=1}}
+{{vendor table row|item=Pile of Recycled Arrow Carts|cost=100 Pile of Recycled Siege Equipment|total=1}}
+{{vendor table row|item=Arrow Cart Mechanism|cost=5000 Badge of Honor + 3000 WvW Skirmish Claim Ticket + 1000 Testimony of Castoran Heroics + 25 Grandmaster Mark Shard|total=1}}
+{{vendor table row|item=Pile of Recycled Shield Generators|cost=100 Pile of Recycled Siege Equipment|total=1}}
+{{vendor table row|item=Shield Generator Mechanism|cost=5000 Badge of Honor + 3000 WvW Skirmish Claim Ticket + 1000 Testimony of Castoran Heroics + 25 Grandmaster Mark Shard|total=1}}
+{{vendor table row|item=Homestead Recipe Book: World vs. World|cost=250 Badge of Honor|total=1}}
+{{vendor table row|item=Homestead Recipe Book: World vs. World, Volume 2|cost=250 Badge of Honor|total=1}}
+{{vendor table row|item=Infinite Siege Tool|cost=0 coin|requirement=one [[Blueprint#Infinite Siege Blueprints|infinite siege blueprint]] collection completed|total=1}}
+{{vendor table row|item=Emblem of the Avenger|quantity=5|cost=1 Emblem of the Conqueror}}
+{{vendor table row|item=Emblem of the Conqueror|cost=100 Emblem of the Avenger}}
+|}
+
+=== Historical ===
+{{vendor table header|showLevel=false|showFacts=false|status=historical}}
+{{vendor table row|item=Siege Blueprint Case (historical)|quantity=2|cost=1 Skirmish Chest|status=historical}}
+{{vendor table row|item=Flame Ram Mechanism|cost=10000 Badge of Honor + 5000 WvW Skirmish Claim Ticket + 1000 Testimony of Jade Heroics + 25 Grandmaster Mark Shard|status=historical}}
+{{vendor table row|item=Catapult Mechanism|cost=10000 Badge of Honor + 5000 WvW Skirmish Claim Ticket + 1000 Testimony of Jade Heroics + 25 Grandmaster Mark Shard|status=historical}}
+{{vendor table row|item=Siege Golem Mechanism|cost=10000 Badge of Honor + 5000 WvW Skirmish Claim Ticket + 1000 Testimony of Jade Heroics + 25 Grandmaster Mark Shard|status=historical}}
+{{vendor table row|item=Trebuchet Mechanism|cost=10000 Badge of Honor + 5000 WvW Skirmish Claim Ticket + 1000 Testimony of Jade Heroics + 25 Grandmaster Mark Shard|status=historical}}
+{{vendor table row|item=Ballista Mechanism|cost=10000 Badge of Honor + 5000 WvW Skirmish Claim Ticket + 1000 Testimony of Jade Heroics + 25 Grandmaster Mark Shard|status=historical}}
+{{vendor table row|item=Arrow Cart Mechanism|cost=10000 Badge of Honor + 5000 WvW Skirmish Claim Ticket + 1000 Testimony of Jade Heroics + 25 Grandmaster Mark Shard|status=historical}}
+{{vendor table row|item=Shield Generator Mechanism|cost=10000 Badge of Honor + 5000 WvW Skirmish Claim Ticket + 1000 Testimony of Jade Heroics + 25 Grandmaster Mark Shard|status=historical}}
+{{vendor table row|item=Mists-Charged Jade Talisman|cost=75 Testimony of Jade Heroics + 115 WvW Skirmish Claim Ticket + 250 Memory of Battle|status=historical}}
+{{vendor table row|item=Mists-Charged Jade Pendant|cost=100 Testimony of Jade Heroics + 150 WvW Skirmish Claim Ticket + 250 Memory of Battle|status=historical}}
+{{vendor table row|item=Mists-Charged Jade Band (Infused)|cost=125 Testimony of Jade Heroics + 175 WvW Skirmish Claim Ticket + 250 Memory of Battle|status=historical}}
+{{vendor table row|item=Mist-Infused Jade Catalyst|cost=125 Testimony of Jade Heroics + 250 Badge of Honor + 50 WvW Skirmish Claim Ticket + 50 Memory of Battle|status=historical}}
+{{vendor table row|item=Flame Ram Mechanism|cost=5000 Badge of Honor + 3000 WvW Skirmish Claim Ticket + 1000 Testimony of Jade Heroics + 25 Grandmaster Mark Shard|total=1|status=historical}}
+{{vendor table row|item=Pile of Recycled Catapults|cost=100 Pile of Recycled Siege Equipment|total=1|status=historical}}
+{{vendor table row|item=Catapult Mechanism|cost=5000 Badge of Honor + 3000 WvW Skirmish Claim Ticket + 1000 Testimony of Jade Heroics + 25 Grandmaster Mark Shard|total=1|status=historical}}
+{{vendor table row|item=Pile of Recycled Siege Golems|cost=100 Pile of Recycled Siege Equipment|total=1|status=historical}}
+{{vendor table row|item=Siege Golem Mechanism|cost=5000 Badge of Honor + 3000 WvW Skirmish Claim Ticket + 1000 Testimony of Jade Heroics + 25 Grandmaster Mark Shard|total=1|status=historical}}
+{{vendor table row|item=Pile of Recycled Trebuchets|cost=100 Pile of Recycled Siege Equipment|total=1|status=historical}}
+{{vendor table row|item=Trebuchet Mechanism|cost=5000 Badge of Honor + 3000 WvW Skirmish Claim Ticket + 1000 Testimony of Jade Heroics + 25 Grandmaster Mark Shard|total=1|status=historical}}
+{{vendor table row|item=Pile of Recycled Ballistae|cost=100 Pile of Recycled Siege Equipment|total=1|status=historical}}
+{{vendor table row|item=Ballista Mechanism|cost=5000 Badge of Honor + 3000 WvW Skirmish Claim Ticket + 1000 Testimony of Jade Heroics + 25 Grandmaster Mark Shard|total=1|status=historical}}
+{{vendor table row|item=Pile of Recycled Arrow Carts|cost=100 Pile of Recycled Siege Equipment|total=1|status=historical}}
+{{vendor table row|item=Arrow Cart Mechanism|cost=5000 Badge of Honor + 3000 WvW Skirmish Claim Ticket + 1000 Testimony of Jade Heroics + 25 Grandmaster Mark Shard|total=1|status=historical}}
+{{vendor table row|item=Pile of Recycled Shield Generators|cost=100 Pile of Recycled Siege Equipment|total=1|status=historical}}
+{{vendor table row|item=Shield Generator Mechanism|cost=5000 Badge of Honor + 3000 WvW Skirmish Claim Ticket + 1000 Testimony of Jade Heroics + 25 Grandmaster Mark Shard|total=1|status=historical}}
+|}&lt;/onlyinclude&gt;</text>
+      <sha1>8ry6hkvqypd9czf1j8ntwjcezh3x50r</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>World vs. World</title>
+    <ns>0</ns>
+    <id>116939</id>
+    <revision>
+      <id>3069916</id>
+      <parentid>3031230</parentid>
+      <timestamp>2025-11-28T10:48:19Z</timestamp>
+      <contributor>
+        <username>Ruby12</username>
+        <id>239584</id>
+      </contributor>
+      <minor/>
+      <comment>/* Notes */</comment>
+      <origin>3069916</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="11510" sha1="bik8l5pvpqr2gtoak3077c4ack9425g" xml:space="preserve">{{otheruses|the mechanical region|the game mode|World versus World}}
+{{location infobox
+| map = World versus World map.jpg
+| levels = 1-80
+| type = region
+| within = The Mists
+| location tree = The Mists
+| id = 7
+}}
+[[World vs. World]] is the region where the [[Mist War]] and [[Edge of the Mists]] take place.
+
+== Locations ==
+;Cities
+* [[Armistice Bastion]]
+
+;Mist War
+* [[Eternal Battlegrounds]]
+* [[Blue Alpine Borderlands]]
+* [[Red Desert Borderlands]]
+* [[Green Alpine Borderlands]]
+* [[Obsidian Sanctum (zone)|Obsidian Sanctum]]
+
+;Edge of the Mists
+* [[Edge of the Mists]]
+
+== Interactive map ==
+{{Interactive map|map = 38, 95, 96, 899, 968, 1099, 1315|floor=3| markers =
+&lt;!--EBG--&gt;
+    { "coord": [10763.6, 13655.8], "id": "38-1", "name": "Red World Overlook", "icon": "Event Keep red.png" },
+    { "coord": [11496.5, 15120.6], "id": "38-2", "name": "Blue World Valley", "icon": "Event Keep blue.png" },
+    { "coord": [9604.47, 15129.9], "id": "38-3", "name": "Green World Lowlands", "icon": "Event Keep green.png" },
+    { "coord": [10202.6, 15437.1], "id": "38-4", "name": "Golanta Clearing", "icon": "Event Camp white.png" },
+    { "coord": [11279.8, 13736.8], "id": "38-5", "name": "Pangloss Rise", "icon": "Event Camp white.png" },
+    { "coord": [9841.05, 13545.8], "id": "38-6", "name": "Speldan Clearcut", "icon": "Event Camp white.png" },
+    { "coord": [11037.9, 15556.2], "id": "38-7", "name": "Danelon Passage", "icon": "Event Camp white.png" },
+    { "coord": [11565.5, 14444.8], "id": "38-8", "name": "Umberglade Woods", "icon": "Event Camp white.png" },
+    { "coord": [10606.3, 14580.3], "id": "38-9", "name": "Stonemist Castle", "icon": "Keep white.png" },
+    { "coord": [9570.97, 14423.2], "id": "38-10", "name": "Rogue's Quarry", "icon": "Event Camp white.png" },
+    { "coord": [9413.84, 14792.8], "id": "38-11", "name": "Aldon's Ledge", "icon": "Event Tower green.png" },
+    { "coord": [9906.21, 14624.6], "id": "38-12", "name": "Wildcreek Run", "icon": "Event Tower green.png" },
+    { "coord": [9805.96, 15406.4], "id": "38-13", "name": "Jerrifer's Slough", "icon": "Event Tower green.png" },
+    { "coord": [10171.8, 15081.8], "id": "38-14", "name": "Klovan Gully", "icon": "Event Tower green.png" },
+    { "coord": [11452.7, 15490.7], "id": "38-15", "name": "Langor Gulch", "icon": "Event Tower blue.png" },
+    { "coord": [10850.1, 15224.4], "id": "38-16", "name": "Quentin Lake", "icon": "Event Tower blue.png" },
+    { "coord": [11156.4, 14527.8], "id": "38-21", "name": "Durios Gulch", "icon": "Event Tower blue.png" },
+    { "coord": [11766.3, 14793.5], "id": "38-22", "name": "Bravost Escarpment", "icon": "Event Tower blue.png" },
+    { "coord": [10256.6, 13514.4], "id": "38-17", "name": "Mendon's Gap", "icon": "Event Tower red.png" },
+    { "coord": [10188.8, 14082.3], "id": "38-18", "name": "Anzalias Pass", "icon": "Event Tower red.png" },
+    { "coord": [10965.2, 14054.6], "id": "38-19", "name": "Ogrewatch Cut", "icon": "Event Tower red.png" },
+    { "coord": [11090.4, 13488.2], "id": "38-20", "name": "Veloka Slope", "icon": "Event Tower red.png" },
+&lt;!--BBL--&gt;
+    { "coord": [14056.6, 12430.9], "id": "96-37", "name": "Blue Alpine Garrison", "icon": "Event Keep blue.png" },
+    { "coord": [15252.2, 12880.7], "id": "96-32", "name": "Askalion Hills", "icon": "Event Keep green.png" },
+    { "coord": [13035.1, 12956.6], "id": "96-33", "name": "Ascension Bay", "icon": "Event Keep red.png" },
+    { "coord": [13688.9, 13339], "id": "96-35", "name": "Redbriar", "icon": "Event Tower red.png" },
+    { "coord": [14581, 13409.9], "id": "96-36", "name": "Greenlake", "icon": "Event Tower green.png" },
+    { "coord": [13444.8, 12078.2], "id": "96-38", "name": "Woodhaven", "icon": "Event Tower blue.png" },
+    { "coord": [14683.4, 12030.3], "id": "96-40", "name": "Dawn's Eyrie", "icon": "Event Tower blue.png" },
+    { "coord": [14083.2, 14033.2], "id": "96-34", "name": "Champion's Demesne", "icon": "Event Camp white.png" },
+    { "coord": [14082.8, 11228.4], "id": "96-39", "name": "The Spiritholme", "icon": "Event Camp white.png" },
+    { "coord": [15015.7, 13502.9], "id": "96-50", "name": "Greenwater Lowlands", "icon": "Event Camp white.png" },
+    { "coord": [15025.5, 12168.3], "id": "96-51", "name": "Stargrove", "icon": "Event Camp white.png" },
+    { "coord": [13211.9, 12195.7], "id": "96-52", "name": "Godslore", "icon": "Event Camp white.png" },
+    { "coord": [13262.3, 13457.1], "id": "96-53", "name": "Redvale Refuge", "icon": "Event Camp white.png" },
+    { "coord": [14065.1, 13339.5], "id": "96-62", "name": "Temple of Lost Prayers", "icon": "Event Ruin.png" },
+    { "coord": [13761, 13074.7], "id": "96-63", "name": "Battle's Hollow", "icon": "Event Ruin.png" },
+    { "coord": [13859.2, 12703.1], "id": "96-64", "name": "Bauer's Estate", "icon": "Event Ruin.png" },
+    { "coord": [14327.1, 12757], "id": "96-65", "name": "Orchard Overlook", "icon": "Event Ruin.png" },
+    { "coord": [14362.3, 13112.1], "id": "96-66", "name": "Carver's Ascent", "icon": "Event Ruin.png" },
+&lt;!--GBL--&gt;
+    { "coord": [6888.59, 13070.9], "id": "95-37", "name": "Green Alpine Garrison", "icon": "Event Keep green.png" },
+    { "coord": [8084.25, 13520.7], "id": "95-32", "name": "Shadaran Hills", "icon": "Event Keep red.png" },
+    { "coord": [5867.06, 13596.6], "id": "95-33", "name": "Dreadfall Bay", "icon": "Event Keep blue.png" },
+    { "coord": [6520.89, 13979], "id": "95-35", "name": "Bluebriar", "icon": "Event Tower blue.png" },
+    { "coord": [7413.05, 14049.9], "id": "95-36", "name": "Redlake", "icon": "Event Tower red.png" },
+    { "coord": [6276.77, 12718.2], "id": "95-38", "name": "Sunnyhill", "icon": "Event Tower green.png" },
+    { "coord": [7515.42, 12670.3], "id": "95-40", "name": "Cragtop", "icon": "Event Tower green.png" },
+    { "coord": [6915.25, 14673.2], "id": "95-34", "name": "Hero's Lodge", "icon": "Event Camp white.png" },
+    { "coord": [6914.78, 11868.4], "id": "95-39", "name": "The Titanpaw", "icon": "Event Camp white.png" },
+    { "coord": [7847.75, 14142.9], "id": "95-50", "name": "Redwater Lowlands", "icon": "Event Camp white.png" },
+    { "coord": [7857.45, 12808.3], "id": "95-51", "name": "Foghaven", "icon": "Event Camp white.png" },
+    { "coord": [6043.87, 12835.7], "id": "95-52", "name": "Faithleap", "icon": "Event Camp white.png" },
+    { "coord": [6094.29, 14097.1], "id": "95-53", "name": "Bluevale Refuge", "icon": "Event Camp white.png" },
+    { "coord": [6897.13, 13979.5], "id": "95-62", "name": "Temple of the Fallen", "icon": "Event Ruin.png" },
+    { "coord": [6593, 13714.7], "id": "95-63", "name": "Norfolk's Hollow", "icon": "Event Ruin.png" },
+    { "coord": [6691.21, 13343.1], "id": "95-64", "name": "Gertzz's Estate", "icon": "Event Ruin.png" },
+    { "coord": [7159.09, 13397], "id": "95-65", "name": "Cohen's Overlook", "icon": "Event Ruin.png" },
+    { "coord": [7194.27, 13752.1], "id": "95-66", "name": "Patrick's Ascent", "icon": "Event Ruin.png" },
+&lt;!--RBL--&gt;
+    { "coord": [9327.72, 10634.1], "id": "1099-106", "name": "Blistering Undercroft", "icon": "Event Keep green.png" },
+    { "coord": [10776.6, 10120.4], "id": "1099-113", "name": "Stoic Rampart", "icon": "Event Keep red.png" },
+    { "coord": [12203, 10706.2], "id": "1099-114", "name": "Osprey's Palace", "icon": "Event Keep blue.png" },
+    { "coord": [9831.82, 9507.67], "id": "1099-102", "name": "O'del Academy", "icon": "Event Tower red.png" },
+    { "coord": [11739.2, 9654.33], "id": "1099-104", "name": "Eternal Necropolis", "icon": "Event Tower red.png" },
+    { "coord": [11256.9, 11551.1], "id": "1099-105", "name": "Crankshaft Depot", "icon": "Event Tower blue.png" },
+    { "coord": [10243.9, 11331.3], "id": "1099-110", "name": "Parched Outpost", "icon": "Event Tower green.png" },
+    { "coord": [10743.8, 9492.51], "id": "1099-99", "name": "Hamm's Lab", "icon": "Event Camp white.png" },
+    { "coord": [11891.4, 11286.6], "id": "1099-100", "name": "Bauer Farmstead", "icon": "Event Camp white.png" },
+    { "coord": [9584.13, 11316.1], "id": "1099-101", "name": "McLain's Encampment", "icon": "Event Camp white.png" },
+    { "coord": [12097.5, 10018.3], "id": "1099-109", "name": "Roy's Refuge", "icon": "Event Camp white.png" },
+    { "coord": [9310.12, 10008], "id": "1099-115", "name": "Boettiger's Hideaway", "icon": "Event Camp white.png" },
+    { "coord": [10754.8, 11854.4], "id": "1099-116", "name": "Dustwhisper Well", "icon": "Event Camp white.png" },
+    { "coord": [10913.3, 11198.2], "id": "1099-118", "name": "Higgins's Ascent", "icon": "Event Ruin.png" },
+    { "coord": [10446.7, 10761.6], "id": "1099-119", "name": "Bearce's Dwelling", "icon": "Event Ruin.png" },
+    { "coord": [10989.5, 10778.3], "id": "1099-120", "name": "Zak's Overlook", "icon": "Event Ruin.png" },
+    { "coord": [10399.4, 11059.5], "id": "1099-121", "name": "Darra's Maze", "icon": "Event Ruin.png" },
+    { "coord": [10725.3, 10453.5], "id": "1099-122", "name": "Tilly's Encampment", "icon": "Event Ruin.png" },
+&lt;!--EotM--&gt;
+    { "coord": [6430, 10626], "id": "968-88", "name": "Arid Fortress", "icon": "Edge fort red.png" },
+    { "coord": [7518.5, 8739], "id": "968-78", "name": "Overgrown Fane", "icon": "Edge fort green.png" },
+    { "coord": [8607, 10626], "id": "968-79", "name": "Thunder Hollow", "icon": "Edge fort blue.png" },
+    { "coord": [7527.71, 10619.2], "id": "968-77", "name": "Inferno's Needle", "icon": "Edge tower red.png" },
+    { "coord": [6959.79, 9665.44], "id": "968-87", "name": "Stonegaze Spire", "icon": "Edge tower green.png" },
+    { "coord": [8111.44, 9658.89], "id": "968-89", "name": "Tytone Perch", "icon": "Edge tower blue.png" },
+    { "coord": [7518.5, 9107.75], "id": "968-80", "name": "Overgrown Fane Reactor", "icon": "Reactor white.png" },
+    { "coord": [6788.73, 10414.7], "id": "968-81", "name": "Arid Fortress Reactor", "icon": "Reactor white.png" },
+    { "coord": [8273.01, 10416], "id": "968-82", "name": "Thunder Hollow Reactor", "icon": "Reactor white.png" },
+    { "coord": [7270.05, 9838.91], "id": "968-83", "name": "Stonegaze Spire Reactor", "icon": "Reactor white.png" },
+    { "coord": [7527.04, 10266.9], "id": "968-84", "name": "Inferno's Needle Reactor", "icon": "Reactor white.png" },
+    { "coord": [7783.19, 9850.85], "id": "968-85", "name": "Tytone Perch Reactor", "icon": "Reactor white.png" },
+    { "coord": [7124.74, 9224.54], "id": "968-90", "name": "Altar (area)", "icon": "Edge Altar.png" },
+    { "coord": [8127.85, 9029.87], "id": "968-91", "name": "Observatory (area)", "icon": "Observatory.png" },
+    { "coord": [7557.21, 9391.91], "id": "968-92", "name": "Statuary (area)", "icon": "Statuary.png" },
+    { "coord": [8155.04, 10773.7], "id": "968-93", "name": "Forge (area)", "icon": "Forge.png" },
+    { "coord": [8801.77, 10154.3], "id": "968-94", "name": "Shrine (area)", "icon": "Shrine (EotM).png" },
+    { "coord": [8096.64, 10297.2], "id": "968-95", "name": "Bell Tower (area)", "icon": "Bell Tower.png" },
+    { "coord": [7114.23, 10382.4], "id": "968-96", "name": "Airport (area)", "icon": "Airport.png" },
+    { "coord": [6850.23, 10729.8], "id": "968-97", "name": "Workshop (area)", "icon": "Workshop.png" },
+    { "coord": [6728.14, 10184.6], "id": "968-98", "name": "Wurm Tunnel (area)", "icon": "Wurm Tunnel.png" }
+}}
+
+== Notes ==
+* The region is mentioned through the [[API:Main|API]], but it does not have any ingame labels.
+
+{{region nav}}
+[[Category:World vs. World|*]]
+
+[[es:Mundo contra Mundo (región)]]</text>
+      <sha1>bik8l5pvpqr2gtoak3077c4ack9425g</sha1>
+    </revision>
+  </page>
+</mediawiki>

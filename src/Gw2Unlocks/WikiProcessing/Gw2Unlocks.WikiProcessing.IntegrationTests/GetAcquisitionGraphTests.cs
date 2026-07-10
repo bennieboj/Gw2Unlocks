@@ -3,7 +3,6 @@ using Gw2Unlocks.Testing.Common;
 using Gw2Unlocks.Wiki;
 using Gw2Unlocks.WikiProcessing.Implementation;
 using Microsoft.Extensions.DependencyInjection;
-using System.Linq;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -79,6 +78,28 @@ public class GetAcquisitionGraphTests : ServiceProviderBasedTest<IGw2WikiProcess
         Assert.DoesNotContain(graph.Edges, e => e.From == reward && e.To == rewardSource && e.Type == EdgeType.RewardedBy);
     }
 
+    [Fact]
+    public async Task MiniDolyakShouldBeSoldBeSkirmishSupervisorWhichIsLocatedInWorldvsWorld()
+    {
+        SetFile("Mini_Dolyak");
+        var graph = await GetSut().GetAcquisitionGraph(TestContext.Current.CancellationToken);
+
+        const string item = "Mini Dolyak";
+        var itemNode = graph.GetNode(item, NodeType.Item);
+        const string vendor = "Skirmish Supervisor";
+        var vendorNode = graph.GetNode(vendor, NodeType.NPC);
+        const string region = "World vs. World";
+        var regionNode = graph.GetNode(region, NodeType.Location);
+
+        Assert.NotNull(itemNode);
+        Assert.NotNull(vendorNode);
+        Assert.NotNull(regionNode);
+
+        Assert.Contains(graph.Edges, e => e.From == item && e.To == vendor && e.Type == EdgeType.SoldBy
+                        && e.Metadata != null && e.Metadata.ContainsKey("cost"));
+        Assert.Contains(graph.Edges, e => e.From == vendor && e.To == region && e.Type == EdgeType.LocatedIn);
+    }
+    
     [Fact]
     public async Task HomesteadUnlocksShouldLinkToDeftLahar()
     {

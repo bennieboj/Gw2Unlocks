@@ -64,9 +64,9 @@ public sealed class Gw2WikiProcessingSource(
                     try
                     {
                         var textCleaned = text;
-                        if (title.Contains("Template:", StringComparison.Ordinal))
+                        if (IsTemplate(title))
                         {
-                            textCleaned = textCleaned.Replace("<onlyinclude>", "", StringComparison.Ordinal);
+                            textCleaned = CleanTemplate(text);
                         }
 
                         List<string> debugtitles = [
@@ -106,10 +106,11 @@ public sealed class Gw2WikiProcessingSource(
     }
 
 
-    private static void FirstPass(AcquisitionGraph graph, string title, string text, Wikitext ast, CancellationToken _)
+    private void FirstPass(AcquisitionGraph graph, string title, string text, Wikitext ast, CancellationToken _)
     {
         ParseAndAssignRedirects(graph, title, ast);
         ParseAndAssignTemplates(graph, title, text);
+        ParseAndAssignSubPage(graph, title, text);
         ParseAndAssignArmorSets(graph, title, ast);
     }
     private void SecondPass(AcquisitionGraph graph, string title, string _, Wikitext ast, CancellationToken cancellationToken)
@@ -138,6 +139,11 @@ public sealed class Gw2WikiProcessingSource(
         else if (IsTemplate(title))
         {
             //gems, bltc and staettue pages contain templates
+            return;
+        }
+        else if (IsSubPage(title))
+        {
+            //subpages on it's own aren't useful
             return;
         }
         else if (infobox == null || infobox.Metadata.TryGetValue("status", out var status) && status == "historical")
@@ -187,13 +193,37 @@ public sealed class Gw2WikiProcessingSource(
             .FirstOrDefault(t => t.Name.ToString().Trim().Equals("Armor set infobox", StringComparison.OrdinalIgnoreCase));
     }
 
+    private void ParseAndAssignSubPage(AcquisitionGraph graph, string title, string text)
+    {
+        if (IsSubPage(title))
+        {
+            logger.LogInformation("ParseAndAssignSubPage {title}", title);
+            graph.CreateSubPage(title, text);
+        }
+    }
+    private static bool IsSubPage(string title)
+    {
+        var testTitle = title[0] != '"' ? title[1..] : title[2..];
+        var isSubPage = testTitle.Contains('/', StringComparison.OrdinalIgnoreCase);
+        var bad = new List<string> { 
+            "/history", "/Drop rate", "/data", "/historical", "Game updates/", "/quotes",
+            "/dialogue", "/research", "/locations", "/Salvage research"
+        };
+        var containsBadThings =  bad.Any(b => title.Contains(b, StringComparison.OrdinalIgnoreCase));
+        return isSubPage && !containsBadThings && !IsTemplate(title);
+    }
+
     private static void ParseAndAssignTemplates(AcquisitionGraph graph, string title, string text)
     {
         if (IsTemplate(title))
         {
-            text = text.Replace("<onlyinclude>", "", StringComparison.Ordinal);
-            graph.CreateTemplate(title, text);
+            graph.CreateTemplate(title, CleanTemplate(text));
         }
+    }
+
+    private static string CleanTemplate(string text)
+    {
+        return text.Replace("<onlyinclude>", "", StringComparison.Ordinal);
     }
 
     private static bool IsTemplate(string title)
@@ -557,20 +587,10 @@ public sealed class Gw2WikiProcessingSource(
             {
                 HandleLocation(graph, nodeId, info, vendorHeaderLocation);
 
-                static bool StartsWithTemplateKey(Template template, string key)
-                {
-                    var argsWithoutValue = template.Arguments.Where(a => a.Name == null).Select(a => a.Value);
-                    var idea = string.Join('|', argsWithoutValue);
-                    return key.Equals(template.Name.ToString().Trim() + "|" + idea, StringComparison.OrdinalIgnoreCase);
-                }
-                var templatesOnPage = ast.EnumDescendants().OfType<Template>().ToList();
-                var templatesToCheck = graph.Templates.Where(kvp => templatesOnPage.Any(t => StartsWithTemplateKey(t, kvp.Key))).ToList();
 
-                var vendorTableRows = ast.EnumDescendants().OfType<Template>().Where(t => t.Name.ToString().Contains("vendor table row", StringComparison.OrdinalIgnoreCase)).ToList();
-                foreach (var template in templatesToCheck) {
-                    var astOfTemplate = parser.Parse(template.Value, cancellationToken);
-                    vendorTableRows.AddRange(astOfTemplate.EnumDescendants().OfType<Template>().Where(t => t.Name.ToString().Contains("vendor table row", StringComparison.OrdinalIgnoreCase)));
-                }
+                var texts = EnumerateWikiTexts(graph, nodeId, ast, cancellationToken);
+                var vendorTableRows = texts.SelectMany(t => t.EnumDescendants().OfType<Template>().Where(t => t.Name.ToString().Contains("vendor table row", StringComparison.OrdinalIgnoreCase))).ToList();
+
                 foreach (var row in vendorTableRows)
                 {
                     var itemName = row.Arguments.FirstOrDefault(a => a.Name?.ToString() == "item")?.Value?.ToString();
@@ -672,6 +692,73 @@ public sealed class Gw2WikiProcessingSource(
         }
 
         ApplyCrafting(graph, nodeId, ast);
+    }
+
+    private IEnumerable<Wikitext> EnumerateWikiTexts(
+        AcquisitionGraph graph,
+        string rootId,
+        Wikitext rootWikiText,
+        CancellationToken cancellationToken)
+    {
+        var visited = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+
+        var stack = new Stack<(string Id, Wikitext WikiText)>();
+
+        stack.Push((rootId, rootWikiText));
+
+        static bool startsWithTemplateKey(Template template, string key)
+        {
+            var argsWithoutValue = template.Arguments
+                .Where(a => a.Name == null)
+                .Select(a => a.Value);
+
+            var suffix = string.Join('|', argsWithoutValue);
+
+            return key.Equals(
+                template.Name.ToString().Trim() + "|" + suffix,
+                StringComparison.OrdinalIgnoreCase);
+        }
+
+        while (stack.TryPop(out var item))
+        {
+            cancellationToken.ThrowIfCancellationRequested();
+
+            if (!visited.Add(item.Id))
+            {
+                continue;
+            }
+
+            yield return item.WikiText;
+
+            var templatesOnPage = item.WikiText
+                .EnumDescendants()
+                .OfType<Template>()
+                .ToList();
+
+            // Traverse subpages.
+            if (graph.SubPages.TryGetValue(item.Id, out var subPageContents))
+            {
+                for (var i = 0; i < subPageContents.Count; i++)
+                {
+                    stack.Push((
+                        $"{item.Id}/subpage/{i}",
+                        parser.Parse(subPageContents[i], cancellationToken)));
+                }
+            }
+
+            // Traverse templates.
+            foreach (var template in graph.Templates)
+            {
+                if (!templatesOnPage.Any(t => startsWithTemplateKey(t, template.Key)))
+                {
+                    continue;
+                }
+
+                stack.Push((
+                    $"template:{template.Key}",
+                    parser.Parse(template.Value, cancellationToken)));
+            }
+        }
     }
 
     private static void HandleLocation(AcquisitionGraph graph, string nodeId, InfoboxData info, string? allowedLocations = null)

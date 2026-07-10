@@ -106,6 +106,9 @@ public class AcquisitionGraph
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Usage", "CA2227:Collection properties should be read only")]
     [JsonIgnore]
     public Dictionary<string, string> Templates { get; set; } = [];
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Usage", "CA2227:Collection properties should be read only")]
+    [JsonIgnore]
+    public Dictionary<string, List<string>> SubPages { get; set; } = [];
 
     private string ResolveRedirect(string name)
     {
@@ -130,6 +133,18 @@ public class AcquisitionGraph
         ArgumentException.ThrowIfNullOrWhiteSpace(name);
         var templatename = name.Replace("Template:", "", StringComparison.OrdinalIgnoreCase).Replace("/", "|", StringComparison.OrdinalIgnoreCase).Trim();
         Templates[templatename] = text;
+    }
+
+    public void CreateSubPage(string name, string text)
+    {
+        ArgumentException.ThrowIfNullOrWhiteSpace(name);
+        var pageBaseName = name.Split('/', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries)[0];
+        if (!SubPages.TryGetValue(pageBaseName, out var subPageList))
+        {
+            subPageList = [];
+            SubPages[pageBaseName] = subPageList;
+        }
+        subPageList.Add(text);
     }
 
     public Node GetOrCreate(string nodeId, Dictionary<string, string>? metadata = null)
