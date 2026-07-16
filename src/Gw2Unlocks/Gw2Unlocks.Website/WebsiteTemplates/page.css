@@ -6,9 +6,14 @@ body {
 }
 
 .top-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+
     padding: 8px 12px;
     border-radius: 8px;
-    border: none;
+
     cursor: pointer;
     text-decoration: none;
     color: white;
@@ -23,11 +28,17 @@ body {
     background: #72A5F2;
 }
 
+.top-btn.ingame-btn {
+    width: 100%;
+    background: #222;
+    border: 1px solid #444;
+    background: #72A5F2;
+    border: none;
+}
+
 .top-btn img {
     width: 16px;
     height: 16px;
-    vertical-align: middle;
-    margin-right: 6px;
 }
 
 .layout {
@@ -138,31 +149,9 @@ body {
 
 .sidebar-actions {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: 8px;
     margin-top: 10px;
-}
-
-
-.sidebar-buttons {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-}
-
-.sidebar-actions .top-btn {
-    box-sizing: border-box;
-}
-
-.sidebar-actions .github {
-    flex: 1 1 calc(50% - 4px);
-    text-align: center;
-}
-
-.sidebar-actions .kofi {
-    flex: 1 1 100%;
-    text-align: center;
 }
 
 .filter-section {

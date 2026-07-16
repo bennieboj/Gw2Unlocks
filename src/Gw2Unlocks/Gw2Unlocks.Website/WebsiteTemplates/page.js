@@ -428,3 +428,20 @@ if (existingKey && existingKey.length === 72) {
         });
     }
 }
+
+const copyButton = document.getElementById("copy-ingame-name");
+const copyText = document.getElementById("copy-text");
+copyButton?.addEventListener("click", async () => {
+    try {
+        await navigator.clipboard.writeText("Bennieboj.2607");
+
+        const originalText = copyText.innerHTML;
+        copyText.textContent = "Copied!";
+
+        setTimeout(() => {
+            copyText.innerHTML = originalText;
+        }, 1500);
+    } catch {
+        copyText.textContent = "Failed to copy";
+    }
+});
