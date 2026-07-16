@@ -106,7 +106,7 @@ public sealed class Gw2WikiProcessingSource(
     }
 
 
-    private void FirstPass(AcquisitionGraph graph, string title, string text, Wikitext ast, CancellationToken _)
+    private static void FirstPass(AcquisitionGraph graph, string title, string text, Wikitext ast, CancellationToken _)
     {
         ParseAndAssignRedirects(graph, title, ast);
         ParseAndAssignTemplates(graph, title, text);
@@ -193,11 +193,10 @@ public sealed class Gw2WikiProcessingSource(
             .FirstOrDefault(t => t.Name.ToString().Trim().Equals("Armor set infobox", StringComparison.OrdinalIgnoreCase));
     }
 
-    private void ParseAndAssignSubPage(AcquisitionGraph graph, string title, string text)
+    private static void ParseAndAssignSubPage(AcquisitionGraph graph, string title, string text)
     {
         if (IsSubPage(title))
         {
-            logger.LogInformation("ParseAndAssignSubPage {title}", title);
             graph.CreateSubPage(title, text);
         }
     }
