@@ -135,13 +135,6 @@ body {
     object-fit: contain;
 }
 
-.ingame-message {
-    display: block;
-    margin-top: 16px;
-    text-align: center;
-    font-size: 0.85rem;
-}
-
 .sidebar-divider {
     margin: 16px 0;
     border-top: 1px solid #333;
