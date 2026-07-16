@@ -570,7 +570,8 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                 {
                     Name = "PvP / WvW",
                     UnlockCriteria = [
-                        new TokenCriteria("Kurzick Weapon Chest")
+                        new TokenCriteria("Kurzick Weapon Chest"),
+                        new SetCriteria("Obsidian weapons"),
                     ],
                     UnlockCategories =
                     [
