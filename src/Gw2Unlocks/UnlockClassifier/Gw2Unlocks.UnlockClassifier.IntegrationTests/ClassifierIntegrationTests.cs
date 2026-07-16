@@ -78,6 +78,36 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
     }
 
     [Fact]
+    public async Task GivenUnlockSoldInWizardsVaultThenShouldReturnWizardsVault()
+    {
+        var unlockName = "Tropical Leaf Cape";
+        var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
+        var group = results.UnlockGroups.Single(g => g.Name == "Other");
+        var category = group.UnlockCategories.Single(c => c.Name == "Wizard's Vault");
+        var unlock = category.Unlocks.Single(c => c.Name == unlockName);
+
+        Assert.NotNull(unlock);
+        Assert.NotNull(unlock.ApiData);
+    }
+
+    [Theory]
+    [InlineData("Cobalt Antique Reaver")]
+    [InlineData("Terracotta Antique Reaver")]
+    [InlineData("Calcite Antique Reaver")]
+    [InlineData("Citrine Antique Reaver")]
+    [InlineData("Viridian Antique Reaver")]
+    public async Task CraftingWeaponsShouldBeLinkedToCrafting(string unlockName)
+    {
+        var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
+        var group = results.UnlockGroups.Single(g => g.Name == "Other");
+        var category = group.UnlockCategories.Single(c => c.Name == "Crafting");
+        var unlock = category.Unlocks.Single(c => c.Name == unlockName);
+
+        Assert.NotNull(unlock);
+        Assert.NotNull(unlock.ApiData);
+    }
+
+    [Fact]
     public async Task GivenUnlockSoldByExchangeSpecialistThenShouldPrioritizeGemStoreOverBlackLionExchangeSpecialist()
     {
         var unlockName = "Frying Pan (toy)";

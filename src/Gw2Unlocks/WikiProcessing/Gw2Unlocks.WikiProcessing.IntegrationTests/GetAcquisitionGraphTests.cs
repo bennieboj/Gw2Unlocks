@@ -462,6 +462,24 @@ public class GetAcquisitionGraphTests : ServiceProviderBasedTest<IGw2WikiProcess
     }
 
     [Theory]
+    [InlineData("Gwyl Monarch's Selection Box")]
+    [InlineData("Ward Hunter's Shoulder Skin")]
+    [InlineData("Tropical Leaf Cape Set")]
+    [InlineData("Toxinshell Selection Box")]
+    public async Task WizardsVaultItemsShouldShowSoldByWizardsVault(string skin)
+    {
+        SetFile("WizardsVault");
+        var graph = await GetSut().GetAcquisitionGraph(TestContext.Current.CancellationToken);
+
+        const string wizardsVaultVendor = "Wizard's Vault";
+        var blackLionWeaponsVendorNode = graph.GetNode(wizardsVaultVendor, NodeType.NPC);
+        Assert.NotNull(blackLionWeaponsVendorNode);
+
+        Assert.Contains(graph.Edges, e => e.From == skin && e.To == wizardsVaultVendor && e.Type == EdgeType.SoldBy
+                        && e.Metadata != null && e.Metadata.TryGetValue("cost", out string? costItem) && costItem.Contains("Astral Acclaim", System.StringComparison.Ordinal));
+    }
+
+    [Theory]
     [InlineData("Collapsing Star Spear Skin")]
     [InlineData("Chiroptophobia Greatsword Skin")]
     [InlineData("Painter's Brilliance Axe Skin")]

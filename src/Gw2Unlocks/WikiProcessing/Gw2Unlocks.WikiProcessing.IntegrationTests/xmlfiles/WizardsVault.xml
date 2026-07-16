@@ -1,0 +1,607 @@
+<mediawiki xmlns="http://www.mediawiki.org/xml/export-0.11/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mediawiki.org/xml/export-0.11/ http://www.mediawiki.org/xml/export-0.11.xsd" version="0.11" xml:lang="en">
+  <siteinfo>
+    <sitename>Guild Wars 2 Wiki</sitename>
+    <dbname>en_wikidb_gw2</dbname>
+    <base>https://wiki.guildwars2.com/wiki/Main_Page</base>
+    <generator>MediaWiki 1.39.17</generator>
+    <case>first-letter</case>
+    <namespaces>
+      <namespace key="-2" case="first-letter">Media</namespace>
+      <namespace key="-1" case="first-letter">Special</namespace>
+      <namespace key="0" case="first-letter" />
+      <namespace key="1" case="first-letter">Talk</namespace>
+      <namespace key="2" case="first-letter">User</namespace>
+      <namespace key="3" case="first-letter">User talk</namespace>
+      <namespace key="4" case="first-letter">Guild Wars 2 Wiki</namespace>
+      <namespace key="5" case="first-letter">Guild Wars 2 Wiki talk</namespace>
+      <namespace key="6" case="first-letter">File</namespace>
+      <namespace key="7" case="first-letter">File talk</namespace>
+      <namespace key="8" case="first-letter">MediaWiki</namespace>
+      <namespace key="9" case="first-letter">MediaWiki talk</namespace>
+      <namespace key="10" case="first-letter">Template</namespace>
+      <namespace key="11" case="first-letter">Template talk</namespace>
+      <namespace key="12" case="first-letter">Help</namespace>
+      <namespace key="13" case="first-letter">Help talk</namespace>
+      <namespace key="14" case="first-letter">Category</namespace>
+      <namespace key="15" case="first-letter">Category talk</namespace>
+      <namespace key="102" case="first-letter">Property</namespace>
+      <namespace key="103" case="first-letter">Property talk</namespace>
+      <namespace key="106" case="first-letter">Form</namespace>
+      <namespace key="107" case="first-letter">Form talk</namespace>
+      <namespace key="108" case="first-letter">Concept</namespace>
+      <namespace key="109" case="first-letter">Concept talk</namespace>
+      <namespace key="112" case="first-letter">smw/schema</namespace>
+      <namespace key="113" case="first-letter">smw/schema talk</namespace>
+      <namespace key="114" case="first-letter">Rule</namespace>
+      <namespace key="115" case="first-letter">Rule talk</namespace>
+      <namespace key="200" case="first-letter">ArenaNet</namespace>
+      <namespace key="201" case="first-letter">ArenaNet talk</namespace>
+      <namespace key="202" case="first-letter">API</namespace>
+      <namespace key="203" case="first-letter">API talk</namespace>
+      <namespace key="274" case="first-letter">Widget</namespace>
+      <namespace key="275" case="first-letter">Widget talk</namespace>
+    </namespaces>
+  </siteinfo>
+  <page>
+    <title>Wizard's Vault</title>
+    <ns>0</ns>
+    <id>361922</id>
+    <revision>
+      <id>3164848</id>
+      <parentid>3164813</parentid>
+      <timestamp>2026-06-29T07:58:15Z</timestamp>
+      <contributor>
+        <ip>80.187.84.161</ip>
+      </contributor>
+      <comment>Weeklys for coming month for planing ahead to see which week has easy weeklys and which to skip, especially when managing several accounts for vault loot. Absolute godsend - Undo revision 3164753 by [[Special:Contributions/Hazasoul|Hazasoul]] ([[User talk:Hazasoul|Talk]])</comment>
+      <origin>3164848</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="16863" sha1="j1u4k53a8xhvvypke2dzyone5n29z3f" xml:space="preserve">{{otheruses|the rewards system|the point of interest|Wizard's Vault (point of interest)}}
+
+[[File:Wizard's Vault interface icon.png|right|link=]]
+{{quotation|[https://www.guildwars2.com/en/news/new-rewards-in-guild-wars-2-secrets-of-the-obscure/ Official site]|The Wizard’s Vault is a new streamlined rewards system that combines the best elements of the daily login and daily achievement systems, allowing you to play Guild Wars 2 the way you want to–whether it’s [[PvE]], [[Player vs Player]], or [[World vs World]], or a mix–and earn a wide variety of exciting rewards for doing so.}}
+
+{{icon|misc|Wizard's Vault icon.png}}[[Wizard's Vault]] is a rewards system available to all [[player]]s, replacing the previous daily [[login reward]] format and its generic [[Daily (achievements)|daily achievements]].&lt;ref name="Discover WV"&gt;[https://www.guildwars2.com/en/news/discover-the-wonders-within-the-wizards-vault-in-guild-wars-2-secrets-of-the-obscure/ Discover the Wonders within the Wizard’s Vault in Guild Wars 2: Secrets of the Obscure], Guildwars2.com&lt;/ref&gt; After selecting their choice of either PvE, PvP, WvW, or mixed objectives, players are awarded with [[Astral Acclaim]] for completing these tasks, which can be exchanged for various rewards, including some [[Gem Store]] items. Some Wizard's Vault tasks and rewards are exclusive to [[expansion]]s, but all types of accounts with a level 80 character have access to the feature and the currency.&lt;ref name="New rewards"/&gt;
+
+== Overview ==
+[[File:Wizards Vault Pane.jpg|thumb|Wizard's Vault panel]]
+* Players receive new objectives to complete daily, weekly, with each quarterly release (called seasons), and certain [[festival]]s and [[bonus event]]s. Completing them grants {{Astral acclaim}} [[Astral Acclaim]]
+** There is a soft limit of {{Astral acclaim|1300}} Astral Acclaim that a player can have at any given time. Players can only claim the rewards from Vault objectives while the Astral Acclaim in an account's wallet is below {{Astral acclaim|1300}}. Other sources, like [[100_Astral_Acclaim|an achievement that gives Astral Acclaim]], may still be able to go over the soft cap.
+** Players will always receive at least one daily task in each selected category.
+* If different players select identical categories and own the same expansions, they will receive the same objectives. Players with different expansions may see different objectives.
+** Buying an expansion will display a different set of objectives '''immediately''', not at reset. Objectives which you have done before the purchase will only count for the progress if they are present in your new objectives list, too. Some of the new objectives might be partially or completely solved - it seems the game tracks your progress in the background. If you have already claimed a daily or weekly chest before the purchase, you will not be able to claim it again.
+* Rewards refresh on a quarterly basis (indicated by the timer under the Special tab), but any Wizard’s Vault–exclusive cosmetic&lt;ref name="official website about Wizard‘s Vault"&gt;[https://help.guildwars2.com/hc/en-us/articles/19617357502867-Secrets-of-the-Obscure-Wizard-s-Vault Secrets of the Obscure: Wizard's Vault], Guildwars2.com&lt;/ref&gt; rewards simply move into the Legacy Rewards section of the vault, where they’ll remain available for the same type of currency indefinitely, at a slightly higher price than at their introduction.&lt;ref name="official website about Wizard‘s Vault"/&gt;&lt;ref name="New rewards" /&gt;
+** The rewards are attainable through regular, normal play; there are no paid upgrades or progression skips, and the [[#Legacy Rewards|Legacy Rewards]] section exists to take the time pressure off and allow players to catch up if they take a break.&lt;ref name="New rewards"&gt;[https://www.guildwars2.com/en/news/new-rewards-in-guild-wars-2-secrets-of-the-obscure/ New Rewards in Guild Wars 2: Secrets of the Obscure], Guildwars2.com&lt;/ref&gt;
+* Daily achievement points are still available, earned by completing Wizard's Vault daily objectives.
+* [[File:Achievements Watch List.png]] Wizard's Vault objectives can be tracked, they however replace normal tracked [[achievement]]s in the UI.
+** [[File:Swap to Achievements.png|25px|Swap to Achievements‎]] [[File:Swap to Wizard's Vault.png|25px|Swap to Wizard's Vault‎]] These buttons in the right top corner allows you to switch between the Achievement Watchlist and the Wizard's Vault Watchlist.
+* The Wizard's Vault has three sections:
+** {{icon|misc|Wizard's Vault Objectives.png}} [[#Objectives|Objectives]] — lists all currently available objectives, also includes timers
+** {{icon|misc|Wizard's Vault Astral Rewards.png}} [[#Astral Rewards|Astral Rewards]] — lists all currently available seasonal rewards
+** {{icon|misc|Wizard's Vault Legacy Rewards.png‎}} [[#Legacy Rewards|Legacy Rewards]] ‎— lists cosmetic rewards from previous seasons
+
+== Objectives ==
+{{see|Wizard's Vault/Easy objectives|Wizard's Vault/List of objectives#Daily|Wizard's Vault/List of objectives#Weekly}}
+
+{{icon|misc|Wizard's Vault Objectives.png}} The objectives available depend on the game modes selected and owned [[expansion]]s. Two players with the same game modes selected and the same [[expansion]]s owned will have identical objectives, but having for example PvE and WvW chosen, your PvE objectives may be different to someone with only PvE chosen, or with only [[Guild Wars 2|Core]] content available.
+
+=== Game mode selection ===
+Upon opening the [[Wizard's Vault]], players are presented with a dialogue asking them to choose which game modes ([[PvE]], [[PvP]] &amp; [[WvW]]) they would like to receive objectives for, allowing daily/weekly game modes to be selected independently. This selection can be changed at any time by clicking the [[File:Options Menu Bar icon.png|19px]] gear icon in the daily or weekly tabs. If any objectives have been claimed (other than the daily "Log in"), the change does not take effect until their respective refresh.
+
+=== Refresh ===
+Daily objectives refresh with the [[Server reset|daily reset]] every day at {{UTC time|00:00}}, and weekly objectives refresh every {{UTC time|Monday 07:30}}.
+
+{{Wizard's Vault objective countdowns|2026-09-01T16:00Z}}
+
+=== Daily ===
+Four random daily objectives will be selected from the chosen set of gameplay options every day, plus a fixed "Log in" objective. Each daily objective rewards {{Astral acclaim|10}} on completion, while the Log In daily awards {{Astral acclaim|5}}.
+
+Completing four objectives of the day will reward a [[Wizard's Vault Daily Completion Chest|daily completion chest]] containing other rewards and {{Astral acclaim|20}}. Players will also earn the [[Wizard's Vault: Daily Completionist]] daily achievement, rewarding {{ap|10}} until a {{ap|15000}} limit is reached. This limit combines the current daily achievement and a number of past daily and monthly categories. (Refer to [[Achievement#Trivia]] for a list of them.)
+
+=== Weekly ===
+Eight random weekly objectives will be selected from the chosen set of gameplay options at the start of each week. Each weekly objective rewards {{Astral acclaim|50}} upon completion.
+
+Completing six of the weekly objectives will reward an additional [[Wizard's Vault Weekly Completion Chest|weekly completion chest]] containing other rewards and {{Astral acclaim|450}}.
+
+{{Weekly Wizard's Vault}}
+
+See [[Extended Weekly Wizard's Vault]] for additional upcoming weeks.
+
+=== Special ===
+{{see|Wizard's Vault/Historical special objectives}}
+The special category contains additional objectives which refresh with each season (usually quarterly), and temporary [[festival]] and [[special event]] objectives. These objectives do not change by game modes selected nor [[expansion]] ownership. Most of these objectives can only be completed by playing content related to the latest expansion.
+
+{{Wizard's vault objectives widget}}
+
+== Astral Rewards ==
+{{see|label=For previous contents, see: [[Wizard's Vault/Historical Astral Rewards]], for currency, see|Astral Acclaim}}
+[[File:The Only Way seasonal refresh.jpg|thumb|The current season — [[The Only Way]] season]]
+{{icon|misc|Wizard's Vault Astral Rewards.png}} These rewards refresh quarterly. After each season ends, Wizard’s Vault–exclusive cosmetic rewards are moved to the [[Wizard's Vault/Legacy Rewards|Legacy Rewards]] section of the Vault at a slightly increased price (+20%).
+{{vendor table header|showFacts=false|showLevel=false|itemWidth=300px|rarityWidth=70px|section=Astral Rewards}}
+{{vendor table row | item = Enchanted Springer Skin | total = 1 | cost = 1000 Astral Acclaim | requirement = [[Guild Wars 2: Visions of Eternity]]}}
+{{vendor table row | item = "/Flex" Emote Tome | total = 1 | cost = 375 Astral Acclaim | requirement = [[Guild Wars 2: Visions of Eternity]]}}
+{{vendor table row | item = Gwyl Monarch's Selection Box | total = 17 | cost = 150 Astral Acclaim | requirement = [[Guild Wars 2: Visions of Eternity]]}}
+{{vendor table row | item = Ward Hunter's Shoulder Skin | total = 1 | cost = 375 Astral Acclaim | requirement = [[Guild Wars 2: Visions of Eternity]]}}
+{{vendor table row | item = Ward Hunter's Gloves Skin | total = 1 | cost = 375 Astral Acclaim | requirement = [[Guild Wars 2: Visions of Eternity]]}}
+{{vendor table row | item = Ward Hunter's Boots Skin | total = 1 | cost = 375 Astral Acclaim | requirement = [[Guild Wars 2: Visions of Eternity]]}}
+|-
+! colspan="4" |
+=== Seasonal rewards ===
+{{vendor table row | item = Legendary Weapon Starter Key—Set 1 | total = 1 | cost = 1000 Astral Acclaim | requirement = [[Guild Wars 2: Visions of Eternity]]}}
+{{vendor table row | item = Wizard's Ascended Armor Chest | per season=3 | cost = 400 Astral Acclaim}}
+{{vendor table row | item = Wizard's Ascended Weapon Chest | per season=1 | cost = 600 Astral Acclaim}}
+{{vendor table row | item = Black Lion Chest Key | per season=3 | cost = 450 Astral Acclaim}}
+{{vendor table row | item = Lesser Essence of Gold | per season=2 | cost = 700 Astral Acclaim}}
+{{vendor table row | item = Transmutation Charge (item) | per season=30 | cost = 8 Astral Acclaim}}
+{{vendor table row | item = Revive Orb | per season=10 | cost = 95 Astral Acclaim}}
+{{vendor table row | item = Metabolic Primer | per season=3 | cost = 80 Astral Acclaim}}
+{{vendor table row | item = Utility Primer | per season=3 | cost = 80 Astral Acclaim}}
+{{vendor table row | item = Black Lion Salvage Kit | per season=3 | cost = 50 Astral Acclaim}}
+{{vendor table row | item = Upgrade Extractor | per season=12 | cost = 35 Astral Acclaim}}
+{{vendor table row | item = Black Lion Mastery Coffer | per season=10 | cost = 30 Astral Acclaim}}
+{{vendor table row | item = Bag Slot Expansion| per season=1 | cost = 500 Astral Acclaim}}
+{{vendor table row | item = Build Storage Expansion| per season=1 | cost = 500 Astral Acclaim}}
+{{vendor table row | item = Build Template Expansion | per season=2 | cost = 350 Astral Acclaim}}
+{{vendor table row | item = Mystic Coin | per season=60 | cost = 9 Astral Acclaim}}
+{{vendor table row | item = Bag of Coins (1 Gold) (limited)| per season=100 | cost = 8 Astral Acclaim}}
+{{vendor table row | item = Bag of Laurels (fine) | per season=150 | cost = 10 Astral Acclaim}}
+{{vendor table row | item = Lucent Crystal Vault Bag | per season=20 | cost = 10 Astral Acclaim}}
+{{vendor table row | item = Tome of Knowledge | per season=35 | cost = 8 Astral Acclaim}}
+{{vendor table row | item = Vision Crystal | per season=4 | cost = 150 Astral Acclaim}}
+{{vendor table row | item = Mystic Clover | per season=20 | cost = 60 Astral Acclaim}}
+{{vendor table row | item = Obsidian Shard | per season=20 | cost = 30 Astral Acclaim}}
+{{vendor table row | item = Wizard's Box of Crafting Materials | cost = 50 Astral Acclaim}}
+{{vendor table row | item = Legendary Essence of Luck | cost = 20 Astral Acclaim}}
+|}
+
+== Legacy Rewards ==
+{{main|Wizard's Vault/Legacy Rewards|label=For Legacy Rewards, see}}
+{{icon|misc|Wizard's Vault Legacy Rewards.png‎}} Cosmetic rewards from previous Wizard's Vault seasons can be found in this tab for a slightly increased price (+20%). Previously purchased items cannot be purchased again from the Legacy tab.
+
+== Gallery ==
+&lt;gallery&gt;
+File:Wizards Vault selection.jpg|Selection of the game modes for the objectives.
+File:Wizards Vault initial selection.jpg|Initial selection of the game modes for the objectives.
+&lt;/gallery&gt;
+
+;Season banners
+{{see also|:Category:Wizard's Vault banner images}}
+&lt;gallery&gt;
+Wizard's Vault banner 01.png|
+Wizard's Vault banner 02.png|
+Wizard's Vault banner 03.png|
+Wizard's Vault banner 04.png|
+&lt;/gallery&gt;
+
+;Promotional materials
+&lt;gallery&gt;
+Raids and Wardrobe seasonal refresh.jpg   |Visions of Eternity:&lt;br&gt; [[Raids and Wardrobe]] [[Wizard's Vault/Legacy Rewards#Raids and Wardrobe Season|Season]]
+Visions of Eternity seasonal refresh.jpg  |[[Visions of Eternity]] [[Wizard's Vault/Legacy Rewards#Visions of Eternity Season|Season]]
+Absolution seasonal refresh.jpg           |Janthir Wilds:&lt;br&gt; [[Absolution]] [[Wizard's Vault/Legacy Rewards#Absolution Season|Season]]
+Repentance seasonal refresh.jpg           |Janthir Wilds:&lt;br&gt; [[Repentance]] [[Wizard's Vault/Legacy Rewards#Repentance Season|Season]]
+Godspawn seasonal refresh.jpg             |Janthir Wilds:&lt;br&gt; [[Godspawn]] [[Wizard's Vault/Legacy Rewards#Godspawn Season|Season]]
+Janthir Wilds seasonal refresh.jpg        |[[Janthir Wilds]] [[Wizard's Vault/Legacy Rewards#Janthir Wilds Season|Season]]
+The Midnight King seasonal refresh.jpg    |Secrets of the Obscure: [[The Midnight King]] [[Wizard's Vault/Legacy Rewards#The Midnight King Season|Season]]
+The Realm of Dreams seasonal refresh.jpg  |Secrets of the Obscure: [[The Realm of Dreams]] [[Wizard's Vault/Legacy Rewards#The Realm of Dreams Season|Season]]
+Through the Veil screenshot 02.jpg        |Secrets of the Obscure: [[Through the Veil (release)|Through the Veil]] [[Wizard's Vault/Legacy Rewards#Through the Veil Season|Season]]
+Sanctified Armor Weapons.jpg              |Secrets of the Obscure season
+Enchanted Owl Griffon Skin promo.jpg      |[[Secrets of the Obscure]] [[Wizard's Vault/Legacy Rewards#Secrets of the Obscure Season|Season]]
+&lt;/gallery&gt;
+
+== Notes ==
+* For research into possible objective cycles, see [[Wizard's Vault/research]].
+* While players without the ''Secrets of the Obscure'' expansion can not visit [[Wizard's Vault (point of interest)|the physical location of the vault]], they can access all of the functions of the vault via the in-game menu regardless.
+* If a player does not collect the reward for a daily, weekly or special objective before it resets it will be lost, independent of whether the completed objective is part of the new rotation or not.
+* Game updates do '''not''' reset the daily and weekly objectives, even when the Astral Rewards and special objectives are updated. A player who completes the weekly objectives on Monday before an update on a Tuesday will not get a new set of weekly objectives.
+* Depending on [[expansion]] ownership, it is possible for a Daily Objective to be included twice. This results in only 3 shown objectives (excluding the log-in) rather than the usual 4, but the duplicated objective will count as two for the daily completion.
+
+== Version history ==
+{{section-stub|mechanic|Likely missing changes}}
+* Prior to the [[Game updates/2023-11-07|November 07, 2023 game update]], the [[Wizard's Vault Daily Completion Chest|daily completion chest]] granted {{Astral acclaim|30}}.
+* The [[Game updates/2026-02-03|February 3, 2026 game update]] updated available objectives and aimed to improve variety. It also changed some recurring rewards and {{item icon|Astral Acclaim}} pricing. Additionally, daily/weekly objective types can now be separately selected, and changed immediately as long as no objective has been completed.
+
+== External links ==
+* [https://www.guildwars2.com/en/news/new-rewards-in-guild-wars-2-secrets-of-the-obscure/ New Rewards in Guild Wars 2: Secrets of the Obscure], GuildWars2.com
+* [https://www.guildwars2.com/en/news/discover-the-wonders-within-the-wizards-vault-in-guild-wars-2-secrets-of-the-obscure/ Discover the Wonders within the Wizard’s Vault in Guild Wars 2: Secrets of the Obscure], GuildWars2.com
+* [https://help.guildwars2.com/hc/en-us/articles/19617357502867-Secrets-of-the-Obscure-Wizard-s-Vault The Wizard‘s Vault], GuildWars2.com
+* [https://www.gamedeveloper.com/production/deep-dive-reimagining-the-battle-pass-to-maximize-enjoyment-in-guild-wars-2 Deep Dive: Reimagining the battle pass in Guild Wars 2], GameDeveloper.com
+
+== References ==
+&lt;references /&gt;
+
+{{Graphical user interface nav}}
+{{#set:Has game icon=File:Wizard's Vault Objectives.png}}
+
+[[de:Gewölbe des Zauberers]]
+[[es:Cámara del Brujo]]
+[[fr:Chambre forte du sorcier]]
+[[Category:Wizard's Vault|*]]</text>
+      <sha1>j1u4k53a8xhvvypke2dzyone5n29z3f</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Gwyl Monarch's Selection Box</title>
+    <ns>0</ns>
+    <id>415629</id>
+    <revision>
+      <id>3139549</id>
+      <parentid>3139176</parentid>
+      <timestamp>2026-05-13T20:14:10Z</timestamp>
+      <contributor>
+        <username>DiegoDeLaHouska</username>
+        <id>206595</id>
+      </contributor>
+      <minor/>
+      <origin>3139549</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="1713" sha1="s04obbwtp2csxr970d3gsqtkbx8tg5c" xml:space="preserve">{{Item infobox
+| description = Use this box to claim one weapon skin of your choice.
+| type = Container
+| rarity = Rare
+| bound = Account
+| id = 109647
+| gallery1 = Gwyl Monarch's Selection Box banner.png
+| gallery1-text = Wizard's Vault banner
+| gallery2 = The Only Way seasonal refresh.jpg
+| gallery2-text = Promo image
+| requires = voe
+}}
+[[Gwyl Monarch's Selection Box]] is a [[container]] which contains an account-bound [[Gwyl Monarch's weapon skins|Gwyl Monarch's weapon skin]] of the player's choice.
+
+== Acquisition ==
+{{Sold by}}
+
+== Contents ==
+{{Account unlocks header}}
+* Choose one of the following:
+** {{Contains|Gwyl Monarch's Axe Skin|chance=Choice}}
+** {{Contains|Gwyl Monarch's Dagger Skin|chance=Choice}}
+** {{Contains|Gwyl Monarch's Focus Skin|chance=Choice}}
+** {{Contains|Gwyl Monarch's Greatsword Skin|chance=Choice}}
+** {{Contains|Gwyl Monarch's Hammer Skin|chance=Choice}}
+** {{Contains|Gwyl Monarch's Longbow Skin|chance=Choice}}
+** {{Contains|Gwyl Monarch's Mace Skin|chance=Choice}}
+** {{Contains|Gwyl Monarch's Pistol Skin|chance=Choice}}
+** {{Contains|Gwyl Monarch's Rifle Skin|chance=Choice}}
+** {{Contains|Gwyl Monarch's Scepter Skin|chance=Choice}}
+** {{Contains|Gwyl Monarch's Shield Skin|chance=Choice}}
+** {{Contains|Gwyl Monarch's Short Bow Skin|chance=Choice}}
+** {{Contains|Gwyl Monarch's Spear Skin|chance=Choice}}
+** {{Contains|Gwyl Monarch's Staff Skin|chance=Choice}}
+** {{Contains|Gwyl Monarch's Sword Skin|chance=Choice}}
+** {{Contains|Gwyl Monarch's Torch Skin|chance=Choice}}
+** {{Contains|Gwyl Monarch's Warhorn Skin|chance=Choice}}
+
+[[de:Auswahlkiste des Gwyl-Monarchen]]
+[[es:Caja de selección de monarca gwyl]]
+[[fr:Boîte de sélection de monarque des gwyls]]</text>
+      <sha1>s04obbwtp2csxr970d3gsqtkbx8tg5c</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Ward Hunter's Shoulder Skin</title>
+    <ns>0</ns>
+    <id>415342</id>
+    <revision>
+      <id>3139250</id>
+      <parentid>3139249</parentid>
+      <timestamp>2026-05-13T10:44:46Z</timestamp>
+      <contributor>
+        <username>Vysnaite</username>
+        <id>270646</id>
+      </contributor>
+      <origin>3139250</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="838" sha1="hbcu4wcryud587fa2dnebgy3d7op1po" xml:space="preserve">{{Item infobox
+| icon = Ward Hunter's Shoulders.png
+| description = Double-click to apply this appearance to your current shoulder armor. This will unlock the skin in your wardrobe.
+| type = armor skin
+| skin type = Shoulders
+| rarity = Masterwork
+| skin = Ward Hunter's Shoulders (light skin); Ward Hunter's Shoulders (medium skin); Ward Hunter's Shoulders (heavy skin)
+| bound = Account
+| id = 109376
+| gallery1 = Ward Hunter's Shoulders.jpg
+| gallery2 = Ward Hunter's Shoulder banner.png
+| gallery2-text = Wizard's Vault banner
+| requires = voe
+}}
+
+== Acquisition ==
+{{Sold by}}
+
+== Gallery ==
+&lt;gallery&gt;
+The Only Way seasonal refresh.jpg|Promo image
+&lt;/gallery&gt;
+
+{{Ward Hunter's armor nav}}
+
+[[de:Skin für Wachenjäger-Schultern]]
+[[es:Diseño de hombros de cazador del Resguardo]]
+[[fr:Apparence d'épaulières de chasse de la Garde]]</text>
+      <sha1>hbcu4wcryud587fa2dnebgy3d7op1po</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Wizard's Vault/Historical Astral Rewards</title>
+    <ns>0</ns>
+    <id>370816</id>
+    <revision>
+      <id>3143163</id>
+      <parentid>3138816</parentid>
+      <timestamp>2026-05-17T17:07:26Z</timestamp>
+      <contributor>
+        <username>Tery3065</username>
+        <id>270948</id>
+      </contributor>
+      <minor/>
+      <origin>3143163</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="15052" sha1="gqg9ihai6p1l5u1qzjirdwv2num5ml8" xml:space="preserve">{{historical content}}
+{{#set:Has canonical name=Wizard's Vault|Has availability=Historical|Is historical=Y|Has game icon=File:Wizard's Vault Objectives.png}}
+Previous items offered from [[Wizard's Vault]] for [[Astral Acclaim]] can be found here. Cosmetic rewards can still be purchased in the [[Wizard's Vault/Legacy Rewards|Legacy Rewards]] tab for increased price. {{TOCright}}
+
+== Retired rewards ==
+;[[Game updates/2024-11-19|November 19, 2024 game update]]
+{{vendor table header|showFacts=false|showLevel=false|itemWidth=300px|rarityWidth=70px|historical=Y}}
+{{vendor table row | item = Ascended Armor Chest | per season=3 | cost = 400 Astral Acclaim}}
+{{vendor table row | item = Ascended Weapon Chest | per season=1 | cost = 600 Astral Acclaim}}
+|}
+
+;[[Game updates/2026-02-03|February 3, 2026 game update]]
+{{vendor table header|showFacts=false|showLevel=false|itemWidth=300px|rarityWidth=70px|historical=Y}}
+{{vendor table row | item = Bag of Coins (1 Gold) (unlimited)| cost = 35 Astral Acclaim}}
+{{vendor table row | item = Masterwork Essence of Luck | per season=40 | cost = 6 Astral Acclaim}}
+{{vendor table row | item = Heavy Crafting Bag | per season=30 | cost = 8 Astral Acclaim | requirement = newest [[expansion]]}}
+{{vendor table row | item = Large Crafting Bag | cost = 40 Astral Acclaim}}
+|}
+
+== [[Visions of Eternity]] ==
+=== [[Raids and Wardrobe|Visions of Eternity Spring]] Season ===
+[[File:Raids and Wardrobe seasonal refresh.jpg|thumb|Visions of Eternity Spring season&lt;br&gt;(Raids and Wardrobe)]]
+{{vendor table header|showFacts=false|showLevel=false|itemWidth=300px|rarityWidth=70px|historical=Y}}
+{{vendor table row | item = Castoran Coral Quest License | total = 1 | cost = 1000 Astral Acclaim | requirement = [[Guild Wars 2: Visions of Eternity]]}}
+{{vendor table row | item = Toxinshell Selection Box | total = 17 | cost = 150 Astral Acclaim | requirement = [[Guild Wars 2: Visions of Eternity]]}}
+{{vendor table row | item = Tropical Leaf Cape Set | total = 1 | cost = 375 Astral Acclaim | requirement = [[Guild Wars 2: Visions of Eternity]]}}
+{{vendor table row | item = Seaside Scholar's Sash Skin | total = 1 | cost = 375 Astral Acclaim | requirement = [[Guild Wars 2: Visions of Eternity]]}}
+{{vendor table row | item = Seaside Scholar's Bracelets Skin | total = 1 | cost = 375 Astral Acclaim | requirement = [[Guild Wars 2: Visions of Eternity]]}}
+{{vendor table row | item = Seaside Scholar's Robes Skin | total = 1 | cost = 375 Astral Acclaim | requirement = [[Guild Wars 2: Visions of Eternity]]}}
+{{vendor table row | item = Legendary Weapon Starter Key—Set 10 | total = 1 | cost = 1000 Astral Acclaim | requirement = [[Guild Wars 2: Visions of Eternity]]}}
+|}
+
+=== [[Visions of Eternity]] Season ===
+[[File:Visions of Eternity seasonal refresh.jpg|thumb|Visions of Eternity season]]
+{{vendor table header|showFacts=false|showLevel=false|itemWidth=300px|rarityWidth=70px|historical=Y}}
+{{vendor table row | item = Enchanted Jackal Skin | total = 1 | cost = 1000 Astral Acclaim | requirement = [[Guild Wars 2: Visions of Eternity]]}}
+{{vendor table row | item = "/drink" Emote Tome | total = 1 | cost = 375 Astral Acclaim | requirement = [[Guild Wars 2: Visions of Eternity]]}}
+{{vendor table row | item = Pearlshell Selection Box | total = 17 | cost = 150 Astral Acclaim | requirement = [[Guild Wars 2: Visions of Eternity]]}}
+{{vendor table row | item = Seaside Scholar's Hat Skin | total = 1 | cost = 375 Astral Acclaim | requirement = [[Guild Wars 2: Visions of Eternity]]}}
+{{vendor table row | item = Seaside Scholar's Shorts Skin | total = 1 | cost = 375 Astral Acclaim | requirement = [[Guild Wars 2: Visions of Eternity]]}}
+{{vendor table row | item = Seaside Scholar's Sandals Skin | total = 1 | cost = 375 Astral Acclaim | requirement = [[Guild Wars 2: Visions of Eternity]]}}
+{{vendor table row | item = Legendary Weapon Starter Key—Set 9 | total = 1 | cost = 1000 Astral Acclaim | requirement = [[Guild Wars 2: Visions of Eternity]]}}
+|}
+
+== [[Janthir Wilds]] ==
+=== [[Fractal Incursion]] special event ===
+* The items were available until the rotation with ''[[Visions of Eternity]]'''s launch. They are listed as requiring [[Fractal Incursion]] for simplicity.
+* [[Lucent Crystal Vault Bag]] was also available, but is omitted as it was made available again one season later with the [[Game updates/2026-02-03|February 3, 2026 game update]].
+{{vendor table header|showFacts=false|showLevel=false|itemWidth=300px|rarityWidth=70px|historical=Y}}
+{{vendor table row | item = Wizard's Infinite Mist Omnipotion | per season=1 | cost = 1000 Astral Acclaim | requirement = [[Fractal Incursion]]}}
+{{vendor table row | item = Mystic Coin Vault Bag | per season=3 | cost = 120 Astral Acclaim | requirement = [[Fractal Incursion]]}}
+&lt;!--{{vendor table row | item = Lucent Crystal Vault Bag | per season=20 | cost = 10 Astral Acclaim | requirement = [[Fractal Incursion]]}}--&gt;
+{{vendor table row | item = Lesser Essence of Gold | per season=1 | cost = 1000 Astral Acclaim | requirement = [[Fractal Incursion]]}}
+|}
+
+=== [[Absolution]] Season ===
+[[File:Absolution seasonal refresh.jpg|thumb|Absolution season]]
+{{vendor table header|showFacts=false|showLevel=false|itemWidth=300px|rarityWidth=70px|historical=Y}}
+{{vendor table row | item = Enchanted Roller Beetle Skin | total = 1 | cost = 1000 Astral Acclaim | requirement = [[Guild Wars 2: Janthir Wilds]]}}
+{{vendor table row | item = Stone-Growth Selection Box | total = 17 | cost = 150 Astral Acclaim | requirement = [[Guild Wars 2: Janthir Wilds]]}}
+{{vendor table row | item = Ward Knight's Helm Skin | total = 1 | cost = 375 Astral Acclaim | requirement = [[Guild Wars 2: Janthir Wilds]]}}
+{{vendor table row | item = Ward Knight's Coat Skin | total = 1 | cost = 375 Astral Acclaim | requirement = [[Guild Wars 2: Janthir Wilds]]}}
+{{vendor table row | item = Ward Knight's Leggings Skin | total = 1 | cost = 375 Astral Acclaim | requirement = [[Guild Wars 2: Janthir Wilds]]}}
+{{vendor table row | item = Ward Knight's Cape Skin | total = 1 | cost = 375 Astral Acclaim | requirement = [[Guild Wars 2: Janthir Wilds]]}}
+{{vendor table row | item = Legendary Weapon Starter Key—Set 8 | total = 1 | cost = 1000 Astral Acclaim | requirement = [[Guild Wars 2: Janthir Wilds]]}}
+|}
+
+=== [[Repentance]] Season ===
+[[File:Repentance seasonal refresh.jpg|thumb|Repentance season]]
+{{vendor table header|showFacts=false|showLevel=false|itemWidth=300px|rarityWidth=70px|historical=Y}}
+{{vendor table row | item = Wayward Wisp Quest License | total = 1 | cost = 500 Astral Acclaim | requirement = [[Guild Wars 2: Janthir Wilds]]}}
+{{vendor table row | item = Old-Growth Selection Box | total = 17 | cost = 150 Astral Acclaim | requirement = [[Guild Wars 2: Janthir Wilds]]}}
+{{vendor table row | item = Ward Knight's Gloves Skin | total = 1 | cost = 375 Astral Acclaim | requirement = [[Guild Wars 2: Janthir Wilds]]}}
+{{vendor table row | item = Ward Knight's Shoulder Skin | total = 1 | cost = 375 Astral Acclaim | requirement = [[Guild Wars 2: Janthir Wilds]]}}
+{{vendor table row | item = Ward Knight's Boots Skin | total = 1 | cost = 375 Astral Acclaim | requirement = [[Guild Wars 2: Janthir Wilds]]}}
+{{vendor table row | item = Skysage's Throne | total = 1 | cost = 500 Astral Acclaim | requirement = [[Guild Wars 2: Janthir Wilds]]}}
+{{vendor table row | item = Legendary Weapon Starter Key—Set 7 | total = 1 | cost = 1000 Astral Acclaim | requirement = [[Guild Wars 2: Janthir Wilds]]}}
+|}
+
+=== [[Godspawn]] Season ===
+[[File:Godspawn seasonal refresh.jpg|thumb|Godspawn season]]
+{{vendor table header|showFacts=false|showLevel=false|itemWidth=300px|rarityWidth=70px|historical=Y}}
+{{vendor table row | item = Enchanted Warclaw Skin | total = 1 | cost = 1000 Astral Acclaim | requirement = [[Guild Wars 2: Janthir Wilds]]}}
+{{vendor table row | item = Dog Bench Chair | total = 1 | cost = 500 Astral Acclaim | requirement = [[Guild Wars 2: Janthir Wilds]]}}
+{{vendor table row | item = Alabaster Spider's Selection Box | total = 17 | cost = 150 Astral Acclaim | requirement = [[Guild Wars 2: Janthir Wilds]]}}
+{{vendor table row | item = Rot Stalker Coat Skin | total = 1 | cost = 375 Astral Acclaim | requirement = [[Guild Wars 2: Janthir Wilds]]}}
+{{vendor table row | item = Rot Stalker Leggings Skin | total = 1 | cost = 375 Astral Acclaim | requirement = [[Guild Wars 2: Janthir Wilds]]}}
+{{vendor table row | item = Rot Stalker Boots Skin | total = 1 | cost = 375 Astral Acclaim | requirement = [[Guild Wars 2: Janthir Wilds]]}}
+{{vendor table row | item = Legendary Weapon Starter Key—Set 6 | total = 1 | cost = 1000 Astral Acclaim | requirement = [[Guild Wars 2: Janthir Wilds]]}}
+|}
+
+=== [[Janthir Wilds]] Season ===
+[[File:Janthir Wilds seasonal refresh.jpg|thumb|Janthir Wilds season]]
+{{vendor table header|showFacts=false|showLevel=false|itemWidth=300px|rarityWidth=70px|historical=Y}}
+{{vendor table row | item = Falling Star Quest License | total = 1 | cost = 1000 Astral Acclaim | requirement = [[Guild Wars 2: Janthir Wilds]]}}
+{{vendor table row | item = Onyx Spider's Selection Box | total = 17 | cost = 150 Astral Acclaim | requirement = [[Guild Wars 2: Janthir Wilds]]}}
+{{vendor table row | item = Rot Stalker Helm Skin | total = 1 | cost = 375 Astral Acclaim | requirement = [[Guild Wars 2: Janthir Wilds]]}}
+{{vendor table row | item = Rot Stalker Shoulder Skin | total = 1 | cost = 375 Astral Acclaim | requirement = [[Guild Wars 2: Janthir Wilds]]}}
+{{vendor table row | item = Rot Stalker Gloves Skin | total = 1 | cost = 375 Astral Acclaim | requirement = [[Guild Wars 2: Janthir Wilds]]}}
+{{vendor table row | item = Legendary Weapon Starter Kit—Set 5 | total = 1 | cost = 1000 Astral Acclaim | requirement = [[Guild Wars 2: Janthir Wilds]]}}
+|}
+
+== [[Secrets of the Obscure]] ==
+=== [[The Midnight King]] Season ===
+[[File:The Midnight King seasonal refresh.jpg|thumb|The Midnight King season]]
+{{vendor table header|showFacts=false|showLevel=false|itemWidth=300px|rarityWidth=70px|historical=Y}}
+{{vendor table row | item = Enchanted Skimmer Skin | total = 1 | cost = 1000 Astral Acclaim | requirement = [[Guild Wars 2: Secrets of the Obscure]]}}
+{{vendor table row | item = Lunar Astrolabe Selection Box | total = 16 | cost = 150 Astral Acclaim | requirement = [[Guild Wars 2: Secrets of the Obscure]]}}
+{{vendor table row | item = Skysage's Cape Skin | total = 1 | cost = 375 Astral Acclaim | requirement = [[Guild Wars 2: Secrets of the Obscure]]}}
+{{vendor table row | item = Skysage's Coat Skin | total = 1 | cost = 375 Astral Acclaim | requirement = [[Guild Wars 2: Secrets of the Obscure]]}}
+{{vendor table row | item = Skysage's Shoulder Skin | total = 1 | cost = 375 Astral Acclaim | requirement = [[Guild Wars 2: Secrets of the Obscure]]}}
+{{vendor table row | item = Skysage's Leggings Skin | total = 1 | cost = 375 Astral Acclaim | requirement = [[Guild Wars 2: Secrets of the Obscure]]}}
+{{vendor table row | item = Legendary Weapon Starter Kit—Set 4 | total = 1 | cost = 1000 Astral Acclaim | requirement = [[Guild Wars 2: Secrets of the Obscure]]}}
+|}
+
+=== [[The Realm of Dreams]] Season ===
+[[File:The Realm of Dreams seasonal refresh.jpg|thumb|The Realm of Dreams season]]
+{{vendor table header|showFacts=false|showLevel=false|itemWidth=300px|rarityWidth=70px|historical=Y}}
+{{vendor table row | item = Cat Tree Chair | cost = 500 Astral Acclaim | total=1 | requirement = [[Guild Wars 2: Secrets of the Obscure]]}}
+{{vendor table row | item = Leaf Glider | cost = 500 Astral Acclaim | total=1 | requirement = [[Guild Wars 2: Secrets of the Obscure]]}}
+{{vendor table row | item = Solar Astrolabe Selection Box | cost = 150 Astral Acclaim | total=16 | requirement = [[Guild Wars 2: Secrets of the Obscure]]}}
+{{vendor table row | item = Skysage's Helm Skin| cost = 375 Astral Acclaim | total=1 | requirement = [[Guild Wars 2: Secrets of the Obscure]]}}
+{{vendor table row | item = Skysage's Boots Skin| cost = 375 Astral Acclaim | total=1 | requirement = [[Guild Wars 2: Secrets of the Obscure]]}}
+{{vendor table row | item = Skysage's Gloves Skin| cost = 375 Astral Acclaim | total=1 | requirement = [[Guild Wars 2: Secrets of the Obscure]]}}
+{{vendor table row | item = Legendary Weapon Starter Kit—Set 3 | total=1 | cost = 1000 Astral Acclaim | requirement = [[Guild Wars 2: Secrets of the Obscure]]}}
+|}
+
+=== [[Through the Veil (release)|Through the Veil]] Season ===
+[[File:Through the Veil screenshot 02.jpg|thumb|Through the Veil season]]
+[[File:Arcane Flow Infusion banner.png|thumb|120px]]
+{{vendor table header|showFacts=false|showLevel=false|itemWidth=300px|rarityWidth=70px|historical=Y}}
+{{vendor table row | item = Arcane Flow Infusion | cost = 375 Astral Acclaim | total=1 | requirement = [[Guild Wars 2: Secrets of the Obscure]]}}
+{{vendor table row | item = Dark Sanctified Weapon Skin Selection Box | cost = 150 Astral Acclaim | | total=16 | requirement = [[Guild Wars 2: Secrets of the Obscure]]}}
+{{vendor table row | item = Sanctified Coat Skin | cost = 375 Astral Acclaim | total=1 | requirement = [[Guild Wars 2: Secrets of the Obscure]]}}
+{{vendor table row | item = Sanctified Helm Skin | cost = 375 Astral Acclaim | total=1 | requirement = [[Guild Wars 2: Secrets of the Obscure]]}}
+{{vendor table row | item = Sanctified Leggings Skin | cost = 375 Astral Acclaim | total=1 | requirement = [[Guild Wars 2: Secrets of the Obscure]]}}
+{{vendor table row | item = Sanctified Cape Skin | cost = 375 Astral Acclaim | total=1 | requirement = [[Guild Wars 2: Secrets of the Obscure]]}}
+{{vendor table row | item = Legendary Weapon Starter Kit—Set 2 | total=1 | cost = 1000 Astral Acclaim | requirement = [[Guild Wars 2: Secrets of the Obscure]]}}
+|}
+
+=== [[Secrets of the Obscure]] Season ===
+[[File:Sanctified Armor Weapons.jpg|thumb|Secrets of the Obscure season]]
+[[File:Enchanted Owl Griffon Skin promo.jpg|thumb]]
+{{vendor table header|showFacts=false|showLevel=false|itemWidth=300px|rarityWidth=70px|historical=Y}}
+{{vendor table row | item = Enchanted Owl Griffon Skin | cost = 1000 Astral Acclaim | total=1 |requirement = [[Guild Wars 2: Secrets of the Obscure]]}}
+{{vendor table row | item = "/bless" Emote Tome | cost = 250 Astral Acclaim | total=1}}
+{{vendor table row | item = Sanctified Weapon Skin Selection Box | cost = 150 Astral Acclaim | | total=16 | requirement = [[Guild Wars 2: Secrets of the Obscure]]}}
+{{vendor table row | item = Sanctified Shoulder Skin | cost = 375 Astral Acclaim | total=1 | requirement = [[Guild Wars 2: Secrets of the Obscure]]}}
+{{vendor table row | item = Sanctified Boots Skin | cost = 375 Astral Acclaim | total=1 | requirement = [[Guild Wars 2: Secrets of the Obscure]]}}
+{{vendor table row | item = Sanctified Gloves Skin | total=1 | cost = 375 Astral Acclaim | requirement = [[Guild Wars 2: Secrets of the Obscure]]}}
+{{vendor table row | item = Legendary Weapon Starter Kit—Set 1 | total=1 | cost = 1000 Astral Acclaim | requirement = [[Guild Wars 2: Secrets of the Obscure]]}}
+|}
+
+[[Category:Wizard's Vault]]</text>
+      <sha1>gqg9ihai6p1l5u1qzjirdwv2num5ml8</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Tropical Leaf Cape Set</title>
+    <ns>0</ns>
+    <id>412691</id>
+    <revision>
+      <id>3103242</id>
+      <timestamp>2026-02-04T12:07:53Z</timestamp>
+      <contributor>
+        <username>Vysnaite</username>
+        <id>270646</id>
+      </contributor>
+      <comment>New page: '{{Item infobox | icon = Tropical Leaf Cape.png | description = Contains a [[Tropical Leaf Cape Skin]] and [[Tropical Leaf Shoulders Skin]]. | type = Container | rarity = Exotic | level = 80 | bound = Account | salvage = None | id = 106964 | gallery1 = Tropical Leaf Cape Set banner.png | gallery1-text = Wizard's Vault banner | gallery2 = Raids and Wardrobe seasonal refresh.jpg | gallery2-text = Promo image | requires = voe }} [[Tropical Leaf Cape Set]] is a [[container]] which co...'</comment>
+      <origin>3103242</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="858" sha1="i18hx8es8e36xh59wqazw5rs5a7uscq" xml:space="preserve">{{Item infobox
+| icon = Tropical Leaf Cape.png
+| description = Contains a [[Tropical Leaf Cape Skin]] and [[Tropical Leaf Shoulders Skin]].
+| type = Container
+| rarity = Exotic
+| level = 80
+| bound = Account
+| salvage = None
+| id = 106964
+| gallery1 = Tropical Leaf Cape Set banner.png
+| gallery1-text = Wizard's Vault banner
+| gallery2 = Raids and Wardrobe seasonal refresh.jpg
+| gallery2-text = Promo image
+| requires = voe
+}}
+[[Tropical Leaf Cape Set]] is a [[container]] which contains an account-bound [[Tropical Leaf Cape Skin|cape]] and [[Tropical Leaf Shoulders Skin|shoulder]] [[skin]]s.
+
+== Acquisition ==
+{{sold by}}
+
+== Contents ==
+* {{Contains|Tropical Leaf Cape Skin|chance=guaranteed}}
+* {{Contains|Tropical Leaf Shoulders Skin|chance=guaranteed}}
+
+[[de:]]
+[[es:Conjunto de capa de hoja tropical]]
+[[fr:Ensemble de cape de feuillage tropical]]</text>
+      <sha1>i18hx8es8e36xh59wqazw5rs5a7uscq</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Toxinshell Selection Box</title>
+    <ns>0</ns>
+    <id>412645</id>
+    <revision>
+      <id>3110665</id>
+      <parentid>3103136</parentid>
+      <timestamp>2026-02-24T10:59:30Z</timestamp>
+      <contributor>
+        <username>Myriada</username>
+        <id>215477</id>
+      </contributor>
+      <minor/>
+      <origin>3110665</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="1656" sha1="qhhs0w6vtnvf7n9w4z2qxz8rupasrlg" xml:space="preserve">{{Item infobox
+| description = Use this box to claim one [[Toxinshell weapon skins|weapon skin]] of your choice.
+| type = Container
+| rarity = Rare
+| bound = Account
+| id = 107221
+| gallery1 = Toxinshell Selection Box banner.png
+| gallery1-text = Wizard's Vault banner
+| gallery2 = Raids and Wardrobe seasonal refresh.jpg
+| gallery2-text = Promo image
+| requires = voe
+}}
+The [[Toxinshell Selection Box]] is a [[container]] which contains an account-bound [[Toxinshell weapon skins|Toxinshell weapon skin]] of the player's choice.
+
+== Acquisition ==
+{{sold by}}
+
+== Contents ==
+{{Account unlocks header}}
+* Choose one of the following:
+** {{Contains|Toxinshell Axe Skin|chance=Choice}}
+** {{Contains|Toxinshell Dagger Skin|chance=Choice}}
+** {{Contains|Toxinshell Focus Skin|chance=Choice}}
+** {{Contains|Toxinshell Greatsword Skin|chance=Choice}}
+** {{Contains|Toxinshell Hammer Skin|chance=Choice}}
+** {{Contains|Toxinshell Longbow Skin|chance=Choice}}
+** {{Contains|Toxinshell Mace Skin|chance=Choice}}
+** {{Contains|Toxinshell Pistol Skin|chance=Choice}}
+** {{Contains|Toxinshell Rifle Skin|chance=Choice}}
+** {{Contains|Toxinshell Scepter Skin|chance=Choice}}
+** {{Contains|Toxinshell Shield Skin|chance=Choice}}
+** {{Contains|Toxinshell Short Bow Skin|chance=Choice}}
+** {{Contains|Toxinshell Spear Skin|chance=Choice}}
+** {{Contains|Toxinshell Staff Skin|chance=Choice}}
+** {{Contains|Toxinshell Sword Skin|chance=Choice}}
+** {{Contains|Toxinshell Torch Skin|chance=Choice}}
+** {{Contains|Toxinshell Warhorn Skin|chance=Choice}}
+
+[[de:Toxinmuschel-Auswahlkiste]]
+[[es:Caja de selección de toxivaina]]
+[[fr:Boîte de sélection à carapace toxique]]</text>
+      <sha1>qhhs0w6vtnvf7n9w4z2qxz8rupasrlg</sha1>
+    </revision>
+  </page>
+</mediawiki>

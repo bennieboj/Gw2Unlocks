@@ -831,7 +831,9 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                             new TokenCriteria("Stabilizing Matrix"),
                             new AchievementCategoryCriteria("Fractals of the Mists"),
                             ] },
-                        new() { Name = "Wizard's Vault", UnlockCriteria = [  ] },
+                        new() { Name = "Wizard's Vault", UnlockCriteria = [
+                            new CurrencyCriteria("Astral Acclaim", priority: 78, UsedInZoneSpecification: false)
+                        ] },
                         new() { Name = "General", UnlockCriteria = [
                             new SetCriteria("Ceremonial weapons", 90),
                             new SetCriteria("Legionnaire weapons", 90),

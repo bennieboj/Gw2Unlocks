@@ -17,9 +17,9 @@ public sealed class Gw2WikiProcessingSource(
     ILogger<Gw2WikiProcessingSource> logger,
     IGw2WikiCache wikiCache) : IGw2WikiProcessingSource
 {
-    private readonly List<string> gemStorePages = ["Gem Store/data", "Gem Store/data (historical)"];
-
     private const string blackLionWeaponsSpecialistNPCKey = "Black Lion Weapons Specialist";
+    private readonly List<string> gemStorePages = ["Gem Store/data", "Gem Store/data (historical)"];
+    private readonly List<string> wizardsVaultPages = ["Wizard's Vault", "Wizard's Vault/Historical Astral Rewards"];
     private readonly List<string> blackLionClaimTicketPages = ["Black Lion Weapons Specialist/historical", "Template:Inventory/black lion claim ticket", "Black Lion Weapons Specialist (Halloween)"];
     private readonly List<string> blackLionStatuettePages = ["Black Lion Statuette/historical", "Template:Inventory/statuette"];
     private readonly WikitextParser parser = new();
@@ -124,6 +124,11 @@ public sealed class Gw2WikiProcessingSource(
         if (gemStorePages.Any(pageTitle => title.Equals(pageTitle, StringComparison.Ordinal)))
         {
             ParseGemStoreEntries(graph, ast);
+            return;
+        }
+        else if (wizardsVaultPages.Any(pageTitle => title.Equals(pageTitle, StringComparison.Ordinal)))
+        {
+            ParseWizardsVaultEntries(graph, ast);
             return;
         }
         else if (blackLionClaimTicketPages.Any(pageTitle => title.Equals(pageTitle, StringComparison.Ordinal)))
@@ -362,6 +367,55 @@ public sealed class Gw2WikiProcessingSource(
                 var node = graph.GetOrCreate(collectionName + " Weapon Collection", metadata);
                 node.SetType(NodeType.BlackLionWeaponCollection);
             }
+        }
+    }
+
+    private static void ParseWizardsVaultEntries(AcquisitionGraph graph, Wikitext ast)
+    {
+        var wizardsVaultEntries = ast.EnumDescendants()
+            .OfType<Template>()
+            .Where(t => t.Name.ToString().Contains("vendor table row", StringComparison.OrdinalIgnoreCase));
+
+        const string wizardsVaultKey = "Wizard's Vault";
+        var wizardsVault = graph.GetNode(wizardsVaultKey);
+        if (wizardsVault == null)
+        {
+            wizardsVault = new Node(new Dictionary<string, string> {
+                { "service", "merchant" }
+            });
+            wizardsVault.SetType(NodeType.NPC);
+            graph.Nodes.Add(wizardsVaultKey, wizardsVault);
+        }
+
+        foreach (var wizardsVaultEntry in wizardsVaultEntries)
+        {
+            string? itemName = null;
+            string? cost = null;
+            var metadata = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
+            foreach (var arg in wizardsVaultEntry.Arguments)
+            {
+                var key = GetText(arg.Name);
+                var value = GetText(arg.Value);
+
+                if (key.Equals("item", StringComparison.OrdinalIgnoreCase))
+                {
+                    itemName = value;
+                    continue;
+                }
+                else if (key.Equals("cost", StringComparison.OrdinalIgnoreCase))
+                {
+                    cost = value;
+                    continue;
+                }
+                if (!string.IsNullOrWhiteSpace(key) && !string.IsNullOrWhiteSpace(value))
+                {
+                    metadata[key] = value;
+                }
+            }
+            if (itemName == null || cost == null)
+                continue;
+            metadata.Add("cost", cost);
+            graph.AddEdge(itemName, wizardsVaultKey, EdgeType.SoldBy, metadata);
         }
     }
 
