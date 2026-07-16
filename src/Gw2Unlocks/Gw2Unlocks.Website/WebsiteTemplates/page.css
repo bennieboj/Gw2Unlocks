@@ -138,9 +138,11 @@ body {
 
 .sidebar-actions {
     display: flex;
-    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 8px;
     margin-top: 10px;
 }
+
 
 .sidebar-buttons {
     flex: 1;
@@ -149,7 +151,17 @@ body {
     gap: 6px;
 }
 
-.sidebar-buttons .top-btn {
+.sidebar-actions .top-btn {
+    box-sizing: border-box;
+}
+
+.sidebar-actions .github {
+    flex: 1 1 calc(50% - 4px);
+    text-align: center;
+}
+
+.sidebar-actions .kofi {
+    flex: 1 1 100%;
     text-align: center;
 }
 
