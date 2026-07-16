@@ -1,4 +1,4 @@
-title: "[Incorrect categorisation] "
+title: "[Incorrect categorisation] Exalted unlocks"
 labels: ["Incorrect categorisation"]
 
 body:
@@ -25,7 +25,7 @@ body:
     attributes:
       label: Current GW2Unlocks page
       description: Which GW2Unlocks page is the unlock currently listed under?
-      placeholder: https://gw2unlocks.com/path-of-fire/crystal-oasis/
+      placeholder: https://gw2unlocks.com/other/general/
     validations:
       required: true
 
@@ -34,7 +34,7 @@ body:
     attributes:
       label: Correct GW2Unlocks page
       description: Which GW2Unlocks page should the unlock belong to instead?
-      placeholder: https://gw2unlocks.com/end-of-dragons/seitung-province/
+      placeholder: https://gw2unlocks.com/heart-of-thorns/auric-basin/
     validations:
       required: true
 
@@ -56,5 +56,6 @@ body:
       description: Why do you think this categorisation is incorrect?
       placeholder: |
         Explain why the unlock belongs in another category and provide any additional context.
+        Example: I think the Exalted are clearly linked to Auric Basin from an unlock perspective.
     validations:
       required: true
