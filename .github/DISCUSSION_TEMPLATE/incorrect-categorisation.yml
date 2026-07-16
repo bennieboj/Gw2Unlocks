@@ -43,7 +43,7 @@ body:
     attributes:
       label: GW2 Wiki links
       description: Please provide link(s) to the relevant Guild Wars 2 Wiki page.
-      placeholder: 
+      placeholder: |
         - https://wiki.guildwars2.com/wiki/Mini_Exalted_Sage
         - https://wiki.guildwars2.com/wiki/Endless_Exalted_Caster_Tonic
     validations:
