@@ -31,7 +31,7 @@
     </style>
   </head>
 
-  <body>
+  <body data-current-slug="{{ CurrentSlug }}">
       <button id="menu-toggle" class="menu-toggle" aria-label="Toggle menu">
           ☰
       </button>
@@ -174,7 +174,7 @@
                                style="{{ u.IconAtlasStyleCss }}">
                           </div>
                           {{ else }}
-                            <img src="{{ u.IconUrl }}" alt="{{ u.Name | html.escape }}" />
+                          <img src="{{ u.IconUrl }}" alt="{{ u.Name | html.escape }}" />
                           {{ end }}
                           {{ if u.RewardIcon != null }}
                           <div class="reward-badge">

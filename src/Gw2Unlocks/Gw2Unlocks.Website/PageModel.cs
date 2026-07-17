@@ -24,6 +24,13 @@ internal sealed class PageModel
     public List<TypeGroupModel> TypeGroups { get; set; } = [];
 
     public string UnlockMapJson { get; set; } = "NOTJSON";
+
+    public string CurrentSlug =>
+        Category != null
+            ? SlugHelper.Slugify(Category.Name)
+            : Group != null
+                ? SlugHelper.Slugify(Group.Name)
+                : "all";
 }
 
 internal sealed class TypeGroupModel

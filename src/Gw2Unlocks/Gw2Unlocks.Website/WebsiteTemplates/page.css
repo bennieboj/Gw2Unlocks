@@ -211,6 +211,18 @@ body {
     font-size: clamp(0.8rem, 1.2vw, 0.90rem);
 }
 
+.group-link.active,
+.category-link.active {
+    background: #222;
+    border-radius: 6px;
+    padding: 6px 8px;
+}
+
+.group-link.active a,
+.category-link.active a {
+    color: #7db7ff;
+}
+
 .type-title {
     margin-top: 22px;
     font-size: 1.1rem;

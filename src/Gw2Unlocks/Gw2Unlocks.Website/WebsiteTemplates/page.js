@@ -21,6 +21,7 @@ const REFRESH_INTERVAL = 5 * 60 * 1000;
 let uiTimer = null;
 let apiTimer = null;
 let nextRefreshAt = 0;
+let hasScrolledSidebar = false;
 
 function startUiTicker() {
     if (uiTimer) return;
@@ -397,6 +398,31 @@ function updateSidebar() {
     if (el) el.textContent = unlocked;
     const totalEl = document.querySelector(`[data-category="${slug}"] .sidebar-total`);
     if (totalEl) totalEl.textContent = total;
+  }
+
+  // Highlight current page
+  const currentSlug = document.body.dataset.currentSlug;
+  if (!currentSlug) {
+    return;
+  }
+
+  document
+    .querySelectorAll(".group-link, .category-link")
+    .forEach(x => x.classList.remove("active"));
+
+  const activeItem = document.querySelector(
+    `[data-group="${currentSlug}"], [data-category="${currentSlug}"]`
+  );
+
+  if (activeItem) {
+    activeItem.classList.add("active");
+    if (!hasScrolledSidebar && sidebar.scrollTop < 50) {
+      hasScrolledSidebar = true;
+      activeItem.scrollIntoView({
+        block: "center",
+        behavior: "smooth"
+      });
+    }
   }
 }
 
