@@ -241,14 +241,13 @@ apiInput.addEventListener("input", async () => {
     const key = apiInput.value.trim();
 
     if (key.length !== 72) {
-    return;
+        return;
     }
 
-    const currentSaved =
-    localStorage.getItem(STORAGE_KEYS.apiKey);
+    const currentSaved = localStorage.getItem(STORAGE_KEYS.apiKey);
 
     if (currentSaved === key) {
-    return;
+        return;
     }
 
     localStorage.setItem(STORAGE_KEYS.apiKey, key);
@@ -258,7 +257,6 @@ apiInput.addEventListener("input", async () => {
         "/img/wait_a_bit.png"
     );
 
-    await refreshApi();
     startApiLoop();
     startUiTicker();
 });
@@ -444,7 +442,6 @@ applyFilter();
 const existingKey = localStorage.getItem(STORAGE_KEYS.apiKey);
 
 if (existingKey && existingKey.length === 72) {
-    refreshApi();
     startApiLoop();
     startUiTicker();
 } else {
