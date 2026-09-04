@@ -238,27 +238,29 @@ menuToggle.addEventListener("click", () => {
 });
 
 apiInput.addEventListener("input", async () => {
-  const key = apiInput.value.trim();
+    const key = apiInput.value.trim();
 
-  if (key.length !== 72) {
+    if (key.length !== 72) {
     return;
-  }
+    }
 
-  const currentSaved =
+    const currentSaved =
     localStorage.getItem(STORAGE_KEYS.apiKey);
 
-  if (currentSaved === key) {
+    if (currentSaved === key) {
     return;
-  }
+    }
 
-  localStorage.setItem(STORAGE_KEYS.apiKey, key);
+    localStorage.setItem(STORAGE_KEYS.apiKey, key);
 
     setStatus(
         "API key saved",
         "/img/wait_a_bit.png"
     );
 
-  await refreshApi();
+    await refreshApi();
+    startApiLoop();
+    startUiTicker();
 });
 
 async function refreshApi() {
@@ -321,19 +323,20 @@ async function refreshApi() {
     const minis = await minisRes.json();
     const skins = await skinsRes.json();
     const novelties = await noveltiesRes.json();
+    const achievementData = await achievementsRes.json();
+    const achievements = achievementData.filter(x => x.done).map(x => x.id);
 
-    const achievementData =
-      await achievementsRes.json();
+    accountState.minis = minis;
+    accountState.skins = skins;
+    accountState.novelties = novelties;
+    accountState.achievements = achievements;
 
-    const achievements =
-      achievementData
-        .filter(x => x.done)
-        .map(x => x.id);
 
     localStorage.setItem(STORAGE_KEYS.minis, JSON.stringify(minis));
     localStorage.setItem(STORAGE_KEYS.skins, JSON.stringify(skins));
     localStorage.setItem(STORAGE_KEYS.novelties, JSON.stringify(novelties));
     localStorage.setItem(STORAGE_KEYS.achievements, JSON.stringify(achievements));
+
     localStorage.setItem(STORAGE_KEYS.lastRefresh, Date.now().toString());
 
     setStatus("API data refreshed");
