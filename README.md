@@ -16,7 +16,10 @@ Each program interacts with data in `src/cache-root`.
 Each steps reads the data from the previous step (if any/needed) and updates the data in their own folder.
 The data is stored locally in order to replay the processing in an easy way without overloading the server or slowing down the process.
 
-1. CacheUpdater: stores all relevant data coming from GW2 API (json) and GW2 Wiki (xml) into `src/cache-root/api-cache` and `src/cache-root/wiki-cache`.
+1. CacheUpdater: stores all relevant data coming from:
+- GW2 API (json) in `src/cache-root/api-cache`
+- GW2 sprites (icon sheets, as webp) in `src/cache-root/icon-sprite-sheet`
+- GW2 Wiki (xml) in `src/cache-root/wiki-cache`
 2. WikiProcessing: processes the data coming from GW2 Wiki into a graph and zone data in `src/cache-root/wiki-processing`.
 3. UnlockClassifier: does the actual classification, produces a `ClassifyConfig`, containing all classified unlocks in `src/cache-root/classifier-cache`.
    - It will display the differences between the existing and the newly generated `ClassifyConfig`. The user is asked to confirm in order to see if the classification algorithm changes don't break anything.
