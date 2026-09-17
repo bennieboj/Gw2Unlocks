@@ -628,34 +628,79 @@ public sealed class Gw2WikiProcessingSource(
         // NPC that are merchants (Vendor)
         if (info.InfoBoxType.Equals("NPC", StringComparison.OrdinalIgnoreCase))
         {
-            string? vendorHeaderLocation = null;
-            var vendorHeaders = ast.EnumDescendants().OfType<Template>().Where(t => t.Name.ToString().Contains("vendor table header", StringComparison.OrdinalIgnoreCase)).ToList();
-            if(vendorHeaders.Count == 1)
-            {
-                var header = vendorHeaders[0];
-                vendorHeaderLocation = header.Arguments.FirstOrDefault(a => string.Equals(a.Name?.ToString()?.Trim(),"location", StringComparison.OrdinalIgnoreCase))?.Value?.ToString();
-            }
-
             if (!string.IsNullOrWhiteSpace(info.Get("service")))
             {
-                HandleLocation(graph, nodeId, info, vendorHeaderLocation);
+                static string[] SplitLocations(string? locations) => locations?
+                    .Split(';', StringSplitOptions.TrimEntries | StringSplitOptions.RemoveEmptyEntries) ?? [];
 
+                // Parse vendor tables in document order; a header scopes the rows after it to its location.
+                var tables = EnumerateWikiTexts(graph, nodeId, ast, cancellationToken)
+                    .Select(text => text.EnumDescendants().OfType<Template>()
+                        .Where(t => t.Name.ToString().Contains("vendor table header", StringComparison.OrdinalIgnoreCase)
+                                 || t.Name.ToString().Contains("vendor table row", StringComparison.OrdinalIgnoreCase))
+                        .ToList()).ToList();
+                var headerLocations = tables.SelectMany(t => t)
+                    .Where(t => t.Name.ToString().Contains("vendor table header", StringComparison.OrdinalIgnoreCase))
+                    .ToDictionary(t => t, t => SplitLocations(t.Arguments.FirstOrDefault(a =>
+                        string.Equals(a.Name?.ToString()?.Trim(), "location", StringComparison.OrdinalIgnoreCase))?.Value?.ToString()));
 
-                var texts = EnumerateWikiTexts(graph, nodeId, ast, cancellationToken);
-                var vendorTableRows = texts.SelectMany(t => t.EnumDescendants().OfType<Template>().Where(t => t.Name.ToString().Contains("vendor table row", StringComparison.OrdinalIgnoreCase))).ToList();
+                // Decide once: do the vendor tables sell at different locations?
+                var useSaleLocations = headerLocations.Values
+                    .Where(l => l.Length > 0)
+                    .DistinctBy(l => string.Join(';', l))
+                    .Count() > 1;
 
-                foreach (var row in vendorTableRows)
+                // The vendor's own locations: infobox location plus all header locations.
+                var vendorLocations = SplitLocations(info.Get("location")).ToHashSet(StringComparer.OrdinalIgnoreCase);
+                vendorLocations.UnionWith(headerLocations.Values.SelectMany(l => l));
+
+                if (useSaleLocations)
                 {
+                    // Multi-location vendor: keep every location on the vendor and
+                    // restrict individual sales via the SoldBy edge's location metadata.
+                    foreach (var location in vendorLocations)
+                    {
+                        graph.AddEdge(nodeId, location, EdgeType.LocatedIn);
+                    }
+                }
+                else
+                {
+                    // Single-location vendor: a single header with a location narrows the
+                    // infobox locations; otherwise the infobox locations stand unchanged.
+                    string? singleHeaderLocation = null;
+                    if (headerLocations.Count == 1)
+                    {
+                        var location = headerLocations.Values.Single();
+                        singleHeaderLocation = location.Length > 0 ? string.Join(';', location) : null;
+                    }
+
+                    HandleLocation(graph, nodeId, info, singleHeaderLocation);
+                }
+
+                string? saleLocation = null;
+                foreach (var row in tables.SelectMany(t => t))
+                {
+                    if (headerLocations.TryGetValue(row, out var allowedLocations))
+                    {
+                        saleLocation = allowedLocations.Length > 0 && !vendorLocations.SetEquals(allowedLocations)
+                            ? string.Join(';', allowedLocations)
+                            : null;
+                        continue;
+                    }
+
                     var itemName = row.Arguments.FirstOrDefault(a => a.Name?.ToString() == "item")?.Value?.ToString();
                     var cost = row.Arguments.FirstOrDefault(a => a.Name?.ToString() == "cost")?.Value?.ToString();
 
                     if (!string.IsNullOrWhiteSpace(itemName))
                     {
-                        graph.GetOrCreate(itemName);
-
                         var metadata = !string.IsNullOrWhiteSpace(cost)
                             ? new Dictionary<string, string> { ["cost"] = cost }
                             : null;
+                        if (useSaleLocations && saleLocation != null)
+                        {
+                            metadata ??= [];
+                            metadata["location"] = saleLocation;
+                        }
 
                         graph.AddEdge(itemName, nodeId, EdgeType.SoldBy, metadata);
                     }

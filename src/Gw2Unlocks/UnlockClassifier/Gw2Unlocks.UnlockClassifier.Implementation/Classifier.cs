@@ -246,6 +246,12 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                                 new ZoneCriteria("Eternity's Garden"),
                                 new TokenCriteria("Shadowstone Fragment")
                             ]
+                        },
+                        new() { Name = "Leyspring Hollows",
+                            UnlockCriteria = [
+                                new ZoneCriteria("Leyspring Hollows"),
+                                new TokenCriteria("Shadowstone Research Data")
+                            ]
                         }
                     ]
                 },
@@ -1194,7 +1200,8 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
         string Key,
         string? Cost,
         bool? IsCostHistorical,
-        EdgeType? IncomingEdgeType);
+        EdgeType? IncomingEdgeType,
+        string? SaleLocation);
 
     private void FillInApiData(Unlock unlock)
     {
@@ -1357,7 +1364,7 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
         AcquisitionGraph graph,
         string startKey)
     {
-        var visited = new Dictionary<string, HashSet<string?>>();
+        var visited = new Dictionary<string, HashSet<(string? Cost, string? SaleLocation)>>();
         var queue = new Queue<SearchState>();
         var parent = new Dictionary<string, string?>();
         var startNode = graph.GetNode(startKey);
@@ -1367,8 +1374,8 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
         if (startNode == null)
             return null;
 
-        var startState = new SearchState(startKey, null, null, null);
-        TryVisit(visited, startKey, null);
+        var startState = new SearchState(startKey, null, null, null, null);
+        TryVisit(visited, startKey, null, null);
         queue.Enqueue(startState);
         parent[startKey] = null;
 
@@ -1385,6 +1392,12 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
 
             if (current == null)
                 continue;
+
+            if (current.Type == NodeType.Location && searchState.SaleLocation != null
+                && !MatchesSaleLocation(currentKey, searchState.SaleLocation))
+            {
+                continue;
+            }
 
             if (searchState.IncomingEdgeType == EdgeType.GatheredFrom
                 && current.Type == NodeType.Gw2Object && current.Metadata.TryGetValue("type", out var objectType) && objectType != "chest")
@@ -1571,6 +1584,15 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
 
                 var nextCost = searchState.Cost;
                 var nextIsHistoricalCost = searchState.IsCostHistorical;
+                var nextSaleLocation = searchState.SaleLocation;
+                if (edge.Type == EdgeType.SoldBy)
+                {
+                    // Restrictions belong to this sale, not to a previous vendor on the path.
+                    nextSaleLocation = edge.Metadata != null
+                        && edge.Metadata.TryGetValue("location", out var location)
+                        && !string.IsNullOrWhiteSpace(location) ? location : null;
+                }
+
                 // If SoldBy → capture cost
                 if (edge.Type == EdgeType.SoldBy &&
                     edge.Metadata != null && edge.Metadata.TryGetValue("cost", out var cost))
@@ -1615,9 +1637,10 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                     edge.To,
                     nextCost,
                     nextIsHistoricalCost,
-                    edge.Type);
+                    edge.Type,
+                    nextSaleLocation);
 
-                if (TryVisit(visited, edge.To, nextCost))
+                if (TryVisit(visited, edge.To, nextCost, nextSaleLocation))
                 {
                     parent[edge.To] = currentKey;
 
@@ -1659,18 +1682,50 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
         return null;
     }
 
-    private static bool TryVisit(
-        Dictionary<string, HashSet<string?>> visited,
-        string key,
-        string? cost)
+    private bool MatchesSaleLocation(string location, string saleLocations)
     {
-        if (!visited.TryGetValue(key, out var costs))
+        return saleLocations.Split(';', StringSplitOptions.TrimEntries | StringSplitOptions.RemoveEmptyEntries)
+            .Any(allowed => IsWithinLocation(location, allowed) || IsWithinLocation(allowed, location));
+    }
+
+    private bool IsWithinLocation(string location, string ancestor)
+    {
+        var pending = new Queue<string>();
+        var visited = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+        pending.Enqueue(location);
+        while (pending.TryDequeue(out var current))
         {
-            costs = [];
-            visited[key] = costs;
+            if (!visited.Add(current))
+                continue;
+            if (string.Equals(current, ancestor, StringComparison.OrdinalIgnoreCase))
+                return true;
+
+            // Follow only location ancestry, never acquisition links or sibling locations.
+            if (edgesByFrom!.TryGetValue(current, out var edges))
+            {
+                foreach (var edge in edges.Where(e => e.Type == EdgeType.LocatedIn))
+                {
+                    pending.Enqueue(edge.To);
+                }
+            }
         }
 
-        return costs.Add(cost);
+        return false;
+    }
+
+    private static bool TryVisit(
+        Dictionary<string, HashSet<(string? Cost, string? SaleLocation)>> visited,
+        string key,
+        string? cost,
+        string? saleLocation)
+    {
+        if (!visited.TryGetValue(key, out var states))
+        {
+            states = [];
+            visited[key] = states;
+        }
+
+        return states.Add((cost, saleLocation));
     }
 
     private void Categorize(string groupName, string? categoryName, string startKkey, Node startNode)

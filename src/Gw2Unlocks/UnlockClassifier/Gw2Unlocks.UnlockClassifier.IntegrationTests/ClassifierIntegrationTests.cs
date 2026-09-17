@@ -51,6 +51,33 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
         Assert.Equal(74444, unlock.ApiData.ChatCodeId);
     }
 
+    /// The Alliance Field Quartermaster sells different items at different locations
+    /// (Shipwreck Strand, Starlit Weald, Eternity's Garden and Leyspring Hollows),
+    /// each for a location-specific token. Even though the vendor itself is located
+    /// in all of these zones, each unlock must be classified to the location where
+    /// it is actually sold — and to none of the vendor's other zones.
+    [Theory]
+    [InlineData("Restless Captain's Heavy Veil (skin)", "Visions of Eternity", "Shipwreck Strand")]
+    [InlineData("Extremis Heavy Hood (skin)", "Visions of Eternity", "Starlit Weald")]
+    [InlineData("Forge Guard's Heavy Helmet (skin)", "Visions of Eternity", "Eternity's Garden")]
+    [InlineData("Tenebral Ward Heavy Helmet (skin)", "Visions of Eternity", "Leyspring Hollows", Skip = "Wiki skin node not available")]
+    public async Task GivenVendorSellsItemsAtDifferentLocationsWhenClassifyingUnlockThenShouldReturnCategoryLinkedToSaleLocation(string unlockName, string groupName, string categoryName)
+    {
+        var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
+        var group = results.UnlockGroups.Single(g => g.Name == groupName);
+        var category = group.UnlockCategories.Single(c => c.Name == categoryName);
+
+        // The unlock must be classified into the category where it is actually sold.
+        Assert.Contains(category.Unlocks, u => u.Name == unlockName);
+        var unlock = category.Unlocks.Single(c => c.Name == unlockName);
+        Assert.NotNull(unlock.ApiData);
+
+        // The vendor is LocatedIn every zone it sells at: the unlock must not leak into those.
+        Assert.DoesNotContain(group.UnlockCategories
+            .Where(c => c.Name != categoryName)
+            .SelectMany(c => c.Unlocks), u => u.Name == unlockName);
+    }
+
     [Fact]
     public async Task StellarWeaponsShouldReturnDomainOfIstan()
     {
@@ -458,6 +485,7 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
     [Theory]
     [InlineData("Peacemaker's Javelin")] // cities
     [InlineData("Inquest Bident (skin)")] // dungeon
+    [InlineData("Tribal Bident")] // set
     public async Task CulturalWeaponsSpearsShouldLinkToCastora(string unlockName)
     {
         var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);

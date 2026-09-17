@@ -535,6 +535,30 @@ public class GetAcquisitionGraphTests : ServiceProviderBasedTest<IGw2WikiProcess
         Assert.Contains(graph.Edges, e => e.From == area && e.To == zone && e.Type == EdgeType.LocatedIn);
     }
 
+    // Fixture pending: xmlfiles/Alliance_Field_Quartermaster.xml.
+    // Keep the NPC infobox location as Castora and include the multiple vendor tables
+    // with their location arguments, so the fixture preserves the regression.
+    [Theory]
+    [InlineData("Restless Captain's Heavy Veil", "Shipwreck Strand")]
+    [InlineData("Extremis Heavy Hood", "Starlit Weald")]
+    [InlineData("Forge Guard's Heavy Helmet", "Eternity's Garden")]
+    [InlineData("Tenebral Ward Heavy Helmet", "Leyspring Hollows")]
+    public async Task ItemsFromMultipleVendorTablesShouldLinkToVendorWithTableLocation(string item, string location)
+    {
+        SetFile("Alliance_Field_Quartermaster");
+        var graph = await GetSut().GetAcquisitionGraph(TestContext.Current.CancellationToken);
+
+        const string vendor = "Alliance Field Quartermaster";
+        var vendorNode = graph.GetNode(vendor, NodeType.NPC);
+
+        Assert.True(graph.Nodes.ContainsKey(item), $"Expected item node: {item}");
+        Assert.NotNull(vendorNode);
+        Assert.Contains(graph.Edges, e => e.From == item && e.To == vendor && e.Type == EdgeType.SoldBy
+                        && e.Metadata != null && e.Metadata.ContainsKey("cost")
+                        && e.Metadata.TryGetValue("location", out var saleLocation) && saleLocation == location);
+        Assert.Contains(graph.Edges, e => e.From == vendor && e.To == location && e.Type == EdgeType.LocatedIn);
+    }
+
     private void SetFile(string fileName)
     {
         fakeWikiApi.FileName = $"xmlfiles/{fileName}.xml";

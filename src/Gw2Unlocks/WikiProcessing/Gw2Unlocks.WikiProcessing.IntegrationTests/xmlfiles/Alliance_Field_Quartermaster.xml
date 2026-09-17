@@ -1,0 +1,374 @@
+<mediawiki xmlns="http://www.mediawiki.org/xml/export-0.11/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mediawiki.org/xml/export-0.11/ http://www.mediawiki.org/xml/export-0.11.xsd" version="0.11" xml:lang="en">
+  <siteinfo>
+    <sitename>Guild Wars 2 Wiki</sitename>
+    <dbname>en_wikidb_gw2</dbname>
+    <base>https://wiki.guildwars2.com/wiki/Main_Page</base>
+    <generator>MediaWiki 1.39.17</generator>
+    <case>first-letter</case>
+    <namespaces>
+      <namespace key="-2" case="first-letter">Media</namespace>
+      <namespace key="-1" case="first-letter">Special</namespace>
+      <namespace key="0" case="first-letter" />
+      <namespace key="1" case="first-letter">Talk</namespace>
+      <namespace key="2" case="first-letter">User</namespace>
+      <namespace key="3" case="first-letter">User talk</namespace>
+      <namespace key="4" case="first-letter">Guild Wars 2 Wiki</namespace>
+      <namespace key="5" case="first-letter">Guild Wars 2 Wiki talk</namespace>
+      <namespace key="6" case="first-letter">File</namespace>
+      <namespace key="7" case="first-letter">File talk</namespace>
+      <namespace key="8" case="first-letter">MediaWiki</namespace>
+      <namespace key="9" case="first-letter">MediaWiki talk</namespace>
+      <namespace key="10" case="first-letter">Template</namespace>
+      <namespace key="11" case="first-letter">Template talk</namespace>
+      <namespace key="12" case="first-letter">Help</namespace>
+      <namespace key="13" case="first-letter">Help talk</namespace>
+      <namespace key="14" case="first-letter">Category</namespace>
+      <namespace key="15" case="first-letter">Category talk</namespace>
+      <namespace key="102" case="first-letter">Property</namespace>
+      <namespace key="103" case="first-letter">Property talk</namespace>
+      <namespace key="106" case="first-letter">Form</namespace>
+      <namespace key="107" case="first-letter">Form talk</namespace>
+      <namespace key="108" case="first-letter">Concept</namespace>
+      <namespace key="109" case="first-letter">Concept talk</namespace>
+      <namespace key="112" case="first-letter">smw/schema</namespace>
+      <namespace key="113" case="first-letter">smw/schema talk</namespace>
+      <namespace key="114" case="first-letter">Rule</namespace>
+      <namespace key="115" case="first-letter">Rule talk</namespace>
+      <namespace key="200" case="first-letter">ArenaNet</namespace>
+      <namespace key="201" case="first-letter">ArenaNet talk</namespace>
+      <namespace key="202" case="first-letter">API</namespace>
+      <namespace key="203" case="first-letter">API talk</namespace>
+      <namespace key="274" case="first-letter">Widget</namespace>
+      <namespace key="275" case="first-letter">Widget talk</namespace>
+    </namespaces>
+  </siteinfo>
+  <page>
+    <title>Alliance Field Quartermaster</title>
+    <ns>0</ns>
+    <id>405511</id>
+    <revision>
+      <id>3197061</id>
+      <parentid>3196478</parentid>
+      <timestamp>2026-09-17T10:00:43Z</timestamp>
+      <contributor>
+        <username>Vysnaite</username>
+        <id>270646</id>
+      </contributor>
+      <comment>/* Tenebral Ward Armor (Leyspring Hollows) */</comment>
+      <origin>3197061</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="23185" sha1="jizona26sdmalm1mu8iyy4uzinxrav1" xml:space="preserve">{{NPC infobox
+| icon = Legendary Crafting.png
+| image = Alliance Field Quartermaster (human female).jpg
+| random = y
+| location = Castora
+| race = Asura, Human, Sylvari
+| level = 80
+| organization = Tyrian Alliance
+| service = vendor
+| gallery1 = Alliance Field Quartermaster (asura male).jpg
+| gallery2 = Alliance Field Quartermaster (sylvari male).jpg
+| requires = voe
+}}
+{{map icon|misc|Legendary Crafting (map icon).png}} [[Alliance Field Quartermaster]]s are [[vendor]]s found near [[Waypoint|waypoints]] in [[Castora]] that offer a wide variety of items. 
+
+== Locations ==
+;[[Castora]]
+* [[Shipwreck Strand]]
+** [[Breezy Cay]]
+** [[Hullgarden]]
+** [[Soaring Sands]]
+
+* [[Starlit Weald]]
+** [[Crumbling Precipice]]
+** [[Shimmering Basin]]
+** [[Untamed Crags]]
+
+* [[Eternity's Garden]]
+** [[Pilgrim's Rest]]
+** [[Temple of Abnegation]]
+** [[The Deepwood]]
+
+* [[Leyspring Hollows]]
+** [[Doyen's Adytum]]
+** [[Hall of Assemblage]]
+** [[Sealed Vestibule]]
+
+== Items offered ==
+=== Merchant ===
+{{inventory|castora merchant}}
+
+=== Visions of Eternity Legendary Crafting ===
+{{inventory|Visions of Eternity Legendary Crafting}}
+
+=== Restless Captain's Armor (Shipwreck Strand) ===
+&lt;div style="overflow: hidden;"&gt;&lt;div style="float:left;margin-right:1em;"&gt;
+==== Restless Captain's Heavy Armor ====
+{{vendor table header|location=Shipwreck Strand|showType=false|showRarity=false|showLevel=false|showFacts=false}}
+{{vendor table row|item=Restless Captain's Heavy Veil|cost=100 Gold + 70000 Karma + 150 Aether-Rich Sap}}
+{{vendor table row|item=Restless Captain's Heavy Mantle|cost=200 Gold + 105000 Karma + 200 Aether-Rich Sap}}
+{{vendor table row|item=Restless Captain's Heavy Coat|cost=300 Gold + 175000 Karma + 250 Aether-Rich Sap}}
+{{vendor table row|item=Restless Captain's Heavy Gloves|cost=150 Gold + 70000 Karma + 150 Aether-Rich Sap}}
+{{vendor table row|item=Restless Captain's Heavy Leggings|cost=200 Gold + 105000 Karma + 200 Aether-Rich Sap}}
+{{vendor table row|item=Restless Captain's Heavy Boots|cost=150 Gold + 70000 Karma + 150 Aether-Rich Sap}}
+{{vendor table row|item=Restless Captain's Heavy Veil|cost=1 Restless Captain Token: Helmet + 35000 Karma}}
+{{vendor table row|item=Restless Captain's Heavy Mantle|cost=1 Restless Captain Token: Shoulders + 52500 Karma}}
+{{vendor table row|item=Restless Captain's Heavy Coat|cost=1 Restless Captain Token: Coat + 87500 Karma}}
+{{vendor table row|item=Restless Captain's Heavy Gloves|cost=1 Restless Captain Token: Gloves + 35000 Karma}}
+{{vendor table row|item=Restless Captain's Heavy Leggings|cost=1 Restless Captain Token: Leggings + 70000 Karma}}
+{{vendor table row|item=Restless Captain's Heavy Boots|cost=1 Restless Captain Token: Boots + 35000 Karma}}
+|}&lt;/div&gt;
+
+&lt;div style="float:left; margin-right:1em;"&gt;
+==== Restless Captain's Light Armor ====
+{{vendor table header|location=Shipwreck Strand|showType=false|showRarity=false|showLevel=false|showFacts=false}}
+{{vendor table row|item=Restless Captain's Light Veil|cost=100 Gold + 70000 Karma + 150 Aether-Rich Sap}}
+{{vendor table row|item=Restless Captain's Light Mantle|cost=200 Gold + 105000 Karma + 200 Aether-Rich Sap}}
+{{vendor table row|item=Restless Captain's Light Coat|cost=300 Gold + 175000 Karma + 250 Aether-Rich Sap}}
+{{vendor table row|item=Restless Captain's Light Gloves|cost=150 Gold + 70000 Karma + 150 Aether-Rich Sap}}
+{{vendor table row|item=Restless Captain's Light Leggings|cost=200 Gold + 105000 Karma + 200 Aether-Rich Sap}}
+{{vendor table row|item=Restless Captain's Light Boots|cost=150 Gold + 70000 Karma + 150 Aether-Rich Sap}}
+{{vendor table row|item=Restless Captain's Light Veil|cost=1 Restless Captain Token: Helmet + 35000 Karma}}
+{{vendor table row|item=Restless Captain's Light Mantle|cost=1 Restless Captain Token: Shoulders + 52500 Karma}}
+{{vendor table row|item=Restless Captain's Light Coat|cost=1 Restless Captain Token: Coat + 87500 Karma}}
+{{vendor table row|item=Restless Captain's Light Gloves|cost=1 Restless Captain Token: Gloves + 35000 Karma}}
+{{vendor table row|item=Restless Captain's Light Leggings|cost=1 Restless Captain Token: Leggings + 70000 Karma}}
+{{vendor table row|item=Restless Captain's Light Boots|cost=1 Restless Captain Token: Boots + 35000 Karma}}
+|}&lt;/div&gt;
+
+&lt;div style="float:left; margin-right:1em;"&gt;
+==== Restless Captain's Medium Armor ====
+{{vendor table header|location=Shipwreck Strand|showType=false|showRarity=false|showLevel=false|showFacts=false}}
+{{vendor table row|item=Restless Captain's Medium Veil|cost=100 Gold + 70000 Karma + 150 Aether-Rich Sap}}
+{{vendor table row|item=Restless Captain's Medium Mantle|cost=200 Gold + 105000 Karma + 200 Aether-Rich Sap}}
+{{vendor table row|item=Restless Captain's Medium Coat|cost=300 Gold + 175000 Karma + 250 Aether-Rich Sap}}
+{{vendor table row|item=Restless Captain's Medium Gloves|cost=150 Gold + 70000 Karma + 150 Aether-Rich Sap}}
+{{vendor table row|item=Restless Captain's Medium Leggings|cost=200 Gold + 105000 Karma + 200 Aether-Rich Sap}}
+{{vendor table row|item=Restless Captain's Medium Boots|cost=150 Gold + 70000 Karma + 150 Aether-Rich Sap}}
+{{vendor table row|item=Restless Captain's Medium Veil|cost=1 Restless Captain Token: Helmet + 35000 Karma}}
+{{vendor table row|item=Restless Captain's Medium Mantle|cost=1 Restless Captain Token: Shoulders + 52500 Karma}}
+{{vendor table row|item=Restless Captain's Medium Coat|cost=1 Restless Captain Token: Coat + 87500 Karma}}
+{{vendor table row|item=Restless Captain's Medium Gloves|cost=1 Restless Captain Token: Gloves + 35000 Karma}}
+{{vendor table row|item=Restless Captain's Medium Leggings|cost=1 Restless Captain Token: Leggings + 70000 Karma}}
+{{vendor table row|item=Restless Captain's Medium Boots|cost=1 Restless Captain Token: Boots + 35000 Karma}}
+|}&lt;/div&gt;&lt;/div&gt;
+
+=== Extremis Armor (Starlit Weald) ===
+&lt;div style="overflow: hidden;"&gt;&lt;div style="float:left;margin-right:1em;"&gt;
+==== Extremis Heavy Armor ====
+{{vendor table header|location=Starlit Weald|showType=false|showRarity=false|showLevel=false|showFacts=false}}
+{{vendor table row|item=Extremis Heavy Hood|cost=100 Gold + 70000 Karma + 150 Antiquated Ducat}}
+{{vendor table row|item=Extremis Heavy Mantle|cost=200 Gold + 105000 Karma + 200 Antiquated Ducat}}
+{{vendor table row|item=Extremis Heavy Coat|cost=300 Gold + 175000 Karma + 250 Antiquated Ducat}}
+{{vendor table row|item=Extremis Heavy Gloves|cost=150 Gold + 70000 Karma + 150 Antiquated Ducat}}
+{{vendor table row|item=Extremis Heavy Leggings|cost=200 Gold + 105000 Karma + 200 Antiquated Ducat}}
+{{vendor table row|item=Extremis Heavy Boots|cost=150 Gold + 70000 Karma + 150 Antiquated Ducat}}
+{{vendor table row|item=Extremis Heavy Hood|cost=1 Extremis Token: Helmet + 35000 Karma}}
+{{vendor table row|item=Extremis Heavy Mantle|cost=1 Extremis Token: Shoulders + 52500 Karma}}
+{{vendor table row|item=Extremis Heavy Coat|cost=1 Extremis Token: Coat + 87500 Karma}}
+{{vendor table row|item=Extremis Heavy Gloves|cost=1 Extremis Token: Gloves + 35000 Karma}}
+{{vendor table row|item=Extremis Heavy Leggings|cost=1 Extremis Token: Leggings + 70000 Karma}}
+{{vendor table row|item=Extremis Heavy Boots|cost=1 Extremis Token: Boots + 35000 Karma}}
+|}&lt;/div&gt;
+
+&lt;div style="float:left; margin-right:1em;"&gt;
+==== Extremis Light Armor ====
+{{vendor table header|location=Starlit Weald|showType=false|showRarity=false|showLevel=false|showFacts=false}}
+{{vendor table row|item=Extremis Light Hood|cost=100 Gold + 70000 Karma + 150 Antiquated Ducat}}
+{{vendor table row|item=Extremis Light Mantle|cost=200 Gold + 105000 Karma + 200 Antiquated Ducat}}
+{{vendor table row|item=Extremis Light Coat|cost=300 Gold + 175000 Karma + 250 Antiquated Ducat}}
+{{vendor table row|item=Extremis Light Gloves|cost=150 Gold + 70000 Karma + 150 Antiquated Ducat}}
+{{vendor table row|item=Extremis Light Leggings|cost=200 Gold + 105000 Karma + 200 Antiquated Ducat}}
+{{vendor table row|item=Extremis Light Boots|cost=150 Gold + 70000 Karma + 150 Antiquated Ducat}}
+{{vendor table row|item=Extremis Light Hood|cost=1 Extremis Token: Helmet + 35000 Karma}}
+{{vendor table row|item=Extremis Light Mantle|cost=1 Extremis Token: Shoulders + 52500 Karma}}
+{{vendor table row|item=Extremis Light Coat|cost=1 Extremis Token: Coat + 87500 Karma}}
+{{vendor table row|item=Extremis Light Gloves|cost=1 Extremis Token: Gloves + 35000 Karma}}
+{{vendor table row|item=Extremis Light Leggings|cost=1 Extremis Token: Leggings + 70000 Karma}}
+{{vendor table row|item=Extremis Light Boots|cost=1 Extremis Token: Boots + 35000 Karma}}
+|}&lt;/div&gt;
+
+&lt;div style="float:left; margin-right:1em;"&gt;
+==== Extremis Medium Armor ====
+{{vendor table header|location=Starlit Weald|showType=false|showRarity=false|showLevel=false|showFacts=false}}
+{{vendor table row|item=Extremis Medium Hood|cost=100 Gold + 70000 Karma + 150 Antiquated Ducat}}
+{{vendor table row|item=Extremis Medium Mantle|cost=200 Gold + 105000 Karma + 200 Antiquated Ducat}}
+{{vendor table row|item=Extremis Medium Coat|cost=300 Gold + 175000 Karma + 250 Antiquated Ducat}}
+{{vendor table row|item=Extremis Medium Gloves|cost=150 Gold + 70000 Karma + 150 Antiquated Ducat}}
+{{vendor table row|item=Extremis Medium Leggings|cost=200 Gold + 105000 Karma + 200 Antiquated Ducat}}
+{{vendor table row|item=Extremis Medium Boots|cost=150 Gold + 70000 Karma + 150 Antiquated Ducat}}
+{{vendor table row|item=Extremis Medium Hood|cost=1 Extremis Token: Helmet + 35000 Karma}}
+{{vendor table row|item=Extremis Medium Mantle|cost=1 Extremis Token: Shoulders + 52500 Karma}}
+{{vendor table row|item=Extremis Medium Coat|cost=1 Extremis Token: Coat + 87500 Karma}}
+{{vendor table row|item=Extremis Medium Gloves|cost=1 Extremis Token: Gloves + 35000 Karma}}
+{{vendor table row|item=Extremis Medium Leggings|cost=1 Extremis Token: Leggings + 70000 Karma}}
+{{vendor table row|item=Extremis Medium Boots|cost=1 Extremis Token: Boots + 35000 Karma}}
+|}&lt;/div&gt;&lt;/div&gt;
+
+=== Forge Guard's Armor (Eternity's Garden) ===
+&lt;div style="overflow: hidden;"&gt;&lt;div style="float:left;margin-right:1em;"&gt;
+==== Forge Guard's Heavy Armor ====
+{{vendor table header|location=Eternity's Garden|showType=false|showRarity=false|showLevel=false|showFacts=false}}
+{{vendor table row|item=Forge Guard's Heavy Helmet|cost=100 Gold + 70000 Karma + 150 Shadowstone Fragment}}
+{{vendor table row|item=Forge Guard's Heavy Pauldron|cost=200 Gold + 105000 Karma + 200 Shadowstone Fragment}}
+{{vendor table row|item=Forge Guard's Heavy Cuirass|cost=300 Gold + 175000 Karma + 250 Shadowstone Fragment}}
+{{vendor table row|item=Forge Guard's Heavy Gloves|cost=150 Gold + 70000 Karma + 150 Shadowstone Fragment}}
+{{vendor table row|item=Forge Guard's Heavy Leggings|cost=200 Gold + 105000 Karma + 200 Shadowstone Fragment}}
+{{vendor table row|item=Forge Guard's Heavy Boots|cost=150 Gold + 70000 Karma + 150 Shadowstone Fragment}}
+{{vendor table row|item=Forge Guard's Heavy Helmet|cost=1 Forge Guard's Token: Helmet + 35000 Karma}}
+{{vendor table row|item=Forge Guard's Heavy Pauldron|cost=1 Forge Guard's Token: Shoulders + 52500 Karma}}
+{{vendor table row|item=Forge Guard's Heavy Cuirass|cost=1 Forge Guard's Token: Cuirass + 87500 Karma}}
+{{vendor table row|item=Forge Guard's Heavy Gloves|cost=1 Forge Guard's Token: Gloves + 35000 Karma}}
+{{vendor table row|item=Forge Guard's Heavy Leggings|cost=1 Forge Guard's Token: Leggings + 70000 Karma}}
+{{vendor table row|item=Forge Guard's Heavy Boots|cost=1 Forge Guard's Token: Boots + 35000 Karma}}
+|}&lt;/div&gt;
+
+&lt;div style="float:left; margin-right:1em;"&gt;
+==== Forge Guard's Light Armor ====
+{{vendor table header|location=Eternity's Garden|showType=false|showRarity=false|showLevel=false|showFacts=false}}
+{{vendor table row|item=Forge Guard's Light Helmet|cost=100 Gold + 70000 Karma + 150 Shadowstone Fragment}}
+{{vendor table row|item=Forge Guard's Light Pauldron|cost=200 Gold + 105000 Karma + 200 Shadowstone Fragment}}
+{{vendor table row|item=Forge Guard's Light Cuirass|cost=300 Gold + 175000 Karma + 250 Shadowstone Fragment}}
+{{vendor table row|item=Forge Guard's Light Gloves|cost=150 Gold + 70000 Karma + 150 Shadowstone Fragment}}
+{{vendor table row|item=Forge Guard's Light Leggings|cost=200 Gold + 105000 Karma + 200 Shadowstone Fragment}}
+{{vendor table row|item=Forge Guard's Light Boots|cost=150 Gold + 70000 Karma + 150 Shadowstone Fragment}}
+{{vendor table row|item=Forge Guard's Light Helmet|cost=1 Forge Guard's Token: Helmet + 35000 Karma}}
+{{vendor table row|item=Forge Guard's Light Pauldron|cost=1 Forge Guard's Token: Shoulders + 52500 Karma}}
+{{vendor table row|item=Forge Guard's Light Cuirass|cost=1 Forge Guard's Token: Cuirass + 87500 Karma}}
+{{vendor table row|item=Forge Guard's Light Gloves|cost=1 Forge Guard's Token: Gloves + 35000 Karma}}
+{{vendor table row|item=Forge Guard's Light Leggings|cost=1 Forge Guard's Token: Leggings + 70000 Karma}}
+{{vendor table row|item=Forge Guard's Light Boots|cost=1 Forge Guard's Token: Boots + 35000 Karma}}
+|}&lt;/div&gt;
+
+&lt;div style="float:left; margin-right:1em;"&gt;
+==== Forge Guard's Medium Armor ====
+{{vendor table header|location=Eternity's Garden|showType=false|showRarity=false|showLevel=false|showFacts=false}}
+{{vendor table row|item=Forge Guard's Medium Helmet|cost=100 Gold + 70000 Karma + 150 Shadowstone Fragment}}
+{{vendor table row|item=Forge Guard's Medium Pauldron|cost=200 Gold + 105000 Karma + 200 Shadowstone Fragment}}
+{{vendor table row|item=Forge Guard's Medium Cuirass|cost=250 Gold + 175000 Karma + 250 Shadowstone Fragment}}
+{{vendor table row|item=Forge Guard's Medium Gloves|cost=150 Gold + 70000 Karma + 150 Shadowstone Fragment}}
+{{vendor table row|item=Forge Guard's Medium Leggings|cost=200 Gold + 105000 Karma + 200 Shadowstone Fragment}}
+{{vendor table row|item=Forge Guard's Medium Boots|cost=150 Gold + 70000 Karma + 150 Shadowstone Fragment}}
+{{vendor table row|item=Forge Guard's Medium Helmet|cost=1 Forge Guard's Token: Helmet + 35000 Karma}}
+{{vendor table row|item=Forge Guard's Medium Pauldron|cost=1 Forge Guard's Token: Shoulders + 52500 Karma}}
+{{vendor table row|item=Forge Guard's Medium Cuirass|cost=1 Forge Guard's Token: Cuirass + 87500 Karma}}
+{{vendor table row|item=Forge Guard's Medium Gloves|cost=1 Forge Guard's Token: Gloves + 35000 Karma}}
+{{vendor table row|item=Forge Guard's Medium Leggings|cost=1 Forge Guard's Token: Leggings + 70000 Karma}}
+{{vendor table row|item=Forge Guard's Medium Boots|cost=1 Forge Guard's Token: Boots + 35000 Karma}}
+|}&lt;/div&gt;&lt;/div&gt;
+
+=== Tenebral Ward Armor (Leyspring Hollows) ===
+&lt;div style="overflow: hidden;"&gt;&lt;div style="float:left;margin-right:1em;"&gt;
+==== Tenebral Ward Heavy Armor ====
+{{vendor table header|location=Leyspring Hollows|showType=false|showRarity=false|showLevel=false|showFacts=false}}
+{{vendor table row|item=Tenebral Ward Heavy Helmet|cost=100 Gold + 70000 Karma + 150 Shadowstone Research Data}}
+{{vendor table row|item=Tenebral Ward Heavy Pauldrons|cost=200 Gold + 105000 Karma + 200 Shadowstone Research Data}}
+{{vendor table row|item=Tenebral Ward Heavy Chestplate|cost=300 Gold + 175000 Karma + 250 Shadowstone Research Data}}
+{{vendor table row|item=Tenebral Ward Heavy Gloves|cost=150 Gold + 70000 Karma + 150 Shadowstone Research Data}}
+{{vendor table row|item=Tenebral Ward Heavy Leggings|cost=200 Gold + 105000 Karma + 200 Shadowstone Research Data}}
+{{vendor table row|item=Tenebral Ward Heavy Boots|cost=150 Gold + 70000 Karma + 150 Shadowstone Research Data}}
+{{vendor table row|item=Tenebral Ward Heavy Helmet|cost=1 Tenebral Ward Token: Helmet + 35000 Karma}}
+{{vendor table row|item=Tenebral Ward Heavy Pauldrons|cost=1 Tenebral Ward Token: Shoulders + 52500 Karma}}
+{{vendor table row|item=Tenebral Ward Heavy Chestplate|cost=1 Tenebral Ward Token: Chest + 87500 Karma}}
+{{vendor table row|item=Tenebral Ward Heavy Gloves|cost=1 Tenebral Ward Token: Gloves + 35000 Karma}}
+{{vendor table row|item=Tenebral Ward Heavy Leggings|cost=1 Tenebral Ward Token: Leggings + 70000 Karma}}
+{{vendor table row|item=Tenebral Ward Heavy Boots|cost=1 Tenebral Ward Token: Boots + 35000 Karma}}
+|}&lt;/div&gt;
+
+&lt;div style="float:left; margin-right:1em;"&gt;
+==== Tenebral Ward Light Armor ====
+{{vendor table header|location=Leyspring Hollows|showType=false|showRarity=false|showLevel=false|showFacts=false}}
+{{vendor table row|item=Tenebral Ward Light Helmet|cost=100 Gold + 70000 Karma + 150 Shadowstone Research Data}}
+{{vendor table row|item=Tenebral Ward Light Pauldrons|cost=200 Gold + 105000 Karma + 200 Shadowstone Research Data}}
+{{vendor table row|item=Tenebral Ward Light Chestplate|cost=300 Gold + 175000 Karma + 250 Shadowstone Research Data}}
+{{vendor table row|item=Tenebral Ward Light Gloves|cost=150 Gold + 70000 Karma + 150 Shadowstone Research Data}}
+{{vendor table row|item=Tenebral Ward Light Leggings|cost=200 Gold + 105000 Karma + 200 Shadowstone Research Data}}
+{{vendor table row|item=Tenebral Ward Light Boots|cost=150 Gold + 70000 Karma + 150 Shadowstone Research Data}}
+{{vendor table row|item=Tenebral Ward Light Helmet|cost=1 Tenebral Ward Token: Helmet + 35000 Karma}}
+{{vendor table row|item=Tenebral Ward Light Pauldrons|cost=1 Tenebral Ward Token: Shoulders + 52500 Karma}}
+{{vendor table row|item=Tenebral Ward Light Chestplate|cost=1 Tenebral Ward Token: Chest + 87500 Karma}}
+{{vendor table row|item=Tenebral Ward Light Gloves|cost=1 Tenebral Ward Token: Gloves + 35000 Karma}}
+{{vendor table row|item=Tenebral Ward Light Leggings|cost=1 Tenebral Ward Token: Leggings + 70000 Karma}}
+{{vendor table row|item=Tenebral Ward Light Boots|cost=1 Tenebral Ward Token: Boots + 35000 Karma}}
+|}&lt;/div&gt;
+
+&lt;div style="float:left; margin-right:1em;"&gt;
+==== Tenebral Ward Medium Armor ====
+{{vendor table header|location=Leyspring Hollows|showType=false|showRarity=false|showLevel=false|showFacts=false}}
+{{vendor table row|item=Tenebral Ward Medium Helmet|cost=100 Gold + 70000 Karma + 150 Shadowstone Research Data}}
+{{vendor table row|item=Tenebral Ward Medium Pauldrons|cost=200 Gold + 105000 Karma + 200 Shadowstone Research Data}}
+{{vendor table row|item=Tenebral Ward Medium Chestplate|cost=300 Gold + 175000 Karma + 250 Shadowstone Research Data}}
+{{vendor table row|item=Tenebral Ward Medium Gloves|cost=150 Gold + 70000 Karma + 150 Shadowstone Research Data}}
+{{vendor table row|item=Tenebral Ward Medium Leggings|cost=200 Gold + 105000 Karma + 200 Shadowstone Research Data}}
+{{vendor table row|item=Tenebral Ward Medium Boots|cost=150 Gold + 70000 Karma + 150 Shadowstone Research Data}}
+{{vendor table row|item=Tenebral Ward Medium Helmet|cost=1 Tenebral Ward Token: Helmet + 35000 Karma}}
+{{vendor table row|item=Tenebral Ward Medium Pauldrons|cost=1 Tenebral Ward Token: Shoulders + 52500 Karma}}
+{{vendor table row|item=Tenebral Ward Medium Chestplate|cost=1 Tenebral Ward Token: Chest + 87500 Karma}}
+{{vendor table row|item=Tenebral Ward Medium Gloves|cost=1 Tenebral Ward Token: Gloves + 35000 Karma}}
+{{vendor table row|item=Tenebral Ward Medium Leggings|cost=1 Tenebral Ward Token: Leggings + 70000 Karma}}
+{{vendor table row|item=Tenebral Ward Medium Boots|cost=1 Tenebral Ward Token: Boots + 35000 Karma}}
+|}&lt;/div&gt;&lt;/div&gt;
+
+=== Unusual Coin Vendor ===
+{{vendor table header|showFacts=false}}
+{{vendor table row|item=Chromatic Double Harp|cost=5 Gold + 70000 Karma + 250 Unusual Coin}}
+{{vendor table row|item=Inquest Aquabreather Box|cost=5 Gold + 70000 Karma + 250 Unusual Coin}}
+{{vendor table row|item=Castoran Researcher's Mask Box|cost=5 Gold + 70000 Karma + 250 Unusual Coin}}
+{{vendor table row|item=Castoran Diver's Mask Box|cost=5 Gold + 70000 Karma + 250 Unusual Coin}}
+{{vendor table row|item=Castoran Explorer's Rebreather Box|cost=5 Gold + 70000 Karma + 250 Unusual Coin}}
+{{vendor table row|item=Kodan Spear|cost=5 Gold + 70000 Karma + 450 Unusual Coin}}
+{{vendor table row|item=Dark Asuran Spear|cost=5 Gold + 70000 Karma + 450 Unusual Coin}}
+{{vendor table row|item=Rosebay|cost=5 Gold + 70000 Karma + 450 Unusual Coin}}
+{{vendor table row|item=Royal Ascalonian Spear|cost=5 Gold + 70000 Karma + 450 Unusual Coin}}
+{{vendor table row|item=Molten Spear|cost=5 Gold + 70000 Karma + 450 Unusual Coin}}
+{{vendor table row|item=Inquest Bident|cost=5 Gold + 70000 Karma + 450 Unusual Coin}}
+{{vendor table row|item=Cleric's Stormcaller Spear|name = Stormcaller Spear|cost=5 Gold + 70000 Karma + 450 Unusual Coin}}
+{{vendor table row|item=Cleric's Charged Stormcaller Spear|name = Charged Stormcaller Spear|cost=5 Gold + 70000 Karma + 450 Unusual Coin}}
+{{vendor table row|item=Cleric's Volcanic Stormcaller Spear|name = Volcanic Stormcaller Spear|cost=5 Gold + 70000 Karma + 450 Unusual Coin}}
+{{vendor table row|item=Dragonsblood Impaler|cost=5 Gold + 70000 Karma + 450 Unusual Coin}}
+{{vendor table row|item=Luxon Hunter's Spear|cost=5 Gold + 70000 Karma + 450 Unusual Coin}}
+{{vendor table row|item=Energized Luxon Hunter's Spear|cost=5 Gold + 70000 Karma + 450 Unusual Coin}}
+{{vendor table row|item=Lightward's Spear|cost=5 Gold + 70000 Karma + 450 Unusual Coin}}
+{{vendor table row|item=Spire of the Forgotten (spear)|cost=5 Gold + 70000 Karma + 450 Unusual Coin}}
+{{vendor table row|item=Living-Water Spear|cost=20 Gold + 105000 Karma + 1000 Unusual Coin}}
+{{vendor table row|item=Dragonsblood Spear Echo|cost=20 Gold + 105000 Karma + 1000 Unusual Coin}}
+{{vendor table row|item=Dragonsblood Spear Reforged|cost=20 Gold + 105000 Karma + 1000 Unusual Coin}}
+{{vendor table row|item=Heroic Dragonsblood Impaler|requirement=Heroic Dragonsblood Staff (skin)|cost=20 Gold + 105000 Karma + 1000 Unusual Coin}}
+{{vendor table row|item=Ancient Coin|cost=1 Unusual Coin}}
+{{vendor table row|item=Orrian Glaive of Rage|name = Orrian Glaive|cost=5 Gold + 70000 Karma + 450 Unusual Coin}}
+{{vendor table row|item=Berserker's Pearl Halberd|name = Pearl Halberd|cost=5 Gold + 70000 Karma + 450 Unusual Coin}}
+{{vendor table row|item=Carrion Tribal Bident of Rage|name = Tribal Bident|cost=5 Gold + 70000 Karma + 450 Unusual Coin}}
+{{vendor table row|item=Berserker's Peacemaker's Javelin|name = Peacemaker's Javelin|cost=2 Gold + 28000 Karma + 200 Unusual Coin}}
+{{vendor table row|item=Berserker's Pirate "Fork"|name = Pirate "Fork"|cost=2 Gold + 28000 Karma + 200 Unusual Coin}}
+{{vendor table row|item=Berserker's Verdant Glaive|name = Verdant Glaive|cost=2 Gold + 28000 Karma + 200 Unusual Coin}}
+{{vendor table row|item=Berserker's Warden Pike|name = Warden Pike|cost=2 Gold + 28000 Karma + 200 Unusual Coin}}
+|}
+
+=== Homestead Decoration Recipes ===
+{{vendor table header|showFacts=false|showLevel=false}}
+{{vendor table row|item=Homestead Recipe Book: Seer Catalogue Volume 1|cost=2 Gold}}
+{{vendor table row|item=Homestead Recipe Book: Seer Catalogue Volume 2|cost=2 Gold}}
+|}
+
+== Gallery ==
+;Appearances
+&lt;gallery widths=100px heights=200px&gt;
+Alliance Field Quartermaster (asura female).jpg
+Alliance Field Quartermaster (asura male).jpg
+Alliance Field Quartermaster (human female).jpg
+Alliance Field Quartermaster (human male).jpg
+Alliance Field Quartermaster (sylvari female).jpg
+Alliance Field Quartermaster (sylvari male).jpg
+&lt;/gallery&gt;
+
+== Trivia ==
+* They are wearing [[Alliance Field Operative armor]].
+
+[[de:Allianz-Feldquartiermeister]]
+[[es:Intendente de campo de la Alianza]]
+[[fr:Quartier-maître de l'alliance]]</text>
+      <sha1>jizona26sdmalm1mu8iyy4uzinxrav1</sha1>
+    </revision>
+  </page>
+</mediawiki>
