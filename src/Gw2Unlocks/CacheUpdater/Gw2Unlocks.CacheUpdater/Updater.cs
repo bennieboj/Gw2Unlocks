@@ -25,12 +25,19 @@ internal class Updater(IGw2ApiSource apiSource, IGw2ApiCache apiCache,
     public async Task UpdateApiData(CancellationToken cancellationToken)
     {
         var items = await RetryAsync(() => apiSource.GetItemsAsync(cancellationToken), "Items");
+        logger.LogInformation("Fetched {count} items from API.", items.Count);
         var skins = await RetryAsync(() => apiSource.GetSkinsAsync(cancellationToken), "Skins");
+        logger.LogInformation("Fetched {count} skins from API.", skins.Count);
         var achievements = await RetryAsync(() => apiSource.GetAchievementsAsync(cancellationToken), "Achievements");
+        logger.LogInformation("Fetched {count} achievements from API.", achievements.Count);
         var achievementCategories = await RetryAsync(() => apiSource.GetAchievementCategoriesAsync(cancellationToken), "Achievement Categories");
+        logger.LogInformation("Fetched {count} achievement categories from API.", achievementCategories.Count);
         var miniatures = await RetryAsync(() => apiSource.GetMiniaturesAsync(cancellationToken), "Miniatures");
+        logger.LogInformation("Fetched {count} miniatures from API.", miniatures.Count);
         var novelties = await RetryAsync(() => apiSource.GetNoveltiesAsync(cancellationToken), "Novelties");
+        logger.LogInformation("Fetched {count} novelties from API.", novelties.Count);
         var titles = await RetryAsync(() => apiSource.GetTitlesAsync(cancellationToken), "Titles");
+        logger.LogInformation("Fetched {count} titles from API.", titles.Count);
 
         List<IconSpriteSheetInput> input = [];
         input.AddRange(miniatures.Where(x => x.IconUrl != null).Select(x => new IconSpriteSheetInput("Miniature", x.Id, x.IconUrl!)));
@@ -41,7 +48,7 @@ internal class Updater(IGw2ApiSource apiSource, IGw2ApiCache apiCache,
         input.AddRange(novelties.Where(x => x.IconUrl != null).Select(x => new IconSpriteSheetInput("Novelty", x.Id, x.IconUrl!)));
         var sw = Stopwatch.StartNew();
         var iconSpriteSheetData = await iconSpriteSheetGenerator.Generate(input, cancellationToken);
-        logger.LogInformation("totalseconds: {totalseconds}", sw.Elapsed.TotalSeconds);
+        logger.LogInformation("iconSpriteSheetData generation time: {totalseconds}", sw.Elapsed.TotalSeconds);
         
 
         await iconSpriteSheetCache.SaveIconSpreadSheets(iconSpriteSheetData.Files, cancellationToken);
