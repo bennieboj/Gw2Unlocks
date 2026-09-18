@@ -91,6 +91,24 @@ Found 1 match(es).
 
 Ask for a list if none was supplied. Accept a pasted diff, file, or plain-language list. Establish each unlock's name, type/ID when available, actual classification or absence, expected group/category or presence, and relevant current/previous run or artifact. Ask for supporting wiki pages or acquisition routes only as needed.
 
+Classifier diff logs (`Gw2Unlocks.UnlockClassifier.Implementation.ClassifierService`, after `Listing all diffs:`) use these markers — see `ClassifierService.PrintDiffAsync` / `PrintUnlockDiff` for the exact rules:
+
+- `[+] Name` — brand-new unlock name that existed nowhere in the previous classifier output. Normal and expected; do not queue unless the user explicitly questions it.
+- `[*] Name (from Old Group > Old Category)` — unlock name that already existed but now appears under a different group/category (moved/reclassified). The `(from ...)` suffix is its previous location; the group/category header above the line is its new location. Queue for investigation: updates/moves are not expected in a routine run.
+- `[-] Name (from Old Group > Old Category)` — unlock name present before but absent everywhere in the new output (removed/disappeared). Queue for investigation: removals are not expected in a routine run.
+
+Move vs remove nuance: a moved unlock is reported only once, as `[*]` under its new location — no matching `[-]` is printed under its old location. A `[-]` therefore always means gone everywhere, not merely moved.
+
+Example:
+
+```text
+[17/09/26 18:51:50:988] [INF] [Gw2Unlocks.UnlockClassifier.Implementation.ClassifierService]     [*] Astral Ward Heavy Boots (skin) (from Secrets of the Obscure > The Wizard's Tower)
+[17/09/26 18:51:50:984] [INF] [Gw2Unlocks.UnlockClassifier.Implementation.ClassifierService]     [+] Spire of Samarog (spear skin)
+[17/09/26 18:51:50:870] [INF] [Gw2Unlocks.UnlockClassifier.Implementation.ClassifierService]     [-] Serpent's Wrath Warhorn (from Janthir Wilds > Lowland Shore)
+```
+
+Triage rule: focus the queue only on `[-]` and `[*]` lines. For each, record the marker, unlock name, old location from the `(from ...)` suffix, and for `[*]` the new group/category header it appears under.
+
 Ask only for missing information needed to investigate. Keep an ordered checklist: pending, investigating, awaiting approval, fixed, deferred, or blocked. Work on one issue at a time; do not silently skip an approval gate.
 
 ### 2. Establish the test baseline
