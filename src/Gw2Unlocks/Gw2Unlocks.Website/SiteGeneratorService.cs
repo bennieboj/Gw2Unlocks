@@ -1,5 +1,4 @@
 ﻿using Gw2Unlocks.IconSpriteSheet;
-using Gw2Unlocks.IconSpriteSheet.Cache;
 using Gw2Unlocks.UnlockClassifier;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
@@ -15,7 +14,6 @@ using System.Text;
 using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace Gw2Unlocks.Website;
 

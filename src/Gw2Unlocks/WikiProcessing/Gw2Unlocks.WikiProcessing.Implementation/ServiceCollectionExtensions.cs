@@ -1,5 +1,4 @@
-﻿using Gw2Unlocks.WikiProcessing;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 
 namespace Gw2Unlocks.WikiProcessing.Implementation;
 

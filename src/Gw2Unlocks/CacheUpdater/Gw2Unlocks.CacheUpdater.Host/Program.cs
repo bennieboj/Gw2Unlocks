@@ -1,5 +1,4 @@
-﻿using GuildWars2.Items;
-using Gw2Unlocks.Api.Cache;
+﻿using Gw2Unlocks.Api.Cache;
 using Gw2Unlocks.Api.Implementation;
 using Gw2Unlocks.Cache.Common;
 using Gw2Unlocks.CacheUpdater;

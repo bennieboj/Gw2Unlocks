@@ -1,8 +1,5 @@
 ﻿using GuildWars2.Collections;
 using GuildWars2.Hero.Equipment.Wardrobe;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Gw2Unlocks.Api.Testing.Builders;
 

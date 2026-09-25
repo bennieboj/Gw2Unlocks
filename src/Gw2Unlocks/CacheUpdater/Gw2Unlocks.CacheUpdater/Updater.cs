@@ -1,6 +1,4 @@
-﻿using GuildWars2.Hero.Equipment.Wardrobe;
-using GuildWars2.Items;
-using Gw2Unlocks.Api;
+﻿using Gw2Unlocks.Api;
 using Gw2Unlocks.IconSpriteSheet;
 using Gw2Unlocks.Wiki;
 using Microsoft.Extensions.Logging;

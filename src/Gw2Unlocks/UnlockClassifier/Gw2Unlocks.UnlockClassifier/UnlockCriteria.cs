@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Gw2Unlocks.UnlockClassifier;
+﻿namespace Gw2Unlocks.UnlockClassifier;
 
 public abstract class UnlockCriteria
 {
