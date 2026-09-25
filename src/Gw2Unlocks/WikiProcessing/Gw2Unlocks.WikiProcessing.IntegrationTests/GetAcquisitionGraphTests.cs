@@ -248,11 +248,56 @@ public class GetAcquisitionGraphTests : ServiceProviderBasedTest<IGw2WikiProcess
         Assert.NotNull(zoneNode);
 
         Assert.Contains(graph.Edges, e => e.From == item && e.To == vendor && e.Type == EdgeType.SoldBy
-                        && e.Metadata != null && e.Metadata.ContainsKey("cost"));
+                        && e.Metadata != null && e.Metadata.ContainsKey("cost")
+                        && e.Metadata.TryGetValue("location", out var saleLocation) && saleLocation == area);
         Assert.Contains(graph.Edges, e => e.From == vendor && e.To == area && e.Type == EdgeType.LocatedIn);
         Assert.Contains(graph.Edges, e => e.From == area && e.To == zone && e.Type == EdgeType.LocatedIn);
-        // for selling purposes, the vendor should only be located in the specific area, not in all areas
-        Assert.Single(graph.Edges, e => e.From == vendor && e.Type == EdgeType.LocatedIn);
+        // The vendor keeps all its locations for completeness; the specific sale
+        // location lives on the SoldBy edge and is enforced by the classifier.
+    }
+
+    [Theory]
+    [InlineData("Mini Captain Leo the Relentless", "Alliance Field Quartermaster", null)]
+    [InlineData("Mini Gwyldell", "Alliance Field Quartermaster", null)]
+    [InlineData("Agaleus Container", "Alliance Field Quartermaster", null)]
+    [InlineData("Polychromatic Coat Box", "Deft Lahar", null)]
+    [InlineData("Restless Captain's Heavy Veil", "Alliance Field Quartermaster", "Shipwreck Strand")]
+    public async Task LocationShouldNotContainBraces(string item, string vendor, string? expectedLocation)
+    {
+        SetFile("LocationShouldNotContainBraces");
+        var graph = await GetSut().GetAcquisitionGraph(TestContext.Current.CancellationToken);
+
+        // The sale must survive with its cost...
+        Assert.Contains(graph.Edges, e => e.From == item && e.To == vendor && e.Type == EdgeType.SoldBy
+                        && e.Metadata != null && e.Metadata.ContainsKey("cost"));
+
+        if (expectedLocation is null)
+        {
+            // ...but unresolved wikitext headers ({{#if:{{{location|}}}|{{{location}}}}})
+            // must not end up as sale-location metadata (the classifier would prune the path).
+            Assert.DoesNotContain(graph.Edges, e => e.From == item && e.Type == EdgeType.SoldBy
+                            && e.Metadata != null && e.Metadata.ContainsKey("location"));
+        }
+        else
+        {
+            // ...while real header locations are still stamped.
+            Assert.Contains(graph.Edges, e => e.From == item && e.To == vendor && e.Type == EdgeType.SoldBy
+                            && e.Metadata != null && e.Metadata.TryGetValue("location", out var saleLocation) && saleLocation == expectedLocation);
+        }
+    }
+
+    [Fact]
+    public async Task LocationShouldNotContainBracesShouldKeepVendorLocationsAndCreateNoGarbageNodes()
+    {
+        SetFile("LocationShouldNotContainBraces");
+        var graph = await GetSut().GetAcquisitionGraph(TestContext.Current.CancellationToken);
+
+        // Vendors keep all their locations for completeness.
+        Assert.Contains(graph.Edges, e => e.From == "Alliance Field Quartermaster" && e.To == "Shipwreck Strand" && e.Type == EdgeType.LocatedIn);
+        Assert.Contains(graph.Edges, e => e.From == "Deft Lahar" && e.To == "Hearth's Glow" && e.Type == EdgeType.LocatedIn);
+
+        // No garbage location node (e.g. "{{") is created anywhere.
+        Assert.DoesNotContain(graph.Nodes, kvp => kvp.Key.Contains('{', System.StringComparison.Ordinal) || kvp.Key.Contains('}', System.StringComparison.Ordinal));
     }
 
     [Theory]
@@ -557,6 +602,44 @@ public class GetAcquisitionGraphTests : ServiceProviderBasedTest<IGw2WikiProcess
                         && e.Metadata != null && e.Metadata.ContainsKey("cost")
                         && e.Metadata.TryGetValue("location", out var saleLocation) && saleLocation == location);
         Assert.Contains(graph.Edges, e => e.From == vendor && e.To == location && e.Type == EdgeType.LocatedIn);
+    }
+
+    // Regression for the 2026-09-18 classifier diff: all 17 Serpent's Wrath weapons were removed
+    // from Janthir Wilds > Lowland Shore. The page "Serpent's Wrath Weapon Choice Box" was converted
+    // from {{contains}} bullets to {{account unlocks table|item|contains=y|...}} on 2026-09-01, so the
+    // ContainedIn edge from the weapon to the box went missing and the chain to the zone broke.
+    [Fact]
+    public async Task SerpentsWrathWarhornShouldBeContainedInWeaponChoiceBoxSoldByShadingWillowInLowlandShore()
+    {
+        SetFile("SerpentWrathWeaponChoiceBox");
+        var graph = await GetSut().GetAcquisitionGraph(TestContext.Current.CancellationToken);
+
+        const string skin = "Serpent's Wrath Warhorn";
+        var skinNode = graph.GetNode(skin, NodeType.Skin);
+        const string weapon = "Berserker's Serpent's Wrath Warhorn";
+        var weaponNode = graph.GetNode(weapon, NodeType.Weapon);
+        const string container = "Serpent's Wrath Weapon Choice Box";
+        var containerNode = graph.GetNode(container, NodeType.Item);
+        const string vendor = "Shading Willow";
+        var vendorNode = graph.GetNode(vendor, NodeType.NPC);
+        const string area = "Autumn's Vale";
+        var areaNode = graph.GetNode(area, NodeType.Location);
+        const string zone = "Lowland Shore";
+        var zoneNode = graph.GetNode(zone, NodeType.Location);
+
+        Assert.NotNull(skinNode);
+        Assert.NotNull(weaponNode);
+        Assert.NotNull(containerNode);
+        Assert.NotNull(vendorNode);
+        Assert.NotNull(areaNode);
+        Assert.NotNull(zoneNode);
+
+        Assert.Contains(graph.Edges, e => e.From == skin && e.To == weapon && e.Type == EdgeType.SkinUnlock);
+        Assert.Contains(graph.Edges, e => e.From == weapon && e.To == container && e.Type == EdgeType.ContainedIn);
+        Assert.Contains(graph.Edges, e => e.From == container && e.To == vendor && e.Type == EdgeType.SoldBy
+                        && e.Metadata != null && e.Metadata.ContainsKey("cost"));
+        Assert.Contains(graph.Edges, e => e.From == vendor && e.To == area && e.Type == EdgeType.LocatedIn);
+        Assert.Contains(graph.Edges, e => e.From == area && e.To == zone && e.Type == EdgeType.LocatedIn);
     }
 
     private void SetFile(string fileName)

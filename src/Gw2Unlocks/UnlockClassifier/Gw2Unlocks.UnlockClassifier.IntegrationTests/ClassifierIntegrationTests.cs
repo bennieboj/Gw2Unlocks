@@ -78,6 +78,40 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
             .SelectMany(c => c.Unlocks), u => u.Name == unlockName);
     }
 
+    // Regression for 2026-09-17 classifier diff: Astral Ward armor skins moved from
+    // Secrets of the Obscure > The Wizard's Tower to Secrets of the Obscure > Skywatch Archipelago.
+    // Lyhr sells the Astral Ward armor only in Outer Ring (The Wizard's Tower),
+    // while his NPC infobox lists both Droknar's Light (Skywatch Archipelago) and Outer Ring.
+    [Theory]
+    [InlineData("Astral Ward Heavy Boots (skin)")]
+    [InlineData("Astral Ward Light Coat (skin)")]
+    public async Task AstralWardArmorShouldReturnWizardsTower(string unlockName)
+    {
+        var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
+        var group = results.UnlockGroups.Single(g => g.Name == "Secrets of the Obscure");
+        var category = group.UnlockCategories.Single(c => c.Name == "The Wizard's Tower");
+        var unlock = category.Unlocks.Single(c => c.Name == unlockName);
+
+        Assert.NotNull(unlock);
+        Assert.NotNull(unlock.ApiData);
+    }
+
+    // Regression for 2026-09-17 classifier diff: Serpent's Wrath / Polychromatic unlocks
+    // disappeared from Janthir Wilds > Lowland Shore entirely.
+    [Theory]
+    [InlineData("Serpent's Wrath Warhorn")]
+    [InlineData("Polychromatic Heavy Breastplate (skin)")]
+    public async Task JanthirWildsUnlocksShouldReturnLowlandShore(string unlockName)
+    {
+        var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
+        var group = results.UnlockGroups.Single(g => g.Name == "Janthir Wilds");
+        var category = group.UnlockCategories.Single(c => c.Name == "Lowland Shore");
+        var unlock = category.Unlocks.Single(c => c.Name == unlockName);
+
+        Assert.NotNull(unlock);
+        Assert.NotNull(unlock.ApiData);
+    }
+
     [Fact]
     public async Task StellarWeaponsShouldReturnDomainOfIstan()
     {

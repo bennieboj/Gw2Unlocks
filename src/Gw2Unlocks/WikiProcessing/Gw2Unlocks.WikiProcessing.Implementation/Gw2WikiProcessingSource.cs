@@ -622,7 +622,7 @@ public sealed class Gw2WikiProcessingSource(
         // objects
         if (info.InfoBoxType.Equals("Object", StringComparison.OrdinalIgnoreCase))
         {
-            HandleLocation(graph, nodeId, info);
+            LinkToLocations(graph, nodeId, ExtractVendorLocations(info));
         }
 
         // NPC that are merchants (Vendor)
@@ -630,9 +630,6 @@ public sealed class Gw2WikiProcessingSource(
         {
             if (!string.IsNullOrWhiteSpace(info.Get("service")))
             {
-                static string[] SplitLocations(string? locations) => locations?
-                    .Split(';', StringSplitOptions.TrimEntries | StringSplitOptions.RemoveEmptyEntries) ?? [];
-
                 // Parse vendor tables in document order; a header scopes the rows after it to its location.
                 var tables = EnumerateWikiTexts(graph, nodeId, ast, cancellationToken)
                     .Select(text => text.EnumDescendants().OfType<Template>()
@@ -644,45 +641,17 @@ public sealed class Gw2WikiProcessingSource(
                     .ToDictionary(t => t, t => SplitLocations(t.Arguments.FirstOrDefault(a =>
                         string.Equals(a.Name?.ToString()?.Trim(), "location", StringComparison.OrdinalIgnoreCase))?.Value?.ToString()));
 
-                // Decide once: do the vendor tables sell at different locations?
-                var useSaleLocations = headerLocations.Values
-                    .Where(l => l.Length > 0)
-                    .DistinctBy(l => string.Join(';', l))
-                    .Count() > 1;
-
                 // The vendor's own locations: infobox location plus all header locations.
-                var vendorLocations = SplitLocations(info.Get("location")).ToHashSet(StringComparer.OrdinalIgnoreCase);
-                vendorLocations.UnionWith(headerLocations.Values.SelectMany(l => l));
-
-                if (useSaleLocations)
-                {
-                    // Multi-location vendor: keep every location on the vendor and
-                    // restrict individual sales via the SoldBy edge's location metadata.
-                    foreach (var location in vendorLocations)
-                    {
-                        graph.AddEdge(nodeId, location, EdgeType.LocatedIn);
-                    }
-                }
-                else
-                {
-                    // Single-location vendor: a single header with a location narrows the
-                    // infobox locations; otherwise the infobox locations stand unchanged.
-                    string? singleHeaderLocation = null;
-                    if (headerLocations.Count == 1)
-                    {
-                        var location = headerLocations.Values.Single();
-                        singleHeaderLocation = location.Length > 0 ? string.Join(';', location) : null;
-                    }
-
-                    HandleLocation(graph, nodeId, info, singleHeaderLocation);
-                }
+                // Kept in full on the vendor for completeness; individual sales are
+                // restricted via the SoldBy edge's location metadata below.
+                LinkToLocations(graph, nodeId, ExtractVendorLocations(info, headerLocations));
 
                 string? saleLocation = null;
                 foreach (var row in tables.SelectMany(t => t))
                 {
                     if (headerLocations.TryGetValue(row, out var allowedLocations))
                     {
-                        saleLocation = allowedLocations.Length > 0 && !vendorLocations.SetEquals(allowedLocations)
+                        saleLocation = allowedLocations.Length > 0
                             ? string.Join(';', allowedLocations)
                             : null;
                         continue;
@@ -696,7 +665,7 @@ public sealed class Gw2WikiProcessingSource(
                         var metadata = !string.IsNullOrWhiteSpace(cost)
                             ? new Dictionary<string, string> { ["cost"] = cost }
                             : null;
-                        if (useSaleLocations && saleLocation != null)
+                        if (saleLocation != null)
                         {
                             metadata ??= [];
                             metadata["location"] = saleLocation;
@@ -727,27 +696,65 @@ public sealed class Gw2WikiProcessingSource(
         // Container (metadata-driven)
         if (info.Get("type")?.Equals("Container", StringComparison.OrdinalIgnoreCase) == true || node.Type == NodeType.GemStoreCombo)
         {
+            void AddContentEdge(string name, EdgeType edgeType)
+            {
+                graph.GetOrCreate(name);
+                graph.AddEdge(name, nodeId, edgeType);
+            }
+
             foreach (var template in ast.EnumDescendants().OfType<Template>())
             {
-                var contains = template.Name.ToString().Equals("contains", StringComparison.OrdinalIgnoreCase);
-                var containsSet = template.Name.ToString().Equals("contains set", StringComparison.OrdinalIgnoreCase);
-                EdgeType? edgeType = null;
-                if (contains || containsSet) {
-                    edgeType = EdgeType.ContainedIn;
-                }
-                else
+                var templateName = template.Name.ToString();
+                if (templateName.Equals("account unlocks table", StringComparison.OrdinalIgnoreCase))
                 {
+                    // {{account unlocks table|item|list|contains=y}} marks container contents;
+                    // without `contains` it is a price/progress table (e.g. old Notes sections)
+                    // and must not create edges.
+                    if (!template.Arguments.Any(a =>
+                            string.Equals(a.Name?.ToString()?.Trim(), "contains", StringComparison.OrdinalIgnoreCase)))
+                    {
+                        continue;
+                    }
+
+                    // Unnamed args: 1 = type selector ("item"), 2 = list of names.
+                    var positional = template.Arguments
+                        .Where(a => a.Name == null || string.IsNullOrWhiteSpace(a.Name.ToString()))
+                        .Select(a => a.Value?.ToString())
+                        .OfType<string>()
+                        .Where(v => !string.IsNullOrWhiteSpace(v))
+                        .ToList();
+                    if (positional.Count < 2)
+                    {
+                        continue;
+                    }
+
+                    var separator = template.Arguments
+                            .FirstOrDefault(a => string.Equals(a.Name?.ToString()?.Trim(), "sep", StringComparison.OrdinalIgnoreCase))
+                            ?.Value?.ToString();
+                    if (string.IsNullOrWhiteSpace(separator))
+                    {
+                        separator = ",";
+                    }
+
+                    foreach (var name in positional[1].Split(separator, StringSplitOptions.TrimEntries | StringSplitOptions.RemoveEmptyEntries))
+                    {
+                        AddContentEdge(name, EdgeType.ContainedIn);
+                    }
+
                     continue;
                 }
 
-                var target = template.Arguments
-                    .FirstOrDefault(a => a.Name == null || string.IsNullOrWhiteSpace(a.Name.ToString()))
-                    ?.Value?.ToString()?.Trim();
-
-                if (!string.IsNullOrWhiteSpace(target))
+                if (templateName.Equals("contains", StringComparison.OrdinalIgnoreCase)
+                    || templateName.Equals("contains set", StringComparison.OrdinalIgnoreCase))
                 {
-                    graph.GetOrCreate(target);
-                    graph.AddEdge(target, nodeId, edgeType.Value);
+                    var target = template.Arguments
+                        .FirstOrDefault(a => a.Name == null || string.IsNullOrWhiteSpace(a.Name.ToString()))
+                        ?.Value?.ToString()?.Trim();
+
+                    if (!string.IsNullOrWhiteSpace(target))
+                    {
+                        AddContentEdge(target, EdgeType.ContainedIn);
+                    }
                 }
             }
         }
@@ -859,27 +866,33 @@ public sealed class Gw2WikiProcessingSource(
         }
     }
 
-    private static void HandleLocation(AcquisitionGraph graph, string nodeId, InfoboxData info, string? allowedLocations = null)
+    private static void LinkToLocations(AcquisitionGraph graph, string nodeId, IEnumerable<string> locations)
     {
-        var locations = info.Get("location")?
-                        .Split(';', StringSplitOptions.TrimEntries | StringSplitOptions.RemoveEmptyEntries);
-
-        if(allowedLocations != null)
+        foreach (var loc in locations)
         {
-            var allowed = allowedLocations
-                .Split(';', StringSplitOptions.TrimEntries | StringSplitOptions.RemoveEmptyEntries)
-                .ToHashSet(StringComparer.OrdinalIgnoreCase);
-            locations = locations?.Where(l => allowed.Contains(l)).ToArray();
+            graph.GetOrCreate(loc);
+            graph.AddEdge(nodeId, loc, EdgeType.LocatedIn);
         }
+    }
 
-        if (locations != null)
-        {
-            foreach (var loc in locations)
-            {
-                graph.GetOrCreate(loc);
-                graph.AddEdge(nodeId, loc, EdgeType.LocatedIn);
-            }
-        }
+    private static string[] SplitLocations(string? locations) => locations?
+        .Split(';', StringSplitOptions.TrimEntries | StringSplitOptions.RemoveEmptyEntries)
+        // Unresolved wikitext (template invocations, parser functions, template parameters
+        // like "{{#if:{{{location|}}}|{{{location}}}}}") can never be a page title: MediaWiki
+        // forbids braces in titles. Treat such fragments as "no location" instead of letting
+        // them stamp SoldBy metadata and create junk location nodes.
+        .Where(l => !l.Contains('{', StringComparison.Ordinal) && !l.Contains('}', StringComparison.Ordinal))
+        .ToArray() ?? [];
+
+    private static HashSet<string> ExtractVendorLocations(
+        InfoboxData info,
+        Dictionary<Template, string[]>? headerLocations = null)
+    {
+        var locations = SplitLocations(info.Get("location"))
+            .ToHashSet(StringComparer.OrdinalIgnoreCase);
+        if (headerLocations is not null)
+            locations.UnionWith(headerLocations.Values.SelectMany(l => l));
+        return locations;
     }
 
     // -------------------------
