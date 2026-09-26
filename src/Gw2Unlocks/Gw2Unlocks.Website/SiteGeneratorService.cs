@@ -363,7 +363,7 @@ internal sealed class SiteGeneratorService(
                     Id = u.ApiData!.Id,
                     Name = u.ApiData.Name,
                     IconUrl = u.ApiData.IconUrl?.ToString() ?? "",
-                    IconAtlasStyleCss = u.ApiData.IconSheet != null && unlocks.Count > 5000 ? $"background-image: url('/icon-sprite-sheets/icons_{u.ApiData.IconSheet}.webp');background-position: -{u.ApiData.IconX}px -{u.ApiData.IconY}px;" : null,
+                    IconAtlasStyleCss = u.ApiData.IconSheet != null ? $"background-image: url('/icon-sprite-sheets/icons_{u.ApiData.IconSheet}.webp');background-position: -{u.ApiData.IconX}px -{u.ApiData.IconY}px;" : null,
                     Requirement = u.ApiData.Requirement ?? "",
                     RewardIcon = u.ApiData.RewardIconUrl?.ToString(),
                     RewardName = u.ApiData.RewardName,
