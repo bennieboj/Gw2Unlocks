@@ -64,143 +64,82 @@ internal sealed class ClassifierService(
         var oldLocations = BuildLocationMap(oldConfig);
         var newLocations = BuildLocationMap(newConfig);
 
-        var oldGroups = oldConfig.UnlockGroups.ToDictionary(x => x.Name);
-        var newGroups = newConfig.UnlockGroups.ToDictionary(x => x.Name);
-
-        var groupNames = oldGroups.Keys
-            .Union(newGroups.Keys)
-            .OrderBy(x => x);
-
         logger.LogInformation("Listing all diffs:");
 
-        foreach (var groupName in groupNames)
+        var oldNodes = oldConfig.GetNodes().ToDictionary(x => x.Path.Key, x => x.Node);
+        var newNodes = newConfig.GetNodes().ToDictionary(x => x.Path.Key, x => x.Node);
+
+        var keys = oldNodes.Keys.Union(newNodes.Keys)
+            .OrderBy(x => x, StringComparer.Ordinal);
+
+        foreach (var key in keys)
         {
-            oldGroups.TryGetValue(groupName, out var oldGroup);
-            newGroups.TryGetValue(groupName, out var newGroup);
+            oldNodes.TryGetValue(key, out var oldNode);
+            newNodes.TryGetValue(key, out var newNode);
 
-            if (oldGroup is null && newGroup is not null)
+            // Indent by depth so the output mirrors the shape of the tree.
+            var depth = key.Split(PathSeparator).Length;
+            var label = key.Replace(PathSeparator, '>');
+
+            if (oldNode is null && newNode is not null)
             {
-                logger.LogInformation("{GroupName}", groupName);
-                PrintAdds(logger, newGroup.Unlocks, 1);
-                PrintAllCategories(logger, newGroup, true);
+                WriteIndented(logger, depth, label);
+                PrintAdds(logger, newNode.Unlocks, depth + 1);
                 continue;
             }
 
-            if (oldGroup is not null && newGroup is null)
+            if (oldNode is not null && newNode is null)
             {
-                logger.LogInformation("{GroupName}", groupName);
-                PrintRemoves(logger, oldGroup.Unlocks, 1, oldLocations, newLocations);
-                PrintAllCategoriesRemoved(logger, oldGroup, oldLocations, newLocations);
+                WriteIndented(logger, depth, label);
+                PrintRemoves(logger, oldNode.Unlocks, depth + 1, oldLocations, newLocations);
                 continue;
             }
 
-            if (oldGroup is null || newGroup is null)
+            if (oldNode is null || newNode is null || !HasUnlockChanges(oldNode.Unlocks, newNode.Unlocks))
                 continue;
 
-            var groupChanged =
-                HasUnlockChanges(oldGroup.Unlocks, newGroup.Unlocks) ||
-                HasCategoryChanges(oldGroup, newGroup);
-
-            if (!groupChanged)
-                continue;
-
-            logger.LogInformation("{GroupName}", groupName);
-
-            PrintUnlockDiff(
-                logger,
-                oldGroup.Unlocks,
-                newGroup.Unlocks,
-                1,
-                oldLocations,
-                newLocations);
-
-            var oldCategories = oldGroup.UnlockCategories.ToDictionary(x => x.Name);
-            var newCategories = newGroup.UnlockCategories.ToDictionary(x => x.Name);
-
-            var categoryNames = oldCategories.Keys
-                .Union(newCategories.Keys)
-                .OrderBy(x => x);
-
-            foreach (var categoryName in categoryNames)
-            {
-                oldCategories.TryGetValue(categoryName, out var oldCategory);
-                newCategories.TryGetValue(categoryName, out var newCategory);
-
-                if (oldCategory is null && newCategory is not null)
-                {
-                    WriteIndented(logger, 1, categoryName);
-                    PrintAdds(logger, newCategory.Unlocks, 2);
-                    continue;
-                }
-
-                if (oldCategory is not null && newCategory is null)
-                {
-                    WriteIndented(logger, 1, categoryName);
-                    PrintRemoves(
-                        logger,
-                        oldCategory.Unlocks,
-                        2,
-                        oldLocations,
-                        newLocations);
-                    continue;
-                }
-
-                if (oldCategory is null || newCategory is null)
-                    continue;
-
-                if (!HasUnlockChanges(oldCategory.Unlocks, newCategory.Unlocks))
-                    continue;
-
-                WriteIndented(logger, 1, categoryName);
-
-                PrintUnlockDiff(
-                    logger,
-                    oldCategory.Unlocks,
-                    newCategory.Unlocks,
-                    2,
-                    oldLocations,
-                    newLocations);
-            }
+            WriteIndented(logger, depth, label);
+            PrintUnlockDiff(logger, oldNode.Unlocks, newNode.Unlocks, depth + 1, oldLocations, newLocations);
         }
 
         return Task.CompletedTask;
     }
 
+    private const char PathSeparator = '';
+
     private static Dictionary<string, string> BuildLocationMap(ClassifyConfig config)
     {
         var map = new Dictionary<string, string>(StringComparer.Ordinal);
 
-        foreach (var group in config.UnlockGroups)
+        foreach (var (node, path) in config.GetNodes())
         {
-            foreach (var unlock in group.Unlocks)
-                map[unlock.Name] = group.Name;
-
-            foreach (var category in group.UnlockCategories)
-            {
-                foreach (var unlock in category.Unlocks)
-                    map[unlock.Name] = $"{group.Name} > {category.Name}";
-            }
+            foreach (var unlock in node.Unlocks)
+                map[unlock.Name] = path.ToString();
         }
 
         return map;
     }
 
-    private static bool HasCategoryChanges(UnlockGroup oldGroup, UnlockGroup newGroup)
+    /// <summary>
+    /// True when the node's own unlocks or anything beneath it changed.
+    /// </summary>
+    private static bool HasSubtreeChanges(UnlockCategory oldNode, UnlockCategory newNode)
     {
-        var oldCategories = oldGroup.UnlockCategories.ToDictionary(x => x.Name);
-        var newCategories = newGroup.UnlockCategories.ToDictionary(x => x.Name);
+        if (HasUnlockChanges(oldNode.Unlocks, newNode.Unlocks))
+            return true;
 
-        var names = oldCategories.Keys.Union(newCategories.Keys);
+        var oldChildren = oldNode.SubCategories.ToDictionary(x => x.Name);
+        var newChildren = newNode.SubCategories.ToDictionary(x => x.Name);
 
-        foreach (var name in names)
+        foreach (var name in oldChildren.Keys.Union(newChildren.Keys))
         {
-            oldCategories.TryGetValue(name, out var oldCategory);
-            newCategories.TryGetValue(name, out var newCategory);
+            oldChildren.TryGetValue(name, out var oldChild);
+            newChildren.TryGetValue(name, out var newChild);
 
-            if (oldCategory is null || newCategory is null)
+            if (oldChild is null || newChild is null)
                 return true;
 
-            if (HasUnlockChanges(oldCategory.Unlocks, newCategory.Unlocks))
+            if (HasSubtreeChanges(oldChild, newChild))
                 return true;
         }
 
@@ -290,39 +229,6 @@ internal sealed class ClassifierService(
                     indent,
                     $"[-] {unlock.Name} (from {previousLocation})");
             }
-        }
-    }
-
-    private static void PrintAllCategories(
-        ILogger logger,
-        UnlockGroup group,
-        bool isAdd)
-    {
-        foreach (var category in group.UnlockCategories.OrderBy(x => x.Name))
-        {
-            WriteIndented(logger, 1, category.Name);
-
-            if (isAdd)
-                PrintAdds(logger, category.Unlocks, 2);
-        }
-    }
-
-    private static void PrintAllCategoriesRemoved(
-        ILogger logger,
-        UnlockGroup group,
-        Dictionary<string, string> oldLocations,
-        Dictionary<string, string> newLocations)
-    {
-        foreach (var category in group.UnlockCategories.OrderBy(x => x.Name))
-        {
-            WriteIndented(logger, 1, category.Name);
-
-            PrintRemoves(
-                logger,
-                category.Unlocks,
-                2,
-                oldLocations,
-                newLocations);
         }
     }
 

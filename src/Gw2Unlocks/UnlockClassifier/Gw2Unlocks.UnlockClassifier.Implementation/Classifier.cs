@@ -13,6 +13,7 @@ using Gw2Unlocks.WikiProcessing;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading;
@@ -40,6 +41,12 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
     private Dictionary<string, List<Edge>>? edgesByFrom;
     private Dictionary<string, List<Edge>>? edgesByTo;
     private ClassifyConfig? classifyConfig;
+
+    // Hardcoded classification targets, resolved against the config once in Init so the
+    // search loop does not re-resolve them per edge.
+    private CategoryPath mysticForgePath;
+    private CategoryPath otherGeneralPath;
+    private CategoryPath otherCraftingPath;
 
     private readonly List<CurrencyCriteria> commonCurrencies = [new CurrencyCriteria("Coin"), new CurrencyCriteria("Karma"), new CurrencyCriteria("Research Note")];
     private readonly List<string> itemsToIgnore = [
@@ -70,13 +77,13 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
     {
         return new ClassifyConfig
         {
-            UnlockGroups =
+            Categories =
             [
                 new()
                 {
                     Name = "Heart of Thorns",
                     UnlockCriteria = [  ],
-                    UnlockCategories =
+                    SubCategories =
                     [
                         new() { Name = "Verdant Brink", UnlockCriteria = [
                             new ZoneCriteria("Verdant Brink"),
@@ -116,7 +123,7 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                         new SetCriteria("Awakened weapons"),
                         new SetCriteria("Bounty Hunter's armor"),
                     ],
-                    UnlockCategories =
+                    SubCategories =
                     [
                         new() {
                             Name = "Crystal Oasis",
@@ -135,7 +142,7 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                 {
                     Name = "End of Dragons",
                     UnlockCriteria = [ new CurrencyCriteria("Ancient Coin") ],
-                    UnlockCategories =
+                    SubCategories =
                     [
                         new() { Name = "Seitung Province", UnlockCriteria = [ new ZoneCriteria("Seitung Province") ] },
                         new() { Name = "New Kaineng City", UnlockCriteria = [ new ZoneCriteria("New Kaineng City") ] },
@@ -154,7 +161,7 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                         new SetCriteria("Skyforged weapons", 100),
                         new SetCriteria("Eagle Eye weapons", 100)
                     ],
-                    UnlockCategories =
+                    SubCategories =
                     [
                         new() {
                             Name = "Skywatch Archipelago",
@@ -192,7 +199,7 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                 {
                     Name = "Janthir Wilds",
                     UnlockCriteria = [ new CurrencyCriteria("Ancient Coin") ],
-                    UnlockCategories =
+                    SubCategories =
                     [
                         new() { Name = "Lowland Shore",
                             UnlockCriteria = [
@@ -225,7 +232,7 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                 {
                     Name = "Visions of Eternity",
                     UnlockCriteria = [ new CurrencyCriteria("Unusual Coin") ],
-                    UnlockCategories =
+                    SubCategories =
                     [
                         new() { Name = "Shipwreck Strand",
                             UnlockCriteria = [
@@ -260,7 +267,7 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                 {
                     Name = "LW Season 1",
                     UnlockCriteria = [  ],
-                    UnlockCategories =
+                    SubCategories =
                     [
                         new() { Name = "Season 1", UnlockCriteria = [
                             new ZoneCriteria("The Battle For Lion's Arch"),
@@ -284,7 +291,7 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                 {
                     Name = "LW Season 2",
                     UnlockCriteria = [  ],
-                    UnlockCategories =
+                    SubCategories =
                     [
                         new() { Name = "Dry Top", UnlockCriteria = [ new ZoneCriteria("Dry Top"), new CurrencyCriteria("Unidentified Fossilized Insect") ] },
                         new() { Name = "The Silverwastes", UnlockCriteria = [ new ZoneCriteria("The Silverwastes") ] },
@@ -295,7 +302,7 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                 {
                     Name = "LW Season 3",
                     UnlockCriteria = [  ],
-                    UnlockCategories =
+                    SubCategories =
                     [
                         new() { Name = "Bloodstone Fen",
                             UnlockCriteria = [
@@ -342,7 +349,7 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                     UnlockCriteria = [
                         new CurrencyCriteria("Volatile Magic")
                     ],
-                    UnlockCategories =
+                    SubCategories =
                     [
                         new() { Name = "Domain of Istan",
                             UnlockCriteria = [
@@ -391,7 +398,7 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                     Name = "Icebrood Saga",
                     UnlockCriteria = [ 
                     ],
-                    UnlockCategories =
+                    SubCategories =
                     [
                         new() { Name = "Grothmar Valley",
                             UnlockCriteria = [
@@ -422,7 +429,7 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                         new SetCriteria("Privateer armor", 90),
                         new SetCriteria("Reinforced Scale armor", 90),
                     ],
-                    UnlockCategories =
+                    SubCategories =
                     [
                         new() { Name = "Ascalonian Catacombs", UnlockCriteria = [
                             new SetCriteria("Ascalonian Performer armor", 90),
@@ -471,7 +478,7 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                     UnlockCriteria = [
                         new SetCriteria("Assaulter's weapons"),
                     ],
-                    UnlockCategories =
+                    SubCategories =
                     [
                         new() { Name = "Secret Lair of the Snowmen", UnlockCriteria = [new ZoneCriteria("Secret Lair of the Snowmen")] },
                         new() { Name = "Old Lion's Court", UnlockCriteria = [new ZoneCriteria("Old Lion's Court")] },
@@ -483,7 +490,7 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                     Name = "Raids Heart of Thorns",
                     UnlockCriteria = [
                     ],
-                    UnlockCategories =
+                    SubCategories =
                     [
                         new() { Name = "Spirit Vale", UnlockCriteria = [new ZoneCriteria("Spirit Vale")] },
                         new() { Name = "Salvation Pass", UnlockCriteria = [new ZoneCriteria("Salvation Pass")] },
@@ -497,7 +504,7 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                     Name = "Raids Path of Fire",
                     UnlockCriteria = [
                     ],
-                    UnlockCategories =
+                    SubCategories =
                     [
                         new() { Name = "Hall of Chains", UnlockCriteria = [new ZoneCriteria("Hall of Chains")] },
                         new() { Name = "Mythwright Gambit", UnlockCriteria = [new ZoneCriteria("Mythwright Gambit")] },
@@ -511,7 +518,7 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                     Name = "Raids Icebrood Saga",
                     UnlockCriteria = [
                     ],
-                    UnlockCategories =
+                    SubCategories =
                     [
                         new() { Name = "Voice of the Fallen and Claw of the Fallen", UnlockCriteria = [new ZoneCriteria("Voice of the Fallen and Claw of the Fallen")] },
                         new() { Name = "Fraenir of Jormag", UnlockCriteria = [new ZoneCriteria("Fraenir of Jormag")] },
@@ -528,7 +535,7 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                     UnlockCriteria = [
                         new SetCriteria("Living Water weapons")
                     ],
-                    UnlockCategories =
+                    SubCategories =
                     [
                         new() { Name = "Aetherblade Hideout", UnlockCriteria = [new ZoneCriteria("Aetherblade Hideout")] },
                         new() { Name = "Xunlai Jade Junkyard", UnlockCriteria = [new ZoneCriteria("Xunlai Jade Junkyard")] },
@@ -543,7 +550,7 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                     UnlockCriteria = [
                         new SetCriteria("Sinful weapons")
                     ],
-                    UnlockCategories =
+                    SubCategories =
                     [
                         new() { Name = "Cosmic Observatory", UnlockCriteria = [new ZoneCriteria("Cosmic Observatory")] },
                         new() { Name = "Temple of Febe", UnlockCriteria = [new ZoneCriteria("Temple of Febe")] },
@@ -555,7 +562,7 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                     Name = "Raids Janthir Wilds",
                     UnlockCriteria = [
                     ],
-                    UnlockCategories =
+                    SubCategories =
                     [
                         new() { Name = "Mount Balrior", UnlockCriteria = [new ZoneCriteria("Mount Balrior")] },
                     ]
@@ -566,7 +573,7 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                     Name = "Raids Visions of Eternity",
                     UnlockCriteria = [
                     ],
-                    UnlockCategories =
+                    SubCategories =
                     [
                         new() { Name = "Guardian's Glade", UnlockCriteria = [new ZoneCriteria("Guardian's Glade")] },
                     ]
@@ -579,7 +586,7 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                         new TokenCriteria("Kurzick Weapon Chest"),
                         new SetCriteria("Obsidian weapons"),
                     ],
-                    UnlockCategories =
+                    SubCategories =
                     [
                         new() { Name = "PvP", UnlockCriteria = [
                             new ZoneCriteria("Heart of the Mists", 60),
@@ -638,7 +645,7 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                 {
                     Name = "Festivals",
                     UnlockCriteria = [  ],
-                    UnlockCategories =
+                    SubCategories =
                     [
                         new() { Name = "Lunar New Year", UnlockCriteria = [
                             new TokenCriteria("Token of the Dragon Ball Champion"),
@@ -706,7 +713,7 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                 {
                     Name = "Cities",
                     UnlockCriteria = [  ],
-                    UnlockCategories =
+                    SubCategories =
                     [
                         new() { Name = "Divinity's Reach", UnlockCriteria = [
                             new SetCriteria("Krytan weapons", 90),
@@ -792,7 +799,7 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                 {
                     Name = "Other",
                     UnlockCriteria = [  ],
-                    UnlockCategories =
+                    SubCategories =
                     [
                         new() { Name = "Elite Specializations", UnlockCriteria = [
                             new AchievementCategoryCriteria("Specializations"),
@@ -923,23 +930,12 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
             logger.LogInformation("achi {progress}/{total}", iAchi, achievementNodes.Count);
         }
 
-        foreach (var group in classifyConfig!.UnlockGroups)
+        foreach (var unlock in classifyConfig!.GetUnlocks().Select(x => x.Unlock))
         {
-
-            foreach (var unlock in group.Unlocks)
-            {
-                FillInApiData(unlock);
-            }
-            foreach (var category in group.UnlockCategories)
-            {
-                foreach (var unlock in category.Unlocks)
-                {
-                    FillInApiData(unlock);
-                }
-            }
+            FillInApiData(unlock);
         }
 
-        return classifyConfig;
+        return classifyConfig!;
     }
 
     private void ClassifyAchievement(Dictionary<string, UnlockContext> unlocksByName, string keyAchi, Node nodeAchi, int achievementIdInt)
@@ -1034,14 +1030,7 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
 
         foreach (var unlock in unlocksToClassify.Distinct())
         {
-            if (bestClassification.Group != null)
-            {
-                Categorize(bestClassification.Group.Name, null, unlock.Name, unlock.Node);
-            }
-            else if (bestClassification.GroupOfCategoryName != null && bestClassification.Category != null)
-            {
-                Categorize(bestClassification.GroupOfCategoryName, bestClassification.Category.Name, unlock.Name, unlock.Node);
-            }
+            Categorize(bestClassification.Path, unlock.Name, unlock.Node);
         }
     }
 
@@ -1076,22 +1065,26 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
 
         classifyConfig = CreateConfig();
 
+        mysticForgePath = ResolvePath("Other", "Mystic Forge");
+        otherGeneralPath = ResolvePath("Other", "General");
+        otherCraftingPath = ResolvePath("Other", "Crafting");
+
         var x = classifyConfig.GetUnlockCriteria<IItemOrCurrencyCriteria>().Select(x => x.GetIItemOrCurrency()).ToHashSet();
         graph.Edges.RemoveWhere(edge => x.Contains(edge.From) && x.Contains(edge.To));
 
         var zoneData = await wikiProcessingSource.GetZoneData(cancellationToken);
 
-        foreach (var group in classifyConfig.UnlockGroups)
+        // Only leaves represent actual places. Without this guard a node that merely happens to
+        // share a name with a zone (including a childless parent) would silently start absorbing
+        // achievement-category criteria and shift classification results.
+        foreach (var (node, _) in classifyConfig.GetNodes().Where(x => x.Node.SubCategories.Count == 0))
         {
-            foreach (var category in group.UnlockCategories)
+            var foundCategory = zoneData.Zones.SingleOrDefault(z => node.Name == z.Name);
+            if (foundCategory != null)
             {
-                var foundCategory = zoneData.Zones.SingleOrDefault(z => category.Name == z.Name);
-                if (foundCategory != null)
+                foreach (var achievementCategory in foundCategory.AchievementCategories)
                 {
-                    foreach (var achievementCategory in foundCategory.AchievementCategories)
-                    {
-                        category.UnlockCriteria.Add(new AchievementCategoryCriteria(achievementCategory));
-                    }
+                    node.UnlockCriteria.Add(new AchievementCategoryCriteria(achievementCategory));
                 }
             }
         }
@@ -1418,19 +1411,9 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
             if (current.Type == NodeType.Set)
             {
                 var criteria = setCriteria!.Where(s => s.Criteria.Matches(currentKey)).ToList();
-                if(criteria.Count > 0)
+                foreach (var match in criteria)
                 {
-                    var groupName = criteria[0].Categorization!.Group?.Name;
-                    var categoryName = criteria[0].Categorization!.Category?.Name ?? "";
-                    var groupOfCategoryName = criteria[0].Categorization!.GroupOfCategoryName ?? "";
-                    if (groupName != null)
-                    {
-                        possibleClassifications.Add(new(groupName, null, BuildPath(currentKey, parent), criteria[0].Criteria.Priority));
-                    }
-                    else
-                    {
-                        possibleClassifications.Add(new(groupOfCategoryName, categoryName, BuildPath(currentKey, parent), criteria[0].Criteria.Priority));
-                    }
+                    possibleClassifications.Add(new(match.Categorization!.Path, BuildPath(currentKey, parent), match.Criteria.Priority));
                 }
             }
 
@@ -1452,17 +1435,7 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                     {
                         foreach (var criteria in matchingCraftingMaterials)
                         {
-                            var groupName = criteria.Categorization!.Group?.Name;
-                            var categoryName = criteria.Categorization!.Category?.Name ?? "";
-                            var groupOfCategoryName = criteria.Categorization!.GroupOfCategoryName ?? "";
-                            if (groupName != null)
-                            {
-                                possibleClassifications.Add(new(groupName, null, BuildPath(currentKey, parent), criteria.Criteria.Priority));
-                            }
-                            else
-                            {
-                                possibleClassifications.Add(new(groupOfCategoryName, categoryName, BuildPath(currentKey, parent), criteria.Criteria.Priority));
-                            }
+                            possibleClassifications.Add(new(criteria.Categorization!.Path, BuildPath(currentKey, parent), criteria.Criteria.Priority));
                         }
                         continue;
                     }
@@ -1479,15 +1452,18 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
             if(current.Type == NodeType.NPC && searchState.Cost != null)
             {
                 var cost = searchState.Cost;
-                var festivals = classifyConfig!.UnlockGroups.Single(g => g.Name == "Festivals");
-                foreach (var category in festivals.UnlockCategories)
+                var festivals = classifyConfig!.Categories.FirstOrDefault(g => g.Name == "Festivals");
+                if (festivals != null)
                 {
-                    var validTokens = category.UnlockCriteria
-                        .OfType<TokenCriteria>().ToList();
-
-                    if (validTokens.Any(t => t.MatchesCost(cost)))
+                    foreach (var category in festivals.SubCategories)
                     {
-                        possibleClassifications.Add(new(festivals.Name, category.Name, BuildPath(currentKey, parent), 100));
+                        var validTokens = category.UnlockCriteria.OfType<TokenCriteria>().ToList();
+
+                        if (validTokens.Any(t => t.MatchesCost(cost)))
+                        {
+                            possibleClassifications.Add(
+                                new(new CategoryPath([festivals, category]), BuildPath(currentKey, parent), 100));
+                        }
                     }
                 }
 
@@ -1502,36 +1478,33 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                  value.Equals("Raid", StringComparison.OrdinalIgnoreCase)))
             {
                 var zone = currentKey;
-                foreach (var group in classifyConfig!.UnlockGroups)
+                foreach (var (node, path) in classifyConfig!.GetNodes())
                 {
-                    foreach (var category in group.UnlockCategories)
+                    // Does the node have a ZoneCriteria that matches this zone?
+                    var zoneCriteria = node.UnlockCriteria
+                        .OfType<ZoneCriteria>()
+                        .Where(z => z.Matches(zone)).ToList();
+
+                    if (zoneCriteria.Count == 0)
+                        continue;
+
+                    // Currencies and tokens valid for this node: its own, plus every ancestor's.
+                    var inheritedCriteria = path.GetInheritedCriteria().ToList();
+                    var validCurrencies = inheritedCriteria
+                        .OfType<CurrencyCriteria>().Concat(commonCurrencies).ToList();
+                    var validTokens = inheritedCriteria
+                        .OfType<TokenCriteria>().ToList();
+
+                    var cost = searchState.Cost;
+                    if (cost == null || (validCurrencies.Count == 0 && validTokens.Count == 0))
                     {
-                        // Does the category have a ZoneCriteria that matches this zone?
-                        var zoneCriteria = category.UnlockCriteria
-                            .OfType<ZoneCriteria>()
-                            .Where(z => z.Matches(zone)).ToList();
-
-                        if (zoneCriteria.Count == 0)
-                            continue;
-
-
-                        // Does the category have a CurrencyCriteria that matches this currency?
-                        var validCurrencies = category.UnlockCriteria
-                            .OfType<CurrencyCriteria>().Concat(group.UnlockCriteria.OfType<CurrencyCriteria>()).Concat(commonCurrencies).ToList();
-                        var validTokens = category.UnlockCriteria
-                            .OfType<TokenCriteria>().Concat(group.UnlockCriteria.OfType<TokenCriteria>()).ToList();
-
-                        var cost = searchState.Cost;
-                        if (cost == null || (validCurrencies.Count == 0 && validTokens.Count == 0))
-                        {
-                            possibleClassifications.Add(new(group.Name, category.Name, BuildPath(currentKey, parent), zoneCriteria.First().Priority));
-                        }
-                        else
-                        {
-                            var countOfValidCurrencies = validCurrencies.Count(c => c.Matches(cost));
-                            var countofValidTokens = validTokens.Count(t => t.MatchesCost(cost));
-                            possibleClassifications.Add(new(group.Name, category.Name, BuildPath(currentKey, parent), zoneCriteria.First().Priority + countOfValidCurrencies * 5 + countofValidTokens * 5));
-                        }
+                        possibleClassifications.Add(new(path, BuildPath(currentKey, parent), zoneCriteria.First().Priority));
+                    }
+                    else
+                    {
+                        var countOfValidCurrencies = validCurrencies.Count(c => c.Matches(cost));
+                        var countofValidTokens = validTokens.Count(t => t.MatchesCost(cost));
+                        possibleClassifications.Add(new(path, BuildPath(currentKey, parent), zoneCriteria.First().Priority + countOfValidCurrencies * 5 + countofValidTokens * 5));
                     }
                 }
             }
@@ -1540,17 +1513,7 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
             var foundTokenCriteria = tokenCriteria!.Where(c => edges.Any(e => c.Criteria.Matches(e.To))).ToList();
             foreach (var criteria in foundTokenCriteria)
             {
-                var groupName = criteria.Categorization!.Group?.Name;
-                var categoryName = criteria.Categorization!.Category?.Name ?? "";
-                var groupOfCategoryName = criteria.Categorization!.GroupOfCategoryName ?? "";
-                if (groupName != null)
-                {
-                    possibleClassifications.Add(new(groupName, null, BuildPath(currentKey, parent), criteria.Criteria.Priority));
-                }
-                else
-                {
-                    possibleClassifications.Add(new(groupOfCategoryName, categoryName, BuildPath(currentKey, parent), criteria.Criteria.Priority));
-                }
+                possibleClassifications.Add(new(criteria.Categorization!.Path, BuildPath(currentKey, parent), criteria.Criteria.Priority));
             }
 
             var isCurrentAToken = tokenCriteria!.Any(c => c.Criteria.Matches(currentKey));
@@ -1572,7 +1535,7 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                     edge.Metadata.TryGetValue("type", out var recipeType);
                     if (recipeType == null || !recipeType.Equals("promotion", StringComparison.OrdinalIgnoreCase))
                     {
-                        possibleClassifications.Add(new("Other", "Mystic Forge", BuildPath(currentKey, parent), 70));
+                        possibleClassifications.Add(new(mysticForgePath, BuildPath(currentKey, parent), 70));
                     }
                 }
 
@@ -1614,22 +1577,11 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                 
                     foreach (var criteria in combinedCriteria)
                     {
-                        var groupName = criteria.Categorization!.Group?.Name;
-                        var categoryName = criteria.Categorization!.Category?.Name ?? "";
-                        var groupOfCategoryName = criteria.Categorization!.GroupOfCategoryName ?? "";
                         int certainty = criteria.Criteria.Priority;
                         if (criteria.Criteria.AllowHistorical && isHistoricalCost == true)
                             certainty = 20;
-                        if (groupName != null)
-                        {
-                            possibleClassifications.Add(new(groupName, null, BuildPath(currentKey, parent), certainty));
-                            continue;
-                        }
-                        else
-                        {
-                            possibleClassifications.Add(new(groupOfCategoryName, categoryName, BuildPath(currentKey, parent), certainty));
-                            continue;
-                        }
+
+                        possibleClassifications.Add(new(criteria.Categorization!.Path, BuildPath(currentKey, parent), certainty));
                     }
                 }
 
@@ -1650,21 +1602,20 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
 
             if (current.Type == NodeType.Weapon && current.Metadata.TryGetValue("IsNamedExoticWeapon", out var rarity) && rarity.Equals("true", StringComparison.OrdinalIgnoreCase))
             {
-                possibleClassifications.Add(new("Other", "General", BuildPath(currentKey, parent), 90));
+                possibleClassifications.Add(new(otherGeneralPath, BuildPath(currentKey, parent), 90));
             }
         }
 
         if (craftingCandidates.Count > 0)
         {
-            possibleClassifications.Add(new("Other", "Crafting", [startKey], 50));
+            possibleClassifications.Add(new(otherCraftingPath, [startKey], 50));
         }
 
         var orderedMatches = possibleClassifications
-            .GroupBy(x => new { x.Group, x.Category })
+            .GroupBy(x => x.Category)
             .Select(g => new
             {
-                g.Key.Group,
-                g.Key.Category,
+                Category = g.Key,
                 MaxPriority = g.Max(x => x.Priority),
                 Count = g.Count(),
                 Items = g.ToList()
@@ -1675,8 +1626,8 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
 
         if (bestMatch != null)
         {
-            Categorize(bestMatch.Group, bestMatch.Category, startKey, startNode);
-            return (startKey, startNode, bestMatch.Items.First().Path, $"{bestMatch.Group}:{bestMatch.Category}", bestMatch.MaxPriority);
+            Categorize(bestMatch.Category, startKey, startNode);
+            return (startKey, startNode, bestMatch.Items.First().Path, bestMatch.Category.ToString(), bestMatch.MaxPriority);
         }
 
         return null;
@@ -1728,20 +1679,60 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
         return states.Add((cost, saleLocation));
     }
 
-    private void Categorize(string groupName, string? categoryName, string startKkey, Node startNode)
+    /// <summary>
+    /// Adds the unlock to the node the classification points at. The path is resolved by name
+    /// against the config, one level at a time.
+    /// </summary>
+    /// <summary>
+    /// Resolves a path from category names, for the hardcoded classification targets below.
+    /// Returns an empty path if any level is missing, which will not match any real node.
+    /// </summary>
+    private CategoryPath ResolvePath(params string[] names)
     {
-        var group = classifyConfig!.UnlockGroups.Single(g => g.Name.Equals(groupName, StringComparison.Ordinal));
-        if (categoryName == null)
+        var nodes = ImmutableArray.CreateBuilder<UnlockCategory>();
+
+        var siblings = classifyConfig!.Categories;
+        foreach (var name in names)
         {
-            if(!group.Unlocks.Any(u => u.Name.Equals(startKkey, StringComparison.Ordinal)))
-                group.Unlocks.Add(new Unlock(startKkey, startNode));
+            var match = siblings.FirstOrDefault(c => c.Name == name);
+            if (match == null)
+            {
+                logger.LogWarning("Hardcoded classification target {Names} is not in the config", string.Join("/", names));
+                return new CategoryPath([]);
+            }
+
+            nodes.Add(match);
+            siblings = match.SubCategories;
         }
-        else
+
+        return new CategoryPath(nodes.ToImmutable());
+    }
+
+    private void Categorize(CategoryPath path, string unlockKey, Node startNode)
+    {
+        var levels = path.Nodes.Select(n => n.Name).ToList();
+
+        var siblings = classifyConfig!.Categories;
+        UnlockCategory? target = null;
+
+        for (var i = 0; i < levels.Count && siblings is not null; i++)
         {
-            var category = group.UnlockCategories.Single(c => c.Name.Equals(categoryName, StringComparison.Ordinal));
-            if (!category.Unlocks.Any(u => u.Name.Equals(startKkey, StringComparison.Ordinal)))
-                category.Unlocks.Add(new Unlock(startKkey, startNode));
+            target = siblings.FirstOrDefault(c => c.Name.Equals(levels[i], StringComparison.Ordinal));
+            if (target == null)
+            {
+                logger.LogWarning("Cannot resolve {Path} while categorizing {Unlock}: {Level} not found",
+                    path, unlockKey, levels[i]);
+                return;
+            }
+
+            siblings = target.SubCategories;
         }
+
+        if (target == null)
+            return;
+
+        if (!target.Unlocks.Any(u => u.Name.Equals(unlockKey, StringComparison.Ordinal)))
+            target.Unlocks.Add(new Unlock(unlockKey, startNode));
     }
 
     private static List<string> BuildPath(string endKey, Dictionary<string, string?> parent)
@@ -1760,10 +1751,13 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
     }
 }
 
-internal sealed class PossibleClassification(string group, string? category, List<string> path, int priority)
+internal sealed class PossibleClassification(CategoryPath category, List<string> path, int priority)
 {
-    public string Group { get; internal set; } = group;
-    public string? Category { get; internal set; } = category;
+    /// <summary>The node this classification points at.</summary>
+    public CategoryPath Category { get; internal set; } = category;
+
+    /// <summary>The acquisition-graph path that led here.</summary>
     public List<string> Path { get; internal set; } = path;
+
     public int Priority { get; internal set; } = priority;
 }

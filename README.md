@@ -24,7 +24,7 @@ The data is stored locally in order to replay the processing in an easy way with
 3. UnlockClassifier: does the actual classification, produces a `ClassifyConfig`, containing all classified unlocks in `src/cache-root/classifier-cache`.
    - It will display the differences between the existing and the newly generated `ClassifyConfig`. The user is asked to confirm in order to see if the classification algorithm changes don't break anything.
    - Running locally will ask for confirmation
-4. WebsiteGenerator: generates the static pages, one per `UnlockGroup` and `UnlockGroup/UnlockCategory` combination.
+4. WebsiteGenerator: generates the static pages, one per node in the `ClassifyConfig` tree, at a URL mirroring its path from the root (e.g. `/heart-of-thorns/auric-basin/`).
    - Running locally will run a local static files server `http://localhost:5000` with hot reload.
    - Running in production mode will just generate the static files, this will be used in the build pipeline.
 

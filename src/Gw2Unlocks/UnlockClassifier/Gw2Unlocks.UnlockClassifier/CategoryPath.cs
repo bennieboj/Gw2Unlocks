@@ -2,7 +2,7 @@ using System;
 using System.Collections.Immutable;
 using System.Linq;
 
-namespace Gw2Unlocks.UnlockClassifier.Implementation;
+namespace Gw2Unlocks.UnlockClassifier;
 
 /// <summary>
 /// The location of a single node in the <see cref="ClassifyConfig"/> tree, as the chain of
@@ -15,7 +15,7 @@ namespace Gw2Unlocks.UnlockClassifier.Implementation;
 /// unequal. Correct equality matters: the classifier groups candidate classifications by this
 /// value and picks the most-supported one, so reference equality would degrade that ranking.
 /// </remarks>
-internal readonly struct CategoryPath : IEquatable<CategoryPath>
+public readonly struct CategoryPath : IEquatable<CategoryPath>
 {
     /// <summary>ASCII unit separator; cannot occur in a category name, so it cannot make two distinct paths compare equal.</summary>
     private const char Separator = '';

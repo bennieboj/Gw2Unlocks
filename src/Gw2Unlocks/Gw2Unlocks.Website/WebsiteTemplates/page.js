@@ -374,32 +374,26 @@ function updateSidebar() {
   // All
   let allUnlocked = 0;
   let allTotal = 0;
-  // Groups
-  for (const [slug, map] of Object.entries(unlockMap.groups)) {
-    const { unlocked, total } = count(map);
-
-    const el = document.querySelector(`[data-group="${slug}"] .sidebar-unlocked`);
-    if (el) el.textContent = unlocked;
-    const totalEl = document.querySelector(`[data-group="${slug}"] .sidebar-total`);
-    if (totalEl) totalEl.textContent = total;
-
-    allUnlocked += unlocked;
-    allTotal += total;
-  }
-  const elAll = document.querySelector(`[data-group="all"] .sidebar-unlocked`);
-  if (elAll) elAll.textContent = allUnlocked;
-  const totalElAll = document.querySelector(`[data-group="all"] .sidebar-total`);
-  if (totalElAll) totalElAll.textContent = allTotal;
-
-  // Categories
+  // Every node, keyed by its full slug path. A root key contains no "/" and covers its whole
+  // branch, so only those are summed for the "All Unlocks" total - summing every node would
+  // count nested unlocks more than once.
   for (const [slug, map] of Object.entries(unlockMap.categories)) {
     const { unlocked, total } = count(map);
 
-    const el = document.querySelector(`[data-category="${slug}"] .sidebar-unlocked`);
+    const el = document.querySelector(`[data-path="${slug}"] .sidebar-unlocked`);
     if (el) el.textContent = unlocked;
-    const totalEl = document.querySelector(`[data-category="${slug}"] .sidebar-total`);
+    const totalEl = document.querySelector(`[data-path="${slug}"] .sidebar-total`);
     if (totalEl) totalEl.textContent = total;
+
+    if (!slug.includes("/")) {
+      allUnlocked += unlocked;
+      allTotal += total;
+    }
   }
+  const elAll = document.querySelector(`[data-path="all"] .sidebar-unlocked`);
+  if (elAll) elAll.textContent = allUnlocked;
+  const totalElAll = document.querySelector(`[data-path="all"] .sidebar-total`);
+  if (totalElAll) totalElAll.textContent = allTotal;
 
   // Highlight current page
   const currentSlug = document.body.dataset.currentSlug;
@@ -411,9 +405,7 @@ function updateSidebar() {
     .querySelectorAll(".group-link, .category-link")
     .forEach(x => x.classList.remove("active"));
 
-  const activeItem = document.querySelector(
-    `[data-group="${currentSlug}"], [data-category="${currentSlug}"]`
-  );
+  const activeItem = document.querySelector(`[data-path="${currentSlug}"]`);
 
   if (activeItem) {
     activeItem.classList.add("active");

@@ -112,28 +112,16 @@
 
               <div class="sidebar-divider"></div>
 
-              <div class="group-link" data-group="all">
+              <div class="group-link" data-path="all">
                   <a href="/">
                       All Unlocks
                       (<span class="sidebar-unlocked">?</span> / <span class="sidebar-total">total</span>)
                   </a>
               </div>
-              {{ for group in Sidebar }}
-              <div class="group-link" data-group="{{ group.Slug }}">
-                  <a href="{{ group.Url }}">
-                      {{ group.Name }}
-                      (<span class="sidebar-unlocked">?</span> / <span class="sidebar-total">total</span>)
-                      {{ if group.IsWip }}
-                      <img class="wip-icon"
-                           src="/img/wip.png"
-                           alt="Work in progress"
-                           title="Work in progress" />
-                      {{ end }}
-                  </a>
-              </div>
-
-              {{ for category in group.Categories }}
-              <div class="category-link" data-category="{{ category.Slug }}">
+              {{ for category in Sidebar }}
+              <div class="{{ if category.Depth == 0 }}group-link{{ else }}category-link{{ end }}"
+                   data-path="{{ category.Slug }}"
+                   style="padding-left: {{ category.Depth * 14 }}px">
                   <a href="{{ category.Url }}">
                       {{ category.Name }}
                       (<span class="sidebar-unlocked">?</span> / <span class="sidebar-total">total</span>)
@@ -145,7 +133,6 @@
                       {{ end }}
                   </a>
               </div>
-              {{ end }}
               {{ end }}
           </div>
           <div class="content">

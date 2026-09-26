@@ -7,6 +7,7 @@ using Scriban;
 using Scriban.Runtime;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -166,11 +167,8 @@ internal sealed class SiteGeneratorService(
 
         var sidebar = BuildSidebar(config);
 
-        var allUnlocks = config.UnlockGroups
-            .SelectMany(g =>
-                g.Unlocks
-                .Concat(g.UnlockCategories.SelectMany(c => c.Unlocks)))
-            .ToList();
+        var allUnlocks = new Collection<Unlock>(
+            [.. config.Categories.SelectMany(g => g.GetUnlocksWithDescendants())]);
 
         var css = await File.ReadAllTextAsync("WebsiteTemplates/page.css", stoppingToken);
         var js = await File.ReadAllTextAsync("WebsiteTemplates/page.js", stoppingToken);
@@ -201,66 +199,64 @@ internal sealed class SiteGeneratorService(
 
         urls.Add("/");
 
-        foreach (var group in config.UnlockGroups)
+        foreach (var category in config.Categories)
         {
-            var groupSlug = SlugHelper.Slugify(group.Name);
-
-            var groupUnlocks = group.Unlocks
-                .Concat(group.UnlockCategories.SelectMany(c => c.Unlocks))
-                .ToList();
-
-            var groupUrl = $"/{groupSlug}/";
-
-            GeneratePage(
-                new PageModel
-                {
-                    Css = css,
-                    Js = js,
-                    Title = $"GW2 {group.Name} Unlocks",
-                    Description = $"A tool for displaying all Guild Wars 2 unlocks in categories. Current category: {group.Name}.",
-                    Url = groupUrl,
-                    Unlocks = groupUnlocks,
-                    TypeGroups = BuildTypeGroups(groupUnlocks),
-                    Sidebar = sidebar,
-                    UnlockMapJson = unlockMapJson,
-                    Group = group
-                },
-                Path.Combine(wwwRootTempPath, groupSlug, "index.html")
-            );
-
-            urls.Add(groupUrl);
-
-            foreach (var category in group.UnlockCategories)
-            {
-                var categorySlug = SlugHelper.Slugify(category.Name);
-
-                var categoryUrl = $"/{groupSlug}/{categorySlug}/";
-
-                GeneratePage(
-                        new PageModel
-                        {
-                            Css = css,
-                            Js = js,
-                            Title = $"GW2 {category.Name} Unlocks",
-                            Description = $"A tool for displaying all Guild Wars 2 unlocks in categories. Current category: {category.Name}.",
-                            Url = categoryUrl,
-                            Unlocks = [.. category.Unlocks],
-                            TypeGroups = BuildTypeGroups([.. category.Unlocks]),
-                            Sidebar = sidebar,
-                            UnlockMapJson = unlockMapJson,
-                            Group = group,
-                            Category = category
-                        },
-                        Path.Combine(wwwRootTempPath, groupSlug, categorySlug, "index.html")
-                    );
-
-                urls.Add(categoryUrl);
-            }
+            GenerateCategoryPage(category, "", category.Name, css, js, sidebar, unlockMapJson, wwwRootTempPath, urls);
         }
 
         GenerateSiteMap(wwwRootTempPath, urls);
 
         logger.LogInformation("Static site generation complete.");
+    }
+
+    /// <summary>
+    /// Generates the page for one node and, recursively, for each of its subcategories. The URL
+    /// and the unlock-map key both use the full slug path from the root, so two categories with
+    /// the same name at different depths cannot collide.
+    /// </summary>
+    private static void GenerateCategoryPage(
+        UnlockCategory category,
+        string parentSlug,
+        string titlePath,
+        string css,
+        string js,
+        List<SidebarCategoryModel> sidebar,
+        string unlockMapJson,
+        string wwwRootTempPath,
+        List<string> urls)
+    {
+        var slug = SlugHelper.Slugify(category.Name);
+        var pathSlug = string.IsNullOrEmpty(parentSlug) ? slug : $"{parentSlug}/{slug}";
+        var url = $"/{pathSlug}/";
+
+        // A node's page shows its own unlocks plus those of everything beneath it. For a leaf
+        // this is just its own unlocks, which is what the old two-level generator produced.
+        var unlocks = category.GetUnlocksWithDescendants();
+
+        GeneratePage(
+            new PageModel
+            {
+                Css = css,
+                Js = js,
+                Title = $"GW2 {category.Name} Unlocks",
+                Description = $"A tool for displaying all Guild Wars 2 unlocks in categories. Current category: {titlePath}.",
+                Url = url,
+                Unlocks = unlocks,
+                TypeGroups = BuildTypeGroups(unlocks),
+                Sidebar = sidebar,
+                UnlockMapJson = unlockMapJson,
+                Category = category,
+                CurrentSlug = pathSlug
+            },
+            Path.Combine(wwwRootTempPath, pathSlug.Replace('/', Path.DirectorySeparatorChar), "index.html")
+        );
+
+        urls.Add(url);
+
+        foreach (var subCategory in category.SubCategories)
+        {
+            GenerateCategoryPage(subCategory, pathSlug, $"{titlePath} > {subCategory.Name}", css, js, sidebar, unlockMapJson, wwwRootTempPath, urls);
+        }
     }
 
     public static void GenerateSiteMap(string publicPath, List<string> urls)
@@ -288,54 +284,30 @@ internal sealed class SiteGeneratorService(
     {
         var map = new UnlockMapModel();
 
-        foreach (var group in config.UnlockGroups)
+        foreach (var (node, path) in config.GetPathedCategories())
         {
-            var groupKey = SlugHelper.Slugify(group.Name);
+            var key = string.Join("/", path.Select(SlugHelper.Slugify));
 
-            var groupDict = new Dictionary<UnlockClassifier.Type, List<int>>();
-            var allGroupUnlocks = group.Unlocks.Concat(group.UnlockCategories.SelectMany(c => c.Unlocks));
-            foreach (var unlock in allGroupUnlocks)
+            // A node's entry covers its whole subtree, matching what the old generator produced
+            // for a group (its own unlocks plus all of its categories').
+            var dict = new Dictionary<UnlockClassifier.Type, List<int>>();
+            foreach (var unlock in node.GetUnlocksWithDescendants())
             {
                 if (unlock.ApiData == null) continue;
 
                 var type = unlock.ApiData.Type;
                 var id = unlock.ApiData.Id;
 
-                if (!groupDict.TryGetValue(type, out var list))
+                if (!dict.TryGetValue(type, out var list))
                 {
                     list = [];
-                    groupDict[type] = list;
+                    dict[type] = list;
                 }
 
                 list.Add(id);
             }
 
-            map.Groups[groupKey] = groupDict;
-
-            foreach (var category in group.UnlockCategories)
-            {
-                var catKey = SlugHelper.Slugify(category.Name);
-
-                var catDict = new Dictionary<UnlockClassifier.Type, List<int>>();
-
-                foreach (var unlock in category.Unlocks)
-                {
-                    if (unlock.ApiData == null) continue;
-
-                    var type = unlock.ApiData.Type;
-                    var id = unlock.ApiData.Id;
-
-                    if (!catDict.TryGetValue(type, out var list))
-                    {
-                        list = [];
-                        catDict[type] = list;
-                    }
-
-                    list.Add(id);
-                }
-
-                map.Categories[catKey] = catDict;
-            }
+            map.Categories[key] = dict;
         }
 
         return map;
@@ -378,7 +350,7 @@ internal sealed class SiteGeneratorService(
             { UnlockClassifier.Type.Novelty, "Novelties" }
         };
 
-    private static List<TypeGroupModel> BuildTypeGroups(List<Unlock> unlocks)
+    private static List<TypeGroupModel> BuildTypeGroups(Collection<Unlock> unlocks)
     {
         return [.. unlocks
             .Where(u => u.ApiData != null)
@@ -404,24 +376,21 @@ internal sealed class SiteGeneratorService(
             })];
     }
 
-    static List<SidebarGroupModel> BuildSidebar(ClassifyConfig config)
+    static List<SidebarCategoryModel> BuildSidebar(ClassifyConfig config)
     {
-        return [.. config.UnlockGroups
-            .Select(group => new SidebarGroupModel
+        return [.. config.GetPathedCategories()
+            .Select(x =>
             {
-                Name = group.Name,
-                Url = $"/{SlugHelper.Slugify(group.Name)}/",
-                Slug = SlugHelper.Slugify(group.Name),
-                IsWip = group.Unlocks.Count == 0 && group.UnlockCategories.All(c => c.Unlocks.Count == 0),
+                var slugs = x.Path.Select(SlugHelper.Slugify).ToList();
 
-                Categories = [.. group.UnlockCategories
-                    .Select(category => new SidebarCategoryModel
-                    {
-                        Name = category.Name,
-                        Url = $"/{SlugHelper.Slugify(group.Name)}/{SlugHelper.Slugify(category.Name)}/",
-                        Slug = SlugHelper.Slugify(category.Name),
-                        IsWip = category.Unlocks.Count == 0
-                    })]
+                return new SidebarCategoryModel
+                {
+                    Name = x.Node.Name,
+                    Url = $"/{string.Join("/", slugs)}/",
+                    Slug = string.Join("/", slugs),
+                    IsWip = !x.Node.HasAnyUnlocks(),
+                    Depth = slugs.Count - 1,
+                };
             })];
     }
 

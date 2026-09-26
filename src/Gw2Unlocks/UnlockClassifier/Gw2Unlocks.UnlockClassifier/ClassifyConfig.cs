@@ -9,15 +9,20 @@ namespace Gw2Unlocks.UnlockClassifier;
 
 public record ClassifyConfig
 {
-    public Collection<UnlockGroup> UnlockGroups { get; init; } = [];
+    public Collection<UnlockCategory> Categories { get; init; } = [];
 }
-public record UnlockGroup()
+
+/// <summary>
+/// A node in the classification tree. Nodes nest through <see cref="SubCategories"/>, so a node
+/// may hold unlocks directly, hold subcategories, or both.
+/// </summary>
+public record UnlockCategory()
 {
     public string Name { get; init; } = "";
     [JsonIgnore]
     public Collection<UnlockCriteria> UnlockCriteria { get; init; } = [];
 
-    public Collection<UnlockCategory> UnlockCategories { get; init; } = [];
+    public Collection<UnlockCategory> SubCategories { get; init; } = [];
     public Collection<Unlock> Unlocks { get; init; } = [];
 
     public override string ToString()
@@ -26,24 +31,12 @@ public record UnlockGroup()
 
         sb.Append(CultureInfo.InvariantCulture, $"{Name}: {Unlocks.Count}");
 
-        foreach (var category in UnlockCategories.Where(c => c.Unlocks.Count > 0))
+        foreach (var subCategory in SubCategories.Where(c => c.Unlocks.Count > 0))
         {
-            sb.Append(CultureInfo.InvariantCulture, $", {category.Name}: {category.Unlocks.Count}");
+            sb.Append(CultureInfo.InvariantCulture, $", {subCategory.Name}: {subCategory.Unlocks.Count}");
         }
 
         return sb.ToString();
-    }
-}
-public record UnlockCategory()
-{
-    public string Name { get; init; } = "";
-    [JsonIgnore]
-    public Collection<UnlockCriteria> UnlockCriteria { get; init; } = [];
-    public Collection<Unlock> Unlocks { get; init; } = [];
-
-    public override string ToString()
-    {
-        return $"{Name}: {Unlocks.Count}";
     }
 }
 

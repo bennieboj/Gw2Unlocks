@@ -1,5 +1,6 @@
 ﻿using Gw2Unlocks.UnlockClassifier;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace Gw2Unlocks.Website;
 
@@ -13,24 +14,22 @@ internal sealed class PageModel
 
     public string Url { get; set; } = "";
 
-    public List<Unlock> Unlocks { get; set; } = [];
+    public Collection<Unlock> Unlocks { get; set; } = [];
 
-    public List<SidebarGroupModel> Sidebar { get; set; } = [];
+    public List<SidebarCategoryModel> Sidebar { get; set; } = [];
 
-    public UnlockGroup? Group { get; set; }
-
+    /// <summary>The node this page is for, or null for the "all unlocks" page.</summary>
     public UnlockCategory? Category { get; set; }
 
     public List<TypeGroupModel> TypeGroups { get; set; } = [];
 
     public string UnlockMapJson { get; set; } = "NOTJSON";
 
-    public string CurrentSlug =>
-        Category != null
-            ? SlugHelper.Slugify(Category.Name)
-            : Group != null
-                ? SlugHelper.Slugify(Group.Name)
-                : "all";
+    /// <summary>
+    /// Slash-joined slugs from the root to the current node, e.g. "heart-of-thorns/auric-basin".
+    /// Matches the key used in the unlock map and the data-path attributes in the template.
+    /// </summary>
+    public string CurrentSlug { get; set; } = "all";
 }
 
 internal sealed class TypeGroupModel
@@ -75,32 +74,31 @@ internal sealed class UnlockRenderModel
     public Type Type { get; set; } = Type.None;
 }
 
-internal sealed class SidebarGroupModel
-{
-    public string Name { get; set; } = "";
-
-    public string Url { get; set; } = "";
-
-    public string Slug { get; set; } = "";
-    
-    public bool IsWip { get; set; }
-
-    public List<SidebarCategoryModel> Categories { get; set; } = [];
-}
-
+/// <summary>
+/// One entry in the sidebar. Nested categories carry their own children, so the sidebar mirrors
+/// the shape of the classification tree at any depth.
+/// </summary>
 internal sealed class SidebarCategoryModel
 {
     public string Name { get; set; } = "";
 
     public string Url { get; set; } = "";
 
+    /// <summary>Slash-joined slugs from the root, used as the key into the unlock map.</summary>
     public string Slug { get; set; } = "";
 
     public bool IsWip { get; set; }
+
+    /// <summary>Indent level in the sidebar, 0 for a root node.</summary>
+    public int Depth { get; set; }
 }
 
 internal sealed class UnlockMapModel
 {
-    public Dictionary<string, Dictionary<Type, List<int>>> Groups { get; set; } = [];
+    /// <summary>
+    /// Unlock ids per node, keyed by the node's full slug path from the root, e.g.
+    /// "heart-of-thorns/auric-basin". Each entry covers the node and everything beneath it, so a
+    /// root entry is the total for that whole branch.
+    /// </summary>
     public Dictionary<string, Dictionary<Type, List<int>>> Categories { get; set; } = [];
 }
