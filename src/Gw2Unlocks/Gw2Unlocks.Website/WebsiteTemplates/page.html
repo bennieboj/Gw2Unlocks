@@ -165,7 +165,8 @@
                           {{ end }}
                           {{ if u.RewardIcon != null }}
                           <div class="reward-badge">
-                              <img src="{{ u.RewardIcon }}"
+                              <img loading="lazy"
+                                   src="{{ u.RewardIcon }}"
                                    alt="{{ u.RewardName | html.escape }}"
                                    title="{{ u.RewardName | html.escape }}" />
                           </div>
