@@ -69,8 +69,13 @@ internal sealed class ClassifierService(
         var oldNodes = oldConfig.GetNodes().ToDictionary(x => x.Path.Key, x => x.Node);
         var newNodes = newConfig.GetNodes().ToDictionary(x => x.Path.Key, x => x.Node);
 
-        var keys = oldNodes.Keys.Union(newNodes.Keys)
-            .OrderBy(x => x, StringComparer.Ordinal);
+        // Walk the new config in its own order so the diff reads in the same order as the site,
+        // then append nodes that only the old config has.
+        var keys = newConfig.GetNodes()
+            .Select(x => x.Path.Key)
+            .Concat(oldConfig.GetNodes()
+                .Select(x => x.Path.Key)
+                .Where(k => !newNodes.ContainsKey(k)));
 
         foreach (var key in keys)
         {
@@ -167,8 +172,8 @@ internal sealed class ClassifierService(
         var oldNames = oldUnlocks.Select(x => x.Name).ToHashSet();
         var newNames = newUnlocks.Select(x => x.Name).ToHashSet();
 
-        var added = newNames.Except(oldNames).OrderBy(x => x);
-        var removed = oldNames.Except(newNames).OrderBy(x => x);
+        var added = newNames.Except(oldNames).OrderBy(x => x, StringComparer.Ordinal);
+        var removed = oldNames.Except(newNames).OrderBy(x => x, StringComparer.Ordinal);
 
         foreach (var name in added)
         {

@@ -81,343 +81,485 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
             [
                 new()
                 {
-                    Name = "Heart of Thorns",
-                    UnlockCriteria = [  ],
+                    Name = "Expansions & Living World",
+                    UnlockCriteria = [],
                     SubCategories =
                     [
-                        new() { Name = "Verdant Brink", UnlockCriteria = [
-                            new ZoneCriteria("Verdant Brink"),
-                            new CurrencyCriteria("Airship Part")
-                            ] },
-                        new() { Name = "Auric Basin", UnlockCriteria = [
-                            new ZoneCriteria("Auric Basin"),
-                            new CurrencyCriteria("Lump of Aurillium"),
-                            new CraftingMaterialCriteria("Auric Ingot")
-                            ] },
-                        new() { Name = "Tangled Depths", UnlockCriteria = [
-                            new ZoneCriteria("Tangled Depths"),
-                            new CurrencyCriteria("Ley Line Crystal"),
-                            new TokenCriteria("Chak Egg"),
-                            ] },
-                        new() { Name = "Dragon's Stand", UnlockCriteria = [ new ZoneCriteria("Dragon's Stand"), new TokenCriteria("Crystalline Ore"),
-                            // some items in DS sell items for the other HoT currencies
-                            new CurrencyCriteria("Airship Part"), new CurrencyCriteria("Lump of Aurillium"), new CurrencyCriteria("Ley Line Crystal")
-                            ] },
+                    new()
+                    {
+                        Name = "LW Season 1",
+                        UnlockCriteria = [  ],
+                        SubCategories =
+                        [
+                            new() { Name = "Season 1", UnlockCriteria = [
+                                new ZoneCriteria("The Battle For Lion's Arch"),
+                                new TokenCriteria("Found Heirloom"),
+                                new TokenCriteria("Fused Gauntlet Ticket", 0, false),
+                                new AchievementCategoryCriteria("Flame and Frost"),
+                                new AchievementCategoryCriteria("Lion's Memory"),
+                                new AchievementCategoryCriteria("Sky Pirates"),
+                                new AchievementCategoryCriteria("Clockwork Chaos"),
+                                new AchievementCategoryCriteria("Emissary Vorpp's Field Assistant"),
+                                new AchievementCategoryCriteria("The Nightmares Within"),
+                                new AchievementCategoryCriteria("The Nightmare Is Over"),
+                                new AchievementCategoryCriteria("Tower of Nightmares"),
+                                new AchievementCategoryCriteria("Escape from Lion's Arch"),
+                                new AchievementCategoryCriteria("The Battle for Lion's Arch")
+                                ] },
+                        ]
+                    },
+
+
+                    new()
+                    {
+                        Name = "LW Season 2",
+                        UnlockCriteria = [  ],
+                        SubCategories =
+                        [
+                            new() { Name = "Dry Top", UnlockCriteria = [ new ZoneCriteria("Dry Top"), new CurrencyCriteria("Unidentified Fossilized Insect") ] },
+                            new() { Name = "The Silverwastes", UnlockCriteria = [ new ZoneCriteria("The Silverwastes") ] },
+                        ]
+                    },
+
+
+                    new()
+                    {
+                        Name = "Heart of Thorns",
+                        UnlockCriteria = [  ],
+                        SubCategories =
+                        [
+                            new() { Name = "Verdant Brink", UnlockCriteria = [
+                                new ZoneCriteria("Verdant Brink"),
+                                new CurrencyCriteria("Airship Part")
+                                ] },
+                            new() { Name = "Auric Basin", UnlockCriteria = [
+                                new ZoneCriteria("Auric Basin"),
+                                new CurrencyCriteria("Lump of Aurillium"),
+                                new CraftingMaterialCriteria("Auric Ingot")
+                                ] },
+                            new() { Name = "Tangled Depths", UnlockCriteria = [
+                                new ZoneCriteria("Tangled Depths"),
+                                new CurrencyCriteria("Ley Line Crystal"),
+                                new TokenCriteria("Chak Egg"),
+                                ] },
+                            new() { Name = "Dragon's Stand", UnlockCriteria = [ new ZoneCriteria("Dragon's Stand"), new TokenCriteria("Crystalline Ore"),
+                                // some items in DS sell items for the other HoT currencies
+                                new CurrencyCriteria("Airship Part"), new CurrencyCriteria("Lump of Aurillium"), new CurrencyCriteria("Ley Line Crystal")
+                                ] },
+                        ]
+                    },
+
+
+                    new()
+                    {
+                        Name = "LW Season 3",
+                        UnlockCriteria = [  ],
+                        SubCategories =
+                        [
+                            new() { Name = "Bloodstone Fen",
+                                UnlockCriteria = [
+                                    new ZoneCriteria("Bloodstone Fen"),
+                                    new TokenCriteria("Blood Ruby")
+                                ]
+                            },
+                            new() { Name = "Ember Bay",
+                                UnlockCriteria = [
+                                    new ZoneCriteria("Ember Bay"),
+                                    new TokenCriteria("Petrified Wood")
+                                ]
+                            },
+                            new() { Name = "Bitterfrost Frontier",
+                                UnlockCriteria = [
+                                    new ZoneCriteria("Bitterfrost Frontier"),
+                                    new TokenCriteria("Fresh Winterberry")
+                                ]
+                            },
+                            new() { Name = "Lake Doric",
+                                UnlockCriteria = [
+                                    new ZoneCriteria("Lake Doric"),
+                                    new TokenCriteria("Jade Shard")
+                                ]
+                            },
+                            new() { Name = "Draconis Mons",
+                                UnlockCriteria = [
+                                    new ZoneCriteria("Draconis Mons"),
+                                    new TokenCriteria("Fire Orchid Blossom")
+                                ]
+                            },
+                            new() { Name = "Siren's Landing",
+                                UnlockCriteria = [
+                                    new ZoneCriteria("Siren's Landing"),
+                                    new TokenCriteria("Orrian Pearl")
+                                ]
+                            },
+                        ]
+                    },
+
+
+                    new()
+                    {
+                        Name = "Path of Fire",
+                        UnlockCriteria = [
+                            new CraftingMaterialCriteria("Sliver of Twitching Forgemetal"),
+                            new CraftingMaterialCriteria("Congealed Putrescence"),
+                            new CraftingMaterialCriteria("Eye of Kormir"),
+                            new CraftingMaterialCriteria("Ley-Infused Sand"),
+                            new CraftingMaterialCriteria("Powdered Rose Quartz"),
+                            new CraftingMaterialCriteria("Eye of Kormir"),
+                            //new CraftingMaterialCriteria("Inscription of the Spearmarshal"),
+                            new CurrencyCriteria("Trade Contract"),
+                            new CurrencyCriteria("Elegy Mosaic"),
+                            new SetCriteria("Elonian weapons"),
+                            new SetCriteria("Awakened weapons"),
+                            new SetCriteria("Bounty Hunter's armor"),
+                        ],
+                        SubCategories =
+                        [
+                            new() {
+                                Name = "Crystal Oasis",
+                                UnlockCriteria = [
+                                    new ZoneCriteria("Crystal Oasis"), new CurrencyCriteria("Casino Coin")
+                                ]
+                            },
+                            new() { Name = "Desert Highlands", UnlockCriteria = [ new ZoneCriteria("Desert Highlands") ] },
+                            new() { Name = "Elon Riverlands", UnlockCriteria = [ new ZoneCriteria("Elon Riverlands") ] },
+                            new() { Name = "The Desolation", UnlockCriteria = [ new ZoneCriteria("The Desolation") ] },
+                            new() { Name = "Domain of Vabbi", UnlockCriteria = [ new ZoneCriteria("Domain of Vabbi") ] },
+                        ]
+                    },
+
+
+                    new()
+                    {
+                        Name = "LW Season 4",
+                        UnlockCriteria = [
+                            new CurrencyCriteria("Volatile Magic")
+                        ],
+                        SubCategories =
+                        [
+                            new() { Name = "Domain of Istan",
+                                UnlockCriteria = [
+                                    new ZoneCriteria("Domain of Istan"),
+                                    new TokenCriteria("Kralkatite Ore"),
+                                    new SetCriteria("Stellar weapons")
+                                ]
+                            },
+                            new() { Name = "Sandswept Isles",
+                                UnlockCriteria = [
+                                    new ZoneCriteria("Sandswept Isles"),
+                                    new TokenCriteria("Difluorite Crystal")
+                                ]
+                            },
+                            new() { Name = "Domain of Kourna",
+                                UnlockCriteria = [
+                                new ZoneCriteria("Domain of Kourna"),
+                                new TokenCriteria("Inscribed Shard")
+                                ]
+                            },
+                            new() { Name = "Jahai Bluffs",
+                                UnlockCriteria = [
+                                    new ZoneCriteria("Jahai Bluffs"),
+                                    new TokenCriteria("Lump of Mistonium")
+                                ]
+                            },
+                            new() { Name = "Thunderhead Peaks",
+                                UnlockCriteria = [
+                                    new ZoneCriteria("Thunderhead Peaks"),
+                                    new TokenCriteria("Branded Mass")
+                                ]
+                            },
+                            new() { Name = "Dragonfall",
+                                UnlockCriteria = [
+                                    new ZoneCriteria("Dragonfall"),
+                                    new TokenCriteria("Mistborn Mote"),
+                                    new SetCriteria("Mist Shard armor"),
+                                    //new TokenCriteria("Gift of Aurene (container)")
+                                ]
+                            },
+                        ]
+                    },
+
+
+                    new()
+                    {
+                        Name = "End of Dragons",
+                        UnlockCriteria = [ new CurrencyCriteria("Ancient Coin") ],
+                        SubCategories =
+                        [
+                            new() { Name = "Seitung Province", UnlockCriteria = [ new ZoneCriteria("Seitung Province") ] },
+                            new() { Name = "New Kaineng City", UnlockCriteria = [ new ZoneCriteria("New Kaineng City") ] },
+                            new() { Name = "The Echovald Wilds", UnlockCriteria = [ new ZoneCriteria("The Echovald Wilds") ] },
+                            new() { Name = "Arborstone", UnlockCriteria = [ new ZoneCriteria("Arborstone"), new CurrencyCriteria("Canach Coin") ] },
+                            new() { Name = "Dragon's End", UnlockCriteria = [ new ZoneCriteria("Dragon's End") ] },
+                            new() { Name = "Gyala Delve", UnlockCriteria = [ new ZoneCriteria("Gyala Delve") ] },
+                        ]
+                    },
+
+
+                    new()
+                    {
+                        Name = "Icebrood Saga",
+                        UnlockCriteria = [ 
+                        ],
+                        SubCategories =
+                        [
+                            new() { Name = "Grothmar Valley",
+                                UnlockCriteria = [
+                                    new ZoneCriteria("Grothmar Valley"),
+                                    new TokenCriteria("Hatched Chili")
+                                ]
+                            },
+                            new() { Name = "Bjora Marches",
+                                UnlockCriteria = [
+                                    new ZoneCriteria("Bjora Marches"),
+                                    new TokenCriteria("Eternal Ice Shard"),
+                                    //new TokenCriteria("Drakkar's Hoard (container)")
+                                ]
+                            },
+                            new() { Name = "Drizzlewood Coast",
+                                UnlockCriteria = [
+                                    new ZoneCriteria("Drizzlewood Coast")
+                                ]
+                            },
+                        ]
+                    },
+
+
+                    new()
+                    {
+                        Name = "Secrets of the Obscure",
+                        UnlockCriteria = [ 
+                            new CurrencyCriteria("Ancient Coin"),
+                            new SetCriteria("Skyforged weapons", 100),
+                            new SetCriteria("Eagle Eye weapons", 100)
+                        ],
+                        SubCategories =
+                        [
+                            new() {
+                                Name = "Skywatch Archipelago",
+                                UnlockCriteria = [
+                                    new ZoneCriteria("Skywatch Archipelago"),
+                                    new CurrencyCriteria("Static Charge"),
+                                    new SetCriteria("Storm's Eye weapons", 100)
+                                ] 
+                            },
+                            new() { 
+                                Name = "The Wizard's Tower", 
+                                UnlockCriteria = [ 
+                                    new ZoneCriteria("The Wizard's Tower")
+                                ]
+                            },
+                            new() { 
+                                Name = "Amnytas", 
+                                UnlockCriteria = [
+                                    new ZoneCriteria("Amnytas"),
+                                    new CurrencyCriteria("Pinch of Stardust")
+                                ]
+                            },
+                            new() { 
+                                Name = "Inner Nayos", 
+                                UnlockCriteria = [
+                                    new ZoneCriteria("Inner Nayos"), 
+                                    new CurrencyCriteria("Calcified Gasp"),
+                                    new SetCriteria("Abomination weapons", 100)
+                                ]
+                            },
+                        ]
+                    },
+
+
+                    new()
+                    {
+                        Name = "Janthir Wilds",
+                        UnlockCriteria = [ new CurrencyCriteria("Ancient Coin") ],
+                        SubCategories =
+                        [
+                            new() { Name = "Lowland Shore",
+                                UnlockCriteria = [
+                                    new ZoneCriteria("Lowland Shore"),
+                                    new TokenCriteria("Curious Lowland Honeycomb")
+                                ]
+                            },
+                            new() { Name = "Janthir Syntri",
+                                UnlockCriteria = [
+                                    new ZoneCriteria("Janthir Syntri"),
+                                    new TokenCriteria("Curious Mursaat Currency")
+                                ]
+                            },
+                            new() { Name = "Mistburned Barrens",
+                                UnlockCriteria = [
+                                    new ZoneCriteria("Mistburned Barrens"),
+                                    new TokenCriteria("Curious Mursaat Ruin Shard")
+                                ]
+                            },
+                            new() { Name = "Bava Nisos",
+                                UnlockCriteria = [
+                                    new ZoneCriteria("Bava Nisos"),
+                                    new TokenCriteria("Curious Mursaat Remnants")
+                                ]
+                            },
+                        ]
+                    },
+
+
+                    new()
+                    {
+                        Name = "Visions of Eternity",
+                        UnlockCriteria = [ new CurrencyCriteria("Unusual Coin") ],
+                        SubCategories =
+                        [
+                            new() { Name = "Shipwreck Strand",
+                                UnlockCriteria = [
+                                    new ZoneCriteria("Shipwreck Strand"),
+                                    new CurrencyCriteria("Aether-Rich Sap"),
+                                    new TokenCriteria("Chromatic Sap")
+                                ]
+                            },
+                            new() { Name = "Starlit Weald",
+                                UnlockCriteria = [
+                                    new ZoneCriteria("Starlit Weald"),
+                                    new CurrencyCriteria("Antiquated Ducat"),
+                                    new TokenCriteria("Raw Enchanting Stone")
+                                ]
+                            },
+                            new() { Name = "Eternity's Garden",
+                                UnlockCriteria = [
+                                    new ZoneCriteria("Eternity's Garden"),
+                                    new TokenCriteria("Shadowstone Fragment")
+                                ]
+                            },
+                            new() { Name = "Leyspring Hollows",
+                                UnlockCriteria = [
+                                    new ZoneCriteria("Leyspring Hollows"),
+                                    new TokenCriteria("Shadowstone Research Data")
+                                ]
+                            }
+                        ]
+                    },
+
+
                     ]
                 },
 
                 new()
                 {
-                    Name = "Path of Fire",
-                    UnlockCriteria = [
-                        new CraftingMaterialCriteria("Sliver of Twitching Forgemetal"),
-                        new CraftingMaterialCriteria("Congealed Putrescence"),
-                        new CraftingMaterialCriteria("Eye of Kormir"),
-                        new CraftingMaterialCriteria("Ley-Infused Sand"),
-                        new CraftingMaterialCriteria("Powdered Rose Quartz"),
-                        new CraftingMaterialCriteria("Eye of Kormir"),
-                        //new CraftingMaterialCriteria("Inscription of the Spearmarshal"),
-                        new CurrencyCriteria("Trade Contract"),
-                        new CurrencyCriteria("Elegy Mosaic"),
-                        new SetCriteria("Elonian weapons"),
-                        new SetCriteria("Awakened weapons"),
-                        new SetCriteria("Bounty Hunter's armor"),
-                    ],
+                    Name = "Raids",
+                    UnlockCriteria = [ new SetCriteria("Assaulter's weapons") ],
                     SubCategories =
                     [
-                        new() {
-                            Name = "Crystal Oasis",
-                            UnlockCriteria = [
-                                new ZoneCriteria("Crystal Oasis"), new CurrencyCriteria("Casino Coin")
-                            ]
-                        },
-                        new() { Name = "Desert Highlands", UnlockCriteria = [ new ZoneCriteria("Desert Highlands") ] },
-                        new() { Name = "Elon Riverlands", UnlockCriteria = [ new ZoneCriteria("Elon Riverlands") ] },
-                        new() { Name = "The Desolation", UnlockCriteria = [ new ZoneCriteria("The Desolation") ] },
-                        new() { Name = "Domain of Vabbi", UnlockCriteria = [ new ZoneCriteria("Domain of Vabbi") ] },
-                    ]
-                },
+                    new()
+                    {
+                        Name = "Core",
+                        UnlockCriteria = [],
+                        SubCategories =
+                        [
+                            new() { Name = "Secret Lair of the Snowmen", UnlockCriteria = [new ZoneCriteria("Secret Lair of the Snowmen")] },
+                            new() { Name = "Old Lion's Court", UnlockCriteria = [new ZoneCriteria("Old Lion's Court")] },
+                        ]
+                    },
 
-                new()
-                {
-                    Name = "End of Dragons",
-                    UnlockCriteria = [ new CurrencyCriteria("Ancient Coin") ],
-                    SubCategories =
-                    [
-                        new() { Name = "Seitung Province", UnlockCriteria = [ new ZoneCriteria("Seitung Province") ] },
-                        new() { Name = "New Kaineng City", UnlockCriteria = [ new ZoneCriteria("New Kaineng City") ] },
-                        new() { Name = "The Echovald Wilds", UnlockCriteria = [ new ZoneCriteria("The Echovald Wilds") ] },
-                        new() { Name = "Arborstone", UnlockCriteria = [ new ZoneCriteria("Arborstone"), new CurrencyCriteria("Canach Coin") ] },
-                        new() { Name = "Dragon's End", UnlockCriteria = [ new ZoneCriteria("Dragon's End") ] },
-                        new() { Name = "Gyala Delve", UnlockCriteria = [ new ZoneCriteria("Gyala Delve") ] },
-                    ]
-                },
 
-                new()
-                {
-                    Name = "Secrets of the Obscure",
-                    UnlockCriteria = [ 
-                        new CurrencyCriteria("Ancient Coin"),
-                        new SetCriteria("Skyforged weapons", 100),
-                        new SetCriteria("Eagle Eye weapons", 100)
-                    ],
-                    SubCategories =
-                    [
-                        new() {
-                            Name = "Skywatch Archipelago",
-                            UnlockCriteria = [
-                                new ZoneCriteria("Skywatch Archipelago"),
-                                new CurrencyCriteria("Static Charge"),
-                                new SetCriteria("Storm's Eye weapons", 100)
-                            ] 
-                        },
-                        new() { 
-                            Name = "The Wizard's Tower", 
-                            UnlockCriteria = [ 
-                                new ZoneCriteria("The Wizard's Tower")
-                            ]
-                        },
-                        new() { 
-                            Name = "Amnytas", 
-                            UnlockCriteria = [
-                                new ZoneCriteria("Amnytas"),
-                                new CurrencyCriteria("Pinch of Stardust")
-                            ]
-                        },
-                        new() { 
-                            Name = "Inner Nayos", 
-                            UnlockCriteria = [
-                                new ZoneCriteria("Inner Nayos"), 
-                                new CurrencyCriteria("Calcified Gasp"),
-                                new SetCriteria("Abomination weapons", 100)
-                            ]
-                        },
-                    ]
-                },
+                    new()
+                    {
+                        Name = "Heart of Thorns",
+                        UnlockCriteria = [
+                        ],
+                        SubCategories =
+                        [
+                            new() { Name = "Spirit Vale", UnlockCriteria = [new ZoneCriteria("Spirit Vale")] },
+                            new() { Name = "Salvation Pass", UnlockCriteria = [new ZoneCriteria("Salvation Pass")] },
+                            new() { Name = "Stronghold of the Faithful", UnlockCriteria = [new ZoneCriteria("Stronghold of the Faithful")] },
+                            new() { Name = "Bastion of the Penitent", UnlockCriteria = [new ZoneCriteria("Bastion of the Penitent")] },
+                        ]
+                    },
 
-                new()
-                {
-                    Name = "Janthir Wilds",
-                    UnlockCriteria = [ new CurrencyCriteria("Ancient Coin") ],
-                    SubCategories =
-                    [
-                        new() { Name = "Lowland Shore",
-                            UnlockCriteria = [
-                                new ZoneCriteria("Lowland Shore"),
-                                new TokenCriteria("Curious Lowland Honeycomb")
-                            ]
-                        },
-                        new() { Name = "Janthir Syntri",
-                            UnlockCriteria = [
-                                new ZoneCriteria("Janthir Syntri"),
-                                new TokenCriteria("Curious Mursaat Currency")
-                            ]
-                        },
-                        new() { Name = "Mistburned Barrens",
-                            UnlockCriteria = [
-                                new ZoneCriteria("Mistburned Barrens"),
-                                new TokenCriteria("Curious Mursaat Ruin Shard")
-                            ]
-                        },
-                        new() { Name = "Bava Nisos",
-                            UnlockCriteria = [
-                                new ZoneCriteria("Bava Nisos"),
-                                new TokenCriteria("Curious Mursaat Remnants")
-                            ]
-                        },
-                    ]
-                },
 
-                new()
-                {
-                    Name = "Visions of Eternity",
-                    UnlockCriteria = [ new CurrencyCriteria("Unusual Coin") ],
-                    SubCategories =
-                    [
-                        new() { Name = "Shipwreck Strand",
-                            UnlockCriteria = [
-                                new ZoneCriteria("Shipwreck Strand"),
-                                new CurrencyCriteria("Aether-Rich Sap"),
-                                new TokenCriteria("Chromatic Sap")
-                            ]
-                        },
-                        new() { Name = "Starlit Weald",
-                            UnlockCriteria = [
-                                new ZoneCriteria("Starlit Weald"),
-                                new CurrencyCriteria("Antiquated Ducat"),
-                                new TokenCriteria("Raw Enchanting Stone")
-                            ]
-                        },
-                        new() { Name = "Eternity's Garden",
-                            UnlockCriteria = [
-                                new ZoneCriteria("Eternity's Garden"),
-                                new TokenCriteria("Shadowstone Fragment")
-                            ]
-                        },
-                        new() { Name = "Leyspring Hollows",
-                            UnlockCriteria = [
-                                new ZoneCriteria("Leyspring Hollows"),
-                                new TokenCriteria("Shadowstone Research Data")
-                            ]
-                        }
-                    ]
-                },
+                    new()
+                    {
+                        Name = "Path of Fire",
+                        UnlockCriteria = [
+                        ],
+                        SubCategories =
+                        [
+                            new() { Name = "Hall of Chains", UnlockCriteria = [new ZoneCriteria("Hall of Chains")] },
+                            new() { Name = "Mythwright Gambit", UnlockCriteria = [new ZoneCriteria("Mythwright Gambit")] },
+                            new() { Name = "The Key of Ahdashim", UnlockCriteria = [new ZoneCriteria("The Key of Ahdashim")] },
+                            new() { Name = "Shiverpeaks Pass", UnlockCriteria = [new ZoneCriteria("Shiverpeaks Pass")] },
+                        ]
+                    },
 
-                new()
-                {
-                    Name = "LW Season 1",
-                    UnlockCriteria = [  ],
-                    SubCategories =
-                    [
-                        new() { Name = "Season 1", UnlockCriteria = [
-                            new ZoneCriteria("The Battle For Lion's Arch"),
-                            new TokenCriteria("Found Heirloom"),
-                            new TokenCriteria("Fused Gauntlet Ticket", 0, false),
-                            new AchievementCategoryCriteria("Flame and Frost"),
-                            new AchievementCategoryCriteria("Lion's Memory"),
-                            new AchievementCategoryCriteria("Sky Pirates"),
-                            new AchievementCategoryCriteria("Clockwork Chaos"),
-                            new AchievementCategoryCriteria("Emissary Vorpp's Field Assistant"),
-                            new AchievementCategoryCriteria("The Nightmares Within"),
-                            new AchievementCategoryCriteria("The Nightmare Is Over"),
-                            new AchievementCategoryCriteria("Tower of Nightmares"),
-                            new AchievementCategoryCriteria("Escape from Lion's Arch"),
-                            new AchievementCategoryCriteria("The Battle for Lion's Arch")
-                            ] },
-                    ]
-                },
 
-                new()
-                {
-                    Name = "LW Season 2",
-                    UnlockCriteria = [  ],
-                    SubCategories =
-                    [
-                        new() { Name = "Dry Top", UnlockCriteria = [ new ZoneCriteria("Dry Top"), new CurrencyCriteria("Unidentified Fossilized Insect") ] },
-                        new() { Name = "The Silverwastes", UnlockCriteria = [ new ZoneCriteria("The Silverwastes") ] },
-                    ]
-                },
+                    new()
+                    {
+                        Name = "Icebrood Saga",
+                        UnlockCriteria = [
+                        ],
+                        SubCategories =
+                        [
+                            new() { Name = "Voice of the Fallen and Claw of the Fallen", UnlockCriteria = [new ZoneCriteria("Voice of the Fallen and Claw of the Fallen")] },
+                            new() { Name = "Fraenir of Jormag", UnlockCriteria = [new ZoneCriteria("Fraenir of Jormag")] },
+                            new() { Name = "Boneskinner", UnlockCriteria = [new ZoneCriteria("Boneskinner"), new TokenCriteria("Boneskinner Ritual Vial", 100)] },
+                            new() { Name = "Whisper of Jormag", UnlockCriteria = [new ZoneCriteria("Whisper of Jormag")] },
+                            new() { Name = "Forging Steel", UnlockCriteria = [new ZoneCriteria("Forging Steel")] },
+                            new() { Name = "Cold War", UnlockCriteria = [new ZoneCriteria("Cold War")] },
+                        ]
+                    },
 
-                new()
-                {
-                    Name = "LW Season 3",
-                    UnlockCriteria = [  ],
-                    SubCategories =
-                    [
-                        new() { Name = "Bloodstone Fen",
-                            UnlockCriteria = [
-                                new ZoneCriteria("Bloodstone Fen"),
-                                new TokenCriteria("Blood Ruby")
-                            ]
-                        },
-                        new() { Name = "Ember Bay",
-                            UnlockCriteria = [
-                                new ZoneCriteria("Ember Bay"),
-                                new TokenCriteria("Petrified Wood")
-                            ]
-                        },
-                        new() { Name = "Bitterfrost Frontier",
-                            UnlockCriteria = [
-                                new ZoneCriteria("Bitterfrost Frontier"),
-                                new TokenCriteria("Fresh Winterberry")
-                            ]
-                        },
-                        new() { Name = "Lake Doric",
-                            UnlockCriteria = [
-                                new ZoneCriteria("Lake Doric"),
-                                new TokenCriteria("Jade Shard")
-                            ]
-                        },
-                        new() { Name = "Draconis Mons",
-                            UnlockCriteria = [
-                                new ZoneCriteria("Draconis Mons"),
-                                new TokenCriteria("Fire Orchid Blossom")
-                            ]
-                        },
-                        new() { Name = "Siren's Landing",
-                            UnlockCriteria = [
-                                new ZoneCriteria("Siren's Landing"),
-                                new TokenCriteria("Orrian Pearl")
-                            ]
-                        },
-                    ]
-                },
 
-                new()
-                {
-                    Name = "LW Season 4",
-                    UnlockCriteria = [
-                        new CurrencyCriteria("Volatile Magic")
-                    ],
-                    SubCategories =
-                    [
-                        new() { Name = "Domain of Istan",
-                            UnlockCriteria = [
-                                new ZoneCriteria("Domain of Istan"),
-                                new TokenCriteria("Kralkatite Ore"),
-                                new SetCriteria("Stellar weapons")
-                            ]
-                        },
-                        new() { Name = "Sandswept Isles",
-                            UnlockCriteria = [
-                                new ZoneCriteria("Sandswept Isles"),
-                                new TokenCriteria("Difluorite Crystal")
-                            ]
-                        },
-                        new() { Name = "Domain of Kourna",
-                            UnlockCriteria = [
-                            new ZoneCriteria("Domain of Kourna"),
-                            new TokenCriteria("Inscribed Shard")
-                            ]
-                        },
-                        new() { Name = "Jahai Bluffs",
-                            UnlockCriteria = [
-                                new ZoneCriteria("Jahai Bluffs"),
-                                new TokenCriteria("Lump of Mistonium")
-                            ]
-                        },
-                        new() { Name = "Thunderhead Peaks",
-                            UnlockCriteria = [
-                                new ZoneCriteria("Thunderhead Peaks"),
-                                new TokenCriteria("Branded Mass")
-                            ]
-                        },
-                        new() { Name = "Dragonfall",
-                            UnlockCriteria = [
-                                new ZoneCriteria("Dragonfall"),
-                                new TokenCriteria("Mistborn Mote"),
-                                new SetCriteria("Mist Shard armor"),
-                                //new TokenCriteria("Gift of Aurene (container)")
-                            ]
-                        },
-                    ]
-                },
+                    new()
+                    {
+                        Name = "End of Dragons",
+                        UnlockCriteria = [
+                            new SetCriteria("Living Water weapons")
+                        ],
+                        SubCategories =
+                        [
+                            new() { Name = "Aetherblade Hideout", UnlockCriteria = [new ZoneCriteria("Aetherblade Hideout")] },
+                            new() { Name = "Xunlai Jade Junkyard", UnlockCriteria = [new ZoneCriteria("Xunlai Jade Junkyard")] },
+                            new() { Name = "Kaineng Overlook", UnlockCriteria = [new ZoneCriteria("Kaineng Overlook")] },
+                            new() { Name = "Harvest Temple", UnlockCriteria = [new ZoneCriteria("Harvest Temple")] },
+                        ]
+                    },
 
-                new()
-                {
-                    Name = "Icebrood Saga",
-                    UnlockCriteria = [ 
-                    ],
-                    SubCategories =
-                    [
-                        new() { Name = "Grothmar Valley",
-                            UnlockCriteria = [
-                                new ZoneCriteria("Grothmar Valley"),
-                                new TokenCriteria("Hatched Chili")
-                            ]
-                        },
-                        new() { Name = "Bjora Marches",
-                            UnlockCriteria = [
-                                new ZoneCriteria("Bjora Marches"),
-                                new TokenCriteria("Eternal Ice Shard"),
-                                //new TokenCriteria("Drakkar's Hoard (container)")
-                            ]
-                        },
-                        new() { Name = "Drizzlewood Coast",
-                            UnlockCriteria = [
-                                new ZoneCriteria("Drizzlewood Coast")
-                            ]
-                        },
+
+                    new()
+                    {
+                        Name = "Secrets of the Obscure",
+                        UnlockCriteria = [
+                            new SetCriteria("Sinful weapons")
+                        ],
+                        SubCategories =
+                        [
+                            new() { Name = "Cosmic Observatory", UnlockCriteria = [new ZoneCriteria("Cosmic Observatory")] },
+                            new() { Name = "Temple of Febe", UnlockCriteria = [new ZoneCriteria("Temple of Febe")] },
+                        ]
+                    },
+
+
+                    new()
+                    {
+                        Name = "Janthir Wilds",
+                        UnlockCriteria = [
+                        ],
+                        SubCategories =
+                        [
+                            new() { Name = "Mount Balrior", UnlockCriteria = [new ZoneCriteria("Mount Balrior")] },
+                        ]
+                    },
+
+
+                    new()
+                    {
+                        Name = "Visions of Eternity",
+                        UnlockCriteria = [
+                        ],
+                        SubCategories =
+                        [
+                            new() { Name = "Guardian's Glade", UnlockCriteria = [new ZoneCriteria("Guardian's Glade")] },
+                        ]
+                    },
+
+
                     ]
                 },
 
@@ -469,113 +611,6 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                             new SetCriteria("Grasping Dead armor", 90),
                             new SetCriteria("Weapons of the Dragon's Deep", 90),
                         ] },
-                    ]
-                },
-
-                new()
-                {
-                    Name = "Raids Core",
-                    UnlockCriteria = [
-                        new SetCriteria("Assaulter's weapons"),
-                    ],
-                    SubCategories =
-                    [
-                        new() { Name = "Secret Lair of the Snowmen", UnlockCriteria = [new ZoneCriteria("Secret Lair of the Snowmen")] },
-                        new() { Name = "Old Lion's Court", UnlockCriteria = [new ZoneCriteria("Old Lion's Court")] },
-                    ]
-                },
-
-                new()
-                {
-                    Name = "Raids Heart of Thorns",
-                    UnlockCriteria = [
-                    ],
-                    SubCategories =
-                    [
-                        new() { Name = "Spirit Vale", UnlockCriteria = [new ZoneCriteria("Spirit Vale")] },
-                        new() { Name = "Salvation Pass", UnlockCriteria = [new ZoneCriteria("Salvation Pass")] },
-                        new() { Name = "Stronghold of the Faithful", UnlockCriteria = [new ZoneCriteria("Stronghold of the Faithful")] },
-                        new() { Name = "Bastion of the Penitent", UnlockCriteria = [new ZoneCriteria("Bastion of the Penitent")] },
-                    ]
-                },
-
-                new()
-                {
-                    Name = "Raids Path of Fire",
-                    UnlockCriteria = [
-                    ],
-                    SubCategories =
-                    [
-                        new() { Name = "Hall of Chains", UnlockCriteria = [new ZoneCriteria("Hall of Chains")] },
-                        new() { Name = "Mythwright Gambit", UnlockCriteria = [new ZoneCriteria("Mythwright Gambit")] },
-                        new() { Name = "The Key of Ahdashim", UnlockCriteria = [new ZoneCriteria("The Key of Ahdashim")] },
-                        new() { Name = "Shiverpeaks Pass", UnlockCriteria = [new ZoneCriteria("Shiverpeaks Pass")] },
-                    ]
-                },
-
-                new()
-                {
-                    Name = "Raids Icebrood Saga",
-                    UnlockCriteria = [
-                    ],
-                    SubCategories =
-                    [
-                        new() { Name = "Voice of the Fallen and Claw of the Fallen", UnlockCriteria = [new ZoneCriteria("Voice of the Fallen and Claw of the Fallen")] },
-                        new() { Name = "Fraenir of Jormag", UnlockCriteria = [new ZoneCriteria("Fraenir of Jormag")] },
-                        new() { Name = "Boneskinner", UnlockCriteria = [new ZoneCriteria("Boneskinner"), new TokenCriteria("Boneskinner Ritual Vial", 100)] },
-                        new() { Name = "Whisper of Jormag", UnlockCriteria = [new ZoneCriteria("Whisper of Jormag")] },
-                        new() { Name = "Forging Steel", UnlockCriteria = [new ZoneCriteria("Forging Steel")] },
-                        new() { Name = "Cold War", UnlockCriteria = [new ZoneCriteria("Cold War")] },
-                    ]
-                },
-
-                new()
-                {
-                    Name = "Raids End of Dragons",
-                    UnlockCriteria = [
-                        new SetCriteria("Living Water weapons")
-                    ],
-                    SubCategories =
-                    [
-                        new() { Name = "Aetherblade Hideout", UnlockCriteria = [new ZoneCriteria("Aetherblade Hideout")] },
-                        new() { Name = "Xunlai Jade Junkyard", UnlockCriteria = [new ZoneCriteria("Xunlai Jade Junkyard")] },
-                        new() { Name = "Kaineng Overlook", UnlockCriteria = [new ZoneCriteria("Kaineng Overlook")] },
-                        new() { Name = "Harvest Temple", UnlockCriteria = [new ZoneCriteria("Harvest Temple")] },
-                    ]
-                },
-
-                new()
-                {
-                    Name = "Raids Secrets of the Obscure",
-                    UnlockCriteria = [
-                        new SetCriteria("Sinful weapons")
-                    ],
-                    SubCategories =
-                    [
-                        new() { Name = "Cosmic Observatory", UnlockCriteria = [new ZoneCriteria("Cosmic Observatory")] },
-                        new() { Name = "Temple of Febe", UnlockCriteria = [new ZoneCriteria("Temple of Febe")] },
-                    ]
-                },
-
-                new()
-                {
-                    Name = "Raids Janthir Wilds",
-                    UnlockCriteria = [
-                    ],
-                    SubCategories =
-                    [
-                        new() { Name = "Mount Balrior", UnlockCriteria = [new ZoneCriteria("Mount Balrior")] },
-                    ]
-                },
-
-                new()
-                {
-                    Name = "Raids Visions of Eternity",
-                    UnlockCriteria = [
-                    ],
-                    SubCategories =
-                    [
-                        new() { Name = "Guardian's Glade", UnlockCriteria = [new ZoneCriteria("Guardian's Glade")] },
                     ]
                 },
 

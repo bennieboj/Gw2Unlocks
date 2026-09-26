@@ -53,7 +53,7 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
     {
         var unlockName = "Mini Exalted Sage";
         var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
-        var category = Find(results, "Heart of Thorns", "Auric Basin");
+        var category = Find(results, "Expansions & Living World", "Heart of Thorns", "Auric Basin");
         var unlock = category.Unlocks.Single(c => c.Name == unlockName);
 
         Assert.NotNull(unlock);
@@ -78,10 +78,11 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
     [InlineData("Extremis Heavy Hood (skin)", "Visions of Eternity", "Starlit Weald")]
     [InlineData("Forge Guard's Heavy Helmet (skin)", "Visions of Eternity", "Eternity's Garden")]
     [InlineData("Tenebral Ward Heavy Helmet (skin)", "Visions of Eternity", "Leyspring Hollows", Skip = "Wiki skin node not available")]
-    public async Task GivenVendorSellsItemsAtDifferentLocationsWhenClassifyingUnlockThenShouldReturnCategoryLinkedToSaleLocation(string unlockName, string groupName, string categoryName)
+    public async Task GivenVendorSellsItemsAtDifferentLocationsWhenClassifyingUnlockThenShouldReturnCategoryLinkedToSaleLocation(string unlockName, string expansionName, string categoryName)
     {
         var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
-        var category = Find(results, groupName, categoryName);
+        var expansion = Find(results, "Expansions & Living World", expansionName);
+        var category = Find(results, "Expansions & Living World", expansionName, categoryName);
 
         // The unlock must be classified into the category where it is actually sold.
         Assert.Contains(category.Unlocks, u => u.Name == unlockName);
@@ -89,7 +90,7 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
         Assert.NotNull(unlock.ApiData);
 
         // The vendor is LocatedIn every zone it sells at: the unlock must not leak into those.
-        Assert.DoesNotContain(Find(results, groupName).SubCategories
+        Assert.DoesNotContain(expansion.SubCategories
             .Where(c => c.Name != categoryName)
             .SelectMany(c => c.Unlocks), u => u.Name == unlockName);
     }
@@ -104,7 +105,7 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
     public async Task AstralWardArmorShouldReturnWizardsTower(string unlockName)
     {
         var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
-        var category = Find(results, "Secrets of the Obscure", "The Wizard's Tower");
+        var category = Find(results, "Expansions & Living World", "Secrets of the Obscure", "The Wizard's Tower");
         var unlock = category.Unlocks.Single(c => c.Name == unlockName);
 
         Assert.NotNull(unlock);
@@ -119,7 +120,7 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
     public async Task JanthirWildsUnlocksShouldReturnLowlandShore(string unlockName)
     {
         var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
-        var category = Find(results, "Janthir Wilds", "Lowland Shore");
+        var category = Find(results, "Expansions & Living World", "Janthir Wilds", "Lowland Shore");
         var unlock = category.Unlocks.Single(c => c.Name == unlockName);
 
         Assert.NotNull(unlock);
@@ -131,7 +132,7 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
     {
         var unlockName = "Stellar Cleaver";
         var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
-        var category = Find(results, "LW Season 4", "Domain of Istan");
+        var category = Find(results, "Expansions & Living World", "LW Season 4", "Domain of Istan");
         var unlock = category.Unlocks.Single(c => c.Name == unlockName);
 
         Assert.NotNull(unlock);
@@ -232,14 +233,14 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
 
 
     [Theory]
-    [InlineData("Wintergreen Dagger", "Raids Core", "Secret Lair of the Snowmen")]  //skin
-    [InlineData("Aetherized Indigo Staff", "Raids Core", "Old Lion's Court")] //skin
-    [InlineData("Mini Vermilion Assault Knight", "Raids Core",  "Old Lion's Court")]
-    [InlineData("Assaulter's Sparking Dagger (skin)", "Raids Heart of Thorns", "Spirit Vale")]
-    public async Task RaidShouldBeRaidCategory(string unlockName, string groupName, string raidName)
+    [InlineData("Wintergreen Dagger", "Core", "Secret Lair of the Snowmen")]  //skin
+    [InlineData("Aetherized Indigo Staff", "Core", "Old Lion's Court")] //skin
+    [InlineData("Mini Vermilion Assault Knight", "Core",  "Old Lion's Court")]
+    [InlineData("Assaulter's Sparking Dagger (skin)", "Heart of Thorns", "Spirit Vale")]
+    public async Task RaidShouldBeRaidCategory(string unlockName, string raidGroupName, string raidName)
     {
         var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
-        var category = Find(results, groupName, raidName);
+        var category = Find(results, "Raids", raidGroupName, raidName);
         var unlock = category.Unlocks.Single(c => c.Name == unlockName);
 
         Assert.NotNull(unlock);
@@ -247,12 +248,12 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
     }
 
     [Theory]
-    [InlineData("Living Water Axe (skin)", "Raids End of Dragons")]
-    [InlineData("Envy's Bite (skin)", "Raids Secrets of the Obscure")]
-    public async Task RaidShouldBeRaidGroup(string unlockName, string groupName)
+    [InlineData("Living Water Axe (skin)", "End of Dragons")]
+    [InlineData("Envy's Bite (skin)", "Secrets of the Obscure")]
+    public async Task RaidShouldBeRaidGroup(string unlockName, string raidGroupName)
     {
         var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
-        var group = Find(results, groupName);
+        var group = Find(results, "Raids", raidGroupName);
         var unlock = group.Unlocks.Single(c => c.Name == unlockName);
 
         Assert.NotNull(unlock);
@@ -269,7 +270,7 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
     public async Task BoneskinnerItemsShouldBeBoneSkinner(string unlockName)
     {
         var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
-        var category = Find(results, "Raids Icebrood Saga", "Boneskinner");
+        var category = Find(results, "Raids", "Icebrood Saga", "Boneskinner");
         var unlock = category.Unlocks.Single(c => c.Name == unlockName);
 
         Assert.NotNull(unlock);
@@ -309,7 +310,7 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
     {
         var unlockName = "Skyforged Axe";
         var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
-        var group = Find(results, "Secrets of the Obscure");
+        var group = Find(results, "Expansions & Living World", "Secrets of the Obscure");
         var unlock = group.Unlocks.Single(c => c.Name == unlockName);
 
         Assert.NotNull(unlock);
@@ -374,7 +375,7 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
     {
         var unlockName = "Endless Spotted Beetle Tonic";
         var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
-        var category = Find(results, "Heart of Thorns", "Dragon's Stand");
+        var category = Find(results, "Expansions & Living World", "Heart of Thorns", "Dragon's Stand");
         var unlock = category.Unlocks.Single(c => c.Name == unlockName);
 
         Assert.NotNull(unlock);
@@ -386,7 +387,7 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
     {
         var unlockName = "Mini Whisper of Jormag";
         var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
-        var category = Find(results, "Icebrood Saga", "Bjora Marches");
+        var category = Find(results, "Expansions & Living World", "Icebrood Saga", "Bjora Marches");
         var unlock = category.Unlocks.Single(c => c.Name == unlockName);
 
         Assert.NotNull(unlock);
@@ -398,7 +399,7 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
     {
         var unlockName = "Blood Ruby Backpack (skin)";
         var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
-        var category = Find(results, "LW Season 3", "Bloodstone Fen");
+        var category = Find(results, "Expansions & Living World", "LW Season 3", "Bloodstone Fen");
         var unlock = category.Unlocks.Single(c => c.Name == unlockName);
 
         Assert.NotNull(unlock);
@@ -411,7 +412,7 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
     public async Task GivenLwS1RewardShouldBeLwS1(string unlockName)
     {
         var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
-        var category = Find(results, "LW Season 1", "Season 1");
+        var category = Find(results, "Expansions & Living World", "LW Season 1", "Season 1");
         var unlock = category.Unlocks.Single(c => c.Name == unlockName);
 
         Assert.NotNull(unlock);
@@ -512,7 +513,7 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
     public async Task CulturalWeaponsSpearsShouldLinkToCastora(string unlockName)
     {
         var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
-        var category = Find(results, "Visions of Eternity", "Shipwreck Strand");
+        var category = Find(results, "Expansions & Living World", "Visions of Eternity", "Shipwreck Strand");
         var unlock = category.Unlocks.Single(c => c.Name == unlockName);
 
         Assert.NotNull(unlock);
@@ -528,7 +529,7 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
     public async Task GivenUnlockInChestInZoneShouldResultInZone(string unlockName, string zoneName)
     {
         var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
-        var category = Find(results, "Heart of Thorns", zoneName);
+        var category = Find(results, "Expansions & Living World", "Heart of Thorns", zoneName);
         var unlock = category.Unlocks.Single(c => c.Name == unlockName);
 
         Assert.NotNull(unlock);
@@ -540,7 +541,7 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
     {
         var unlockName = "Endless Exalted Caster Tonic";
         var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
-        var category = Find(results, "Heart of Thorns", "Auric Basin");
+        var category = Find(results, "Expansions & Living World", "Heart of Thorns", "Auric Basin");
         var unlock = category.Unlocks.Single(c => c.Name == unlockName);
 
         Assert.NotNull(unlock);
@@ -560,7 +561,7 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
     {
         var unlockName = "Blue Choya Kite";
         var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
-        var category = Find(results, "Path of Fire", "Crystal Oasis");
+        var category = Find(results, "Expansions & Living World", "Path of Fire", "Crystal Oasis");
         var unlock = category.Unlocks.Single(c => c.Name == unlockName);
 
         Assert.NotNull(unlock);
@@ -572,7 +573,7 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
     {
         var unlockName = "Mist Shard Visage";
         var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
-        var category = Find(results, "LW Season 4", "Dragonfall");
+        var category = Find(results, "Expansions & Living World", "LW Season 4", "Dragonfall");
         var unlock = category.Unlocks.Single(c => c.Name == unlockName);
 
         Assert.NotNull(unlock);
@@ -584,7 +585,7 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
     {
         var unlockName = "Funerary Axe (skin)";
         var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
-        var category = Find(results, "Path of Fire", "Desert Highlands");
+        var category = Find(results, "Expansions & Living World", "Path of Fire", "Desert Highlands");
         var unlock = category.Unlocks.Single(c => c.Name == unlockName);
 
         Assert.NotNull(unlock);
@@ -637,7 +638,7 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
     {
         var unlockName = "Bladed Helmet (skin)";
         var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, "Bladed Helmet (skin)");
-        var category = Find(results, "Heart of Thorns", "Verdant Brink");
+        var category = Find(results, "Expansions & Living World", "Heart of Thorns", "Verdant Brink");
         var unlock = category.Unlocks.Single(c => c.Name == unlockName);
 
         Assert.NotNull(unlock);
@@ -662,7 +663,7 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
     {
         string unlockName = "Sunspear Warsickle (skin)";
         var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
-        var group = Find(results, "Path of Fire");
+        var group = Find(results, "Expansions & Living World", "Path of Fire");
         var unlock = group.Unlocks.Single(c => c.Name == unlockName);
 
         Assert.NotNull(unlock);
@@ -674,7 +675,7 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
     {
         string unlockName = "Mini Tyrannus Maneater";
         var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
-        var category = Find(results, "Visions of Eternity", "Starlit Weald");
+        var category = Find(results, "Expansions & Living World", "Visions of Eternity", "Starlit Weald");
         var unlock = category.Unlocks.Single(c => c.Name == unlockName);
 
         Assert.NotNull(unlock);
@@ -703,7 +704,7 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
         var unlockAchiName = "Seitung Province (achievements)#achievement6331";
         var unlocks = new string[] { unlockSkinName, unlockAchiName };
         var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlocks);
-        var category = Find(results, "End of Dragons", "Seitung Province");
+        var category = Find(results, "Expansions & Living World", "End of Dragons", "Seitung Province");
         var unlockSkin = category.Unlocks.Single(c => c.Name == unlockSkinName);
         var unlockAchi = category.Unlocks.Single(c => c.Name == unlockAchiName);
 
@@ -751,7 +752,7 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
     public async Task ItemsRequiredForAchievementShouldCategorizeCorrectly(string unlockName)
     {
         var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
-        var category = Find(results, "Heart of Thorns", "Auric Basin");
+        var category = Find(results, "Expansions & Living World", "Heart of Thorns", "Auric Basin");
         var unlock = category.Unlocks.Single(c => c.Name == unlockName);
 
         Assert.NotNull(unlock);
@@ -765,7 +766,7 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
         var unlockAchiName = "Basic Collections#achievement2262"; // Auric Weapons achievement
         var unlockRewardName = "Auric Backplate (skin)";
         var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, [.. unlocksForAchi, unlockAchiName]);
-        var category = Find(results, "Heart of Thorns", "Auric Basin");
+        var category = Find(results, "Expansions & Living World", "Heart of Thorns", "Auric Basin");
         var unlockAchi = category.Unlocks.Single(c => c.Name == unlockAchiName);
         var unlockReward = category.Unlocks.Single(c => c.Name == unlockRewardName);
 
@@ -782,7 +783,7 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
         var unlocksForAchi = new List<string> { "Bladed Greaves (skin)" };
         var unlockName = "Basic Collections#achievement2407"; // Bladed Armor achievement
         var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, [.. unlocksForAchi, unlockName]);
-        var category = Find(results, "Heart of Thorns", "Verdant Brink");
+        var category = Find(results, "Expansions & Living World", "Heart of Thorns", "Verdant Brink");
         var unlock = category.Unlocks.Single(c => c.Name == unlockName);
 
         Assert.NotNull(unlock);
@@ -810,7 +811,7 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
     {
         var unlockName = "Auric Basin (achievements)#achievement2292"; // Highest Gear achievement
         var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
-        var category = Find(results, "Heart of Thorns", "Auric Basin");
+        var category = Find(results, "Expansions & Living World", "Heart of Thorns", "Auric Basin");
         var unlock = category.Unlocks.Single(c => c.Name == unlockName);
 
         Assert.NotNull(unlock);
@@ -822,7 +823,7 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
     {
         var unlockName = "A Crack in the Ice (achievements)#achievement3221"; // Playing Chicken  achievement
         var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
-        var category = Find(results, "LW Season 3", "Bitterfrost Frontier");
+        var category = Find(results, "Expansions & Living World", "LW Season 3", "Bitterfrost Frontier");
         var unlock = category.Unlocks.Single(c => c.Name == unlockName);
 
         Assert.NotNull(unlock);
@@ -841,7 +842,7 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
     {
         var unlockName = "A Crack in the Ice (achievements)#achievement3214"; // Quirky Quaggan Quest  achievement
         var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
-        var category = Find(results, "LW Season 3", "Bitterfrost Frontier");
+        var category = Find(results, "Expansions & Living World", "LW Season 3", "Bitterfrost Frontier");
         var unlock = category.Unlocks.Single(c => c.Name == unlockName);
 
         Assert.NotNull(unlock);
@@ -854,7 +855,7 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
     {
         var unlockName = "A Crack in the Ice (achievements)#achievement3188"; // Stay Unfrosty  achievement
         var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
-        var category = Find(results, "LW Season 3", "Bitterfrost Frontier");
+        var category = Find(results, "Expansions & Living World", "LW Season 3", "Bitterfrost Frontier");
         var unlock = category.Unlocks.Single(c => c.Name == unlockName);
 
         Assert.NotNull(unlock);
@@ -868,7 +869,7 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
     {
         var unlockName = "A Crack in the Ice (achievements)#achievement3188"; // Stay Unfrosty  achievement
         var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
-        var category = Find(results, "LW Season 3", "Bitterfrost Frontier");
+        var category = Find(results, "Expansions & Living World", "LW Season 3", "Bitterfrost Frontier");
         var unlock = category.Unlocks.Single(c => c.Name == unlockName);
 
         Assert.NotNull(unlock);

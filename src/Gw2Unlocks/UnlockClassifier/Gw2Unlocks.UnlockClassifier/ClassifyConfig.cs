@@ -9,6 +9,7 @@ namespace Gw2Unlocks.UnlockClassifier;
 
 public record ClassifyConfig
 {
+    /// <summary>Top-level nodes. Order is significant: it drives the sidebar, sitemap and page order.</summary>
     public Collection<UnlockCategory> Categories { get; init; } = [];
 }
 
@@ -22,6 +23,7 @@ public record UnlockCategory()
     [JsonIgnore]
     public Collection<UnlockCriteria> UnlockCriteria { get; init; } = [];
 
+    /// <summary>Nested nodes. Order is significant: it drives the sidebar and page order.</summary>
     public Collection<UnlockCategory> SubCategories { get; init; } = [];
     public Collection<Unlock> Unlocks { get; init; } = [];
 
