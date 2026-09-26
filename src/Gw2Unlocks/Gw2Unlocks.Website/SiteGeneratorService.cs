@@ -174,10 +174,7 @@ internal sealed class SiteGeneratorService(
         var js = await File.ReadAllTextAsync("WebsiteTemplates/page.js", stoppingToken);
 
         var wwwRootTempPath = "wwwroot";
-        if (!Directory.Exists(wwwRootTempPath))
-        {
-            Directory.CreateDirectory(wwwRootTempPath);
-        }
+        PrepareOutputDirectory(wwwRootTempPath, env.IsDevelopment());
         CopyDirectoryContents("WebsiteStaticFiles", wwwRootTempPath);
         CopyDirectoryContents(iconSpriteSheetCache.GetIconSpreadSheetsPath(), Path.Combine(wwwRootTempPath, "icon-sprite-sheets"));
 
@@ -456,6 +453,48 @@ internal sealed class SiteGeneratorService(
         ];
 
         return $"[&{Convert.ToBase64String(bytes)}]";
+    }
+
+    /// <summary>
+    /// Empties the output directory before generating, so pages for categories that no longer
+    /// exist in the config are not left behind. Everything here is regenerated on each run: the
+    /// static files and icon sprite sheets are copied in again, and the pages are rewritten.
+    /// </summary>
+    /// <param name="isDevelopment">
+    /// In development this directory is being served by the local static file server, so its
+    /// files can be in use and deleting them fails. Only the deployable output is cleaned.
+    /// </param>
+    private static void PrepareOutputDirectory(string path, bool isDevelopment)
+    {
+        if (!isDevelopment && Directory.Exists(path))
+        {
+            ClearReadOnly(path);
+            Directory.Delete(path, recursive: true);
+        }
+
+        Directory.CreateDirectory(path);
+    }
+
+    /// <summary>
+    /// Read-only files and directories cannot be deleted on Windows, and generated output can end
+    /// up marked read-only (for example when synced by OneDrive). The whole tree has to be
+    /// cleared, because a recursive delete fails on the first read-only descendant it reaches.
+    /// </summary>
+    private static void ClearReadOnly(string root)
+    {
+        foreach (var file in Directory.GetFiles(root, "*", SearchOption.AllDirectories))
+        {
+            File.SetAttributes(file, FileAttributes.Normal);
+        }
+
+        foreach (var directory in Directory.GetDirectories(root, "*", SearchOption.AllDirectories))
+        {
+            var info = new DirectoryInfo(directory);
+            info.Attributes &= ~FileAttributes.ReadOnly;
+        }
+
+        var rootInfo = new DirectoryInfo(root);
+        rootInfo.Attributes &= ~FileAttributes.ReadOnly;
     }
 
     private static void CopyDirectoryContents(string source, string destination)
