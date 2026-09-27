@@ -139,6 +139,24 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
         Assert.NotNull(unlock.ApiData);
     }
 
+    /// The Jade Tech and Jade Punk weapon sets are crafted from Deldrimor Steel, and the only
+    /// Deldrimor Steel the graph knows about sits in Dragonstorm chests in the Icebrood Saga.
+    /// That misplaces the weapons, so the set membership is what identifies Seitung Province.
+    /// The bare weapon nodes are never classified (ShouldClassify only takes skins, miniatures and
+    /// novelties), so the skins are what a player actually unlocks and what the site lists.
+    [Theory]
+    [InlineData("Jade Punk Hammer (skin)")]
+    [InlineData("Jade Tech Axe (skin)")]
+    public async Task GivenJadeWeaponThenShouldReturnSeitungProvince(string unlockName)
+    {
+        var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
+        var category = Find(results, "Expansions & Living World", "End of Dragons", "Seitung Province");
+        var unlock = category.Unlocks.Single(c => c.Name == unlockName);
+
+        Assert.NotNull(unlock);
+        Assert.NotNull(unlock.ApiData);
+    }
+
     [Fact]
     public async Task GivenUnlockSoldInGemStoreThenShouldReturnGemStore()
     {

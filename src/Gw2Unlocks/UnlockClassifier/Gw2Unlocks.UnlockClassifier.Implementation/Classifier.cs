@@ -286,7 +286,11 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                         UnlockCriteria = [ new CurrencyCriteria("Ancient Coin") ],
                         SubCategories =
                         [
-                            new() { Name = "Seitung Province", UnlockCriteria = [ new ZoneCriteria("Seitung Province") ] },
+                            new() { Name = "Seitung Province", UnlockCriteria = [
+                                new ZoneCriteria("Seitung Province"),
+                                new SetCriteria("Jade Tech weapons"),
+                                new SetCriteria("Jade Punk weapons"),
+                            ] },
                             new() { Name = "New Kaineng City", UnlockCriteria = [ new ZoneCriteria("New Kaineng City") ] },
                             new() { Name = "The Echovald Wilds", UnlockCriteria = [ new ZoneCriteria("The Echovald Wilds") ] },
                             new() { Name = "Arborstone", UnlockCriteria = [ new ZoneCriteria("Arborstone"), new CurrencyCriteria("Canach Coin") ] },
