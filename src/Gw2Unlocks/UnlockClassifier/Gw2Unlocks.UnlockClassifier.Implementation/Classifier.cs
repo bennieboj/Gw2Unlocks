@@ -559,7 +559,13 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                         ],
                         SubCategories =
                         [
-                            new() { Name = "Guardian's Glade", UnlockCriteria = [new ZoneCriteria("Guardian's Glade")] },
+                            new() {
+                                Name = "Guardian's Glade",
+                                UnlockCriteria = [
+                                    new ZoneCriteria("Guardian's Glade"),
+                                    new SetCriteria("Bleeding Edge Inquest weapons")
+                                ]
+                            },
                         ]
                     },
 
