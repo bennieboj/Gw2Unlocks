@@ -88,7 +88,8 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                     new()
                     {
                         Name = "LW Season 1",
-                        UnlockCriteria = [  ],
+                        UnlockCriteria = [
+                            new RequiresExpansionOrReleaseCriteria("lws1", "living world season 1") ],
                         SubCategories =
                         [
                             new() { Name = "Season 1", UnlockCriteria = [
@@ -113,7 +114,8 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                     new()
                     {
                         Name = "LW Season 2",
-                        UnlockCriteria = [  ],
+                        UnlockCriteria = [
+                            new RequiresExpansionOrReleaseCriteria("lws2", "living world season 2") ],
                         SubCategories =
                         [
                             new() { Name = "Dry Top", UnlockCriteria = [ new ZoneCriteria("Dry Top"), new CurrencyCriteria("Unidentified Fossilized Insect") ] },
@@ -125,7 +127,9 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                     new()
                     {
                         Name = "Heart of Thorns",
-                        UnlockCriteria = [  ],
+                        UnlockCriteria = [
+                            new RequiresExpansionOrReleaseCriteria("hot", "heart of thorns")
+                        ],
                         SubCategories =
                         [
                             new() { Name = "Verdant Brink", UnlockCriteria = [
@@ -153,7 +157,8 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                     new()
                     {
                         Name = "LW Season 3",
-                        UnlockCriteria = [  ],
+                        UnlockCriteria = [
+                            new RequiresExpansionOrReleaseCriteria("lws3", "living world season 3") ],
                         SubCategories =
                         [
                             new() { Name = "Bloodstone Fen",
@@ -200,6 +205,7 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                     {
                         Name = "Path of Fire",
                         UnlockCriteria = [
+                            new RequiresExpansionOrReleaseCriteria("pof", "path of fire"),
                             new CraftingMaterialCriteria("Sliver of Twitching Forgemetal"),
                             new CraftingMaterialCriteria("Congealed Putrescence"),
                             new CraftingMaterialCriteria("Eye of Kormir"),
@@ -233,7 +239,8 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                     {
                         Name = "LW Season 4",
                         UnlockCriteria = [
-                            new CurrencyCriteria("Volatile Magic")
+                            new CurrencyCriteria("Volatile Magic"),
+                            new RequiresExpansionOrReleaseCriteria("lws4", "living world season 4")
                         ],
                         SubCategories =
                         [
@@ -283,7 +290,10 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                     new()
                     {
                         Name = "End of Dragons",
-                        UnlockCriteria = [ new CurrencyCriteria("Ancient Coin") ],
+                        UnlockCriteria = [
+                            new CurrencyCriteria("Ancient Coin"),
+                            new RequiresExpansionOrReleaseCriteria("eod", "end of dragons")
+                        ],
                         SubCategories =
                         [
                             new() { Name = "Seitung Province", UnlockCriteria = [
@@ -304,6 +314,7 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                     {
                         Name = "Icebrood Saga",
                         UnlockCriteria = [ 
+                            new RequiresExpansionOrReleaseCriteria("lws5", "living world season 5", "the icebrood saga"),
                         ],
                         SubCategories =
                         [
@@ -333,6 +344,7 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                     {
                         Name = "Secrets of the Obscure",
                         UnlockCriteria = [ 
+                            new RequiresExpansionOrReleaseCriteria("soto", "soo", "secrets of the obscure"),
                             new CurrencyCriteria("Ancient Coin"),
                             new SetCriteria("Skyforged weapons", 100),
                             new SetCriteria("Eagle Eye weapons", 100)
@@ -375,7 +387,10 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                     new()
                     {
                         Name = "Janthir Wilds",
-                        UnlockCriteria = [ new CurrencyCriteria("Ancient Coin") ],
+                        UnlockCriteria = [
+                            new CurrencyCriteria("Ancient Coin"),
+                            new RequiresExpansionOrReleaseCriteria("jw", "janthir wilds")
+                        ],
                         SubCategories =
                         [
                             new() { Name = "Lowland Shore",
@@ -409,7 +424,10 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                     new()
                     {
                         Name = "Visions of Eternity",
-                        UnlockCriteria = [ new CurrencyCriteria("Unusual Coin") ],
+                        UnlockCriteria = [
+                            new CurrencyCriteria("Unusual Coin"),
+                            new RequiresExpansionOrReleaseCriteria("voe", "visions of eternity")
+                        ],
                         SubCategories =
                         [
                             new() { Name = "Shipwreck Strand",
@@ -467,6 +485,7 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                     {
                         Name = "Heart of Thorns",
                         UnlockCriteria = [
+                            new RequiresExpansionOrReleaseCriteria("hot", "heart of thorns")
                         ],
                         SubCategories =
                         [
@@ -482,6 +501,7 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                     {
                         Name = "Path of Fire",
                         UnlockCriteria = [
+                            new RequiresExpansionOrReleaseCriteria("pof", "path of fire")
                         ],
                         SubCategories =
                         [
@@ -497,6 +517,7 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                     {
                         Name = "Icebrood Saga",
                         UnlockCriteria = [
+                            new RequiresExpansionOrReleaseCriteria("lws5", "living world season 5", "the icebrood saga")
                         ],
                         SubCategories =
                         [
@@ -514,7 +535,8 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                     {
                         Name = "End of Dragons",
                         UnlockCriteria = [
-                            new SetCriteria("Living Water weapons")
+                            new SetCriteria("Living Water weapons"),
+                            new RequiresExpansionOrReleaseCriteria("eod", "end of dragons")
                         ],
                         SubCategories =
                         [
@@ -530,7 +552,8 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                     {
                         Name = "Secrets of the Obscure",
                         UnlockCriteria = [
-                            new SetCriteria("Sinful weapons")
+                            new SetCriteria("Sinful weapons"),
+                            new RequiresExpansionOrReleaseCriteria("soto", "soo", "secrets of the obscure")
                         ],
                         SubCategories =
                         [
@@ -544,6 +567,7 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                     {
                         Name = "Janthir Wilds",
                         UnlockCriteria = [
+                            new RequiresExpansionOrReleaseCriteria("jw", "janthir wilds")
                         ],
                         SubCategories =
                         [
@@ -556,6 +580,7 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                     {
                         Name = "Visions of Eternity",
                         UnlockCriteria = [
+                            new RequiresExpansionOrReleaseCriteria("voe", "visions of eternity")
                         ],
                         SubCategories =
                         [
@@ -1419,6 +1444,34 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
         if (startNode == null)
             return null;
 
+        // An item's infobox "requires" parameter states the expansion or release the content
+        // belongs to. It lives on the item node, which the search reaches before any zone, and it
+        // is carried along the path so every candidate classification is scored with the release
+        // the wiki states rather than with whatever zone the traversal happened to reach first.
+        // A wiki item's "requires" parameter states the release the content belongs to. It is only
+        // read from the unlock itself or from the item that grants it, which a SkinUnlock edge
+        // joins to a skin: a skin's own page carries no "requires", the item's does. Location nodes
+        // carry one too, but reading those would be circular, using a zone's own release to decide
+        // which zone an item found there belongs to, so The Chilly Chaise would follow whichever
+        // of its two sources the search happened to reach.
+        var effectiveRequires = ReadRequires(startNode);
+        if (effectiveRequires == null)
+        {
+            foreach (var edge in edgesByFrom?.GetValueOrDefault(startKey) ?? [])
+            {
+                if (edge.Type != EdgeType.SkinUnlock)
+                {
+                    continue;
+                }
+
+                effectiveRequires = ReadRequires(graph.GetNode(edge.To));
+                if (effectiveRequires != null)
+                {
+                    break;
+                }
+            }
+        }
+
         var startState = new SearchState(startKey, null, null, null, null);
         TryVisit(visited, startKey, null, null);
         queue.Enqueue(startState);
@@ -1663,6 +1716,11 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
             possibleClassifications.Add(new(otherCraftingPath, [startKey], 50));
         }
 
+        // A wiki "requires" parameter is an explicit statement about the release, so it is treated
+        // as a constraint rather than as evidence to be weighed: candidates from other releases
+        // are dropped outright, and the surviving ones are then collapsed onto the deepest
+        // category they all share when they cannot be separated. Both steps are gated on the item
+        // actually declaring a release, so unlocks without one keep their previous behaviour.
         var orderedMatches = possibleClassifications
             .GroupBy(x => x.Category)
             .Select(g => new
@@ -1672,9 +1730,49 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                 Count = g.Count(),
                 Items = g.ToList()
             })
+            .Select(x => new
+            {
+                x.Category,
+                x.MaxPriority,
+                x.Count,
+                x.Items,
+                // A release stated by the wiki settles ties, it does not exclude. "requires" says
+                // what a player needs to own the content, not that the content exists nowhere
+                // else, so a category from another release may still win on its own evidence:
+                // Blood Ruby Backpack requires Heart of Thorns but is earned in Bloodstone Fen.
+                MatchesRequires = !string.IsNullOrWhiteSpace(effectiveRequires)
+                    && AllowsRequiredRelease(x.Category, effectiveRequires),
+            })
             .OrderByDescending(x => x.MaxPriority)
-            .ThenByDescending(x => x.Count); // optional tie-breaker
-        var bestMatch = orderedMatches.FirstOrDefault();
+            .ThenByDescending(x => x.Count)
+            .ThenByDescending(x => x.MatchesRequires) // the wiki's release breaks an otherwise exact tie
+            .ToList();
+
+        if (orderedMatches.Count == 0)
+        {
+            return null;
+        }
+
+        // The candidates that tie on priority and on the number of supporting paths, before the
+        // release is taken into account.
+        var top = orderedMatches[0];
+        var contenders = orderedMatches
+            .Where(x => x.MaxPriority == top.MaxPriority && x.Count == top.Count)
+            .ToList();
+
+        // Collapsing is a consequence of trusting the wiki's release, so it only applies when that
+        // release actually decided something. A tie the release says nothing about, such as a skin
+        // in a chest in Verdant Brink and one in Auric Basin, is a pre-existing ambiguity and
+        // keeps the category it has always had.
+        var matching = contenders.Where(x => x.MatchesRequires).ToList();
+        var requiresDecided = matching.Count > 0 && matching.Count < contenders.Count;
+        var collapseTo = requiresDecided && matching.Count > 1
+            ? FindCommonAncestor(matching.Select(x => x.Category))
+            : null;
+
+        var bestMatch = collapseTo != null
+            ? new { Category = collapseTo.Value, top.MaxPriority, top.Count, Items = matching.SelectMany(x => x.Items).ToList(), top.MatchesRequires }
+            : orderedMatches.First();
 
         if (bestMatch != null)
         {
@@ -1683,6 +1781,63 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
         }
 
         return null;
+    }
+
+    /// <summary>
+    /// The deepest category shared by every one of these paths, i.e. the point the evidence
+    /// actually pins down. Returns the path itself when there is a single distinct category, and
+    /// null when the categories do not share a parent at all.
+    /// </summary>
+    private static CategoryPath? FindCommonAncestor(IEnumerable<CategoryPath> paths)
+    {
+        var distinct = paths.Distinct().ToList();
+        if (distinct.Count <= 1)
+        {
+            return null;
+        }
+
+        var common = distinct[0].Nodes.ToArray();
+        for (var i = 1; i < distinct.Count; i++)
+        {
+            var other = distinct[i].Nodes;
+            var shared = 0;
+            while (shared < common.Length && shared < other.Length
+                && string.Equals(common[shared].Name, other[shared].Name, StringComparison.Ordinal))
+            {
+                shared++;
+            }
+
+            common = common.Take(shared).ToArray();
+        }
+
+        // A shared root such as "Expansions & Living World" carries no information about the
+        // unlock, so collapsing all the way to it would be as arbitrary as picking a child.
+        if (common.Length < 2)
+        {
+            return null;
+        }
+
+        return new CategoryPath([.. common]);
+    }
+
+    /// <summary>
+    /// The release this node's wiki infobox declares through its <c>requires</c> parameter, or null
+    /// when the page does not state one.
+    /// </summary>
+    private static string? ReadRequires(Node? node) =>
+        node?.Metadata.TryGetValue("requires", out var value) == true && !string.IsNullOrWhiteSpace(value)
+            ? value
+            : null;
+
+    /// <summary>
+    /// Whether this category's own criteria, or those of an ancestor, name the release the wiki
+    /// says the item requires. Categories that say nothing about a release match, so a config
+    /// without the criteria behaves exactly as it did before.
+    /// </summary>
+    private static bool AllowsRequiredRelease(CategoryPath path, string requires)
+    {
+        var criteria = path.GetInheritedCriteria().OfType<RequiresExpansionOrReleaseCriteria>().ToList();
+        return criteria.Count == 0 || criteria.Any(c => c.Matches(requires));
     }
 
     private bool MatchesSaleLocation(string location, string saleLocations)

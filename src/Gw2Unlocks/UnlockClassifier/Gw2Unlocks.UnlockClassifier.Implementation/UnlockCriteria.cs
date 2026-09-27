@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace Gw2Unlocks.UnlockClassifier.Implementation;
 
@@ -61,6 +62,37 @@ internal sealed class AchievementCategoryCriteria(string AchievementCategoryName
             name,
             AchievementCategoryName,
             StringComparison.OrdinalIgnoreCase);
+    }
+}
+
+
+/// <summary>
+/// The expansion or release a wiki infobox declares via its <c>requires</c> parameter, which
+/// Template:Infobox requires turns into an expansion notice and a category. The wiki accepts both
+/// a short code and a spelled-out name (<c>eod</c> or <c>end of dragons</c>), so a criterion matches
+/// any of the aliases it is given.
+/// </summary>
+/// <remarks>
+/// This is not a scored criterion. It never contributes priority, it is never matched against a
+/// node: it constrains <em>which</em> categories a classification may land in, so that a release
+/// stated once on the item page prunes candidates from every other release.
+/// </remarks>
+internal sealed class RequiresExpansionOrReleaseCriteria(params string[] aliases) : UnlockCriteria
+{
+    public override int Priority => 0;
+
+    public override bool Matches(string requires)
+    {
+        if (string.IsNullOrWhiteSpace(requires))
+        {
+            return false;
+        }
+
+        // A page may require more than one release, e.g. "requires = lws5, eod".
+        return requires
+            .Split(',', StringSplitOptions.TrimEntries | StringSplitOptions.RemoveEmptyEntries)
+            .Any(required => aliases.Any(
+                alias => string.Equals(alias, required, StringComparison.OrdinalIgnoreCase)));
     }
 }
 

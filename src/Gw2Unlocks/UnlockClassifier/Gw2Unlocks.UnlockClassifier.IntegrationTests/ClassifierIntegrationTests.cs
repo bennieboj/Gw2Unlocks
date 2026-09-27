@@ -77,7 +77,7 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
     [InlineData("Restless Captain's Heavy Veil (skin)", "Visions of Eternity", "Shipwreck Strand")]
     [InlineData("Extremis Heavy Hood (skin)", "Visions of Eternity", "Starlit Weald")]
     [InlineData("Forge Guard's Heavy Helmet (skin)", "Visions of Eternity", "Eternity's Garden")]
-    [InlineData("Tenebral Ward Heavy Helmet (skin)", "Visions of Eternity", "Leyspring Hollows", Skip = "Wiki skin node not available")]
+    [InlineData("Tenebral Ward Heavy Helmet (skin)", "Visions of Eternity", "Leyspring Hollows")]
     public async Task GivenVendorSellsItemsAtDifferentLocationsWhenClassifyingUnlockThenShouldReturnCategoryLinkedToSaleLocation(string unlockName, string expansionName, string categoryName)
     {
         var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
@@ -121,6 +121,50 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
     {
         var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
         var category = Find(results, "Expansions & Living World", "Janthir Wilds", "Lowland Shore");
+        var unlock = category.Unlocks.Single(c => c.Name == unlockName);
+
+        Assert.NotNull(unlock);
+        Assert.NotNull(unlock.ApiData);
+    }
+
+    // Regression for the 2026-09-18 classifier diff: Angler Hat moved from
+    // Janthir Wilds > Lowland Shore to End of Dragons > Arborstone.
+    // The hat is sold by vendors spread over four releases, and the reachable End of Dragons
+    // zones (Arborstone and The Echovald Wilds) are indistinguishable: the graph cannot say
+    // which EoD map sells it. Its item page declares "requires = eod", which resolves the
+    // release but not the map, so the unlock belongs on End of Dragons itself rather than on
+    // an arbitrary child that a BFS reorder could change tomorrow.
+    [Theory]
+    [InlineData("Angler Hat (heavy skin)")]
+    [InlineData("Angler Hat (light skin)")]
+    [InlineData("Angler Hat (medium skin)")]
+    public async Task GivenItemRequiresEndOfDragonsThenShouldReturnEndOfDragonsItself(string unlockName)
+    {
+        var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
+        var endOfDragons = Find(results, "Expansions & Living World", "End of Dragons");
+
+        var unlock = endOfDragons.Unlocks.Single(c => c.Name == unlockName);
+        Assert.NotNull(unlock.ApiData);
+
+        // The release is resolved, the map is not: no EoD child may claim it, and neither may
+        // any of the other releases the hat is sold in.
+        Assert.Empty(endOfDragons.SubCategories.SelectMany(c => c.Unlocks));
+        Assert.DoesNotContain(
+            Find(results, "Expansions & Living World", "Janthir Wilds").GetUnlocksWithDescendants(),
+            u => u.Name == unlockName);
+    }
+
+    // The Chilly Chaise is obtainable twice: from a Vigil Emissary Chest in Eye of the North, and
+    // as the reward of the Shiverpeaks Pass strike. Its own page states no "requires", but both of
+    // those sources do (Shiverpeaks Pass requires Path of Fire, and Shiverpeaks Pass sits in
+    // Grothmar Valley, which requires The Icebrood Saga). Reading a source's release would let the
+    // zone decide its own classification, so the novelty has to stay where the graph put it.
+    [Fact]
+    public async Task GivenNoRequiresOnTheItemItselfThenShouldNotFollowTheSourcesRelease()
+    {
+        var unlockName = "The Chilly Chaise";
+        var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
+        var category = Find(results, "Raids", "Path of Fire", "Shiverpeaks Pass");
         var unlock = category.Unlocks.Single(c => c.Name == unlockName);
 
         Assert.NotNull(unlock);
