@@ -977,10 +977,17 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
     {
         List<(Categorization categorization, string unlockName) > possibleClassifications = [];
         var achievement = achievements!.SingleOrDefault(a => a.Id == achievementIdInt);
-        if(achievement != null && (achievement.Flags.Daily || achievement.Flags.Weekly || achievement.Name.Contains("(Annual)", StringComparison.InvariantCulture)))
+        if(achievement != null && 
+            (achievement.Flags.Daily 
+            || achievement.Flags.Weekly 
+            || achievement.Flags.Monthly 
+            || achievement.Name.Contains("(Annual)", StringComparison.InvariantCulture)
+            || (achievement.Flags.Repeatable && achievement.PointCap is null)
+            )
+        )
         {
             //filter out
-            //return;
+            return;
         }
         if (achievementCriteriaByAchievementId!.TryGetValue(achievementIdInt, out var foundAchievementCategoryCriteria))
         {

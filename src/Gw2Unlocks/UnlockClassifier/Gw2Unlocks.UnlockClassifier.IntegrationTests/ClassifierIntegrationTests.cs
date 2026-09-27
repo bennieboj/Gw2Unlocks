@@ -791,18 +791,29 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
         Assert.Equal("https://render.guildwars2.com/file/109A0AE76FCA3EBC03039BA668B90142CAB0DDA2/866109.png", unlock.ApiData.IconUrl?.ToString());
     }
 
-    [Theory(Skip = "not sure yet")]
-    [InlineData("New Kaineng City (achievements)#achievement6213")] // "Protector of Kaineng", repeatable, ideally I want this still!
-    [InlineData("New Year's Customs#achievement6063")] // "(Weekly) Lunar Festivities", weekly
-    [InlineData("New Year's Customs#achievement4080")] // "(Annual) New Year's Resolution", contains "{Annual}"
-    [InlineData("Super Adventure Box: Nostalgia#achievement2843")] // "Course Load", repeatable
-    public async Task GivenAchievementsThatAreNotRepeatableShouldNotBeLinkedtoUnlockCategory(string unlockName)
+    /// Repeatable achievements that have an achievement point cap (e.g. "Protector of Kaineng",
+    /// point_cap = 2) are completed permanently, so they stay classified.
+    [Theory]
+    [InlineData("New Kaineng City (achievements)#achievement6213")] // "Protector of Kaineng", repeatable with a point cap
+    [InlineData("Super Adventure Box: Nostalgia#achievement2843")] // "Course Load", repeatable with a point cap
+    public async Task GivenAchievementsThatAreNotRepeatableShouldBeLinkedtoUnlockCategory(string unlockName)
     {
         var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
-        var groups = results.Categories.Where(g => g.Unlocks.Any(u => u.Name == unlockName)).ToList();
         var categories = results.GetAllCategories().Where(c => c.Unlocks.Any(u => u.Name == unlockName)).ToList();
 
-        Assert.Empty(groups);
+        Assert.Single(categories);
+    }
+
+    /// Resettable achievements (daily/weekly/annual) and achievements without an achievement
+    /// point cap are never a permanent unlock, so they are not classified at all.
+    [Theory]
+    [InlineData("New Year's Customs#achievement6063")] // "(Weekly) Lunar Festivities", weekly
+    [InlineData("New Year's Customs#achievement4080")] // "(Annual) New Year's Resolution", contains "(Annual)"
+    public async Task GivenAchievementsThatAreRepeatableShouldNotBeLinkedtoUnlockCategory(string unlockName)
+    {
+        var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
+        var categories = results.GetAllCategories().Where(c => c.Unlocks.Any(u => u.Name == unlockName)).ToList();
+
         Assert.Empty(categories);
     }
 
