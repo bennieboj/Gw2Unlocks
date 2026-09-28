@@ -217,6 +217,29 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
         Assert.Equal(Type.Miniature, unlock.ApiData?.Type);
     }
 
+    /// The Endless tonics are crafted in the Mystic Forge. Their ingredients (Chunk of Ancient
+    /// Ambergris) are fished, so once fishing holes were allowed through the GatheredFrom cut
+    /// each tonic also reached a zone via "Tonic -> GatheredFrom -> Fishing hole -> LocatedIn".
+    /// A fishing hole is a weaker statement about how you get the unlock than the recipe it
+    /// feeds, so it must not outrank the Mystic Forge. These used to land in Arborstone,
+    /// Inner Nayos, Lowland Shore and Shipwreck Strand.
+    [Theory]
+    [InlineData("Endless Cave Crab Tonic")]
+    [InlineData("Endless Hermit Crab Tonic")]
+    [InlineData("Endless Koi Tonic")]
+    [InlineData("Endless Shark Tonic")]
+    [InlineData("Endless Dolphin Tonic")]
+    [InlineData("Endless Thundershrimp Tonic")]
+    public async Task GivenCraftedTonicMadeFromFishThenShouldBeMysticForge(string unlockName)
+    {
+        var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
+        var category = Find(results, "Other", "Mystic Forge");
+        var unlock = category.Unlocks.Single(c => c.Name == unlockName);
+
+        Assert.NotNull(unlock);
+        Assert.NotNull(unlock.ApiData);
+    }
+
     /// These two are rewarded by a meta event via a cache: Mini -> ContainedIn -> cache ->
     /// RewardedBy -> meta event. The meta event names its zone in the infobox "location"
     /// field, which used to be dropped, so the chain dead-ended before reaching a zone.
@@ -476,6 +499,15 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
     [Theory]
     [InlineData("Cobalt Antique Artifact")]
     [InlineData("Illustrious Breastplate")]
+    // The Calcite/Citrine/Viridian Antique weapon sets used to sit at priority 79, just below
+    // ZoneCriteria's default of 80, so any zone the traversal happened to reach could outrank
+    // Crafting and file these skins under a random zone. They are crafted, so they belong here.
+    [InlineData("Viridian Antique Impaler")]
+    [InlineData("Viridian Antique Warhammer")]
+    [InlineData("Calcite Antique Impaler")]
+    [InlineData("Calcite Antique Warhammer")]
+    [InlineData("Citrine Antique Impaler")]
+    [InlineData("Citrine Antique Warhammer")]
     public async Task AscendedCraftingSkinsShouldBeCrafting(string unlockName)
     {
         var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);

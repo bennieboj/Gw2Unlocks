@@ -82,6 +82,14 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
     private static readonly HashSet<string> gatheringSourceTypes =
         new(StringComparer.OrdinalIgnoreCase) { "chest", "fishing hole" };
 
+    // A zone reached only by way of a fishing hole is a weaker statement about how the player
+    // gets the unlock than the route that actually consumes it. Crafted items whose ingredients
+    // are fish (the Endless tonics) otherwise picked up whichever zone the fish spawns in,
+    // because a ZoneCriteria scores 80 and outranks the Mystic Forge's 70. Scoring these below
+    // the Mystic Forge keeps the genuine drops in their zone, because for those it is the only
+    // evidence there is and the tie is then settled by the number of supporting paths.
+    private const int fishingHoleZonePriority = 65;
+
     private static ClassifyConfig CreateConfig()
     {
         return new ClassifyConfig
@@ -892,9 +900,9 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                             new SetCriteria("Illustrious armor"),
                             new SetCriteria("Cobalt Antique weapons"),
                             new SetCriteria("Terracotta Antique weapons"),
-                            new SetCriteria("Calcite Antique weapons", 79),
-                            new SetCriteria("Citrine Antique weapons", 79),
-                            new SetCriteria("Viridian Antique weapons", 79),
+                            new SetCriteria("Calcite Antique weapons", 81),
+                            new SetCriteria("Citrine Antique weapons", 81),
+                            new SetCriteria("Viridian Antique weapons", 81),
                             ] },
                         new() { Name = "Legendary", UnlockCriteria = [
                             new SetCriteria("Experimental weapons"),
@@ -1610,15 +1618,20 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                         .OfType<TokenCriteria>().ToList();
 
                     var cost = searchState.Cost;
+                    var zonePriority = zoneCriteria.First().Priority;
+                    if (reachedViaFishingHole(currentKey, parent))
+                    {
+                        zonePriority = Math.Min(zonePriority, fishingHoleZonePriority);
+                    }
                     if (cost == null || (validCurrencies.Count == 0 && validTokens.Count == 0))
                     {
-                        possibleClassifications.Add(new(path, BuildPath(currentKey, parent), zoneCriteria.First().Priority));
+                        possibleClassifications.Add(new(path, BuildPath(currentKey, parent), zonePriority));
                     }
                     else
                     {
                         var countOfValidCurrencies = validCurrencies.Count(c => c.Matches(cost));
                         var countofValidTokens = validTokens.Count(t => t.MatchesCost(cost));
-                        possibleClassifications.Add(new(path, BuildPath(currentKey, parent), zoneCriteria.First().Priority + countOfValidCurrencies * 5 + countofValidTokens * 5));
+                        possibleClassifications.Add(new(path, BuildPath(currentKey, parent), zonePriority + countOfValidCurrencies * 5 + countofValidTokens * 5));
                     }
                 }
             }
@@ -1964,6 +1977,29 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
 
         path.Reverse();
         return path;
+    }
+
+    /// Whether the route to this node passed through a fishing hole, i.e. whether the wiki only
+    /// relates the unlock to the zone by way of a fish or other gatherable spawning there. The
+    /// zone is then a weaker claim about the unlock than a recipe or vendor would be, so the
+    /// caller scores it below those. Only fishing holes are treated this way: a curated chest is
+    /// a deliberate placement and is as strong a claim as the wiki can make.
+    private bool reachedViaFishingHole(string endKey, Dictionary<string, string?> parent)
+    {
+        var current = endKey;
+        while (current != null)
+        {
+            if (graph?.GetNode(current) is { Type: NodeType.Gw2Object } node
+                && node.Metadata.TryGetValue("type", out var objectType)
+                && objectType.Equals("fishing hole", StringComparison.OrdinalIgnoreCase))
+            {
+                return true;
+            }
+
+            current = parent[current];
+        }
+
+        return false;
     }
 }
 
