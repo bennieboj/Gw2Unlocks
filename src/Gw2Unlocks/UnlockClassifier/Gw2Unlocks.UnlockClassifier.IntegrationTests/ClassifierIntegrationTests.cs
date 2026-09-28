@@ -201,6 +201,22 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
         Assert.NotNull(unlock.ApiData);
     }
 
+    /// The only miniature in the game dropped by a fishing hole. The cut on non-chest
+    /// GatheredFrom sources used to stop the search at the fishing node, so it classified
+    /// nowhere. Both of its sources put it in Shipwreck Strand, which is where it lands.
+    [Fact]
+    public async Task GivenMiniDroppedByFishingHoleThenShouldReturnShipwreckStrand()
+    {
+        var unlockName = "Mini Horror Crab";
+        var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
+        var category = Find(results, "Expansions & Living World", "Visions of Eternity", "Shipwreck Strand");
+        var unlock = category.Unlocks.Single(c => c.Name == unlockName);
+
+        Assert.NotNull(unlock);
+        Assert.Equal(1013, unlock.ApiData?.Id);
+        Assert.Equal(Type.Miniature, unlock.ApiData?.Type);
+    }
+
     /// These two are rewarded by a meta event via a cache: Mini -> ContainedIn -> cache ->
     /// RewardedBy -> meta event. The meta event names its zone in the infobox "location"
     /// field, which used to be dropped, so the chain dead-ended before reaching a zone.

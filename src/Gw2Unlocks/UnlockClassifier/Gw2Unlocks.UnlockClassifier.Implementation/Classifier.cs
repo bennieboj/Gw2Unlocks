@@ -73,6 +73,15 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
         "Unidentified Gear"
     ];
 
+    // Sources reached through a GatheredFrom edge that are deliberately placed rather than
+    // dropped by a mob: a curated chest, or a fishing hole the wiki gives a location for.
+    // Anything else arriving that way is a mob drop, which would otherwise place thousands of
+    // items in whichever zone the traversal happened to reach first. The comparison is
+    // case-insensitive because the two types are not cased alike: "chest" is lowercase in the
+    // wiki, "Fishing hole" is capitalised.
+    private static readonly HashSet<string> gatheringSourceTypes =
+        new(StringComparer.OrdinalIgnoreCase) { "chest", "fishing hole" };
+
     private static ClassifyConfig CreateConfig()
     {
         return new ClassifyConfig
@@ -1498,7 +1507,7 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
             }
 
             if (searchState.IncomingEdgeType == EdgeType.GatheredFrom
-                && current.Type == NodeType.Gw2Object && current.Metadata.TryGetValue("type", out var objectType) && objectType != "chest")
+                && current.Type == NodeType.Gw2Object && current.Metadata.TryGetValue("type", out var objectType) && !gatheringSourceTypes.Contains(objectType))
             {
                 continue;
             }
