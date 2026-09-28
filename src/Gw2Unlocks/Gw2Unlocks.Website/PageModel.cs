@@ -101,4 +101,12 @@ internal sealed class UnlockMapModel
     /// root entry is the total for that whole branch.
     /// </summary>
     public Dictionary<string, Dictionary<Type, List<int>>> Categories { get; set; } = [];
+
+    /// <summary>
+    /// The count at which each capped repeatable achievement has awarded its full achievement point
+    /// cap, keyed by achievement id. Absent ids never reach a cap, so only the account API's "done"
+    /// flag applies to them. Kept beside the map so the sidebar can count unlocks without a
+    /// corresponding element on the page.
+    /// </summary>
+    public Dictionary<int, int> AchievementPointCapReachedAt { get; set; } = [];
 }

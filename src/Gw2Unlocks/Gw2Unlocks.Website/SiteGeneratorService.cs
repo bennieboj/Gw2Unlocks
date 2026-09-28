@@ -162,13 +162,14 @@ internal sealed class SiteGeneratorService(
     private async Task GenerateSite(CancellationToken stoppingToken)
     {
         var config = await classifierCache.GetClassifierConfigFromCacheAsync(stoppingToken);
-        var unlockMapJson = JsonSerializer.Serialize(BuildUnlockMap(config), serOptions);
         var urls = new List<string>();
 
         var sidebar = BuildSidebar(config);
 
         var allUnlocks = new Collection<Unlock>(
             [.. config.Categories.SelectMany(g => g.GetUnlocksWithDescendants())]);
+
+        var unlockMapJson = JsonSerializer.Serialize(BuildUnlockMap(config, allUnlocks), serOptions);
 
         var css = await File.ReadAllTextAsync("WebsiteTemplates/page.css", stoppingToken);
         var js = await File.ReadAllTextAsync("WebsiteTemplates/page.js", stoppingToken);
@@ -277,7 +278,7 @@ internal sealed class SiteGeneratorService(
         File.WriteAllText(Path.Combine(publicPath, "sitemap.xml"), sb.ToString());
     }
 
-    private static UnlockMapModel BuildUnlockMap(ClassifyConfig config)
+    private static UnlockMapModel BuildUnlockMap(ClassifyConfig config, Collection<Unlock> allUnlocks)
     {
         var map = new UnlockMapModel();
 
@@ -305,6 +306,14 @@ internal sealed class SiteGeneratorService(
             }
 
             map.Categories[key] = dict;
+        }
+
+        foreach (var unlock in allUnlocks)
+        {
+            if (unlock.ApiData?.AchievementPointCapReachedAt is { } reachedAt)
+            {
+                map.AchievementPointCapReachedAt[unlock.ApiData.Id] = reachedAt;
+            }
         }
 
         return map;

@@ -69,6 +69,19 @@ public class ApiData
     public string Requirement { get; set; } = "";
     public Uri? RewardIconUrl { get; set; }
     public string? RewardName { get; set; } = "";
+
+    /// <summary>
+    /// For a repeatable achievement, the count at which it has awarded its full achievement point
+    /// cap, or null when the tiers award fewer points than the cap (so the cap is never reached)
+    /// or the achievement is not capped. Null for every other unlock type.
+    /// </summary>
+    /// <remarks>
+    /// The account API only reports an achievement as done once every tier is filled, but a tier
+    /// past the cap awards no points, so a player holding every obtainable point still sees the
+    /// achievement as incomplete. Comparing progress against this count lets the site treat the
+    /// unlock as earned.
+    /// </remarks>
+    public int? AchievementPointCapReachedAt { get; set; }
 }
 
 public enum Type

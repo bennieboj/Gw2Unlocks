@@ -951,11 +951,15 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
         Assert.Equal("https://render.guildwars2.com/file/109A0AE76FCA3EBC03039BA668B90142CAB0DDA2/866109.png", unlock.ApiData.IconUrl?.ToString());
     }
 
-    /// Repeatable achievements that have an achievement point cap (e.g. "Protector of Kaineng",
-    /// point_cap = 2) are completed permanently, so they stay classified.
+    /// <summary>
+    /// Repeatable achievements that award achievement points stay classified: the points are
+    /// permanent once earned, so the achievement is a real unlock rather than a repeatable chore.
+    /// </summary>
     [Theory]
-    [InlineData("New Kaineng City (achievements)#achievement6213")] // "Protector of Kaineng", repeatable with a point cap
-    [InlineData("Super Adventure Box: Nostalgia#achievement2843")] // "Course Load", repeatable with a point cap
+    [InlineData("New Kaineng City (achievements)#achievement6213")] // "Protector of Kaineng", 1+1+0 capped at 2
+    [InlineData("New Kaineng City (achievements)#achievement6310")] // "Harbinger of Zhaitan", 1+1+0 capped at 2
+    [InlineData("New Kaineng City (achievements)#achievement6508")] // "Not in This Neighborhood", 1+1+1 capped at 2
+    [InlineData("Super Adventure Box: Nostalgia#achievement2843")] // "Course Load", 20 capped at 100
     public async Task GivenAchievementsThatAreNotRepeatableShouldBeLinkedtoUnlockCategory(string unlockName)
     {
         var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
@@ -964,11 +968,56 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
         Assert.Single(categories);
     }
 
-    /// Resettable achievements (daily/weekly/annual) and achievements without an achievement
-    /// point cap are never a permanent unlock, so they are not classified at all.
+    /// <summary>
+    /// The count at which a repeatable achievement has awarded its full achievement point cap.
+    /// A tier beyond the cap awards no points, so the account API never reports the achievement as
+    /// done even though the player holds every obtainable point; the site would otherwise show it
+    /// as locked forever.
+    /// </summary>
+    [Theory]
+    [InlineData("New Kaineng City (achievements)#achievement6213", 100)] // "Protector of Kaineng": 1 point at 50, 1 at 100
+    [InlineData("New Kaineng City (achievements)#achievement6310", 100)] // "Harbinger of Zhaitan": 1 point at 50, 1 at 100
+    [InlineData("New Kaineng City (achievements)#achievement6508", 100)] // "Not in This Neighborhood": 1 point at 50, 1 at 100
+    public async Task GivenRepeatableAchievementThatAwardsPointsThenCapIsReachedAtTheCumulativePointCount(string unlockName, int expectedCount)
+    {
+        var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
+        var category = Assert.Single(results.GetAllCategories(), c => c.Unlocks.Any(u => u.Name == unlockName));
+        var unlock = category.Unlocks.Single(c => c.Name == unlockName);
+
+        Assert.NotNull(unlock.ApiData);
+        Assert.Equal(expectedCount, unlock.ApiData.AchievementPointCapReachedAt);
+    }
+
+    /// <summary>
+    /// When the tiers award fewer points than the cap, the cap is never reached, so there is no
+    /// count to report and the plain "done" flag remains the correct signal. "Reliving the
+    /// Tragedy" awards 1 point against a cap of 2.
+    /// </summary>
+    [Theory]
+    [InlineData("New Kaineng City (achievements)#achievement6443")] // "Reliving the Tragedy", 1 point capped at 2
+    [InlineData("Super Adventure Box: Nostalgia#achievement2843")] // "Course Load", 20 points capped at 100
+    public async Task GivenRepeatableAchievementThatCannotReachItsCapThenCapReachedAtIsNull(string unlockName)
+    {
+        var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
+        var category = Assert.Single(results.GetAllCategories(), c => c.Unlocks.Any(u => u.Name == unlockName));
+        var unlock = category.Unlocks.Single(c => c.Name == unlockName);
+
+        Assert.NotNull(unlock.ApiData);
+        Assert.Null(unlock.ApiData.AchievementPointCapReachedAt);
+    }
+
+    /// <summary>
+    /// Resettable achievements (daily/weekly/annual), achievements without an achievement point cap,
+    /// and repeatable achievements that award no points at all are never a permanent unlock, so
+    /// they are not classified. A cap of 0 (exposed as -1 by the API, and written by the wiki as
+    /// "capped at 0") means the tiers award nothing however often they are repeated.
+    /// </summary>
     [Theory]
     [InlineData("New Year's Customs#achievement6063")] // "(Weekly) Lunar Festivities", weekly
     [InlineData("New Year's Customs#achievement4080")] // "(Annual) New Year's Resolution", contains "(Annual)"
+    [InlineData("New Kaineng City (achievements)#achievement6180")] // "No-Fun Police", repeatable, capped at 0
+    [InlineData("New Kaineng City (achievements)#achievement6235")] // "Always in Working Order", repeatable, capped at 0
+    [InlineData("New Kaineng City (achievements)#achievement6247")] // "Working as Intended", repeatable, capped at 0
     public async Task GivenAchievementsThatAreRepeatableShouldNotBeLinkedtoUnlockCategory(string unlockName)
     {
         var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);

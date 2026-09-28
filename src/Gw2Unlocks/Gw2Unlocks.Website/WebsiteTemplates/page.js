@@ -107,6 +107,31 @@ function isUnlocked(id, type) {
   return false;
 }
 
+// Whether the account API record shows a capped repeatable achievement has been played far enough
+// to award its full achievement point cap.
+//
+// "current" only describes the run in progress: completing a repeatable resets it to zero and
+// starts the next run, so a player who has earned the cap can sit at a low count again. "repeated"
+// is the count of completed runs, and a completed run necessarily passed the cap count, because
+// the cap always sits at or below the final tier. So a completed run settles it permanently, and
+// "current" only covers the run in progress. Ids absent from the map never reach a cap, so for
+// those the "done" flag alone applies.
+function isAchievementCapEarned(achievement) {
+  const capReachedAt = unlockMap.achievementPointCapReachedAt?.[achievement.id];
+
+  if (capReachedAt === undefined) {
+    return false;
+  }
+
+  const completedRuns = typeof achievement.repeated === "number" ? achievement.repeated : 0;
+
+  if (completedRuns > 0) {
+    return true;
+  }
+
+  return typeof achievement.current === "number" && achievement.current >= capReachedAt;
+}
+
 function updateUnlockStates() {
 
   document.querySelectorAll(".grid").forEach(grid => {
@@ -322,13 +347,20 @@ async function refreshApi() {
     const skins = await skinsRes.json();
     const novelties = await noveltiesRes.json();
     const achievementData = await achievementsRes.json();
-    const achievements = achievementData.filter(x => x.done).map(x => x.id);
+    // A capped repeatable achievement is earned once its point cap is reached, even though the
+    // account API never reports it as done: the tier past the cap awards no points, so the player
+    // holds every obtainable point while the achievement still reads as incomplete. A repeatable
+    // also resets its progress to zero on completion, so the current count is only evidence within
+    // the run it was measured in. The cap is a one-off unlock, so it is folded into the done set
+    // here rather than re-derived from progress on every render.
+    const achievements = achievementData
+      .filter(x => x.done || isAchievementCapEarned(x))
+      .map(x => x.id);
 
     accountState.minis = minis;
     accountState.skins = skins;
     accountState.novelties = novelties;
     accountState.achievements = achievements;
-
 
     localStorage.setItem(STORAGE_KEYS.minis, JSON.stringify(minis));
     localStorage.setItem(STORAGE_KEYS.skins, JSON.stringify(skins));

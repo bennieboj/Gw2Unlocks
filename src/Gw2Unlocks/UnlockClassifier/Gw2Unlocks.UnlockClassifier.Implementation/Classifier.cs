@@ -1034,7 +1034,7 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
             || achievement.Flags.Weekly 
             || achievement.Flags.Monthly 
             || achievement.Name.Contains("(Annual)", StringComparison.InvariantCulture)
-            || (achievement.Flags.Repeatable && achievement.PointCap is null)
+            || (achievement.Flags.Repeatable && (achievement.PointCap is null || !AwardsAchievementPoints(achievement)))
             )
         )
         {
@@ -1126,6 +1126,45 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
         {
             Categorize(bestClassification.Path, unlock.Name, unlock.Node);
         }
+    }
+
+    /// <summary>
+    /// Whether the achievement's tiers award any achievement points at all. A repeatable
+    /// achievement that awards none is not an unlock, however often it is repeated, so it is
+    /// filtered out; the wiki writes these as "capped at 0" and the API exposes 0 as -1.
+    /// </summary>
+    private static bool AwardsAchievementPoints(Achievement achievement)
+        => achievement.Tiers.Any(t => t.Points > 0);
+
+    /// <summary>
+    /// The count at which a repeatable achievement has awarded its full achievement point cap, or
+    /// null when the tiers never award that many points.
+    /// </summary>
+    /// <remarks>
+    /// Tiers are cumulative and a tier past the cap awards nothing, so the account API keeps
+    /// reporting the achievement as incomplete long after the player has every obtainable point.
+    /// Summing the tier points in order and stopping at the cap gives the count that actually
+    /// matters. An uncapped achievement awards the same points however often it is repeated, so it
+    /// has no meaningful cap and yields null, as does a cap of 0 (exposed as -1).
+    /// </remarks>
+    private static int? GetAchievementPointCapReachedAt(Achievement achievement)
+    {
+        if (achievement.PointCap is not { } cap || cap <= 0)
+        {
+            return null;
+        }
+
+        var pointsAwarded = 0;
+        foreach (var tier in achievement.Tiers)
+        {
+            pointsAwarded += tier.Points;
+            if (pointsAwarded >= cap)
+            {
+                return tier.Count;
+            }
+        }
+
+        return null;
     }
 
     private void ClassifyUnlock(string unlock)
@@ -1433,7 +1472,8 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                     IconY = achievementCategoryInvItem?.Y,
                     ChatCodeId = achievement.Id,
                     RewardName = rewardName,
-                    RewardIconUrl = rewardIcon
+                    RewardIconUrl = rewardIcon,
+                    AchievementPointCapReachedAt = GetAchievementPointCapReachedAt(achievement)
                 };
             }
         }
