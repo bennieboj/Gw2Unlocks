@@ -527,6 +527,7 @@ public sealed class Gw2WikiProcessingSource(
             "ARMOR SET" => NodeType.Set,
 
             "EVENT" => NodeType.Event,
+            "ADVENTURE" => NodeType.Adventure,
 
             "OBJECT" => NodeType.Gw2Object,
 
@@ -618,6 +619,16 @@ public sealed class Gw2WikiProcessingSource(
         }
 
 
+        // Events and adventures state where they happen in an infobox "location" field. That was
+        // never turned into an edge, so anything reachable only through an event or adventure
+        // (event caches, event rewards) dead-ended before it ever reached a zone. Unlike a vendor,
+        // an event has no vendor tables, so the infobox field is the whole story.
+        if (info.InfoBoxType.Equals("Event", StringComparison.OrdinalIgnoreCase)
+            || info.InfoBoxType.Equals("Adventure", StringComparison.OrdinalIgnoreCase))
+        {
+            LinkToLocations(graph, nodeId, SplitLocations(info.Get("location")));
+        }
+
         // objects
         if (info.InfoBoxType.Equals("Object", StringComparison.OrdinalIgnoreCase))
         {
@@ -677,7 +688,8 @@ public sealed class Gw2WikiProcessingSource(
         }
 
         if (info.InfoBoxType.Equals("NPC", StringComparison.OrdinalIgnoreCase) || 
-            info.InfoBoxType.Equals("Event", StringComparison.OrdinalIgnoreCase)) { }
+            info.InfoBoxType.Equals("Event", StringComparison.OrdinalIgnoreCase) ||
+            info.InfoBoxType.Equals("Adventure", StringComparison.OrdinalIgnoreCase)) { }
         {
             var rewardsItemTemplates = ast.EnumDescendants().OfType<Template>().Where(t => t.Name.ToString().Contains("Rewards item", StringComparison.OrdinalIgnoreCase)).ToList();
             foreach (var rewardItemTemplate in rewardsItemTemplates)
@@ -688,6 +700,32 @@ public sealed class Gw2WikiProcessingSource(
                 if (itemName != null && !anyContainsForbiddenArgument)
                 {
                     graph.AddEdge(itemName, nodeId, EdgeType.RewardedBy);
+                }
+            }
+        }
+
+        // Adventures hand out their rewards through "Adventure rewards" templates rather than
+        // plain "Rewards item" ones. Each medal tier names its own container, and an adventure
+        // usually repeats the template for the first-time and the daily reward, which name the
+        // same containers; the graph de-duplicates the identical edges.
+        if (info.InfoBoxType.Equals("Adventure", StringComparison.OrdinalIgnoreCase))
+        {
+            var medalItemArguments = new[] { "gold item", "silver item", "bronze item" };
+            var adventureRewardTemplates = ast.EnumDescendants().OfType<Template>()
+                .Where(t => t.Name.ToString().Contains("Adventure rewards", StringComparison.OrdinalIgnoreCase));
+
+            foreach (var adventureRewardTemplate in adventureRewardTemplates)
+            {
+                foreach (var medalItemArgument in medalItemArguments)
+                {
+                    var itemName = adventureRewardTemplate.Arguments
+                        .FirstOrDefault(a => a.Name?.ToString().Trim().Equals(medalItemArgument, StringComparison.OrdinalIgnoreCase) == true)
+                        ?.Value?.ToString();
+
+                    if (!string.IsNullOrWhiteSpace(itemName))
+                    {
+                        graph.AddEdge(itemName, nodeId, EdgeType.RewardedBy);
+                    }
                 }
             }
         }

@@ -201,6 +201,56 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
         Assert.NotNull(unlock.ApiData);
     }
 
+    /// These two are rewarded by a meta event via a cache: Mini -> ContainedIn -> cache ->
+    /// RewardedBy -> meta event. The meta event names its zone in the infobox "location"
+    /// field, which used to be dropped, so the chain dead-ended before reaching a zone.
+    [Theory]
+    [InlineData("Mini Gwyllian", "Starlit Weald")]            // Secrets of the Weald
+    [InlineData("Mini All Seer", "Eternity's Garden")]        // Shackles of the Ancients
+    public async Task GivenMiniRewardedByMetaEventThenShouldReturnMapZone(string unlockName, string zoneName)
+    {
+        var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
+        var category = Find(results, "Expansions & Living World", "Visions of Eternity", zoneName);
+        var unlock = category.Unlocks.Single(c => c.Name == unlockName);
+
+        Assert.NotNull(unlock);
+        Assert.NotNull(unlock.ApiData);
+    }
+
+    /// These come from an adventure reward container: Mini -> ContainedIn -> container ->
+    /// RewardedBy -> adventure -> LocatedIn -> zone. Adventures name their containers in the
+    /// "Adventure rewards" template's gold/silver/bronze item arguments, not in "Rewards item".
+    [Theory]
+    [InlineData("Mini Adventurous Castoran Choya", "Starlit Weald")]  // The Great Choya Race, Enchanting Grottoes
+    [InlineData("Mini Castoran Choya", "Starlit Weald")]              // The Great Choya Race, Enchanting Grottoes
+    [InlineData("Mini Kitshark Pup", "Eternity's Garden")]            // Kitshark Fishing, Artificer's Islet
+    [InlineData("Mini Kitshark Adult", "Eternity's Garden")]          // Kitshark Fishing, Artificer's Islet
+    public async Task GivenMiniRewardedByAdventureThenShouldReturnMapZone(string unlockName, string zoneName)
+    {
+        var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
+        var category = Find(results, "Expansions & Living World", "Visions of Eternity", zoneName);
+        var unlock = category.Unlocks.Single(c => c.Name == unlockName);
+
+        Assert.NotNull(unlock);
+        Assert.NotNull(unlock.ApiData);
+    }
+
+    /// These are named directly in an event's "Rewards item" list. All three of the events that
+    /// reward them sit in areas inside Eternity's Garden, so they all land on the same map.
+    [Theory]
+    [InlineData("Mini Apprentice Steward of Galdra")]   // Artificer's Islet
+    [InlineData("Mini Augmented Steward of Galdra")]    // Artificer's Islet, The Deepwood, The Mothmarsh
+    [InlineData("Mini Enchanted Spell Guardian")]       // Artificer's Islet
+    public async Task GivenMiniRewardedByEventThenShouldReturnEternitysGarden(string unlockName)
+    {
+        var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
+        var category = Find(results, "Expansions & Living World", "Visions of Eternity", "Eternity's Garden");
+        var unlock = category.Unlocks.Single(c => c.Name == unlockName);
+
+        Assert.NotNull(unlock);
+        Assert.NotNull(unlock.ApiData);
+    }
+
     [Fact]
     public async Task GivenUnlockSoldInGemStoreThenShouldReturnGemStore()
     {

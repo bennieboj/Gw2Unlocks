@@ -28,6 +28,7 @@ public enum NodeType
     BackItem = 12,
     Set = 13,
     Event = 30,
+    Adventure = 31,
     Achievement = 40,
     GemStoreCombo = 50,
     BlackLionWeaponCollection = 51
