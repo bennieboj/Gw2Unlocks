@@ -97,11 +97,12 @@ Classifier diff logs (produced by `Gw2Unlocks.UnlockClassifier.Implementation.Cl
 - `[*] Name (from Old Group / Old Category)` — unlock name that already existed but now appears under a different group/category (moved/reclassified). The `(from ...)` suffix is its previous location; the category bullets above the line are its new location. Queue for investigation: updates/moves are not expected in a routine run.
 - `[-] Name (from Old Group / Old Category)` — unlock name present before but absent everywhere in the new output (removed/disappeared). Queue for investigation: removals are not expected in a routine run.
 
-A `Diff summary: N added, N moved, N removed` line follows the heading. That is the count the pull
-request workflow grades: when `moved` or `removed` is above zero, the pull request is titled and
-banner-flagged as needing review. Classifying does **not** fail on account of the diff, so a removal
-never blocks the pipeline or the following night's run. Only a crash of the classifier itself fails
-the run. On a local run the same numbers are printed, and the classifier then asks before saving.
+A `Diff summary: N added, N moved, N removed` line follows the heading, and the same text is written to
+the pull request that the classifier opens or updates. When `moved` or `removed` is above zero, that
+pull request is banner-flagged as needing review. Classifying does **not** fail on account of the
+diff, so a removal never blocks the pipeline or the following night's run. Only a crash of the
+classifier itself fails the run. On a local run the same numbers are printed, and the classifier then
+asks before saving.
 
 Move vs remove nuance: a moved unlock is reported only once, as `[*]` under its new location — no matching `[-]` is printed under its old location. A `[-]` therefore always means gone everywhere, not merely moved. The exception is a move onto a category path that did not exist before: that path is new, so the unlock is reported as `[+]` and does not count as a regression.
 
@@ -204,5 +205,5 @@ Locations relative to the repository root:
 - Processed graph: `src/cache-root/wiki-processing/wikigraph.json`
 - Raw wiki inputs: `src/cache-root/wiki-cache`
 - API inputs: `src/cache-root/api-cache`
-- Wiki Processing pipeline: `.github/workflows/2_wiki-processing.yml`
+- Refresh pipeline: `.github/workflows/1_cache-updater_2_wiki_processing_and_PR.yml`
 - Classifier pipeline: `.github/workflows/3_unlock-classifier.yml`

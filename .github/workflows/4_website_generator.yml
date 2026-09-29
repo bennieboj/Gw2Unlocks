@@ -1,28 +1,32 @@
 name: 4_Website_Generator
 
+# Two reasons to run, doing different things. On a pull request this is the gate: it builds the
+# site against the classified data and reports pass or fail, and branch protection is configured to
+# require it, so a classification the site cannot generate cannot be merged. On a push to main it
+# publishes.
 on:
+  pull_request:
+    branches:
+      - main
+
   push:
     branches:
       - main
-      
-  workflow_run:
-    workflows: ["3_Unlock_Classifier"]
-    types:
-      - completed
 
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
-  group: automated-pipeline
+  group: automated-site
   cancel-in-progress: false
 
 jobs:
-  run:
-    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
-
+  # The name of this job is the name of the status check, so it is what you pick as the required
+  # check on main. It is deliberately not called "run".
+  build_site:
+    if: github.event_name != 'push'
     runs-on: ubuntu-latest
 
     steps:
@@ -30,12 +34,20 @@ jobs:
         with:
           fetch-depth: 0
 
-      # Triggered by the classifier, this generates the site from the automated branch so a broken
-      # build is caught before the pull request is opened. Triggered by a push to main, it uses
-      # the merged result and publishes it.
-      - name: Checkout automated branch
-        if: github.event_name == 'workflow_run'
-        uses: ./.github/actions/checkout-automated-branch
+      - uses: actions/setup-dotnet@v6
+        with:
+          dotnet-version: 10.0.x
+
+      - run: dotnet run --no-launch-profile --project src/Gw2Unlocks/Gw2Unlocks.Website
+
+  deploy:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
 
       - uses: actions/setup-dotnet@v6
         with:
@@ -43,10 +55,9 @@ jobs:
 
       - run: dotnet run --no-launch-profile --project src/Gw2Unlocks/Gw2Unlocks.Website
 
-      # Only a merge into main publishes. An automated run validates that the site builds; it must
-      # not put unreviewed data in front of users.
+      # Only a push to main publishes, so unreviewed data cannot reach the site. A pull request run
+      # builds the site and stops there.
       - name: Publish to Cloudflare Pages
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         uses: cloudflare/wrangler-action@v4
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}

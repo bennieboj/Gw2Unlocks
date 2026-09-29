@@ -83,85 +83,84 @@ The project uses a distributed cache in `src/cache-root/`:
 ## Workflow Pipeline
 
 ```text
-      03:00 UTC cron  /  "Run workflow" on 1_Cache_Updater
+      03:00 UTC cron  /  "Run workflow"
       |
       v
-      1_Cache_Updater            creates automated-run/<date>, commits, pushes
+      1_Cache_Updater_2_Wiki_Processing_and_PR   job: refresh
+        fetch the GW2 API and the wiki
+        process the wiki dump
+        commit to `automated` (created from main when missing)
+        open a pull request if there is not one already
       |
-      |  workflow_run, and only when the stage before it succeeded
+      |  the push triggers 3
       v
-      2_Wiki_Processing          joins the same branch, commits, pushes
+      3_Unlock_Classifier                      on push to `automated`, job: classify
+        classifies, writes classifier-config.json, commits it
+        fills in the pull request body with the diff
+        |
+        |  skips itself when the commit touched only the classifier cache
+        |
+        |  the commit updates the pull request, which triggers 4
+        v
+      4_Website_Generator                      on pull_request, job: build_site
+        builds the site, passes or fails, never deploys
+      |
+      |  you read the diff and merge
+      v
+      push to main  ──>  the `automated` branch is deleted
       |
       v
-      3_Unlock_Classifier        joins the same branch, commits, pushes
-      |                         (a crash fails the run; a removal does not)
-      v
-      3B_Automatic_PR_Creation   always opens a pull request
-      |
-      |  it reads the classifier's "Diff summary" line and grades the change
-      |
-      +-- nothing moved or removed --> additions only, safe to merge unattended
-      |
-      +-- something moved or removed -> the pull request says so, and waits for you
-      |
-      |  Either way you merge, or close it and forget it. Each night's run branches from main, so
-      |  an unmerged pull request never blocks the next one.
-      v
-      4_Website_Generator         builds the site; publishes only on a push to main
+      4_Website_Generator                      on push to main, job: deploy
+        builds the site, then DEPLOYS to Cloudflare
 ```
 
-The pipeline has one path. A classification change is never a build failure, so nothing stops early
-and nothing queues up behind an unmerged pull request: the next night branches from `main` afresh. The
-only question the pipeline asks is whether to *ask you*, and it answers that by grading the diff
-rather than by refusing to continue.
+Every stage is triggered by a git push or a pull request, never by another workflow finishing, so
+there is no branch to look up and no `workflow_run` chain to reason about. `automated` holds the
+pending changes and is recreated from `main` after each merge, which keeps the pull request's diff
+equal to everything since you last looked, and lets an unmerged night accumulate rather than being
+discarded.
 
-### 1. Cache Updater (`.github/workflows/1_cache-updater.yml`)
-**Purpose**: Fetch fresh data from Guild Wars 2 API
-**Triggers**: Manual or scheduled (daily at 3:00 UTC: 04:00 Brussels in winter, 05:00 in summer)
-**Process**: 
-- Calls `Updater.UpdateApiData()` to fetch all API endpoints
-- Generates icon sprite sheets
-- Saves all data to `api-cache/`
-
-### 2. Wiki Processing (`.github/workflows/2_wiki-processing.yml`)
-**Purpose**: Cache Wiki page data
-**Triggers**: After Cache Updater completes or manual
+### 1. Cache Updater, Wiki Processing and PR (`.github/workflows/1_cache-updater_2_wiki_processing_and_PR.yml`)
+**Purpose**: Fetch fresh data, process it, and open a pull request for the result
+**Triggers**: Scheduled (daily at 3:00 UTC: 04:00 Brussels in winter, 05:00 in summer) or manual
+**Job**: `refresh`, which runs the three stages in order and stops if any of them fails
 **Process**:
-- Calls `WikiCache.StreamPagesToCacheAsync()`
-- Downloads and parses Wiki XML dumps
-- Saves to `wiki-cache/`
+- Creates `automated` from `main` when it is missing, otherwise joins it, so an unmerged night is
+  never thrown away
+- Calls `Updater.UpdateApiData()` to fetch all API endpoints, and generates icon sprite sheets
+- Calls the wiki processing host to download and parse the Wiki XML dumps
+- Commits to `automated` with an explicit refspec, so the push can never land on `main`
+- Opens a pull request if none is open, and never edits an existing one: the classifier owns the body
 
 ### 3. Unlock Classifier (`.github/workflows/3_unlock-classifier.yml`)
-**Purpose**: Process unlocks and generate website data
-**Triggers**: After Wiki Processing or manual
+**Purpose**: Classify the unlocks, commit the result, and report what changed
+**Triggers**: A push to `automated` (which is what the refresh job produces), or manual
+**Job**: `classify`
 **Process**:
-- Loads cached API and wiki data
-- Classifies unlocks by zone/vendor/etc.
-- Generates processed data for website
-
-### 3B. Automatic PR Creation (`.github/workflows/3B_automatic_pr_creation.yml`)
-**Purpose**: Open a pull request so a human can review the data change
-**Triggers**: Only after the Unlock Classifier succeeds. No manual dispatch: it reads the log of the
-classifier run that triggered it, and a hand-started run would have no such log.
-**Process**:
-- Reads the classifier's `Diff summary:` line to count what moved and what was removed
-- Always opens the pull request, or updates it when one is already open for the branch
-- Marks it in the title and the body when unlocks moved or were removed
-- Auto-merge for a clean run is present but commented out; merging is always allowed either way
+- Skips itself when the incoming commit touched only `classifier-cache/`, since that is its own
+  output coming back around
+- Classifies unlocks by zone/vendor/etc. and writes `classifier-cache/classifier-config.json`
+- Fails only if the classifier itself crashed; a change in classification is never a build failure
+- Writes the diff to a file, then creates or updates the pull request with it as the body, noting
+  when unlocks moved or were removed
+- Auto-merge is present but commented out; every merge is a human decision
 
 ### 4. Website Generator (`.github/workflows/4_website_generator.yml`)
 **Purpose**: Build the static website, and deploy it once the data has been reviewed
-**Triggers**: Manual, a push to `main`, or after the Unlock Classifier
+**Triggers**: A pull request (`build_site`), a push to `main` (`deploy`), or manual
 **Process**:
 - After the classifier: generates the site from the automated branch as a build check, no deploy
 - On a push to `main`: generates and deploys to Cloudflare Pages
 
 ### The automated branch
 
-Every stage works on `automated-run/{date}` (Brussels date), created by stage 1 and joined by the
-rest. `.github/actions/checkout-automated-branch/action.yml` computes the name and checks it out, so
-no stage has to work out which branch an earlier stage used. Stages push to an explicit
-`HEAD:refs/heads/<branch>` refspec, so a push can never land on whatever happens to be checked out.
+Pending changes live on `automated`, which the refresh job creates from `main` when it is missing and
+joins when it already exists. After you merge, the branch is deleted by the *Automatically delete head
+branches* repository setting and the next run recreates it, so a pull request's diff is always
+"everything since you last merged" and an unmerged night accumulates rather than being lost.
+
+Every stage pushes with an explicit `HEAD:refs/heads/automated` refspec, so a push can never land on
+whatever happens to be checked out.
 
 ## Development Setup
 
@@ -292,16 +291,18 @@ The project uses `GW2SDK` package (version 3.2.0) for real API calls:
 ```
 
 ### Production Pipeline
-Automated via GitHub Actions, each stage chaining to the next on `automated-run/{date}`:
-1. `1_Cache_Updater.yml` - Updates from GW2 API
-2. `2_wiki-processing.yml` - Updates Wiki cache
-3. `3_unlock-classifier.yml` - Processes unlocks, and fails only if the classifier itself crashes
-4. `3B_automatic_pr_creation.yml` - Opens the pull request, marked up when unlocks moved or vanished
-5. `4_website_generator.yml` - Builds the site, and deploys it once the pull request is merged
+Automated via GitHub Actions, on the `automated` branch:
+1. `1_cache-updater_2_wiki_processing_and_PR.yml` - Fetches game data, processes the wiki, and opens
+   the pull request
+2. `3_unlock-classifier.yml` - Classifies unlocks, commits the result, and writes the diff into the
+   pull request; fails only if the classifier itself crashes
+3. `4_website_generator.yml` - `build_site` checks the site builds on the pull request, and `deploy`
+   publishes on a push to `main`
 
-The pipeline always runs to completion. A classification change is graded in the pull request rather
-than used to stop the run, so an unmerged pull request never blocks the next one. Merging is always
-your call; auto-merge for a clean run is available but switched off.
+The pipeline always runs to completion. A classification change is reported in the pull request rather
+than used to stop the run, so an unmerged night never blocks the next one. Merging is always your
+call; auto-merge is available but switched off. The one gate is `build_site`, which is configured as a
+required status check on `main`.
 
 ## Troubleshooting
 
@@ -347,7 +348,7 @@ When interacting with this codebase, note:
 2. **Shared State**: Cache directories contain shared state between steps
 3. **Testing Strategy**: Use fake APIs (`Gw2ApiSuccessResponseFake`) for isolated unit tests
 4. **Production Secrets**: Real API keys stored in GitHub secrets, not code
-5. **Rolling Updates**: Each automated run works on its own branch (`automated-run/{date}`)
+5. **Rolling Updates**: Each automated run works on the shared `automated` branch
 
 ## Files Generated by This Pipeline
 

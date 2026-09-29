@@ -1,0 +1,81 @@
+name: 1_Cache_Updater_2_Wiki_Processing_and_PR
+
+# The three things that used to be separate workflows: fetch the game data, process the wiki dump,
+# and open a pull request for the result. They are three jobs here because they are one pipeline
+# with nothing to decide in between, and a failure in any of them should stop the next.
+on:
+  workflow_dispatch:
+  schedule:
+    # GitHub cron is always UTC: 03:00 UTC is 04:00 in Brussels during winter and 05:00 in summer.
+    - cron: '0 3 * * *'
+
+permissions:
+  contents: write
+  pull-requests: write
+
+# One refresh at a time. Without this, a manual run during the nightly one would fight it over
+# the same branch.
+concurrency:
+  group: automated-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      # `automated` holds the pending changes. It is created from main when it is missing, which is
+      # the normal case after a merge, and joined when it already exists so that a night nobody had
+      # time to review is not thrown away. The push names its own target, so the checkout above
+      # being on main cannot make this write to main.
+      - name: Join or create the automated branch
+        run: |
+          git fetch origin
+          if git show-ref --verify --quiet refs/remotes/origin/automated; then
+            git checkout -B automated origin/automated
+            echo "Continuing the existing automated branch."
+          else
+            git checkout -b automated origin/main
+            echo "Created automated from main."
+          fi
+
+      - uses: actions/setup-dotnet@v6
+        with:
+          dotnet-version: 10.0.x
+
+      - name: Fetch game data
+        run: dotnet run --no-launch-profile --project src/Gw2Unlocks/CacheUpdater/Gw2Unlocks.CacheUpdater.Host
+
+      - name: Process the wiki
+        run: dotnet run --no-launch-profile --project src/Gw2Unlocks/WikiProcessing/Gw2Unlocks.WikiProcessing.Host
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+
+          git add .
+          git diff --cached --quiet && exit 0
+
+          git commit -m "Cache Updater and Wiki Processing update"
+          git push origin "HEAD:refs/heads/automated"
+
+      # The push above fires 3_Unlock_Classifier, which is what fills in the pull request body with
+      # the classification diff. This job only makes sure a request exists, and deliberately never
+      # edits an existing one, so it cannot race the classifier and overwrite the diff.
+      - name: Ensure a pull request exists
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if PR=$(gh pr list --head automated --state open --json number --jq '.[0].number') && [ -n "$PR" ]; then
+            echo "Pull request #$PR is already open; leaving its body to the classifier."
+          else
+            echo "Creating a placeholder pull request; the classifier fills in the diff."
+            gh pr create --head automated --base main \
+              --title "Data update $(TZ=Europe/Brussels date +%F)" \
+              --body "The classifier is filling in this description."
+          fi

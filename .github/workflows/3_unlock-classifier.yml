@@ -1,43 +1,63 @@
 name: 3_Unlock_Classifier
 
+# Triggered by the refresh workflow pushing to `automated`, not by the previous workflow finishing.
+# The push tells this workflow both that there is work to do and which branch it is on, so there is
+# no branch to look up.
 on:
-  workflow_run:
-    workflows: ["2_Wiki_Processing"]
-    types:
-      - completed
+  push:
+    branches:
+      - automated
 
   workflow_dispatch:
 
 permissions:
   contents: write
+  pull-requests: write
 
+# The classifier commits its own output, which pushes to `automated`, which brings this workflow
+# back around. The guard below makes that second run a no-op; this group keeps the two from
+# overlapping in the meantime.
 concurrency:
-  group: automated-pipeline
+  group: automated-classify
   cancel-in-progress: false
 
 jobs:
-  run:
-    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
-
+  classify:
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v7
         with:
-          fetch-depth: 0
+          fetch-depth: 2
 
-      - name: Checkout automated branch
-        id: branch
-        uses: ./.github/actions/checkout-automated-branch
+      # Classifying is the expensive part, so skip it when the push could only have come from this
+      # workflow: a commit that touched nothing but the classifier cache is this job's own output
+      # coming back around. A commit from the refresh workflow always touches api-cache or
+      # wiki-processing too, so it is never skipped.
+      - name: Skip a push that only carries this job's own output
+        id: self
+        run: |
+          changed=$(git diff --name-only HEAD^ HEAD)
+          outside=$(echo "$changed" | grep -vc '^src/cache-root/classifier-cache/' || true)
+          if [ -z "$changed" ] || [ "$outside" = "0" ]; then
+            echo "Nothing outside the classifier cache changed; this is the previous run's commit."
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "Will classify: $outside file(s) outside the classifier cache."
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+          fi
 
       - uses: actions/setup-dotnet@v6
+        if: steps.self.outputs.skip != 'true'
         with:
           dotnet-version: 10.0.x
 
-      # The diff is what this step is for. It exits non-zero only if the classifier itself crashed:
-      # a change in classification is reported, never treated as a build failure, because a pull
-      # request is always opened afterwards and that is where the change gets reviewed.
+      # Exits non-zero only if the classifier itself crashed. A change in classification is
+      # reported rather than treated as a failure: it goes into the pull request for a human.
       - name: Classify unlocks
+        if: steps.self.outputs.skip != 'true'
+        env:
+          CLASSIFIER_DIFF_REPORT: ${{ runner.temp }}/classifier-diff.md
         run: |
           status=0
           dotnet run --no-launch-profile --project src/Gw2Unlocks/UnlockClassifier/Gw2Unlocks.UnlockClassifier.Host 2>&1 \
@@ -45,18 +65,17 @@ jobs:
           exit $status
 
       - name: Summarise classification diff
-        if: always()
+        if: always() && steps.self.outputs.skip != 'true'
         run: |
           {
             echo "## Classification diff"
             echo
-            sed -n '/Listing all diffs:/,$p' "$RUNNER_TEMP/classifier.log" \
-              | sed -E 's/^\[[^]]*\] \[[A-Z]+\] \[[^]]*\] //'
+            cat "$RUNNER_TEMP/classifier-diff.md" 2>/dev/null \
+              || sed -n '/Listing all diffs:/,$p' "$RUNNER_TEMP/classifier.log"
           } >> "$GITHUB_STEP_SUMMARY"
 
       - name: Commit changes
-        env:
-          BRANCH: ${{ steps.branch.outputs.branch }}
+        if: steps.self.outputs.skip != 'true'
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
@@ -65,6 +84,73 @@ jobs:
           git diff --cached --quiet && exit 0
 
           git commit -m "Unlock Classifier update"
-          # Explicit refspec: this push names its target, so it cannot land on the checked out
-          # branch by accident.
-          git push origin "HEAD:refs/heads/$BRANCH"
+          # Explicit refspec: the push names its target, so it cannot land on the wrong branch.
+          git push origin "HEAD:refs/heads/automated"
+
+      # The classifier is the only stage that knows what changed, so it is the one that writes the
+      # pull request body. Creating the request as well as updating it means this works whichever
+      # order the refresh workflow and this one finish in. The refresh job only creates a request
+      # when there is none, so it never overwrites the body written here.
+      - name: Create or update the pull request
+        if: always() && steps.self.outputs.skip != 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          summary=$(grep -o 'Diff summary: .*' "$RUNNER_TEMP/classifier-diff.md" | head -1)
+          if [ -z "$summary" ]; then
+            summary=$(grep -o 'Diff summary: .*' "$RUNNER_TEMP/classifier.log" | head -1)
+          fi
+
+          if [ -z "$summary" ]; then
+            echo "::error::No classification diff was produced, so there is nothing to report."
+            exit 1
+          fi
+
+          moved=$(printf '%s' "$summary" | grep -o '[0-9]* moved' | grep -o '[0-9]*' || echo 0)
+          removed=$(printf '%s' "$summary" | grep -o '[0-9]* removed' | grep -o '[0-9]*' || echo 0)
+          echo "Classifier says: $summary"
+
+          {
+            echo "Automated refresh of the game data and its classification."
+            echo
+            if [ "$moved" -gt 0 ] || [ "$removed" -gt 0 ]; then
+              echo "> ### Review required"
+              echo ">"
+              echo "> **$moved** unlock(s) moved and **$removed** were removed."
+              echo ">"
+              echo "> Moves and removals are the changes worth a human eye: an unlock can land in"
+              echo "> the wrong category, or disappear because a wiki page was unreachable."
+            else
+              echo "> Nothing moved and nothing was removed. Additions only."
+            fi
+            echo
+            echo "## Classification diff"
+            echo
+            cat "$RUNNER_TEMP/classifier-diff.md"
+            echo
+            echo "## Changed files"
+            echo
+            echo '```'
+            git diff --stat origin/main...automated
+            echo '```'
+          } > pr-body.md
+
+          if PR=$(gh pr list --head automated --state open --json number --jq '.[0].number') && [ -n "$PR" ]; then
+            echo "Updating pull request #$PR"
+            gh pr edit "$PR" --body-file pr-body.md
+          else
+            echo "Creating pull request for automated"
+            gh pr create --head automated --base main \
+              --title "Data update $(TZ=Europe/Brussels date +%F)" --body-file pr-body.md
+          fi
+
+      # Left off on purpose. The classification diff is informational, so there is no
+      # clean-versus-regressed signal to gate on and every merge stays yours. Note that repository
+      # auto-merge is fulfilled by GitHub rather than by this token, which is what lets the
+      # resulting push to main trigger 4_Website_Generator; merging immediately with the token
+      # would not. The head branch is deleted by the repository setting "Automatically delete head
+      # branches", and the next nightly run recreates it from main.
+      # - name: Merge automatically
+      #   env:
+      #     GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #   run: gh pr merge automated --squash --auto
