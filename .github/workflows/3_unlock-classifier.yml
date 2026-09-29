@@ -11,6 +11,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: automated-pipeline
+  cancel-in-progress: false
+
 jobs:
   run:
     if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
@@ -22,23 +26,37 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Compute branch
-        run: |
-          export TZ=Europe/Brussels
-          echo "BRANCH=daily/$(date +%F)" >> $GITHUB_ENV
-
-      - name: Checkout branch
-        run: |
-          git fetch origin
-          git checkout $BRANCH
+      - name: Checkout automated branch
+        id: branch
+        uses: ./.github/actions/checkout-automated-branch
 
       - uses: actions/setup-dotnet@v6
         with:
           dotnet-version: 10.0.x
 
-      - run: dotnet run --no-launch-profile --project src/Gw2Unlocks/UnlockClassifier/Gw2Unlocks.UnlockClassifier.Host
+      # The diff is what this step is for. It exits non-zero only if the classifier itself crashed:
+      # a change in classification is reported, never treated as a build failure, because a pull
+      # request is always opened afterwards and that is where the change gets reviewed.
+      - name: Classify unlocks
+        run: |
+          status=0
+          dotnet run --no-launch-profile --project src/Gw2Unlocks/UnlockClassifier/Gw2Unlocks.UnlockClassifier.Host 2>&1 \
+            | tee "$RUNNER_TEMP/classifier.log" || status=$?
+          exit $status
+
+      - name: Summarise classification diff
+        if: always()
+        run: |
+          {
+            echo "## Classification diff"
+            echo
+            sed -n '/Listing all diffs:/,$p' "$RUNNER_TEMP/classifier.log" \
+              | sed -E 's/^\[[^]]*\] \[[A-Z]+\] \[[^]]*\] //'
+          } >> "$GITHUB_STEP_SUMMARY"
 
       - name: Commit changes
+        env:
+          BRANCH: ${{ steps.branch.outputs.branch }}
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
@@ -47,4 +65,6 @@ jobs:
           git diff --cached --quiet && exit 0
 
           git commit -m "Unlock Classifier update"
-          git push origin HEAD
+          # Explicit refspec: this push names its target, so it cannot land on the checked out
+          # branch by accident.
+          git push origin "HEAD:refs/heads/$BRANCH"

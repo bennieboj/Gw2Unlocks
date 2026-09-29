@@ -1,0 +1,132 @@
+name: 3B_Automatic_PR_Creation
+
+# Deliberately has no workflow_dispatch: this is the tail of the pipeline and it reads the log of
+# the classifier run that triggered it. Dispatched by hand there would be no such run to read.
+on:
+  workflow_run:
+    workflows: ["3_Unlock_Classifier"]
+    types:
+      - completed
+
+permissions:
+  contents: write
+  pull-requests: write
+  actions: read
+
+concurrency:
+  group: automated-pipeline
+  cancel-in-progress: false
+
+jobs:
+  open:
+    if: github.event.workflow_run.conclusion == 'success'
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Checkout automated branch
+        id: branch
+        uses: ./.github/actions/checkout-automated-branch
+
+      # The classifier prints its diff as markdown, so the pull request body is that section of the
+      # classifier run log with the log prefix stripped. Capped because GitHub rejects bodies over
+      # 65536 characters. The same line that heads the diff says how loudly to ask for review.
+      - name: Build pull request body
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: ${{ steps.branch.outputs.branch }}
+        run: |
+          git fetch origin
+
+          gh run view "${{ github.event.workflow_run.id }}" --log > classifier.log
+
+          summary=$(grep -o 'Diff summary: .*' classifier.log | head -1)
+          if [ -z "$summary" ]; then
+            echo "::error::No 'Diff summary:' line in the classifier log, so the change cannot be graded."
+            exit 1
+          fi
+          moved=$(printf '%s' "$summary" | grep -o '[0-9]* moved' | grep -o '[0-9]*' || echo 0)
+          removed=$(printf '%s' "$summary" | grep -o '[0-9]* removed' | grep -o '[0-9]*' || echo 0)
+          echo "moved=$moved" >> "$GITHUB_ENV"
+          echo "removed=$removed" >> "$GITHUB_ENV"
+          echo "Classifier says: $summary"
+
+          {
+            echo "Automated refresh of the game data and its classification."
+            echo
+            echo "_Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.event.workflow_run.id }}_"
+            echo
+            if [ "$moved" -gt 0 ] || [ "$removed" -gt 0 ]; then
+              echo "> ## Review required"
+              echo ">"
+              echo "> The classification **moved $moved** unlock(s) and **removed $removed**."
+              echo ">"
+              echo "> Moves and removals are the changes worth a human eye: an unlock can land in"
+              echo "> the wrong category, or disappear because a wiki page was unreachable."
+              echo "> Nothing here is automatically merged. Read the diff, then merge or close."
+            else
+              echo "> No unlocks moved or were removed. This is additions only."
+            fi
+            echo
+            echo "## Classification diff"
+            echo
+            sed -n '/Listing all diffs:/,$p' classifier.log \
+              | sed -E 's/^\[[^]]*\] \[[A-Z]+\] \[[^]]*\] //' \
+              | head -c 60000
+            echo
+            echo "## Changed files"
+            echo
+            echo '```'
+            git diff --stat "origin/main...$BRANCH"
+            echo '```'
+          } > pr-body.md
+
+          wc -c pr-body.md
+
+      - name: Create or update pull request
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: ${{ steps.branch.outputs.branch }}
+          MOVED: ${{ env.moved }}
+          REMOVED: ${{ env.removed }}
+        run: |
+          if [ "$MOVED" -gt 0 ] || [ "$REMOVED" -gt 0 ]; then
+            title="Data update ${BRANCH##*/} (review required: $MOVED moved, $REMOVED removed)"
+          else
+            title="Data update ${BRANCH##*/}"
+          fi
+
+          if PR=$(gh pr list --head "$BRANCH" --state open --json number --jq '.[0].number') && [ -n "$PR" ]; then
+            echo "Updating existing pull request #$PR"
+            gh pr edit "$PR" --title "$title" --body-file pr-body.md
+          else
+            echo "Creating pull request: $title"
+            gh pr create \
+              --head "$BRANCH" \
+              --base main \
+              --title "$title" \
+              --body-file pr-body.md
+          fi
+
+      # Off by default. Turn it on by removing the "#" from the three lines below, once you have
+      # watched one manual merge all the way through to a Cloudflare deploy: repository auto-merge
+      # is fulfilled by GitHub rather than by this token, and that is what makes the push to main
+      # trigger 4_Website_Generator. Merging immediately with the token instead would not.
+      #
+      # Only runs when nothing moved or was removed. A regression leaves the pull request open for
+      # you, which is the whole point of grading it. No review is requested on the pull request:
+      # you are the only collaborator, repository notifications already email you, and a pending
+      # self-review would only hold up --auto.
+      #
+      # The head branch is deleted by the repository setting "Automatically delete head branches"
+      # when a pull request merges, so --delete-branch is not needed.
+      # - name: Merge a clean run automatically
+      #   if: env.moved == '0' && env.removed == '0'
+      #   env:
+      #     GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #     BRANCH: ${{ steps.branch.outputs.branch }}
+      #   run: gh pr merge "$BRANCH" --squash --auto

@@ -1,0 +1,45 @@
+name: Checkout automated branch
+description: >-
+  Computes the branch this automated run works on and checks it out. Every stage of the pipeline
+  derives the name the same way from the same clock, so no stage has to guess which branch an
+  earlier stage used.
+
+inputs:
+  create:
+    description: >-
+      Create the branch from the default branch when it does not exist on origin yet. The first
+      stage of the pipeline creates it; later stages only ever join an existing one.
+    default: 'false'
+
+outputs:
+  branch:
+    description: The branch this run works on, e.g. automated-run/2026-09-28.
+    value: ${{ steps.branch.outputs.branch }}
+
+runs:
+  using: composite
+  steps:
+    - name: Resolve and check out the automated branch
+      id: branch
+      shell: bash
+      env:
+        CREATE: ${{ inputs.create }}
+        DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+      run: |
+        set -euo pipefail
+
+        # Brussels, because that is the calendar the pipeline is planned around.
+        BRANCH="automated-run/$(TZ=Europe/Brussels date +%F)"
+        echo "branch=$BRANCH" >> "$GITHUB_OUTPUT"
+        echo "Working on $BRANCH"
+
+        git fetch --prune origin
+
+        if git show-ref --verify --quiet "refs/remotes/origin/$BRANCH"; then
+          git checkout -B "$BRANCH" "origin/$BRANCH"
+        elif [ "$CREATE" = "true" ]; then
+          git checkout -b "$BRANCH" "origin/$DEFAULT_BRANCH"
+        else
+          echo "::error::No branch $BRANCH on origin, and this stage does not create it."
+          exit 1
+        fi

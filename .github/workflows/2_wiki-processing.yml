@@ -11,6 +11,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: automated-pipeline
+  cancel-in-progress: false
+
 jobs:
   run:
     if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
@@ -22,15 +26,9 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Compute branch
-        run: |
-          export TZ=Europe/Brussels
-          echo "BRANCH=daily/$(date +%F)" >> $GITHUB_ENV
-
-      - name: Checkout branch
-        run: |
-          git fetch origin
-          git checkout $BRANCH
+      - name: Checkout automated branch
+        id: branch
+        uses: ./.github/actions/checkout-automated-branch
 
       - uses: actions/setup-dotnet@v6
         with:
@@ -39,6 +37,8 @@ jobs:
       - run: dotnet run --no-launch-profile --project src/Gw2Unlocks/WikiProcessing/Gw2Unlocks.WikiProcessing.Host
 
       - name: Commit changes
+        env:
+          BRANCH: ${{ steps.branch.outputs.branch }}
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
@@ -47,4 +47,6 @@ jobs:
           git diff --cached --quiet && exit 0
 
           git commit -m "Wiki Processing update"
-          git push origin HEAD
+          # Explicit refspec: this push names its target, so it cannot land on the checked out
+          # branch by accident.
+          git push origin "HEAD:refs/heads/$BRANCH"

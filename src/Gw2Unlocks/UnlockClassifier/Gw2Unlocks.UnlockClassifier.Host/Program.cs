@@ -7,6 +7,7 @@ using Gw2Unlocks.UnlockClassifier.Implementation;
 using Gw2Unlocks.WikiProcessing.Cache;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using System;
 
 var builder = Host.CreateApplicationBuilder(args);
 
@@ -24,3 +25,7 @@ builder.Services.AddClassifier()
 
 var host = builder.Build();
 await host.RunAsync();
+
+// RunAsync always reports success, so the exit code is carried by Environment.ExitCode instead:
+// that is what lets a regressed classification or a crash fail the pipeline step.
+return Environment.ExitCode;

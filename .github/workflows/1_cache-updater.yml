@@ -2,11 +2,16 @@ name: 1_Cache_Updater
 
 on:
   workflow_dispatch:
-  # schedule:
-    # - cron: '0 3 * * *'  # ~04:00 Brussels (adjust if needed)
+  schedule:
+    # GitHub cron is always UTC: 03:00 UTC is 04:00 in Brussels during winter and 05:00 in summer.
+    - cron: '0 3 * * *'
 
 permissions:
   contents: write
+
+concurrency:
+  group: automated-pipeline
+  cancel-in-progress: false
 
 jobs:
   run:
@@ -17,15 +22,11 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Compute branch
-        run: |
-          export TZ=Europe/Brussels
-          echo "BRANCH=daily/$(date +%F)" >> $GITHUB_ENV
-
-      - name: Checkout branch
-        run: |
-          git fetch origin
-          git checkout $BRANCH || git checkout -b $BRANCH
+      - name: Checkout automated branch
+        id: branch
+        uses: ./.github/actions/checkout-automated-branch
+        with:
+          create: 'true'
 
       - uses: actions/setup-dotnet@v6
         with:
@@ -34,6 +35,8 @@ jobs:
       - run: dotnet run --no-launch-profile --project src/Gw2Unlocks/CacheUpdater/Gw2Unlocks.CacheUpdater.Host
       
       - name: Commit changes
+        env:
+          BRANCH: ${{ steps.branch.outputs.branch }}
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
@@ -42,4 +45,6 @@ jobs:
           git diff --cached --quiet && exit 0
 
           git commit -m "Cache Updater update"
-          git push origin HEAD
+          # Explicit refspec: this push names its target, so it cannot land on the checked out
+          # branch by accident.
+          git push origin "HEAD:refs/heads/$BRANCH"
