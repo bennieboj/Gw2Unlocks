@@ -48,10 +48,6 @@ jobs:
       cancel-in-progress: false
 
     steps:
-      - uses: actions/checkout@v7
-        with:
-          fetch-depth: 2
-
       # Work out which branch this run is about. A workflow_run fires from the default branch, so
       # github.ref would say `main` and be wrong; the refresh job always works on `automated`.
       - name: Resolve the branch
@@ -89,6 +85,14 @@ jobs:
             echo "skip=false" >> "$GITHUB_OUTPUT"
             echo "This run is about $branch."
           fi
+
+      # Checked out explicitly rather than left to the event. A workflow_run checks out the
+      # default branch by default, which would be main rather than the branch just resolved, and
+      # the commit below would then be pushed to `automated` as a non-fast-forward and fail.
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ steps.target.outputs.branch }}
+          fetch-depth: 2
 
       # Classifying is the expensive part, so skip it when the push could only have come from this
       # workflow: a commit that touched nothing but the classifier cache is this job's own output
