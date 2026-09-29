@@ -92,35 +92,39 @@ The project uses a distributed cache in `src/cache-root/`:
         commit to `automated` (created from main when missing)
         open a pull request if there is not one already
       |
-      |  the push triggers 3
+      |  the refresh run finishing triggers this
       v
-      3_Unlock_Classifier                      on push to any branch, job: classify
-        classifies, writes classifier-config.json, commits it
-        fills in the pull request body with the diff
-        |
-        |  never runs against main, and skips itself when the
-        |  commit touched only the classifier cache
-        |
-        |  the commit updates the pull request, which triggers 4
-        v
-      4_Website_Generator                      on pull_request, job: build_site
-        builds the site, passes or fails, never deploys
-        (informational: not a required check)
-      |
-      |  you read the diff and merge
-      v
+      3_Unlock_Classifier_4_Website_Generator
+        job classify    the branch, unless it is main
+          classifies, writes classifier-config.json, commits it
+          fills in the pull request body with the diff
+          (skips itself when the commit touched only the
+          classifier cache, which is its own output)
+          |
+          |  needs: classify
+          v
+        job build_site  checks that branch out fresh, so it builds
+                       the classifier's own commit, not the one
+                       before it. Never deploys.
+          |
+          |  you read the diff and merge
+          v
       push to main  ──>  the `automated` branch is deleted
-      |
-      v
-      4_Website_Generator                      on push to main, job: deploy
-        builds the site, then DEPLOYS to Cloudflare
+          |              (classify is skipped on this event)
+          v
+        job deploy      builds the site, then DEPLOYS to Cloudflare
 ```
 
-Every stage is triggered by a git push, a pull request, or a workflow finishing, so there is no branch
-to look up. `automated` holds the pending changes and is recreated from `main` after each merge, which
-keeps the pull request's diff equal to everything since you last looked, and lets an unmerged night
-accumulate rather than being discarded. Pushing any other branch classifies that branch too, which is
-how a change is reviewed without running anything locally.
+Two workflows. Every stage is triggered by a git push or a workflow finishing, so there is no branch
+to look up, and the classifier and the website generator are one story in one file: the classification
+is the data, the site is what that data produces, and the build always runs on the classifier's own
+commit rather than the one before it.
+
+`automated` holds the pending changes and is recreated from `main` after each merge, which keeps the
+pull request's diff equal to everything since you last looked, and lets an unmerged night accumulate
+rather than being discarded. Pushing any other branch classifies that branch too, which is how a
+change is reviewed without running anything locally. Only a push to `main` publishes, so unreviewed
+data cannot reach the site.
 
 ### 1. Cache Updater, Wiki Processing and PR (`.github/workflows/1_cache-updater_2_wiki_processing_and_PR.yml`)
 **Purpose**: Fetch fresh data, process it, and open a pull request for the result
@@ -134,11 +138,12 @@ how a change is reviewed without running anything locally.
 - Commits to `automated` with an explicit refspec, so the push can never land on `main`
 - Opens a pull request if none is open, and never edits an existing one: the classifier owns the body
 
-### 3. Unlock Classifier (`.github/workflows/3_unlock-classifier.yml`)
-**Purpose**: Classify the unlocks, commit the result, and report what changed
+### 3 & 4. Unlock Classifier and Website Generator (`.github/workflows/3_unlock-classifier_4_website_generator.yml`)
+**Purpose**: Classify the unlocks, build the site from that classification, and publish once it has been reviewed
 **Triggers**: A push to any branch, the nightly refresh finishing, or a manual dispatch naming a branch
-**Job**: `classify`
-**Process**:
+**Jobs**: `classify`, then `build_site`, and `deploy` only on a push to `main`
+
+`classify`:
 - Works out which branch the run is about, and never classifies `main`, so data only ever reaches it
   by being merged
 - Skips itself when the incoming commit touched only `classifier-cache/`, since that is its own
@@ -149,16 +154,21 @@ how a change is reviewed without running anything locally.
   it also owns the title; on a feature branch it only updates the body of the request you opened
 - Auto-merge is present but commented out; every merge is a human decision
 
-Pushing a feature branch is therefore enough to classify it: the run appears, commits the result, and
-adds the diff to that branch's pull request. No secret is involved, because the classifier pushes
-with the default token and that push deliberately fires no further events.
+`build_site`:
+- `needs: classify`, so it starts only after the classifier has committed and pushed
+- Checks the branch out fresh, so it builds the classifier's own commit rather than the one before it
+- Builds the site and stops. It never deploys, and it is where new data breaking a template is found
+  before anyone reads a diff
 
-### 4. Website Generator (`.github/workflows/4_website_generator.yml`)
-**Purpose**: Build the static website, and deploy it once the data has been reviewed
-**Triggers**: A pull request (`build_site`), a push to `main` (`deploy`), or manual
-**Process**:
-- After the classifier: generates the site from the automated branch as a build check, no deploy
-- On a push to `main`: generates and deploys to Cloudflare Pages
+`deploy`:
+- The only job that publishes, and only on a push to `main`
+- Builds, then deploys to Cloudflare Pages, so a broken build leaves the previous deploy live rather
+  than replacing it with nothing
+
+Pushing a feature branch is therefore enough to classify it: the run appears, commits the result,
+builds the site against that commit, and adds the diff to the branch's pull request. No secret is
+involved, because the classifier pushes with the default token and that push deliberately fires no
+further events.
 
 ### The automated branch
 
@@ -302,10 +312,9 @@ The project uses `GW2SDK` package (version 3.2.0) for real API calls:
 Automated via GitHub Actions, on the `automated` branch:
 1. `1_cache-updater_2_wiki_processing_and_PR.yml` - Fetches game data, processes the wiki, and opens
    the pull request
-2. `3_unlock-classifier.yml` - Classifies unlocks, commits the result, and writes the diff into the
-   pull request; fails only if the classifier itself crashes
-3. `4_website_generator.yml` - `build_site` checks the site builds on the pull request, and `deploy`
-   publishes on a push to `main`
+2. `3_unlock-classifier_4_website_generator.yml` - `classify` classifies unlocks, commits the result
+   and writes the diff into the pull request; `build_site` then builds the site against that commit;
+   `deploy` publishes on a push to `main`
 
 The pipeline always runs to completion. A classification change is reported in the pull request rather
 than used to stop the run, so an unmerged night never blocks the next one. Merging is always your
