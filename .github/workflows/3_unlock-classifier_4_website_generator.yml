@@ -90,6 +90,7 @@ jobs:
       # default branch by default, which would be main rather than the branch just resolved, and
       # the commit below would then be pushed to `automated` as a non-fast-forward and fail.
       - uses: actions/checkout@v7
+        if: steps.target.outputs.skip != 'true'
         with:
           ref: ${{ steps.target.outputs.branch }}
           fetch-depth: 2
@@ -246,7 +247,10 @@ jobs:
   # This is where new data breaking a template is found, before anyone reads a diff.
   build_site:
     needs: classify
-    if: needs.classify.result == 'success'
+    # A green classify is not enough on its own: on a push to main it succeeds while doing
+    # nothing, because every step is skipped. Requiring a branch proves it actually classified
+    # something, so a main push goes straight to deploy.
+    if: needs.classify.result == 'success' && needs.classify.outputs.branch != ''
     runs-on: ubuntu-latest
 
     steps:
