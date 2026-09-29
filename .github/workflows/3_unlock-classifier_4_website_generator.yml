@@ -113,15 +113,19 @@ jobs:
             echo "skip=false" >> "$GITHUB_OUTPUT"
           fi
 
+      # Every step below checks BOTH guards. A skipped step leaves its outputs empty rather than
+      # 'true', and an empty string is not equal to 'true', so gating on one guard alone would
+      # re-enable exactly the steps the other guard turned off.
+
       - uses: actions/setup-dotnet@v6
-        if: steps.self.outputs.skip != 'true'
+        if: steps.target.outputs.skip != 'true' && steps.self.outputs.skip != 'true'
         with:
           dotnet-version: 10.0.x
 
       # Exits non-zero only if the classifier itself crashed. A change in classification is
       # reported rather than treated as a failure: it goes into the pull request for a human.
       - name: Classify unlocks
-        if: steps.self.outputs.skip != 'true'
+        if: steps.target.outputs.skip != 'true' && steps.self.outputs.skip != 'true'
         env:
           CLASSIFIER_DIFF_REPORT: ${{ runner.temp }}/classifier-diff.md
         run: |
@@ -131,7 +135,7 @@ jobs:
           exit $status
 
       - name: Summarise classification diff
-        if: always() && steps.self.outputs.skip != 'true'
+        if: always() && steps.target.outputs.skip != 'true' && steps.self.outputs.skip != 'true'
         run: |
           {
             echo "## Classification diff"
@@ -141,7 +145,7 @@ jobs:
           } >> "$GITHUB_STEP_SUMMARY"
 
       - name: Commit changes
-        if: steps.self.outputs.skip != 'true'
+        if: steps.target.outputs.skip != 'true' && steps.self.outputs.skip != 'true'
         env:
           BRANCH: ${{ steps.target.outputs.branch }}
         run: |
@@ -159,7 +163,7 @@ jobs:
       # pull request body. On `automated` it creates the request or updates it; on a feature branch
       # the request is the one you opened for your own work, so only its body is touched.
       - name: Create or update the pull request
-        if: always() && steps.self.outputs.skip != 'true'
+        if: always() && steps.target.outputs.skip != 'true' && steps.self.outputs.skip != 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: ${{ steps.target.outputs.branch }}
@@ -228,6 +232,7 @@ jobs:
           else
             echo "::notice::No open pull request for $BRANCH; opening one is left to you."
           fi
+
       # Left off on purpose. The classification diff is informational, so there is no
       # clean-versus-regressed signal to gate on and every merge stays yours. Note that repository
       # auto-merge is fulfilled by GitHub rather than by this token, which is what lets the
@@ -239,7 +244,6 @@ jobs:
       #   env:
       #     GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       #   run: gh pr merge automated --squash --auto
-
 
   # Builds the site on whatever branch was just classified. It depends on classify, so it starts
   # only once the classifier has committed and pushed, and it checks that branch out fresh, so it
