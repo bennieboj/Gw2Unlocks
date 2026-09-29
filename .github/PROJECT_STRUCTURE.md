@@ -94,16 +94,18 @@ The project uses a distributed cache in `src/cache-root/`:
       |
       |  the push triggers 3
       v
-      3_Unlock_Classifier                      on push to `automated`, job: classify
+      3_Unlock_Classifier                      on push to any branch, job: classify
         classifies, writes classifier-config.json, commits it
         fills in the pull request body with the diff
         |
-        |  skips itself when the commit touched only the classifier cache
+        |  never runs against main, and skips itself when the
+        |  commit touched only the classifier cache
         |
         |  the commit updates the pull request, which triggers 4
         v
       4_Website_Generator                      on pull_request, job: build_site
         builds the site, passes or fails, never deploys
+        (informational: not a required check)
       |
       |  you read the diff and merge
       v
@@ -114,11 +116,11 @@ The project uses a distributed cache in `src/cache-root/`:
         builds the site, then DEPLOYS to Cloudflare
 ```
 
-Every stage is triggered by a git push or a pull request, never by another workflow finishing, so
-there is no branch to look up and no `workflow_run` chain to reason about. `automated` holds the
-pending changes and is recreated from `main` after each merge, which keeps the pull request's diff
-equal to everything since you last looked, and lets an unmerged night accumulate rather than being
-discarded.
+Every stage is triggered by a git push, a pull request, or a workflow finishing, so there is no branch
+to look up. `automated` holds the pending changes and is recreated from `main` after each merge, which
+keeps the pull request's diff equal to everything since you last looked, and lets an unmerged night
+accumulate rather than being discarded. Pushing any other branch classifies that branch too, which is
+how a change is reviewed without running anything locally.
 
 ### 1. Cache Updater, Wiki Processing and PR (`.github/workflows/1_cache-updater_2_wiki_processing_and_PR.yml`)
 **Purpose**: Fetch fresh data, process it, and open a pull request for the result
@@ -134,16 +136,22 @@ discarded.
 
 ### 3. Unlock Classifier (`.github/workflows/3_unlock-classifier.yml`)
 **Purpose**: Classify the unlocks, commit the result, and report what changed
-**Triggers**: A push to `automated` (which is what the refresh job produces), or manual
+**Triggers**: A push to any branch, the nightly refresh finishing, or a manual dispatch naming a branch
 **Job**: `classify`
 **Process**:
+- Works out which branch the run is about, and never classifies `main`, so data only ever reaches it
+  by being merged
 - Skips itself when the incoming commit touched only `classifier-cache/`, since that is its own
   output coming back around
 - Classifies unlocks by zone/vendor/etc. and writes `classifier-cache/classifier-config.json`
 - Fails only if the classifier itself crashed; a change in classification is never a build failure
-- Writes the diff to a file, then creates or updates the pull request with it as the body, noting
-  when unlocks moved or were removed
+- Creates or updates the pull request for that branch, putting the diff in the body. On `automated`
+  it also owns the title; on a feature branch it only updates the body of the request you opened
 - Auto-merge is present but commented out; every merge is a human decision
+
+Pushing a feature branch is therefore enough to classify it: the run appears, commits the result, and
+adds the diff to that branch's pull request. No secret is involved, because the classifier pushes
+with the default token and that push deliberately fires no further events.
 
 ### 4. Website Generator (`.github/workflows/4_website_generator.yml`)
 **Purpose**: Build the static website, and deploy it once the data has been reviewed
@@ -301,8 +309,9 @@ Automated via GitHub Actions, on the `automated` branch:
 
 The pipeline always runs to completion. A classification change is reported in the pull request rather
 than used to stop the run, so an unmerged night never blocks the next one. Merging is always your
-call; auto-merge is available but switched off. The one gate is `build_site`, which is configured as a
-required status check on `main`.
+call; auto-merge is available but switched off. `build_site` reports whether the site generates but is
+deliberately not a required check: it almost always passes, and making it required would leave pull
+requests blocked by a check that cannot report on a commit the classifier made.
 
 ## Troubleshooting
 
