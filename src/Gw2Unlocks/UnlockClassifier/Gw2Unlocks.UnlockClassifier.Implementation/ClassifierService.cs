@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using System;
+using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -18,6 +19,13 @@ internal sealed class ClassifierService(
     /// </summary>
     private const string CiEnvironmentVariable = "GITHUB_ACTIONS";
 
+    /// <summary>
+    /// When set, the rendered diff is also written here. The classifier is the only stage that
+    /// knows what changed, so it is the only one that can put the diff in the pull request without
+    /// somebody scraping it back out of the run log.
+    /// </summary>
+    private const string DiffReportVariable = "CLASSIFIER_DIFF_REPORT";
+
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
         ArgumentNullException.ThrowIfNull(logger);
@@ -30,12 +38,14 @@ internal sealed class ClassifierService(
             var newConfig = await classifier.ClassifyUnlocks(stoppingToken);
 
             // The diff is the whole product of this step. It goes to the log for a person reading
-            // the run, and the pull request workflow reuses the same line to decide how loudly to
-            // ask for review. Classifying never stops on account of what the diff says: a removal
-            // is a question for a human, not a failure of the classifier, and the pull request is
-            // where that question gets asked.
+            // the run, to a file the workflow turns into the pull request body, and nowhere else.
+            // Classifying never stops on account of what the diff says: a removal is a question for
+            // a human, not a failure of the classifier, and the pull request is where it gets asked.
             var diff = ClassifierDiff.Build(oldConfig, newConfig);
-            logger.LogInformation("{Diff}", diff.ToMarkdown());
+            var markdown = diff.ToMarkdown();
+
+            logger.LogInformation("{Diff}", markdown);
+            WriteDiffReport(markdown);
 
             if (diff.HasRegressions)
             {
@@ -86,5 +96,27 @@ internal sealed class ClassifierService(
         var input = Console.ReadLine();
 
         return input is { Length: 1 } && (input[0] == 'y' || input[0] == 'Y');
+    }
+
+    /// <summary>
+    /// Writes the diff where the workflow can pick it up. Best effort: the log already carries the
+    /// diff, so a failure here costs the pull request its body but must not fail the run.
+    /// </summary>
+    private void WriteDiffReport(string markdown)
+    {
+        var path = Environment.GetEnvironmentVariable(DiffReportVariable);
+
+        if (string.IsNullOrEmpty(path))
+            return;
+
+        try
+        {
+            File.WriteAllText(path, markdown);
+            logger.LogInformation("Wrote the classification diff to {Path}", path);
+        }
+        catch (Exception ex)
+        {
+            logger.LogWarning(ex, "Could not write the classification diff to {Path}", path);
+        }
     }
 }
