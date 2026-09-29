@@ -161,9 +161,11 @@ jobs:
           removed=$(printf '%s' "$summary" | grep -o '[0-9]* removed' | grep -o '[0-9]*' || echo 0)
           echo "Classifier says: $summary"
 
-          # fetch-depth 2 brought only this branch's last two commits, so main has to be fetched
-          # before it can be compared against.
-          git fetch --depth 1 origin main
+          # A plain `git fetch origin main` writes to FETCH_HEAD and never creates origin/main, so
+          # the diff below would have nothing to compare against. The refspec makes the remote
+          # tracking ref exist, and --deepen supplies the history the three-dot form needs to find
+          # a merge base, which a depth-1 clone does not have.
+          git fetch --deepen=200 origin "+refs/heads/main:refs/remotes/origin/main"
 
           {
             if [ "$BRANCH" = "automated" ]; then
