@@ -206,4 +206,4 @@ Locations relative to the repository root:
 - Raw wiki inputs: `src/cache-root/wiki-cache`
 - API inputs: `src/cache-root/api-cache`
 - Refresh pipeline: `.github/workflows/1_cache-updater_2_wiki_processing_and_PR.yml`
-- Classifier pipeline: `.github/workflows/3_unlock-classifier.yml`
+- Classifier pipeline: `.github/workflows/3_unlock-classifier_4_website_generator.yml` (job `classify`)

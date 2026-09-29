@@ -1,11 +1,20 @@
-name: 3_Unlock_Classifier
+name: 3_Unlock_Classifier_4_Website_Generator
 
+# Classifier and website generator in one workflow, because they are one story: the classification
+# is the data, and the website is what that data produces. Splitting them meant the website build
+# was validating a commit the classifier had already superseded.
+#
+# Jobs:
+#   classify   - works on any branch except main; classifies, commits, and writes the pull request
+#   build_site - builds the site on that branch as a check, never deploys
+#   deploy     - only on a push to main; builds and publishes
+#
 # Three ways in, because the branch and the event that started the run are not the same thing:
-#   push             - you pushed a branch, so classify that branch
-#   workflow_run     - the nightly refresh finished, which always works on `automated`
+#   push              - you pushed a branch, so classify that branch
+#   workflow_run      - the nightly refresh finished, which always works on `automated`
 #   workflow_dispatch - you named a branch to classify by hand
-# The push case is what makes reviewing a data change on a feature branch a one-liner instead of
-# something to reproduce locally.
+# Pushing a feature branch is therefore enough to classify it: the run appears, commits the result,
+# and adds the diff to that branch's pull request.
 on:
   push:
 
@@ -25,16 +34,18 @@ permissions:
   contents: write
   pull-requests: write
 
-# The classifier commits its own output, and a push made with the default token fires no event at
-# all, so there is no loop today. This group covers the case where a personal access token is added
-# later, which would make that push fire and bring this workflow straight back around.
-concurrency:
-  group: automated-classify
-  cancel-in-progress: false
-
 jobs:
   classify:
     runs-on: ubuntu-latest
+    outputs:
+      branch: ${{ steps.target.outputs.branch }}
+
+    # The classifier commits its own output, and a push made with the default token fires no event
+    # at all, so there is no loop today. This group covers the case where a personal access token is
+    # added later, which would make that push fire and bring this workflow straight back around.
+    concurrency:
+      group: automated-classify
+      cancel-in-progress: false
 
     steps:
       - uses: actions/checkout@v7
@@ -68,7 +79,8 @@ jobs:
           fi
 
           # Never classify or write to main. Data only ever reaches main by being merged, and a
-          # classifier that could commit to it would quietly route around that.
+          # classifier that could commit to it would quietly route around that. A push straight to
+          # main is a request to publish, which the deploy job handles instead.
           if [ "$branch" = "main" ]; then
             echo "::notice::main is never classified directly; data arrives by merging a pull request."
             echo "skip=true" >> "$GITHUB_OUTPUT"
@@ -211,15 +223,66 @@ jobs:
           else
             echo "::notice::No open pull request for $BRANCH; opening one is left to you."
           fi
-
       # Left off on purpose. The classification diff is informational, so there is no
       # clean-versus-regressed signal to gate on and every merge stays yours. Note that repository
       # auto-merge is fulfilled by GitHub rather than by this token, which is what lets the
-      # resulting push to main trigger 4_Website_Generator; merging immediately with the token
-      # would not. The `automated` branch is deleted by the repository setting "Automatically delete
-      # head branches", and the next nightly run recreates it from main.
+      # resulting push to main reach the deploy job; merging immediately with the token would not.
+      # The `automated` branch is deleted by the repository setting "Automatically delete head
+      # branches", and the next nightly run recreates it from main.
       # - name: Merge automatically
       #   if: steps.target.outputs.branch == 'automated'
       #   env:
       #     GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       #   run: gh pr merge automated --squash --auto
+
+
+  # Builds the site on whatever branch was just classified. It depends on classify, so it starts
+  # only once the classifier has committed and pushed, and it checks that branch out fresh, so it
+  # sees the classifier's commit rather than the one before it. Validation only: it never deploys.
+  # This is where new data breaking a template is found, before anyone reads a diff.
+  build_site:
+    needs: classify
+    if: needs.classify.result == 'success'
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ needs.classify.outputs.branch }}
+          fetch-depth: 0
+
+      - uses: actions/setup-dotnet@v6
+        with:
+          dotnet-version: 10.0.x
+
+      # Not in Development, so the generator produces the site once and exits.
+      - name: Build the site
+        run: dotnet run --no-launch-profile --project src/Gw2Unlocks/Gw2Unlocks.Website
+
+  # The only job that publishes. Gated on a push to main, so unreviewed data cannot reach the site:
+  # a push straight to main is a request to publish, and classify is skipped on that same event.
+  deploy:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-dotnet@v6
+        with:
+          dotnet-version: 10.0.x
+
+      - name: Build the site
+        run: dotnet run --no-launch-profile --project src/Gw2Unlocks/Gw2Unlocks.Website
+
+      # Runs only if the build above succeeded, so a broken build leaves the previous deploy live
+      # rather than replacing it with nothing.
+      - name: Publish to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v4
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy wwwroot --project-name=gw2unlocks
+          workingDirectory: "src/Gw2Unlocks/Gw2Unlocks.Website"
