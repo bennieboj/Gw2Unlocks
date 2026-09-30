@@ -19,6 +19,8 @@ All paths below are relative to the repository root. Start command examples from
 
 Read `.github/PROJECT_STRUCTURE.md` first, then verify paths and commands against current source and configuration. Use .NET and existing xUnit conventions, not Node.js tooling.
 
+Complete the `Git Workflow` section below (pull `main`, confirm a clean tree, create a `feature/**` branch) before starting any investigation step.
+
 Tests must execute from `src/Gw2Unlocks` so its `global.json` selects the runner. This PowerShell example starts at the repository root and restores that working directory afterward:
 
 ```powershell
@@ -82,8 +84,25 @@ Found 1 match(es).
 - Before fix approval, inspect source code, inspect cached data through the Cache Inspector or existing interface-backed tests, run existing tests, and add/run regression tests with isolated fixtures.
 - Explain the root cause and proposed fix for EACH issue and wait for explicit approval before changing production code, configuration, or cached/generated data. Production logging changes also require approval.
 - Inspect test side effects; isolate fixture writes and do not regenerate shared caches without approval.
-- Preserve local edits and failing inputs. Do not reset files, switch branches, delete caches, refresh sources or run pipeline hosts merely to investigate.
+- Preserve local edits and failing inputs. Do not reset files, switch branches mid-investigation (the one-time branch setup in `Git Workflow` is the only exception), delete caches, refresh sources or run pipeline hosts merely to investigate.
 - Preserve relevant old/current evidence before approved regeneration. Never manually patch the production graph just to make a test pass.
+
+## Git Workflow
+
+Run these once at the start of an investigation, before reading code or running the inspector. `main` is protected and must not be committed or pushed to directly; all work lands on a `feature/**` branch.
+
+```powershell
+git switch main
+git pull --ff-only origin main
+git status --porcelain
+git switch -c feature/<short-slug>
+```
+
+- `git pull --ff-only` keeps the pull non-interactive and fails instead of creating a merge commit. If it fails, resolve with the user; do not force, reset or hard-reset.
+- The `git status --porcelain` output must be empty. If anything is listed, STOP and report it. Do not stash, commit, discard or checkout over existing changes.
+- `**` is a lowercase, hyphenated slug describing the reported problem, e.g. `feature/mini-dolyak-acquisition-path`. Keep one branch per investigation queue so related fixes stay reviewable together; rename with `git branch -m` if the queue's scope changes.
+- Never switch branches mid-investigation. The prohibition on switching branches while debugging protects in-progress evidence; the initial branch creation above is the only exception.
+- Commit and push only after a fix is approved and verified. Open a pull request for the branch instead of pushing to `main`.
 
 ## Step-by-Step Workflow
 
