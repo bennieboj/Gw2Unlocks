@@ -680,6 +680,45 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
         Assert.NotNull(unlock.ApiData);
     }
 
+    //just pin weapons for now
+    [Theory]
+    [InlineData("Shining Ward Axe (skin)")]
+    [InlineData("Shining Ward Torch (skin)")]
+    [InlineData("Shining Ward Warhorn (skin)")]
+    public async Task GivenWeaponSoldByZoneLocalVendorAndAlsoByMultiZoneVendorThenShouldReturnZoneOfLocalVendor(string unlockName)
+    {
+        var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
+        var category = Find(results, "Expansions & Living World", "Visions of Eternity", "Leyspring Hollows");
+        var unlock = category.Unlocks.Single(c => c.Name == unlockName);
+
+        Assert.NotNull(unlock);
+        Assert.NotNull(unlock.ApiData);
+    }
+
+    /// <summary>
+    /// A collection achievement is placed wherever most of its bits were placed, so the Shining Ward
+    /// Weapon Collector follows its seventeen weapon skins. Getting those into Leyspring Hollows is
+    /// what moves the collection out of Shipwreck Strand.
+    /// </summary>
+    [Fact]
+    public async Task GivenShiningWardWeaponCollectorShouldReturnLeyspringHollows()
+    {
+        string[] skinNames = [
+            "Shining Ward Axe (skin)", "Shining Ward Dagger (skin)", "Shining Ward Focus (skin)",
+            "Shining Ward Greatsword (skin)", "Shining Ward Hammer (skin)", "Shining Ward Longbow (skin)",
+            "Shining Ward Mace (skin)", "Shining Ward Pistol (skin)", "Shining Ward Rifle (skin)",
+            "Shining Ward Scepter (skin)", "Shining Ward Shield (skin)", "Shining Ward Short Bow (skin)",
+            "Shining Ward Spear (skin)", "Shining Ward Staff (skin)", "Shining Ward Sword (skin)",
+            "Shining Ward Torch (skin)", "Shining Ward Warhorn (skin)",
+        ];
+        var achievementName = "Rare Collections#achievement9437";
+        var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, [.. skinNames, achievementName]);
+        var category = Find(results, "Expansions & Living World", "Visions of Eternity", "Leyspring Hollows");
+
+        Assert.Contains(category.Unlocks, u => u.Name == achievementName);
+    }
+
+
     [Theory]
     [InlineData("Great Capra (skin)", "Verdant Brink")]
     [InlineData("Ley Guard's Protector", "Auric Basin")]

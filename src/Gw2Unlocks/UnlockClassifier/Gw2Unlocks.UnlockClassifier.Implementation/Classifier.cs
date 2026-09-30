@@ -470,7 +470,8 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                             new() { Name = "Leyspring Hollows",
                                 UnlockCriteria = [
                                     new ZoneCriteria("Leyspring Hollows"),
-                                    new TokenCriteria("Shadowstone Research Data")
+                                    new TokenCriteria("Shadowstone Research Data"),
+                                    new SetCriteria("Shining Ward weapons")
                                 ]
                             }
                         ]
