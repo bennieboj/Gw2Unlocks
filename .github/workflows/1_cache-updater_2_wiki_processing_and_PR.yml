@@ -59,9 +59,20 @@ jobs:
           git config user.email "github-actions@github.com"
 
           git add .
-          git diff --cached --quiet && exit 0
+          # Written as an if rather than the shorter `git diff --cached --quiet && exit 0`. That
+          # form ends only this step, so the push below was skipped while the workflow carried on
+          # to the pull request, which then failed with "Head ref must be a branch" because
+          # `automated` had never reached the remote. `exit 0` is not a way to stop a workflow.
+          if git diff --cached --quiet; then
+            echo "No file changes to commit; the branch is still published below."
+          else
+            git commit -m "Cache Updater and Wiki Processing update"
+          fi
 
-          git commit -m "Cache Updater and Wiki Processing update"
+          # Pushed whether or not there was anything to commit. `automated` is the head ref of the
+          # pull request below and the ref the classifier checks out, so it has to exist on the
+          # remote even on a night when the fetch changed nothing. A branch level with main is a
+          # valid state that the next step checks for; a branch that does not exist is not.
           git push origin "HEAD:refs/heads/automated"
 
       # The push above fires 3_Unlock_Classifier, which is what fills in the pull request body with
@@ -71,6 +82,26 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          # Asked git, not the API, whether there is anything to open a request for. `gh pr create`
+          # answers "No commits between main and automated" when the two refs are identical, which
+          # is what a night that changed no data looks like, so the condition has to be established
+          # before the call rather than by interpreting its failure.
+          git fetch origin "+refs/heads/main:refs/remotes/origin/main"
+
+          # Checked separately from the comparison below, because `git rev-list` prints nothing both
+          # when the branches match and when the argument is unknown. Treating the second as the
+          # first would skip the pull request for the rest of the pipeline on a fetch failure, and
+          # report success while doing it.
+          if ! git rev-parse --verify --quiet origin/main >/dev/null; then
+            echo "::error::Could not resolve origin/main, so the branch cannot be compared to it."
+            exit 1
+          fi
+
+          if [ -z "$(git rev-list origin/main..HEAD)" ]; then
+            echo "::notice::Automated branch holds nothing that main does not; no pull request needed."
+            exit 0
+          fi
+
           if PR=$(gh pr list --head automated --state open --json number --jq '.[0].number') && [ -n "$PR" ]; then
             echo "Pull request #$PR is already open; leaving its body to the classifier."
           else
