@@ -25,6 +25,7 @@ internal sealed class UpdaterService(ILogger<BackgroundService> logger, IGw2Wiki
         catch (Exception ex)
         {
             logger.LogError(ex, "Error in UpdaterService");
+            Environment.ExitCode = 1;
         }
         finally
         {

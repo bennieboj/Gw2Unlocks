@@ -23,6 +23,7 @@ internal sealed class UpdaterService(ILogger<UpdaterService> logger, IUpdater up
         catch (Exception ex)
         {
             logger.LogError(ex, "Error in UpdaterService");
+            Environment.ExitCode = 1;
         }
         finally
         {

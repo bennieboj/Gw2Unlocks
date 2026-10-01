@@ -49,6 +49,7 @@ internal sealed class SiteGeneratorService(
         catch (Exception ex)
         {
             logger.LogError(ex, "Error in SiteGeneratorService");
+            Environment.ExitCode = 1;
         }
         finally
         {
