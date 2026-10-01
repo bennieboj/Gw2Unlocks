@@ -226,9 +226,25 @@ jobs:
               gh pr edit "$PR" --body-file pr-body.md
             fi
           elif [ "$BRANCH" = "automated" ]; then
-            echo "Creating pull request for automated"
-            gh pr create --head automated --base main \
-              --title "Data update $(TZ=Europe/Brussels date +%F)" --body-file pr-body.md
+            # Same reason as the guard in the refresh workflow: `gh pr create` cannot make a
+            # request when `automated` holds no commit that main does not, which is what a night
+            # whose classification changed nothing leaves behind. Checked before the call, because
+            # otherwise the run reports a failure for a state that is entirely normal.
+            # `git rev-list` prints nothing both when the branches match and when the argument is
+            # unknown, so a failed comparison is separated out first. Otherwise a fetch failure would
+            # skip the pull request and still report the run as successful.
+            if ! git rev-parse --verify --quiet origin/main >/dev/null; then
+              echo "::error::Could not resolve origin/main, so the branch cannot be compared to it."
+              exit 1
+            fi
+
+            if [ -z "$(git rev-list origin/main..HEAD)" ]; then
+              echo "::notice::$BRANCH holds nothing that main does not; no pull request needed."
+            else
+              echo "Creating pull request for $BRANCH"
+              gh pr create --head "$BRANCH" --base main \
+                --title "Data update $(TZ=Europe/Brussels date +%F)" --body-file pr-body.md
+            fi
           else
             echo "::notice::No open pull request for $BRANCH; opening one is left to you."
           fi

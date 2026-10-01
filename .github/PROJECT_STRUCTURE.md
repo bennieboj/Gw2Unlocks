@@ -90,7 +90,8 @@ The project uses a distributed cache in `src/cache-root/`:
         fetch the GW2 API and the wiki
         process the wiki dump
         commit to `automated` (created from main when missing)
-        open a pull request if there is not one already
+        open a pull request if there is not one and there is
+        something on it that main does not have
       |
       |  the refresh run finishing triggers this
       v
@@ -136,7 +137,10 @@ data cannot reach the site.
 - Calls `Updater.UpdateApiData()` to fetch all API endpoints, and generates icon sprite sheets
 - Calls the wiki processing host to download and parse the Wiki XML dumps
 - Commits to `automated` with an explicit refspec, so the push can never land on `main`
-- Opens a pull request if none is open, and never edits an existing one: the classifier owns the body
+- Always pushes `automated`, even when the fetch changed no files, because it is both the pull
+  request's head ref and the ref the classifier checks out
+- Opens a pull request only when `automated` holds a commit `main` does not, and never edits an
+  existing one: the classifier owns the body
 
 ### 3 & 4. Unlock Classifier and Website Generator (`.github/workflows/3_unlock-classifier_4_website_generator.yml`)
 **Purpose**: Classify the unlocks, build the site from that classification, and publish once it has been reviewed
