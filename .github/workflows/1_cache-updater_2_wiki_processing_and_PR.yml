@@ -64,15 +64,45 @@ jobs:
             --self-contained false \
             -o src/Gw2Unlocks/CacheUpdater/Gw2Unlocks.CacheUpdater.Host/publish
 
-      # The single check that would have made the libSkiaSharp failure obvious: it names the file
-      # that was missing and the directory it was looked for in.
-      - name: Show native assets
+      # Reports where the native SkiaSharp library went missing, then fails if it is not next to the
+      # app. The two questions are deliberately separate, because the answer differs by cause:
+      #
+      #   never downloaded  -> restore did not resolve the package at all
+      #   in assets, absent  -> restore resolved it, but publish did not copy the RID asset out
+      #   present            -> the loader cannot see it for some other reason
+      #
+      # project.assets.json is the restore graph, so it distinguishes the first two directly.
+      - name: Diagnose native assets
         run: |
           dir=src/Gw2Unlocks/CacheUpdater/Gw2Unlocks.CacheUpdater.Host/publish
+          assets=src/Gw2Unlocks/CacheUpdater/Gw2Unlocks.CacheUpdater.Host/obj/project.assets.json
+
+          echo "### SkiaSharp packages in the NuGet cache"
+          ls ~/.nuget/packages/ 2>/dev/null | grep -i skiasharp || echo "(none downloaded)"
+
+          echo
+          echo "### SkiaSharp native assets in the restore graph"
+          if [ -f "$assets" ]; then
+            # Match only package ids. A loose pattern also matches the libSkiaSharp.so file names
+            # inside the assets file, which are evidence of the asset, not of a resolved package.
+            grep -o '"SkiaSharp[A-Za-z.]*/[0-9][^"]*"' "$assets" | tr -d '"' | sort -u | sed 's/^/  package: /'
+            echo "  --- native asset entries ---"
+            grep -o '"libSkiaSharp[^"]*"' "$assets" | sort -u | sed 's/^/  asset:   /' || echo "  (no native asset entries)"
+          else
+            echo "  project.assets.json not found at $assets"
+          fi
+
+          echo
+          echo "### Native libraries in the publish output"
+          find "$dir" -name '*.so' 2>/dev/null | sed 's/^/  /' || true
+          [ -d "$dir/runtimes" ] && echo "  (runtimes/ present)" || echo "  (no runtimes/ directory)"
+
+          echo
           if [ -f "$dir/libSkiaSharp.so" ]; then
             echo "libSkiaSharp.so present in the application directory."
           else
             echo "::error::libSkiaSharp.so is missing from $dir; the sprite sheet step will fail."
+            echo "--- full listing ---"
             ls -la "$dir" || true
             exit 1
           fi
