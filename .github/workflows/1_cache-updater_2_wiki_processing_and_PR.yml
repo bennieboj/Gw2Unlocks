@@ -47,11 +47,59 @@ jobs:
         with:
           dotnet-version: 10.0.x
 
+      # Published rather than `dotnet run` because the icon sprite sheets need the native SkiaSharp
+      # library. A plain `dotnet run` builds without a runtime identifier, which leaves the native
+      # asset under runtimes/<rid>/native/ instead of next to the app, and the loader fails with
+      # DllNotFoundException for libSkiaSharp. Publishing with an explicit RID places the .so in the
+      # application directory, which is where the P/Invoke probe looks first.
+      #
+      # The output stays inside the repository on purpose: CachePaths walks up from the executable to
+      # find Directory.Build.props and throws if it does not, so publishing to the runner temp
+      # directory would break cache path resolution.
+      - name: Publish the cache updater
+        run: |
+          dotnet publish src/Gw2Unlocks/CacheUpdater/Gw2Unlocks.CacheUpdater.Host \
+            -c Release \
+            -r linux-x64 \
+            --self-contained false \
+            -o src/Gw2Unlocks/CacheUpdater/Gw2Unlocks.CacheUpdater.Host/publish
+
+      # The single check that would have made the libSkiaSharp failure obvious: it names the file
+      # that was missing and the directory it was looked for in.
+      - name: Show native assets
+        run: |
+          dir=src/Gw2Unlocks/CacheUpdater/Gw2Unlocks.CacheUpdater.Host/publish
+          if [ -f "$dir/libSkiaSharp.so" ]; then
+            echo "libSkiaSharp.so present in the application directory."
+          else
+            echo "::error::libSkiaSharp.so is missing from $dir; the sprite sheet step will fail."
+            ls -la "$dir" || true
+            exit 1
+          fi
+
       - name: Fetch game data
-        run: dotnet run --no-launch-profile --project src/Gw2Unlocks/CacheUpdater/Gw2Unlocks.CacheUpdater.Host
+        run: |
+          set +e
+          src/Gw2Unlocks/CacheUpdater/Gw2Unlocks.CacheUpdater.Host/publish/Gw2Unlocks.CacheUpdater.Host
+          code=$?
+          set -e
+          echo "Cache updater exit code: $code"
+          if [ "$code" -ne 0 ]; then
+            echo "::error::The cache updater failed with exit code $code; no data was written."
+          fi
+          exit "$code"
 
       - name: Process the wiki
-        run: dotnet run --no-launch-profile --project src/Gw2Unlocks/WikiProcessing/Gw2Unlocks.WikiProcessing.Host
+        run: |
+          set +e
+          dotnet run --no-launch-profile --project src/Gw2Unlocks/WikiProcessing/Gw2Unlocks.WikiProcessing.Host
+          code=$?
+          set -e
+          echo "Wiki processing exit code: $code"
+          if [ "$code" -ne 0 ]; then
+            echo "::error::Wiki processing failed with exit code $code; no graph was written."
+          fi
+          exit "$code"
 
       - name: Commit changes
         run: |
