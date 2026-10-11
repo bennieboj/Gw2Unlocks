@@ -3,6 +3,7 @@ using Microsoft.Extensions.Logging;
 using Serilog;
 using Serilog.Events;
 using System;
+using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 
@@ -15,9 +16,22 @@ public static class ServiceCollectionExtensions
         ArgumentNullException.ThrowIfNull(loggingBuilder);
         ArgumentNullException.ThrowIfNull(configuration);
 
-        // Default to Information if not set
-        var defaultLevelString = configuration["Logging:LogLevel:Default"] ?? "Information";
-        var defaultLevel = MapToSerilogLevel(defaultLevelString) ?? LogEventLevel.Information;
+        // Code defaults (LoggingDefaults) with per-project Logging:LogLevel config layered on top;
+        // any key present in configuration wins over the default, and config may add new keys.
+        var logLevels = new Dictionary<string, LogLevel>(StringComparer.OrdinalIgnoreCase);
+        foreach (var pair in LoggingDefaults.DefaultLogLevel)
+            logLevels[pair.Key] = pair.Value;
+
+        foreach (var pair in configuration.GetSection("Logging:LogLevel").GetChildren())
+        {
+            if (Enum.TryParse(pair.Value, ignoreCase: true, out LogLevel parsedLevel) && Enum.IsDefined(parsedLevel))
+                logLevels[pair.Key] = parsedLevel;
+        }
+
+        // Default to Debug (LoggingDefaults) if not set anywhere
+        var defaultLevel = logLevels.TryGetValue("Default", out var configuredDefault)
+            ? MapToSerilogLevel(configuredDefault)
+            : LogEventLevel.Information;
 
         var loggerConfig = new LoggerConfiguration()
             .MinimumLevel.Is(defaultLevel)
@@ -34,18 +48,13 @@ public static class ServiceCollectionExtensions
                 outputTemplate: "[{Timestamp:dd/MM/yy HH:mm:ss:fff}] [{Level:u3}] [{SourceContext}] {Message:lj}{NewLine}{Exception}"
             );
 
-        // Apply category overrides from Microsoft-style config
-        var logLevels = configuration.GetSection("Logging:LogLevel").GetChildren();
+        // Apply category overrides (defaults merged with config)
         foreach (var pair in logLevels)
         {
             if (pair.Key.Equals("Default", StringComparison.OrdinalIgnoreCase))
                 continue;
 
-            var serilogLevel = MapToSerilogLevel(pair.Value);
-            if (serilogLevel is null)
-                continue;
-
-            if (pair.Value != null && pair.Value.Equals("None", StringComparison.OrdinalIgnoreCase))
+            if (pair.Value == LogLevel.None)
             {
                 // None means completely disabled for this category
                 loggerConfig.MinimumLevel.Override(pair.Key, LogEventLevel.Fatal);
@@ -54,7 +63,7 @@ public static class ServiceCollectionExtensions
             }
             else
             {
-                loggerConfig.MinimumLevel.Override(pair.Key, serilogLevel.Value);
+                loggerConfig.MinimumLevel.Override(pair.Key, MapToSerilogLevel(pair.Value));
             }
         }
 
@@ -67,21 +76,19 @@ public static class ServiceCollectionExtensions
         return loggingBuilder;
     }
 
-    private static LogEventLevel? MapToSerilogLevel(string? microsoftLevel)
+    private static LogEventLevel MapToSerilogLevel(LogLevel microsoftLevel)
     {
-        if (string.IsNullOrWhiteSpace(microsoftLevel))
-            return null;
-
-        return microsoftLevel.ToUpperInvariant() switch
+        return microsoftLevel switch
         {
-            "TRACE" => LogEventLevel.Verbose,
-            "DEBUG" => LogEventLevel.Debug,
-            "INFORMATION" => LogEventLevel.Information,
-            "WARNING" => LogEventLevel.Warning,
-            "ERROR" => LogEventLevel.Error,
-            "CRITICAL" => LogEventLevel.Fatal,
-            "NONE" => null, // handled separately
-            _ => null
+            LogLevel.Trace => LogEventLevel.Verbose,
+            LogLevel.Debug => LogEventLevel.Debug,
+            LogLevel.Information => LogEventLevel.Information,
+            LogLevel.Warning => LogEventLevel.Warning,
+            LogLevel.Error => LogEventLevel.Error,
+            LogLevel.Critical => LogEventLevel.Fatal,
+            // LogLevel.None is handled by the caller (category disabled);
+            // as a base level it also silences everything below Fatal.
+            _ => LogEventLevel.Fatal,
         };
     }
 }
