@@ -61,72 +61,73 @@ jobs:
         with:
           dotnet-version: 10.0.x
 
-      # Published rather than `dotnet run` because the icon sprite sheets need the native SkiaSharp
-      # library. A plain `dotnet run` builds without a runtime identifier, which leaves the native
-      # asset under runtimes/<rid>/native/ instead of next to the app, and the loader fails with
-      # DllNotFoundException for libSkiaSharp. Publishing with an explicit RID places the .so in the
-      # application directory, which is where the P/Invoke probe looks first.
-      #
-      # The output stays inside the repository on purpose: CachePaths walks up from the executable to
-      # find Directory.Build.props and throws if it does not, so publishing to the runner temp
-      # directory would break cache path resolution.
-      - name: Publish the cache updater
-        run: |
-          dotnet publish src/Gw2Unlocks/CacheUpdater/Gw2Unlocks.CacheUpdater.Host \
-            -c Release \
-            -r linux-x64 \
-            --self-contained false \
-            -o src/Gw2Unlocks/CacheUpdater/Gw2Unlocks.CacheUpdater.Host/publish
-
-      # Reports where the native SkiaSharp library went missing, then fails if it is not next to the
-      # app. The two questions are deliberately separate, because the answer differs by cause:
+      # Disabled: reported where the native SkiaSharp library went missing, then failed if it was not
+      # next to the app. The two questions were deliberately separate, because the answer differs by
+      # cause:
       #
       #   never downloaded  -> restore did not resolve the package at all
-      #   in assets, absent  -> restore resolved it, but publish did not copy the RID asset out
+      #   in assets, absent  -> restore resolved it, but the build did not copy the RID asset out
       #   present            -> the loader cannot see it for some other reason
       #
       # project.assets.json is the restore graph, so it distinguishes the first two directly.
-      - name: Diagnose native assets
-        run: |
-          dir=src/Gw2Unlocks/CacheUpdater/Gw2Unlocks.CacheUpdater.Host/publish
-          assets=src/Gw2Unlocks/CacheUpdater/Gw2Unlocks.CacheUpdater.Host/obj/project.assets.json
+      #
+      # Kept rather than deleted because it is the only thing that answers those three questions
+      # directly. If the sprite sheet step fails with DllNotFoundException again, re-enable this
+      # instead of inferring the cause from the loader message.
+      #- name: Diagnose native assets
+      #  run: |
+      #    dir=src/Gw2Unlocks/CacheUpdater/Gw2Unlocks.CacheUpdater.Host/bin/Release/net10.0/linux-x64
+      #    assets=src/Gw2Unlocks/CacheUpdater/Gw2Unlocks.CacheUpdater.Host/obj/project.assets.json
+      #
+      #    echo "### SkiaSharp packages in the NuGet cache"
+      #    ls ~/.nuget/packages/ 2>/dev/null | grep -i skiasharp || echo "(none downloaded)"
+      #
+      #    echo
+      #    echo "### SkiaSharp native assets in the restore graph"
+      #    if [ -f "$assets" ]; then
+      #      # Match only package ids. A loose pattern also matches the libSkiaSharp.so file names
+      #      # inside the assets file, which are evidence of the asset, not of a resolved package.
+      #      # Digits must be in the class: package ids like Win32 contain them, and leaving them out
+      #      # silently drops those lines, which reads as a package that never resolved.
+      #      grep -o '"SkiaSharp[A-Za-z0-9.]*/[0-9][^"]*"' "$assets" | tr -d '"' | sort -u | sed 's/^/  package: /'
+      #      echo "  --- native asset entries ---"
+      #      grep -o '"libSkiaSharp[^"]*"' "$assets" | sort -u | sed 's/^/  asset:   /' || echo "  (no native asset entries)"
+      #    else
+      #      echo "  project.assets.json not found at $assets"
+      #    fi
+      #
+      #    echo
+      #    echo "### Native libraries in the build output"
+      #    find "$dir" -name '*.so' 2>/dev/null | sed 's/^/  /' || true
+      #    [ -d "$dir/runtimes" ] && echo "  (runtimes/ present)" || echo "  (no runtimes/ directory)"
+      #
+      #    echo
+      #    if [ -f "$dir/libSkiaSharp.so" ]; then
+      #      echo "libSkiaSharp.so present in the application directory."
+      #    else
+      #      echo "::error::libSkiaSharp.so is missing from $dir; the sprite sheet step will fail."
+      #      echo "--- full listing ---"
+      #      ls -la "$dir" || true
+      #      exit 1
+      #    fi
 
-          echo "### SkiaSharp packages in the NuGet cache"
-          ls ~/.nuget/packages/ 2>/dev/null | grep -i skiasharp || echo "(none downloaded)"
-
-          echo
-          echo "### SkiaSharp native assets in the restore graph"
-          if [ -f "$assets" ]; then
-            # Match only package ids. A loose pattern also matches the libSkiaSharp.so file names
-            # inside the assets file, which are evidence of the asset, not of a resolved package.
-            # Digits must be in the class: package ids like Win32 contain them, and leaving them out
-            # silently drops those lines, which reads as a package that never resolved.
-            grep -o '"SkiaSharp[A-Za-z0-9.]*/[0-9][^"]*"' "$assets" | tr -d '"' | sort -u | sed 's/^/  package: /'
-            echo "  --- native asset entries ---"
-            grep -o '"libSkiaSharp[^"]*"' "$assets" | sort -u | sed 's/^/  asset:   /' || echo "  (no native asset entries)"
-          else
-            echo "  project.assets.json not found at $assets"
-          fi
-
-          echo
-          echo "### Native libraries in the publish output"
-          find "$dir" -name '*.so' 2>/dev/null | sed 's/^/  /' || true
-          [ -d "$dir/runtimes" ] && echo "  (runtimes/ present)" || echo "  (no runtimes/ directory)"
-
-          echo
-          if [ -f "$dir/libSkiaSharp.so" ]; then
-            echo "libSkiaSharp.so present in the application directory."
-          else
-            echo "::error::libSkiaSharp.so is missing from $dir; the sprite sheet step will fail."
-            echo "--- full listing ---"
-            ls -la "$dir" || true
-            exit 1
-          fi
-
+      # Run with an explicit RID. Without `-r` there is no runtime identifier, which leaves the native
+      # SkiaSharp asset under runtimes/<rid>/native/ instead of next to the app, and the loader fails
+      # with DllNotFoundException for libSkiaSharp. With `-r linux-x64` the SDK flattens
+      # libSkiaSharp.so into bin/Release/net10.0/linux-x64/ alongside the apphost, which is where the
+      # P/Invoke probe looks first.
+      #
+      # `-r` does not imply self-contained on .NET 10, so the app stays framework-dependent and uses
+      # the runner's runtime. Nothing here needs `--self-contained false`.
+      #
+      # The output stays inside the repository on purpose: CachePaths walks up from the executable to
+      # find Directory.Build.props and throws if it does not, so building to the runner temp
+      # directory would break cache path resolution.
       - name: Fetch game data
         run: |
           set +e
-          src/Gw2Unlocks/CacheUpdater/Gw2Unlocks.CacheUpdater.Host/publish/Gw2Unlocks.CacheUpdater.Host
+          dotnet run --no-launch-profile -c Release -r linux-x64 \
+            --project src/Gw2Unlocks/CacheUpdater/Gw2Unlocks.CacheUpdater.Host
           code=$?
           set -e
           echo "Cache updater exit code: $code"
