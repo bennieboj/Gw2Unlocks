@@ -32,12 +32,26 @@ jobs:
       # the normal case after a merge, and joined when it already exists so that a night nobody had
       # time to review is not thrown away. The push names its own target, so the checkout above
       # being on main cannot make this write to main.
+      #
+      # It is then brought forward from main. Without this the branch is a permanent snapshot of
+      # whatever main looked like when it was first created: every later fix lands on main and never
+      # reaches the branch this workflow actually compiles, so the pipeline keeps silently building
+      # stale code no matter how many fixes are merged. A fast-forward is the common case, because
+      # once a PR is merged `automated` has nothing of its own to protect. A merge is only needed
+      # while data changes are still pending review, and it fails the run rather than dropping them.
       - name: Join or create the automated branch
         run: |
           git fetch origin
           if git show-ref --verify --quiet refs/remotes/origin/automated; then
             git checkout -B automated origin/automated
             echo "Continuing the existing automated branch."
+            if git merge-base --is-ancestor origin/automated origin/main; then
+              git merge --ff-only origin/main
+              echo "Fast-forwarded automated to main."
+            else
+              git merge origin/main -m "Sync automated with main"
+              echo "Merged main into automated."
+            fi
           else
             git checkout -b automated origin/main
             echo "Created automated from main."
@@ -85,7 +99,9 @@ jobs:
           if [ -f "$assets" ]; then
             # Match only package ids. A loose pattern also matches the libSkiaSharp.so file names
             # inside the assets file, which are evidence of the asset, not of a resolved package.
-            grep -o '"SkiaSharp[A-Za-z.]*/[0-9][^"]*"' "$assets" | tr -d '"' | sort -u | sed 's/^/  package: /'
+            # Digits must be in the class: package ids like Win32 contain them, and leaving them out
+            # silently drops those lines, which reads as a package that never resolved.
+            grep -o '"SkiaSharp[A-Za-z0-9.]*/[0-9][^"]*"' "$assets" | tr -d '"' | sort -u | sed 's/^/  package: /'
             echo "  --- native asset entries ---"
             grep -o '"libSkiaSharp[^"]*"' "$assets" | sort -u | sed 's/^/  asset:   /' || echo "  (no native asset entries)"
           else
