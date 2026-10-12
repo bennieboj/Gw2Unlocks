@@ -77,6 +77,8 @@ internal sealed class Gw2WikiCache(CachePaths cachePaths)
         CancellationToken cancellationToken)
     {
         int fileIndex = 0;
+        string currentFileName = "(no file started)";
+        int pagesWritten = 0;
 
         FileStream? stream = null;
         StreamWriter? writer = null;
@@ -99,6 +101,7 @@ internal sealed class Gw2WikiCache(CachePaths cachePaths)
             await CloseCurrentFileAsync();
 
             var fileName = $"{WikiBulkPrefix}{fileIndex++:D4}{WikiBulkExtension}";
+            currentFileName = fileName;
             var path = Path.Combine(CacheFolder, fileName);
 
             stream = System.IO.File.Create(path);
@@ -110,18 +113,35 @@ internal sealed class Gw2WikiCache(CachePaths cachePaths)
 
         await StartNewFileAsync();
 
-        await foreach (var page in pages.WithCancellation(cancellationToken))
+        try
         {
-            cancellationToken.ThrowIfCancellationRequested();
-
-            var bytes = writer!.Encoding.GetByteCount(page + Environment.NewLine);
-
-            if (stream!.Length + bytes > maxFileSizeBytes)
+            await foreach (var page in pages.WithCancellation(cancellationToken))
             {
-                await StartNewFileAsync();
-            }
+                cancellationToken.ThrowIfCancellationRequested();
 
-            await writer.WriteLineAsync(page);
+                var bytes = writer!.Encoding.GetByteCount(page + Environment.NewLine);
+
+                if (stream!.Length + bytes > maxFileSizeBytes)
+                {
+                    await StartNewFileAsync();
+                }
+
+                await writer.WriteLineAsync(page);
+                pagesWritten++;
+            }
+        }
+        catch (OperationCanceledException)
+        {
+            // Keep cancellation distinguishable for callers (e.g. UpdaterService shutdown handling).
+            throw;
+        }
+        catch (Exception ex)
+        {
+            // Surface which cache file was being written when the page source failed.
+            throw new InvalidOperationException(
+                $"Wiki page streaming failed while writing '{currentFileName}' " +
+                $"({pagesWritten} page(s) written so far). The failure is in the page source. See inner exception for details.",
+                ex);
         }
 
         await CloseCurrentFileAsync();
