@@ -4,6 +4,7 @@ using Polly.Retry;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Net.Http;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -121,8 +122,26 @@ public sealed class Gw2WikiSource(ILogger<Gw2WikiSource> logger, Lazy<Task<WikiS
         sb.Append("&curonly=1&wpDownload=1");
 
         using var content = new StringContent(sb.ToString(), Encoding.UTF8, "application/x-www-form-urlencoded");
-        var response = await retryPolicy.ExecuteAsync(() => http.PostAsync(url, content, cancellationToken));
-        response.EnsureSuccessStatusCode();
+        using var response = await retryPolicy.ExecuteAsync(() => http.PostAsync(url, content, cancellationToken));
+        if (!response.IsSuccessStatusCode)
+        {
+            // The bare EnsureSuccessStatusCode() exception loses the URL and batch,
+            // so include both to make the failure reproducible locally.
+            var bodySnippet = await response.Content.ReadAsStringAsync(cancellationToken);
+            if (bodySnippet.Length > 300)
+                bodySnippet = bodySnippet[..300];
+
+            var batchSample = string.Join(", ", titles.Take(5));
+            if (titles.Count > 5)
+                batchSample += $", ... (+{titles.Count - 5} more)";
+
+            throw new HttpRequestException(
+                $"POST '{url}' returned {(int)response.StatusCode} ({response.StatusCode}) after retries. " +
+                $"Batch of {titles.Count} page(s): {batchSample}. " +
+                $"Response body starts with: {bodySnippet}",
+                null,
+                response.StatusCode);
+        }
 
         return await response.Content.ReadAsStringAsync(cancellationToken);
     }
