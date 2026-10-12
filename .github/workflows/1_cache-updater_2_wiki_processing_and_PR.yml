@@ -5,15 +5,12 @@ name: 1_Cache_Updater_2_Wiki_Processing_and_PR
 # with nothing to decide in between, and a failure in any of them should stop the next.
 on:
   workflow_dispatch:
-  schedule:
-    # GitHub cron is always UTC: 03:00 UTC is 04:00 in Brussels during winter and 05:00 in summer.
-    - cron: '0 3 * * *'
 
 permissions:
   contents: write
   pull-requests: write
 
-# One refresh at a time. Without this, a manual run during the nightly one would fight it over
+# One refresh at a time. Without this, concurrent runs would fight over
 # the same branch.
 concurrency:
   group: automated-refresh
@@ -24,15 +21,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Work out which branch this run refreshes. A schedule only ever runs the default branch's
-      # workflow, and a dispatch from main is a request for the nightly behaviour, so both work on
-      # `automated`. Dispatched from any other branch, that branch is what gets refreshed and
+      # Work out which branch this run refreshes. A dispatch from main is a request for the
+      # standard data-refresh behaviour, so it works on `automated`. Dispatched from any other
+      # branch, that branch is what gets refreshed and
       # pushed to: the normal pipeline, on the branch you chose, running that branch's own code.
       # This is how a pipeline change is tested before it reaches main.
       - name: Resolve the branch
         id: target
         run: |
-          if [ "${{ github.event_name }}" = "schedule" ] || [ "${{ github.ref_name }}" = "main" ]; then
+          if [ "${{ github.ref_name }}" = "main" ]; then
             branch="automated"
           else
             branch="${{ github.ref_name }}"
@@ -51,9 +48,9 @@ jobs:
           fetch-depth: 0
 
       # `automated` holds the pending changes. It is created from main when it is missing, which is
-      # the normal case after a merge, and joined when it already exists so that a night nobody had
-      # time to review is not thrown away. The push names its own target, so the checkout above
-      # being on main cannot make this write to main.
+      # the normal case after a merge, and joined when it already exists so that unreviewed data is
+      # not thrown away. The push names its own target, so the checkout above being on main cannot
+      # make this write to main.
       #
       # It is then brought forward from main. Without this the branch is a permanent snapshot of
       # whatever main looked like when it was first created: every later fix lands on main and never
