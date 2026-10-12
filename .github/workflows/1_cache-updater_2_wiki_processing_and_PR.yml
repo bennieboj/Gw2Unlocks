@@ -24,6 +24,28 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # Work out which branch this run refreshes. A schedule only ever runs the default branch's
+      # workflow, and a dispatch from main is a request for the nightly behaviour, so both work on
+      # `automated`. Dispatched from any other branch, that branch is what gets refreshed and
+      # pushed to: the normal pipeline, on the branch you chose, running that branch's own code.
+      # This is how a pipeline change is tested before it reaches main.
+      - name: Resolve the branch
+        id: target
+        run: |
+          if [ "${{ github.event_name }}" = "schedule" ] || [ "${{ github.ref_name }}" = "main" ]; then
+            branch="automated"
+          else
+            branch="${{ github.ref_name }}"
+          fi
+
+          if [ -z "$branch" ]; then
+            echo "::error::Could not work out which branch this run is about."
+            exit 1
+          fi
+
+          echo "branch=$branch" >> "$GITHUB_OUTPUT"
+          echo "This run is about $branch."
+
       - uses: actions/checkout@v7
         with:
           fetch-depth: 0
@@ -39,7 +61,11 @@ jobs:
       # stale code no matter how many fixes are merged. A fast-forward is the common case, because
       # once a PR is merged `automated` has nothing of its own to protect. A merge is only needed
       # while data changes are still pending review, and it fails the run rather than dropping them.
+      # Only for `automated`. A run dispatched from a feature branch works on that branch as-is:
+      # the branch is the thing this run refreshes, so switching away from it would run someone
+      # else's code, which is the whole point of dispatching from a branch.
       - name: Join or create the automated branch
+        if: steps.target.outputs.branch == 'automated'
         run: |
           git fetch origin
           if git show-ref --verify --quiet refs/remotes/origin/automated; then
@@ -149,6 +175,8 @@ jobs:
           exit "$code"
 
       - name: Commit changes
+        env:
+          BRANCH: ${{ steps.target.outputs.branch }}
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
@@ -164,11 +192,11 @@ jobs:
             git commit -m "Cache Updater and Wiki Processing update"
           fi
 
-          # Pushed whether or not there was anything to commit. `automated` is the head ref of the
-          # pull request below and the ref the classifier checks out, so it has to exist on the
-          # remote even on a night when the fetch changed nothing. A branch level with main is a
+          # Pushed whether or not there was anything to commit. The branch resolved above is the
+          # head ref of the pull request below and the ref the classifier checks out, so it has to
+          # exist on the remote even when the fetch changed nothing. A branch level with main is a
           # valid state that the next step checks for; a branch that does not exist is not.
-          git push origin "HEAD:refs/heads/automated"
+          git push origin "HEAD:refs/heads/$BRANCH"
 
       # The push above fires 3_Unlock_Classifier, which is what fills in the pull request body with
       # the classification diff. This job only makes sure a request exists, and deliberately never
@@ -176,10 +204,11 @@ jobs:
       - name: Ensure a pull request exists
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: ${{ steps.target.outputs.branch }}
         run: |
           # Asked git, not the API, whether there is anything to open a request for. `gh pr create`
-          # answers "No commits between main and automated" when the two refs are identical, which
-          # is what a night that changed no data looks like, so the condition has to be established
+          # answers "No commits between main and <branch>" when the two refs are identical, which
+          # is what a run that changed no data looks like, so the condition has to be established
           # before the call rather than by interpreting its failure.
           git fetch origin "+refs/heads/main:refs/remotes/origin/main"
 
@@ -193,15 +222,20 @@ jobs:
           fi
 
           if [ -z "$(git rev-list origin/main..HEAD)" ]; then
-            echo "::notice::Automated branch holds nothing that main does not; no pull request needed."
+            echo "::notice::$BRANCH holds nothing that main does not; no pull request needed."
             exit 0
           fi
 
-          if PR=$(gh pr list --head automated --state open --json number --jq '.[0].number') && [ -n "$PR" ]; then
+          if PR=$(gh pr list --head "$BRANCH" --state open --json number --jq '.[0].number') && [ -n "$PR" ]; then
             echo "Pull request #$PR is already open; leaving its body to the classifier."
           else
             echo "Creating a placeholder pull request; the classifier fills in the diff."
-            gh pr create --head automated --base main \
-              --title "Data update $(TZ=Europe/Brussels date +%F)" \
+            if [ "$BRANCH" = "automated" ]; then
+              title="Data update $(TZ=Europe/Brussels date +%F)"
+            else
+              title="Pipeline run for $BRANCH"
+            fi
+            gh pr create --head "$BRANCH" --base main \
+              --title "$title" \
               --body "The classifier is filling in this description."
           fi

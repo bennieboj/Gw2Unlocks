@@ -24,7 +24,7 @@ public sealed class Gw2WikiSource(ILogger<Gw2WikiSource> logger, Lazy<Task<WikiS
         var site = await lazySite.Value;
 
         using var http = new HttpClient();
-        http.DefaultRequestHeaders.UserAgent.ParseAdd("Mozilla/5.0");
+        http.DefaultRequestHeaders.UserAgent.ParseAdd(ServiceCollectionExtensions.UserAgent);
 
         var retryPolicy = Policy
             .HandleResult<HttpResponseMessage>(r => !r.IsSuccessStatusCode)

@@ -89,7 +89,9 @@ The project uses a distributed cache in `src/cache-root/`:
       1_Cache_Updater_2_Wiki_Processing_and_PR   job: refresh
         fetch the GW2 API and the wiki
         process the wiki dump
-        commit to `automated` (created from main when missing)
+        commit to the branch this run is about: `automated` for a
+        schedule or a run from main, the dispatched branch otherwise
+        (`automated` is created from main when missing)
         open a pull request if there is not one and there is
         something on it that main does not have
       |
