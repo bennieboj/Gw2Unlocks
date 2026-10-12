@@ -28,7 +28,7 @@ public sealed class Gw2WikiSource(ILogger<Gw2WikiSource> logger, Lazy<Task<WikiS
     // wiki.guildwars2.com bans sustained request bursts from runner IPs (plain nginx 403s);
     // the pause after every listing fetch and export batch keeps the crawl under the rate
     // that triggers that. Single shared throttle point for both request streams.
-    private static readonly TimeSpan BatchPause = TimeSpan.FromSeconds(2);
+    private static readonly TimeSpan BatchPause = TimeSpan.FromMilliseconds(500);
 
     public async IAsyncEnumerable<string> StreamAllPages(
         [EnumeratorCancellation] CancellationToken cancellationToken)
