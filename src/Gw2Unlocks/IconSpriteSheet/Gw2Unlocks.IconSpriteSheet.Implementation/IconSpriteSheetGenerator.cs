@@ -60,7 +60,7 @@ internal sealed class IconSpriteSheetGenerator : IIconSpriteSheetGenerator
 
                     downloaded[i] = await response.Content.ReadAsByteArrayAsync(ct);
                 });
-            logger.LogInformation("step 1: {durationseconds}", sw.Elapsed.TotalSeconds);
+            logger.LogDebug("step 1: {durationseconds}", sw.Elapsed.TotalSeconds);
 
             sw = Stopwatch.StartNew();
             var resized = new ConcurrentDictionary<int, SKBitmap>();
@@ -86,7 +86,7 @@ internal sealed class IconSpriteSheetGenerator : IIconSpriteSheetGenerator
                         resized[item.Key] = bitmap;
                     }
                 });
-            logger.LogInformation("step 2: {durationseconds}", sw.Elapsed.TotalSeconds);
+            logger.LogDebug("step 2: {durationseconds}", sw.Elapsed.TotalSeconds);
 
             sw = Stopwatch.StartNew();
             using var bitmap = new SKBitmap(width, height, SKColorType.Rgba8888, SKAlphaType.Premul);
@@ -113,7 +113,7 @@ internal sealed class IconSpriteSheetGenerator : IIconSpriteSheetGenerator
 
                 resizedBitmap.Dispose();
             }
-            logger.LogInformation("step 3: {durationseconds}", sw.Elapsed.TotalSeconds);
+            logger.LogDebug("step 3: {durationseconds}", sw.Elapsed.TotalSeconds);
 
             using var image = SKImage.FromBitmap(bitmap);
             using var data = image.Encode(SKEncodedImageFormat.Webp, 90);

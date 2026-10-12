@@ -11,7 +11,7 @@ name: 3_Unlock_Classifier_4_Website_Generator
 #
 # Three ways in, because the branch and the event that started the run are not the same thing:
 #   push              - you pushed a branch, so classify that branch
-#   workflow_run      - the nightly refresh finished, which always works on `automated`
+#   workflow_run      - the refresh workflow finished, which always works on `automated`
 #   workflow_dispatch - you named a branch to classify by hand
 # Pushing a feature branch is therefore enough to classify it: the run appears, commits the result,
 # and adds the diff to that branch's pull request.
@@ -254,7 +254,7 @@ jobs:
       # auto-merge is fulfilled by GitHub rather than by this token, which is what lets the
       # resulting push to main reach the deploy job; merging immediately with the token would not.
       # The `automated` branch is deleted by the repository setting "Automatically delete head
-      # branches", and the next nightly run recreates it from main.
+      # branches", and the next refresh run recreates it from main.
       # - name: Merge automatically
       #   if: steps.target.outputs.branch == 'automated'
       #   env:

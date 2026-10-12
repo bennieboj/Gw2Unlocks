@@ -83,13 +83,15 @@ The project uses a distributed cache in `src/cache-root/`:
 ## Workflow Pipeline
 
 ```text
-      03:00 UTC cron  /  "Run workflow"
+      "Run workflow" on workflow 1 / local src/Gw2Unlocks/run-local-pipeline.sh
       |
       v
       1_Cache_Updater_2_Wiki_Processing_and_PR   job: refresh
         fetch the GW2 API and the wiki
         process the wiki dump
-        commit to `automated` (created from main when missing)
+        commit to the branch this run is about: `automated` for
+        a run from main, the dispatched branch otherwise
+        (`automated` is created from main when missing)
         open a pull request if there is not one and there is
         something on it that main does not have
       |
@@ -144,7 +146,7 @@ data cannot reach the site.
 
 ### 3 & 4. Unlock Classifier and Website Generator (`.github/workflows/3_unlock-classifier_4_website_generator.yml`)
 **Purpose**: Classify the unlocks, build the site from that classification, and publish once it has been reviewed
-**Triggers**: A push to any branch, the nightly refresh finishing, or a manual dispatch naming a branch
+**Triggers**: A push to any branch, the refresh workflow finishing, or a manual dispatch naming a branch
 **Jobs**: `classify`, then `build_site`, and `deploy` only on a push to `main`
 
 `classify`:
