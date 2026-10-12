@@ -83,7 +83,7 @@ The project uses a distributed cache in `src/cache-root/`:
 ## Workflow Pipeline
 
 ```text
-      "Run workflow" on workflow 1 / local scripts/run-local-pipeline.sh
+      "Run workflow" on workflow 1 / local src/Gw2Unlocks/run-local-pipeline.sh
       |
       v
       1_Cache_Updater_2_Wiki_Processing_and_PR   job: refresh
