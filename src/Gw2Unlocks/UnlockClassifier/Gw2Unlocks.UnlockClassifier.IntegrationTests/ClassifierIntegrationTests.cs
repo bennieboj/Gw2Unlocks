@@ -1028,14 +1028,32 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
     }
 
     /// <summary>
-    /// When the tiers award fewer points than the cap, the cap is never reached, so there is no
-    /// count to report and the plain "done" flag remains the correct signal. "Reliving the
-    /// Tragedy" awards 1 point against a cap of 2.
+    /// When the tiers award fewer points than the cap allows, the cap is only reachable over
+    /// several completions of the repeatable, never within a single run. Filling every tier on each
+    /// completion is what earns toward the cap, so the last tier's count is the point at which the
+    /// achievement counts as earned. "Reliving the Tragedy" awards 1 point against a cap of 2, and
+    /// "Course Load" awards 20 points against a cap of 100.
     /// </summary>
     [Theory]
-    [InlineData("New Kaineng City (achievements)#achievement6443")] // "Reliving the Tragedy", 1 point capped at 2
-    [InlineData("Super Adventure Box: Nostalgia#achievement2843")] // "Course Load", 20 points capped at 100
-    public async Task GivenRepeatableAchievementThatCannotReachItsCapThenCapReachedAtIsNull(string unlockName)
+    [InlineData("New Kaineng City (achievements)#achievement6443", 1)] // "Reliving the Tragedy", 1 point capped at 2
+    [InlineData("Super Adventure Box: Nostalgia#achievement2843", 8)] // "Course Load", 20 points capped at 100
+    public async Task GivenRepeatableAchievementWhoseTiersCannotReachItsCapThenCapReachedAtIsTheLastTierCount(string unlockName, int expectedCount)
+    {
+        var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
+        var category = Assert.Single(results.GetAllCategories(), c => c.Unlocks.Any(u => u.Name == unlockName));
+        var unlock = category.Unlocks.Single(c => c.Name == unlockName);
+
+        Assert.NotNull(unlock.ApiData);
+        Assert.Equal(expectedCount, unlock.ApiData.AchievementPointCapReachedAt);
+    }
+
+    /// <summary>
+    /// An achievement with no point cap has no meaningful cap to reach, so it yields null and the
+    /// plain "done" flag remains the signal. "Nightmare's Aftermath Mastery" is uncapped.
+    /// </summary>
+    [Theory]
+    [InlineData("The Nightmare Is Over#achievement1202")] // "Nightmare's Aftermath Mastery", no point cap
+    public async Task GivenAchievementWithNoCapThenCapReachedAtIsNull(string unlockName)
     {
         var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
         var category = Assert.Single(results.GetAllCategories(), c => c.Unlocks.Any(u => u.Name == unlockName));
@@ -1138,4 +1156,64 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
         Assert.NotNull(unlock.ApiData.IconX);
         Assert.NotNull(unlock.ApiData.IconY);
     }
+
+    /// <summary>
+    /// Recursively finds an unlock by name anywhere in the classification tree.
+    /// </summary>
+    private static Unlock? FindUnlockAnywhere(ClassifyConfig config, string name)
+    {
+        foreach (var category in config.Categories)
+        {
+            var found = FindUnlockAnywhere(category, name);
+            if (found != null)
+            {
+                return found;
+            }
+        }
+
+        return null;
+    }
+
+    private static Unlock? FindUnlockAnywhere(UnlockCategory category, string name)
+    {
+        var direct = category.Unlocks.FirstOrDefault(c => c.Name == name);
+        if (direct != null)
+        {
+            return direct;
+        }
+
+        foreach (var sub in category.SubCategories)
+        {
+            var found = FindUnlockAnywhere(sub, name);
+            if (found != null)
+            {
+                return found;
+            }
+        }
+
+        return null;
+    }
+
+    /// <summary>
+    /// Regression (diagnostic): capped repeatable achievements whose per-completion tier points sum to
+    /// less than the point cap (e.g. Eternal Seitung Harbor Shenanigans, Eternal Troubles from the Deep)
+    /// must still expose AchievementPointCapReachedAt, otherwise the site can never mark them achieved.
+    /// </summary>
+    [Theory]
+    [InlineData("Seitung Province (achievements)#achievement6185")] // Eternal Aetherblade Shenanigans
+    [InlineData("Seitung Province (achievements)#achievement6209")] // Eternal Purist Shenanigans
+    [InlineData("Seitung Province (achievements)#achievement6409")] // Eternal Seitung Province Meta-Event
+    [InlineData("Seitung Province (achievements)#achievement6265")] // Eternal Seitung Harbor Shenanigans
+    [InlineData("Seitung Province (achievements)#achievement6447")] // Eternal Troubles from the Deep
+    public async Task GivenCappedRepeatableAchievementThenApiDataShouldContainAchievementPointCapReachedAt(string unlockName)
+    {
+        var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
+        var unlock = FindUnlockAnywhere(results, unlockName);
+
+        Assert.NotNull(unlock);
+        Assert.NotNull(unlock.ApiData);
+        Assert.True(unlock.ApiData.AchievementPointCapReachedAt.HasValue,
+            $"Expected AchievementPointCapReachedAt to be set for '{unlockName}' but it was null.");
+    }
 }
+

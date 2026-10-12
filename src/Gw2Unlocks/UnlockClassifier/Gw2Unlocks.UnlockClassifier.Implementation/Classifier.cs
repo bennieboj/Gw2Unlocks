@@ -1139,14 +1139,18 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
 
     /// <summary>
     /// The count at which a repeatable achievement has awarded its full achievement point cap, or
-    /// null when the tiers never award that many points.
+    /// null when the achievement is not capped or has no tiers.
     /// </summary>
     /// <remarks>
     /// Tiers are cumulative and a tier past the cap awards nothing, so the account API keeps
     /// reporting the achievement as incomplete long after the player has every obtainable point.
     /// Summing the tier points in order and stopping at the cap gives the count that actually
-    /// matters. An uncapped achievement awards the same points however often it is repeated, so it
-    /// has no meaningful cap and yields null, as does a cap of 0 (exposed as -1).
+    /// matters. Some capped repeatables award fewer points across all of their tiers than the cap
+    /// allows, so the cap is only reachable over several completions rather than within a single
+    /// run; there the last tier's count is returned, because every tier must be filled on each
+    /// completion to earn toward the cap. An uncapped achievement awards the same points however
+    /// often it is repeated, so it has no meaningful cap and yields null, as does a cap of 0
+    /// (exposed as -1).
     /// </remarks>
     private static int? GetAchievementPointCapReachedAt(Achievement achievement)
     {
@@ -1156,16 +1160,22 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
         }
 
         var pointsAwarded = 0;
+        int? lastTierCount = null;
         foreach (var tier in achievement.Tiers)
         {
             pointsAwarded += tier.Points;
+            lastTierCount = tier.Count;
             if (pointsAwarded >= cap)
             {
                 return tier.Count;
             }
         }
 
-        return null;
+        // The tiers never award as many points as the cap allows, so the cap is only reachable
+        // across multiple completions. Filling every tier on each completion is what earns toward
+        // the cap, so the last tier's count is the point at which the achievement counts as earned.
+        // An achievement with no tiers has nothing to fill and stays null.
+        return lastTierCount;
     }
 
     private void ClassifyUnlock(string unlock)
