@@ -18,6 +18,12 @@ namespace Gw2Unlocks.Wiki.Implementation;
 
 public sealed class Gw2WikiSource(ILogger<Gw2WikiSource> logger, Lazy<Task<WikiSite>> lazySite) : IGw2WikiSource
 {
+    private const string ExportEndpoint = "https://wiki.guildwars2.com/wiki/Special:Export";
+
+    // wiki.guildwars2.com bans sustained request bursts from runner IPs (plain nginx 403s);
+    // the pause after every export batch keeps the crawl under the rate that triggers that.
+    private static readonly TimeSpan BatchPause = TimeSpan.FromSeconds(2);
+
     public async IAsyncEnumerable<string> StreamAllPages(
         [EnumeratorCancellation] CancellationToken cancellationToken)
     {
@@ -26,9 +32,18 @@ public sealed class Gw2WikiSource(ILogger<Gw2WikiSource> logger, Lazy<Task<WikiS
         using var http = new HttpClient();
         http.DefaultRequestHeaders.UserAgent.ParseAdd(ServiceCollectionExtensions.UserAgent);
 
+        // Retries ride out the same 403 windows as the siteinfo handshake. The ladder is long
+        // on purpose: a batch that gives up early throws away every page streamed so far,
+        // because the cache writer restarts from the first file on the next run.
         var retryPolicy = Policy
             .HandleResult<HttpResponseMessage>(r => !r.IsSuccessStatusCode)
-            .WaitAndRetryAsync(5, attempt => TimeSpan.FromSeconds(Math.Pow(2, attempt)));
+            .WaitAndRetryAsync(
+                retryCount: 5,
+                // 15s, 30s, 60s, 120s, 240s
+                sleepDurationProvider: attempt => TimeSpan.FromSeconds(15 * Math.Pow(2, attempt - 1)),
+                onRetry: (result, delay, attempt, _) => logger.LogWarning(
+                    "Export POST to {ExportEndpoint} returned {StatusCode}; retry {Attempt}/5 in {DelaySeconds}s",
+                    ExportEndpoint, (int)result.Result!.StatusCode, attempt, delay.TotalSeconds));
 
         int totalPages = 0;
 
@@ -60,6 +75,8 @@ public sealed class Gw2WikiSource(ILogger<Gw2WikiSource> logger, Lazy<Task<WikiS
 
                     logger.LogInformation("Exported {Count} pages so far", totalPages);
 
+                    await Task.Delay(BatchPause, cancellationToken);
+
                     batch.Clear();
                 }
             }
@@ -77,6 +94,8 @@ public sealed class Gw2WikiSource(ILogger<Gw2WikiSource> logger, Lazy<Task<WikiS
                 totalPages += batchCount;
 
                 logger.LogInformation("Exported {Count} pages so far", totalPages);
+
+                await Task.Delay(BatchPause, cancellationToken);
             }
         }
 
@@ -111,7 +130,7 @@ public sealed class Gw2WikiSource(ILogger<Gw2WikiSource> logger, Lazy<Task<WikiS
     List<string> titles,
     CancellationToken cancellationToken)
     {
-        var url = new Uri("https://wiki.guildwars2.com/wiki/Special:Export");
+        var url = new Uri(ExportEndpoint);
         var sb = new StringBuilder();
         sb.Append("title=Special%3AExport&pages=");
         for (int i = 0; i < titles.Count; i++)
