@@ -1,3 +1,0 @@
-[build]
-  base    = "src/Gw2Unlocks/Gw2Unlocks.Website"            # base directory for your project
-  publish = "wwwroot"                                      # output directory, relative from the base dir

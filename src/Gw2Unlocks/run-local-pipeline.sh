@@ -15,6 +15,14 @@
 # Nothing is ever committed or pushed; that stays manual. Run from anywhere on
 # the branch you want refreshed (e.g. `automated`).
 set -euo pipefail
+trap 'rc=$?; if [ "$rc" -ne 0 ]; then
+  echo
+  echo "ERROR: Script failed with exit code $rc."
+  read -r -p "Type confirm to close this window: " answer
+  while [ "$answer" != "confirm" ]; do
+    read -r -p "Type confirm to close this window: " answer
+  done
+fi' EXIT
 
 cd "$(dirname "${BASH_SOURCE[0]}")"
 
