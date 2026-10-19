@@ -58,7 +58,7 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
 
         Assert.NotNull(unlock);
         Assert.NotNull(unlock.ApiData);
-        Assert.Equal(346, unlock.ApiData.Id);
+        Assert.Equal("346", unlock.ApiData.Id);
         Assert.Equal(Type.Miniature, unlock.ApiData.Type);
         Assert.Equal("Mini Exalted Sage", unlock.ApiData.Name);
         Assert.NotNull(unlock.ApiData.IconUrl);
@@ -93,6 +93,120 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
         Assert.DoesNotContain(expansion.SubCategories
             .Where(c => c.Name != categoryName)
             .SelectMany(c => c.Unlocks), u => u.Name == unlockName);
+    }
+
+    // Recipes resolve their unlock identity through the API recipe sheet (item id ->
+    // recipe id) rather than through skins or minis.
+    [Theory]
+    [InlineData("Recipe: Slice of Allspice Cake", "Expansions & Living World", "Heart of Thorns", "Auric Basin", "9949")]
+    public async Task GivenRecipeUnlockWhenClassifyingThenShouldReturnExpectedCategoryAndApiData(
+        string unlockName, string groupName, string categoryName, string? subCategoryName, string expectedId)
+    {
+        var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
+        var category = Find(results, subCategoryName == null
+            ? [groupName, categoryName]
+            : [groupName, categoryName, subCategoryName]);
+        var unlock = category.Unlocks.Single(c => c.Name == unlockName);
+
+        Assert.NotNull(unlock);
+        Assert.NotNull(unlock.ApiData);
+        Assert.Equal(Type.Recipe, unlock.ApiData.Type);
+        Assert.Equal(expectedId, unlock.ApiData.Id);
+        Assert.NotNull(unlock.ApiData.IconUrl);
+        Assert.NotNull(unlock.ApiData.IconSheet);
+        Assert.NotNull(unlock.ApiData.IconX);
+        Assert.NotNull(unlock.ApiData.IconY);
+    }
+
+    // Emotes resolve their unlock identity through the API emote listing the tome as an
+    // unlock item. Emotes absent from the /v2/emotes endpoint never enter the tree, so those
+    // rows stay skipped as documentation of intent until the API lists them.
+    [Theory]
+    [InlineData("\"/bless\" Emote Tome", "Other", "Wizard's Vault", null, "Bless")]
+    [InlineData("\"/Clap\" Emote Tome", "Expansions & Living World", "Visions of Eternity", "Leyspring Hollows", "clap", Skip = "not in API")]
+    [InlineData("\"/CrabDance\" Emote Tome", "Expansions & Living World", "Visions of Eternity", "Shipwreck Strand", "crabdance", Skip = "not in API")]
+    [InlineData("\"/Barbecue\" Emote Tome", "Other", "Black Lion Statuette", null, "barbecue", Skip = "not in API")]
+    [InlineData("\"/BloodstoneBoogie\" Emote Tome", "Other", "Gem Store", null, "bloodstoneboogie", Skip = "not in API")]
+    public async Task GivenEmoteUnlockWhenClassifyingThenShouldReturnExpectedCategoryAndApiData(
+        string unlockName, string groupName, string categoryName, string? subCategoryName, string expectedId)
+    {
+        var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
+        var category = Find(results, subCategoryName == null
+            ? [groupName, categoryName]
+            : [groupName, categoryName, subCategoryName]);
+        var unlock = category.Unlocks.Single(c => c.Name == unlockName);
+
+        Assert.NotNull(unlock);
+        Assert.NotNull(unlock.ApiData);
+        Assert.Equal(Type.Emote, unlock.ApiData.Type);
+        Assert.Equal(expectedId, unlock.ApiData.Id);
+        Assert.NotNull(unlock.ApiData.IconUrl);
+        Assert.NotNull(unlock.ApiData.IconSheet);
+        Assert.NotNull(unlock.ApiData.IconX);
+        Assert.NotNull(unlock.ApiData.IconY);
+    }
+
+    /// <summary>
+    /// The Shiver tome has no graph edges of its own; it inherits its categorization from the
+    /// "Shadow in the Ice" achievement that rewards it, so both names are classified together.
+    /// </summary>
+    [Fact]
+    public async Task GivenEmoteTomeRewardedByAchievementWhenClassifyingThenShouldInheritAchievementCategory()
+    {
+        var unlockName = "\"/Shiver\" Emote Tome";
+        var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken,
+            unlockName, "Shadow in the Ice (achievements)#achievement5107");
+        var category = Find(results, "Expansions & Living World", "Icebrood Saga", "Bjora Marches");
+        var unlock = category.Unlocks.Single(c => c.Name == unlockName);
+
+        Assert.NotNull(unlock);
+        Assert.NotNull(unlock.ApiData);
+        Assert.Equal(Type.Emote, unlock.ApiData.Type);
+        Assert.Equal("shiver", unlock.ApiData.Id);
+        Assert.NotNull(unlock.ApiData.IconUrl);
+        Assert.NotNull(unlock.ApiData.IconSheet);
+        Assert.NotNull(unlock.ApiData.IconX);
+        Assert.NotNull(unlock.ApiData.IconY);
+    }
+
+    // Gliders resolve their unlock identity through the wiki glider-id and the API glider.
+    [Theory]
+    [InlineData("Arachnid Glider", "Other", "Gem Store", "64")]
+    public async Task GivenGliderUnlockWhenClassifyingThenShouldReturnExpectedCategoryAndApiData(
+        string unlockName, string groupName, string categoryName, string expectedId)
+    {
+        var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
+        var category = Find(results, groupName, categoryName);
+        var unlock = category.Unlocks.Single(c => c.Name == unlockName);
+
+        Assert.NotNull(unlock);
+        Assert.NotNull(unlock.ApiData);
+        Assert.Equal(Type.Glider, unlock.ApiData.Type);
+        Assert.Equal(expectedId, unlock.ApiData.Id);
+        Assert.NotNull(unlock.ApiData.IconUrl);
+        Assert.NotNull(unlock.ApiData.IconSheet);
+        Assert.NotNull(unlock.ApiData.IconX);
+        Assert.NotNull(unlock.ApiData.IconY);
+    }
+
+    // Outfits resolve their unlock identity through the wiki outfit-id and the API outfit.
+    [Theory]
+    [InlineData("Abyss Hunter Outfit", "Other", "Gem Store", "129")]
+    public async Task GivenOutfitUnlockWhenClassifyingThenShouldReturnExpectedCategoryAndApiData(
+        string unlockName, string groupName, string categoryName, string expectedId)
+    {
+        var results = await GetSut().ClassifyUnlocks(TestContext.Current.CancellationToken, unlockName);
+        var category = Find(results, groupName, categoryName);
+        var unlock = category.Unlocks.Single(c => c.Name == unlockName);
+
+        Assert.NotNull(unlock);
+        Assert.NotNull(unlock.ApiData);
+        Assert.Equal(Type.Outfit, unlock.ApiData.Type);
+        Assert.Equal(expectedId, unlock.ApiData.Id);
+        Assert.NotNull(unlock.ApiData.IconUrl);
+        Assert.NotNull(unlock.ApiData.IconSheet);
+        Assert.NotNull(unlock.ApiData.IconX);
+        Assert.NotNull(unlock.ApiData.IconY);
     }
 
     // Regression for 2026-09-17 classifier diff: Astral Ward armor skins moved from
@@ -213,7 +327,7 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
         var unlock = category.Unlocks.Single(c => c.Name == unlockName);
 
         Assert.NotNull(unlock);
-        Assert.Equal(1013, unlock.ApiData?.Id);
+        Assert.Equal("1013", unlock.ApiData?.Id);
         Assert.Equal(Type.Miniature, unlock.ApiData?.Type);
     }
 
@@ -745,7 +859,7 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
 
         Assert.NotNull(unlock);
         Assert.NotNull(unlock.ApiData);
-        Assert.Equal(186, unlock.ApiData.Id);
+        Assert.Equal("186", unlock.ApiData.Id);
         Assert.Equal(Type.Novelty, unlock.ApiData.Type);
         Assert.Equal("Endless Exalted Caster Tonic", unlock.ApiData.Name);
         Assert.NotNull(unlock.ApiData.IconUrl);
@@ -789,13 +903,13 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
 
         Assert.NotNull(unlock);
         Assert.NotNull(unlock.ApiData);
-        Assert.Equal(7422, unlock.ApiData.Id);
+        Assert.Equal("7422", unlock.ApiData.Id);
         Assert.Equal("Funerary Axe", unlock.ApiData.Name);
         Assert.NotNull(unlock.ApiData.IconUrl);
         Assert.NotNull(unlock.ApiData.IconSheet);
         Assert.NotNull(unlock.ApiData.IconX);
         Assert.NotNull(unlock.ApiData.IconY);
-        Assert.Equal(7422, unlock.ApiData.Id);
+        Assert.Equal("7422", unlock.ApiData.Id);
     }
 
     [Fact]
@@ -1105,7 +1219,7 @@ public class ClassifierIntegrationTests(ITestOutputHelper output) : ServiceProvi
 
         Assert.NotNull(unlock);
         Assert.NotNull(unlock.ApiData);
-        Assert.Equal(3221, unlock.ApiData.Id);
+        Assert.Equal("3221", unlock.ApiData.Id);
         Assert.Equal(Type.Achievement, unlock.ApiData.Type);
         Assert.Equal("Playing Chicken", unlock.ApiData.Name);
         Assert.Equal("Push a chicken to its limits.", unlock.ApiData.Requirement);

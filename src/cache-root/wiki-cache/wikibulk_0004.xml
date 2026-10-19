@@ -1,5 +1,1928 @@
 <?xml version="1.0" encoding="UTF-8"?><mediawiki xmlns="http://www.mediawiki.org/xml/export-0.11/">
 <page xmlns="http://www.mediawiki.org/xml/export-0.11/">
+    <title>Worn Scale Helm</title>
+    <ns>0</ns>
+    <id>51526</id>
+    <revision>
+      <id>2706180</id>
+      <parentid>2602006</parentid>
+      <timestamp>2023-07-16T13:16:54Z</timestamp>
+      <contributor>
+        <username>AWB Alex</username>
+        <id>102516</id>
+      </contributor>
+      <minor />
+      <comment>/* top */+Add salvage parameter</comment>
+      <origin>2706180</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="4721" sha1="nd51suztyw7o9m1yv0kb5hzj9z45wte" xml:space="preserve">{{Armor infobox
+| salvage = Standard
+| class = Heavy
+| type = headgear
+| set = Worn Scale armor
+| skin = Worn Scale Helm (skin)
+}}
+
+[[Worn Scale Helm]]s are [[heavy armor]] headwear.
+
+== Acquisition ==
+* Random drop from foes and chests
+{{loot variant table header}}
+{{loot variant table subheader|fine}}
+{{loot variant table row | name = Strong Worn Scale Helm | level = 31 | prefix = strong | value = 39 | id = 1665 }}
+{{loot variant table row | name = Ravaging Worn Scale Helm | level = 32 | prefix = ravaging | value = 40 | id = 1669 }}
+{{loot variant table row | name = Honed Worn Scale Helm | level = 33 | prefix = honed | value = 42 | id = 1673 }}
+{{loot variant table row | name = Ravaging Worn Scale Helm | level = 34 | prefix = ravaging | value = 42 | id = 1677 }}
+{{loot variant table row | name = Strong Worn Scale Helm | level = 36 | prefix = strong | value = 44 | id = 1666 }}
+{{loot variant table row | name = Ravaging Worn Scale Helm | level = 37 | prefix = ravaging | value = 44 | id = 1670 }}
+{{loot variant table row | name = Honed Worn Scale Helm | level = 38 | prefix = honed | value = 45 | id = 1674 }}
+{{loot variant table row | name = Ravaging Worn Scale Helm | level = 39 | prefix = ravaging | value = 47 | id = 1678 }}
+{{loot variant table row | name = Strong Worn Scale Helm | level = 41 | prefix = strong | value = 48 | id = 1679 }}
+{{loot variant table row | name = Ravaging Worn Scale Helm | level = 42 | prefix = ravaging | value = 49 | id = 1683 }}
+{{loot variant table row | name = Honed Worn Scale Helm | level = 43 | prefix = honed | value = 50 | id = 1687 }}
+{{loot variant table row | name = Ravaging Worn Scale Helm | level = 44 | prefix = ravaging | value = 50 | id = 1691 }}
+{{loot variant table row | name = Strong Worn Scale Helm | level = 46 | prefix = strong | value = 53 | id = 1680 }}
+{{loot variant table row | name = Ravaging Worn Scale Helm | level = 47 | prefix = ravaging | value = 53 | id = 1684 }}
+{{loot variant table row | name = Honed Worn Scale Helm | level = 48 | prefix = honed | value = 54 | id = 1688 }}
+{{loot variant table row | name = Ravaging Worn Scale Helm | level = 49 | prefix = ravaging | value = 55 | id = 1692 }}
+{{loot variant table row | name = Strong Worn Scale Helm | level = 51 | prefix = strong | value = 57 | id = 1681 }}
+{{loot variant table row | name = Ravaging Worn Scale Helm | level = 52 | prefix = ravaging | value = 58 | id = 1685 }}
+{{loot variant table row | name = Honed Worn Scale Helm | level = 53 | prefix = honed | value = 59 | id = 1689 }}
+{{loot variant table row | name = Ravaging Worn Scale Helm | level = 54 | prefix = ravaging | value = 59 | id = 1693 }}
+{{loot variant table row | name = Strong Worn Scale Helm | level = 56 | prefix = strong | value = 62 | id = 1682 }}
+{{loot variant table row | name = Ravaging Worn Scale Helm | level = 57 | prefix = ravaging | value = 62 | id = 1686 }}
+{{loot variant table row | name = Honed Worn Scale Helm | level = 58 | prefix = honed | value = 63 | id = 1690 }}
+{{loot variant table row | name = Ravaging Worn Scale Helm | level = 59 | prefix = ravaging | value = 64 | id = 1694 }}
+
+{{loot variant table subheader|masterwork}}
+{{loot variant table row | name = Mighty Worn Scale Helm of the Citadel | level = 14 | prefix = mighty | uslot = Minor Rune of the Citadel | value = 48 | id = 1737 }}
+{{loot variant table row | name = Mighty Worn Scale Helm of the Flame Legion | level = 20 | prefix = mighty | uslot = Minor Rune of the Flame Legion | value = 60 | id = 1738 }}
+{{loot variant table row | name = Strong Worn Scale Helm of Melandru | level = 26 | prefix = strong | uslot = Minor Rune of Melandru | value = 70 | id = 1740 }}
+{{loot variant table row | name = Ravaging Worn Scale Helm of Mercy | level = 27 | prefix = ravaging | uslot = Minor Rune of Mercy | value = 70 | id = 1746 }}
+{{loot variant table row | name = Strong Worn Scale Helm of the Flame Legion | level = 32 | prefix = strong | uslot = Minor Rune of the Flame Legion | value = 80 | id = 1743 }}
+{{loot variant table row | name = Ravaging Worn Scale Helm of the Citadel | level = 33 | prefix = ravaging | uslot = Minor Rune of the Citadel | value = 83 | id = 1748 }}
+{{loot variant table row | name = Strong Worn Scale Helm of the Traveler | level = 38 | prefix = strong | uslot = Minor Rune of the Traveler | value = 90 | id = 1744 }}
+{{loot variant table row | name = Ravaging Worn Scale Helm of the Pack | level = 39 | prefix = ravaging | uslot = Minor Rune of the Pack | value = 93 | id = 1755 }}
+|}
+
+== Salvage into ==
+* ~1 [[Ore]] of corresponding tier (higher level items yield higher tier materials).
+
+[[de:Abgenutzter Schuppen-Helm]]
+[[es:Yelmo de escamas gastado]]
+[[fr:Heaume en écailles usé]]</text>
+      <sha1>nd51suztyw7o9m1yv0kb5hzj9z45wte</sha1>
+    </revision>
+  </page>
+<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
+    <title>Worn Scale Helm (PvP)</title>
+    <ns>0</ns>
+    <id>154805</id>
+    <revision>
+      <id>2699018</id>
+      <parentid>2602007</parentid>
+      <timestamp>2023-07-16T09:11:16Z</timestamp>
+      <contributor>
+        <username>AWB Alex</username>
+        <id>102516</id>
+      </contributor>
+      <minor />
+      <comment>/* top */+Add salvage parameter</comment>
+      <origin>2699018</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="657" sha1="slyuqqec84ejuqlhuh34ifkpijf36yl" xml:space="preserve">{{Armor infobox
+| icon = Worn Scale Helm.png
+| status = historical
+| level = 80
+| skin = Worn Scale Helm (skin)
+| type = headgear
+| rarity = exotic
+| class = heavy
+| set = Worn Scale armor (PvP)
+| bound = acquire
+| salvage = Standard
+| id = 5434
+}}
+
+[[Worn Scale Helm (PvP)|Worn Scale Helm]] was a [[PvP reward (historical)|PvP reward]] available from [[Deer Reward Chest]]s, or crafted at the [[Mystic Forge]].
+
+== Acquisition ==
+=== Contained in ===
+{{contained in}}
+
+=== PvP recipe ===
+{{PvP recipe
+| mat-1 = Heavy Helm Token
+| amt-1 = 1
+| mat-2 = Deer Token
+| amt-2 = 1
+| mat-3 = Arcane Orb
+| amt-3 = 1
+| mat-4 = Arcane Powder
+| amt-4 = 5
+| rank = 10
+}}</text>
+      <sha1>slyuqqec84ejuqlhuh34ifkpijf36yl</sha1>
+    </revision>
+  </page>
+<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
+    <title>Worn Scale Helm (skin)</title>
+    <ns>0</ns>
+    <id>154811</id>
+    <revision>
+      <id>2278116</id>
+      <parentid>1685405</parentid>
+      <timestamp>2021-06-19T15:31:20Z</timestamp>
+      <contributor>
+        <username>AWB Alex</username>
+        <id>102516</id>
+      </contributor>
+      <minor />
+      <comment>/* top */+dye parameters</comment>
+      <origin>2278116</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="384" sha1="t95ef9yoy4ate0r4agxm2r6slhylncm" xml:space="preserve">{{otheruses|the [[skin]] unlocked in the [[wardrobe]]|the armor piece|Worn Scale Helm}}
+{{Skin infobox
+| name = Worn Scale Helm
+| icon = Worn Scale Helm.png
+| type = Headgear
+| class = Heavy
+| set = Worn Scale armor
+| id = 99
+| dye channels = 3
+}}
+
+[[Worn Scale Helm (skin)|Worn Scale Helm]] is a [[skin]] that is part of the [[Worn Scale armor]] set.
+
+== Acquisition ==
+{{skin list}}</text>
+      <sha1>t95ef9yoy4ate0r4agxm2r6slhylncm</sha1>
+    </revision>
+  </page>
+<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
+    <title>Worn Scale Legs</title>
+    <ns>0</ns>
+    <id>51440</id>
+    <revision>
+      <id>2706181</id>
+      <parentid>2603078</parentid>
+      <timestamp>2023-07-16T13:16:56Z</timestamp>
+      <contributor>
+        <username>AWB Alex</username>
+        <id>102516</id>
+      </contributor>
+      <minor />
+      <comment>/* top */+Add salvage parameter</comment>
+      <origin>2706181</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="4731" sha1="r5e9wb7byxps9ropmp3vfcjjsf1oubw" xml:space="preserve">{{Armor infobox
+| salvage = Standard
+| class = Heavy
+| type = leggings
+| set = Worn Scale armor
+| skin = Worn Scale Legs (skin)
+}}
+
+[[Worn Scale Legs]] are [[heavy armor]] legwear.
+
+== Acquisition ==
+* Random drop from foes and chests
+{{loot variant table header}}
+{{loot variant table subheader|fine}}
+{{loot variant table row | name = Strong Worn Scale Legs | level = 31 | prefix = strong | value = 44 | id = 1907 }}
+{{loot variant table row | name = Ravaging Worn Scale Legs | level = 32 | prefix = ravaging | value = 45 | id = 1916 }}
+{{loot variant table row | name = Honed Worn Scale Legs | level = 33 | prefix = honed | value = 47 | id = 1922 }}
+{{loot variant table row | name = Ravaging Worn Scale Legs | level = 34 | prefix = ravaging | value = 47 | id = 1929 }}
+{{loot variant table row | name = Strong Worn Scale Legs | level = 36 | prefix = strong | value = 49 | id = 1910 }}
+{{loot variant table row | name = Ravaging Worn Scale Legs | level = 37 | prefix = ravaging | value = 49 | id = 1917 }}
+{{loot variant table row | name = Honed Worn Scale Legs | level = 38 | prefix = honed | value = 51 | id = 1925 }}
+{{loot variant table row | name = Ravaging Worn Scale Legs | level = 39 | prefix = ravaging | value = 52 | id = 1930 }}
+{{loot variant table row | name = Strong Worn Scale Legs | level = 41 | prefix = strong | value = 54 | id = 1932 }}
+{{loot variant table row | name = Ravaging Worn Scale Legs | level = 42 | prefix = ravaging | value = 55 | id = 1941 }}
+{{loot variant table row | name = Honed Worn Scale Legs | level = 43 | prefix = honed | value = 56 | id = 1947 }}
+{{loot variant table row | name = Ravaging Worn Scale Legs | level = 44 | prefix = ravaging | value = 56 | id = 1955 }}
+{{loot variant table row | name = Strong Worn Scale Legs | level = 46 | prefix = strong | value = 59 | id = 1934 }}
+{{loot variant table row | name = Ravaging Worn Scale Legs | level = 47 | prefix = ravaging | value = 59 | id = 1942 }}
+{{loot variant table row | name = Honed Worn Scale Legs | level = 48 | prefix = honed | value = 61 | id = 1950 }}
+{{loot variant table row | name = Ravaging Worn Scale Legs | level = 49 | prefix = ravaging | value = 62 | id = 1957 }}
+{{loot variant table row | name = Strong Worn Scale Legs | level = 51 | prefix = strong | value = 63 | id = 1936 }}
+{{loot variant table row | name = Ravaging Worn Scale Legs | level = 52 | prefix = ravaging | value = 65 | id = 1943 }}
+{{loot variant table row | name = Honed Worn Scale Legs | level = 53 | prefix = honed | value = 66 | id = 1952 }}
+{{loot variant table row | name = Ravaging Worn Scale Legs | level = 54 | prefix = ravaging | value = 66 | id = 1959 }}
+{{loot variant table row | name = Strong Worn Scale Legs | level = 56 | prefix = strong | value = 69 | id = 1938 }}
+{{loot variant table row | name = Ravaging Worn Scale Legs | level = 57 | prefix = ravaging | value = 69 | id = 1946 }}
+{{loot variant table row | name = Honed Worn Scale Legs | level = 58 | prefix = honed | value = 70 | id = 1953 }}
+{{loot variant table row | name = Ravaging Worn Scale Legs | level = 59 | prefix = ravaging | value = 72 | id = 1960 }}
+
+{{loot variant table subheader|masterwork}}
+{{loot variant table row | name = Mighty Worn Scale Legs of the Flock | level = 14 | prefix = mighty | uslot = Minor Rune of the Flock | value = 54 | id = 2010 }}
+{{loot variant table row | name = Mighty Worn Scale Legs of Balthazar | level = 20 | prefix = mighty | uslot = Minor Rune of Balthazar | value = 68 | id = 2012 }}
+{{loot variant table row | name = Strong Worn Scale Legs of Scavenging | level = 26 | prefix = strong | uslot = Minor Rune of Scavenging | value = 79 | id = 2013 }}
+{{loot variant table row | name = Ravaging Worn Scale Legs of the Afflicted | level = 27 | prefix = ravaging | uslot = Minor Rune of the Afflicted | value = 79 | id = 2016 }}
+{{loot variant table row | name = Strong Worn Scale Legs of Mercy | level = 32 | prefix = strong | uslot = Minor Rune of Mercy | value = 90 | id = 2014 }}
+{{loot variant table row | name = Ravaging Worn Scale Legs of the Afflicted | level = 33 | prefix = ravaging | uslot = Minor Rune of the Afflicted | value = 93 | id = 2017 }}
+{{loot variant table row | name = Strong Worn Scale Legs of the Dolyak | level = 38 | prefix = strong | uslot = Minor Rune of the Dolyak | value = 101 | id = 2015 }}
+{{loot variant table row | name = Ravaging Worn Scale Legs of the Afflicted | level = 39 | prefix = ravaging | uslot = Minor Rune of the Afflicted | value = 104 | id = 2023 }}
+|}
+
+== Salvage into ==
+* ~1 [[Ore]] of corresponding tier (higher level items yield higher tier materials).
+
+[[de:Abgenutzter Schuppen-Beinschutz]]
+[[es:Espinilleras de escamas gastadas]]
+[[fr:Cuissardes en écailles usées]]</text>
+      <sha1>r5e9wb7byxps9ropmp3vfcjjsf1oubw</sha1>
+    </revision>
+  </page>
+<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
+    <title>Worn Scale Legs (PvP)</title>
+    <ns>0</ns>
+    <id>154809</id>
+    <revision>
+      <id>2699019</id>
+      <parentid>2602008</parentid>
+      <timestamp>2023-07-16T09:11:17Z</timestamp>
+      <contributor>
+        <username>AWB Alex</username>
+        <id>102516</id>
+      </contributor>
+      <minor />
+      <comment>/* top */+Add salvage parameter</comment>
+      <origin>2699019</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="661" sha1="3pzedbst0tx27f06mplreljopomw3zy" xml:space="preserve">{{Armor infobox
+| icon = Worn Scale Legs.png
+| status = historical
+| level = 80
+| skin = Worn Scale Legs (skin)
+| type = leggings
+| rarity = exotic
+| class = heavy
+| set = Worn Scale armor (PvP)
+| bound = acquire
+| salvage = Standard
+| id = 5435
+}}
+
+[[Worn Scale Legs (PvP)|Worn Scale Legs]] was a [[PvP reward (historical)|PvP reward]] available from [[Deer Reward Chest]]s, or crafted at the [[Mystic Forge]].
+
+== Acquisition ==
+=== Contained in ===
+{{contained in}}
+
+=== PvP recipe ===
+{{PvP recipe
+| mat-1 = Heavy Leggings Token
+| amt-1 = 1
+| mat-2 = Deer Token
+| amt-2 = 1
+| mat-3 = Arcane Orb
+| amt-3 = 1
+| mat-4 = Arcane Powder
+| amt-4 = 5
+| rank = 10
+}}</text>
+      <sha1>3pzedbst0tx27f06mplreljopomw3zy</sha1>
+    </revision>
+  </page>
+<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
+    <title>Worn Scale Legs (skin)</title>
+    <ns>0</ns>
+    <id>154815</id>
+    <revision>
+      <id>2278117</id>
+      <parentid>1685406</parentid>
+      <timestamp>2021-06-19T15:31:26Z</timestamp>
+      <contributor>
+        <username>AWB Alex</username>
+        <id>102516</id>
+      </contributor>
+      <minor />
+      <comment>/* top */+dye parameters</comment>
+      <origin>2278117</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="384" sha1="oce8udyeqghf9r8gliodrse5juakixy" xml:space="preserve">{{otheruses|the [[skin]] unlocked in the [[wardrobe]]|the armor piece|Worn Scale Legs}}
+{{Skin infobox
+| name = Worn Scale Legs
+| icon = Worn Scale Legs.png
+| type = Leggings
+| class = Heavy
+| set = Worn Scale armor
+| id = 23
+| dye channels = 3
+}}
+
+[[Worn Scale Legs (skin)|Worn Scale Legs]] is a [[skin]] that is part of the [[Worn Scale armor]] set.
+
+== Acquisition ==
+{{skin list}}</text>
+      <sha1>oce8udyeqghf9r8gliodrse5juakixy</sha1>
+    </revision>
+  </page>
+<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
+    <title>Worn Scale Pauldrons</title>
+    <ns>0</ns>
+    <id>51524</id>
+    <revision>
+      <id>2706182</id>
+      <parentid>2602009</parentid>
+      <timestamp>2023-07-16T13:16:58Z</timestamp>
+      <contributor>
+        <username>AWB Alex</username>
+        <id>102516</id>
+      </contributor>
+      <minor />
+      <comment>/* top */+Add salvage parameter</comment>
+      <origin>2706182</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="4861" sha1="5f6j80nmkg8p3rykv78bmclibjuq6w2" xml:space="preserve">{{Armor infobox
+| salvage = Standard
+| class = Heavy
+| type = shoulders
+| set = Worn Scale armor
+| skin = Worn Scale Pauldrons (skin)
+}}
+
+[[Worn Scale Pauldrons]] are [[heavy armor]] shoulders.
+
+== Acquisition ==
+* Random drop from foes and chests
+{{loot variant table header}}
+{{loot variant table subheader|fine}}
+{{loot variant table row | name = Strong Worn Scale Pauldrons | level = 31 | prefix = strong | value = 35 | id = 2176 }}
+{{loot variant table row | name = Ravaging Worn Scale Pauldrons | level = 32 | prefix = ravaging | value = 36 | id = 2183 }}
+{{loot variant table row | name = Honed Worn Scale Pauldrons | level = 33 | prefix = honed | value = 37 | id = 2190 }}
+{{loot variant table row | name = Ravaging Worn Scale Pauldrons | level = 34 | prefix = ravaging | value = 37 | id = 2197 }}
+{{loot variant table row | name = Strong Worn Scale Pauldrons | level = 36 | prefix = strong | value = 39 | id = 2179 }}
+{{loot variant table row | name = Ravaging Worn Scale Pauldrons | level = 37 | prefix = ravaging | value = 39 | id = 2185 }}
+{{loot variant table row | name = Honed Worn Scale Pauldrons | level = 38 | prefix = honed | value = 40 | id = 2192 }}
+{{loot variant table row | name = Ravaging Worn Scale Pauldrons | level = 39 | prefix = ravaging | value = 41 | id = 2199 }}
+{{loot variant table row | name = Strong Worn Scale Pauldrons | level = 41 | prefix = strong | value = 42 | id = 2201 }}
+{{loot variant table row | name = Ravaging Worn Scale Pauldrons | level = 42 | prefix = ravaging | value = 43 | id = 2207 }}
+{{loot variant table row | name = Honed Worn Scale Pauldrons | level = 43 | prefix = honed | value = 44 | id = 2215 }}
+{{loot variant table row | name = Ravaging Worn Scale Pauldrons | level = 44 | prefix = ravaging | value = 44 | id = 2222 }}
+{{loot variant table row | name = Strong Worn Scale Pauldrons | level = 46 | prefix = strong | value = 47 | id = 2202 }}
+{{loot variant table row | name = Ravaging Worn Scale Pauldrons | level = 47 | prefix = ravaging | value = 47 | id = 2210 }}
+{{loot variant table row | name = Honed Worn Scale Pauldrons | level = 48 | prefix = honed | value = 48 | id = 2217 }}
+{{loot variant table row | name = Ravaging Worn Scale Pauldrons | level = 49 | prefix = ravaging | value = 49 | id = 2223 }}
+{{loot variant table row | name = Strong Worn Scale Pauldrons | level = 51 | prefix = strong | value = 50 | id = 2204 }}
+{{loot variant table row | name = Ravaging Worn Scale Pauldrons | level = 52 | prefix = ravaging | value = 51 | id = 2211 }}
+{{loot variant table row | name = Honed Worn Scale Pauldrons | level = 53 | prefix = honed | value = 52 | id = 2219 }}
+{{loot variant table row | name = Ravaging Worn Scale Pauldrons | level = 54 | prefix = ravaging | value = 52 | id = 2224 }}
+{{loot variant table row | name = Strong Worn Scale Pauldrons | level = 56 | prefix = strong | value = 54 | id = 2205 }}
+{{loot variant table row | name = Ravaging Worn Scale Pauldrons | level = 57 | prefix = ravaging | value = 54 | id = 2214 }}
+{{loot variant table row | name = Honed Worn Scale Pauldrons | level = 58 | prefix = honed | value = 55 | id = 2221 }}
+{{loot variant table row | name = Ravaging Worn Scale Pauldrons | level = 59 | prefix = ravaging | value = 57 | id = 2225 }}
+
+{{loot variant table subheader|masterwork}}
+{{loot variant table row | name = Mighty Worn Scale Pauldrons of Lyssa | level = 14 | prefix = mighty | uslot = Minor Rune of Lyssa | value = 42 | id = 2258 }}
+{{loot variant table row | name = Mighty Worn Scale Pauldrons of Rata Sum | level = 20 | prefix = mighty | uslot = Minor Rune of Rata Sum | value = 53 | id = 2259 }}
+{{loot variant table row | name = Strong Worn Scale Pauldrons of Grenth | level = 26 | prefix = strong | uslot = Minor Rune of Grenth | value = 62 | id = 2261 }}
+{{loot variant table row | name = Ravaging Worn Scale Pauldrons of Lyssa | level = 27 | prefix = ravaging | uslot = Minor Rune of Lyssa | value = 62 | id = 2265 }}
+{{loot variant table row | name = Strong Worn Scale Pauldrons of Scavenging | level = 32 | prefix = strong | uslot = Minor Rune of Scavenging | value = 71 | id = 2263 }}
+{{loot variant table row | name = Ravaging Worn Scale Pauldrons of Infiltration | level = 33 | prefix = ravaging | uslot = Minor Rune of Infiltration | value = 73 | id = 2267 }}
+{{loot variant table row | name = Strong Worn Scale Pauldrons of the Lich | level = 38 | prefix = strong | uslot = Minor Rune of the Lich | value = 80 | id = 2264 }}
+{{loot variant table row | name = Ravaging Worn Scale Pauldrons of the Pack | level = 39 | prefix = ravaging | uslot = Minor Rune of the Pack | value = 82 | id = 2274 }}|}
+
+== Salvage into ==
+* ~2 [[Ore]] of corresponding tier (higher level items yield higher tier materials).
+
+[[de:Abgenutzter Schuppen-Schulterschutz]]
+[[es:Hombreras de escamas gastadas]]
+[[fr:Espauliers en écailles usés]]</text>
+      <sha1>5f6j80nmkg8p3rykv78bmclibjuq6w2</sha1>
+    </revision>
+  </page>
+<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
+    <title>Worn Scale Pauldrons (PvP)</title>
+    <ns>0</ns>
+    <id>154806</id>
+    <revision>
+      <id>2699020</id>
+      <parentid>2602010</parentid>
+      <timestamp>2023-07-16T09:11:18Z</timestamp>
+      <contributor>
+        <username>AWB Alex</username>
+        <id>102516</id>
+      </contributor>
+      <minor />
+      <comment>/* top */+Add salvage parameter</comment>
+      <origin>2699020</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="682" sha1="1zj2n8epg26tbuq4ji5exe5sxvn7a07" xml:space="preserve">{{Armor infobox
+| icon = Worn Scale Pauldrons.png
+| status = historical
+| level = 80
+| skin = Worn Scale Pauldrons (skin)
+| type = shoulders
+| rarity = exotic
+| class = heavy
+| set = Worn Scale armor (PvP)
+| bound = acquire
+| salvage = Standard
+| id = 5436
+}}
+
+[[Worn Scale Pauldrons (PvP)|Worn Scale Pauldrons]] was a [[PvP reward (historical)|PvP reward]] available from [[Deer Reward Chest]]s, or crafted at the [[Mystic Forge]].
+
+== Acquisition ==
+=== Contained in ===
+{{contained in}}
+
+=== PvP recipe ===
+{{PvP recipe
+| mat-1 = Heavy Pauldron Token
+| amt-1 = 1
+| mat-2 = Deer Token
+| amt-2 = 1
+| mat-3 = Arcane Orb
+| amt-3 = 1
+| mat-4 = Arcane Powder
+| amt-4 = 5
+| rank = 10
+}}</text>
+      <sha1>1zj2n8epg26tbuq4ji5exe5sxvn7a07</sha1>
+    </revision>
+  </page>
+<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
+    <title>Worn Scale Pauldrons (skin)</title>
+    <ns>0</ns>
+    <id>154812</id>
+    <revision>
+      <id>2278118</id>
+      <parentid>1685407</parentid>
+      <timestamp>2021-06-19T15:31:33Z</timestamp>
+      <contributor>
+        <username>AWB Alex</username>
+        <id>102516</id>
+      </contributor>
+      <minor />
+      <comment>/* top */+dye parameters</comment>
+      <origin>2278118</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="410" sha1="idi0muvmme0tyvw0sgzpc4p4wj5wvhe" xml:space="preserve">{{otheruses|the [[skin]] unlocked in the [[wardrobe]]|the armor piece|Worn Scale Pauldrons}}
+{{Skin infobox
+| name = Worn Scale Pauldrons
+| icon = Worn Scale Pauldrons.png
+| type = Shoulders
+| class = Heavy
+| set = Worn Scale armor
+| id = 66
+| dye channels = 3
+}}
+
+[[Worn Scale Pauldrons (skin)|Worn Scale Pauldrons]] is a [[skin]] that is part of the [[Worn Scale armor]] set.
+
+== Acquisition ==
+{{skin list}}</text>
+      <sha1>idi0muvmme0tyvw0sgzpc4p4wj5wvhe</sha1>
+    </revision>
+  </page>
+<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
+    <title>Worn Scale armor</title>
+    <ns>0</ns>
+    <id>68767</id>
+    <revision>
+      <id>2842008</id>
+      <parentid>1694040</parentid>
+      <timestamp>2024-07-03T18:14:13Z</timestamp>
+      <contributor>
+        <username>Angelica</username>
+        <id>237433</id>
+      </contributor>
+      <origin>2842008</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="1051" sha1="ml9o9wfdltil629r35p0nuvs2fl8n4x" xml:space="preserve">{{Armor set infobox
+| source = PvE
+| image = Worn Scale armor human female front.jpg
+| class = heavy
+}}
+[[Worn Scale armor]] is a set of [[heavy armor]] available as [[loot]]. It appears in {{rarity|fine}} rarity from levels 31-59 and in {{rarity|masterwork}} rarity from levels 14-39.
+
+== Skin pieces ==
+{{armor skin set table}}
+
+== Gallery ==
+=== Asura ===
+{{armor gallery
+| race = asura
+| gender = female
+}}
+{{armor gallery
+| race = asura
+| gender = male
+}}
+
+=== Charr ===
+{{armor gallery
+| race = charr
+| gender = female
+}}
+{{armor gallery
+| race = charr
+| gender = male
+}}
+
+=== Human ===
+{{armor gallery
+| race = human
+| gender = female
+}}
+{{armor gallery
+| race = human
+| gender = male
+}}
+
+=== Norn ===
+{{armor gallery
+| race = norn
+| gender = female
+}}
+{{armor gallery
+| race = norn
+| gender = male
+}}
+
+=== Sylvari ===
+{{armor gallery
+| race = sylvari
+| gender = female
+}}
+{{armor gallery
+| race = sylvari
+| gender = male
+}}
+
+{{armor nav}}
+
+[[Category:Loot armor sets|3-3]]
+[[de:Abgenutzte Schuppen-Rüstung]]
+[[es:Armadura de escamas gastada]]</text>
+      <sha1>ml9o9wfdltil629r35p0nuvs2fl8n4x</sha1>
+    </revision>
+  </page>
+<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
+    <title>Worn Scale armor (PvP)</title>
+    <ns>0</ns>
+    <id>57075</id>
+    <revision>
+      <id>2210990</id>
+      <parentid>2176040</parentid>
+      <timestamp>2021-01-02T01:51:27Z</timestamp>
+      <contributor>
+        <username>Daysky</username>
+        <id>239479</id>
+      </contributor>
+      <minor />
+      <comment>[Bot edit]: [1x] Remove left-to-right mark.</comment>
+      <origin>2210990</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="893" sha1="b0flfrd9vqi6fte2ts8zll877g43zch" xml:space="preserve">{{Armor set infobox
+| source = PvP
+| image = Worn Scale armor human male front.jpg
+| class = heavy
+| level = 80
+| rarity = exotic
+| status = historical
+}}
+[[Worn Scale armor (PvP)]] was a [[Structured PvP|PvP]] armor set with pieces available from [[Deer Reward Chest]]s, or crafted at the [[Mystic Forge]].
+
+== Set pieces ==
+{| {{STDT|equip}}
+! Armor !! Game link
+|-
+| {{item icon|Worn Scale Helm (PvP)|large=1}} || {{item link|5434}}
+|-
+| {{item icon|Worn Scale Pauldrons (PvP)|large=1}} || {{item link|5436}}
+|-
+| {{item icon|Worn Scale Coat (PvP)|large=1}} || {{item link|5432}}
+|-
+| {{item icon|Worn Scale Gauntlets (PvP)|large=1}} || {{item link|5433}}
+|-
+| {{item icon|Worn Scale Legs (PvP)|large=1}} || {{item link|5435}}
+|-
+| {{item icon|Worn Scale Boots (PvP)|large=1}} || {{item link|5431}}
+|}
+
+== Gallery ==
+{{main|Worn Scale armor#Gallery}}
+
+[[Category:Historical PvP armor sets]]</text>
+      <sha1>b0flfrd9vqi6fte2ts8zll877g43zch</sha1>
+    </revision>
+  </page>
+<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
+    <title>Worn Scroll</title>
+    <ns>0</ns>
+    <id>395170</id>
+    <revision>
+      <id>3135297</id>
+      <parentid>2996016</parentid>
+      <timestamp>2026-04-26T09:15:39Z</timestamp>
+      <contributor>
+        <username>Kossage</username>
+        <id>126773</id>
+      </contributor>
+      <origin>3135297</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="1759" sha1="48khwx5sgesr951iwoe408m55v9v0xc" xml:space="preserve">{{object infobox
+| image = Scroll 1.jpg
+| location = The Laboratory
+| type = Book
+| coordinates = [35581, 12160]
+| requires = jw
+}}
+[[Worn Scroll]] is a letter found on the second floor of [[the Laboratory]], in an alcove north of the [[Forge of the Blood Phenom]].
+
+== Location ==
+;[[Janthir]]
+*[[Mistburned Barrens]]
+**[[The Laboratory]] 
+
+== Text ==
+{{Book text
+| [[Manikaz]],
+
+Once again, your request to join us at the [[gww:Door of Komalie|Komalie]] fortress is denied. Up until now, I have held my tongue at your blatant attempts to rise above your station for a gilded of your age. Do not misunderstand me; your experiments and your study and mastery of [[bloodstone]] have been a boon to both our [[Overseer (title)|overseers]] here and our [[White Mantle]] servants at the [[Maguuma Jungle|Maguuma]] site, but you continue to overreach. If you persist in your mewling and incessant begging, [[Optimus Caliph|Optimus]] may not view your contribution as favorably when we return home.
+
+We are guarding this inherited world against a tide of [[titan]]s, [[demon]]s, and perhaps even their [[Abaddon|banished god]]. The cost is incalculable, but in time, the flocks of this world will come to appreciate—or, at the very least, understand—our actions to ensure Tyria's continued existence.
+
+If, and only if, you are patient, Manikaz—once the [[Flameseeker Verse|Flameseeker]] threat has passed—we can direct your expertise to some task worthy of your attention. The next [[dragonrise]], perhaps?
+
+—[[Lazarus]]
+}}
+
+== Trivia ==
+* This object was named ''"Worn Letter"'' with [[:File:Torn Page.jpg|this appearance]] before an unknown updated, to match the book title.
+
+== See also ==
+* [[Worn Letter]]
+* [[Worn Note]]
+
+[[es:Pergamino desgastado]]</text>
+      <sha1>48khwx5sgesr951iwoe408m55v9v0xc</sha1>
+    </revision>
+  </page>
+<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
+    <title>Worn Scroll (Doyen's Adytum)</title>
+    <ns>0</ns>
+    <id>423337</id>
+    <revision>
+      <id>3203122</id>
+      <parentid>3203107</parentid>
+      <timestamp>2026-09-26T02:50:46Z</timestamp>
+      <contributor>
+        <username>Sunlion</username>
+        <id>225997</id>
+      </contributor>
+      <origin>3203122</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="2331" sha1="8o7o92dkh2hke2cg8kxd1jz80yt89n0" xml:space="preserve">{{Object infobox
+| name = Worn Scroll
+| image = 
+| location = Doyen's Adytum
+| type = Book
+| coordinates = [3670.7, 58135.4]
+| requires = voe
+}}
+[[Worn Scroll (Doyen's Adytum)|Worn Scroll]] is a [[book]] found in [[Doyen's Adytum]].
+
+== Location ==
+;[[Castora]]
+* [[Leyspring Hollows]]
+** [[Doyen's Adytum]]
+
+== Text ==
+{{Book text|title=Pedagogical Assessment|
+''High Artificer Gardesano's account, as transcribed by Amanuensis Nofra''
+
+I have made a breakthrough with my newest pupils. Some of my fellow docents at the main conservatoire here in Stellis Quor's Luminous Ward had their misgivings, but what good is the experience of a proper education without space to pursue one's fancies, one's passions? The mursaat we admit to study in Stellis Quor should come to know Tyria as we do—its power, its beauty, and its dangers, within reason. But I digress; last week's lessons were something of a personal interest to me.
+
+In recent days, both Elka and Antenor have taken a growing interest in my stewards, and so I offered to instruct them in the delicate craft of shaping and enchanting their own constructs. Even with these rudimentary lessons and my limited facilities in the city, Elka was able to follow my methods to the letter as if she were my very shadow. And she produced an impressive first attempt, a near perfect simulacrum of one of my own stewards with some noticeable differences in flair.
+
+Antenor... He took an unorthodox approach, asking if he could supply his own materials and returning the following day with several large purple jadestones; an inspired choice, I thought. Jade has shown potential in the use of arcane constructs. But, for reasons I've yet to discern, it's a material that takes greater arcane input to reach a functional baseline than other materials I've experimented with, and I prefer to lean toward efficiency. Nonetheless, Antenor was both diligent and insouciant; it took him much longer than Elka to finish his first construct, but it paid off. The bulky thing was even able to hover with the best of us.
+
+I still smile when I think about their work and the potential their newfound crafts could provide for them and their people. It will be an honor to watch and see what becomes of their studies. Such is the unique pride of a teacher.
+}}
+
+== See also ==
+* [[Academic Records]]</text>
+      <sha1>8o7o92dkh2hke2cg8kxd1jz80yt89n0</sha1>
+    </revision>
+  </page>
+<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
+    <title>Worn Scroll (The Auguratorium)</title>
+    <ns>0</ns>
+    <id>423284</id>
+    <revision>
+      <id>3208762</id>
+      <parentid>3202035</parentid>
+      <timestamp>2026-10-05T21:29:27Z</timestamp>
+      <contributor>
+        <username>Kossage</username>
+        <id>126773</id>
+      </contributor>
+      <origin>3208762</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="1285" sha1="qxgagaccjf74tlpk93sisskzuix0rzi" xml:space="preserve">{{object infobox
+| name = Worn Scroll
+| image = Collected Debate Notes.jpg
+| location = The Auguratorium
+| type = Book
+| interaction prompt = Read
+| coordinates = 
+| requires = voe
+}}
+The [[Worn Scroll (The Auguratorium)|Worn Scroll]] is a [[book]] in the northeastern bookshelves of [[The Auguratorium]].
+
+== Location ==
+;[[Castora]]
+*[[Leyspring Hollows]]
+**[[The Auguratorium]]
+***[[Tactician's Chantry]]
+
+== Text ==
+{{Book text|title=Worn Scroll|
+To the [[Doyen]]'s Chosen,
+
+If you have been entrusted with this scroll, you've entered the deepest leyspring of [[Castora]]. This blessed place was discovered by [[Calogero, Avatar of the All Seer|the first elder]] a lifetime ago, and it houses an immense source of power that has taken all my strength to shield from the rest of [[Tyria (world)|Tyria]], from even our own people.
+
+As tensions with the [[Mursaat|shadow stalkers]] escalate, I fear it is time to reveal all truths. We will need every drop of power in the moments to come, or [[seer]]kind may be absorbed into [[the Mists]] beyond.
+
+These halls were never meant to house us, so you will find little comfort within them. Here, you will reflect, prepare, and fortify for the battles ahead.
+
+When [[Exposed Ley Root|the root]] is almost dry, it will be time to depart.
+}}</text>
+      <sha1>qxgagaccjf74tlpk93sisskzuix0rzi</sha1>
+    </revision>
+  </page>
+<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
+    <title>Worn Seer Coin</title>
+    <ns>0</ns>
+    <id>405218</id>
+    <revision>
+      <id>3095409</id>
+      <parentid>3071235</parentid>
+      <timestamp>2026-01-18T21:22:26Z</timestamp>
+      <contributor>
+        <username>Asuaka</username>
+        <id>128597</id>
+      </contributor>
+      <origin>3095409</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="830" sha1="cusbgh49364usoezgialwn73qj84q3e" xml:space="preserve">{{Item infobox
+| description = This unusually large coin features a seer face on one side and a staff and a star on the other. How much was it worth in their society?
+| hint = While being chased by Inquest, Meliza dropped an old ritual coin near a waterfall just east of the Command Complex. If you retrieve it, she'll be grateful.
+| id = 106111
+| type = trophy
+| collection = Digging for Knowledge
+| rarity = basic
+| bound = account
+| requires = voe
+| gallery1 = Worn Seer Coin map.jpg
+| gallery1-text = Location of the Worn Seer Coin on the map.
+| gallery2 = Worn Seer Coin location.jpg
+| gallery2-text = Appearance of the Worn Seer Coin on the ground.
+}}
+
+== Acquisition ==
+* Interact with the [[Loose Dirt]] on the ground, east of the Inquest base in [[Starlit Weald]].
+
+{{collection nav}}
+
+[[es:Moneda de vidente desgastada]]</text>
+      <sha1>cusbgh49364usoezgialwn73qj84q3e</sha1>
+    </revision>
+  </page>
+<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
+    <title>Worn Seer Tablet</title>
+    <ns>0</ns>
+    <id>407535</id>
+    <revision>
+      <id>3211740</id>
+      <parentid>3195598</parentid>
+      <timestamp>2026-10-11T14:42:38Z</timestamp>
+      <contributor>
+        <username>Kossage</username>
+        <id>126773</id>
+      </contributor>
+      <origin>3211740</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="9249" sha1="0odbmp7x55vdpn0co8wzgl76tnhzedl" xml:space="preserve">{{Object infobox
+| location = Cloister of Stars; Lost Basilica
+| type = Book
+| coordinates = [[7202.2, 58697.3], [6974.0, 58041.7]]
+| requires = voe
+}}
+[[Worn Seer Tablet]]s are documents left behind by [[seer]]s. The tablet in [[Lost Basilica]] is an excerpt from [[Lasia]]'s journal.
+
+== Location == 
+;[[Castora]]
+* [[Starlit Weald]]
+** [[Cloister of Stars]]
+** [[Lost Basilica]]
+
+== Story involvement ==
+=== [[Visions of Eternity story]] ===
+* [[Code of Creation]]
+** [[Deeper Revelations]]
+
+== Text ==
+=== [[Starlit Weald]] ===
+;[[Cloister of Stars]]
+{{Book text|title= The Final Night|
+It's the last night now. By the time the sun rises tomorrow, we will be gone from here, and our legacy will be behind us. It should pain me more to abandon our temples, to see the sacrifices we've made amount to nothing, but I've already grieved as much as I can. I've spent my tears on my [[Endiro]]; there are none left for [[Castora]].
+
+[[Legendary Sidony the Shadowkeeper|Sidony]] says the [[Seneschal|beasts]] will protect Castora and guard its secrets for our inevitable return. But the pallid faces of my fellows reveal that we already know the truth: we will never return to this place. We march not to victory, but to [[Valley of Agony|extinction]]. The [[The All Seer|bindings on the beasts]] are indeed strong—as strong as we could make them—and they will not fray with time. Instead, they will guard this place, waiting for a return that will not come, until that distant day when the last light of [[Tyria (world)|Tyria]] is finally extinguished.
+}}
+
+;[[Lost Basilica]]
+{{Book text|title= [[Lasia]]'s Journal|
+The day approaches! [[Mazeo]] and I will both undergo the [[Ascension (seer)|divitium nava]] at last. My brother has kept calm about it, but I am not so easily fooled. He knows this will be a great honor for us and a continuous boon for our family. Of course, [[Meliore]] believes I am too fixated, but she would; she was chosen and underwent the process several years ago. She has since lorded her "eternal wisdom" over my brother and me as if she were [[doyen]] herself. But then, she is our elder sister, as she loves to remind us.
+
+Still, I admit some petty jealousy on my part. I've long wished to tend and work the [[The Forge (Eternity's Garden)|forge]] and make divine instruments as my elder sister does, ever since the three of us were allowed residence here. A role that requires immense power and control—two things she tells me that I lack. It has been enough to serve her as an apprentice over the years, but banality has crept in, and I tire of a mere supporting role.
+----
+I did everything asked of me, word for word, motion for motion. Everything Mazeo had done mere hours before my own attempt. Instead, my body wilts. I can barely float from one room of the convalescent ward to the next. I have been summarily rejected, cast out by the will of [[Tyria (world)|this world]]. I will never spin threads of chronomantic-infused damask or create a masterpiece like the [[Dorat Fine]]. I will waste away, unremarkable and irrelevant.
+
+Little Brother, Elder Sister. If you read this, perhaps you'll forgive my melodramatics in time. I am empty and spent. Something has been taken that I can never get back. Centuries chasing, preparing to finally stand at your side, Sister, among the ascended before us. For it to collapse away beneath me? I cannot bear it.
+----
+Mazeo left Castora this morning. He woke early and carried me to the [[Soaring Sands|coast]] to watch the sunrise. We sang for a time and spoke for longer. The [[Seer-mursaat war|conflict]] with the [[mursaat]] has grown beyond small skirmishes. At least, that is what we're told.
+
+This outpost is to be abandoned in the coming years to protect and preserve its secrets, and if the healers' assessments are to be believed, my condition will overtake me before the last portal closes. Mazeo said he plans to return before then and see me one final time. I hope he means it. War breeds nothing if not uncertainty. 
+
+Meliore will remain here, for now. She has received a directive of transfer to the bastions of [[Stellis Quor]] to help with plans for the siege of [[Apavim]], but she has been allowed to delay for my sake, to make sure I am cared for in my final years. After the grief we've given one another, I wouldn't have blamed her for accepting her new role and moving on, and yet, here she is at my side.
+}}
+
+=== Into the Depths ===
+;Deepwood Outpost
+{{Book text|
+Seekers of the [[Navarium Core]],
+
+Only those who have attained the doyen's most sacred trust, who have stood within the [[Empyreal Threshold]], [[Shackles of the Ancients|quelled the All Seer]], and who have performed rites at the [[Dome of the Indelible Word]], will possess the imbuements necessary to read the true words of this sacred writ. To the uninitiated, the tablet will appear to describe the mundane qualities of [[seer]] architectural techniques.
+
+The reason for these measures is to safeguard the location of our people's most important site on Castora, which must remain a closely guarded secret. While Castora itself is, as you have no doubt experienced for yourself, a locale that is steeped in the powerful magic of Tyria's [[ley line]]s and nature spirits, there is a [[Exposed Ley Root|source of power]] greater than any that our people have ever encountered.
+
+While there are known confluences of ley lines across Tyria, what may not be common knowledge is that there are even more powerful upflows of Tyria's innate magic scattered across the planet, each one hidden deep underground.
+
+These "ley roots," as we have called them, are places where one can bathe in the primal power of the planet itself. In most cases, these sites remain out of reach because these natural "springs" of ley energy have become the resting places for the Elder Dragons.
+
+The presence of those immensely powerful beings has made it all but impossible for any of the [[Elder race|elder species]] of Tyria to study these incredible upwellings. However, for reasons unknown to us, the ley root beneath Castora has remained untouched for millennia...which gives our people a unique advantage.
+
+If you wish to learn more, your next step should be to consult [[Gardesano, Avatar of the All Seer|Gardesano]], who can almost always be found within the ateliers of the forge.
+}}
+
+;[[Gardesano's Atelier]]
+{{Book text|
+My fellow seers,
+
+The time has come for us to abandon this place, lest it fall into the hands of the shadow stalkers. While this decision was not made lightly, there are aspects of our actions that we must now make haste to address.
+
+This tablet, which has been ensorcelled to be readable only by the trusted few who have attained their initiate level of our ascension ritual, must bear the burden of one of our people's most cherished secrets: the path that leads to the Navarium Core.
+
+For eons, it was my humble charge to lead those of us who are chosen to the hidden path through the [[Spire of Exaltation]]. However, I have now been tasked with a greater purpose, and this requires me to leave this tablet in my stead.
+
+I, and five of my siblings, [[Those Who Watch|are to become guardians of this place]]. Avatars of the All Seer, we will defend our blessed garden, and the many secrets it contains, for all eternity. I shall bear this responsibility with honor, and I pray that our watch will endure through the ages.
+
+If you seek the path I once illuminated, you must follow the steps of one of the other high stewards, for only they can reveal the way.
+
+May the All Seer watch and guide us,
+}}
+
+;[[Spire of Exaltation]] (story instance)
+{{Book text|
+Seekers of the Navarium Core,
+
+You have done well to come this far.
+
+Your presence here, and your ability to read the words inscribed on this tablet, ensure that the secrets of our kind are vouchsafed by those entrusted through the rite of Divitium Nava.
+
+The wellspring, around which the Navarium Core was built, is one of Tyria's greatest natural treasures, and its existence must remain obscured from those who would seek it for nefarious ends.
+
+As with the rite of Divitium Nava, the path ahead is a test. You must navigate the depths, make your way through darkness and threat in equal measure, before you may descend the remainder of the way.
+
+Just as the [[Divitium Nava|trials you faced]] were opportunities to exalt yourself and your kind, your navigation through the darkness ahead represents our desire to enlighten the world with our philosophy, our wisdom, our guidance.
+
+Should you make it to the end of the path, look for the last words at the top of the mechanism that will take you into the depths.
+
+Your fate awaits you.
+}}
+
+;Leyspring Hollows (story instance)
+{{Book text|
+Seekers of the Navarium Core,
+
+You are to be congratulated. Through darkness, you have brought light. Through the flame of battle, you have emerged victorious.
+
+You stand at the precipice to one of our kind's greatest secrets. You are now bequeathed with this great and powerful knowledge, and you will be entrusted with its safekeeping.
+
+Divitium Nava was only the beginning.
+
+What awaits you now, only the fates will reveal.
+
+Vigalium. Quistuna. Illumos.
+}}
+
+== Related achievements ==
+* {{achievement|Into the Depths}}</text>
+      <sha1>0odbmp7x55vdpn0co8wzgl76tnhzedl</sha1>
+    </revision>
+  </page>
+<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
+    <title>Worn Voltaic Spear</title>
+    <ns>0</ns>
+    <id>379944</id>
+    <revision>
+      <id>2870781</id>
+      <parentid>2870780</parentid>
+      <timestamp>2024-09-10T21:40:26Z</timestamp>
+      <contributor>
+        <username>DiegoDeLaHouska</username>
+        <id>206595</id>
+      </contributor>
+      <minor />
+      <origin>2870781</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="555" sha1="amygzteo00lj117kn4zhvvcli0jeo7t" xml:space="preserve">{{Weapon infobox
+| type = Spear
+| level = 80
+| rarity = Exotic
+| prefix = Berserker's
+| bound = account soul
+| value = 396
+| skin = Worn Voltaic Spear (skin)
+| id = 102071
+}}
+
+== Acquisition ==
+=== Sold by ===
+{{Sold by}}
+=== Achievement ===
+{{achievement list|reward=Worn Voltaic Spear}}
+
+== Trivia ==
+* This spear uses a recolored model of [[Al'ir'aska]], which itself resembles the [[gww:Voltaic Spear|Voltaic Spear]] from the original ''Guild Wars''.
+
+[[de:Abgenutzter voltaischer Speer]]
+[[es:Lanza voltaica desgastada]]
+[[fr:Lance voltaïque usée]]</text>
+      <sha1>amygzteo00lj117kn4zhvvcli0jeo7t</sha1>
+    </revision>
+  </page>
+<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
+    <title>Worn Voltaic Spear (historical)</title>
+    <ns>0</ns>
+    <id>141070</id>
+    <revision>
+      <id>2841772</id>
+      <parentid>2841771</parentid>
+      <timestamp>2024-07-02T16:26:21Z</timestamp>
+      <contributor>
+        <username>Sunlion</username>
+        <id>225997</id>
+      </contributor>
+      <origin>2841772</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="495" sha1="kszrbtkscsrnc8ewvd6j777gjhowkth" xml:space="preserve">{{Weapon infobox
+| name = Worn Voltaic Spear
+| icon = Worn Voltaic Spear.png
+| type = Spear
+| minimum power = 905
+| maximum power = 1000
+| level = 80
+| bound = acquire
+| skin = Worn Voltaic Spear (skin)
+| rarity = exotic
+| id = 32063
+| status = historical
+| gallery1 = Worn Voltaic Spear.jpg
+}}
+[[Worn Voltaic Spear (historical)|Worn Voltaic Spear]] is a historical [[spear]].
+
+== Acquisition ==
+* Acquisition method for this skin has never been determined. It was likely a high-rank PvP reward.</text>
+      <sha1>kszrbtkscsrnc8ewvd6j777gjhowkth</sha1>
+    </revision>
+  </page>
+<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
+    <title>Worn Voltaic Spear (skin)</title>
+    <ns>0</ns>
+    <id>134286</id>
+    <revision>
+      <id>2841804</id>
+      <parentid>2841775</parentid>
+      <timestamp>2024-07-02T17:44:39Z</timestamp>
+      <contributor>
+        <ip>85.233.25.191</ip>
+      </contributor>
+      <origin>2841804</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="657" sha1="kssz0tzg3sgp85u2dg5hzs2h2r0s6m4" xml:space="preserve">{{otheruses|the [[skin]] unlocked in the [[wardrobe]]|the weapon|Worn Voltaic Spear}}
+{{Skin infobox
+| name = Worn Voltaic Spear
+| icon = Worn Voltaic Spear.png
+| type = Spear
+| id = 4854
+| categorize = y
+| gallery1 = Worn Voltaic Spear.jpg
+}}
+[[Worn Voltaic Spear (skin)|Worn Voltaic Spear]] is a [[spear]] [[skin]].
+
+== Acquisition ==
+{{skin list}}
+
+== Notes ==
+* Uses the same model as [[Al'ir'aska (skin)|Al'ir'aska]], but with a different texture.
+* It became unobtainable with its original source being made historical, but was reintroduced multiple years later in 2024 as part of [[Sunken Treasure Week]].
+
+[[de:Abgenutzter voltaischer Speer (Skin)]]</text>
+      <sha1>kssz0tzg3sgp85u2dg5hzs2h2r0s6m4</sha1>
+    </revision>
+  </page>
+<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
+    <title>Worn chain armor</title>
+    <ns>0</ns>
+    <id>85138</id>
+    <redirect title="Worn Chain armor" />
+    <revision>
+      <id>540198</id>
+      <timestamp>2013-03-21T21:01:34Z</timestamp>
+      <contributor>
+        <username>MynockSpit</username>
+        <id>93454</id>
+      </contributor>
+      <comment>moved [[Worn chain armor]] to [[Worn Chain armor]]: Capped the 'c' in chain to match other pages.</comment>
+      <origin>540198</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="31" sha1="j2x87nduld5wqahbeyqfkshgl91mx3k" xml:space="preserve">#REDIRECT [[:Worn Chain armor]]</text>
+      <sha1>j2x87nduld5wqahbeyqfkshgl91mx3k</sha1>
+    </revision>
+  </page>
+<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
+    <title>Worried Seraph Soldier Jim</title>
+    <ns>0</ns>
+    <id>121187</id>
+    <revision>
+      <id>2740033</id>
+      <parentid>2583389</parentid>
+      <timestamp>2023-09-15T05:13:54Z</timestamp>
+      <contributor>
+        <ip>184.160.183.116</ip>
+      </contributor>
+      <origin>2740033</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="1640" sha1="btwf7ouu6l1whdcayc9apcegkzyr4i7" xml:space="preserve">{{NPC infobox
+| location = Wynchona Woods
+| image = Seraph Soldier male 2.jpg
+| race = Human
+| organization = Seraph
+| level = 37
+| coordinates = [46917,27387]
+}}
+[[Worried Seraph Soldier Jim]] is a [[Seraph]] found in [[Wynchona Woods]] that is afraid of [[spider]]s. He serves as the [[event runner]] for [[Free the soldiers trapped by spiders]] and [[Kill Gargantula, the spider broodmother]].
+
+== Location ==
+* [[Harathi Hinterlands]]
+** [[Wynchona Woods]]
+
+== Dialogue ==
+:The spiders of the woods are killers. They attack like the night and are as ferocious as the charr! I'm not going back there.
+:{{dialogue icon|end}} ''Keep it together.''
+
+;If [[Free the soldiers trapped by spiders]]:
+:[[Injured Scout Sandra|Sandra]]'s crazy! Going up against those monsters to free our captive comrades isn't bravery, it's suicide! Especially with the wounds she has!
+:{{dialogue icon|yes}} ''I'll see what I can do.''
+:{{dialogue icon|end}} ''That's too bad.''
+
+;If [[Kill Gargantula, the spider broodmother]] is occurring
+:I don't know how Sandra's doing it, but most of the captive troops have returned. We're just missing [[Captain Marshall]]! If you're brave enough you should check in with her!
+:{{dialogue icon|yes}} ''I'll see what I can do.''
+:{{dialogue icon|end}} ''That's too bad.''
+
+== Quotes ==
+;On approach if [[Free the soldiers trapped by spiders]] is occurring
+:''Help! I can't face those spiders again, but they've got my buddies. Anyone? Help?''
+
+;On approach if [[Kill Gargantula, the spider broodmother]] is occurring
+:''The unit's been freed, but the spider queen still has Captain Marshall!''
+
+[[Category:Event runners]]</text>
+      <sha1>btwf7ouu6l1whdcayc9apcegkzyr4i7</sha1>
+    </revision>
+  </page>
+<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
+    <title>Worried Skritt Forager</title>
+    <ns>0</ns>
+    <id>91588</id>
+    <revision>
+      <id>3083797</id>
+      <parentid>3083795</parentid>
+      <timestamp>2025-12-25T02:16:21Z</timestamp>
+      <contributor>
+        <username>Tery3065</username>
+        <id>270948</id>
+      </contributor>
+      <minor />
+      <comment>/* Dialogue */</comment>
+      <origin>3083797</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="1411" sha1="paa34ayewmhs1puhhz23nzehy95jkh6" xml:space="preserve">{{NPC infobox
+| image = Concerned Skritt Forager.jpg
+| location = The Anthill
+| race = skritt
+| level = 14
+}}
+[[Worried Skritt Forager]]s have collected pieces of [[Chaotic Material]] and must be convinced to dispose of them in order to [[assist the Chaos krewe]].
+
+== Location ==
+;[[Maguuma Jungle]]
+* [[Metrica Province]]
+** [[The Anthill]]
+
+== Heart involvement ==
+:{{heart|Assist the Chaos krewe}}
+
+== Dialogue ==
+:So shiny. So pretty. So much power inside...
+:{{dialogue icon|more}} ''You should really get rid of that.''
+::But I love it. I love my pretty little rocks. Please, let me keep my pretties.
+::{{dialogue icon|more}} ''Those rocks could destroy you and your entire family.''
+:::No! Never! This will become part of my collection!''
+:::{{dialogue icon|end}} ''Wait! Stop!'' &lt;small&gt;''(a [[Chaos Beast]] appears)''&lt;/small&gt;
+::{{dialogue icon|more}} ''Trust me friend, there are far better treasures to be found.''
+:::No! Never! This will become part of my collection!''
+:::{{dialogue icon|end}} ''Wait! Stop!'' &lt;small&gt;''(a [[Chaos Beast]] appears)''&lt;/small&gt;
+::{{dialogue icon|more}} ''There are some asura who would kill for what you have there, is it worth the risk?'' &lt;small&gt;'''(correct answer)'''&lt;/small&gt;
+:::Fine, it will go back where I found it.
+:::{{dialogue icon|end}} ''Good.''
+:{{dialogue icon|end}} ''I should go.''
+
+== See also ==
+* [[Concerned Skritt Forager]]
+* [[Greedy Skritt Forager]]</text>
+      <sha1>paa34ayewmhs1puhhz23nzehy95jkh6</sha1>
+    </revision>
+  </page>
+<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
+    <title>Worshipper</title>
+    <ns>0</ns>
+    <id>224376</id>
+    <revision>
+      <id>3185097</id>
+      <parentid>2770592</parentid>
+      <timestamp>2026-08-18T20:45:28Z</timestamp>
+      <contributor>
+        <username>Tery3065</username>
+        <id>270948</id>
+      </contributor>
+      <minor />
+      <origin>3185097</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="549" sha1="d3jkzx8xesiyhr0nz0h6ii6ld8eodg3" xml:space="preserve">{{NPC infobox
+| image = Elonian female 12.jpg
+| location = Lake Gendarr; Astrozintli Forelands; Elona Reach
+| race = human, Hylek, Quaggan
+| level = 30, 58, 80
+}}
+[[Worshipper]]s are NPCs found visiting and praying at various religious sites throughout [[Tyria]].
+
+== Locations ==
+;[[Crystal Desert]]
+* [[Crystal Oasis]]
+** [[Elona Reach]]
+*** [[Temple of Kormir]] (80)
+
+;[[Kryta]]
+* [[Gendarran Fields]]
+** [[Lake Gendarr]] (30)
+
+;[[Maguuma Jungle]]
+* [[Sparkfly Fen]]
+** [[Astrozintli Forelands]] (59)
+
+[[Category:Church of Kormir]]
+[[de:Anbeter]]</text>
+      <sha1>d3jkzx8xesiyhr0nz0h6ii6ld8eodg3</sha1>
+    </revision>
+  </page>
+<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
+    <title>Worshipper (hylek)</title>
+    <ns>0</ns>
+    <id>229119</id>
+    <redirect title="Worshipper" />
+    <revision>
+      <id>2048898</id>
+      <parentid>1627372</parentid>
+      <timestamp>2020-04-28T22:08:39Z</timestamp>
+      <contributor>
+        <username>Nero9012</username>
+        <id>225401</id>
+      </contributor>
+      <comment>Merging with base article. These don't seem to have an impact on the events that were listed regardless.</comment>
+      <origin>2048898</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="24" sha1="m2av86td6zj9jvjgw545j8lbrdovcnc" xml:space="preserve">#Redirect [[Worshipper]]</text>
+      <sha1>m2av86td6zj9jvjgw545j8lbrdovcnc</sha1>
+    </revision>
+  </page>
+<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
+    <title>Worshipper (quaggan)</title>
+    <ns>0</ns>
+    <id>232081</id>
+    <redirect title="Worshipper" />
+    <revision>
+      <id>2048897</id>
+      <parentid>1817793</parentid>
+      <timestamp>2020-04-28T22:08:00Z</timestamp>
+      <contributor>
+        <username>Nero9012</username>
+        <id>225401</id>
+      </contributor>
+      <comment>Merging with base article</comment>
+      <origin>2048897</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="24" sha1="m2av86td6zj9jvjgw545j8lbrdovcnc" xml:space="preserve">#Redirect [[Worshipper]]</text>
+      <sha1>m2av86td6zj9jvjgw545j8lbrdovcnc</sha1>
+    </revision>
+  </page>
+<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
+    <title>Worthy Burden</title>
+    <ns>0</ns>
+    <id>61290</id>
+    <revision>
+      <id>3125017</id>
+      <parentid>2872899</parentid>
+      <timestamp>2026-04-08T06:43:19Z</timestamp>
+      <contributor>
+        <username>Tery3065</username>
+        <id>270948</id>
+      </contributor>
+      <minor />
+      <origin>3125017</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="1634" sha1="s0usv76odz1o0rmkv2w1rdwiy2fqdfi" xml:space="preserve">{{NPC infobox
+| image = Kodan female 2.jpg
+| location = The Sea of Lamentation
+| race = Kodan
+| level = 79
+| service = Renown Heart
+| goal = Help Worthy Burden defeat icebrood in Drakkar Spurs
+| coordinates = [53985,25203]
+}}
+[[Worthy Burden]] is a [[Renown Heart NPC]] in [[The Sea of Lamentation]]. After [[Help Worthy Burden defeat icebrood in Drakkar Spurs|helping her fight the local icebrood]], she will sell items as a [[karma merchant]].
+
+== Location ==
+* [[Frostgorge Sound]]
+** [[The Sea of Lamentation]]
+
+== Heart involvement ==
+: {{heart|Help Worthy Burden defeat icebrood in Drakkar Spurs}}
+
+== Items offered ==
+{{vendor table header|showFacts=false}}
+{{vendor table row|id=23434|cost=574 karma}}
+{{vendor table row|id=23445|cost=1141 karma}}
+{{vendor table row|id=29540|cost=455 karma}}
+{{vendor table row|id=29550|cost=686 karma}}
+{{vendor table row|id=29542|cost=910 karma}}
+{{vendor table row|id=29557|cost=1365 karma}}
+|}
+
+== Dialogue ==
+:{{dialogue icon|heartno}} Jormag has harried us for too long. We must strike back wherever we can. Will you help us?
+:{{dialogue icon|more}} ''What can I do?''
+::{{dialogue icon|heartno}} Destroy as many icebrood as you can, and help any kodan you find along the way.
+::{{dialogue icon|end}} ''Will do.''
+:{{dialogue icon|end}} ''I can't right now.''
+
+:{{dialogue icon|heartyes}} Without an army, we can do little against Jormag, but each fight we win maintains a little balance. Thank you for standing with us.
+:{{dialogue icon|karma}} ''What have you got for sale?''
+:{{dialogue icon|end}} ''Glad I could help.''
+
+[[de:Würdige Last]]
+[[es:Carga Digna]]
+[[fr:Charge notable]]</text>
+      <sha1>s0usv76odz1o0rmkv2w1rdwiy2fqdfi</sha1>
+    </revision>
+  </page>
+<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
+    <title>Wortt</title>
+    <ns>0</ns>
+    <id>104774</id>
+    <revision>
+      <id>2961050</id>
+      <parentid>2301701</parentid>
+      <timestamp>2025-04-30T11:54:17Z</timestamp>
+      <contributor>
+        <username>Aylia</username>
+        <id>196297</id>
+      </contributor>
+      <origin>2961050</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="954" sha1="ef5r4a9k5o0pglndlbmgv2pbiudp7op" xml:space="preserve">__NOTOC__{{NPC infobox
+| location = Lower Research Stacks
+| race = Asura
+| goal = Super Adventure Box: Back to School
+| status = historical
+}}
+[[Wortt]] was a former [[krewe]]mate of [[Moto]] who could be found near Research Waypoint in [[Rata Sum]] with the rest of the krewe; [[Yavvi]], [[Ketto]], and [[Nimbb]]. Currently, they're working on the Somno-Scholar, a device that teaches the user information while they sleep. The krewe's previous projects include the Intravenous Intelligizer and, when Moto was still a member, the original Adventure Box.
+
+== Location ==
+=== Historical location ===
+;[[Maguuma Jungle]]
+* [[Rata Sum]]
+** [[Lower Research Stacks]]
+
+== Story involvement ==
+=== [[Super Adventure Box: Back to School]] ===
+* [[Ketto's Lab]]
+
+== Trivia ==
+* He was added to the game with the [[Game updates/2013-09-03|September 3rd, 2013]] update, as part of the [[Super Adventure Box: Back to School]] [[release]].
+
+[[de:Worpp]]
+[[fr:Wortt]]</text>
+      <sha1>ef5r4a9k5o0pglndlbmgv2pbiudp7op</sha1>
+    </revision>
+  </page>
+<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
+    <title>Wounded</title>
+    <ns>0</ns>
+    <id>84421</id>
+    <revision>
+      <id>2709213</id>
+      <parentid>2241089</parentid>
+      <timestamp>2023-07-21T20:52:10Z</timestamp>
+      <contributor>
+        <username>TheDetective13</username>
+        <id>209185</id>
+      </contributor>
+      <minor />
+      <comment>/* Notes */</comment>
+      <origin>2709213</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="679" sha1="o4whsr7jzxc9buh7fgfav0hk1i0qqii" xml:space="preserve">{{otheruses|the effect}}
+{{effect infobox
+| icon = Crippled.png
+| description = The journey has taken its toll.
+| id = 16992
+}}
+[[Wounded]] is an effect present on [[Wounded Soldier]]s in [[Verdant Brink]] and [[Mercenary|mercenaries]] in the [[Lion's Arch Aerodrome]], the latter of which get it removed from them after they visit the [[Black Lion Work-Site Medic]].
+
+== Notes ==
+* The  effect was previously found on [[Wounded Refugee]]s and lasted a week. Players could assist the refugee to remove the effect as part of [[Refugee Volunteer]].
+* [[Braham|Braham Eirsson]] receives this effect during [[Scarlet's End]] instance.
+* The effect uses the same icon as [[Crippled]].</text>
+      <sha1>o4whsr7jzxc9buh7fgfav0hk1i0qqii</sha1>
+    </revision>
+  </page>
+<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
+    <title>Wounded (NPC)</title>
+    <ns>0</ns>
+    <id>212800</id>
+    <revision>
+      <id>2048692</id>
+      <parentid>1739029</parentid>
+      <timestamp>2020-04-28T17:05:33Z</timestamp>
+      <contributor>
+        <username>Nero9012</username>
+        <id>225401</id>
+      </contributor>
+      <origin>2048692</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="501" sha1="a4grjrqzhm1wg8vjy88hy9v5vumjm8n" xml:space="preserve">{{NPC infobox
+| name = Wounded
+| location = Camp Resolve; Pact Base Camp
+| race = Various
+| organization = Durmand Priory, Order of Whispers, Pact, Vigil
+}}
+[[Wounded (NPC)|Wounded]] are found in the medical tents of [[Camp Resolve]] and [[Pact Base Camp]].
+
+== Locations ==
+;[[Heart of Maguuma]]
+* [[Dragon's Stand]]
+** [[Pact Base Camp]]
+
+;[[Maguuma Wastes]]
+* [[The Silverwastes]]
+** [[Camp Resolve]]
+
+[[Category:Asura]]
+[[Category:Charr]]
+[[Category:Humans]]
+[[Category:Norn]]
+[[Category:Sylvari]]</text>
+      <sha1>a4grjrqzhm1wg8vjy88hy9v5vumjm8n</sha1>
+    </revision>
+  </page>
+<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
+    <title>Wounded (Pact Survivor Effect)</title>
+    <ns>0</ns>
+    <id>183144</id>
+    <revision>
+      <id>2241091</id>
+      <parentid>1212513</parentid>
+      <timestamp>2021-03-17T03:34:42Z</timestamp>
+      <contributor>
+        <username>Sunlion</username>
+        <id>225997</id>
+      </contributor>
+      <minor />
+      <origin>2241091</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="448" sha1="bvshknilgj69b0klwasv9fobi1fslpp" xml:space="preserve">{{effect infobox
+| icon = Crippled.png
+| name = Wounded
+| description = Movement speed decreased by 50%; stacks duration.
+| id = 33749
+}}
+
+The [[Wounded (Pact Survivor Effect)|Wounded]] [[effect]] can be found on [[Pact Survivor]]s as part of the [[Safeguard survivors attempting to reach the Pact encampment]] event in [[Verdant Brink]].
+
+== Notes ==
+* This effect will refresh itself indefinitely unless [[condition removal|removed]] by a player.</text>
+      <sha1>bvshknilgj69b0klwasv9fobi1fslpp</sha1>
+    </revision>
+  </page>
+<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
+    <title>Wounded (The Departing)</title>
+    <ns>0</ns>
+    <id>217630</id>
+    <revision>
+      <id>2233470</id>
+      <parentid>1781274</parentid>
+      <timestamp>2021-02-28T21:19:25Z</timestamp>
+      <contributor>
+        <username>Doodleplex</username>
+        <id>203325</id>
+      </contributor>
+      <minor />
+      <origin>2233470</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="373" sha1="js46929cnq0rxycgzcpb9nvoprm4mqn" xml:space="preserve">{{Effect infobox
+| name = Wounded
+| description = Balthazar has grievously wounded you.
+| id = 45528
+| requires = pof
+}}
+[[Wounded (The Departing)|Wounded]] is an [[effect]] applied to players the first time after [[Balthazar]] enters a fire shield to retaliate against them during [[The Departing]].
+
+[[de:Verwundet]]
+[[es:Herida (La marcha)]]
+[[fr:Blessé (En partance)]]</text>
+      <sha1>js46929cnq0rxycgzcpb9nvoprm4mqn</sha1>
+    </revision>
+  </page>
+<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
+    <title>Wounded (Wounded Soldier effect)</title>
+    <ns>0</ns>
+    <id>204572</id>
+    <revision>
+      <id>2241092</id>
+      <parentid>1440239</parentid>
+      <timestamp>2021-03-17T03:36:25Z</timestamp>
+      <contributor>
+        <username>Sunlion</username>
+        <id>225997</id>
+      </contributor>
+      <minor />
+      <origin>2241092</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="689" sha1="1xah3a960kqh31ag0esmwrvfmj2xb8s" xml:space="preserve">{{otheruses|the found on [[Wounded Soldier]]s found at [[Shaded Spring]]|other skills of the same name|Wounded (disambiguation)}}
+{{effect infobox
+|name = Wounded
+| icon = Crippled.png
+| type = condition
+| description = Movement speed decreased by 50%; stacks duration. 
+| id = 27694
+}}
+
+The [[Wounded (Wounded Soldier effect)|Wounded]] effect is an effect found on [[Wounded Soldier]]s found at [[Shaded Spring]].
+
+== Notes ==
+* As a condition it can be removed by [[condition removal]].
+* Applied on Wounded Soldiers at [[Shaded Spring]] at the start of the local meta-event.
+* When it ends after lasting its full duration, it reapplies itself for 10s. This will not happen when removed.</text>
+      <sha1>1xah3a960kqh31ag0esmwrvfmj2xb8s</sha1>
+    </revision>
+  </page>
+<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
+    <title>Wounded (Zephyrite)</title>
+    <ns>0</ns>
+    <id>126051</id>
+    <revision>
+      <id>2241093</id>
+      <parentid>835353</parentid>
+      <timestamp>2021-03-17T03:36:49Z</timestamp>
+      <contributor>
+        <username>Sunlion</username>
+        <id>225997</id>
+      </contributor>
+      <minor />
+      <origin>2241093</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="451" sha1="4nkp7sxjw3zxwgm4dmuwjsxww2nmmdm" xml:space="preserve">{{effect infobox
+| name = Wounded
+| icon = Crippled.png
+| description = ...
+| id = 24756
+}}
+
+[[Wounded (Zephyrite)|Wounded]] is an [[effect]] found on [[Zephyrites]] in the [[Prosperity Mine]] during the [[Rescue injured Zephyrites from the Inquest inside the mine and escort them outside|Rescue Zephyrites from the Inquest]] event in [[Prospect Valley]].
+
+== Notes ==
+* The effect slows their movement, similar to [[cripple]] and slowly deals damage.</text>
+      <sha1>4nkp7sxjw3zxwgm4dmuwjsxww2nmmdm</sha1>
+    </revision>
+  </page>
+<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
+    <title>Wounded (disambiguation)</title>
+    <ns>0</ns>
+    <id>204573</id>
+    <revision>
+      <id>1587502</id>
+      <parentid>1440227</parentid>
+      <timestamp>2017-11-26T01:41:44Z</timestamp>
+      <contributor>
+        <username>Doodleplex</username>
+        <id>203325</id>
+      </contributor>
+      <origin>1587502</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="216" sha1="9gh65uwmvvxtt09o430o6ifrfel8fpp" xml:space="preserve">{{disambig}}
+[[Wounded (disambiguation)|Wounded]] can refer to:
+
+;Effects
+* [[Wounded]]
+* [[Wounded (Pact Survivor Effect)]]
+* [[Wounded (Wounded Soldier effect)]]
+* [[Wounded (Zephyrite)]]
+
+;NPCs
+* [[Wounded (NPC)]]</text>
+      <sha1>9gh65uwmvvxtt09o430o6ifrfel8fpp</sha1>
+    </revision>
+  </page>
+<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
+    <title>Wounded Agent</title>
+    <ns>0</ns>
+    <id>194027</id>
+    <revision>
+      <id>2049793</id>
+      <parentid>1589842</parentid>
+      <timestamp>2020-04-30T20:15:44Z</timestamp>
+      <contributor>
+        <username>Nero9012</username>
+        <id>225401</id>
+      </contributor>
+      <origin>2049793</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="523" sha1="1kq7zeh9ju1pip4qkad4z6acdt56aew" xml:space="preserve">{{NPC infobox
+| location = Signal Peak
+| race = Various
+| organization = Order of Whispers, Pact
+| level = 70
+}}
+[[Wounded Agent]]s are wounded [[Whispers Agent]]s found in the [[Pact]] field hospital at [[Oceanside Ordnance]].
+
+== Location ==
+;[[Ruins of Orr]]
+* [[Straits of Devastation]]
+** [[Signal Peak]]
+*** [[Oceanside Ordnance]]
+
+== Combat abilities ==
+;Effects
+* {{effect|Crippled}} - {{effect description|Crippled}}
+
+[[Category:Asura]]
+[[Category:Charr]]
+[[Category:Humans]]
+[[Category:Norn]]
+[[Category:Sylvari]]</text>
+      <sha1>1kq7zeh9ju1pip4qkad4z6acdt56aew</sha1>
+    </revision>
+  </page>
+<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
+    <title>Wounded Crusader</title>
+    <ns>0</ns>
+    <id>194031</id>
+    <revision>
+      <id>2049795</id>
+      <parentid>1589844</parentid>
+      <timestamp>2020-04-30T20:17:19Z</timestamp>
+      <contributor>
+        <username>Nero9012</username>
+        <id>225401</id>
+      </contributor>
+      <origin>2049795</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="514" sha1="hjhq87cvpny5bd8o493b8iqt46p9f0e" xml:space="preserve">{{NPC infobox
+| location = Signal Peak
+| race = Various
+| organization = Vigil, Pact
+| level = 70
+}}
+[[Wounded Crusader]]s are wounded [[Vigil Crusader]]s found in the [[Pact]] field hospital at [[Oceanside Ordnance]].
+
+== Location ==
+;[[Ruins of Orr]]
+* [[Straits of Devastation]]
+** [[Signal Peak]]
+*** [[Oceanside Ordnance]]
+
+== Combat abilities ==
+;Effects
+* {{effect|Crippled}} - {{effect description|Crippled}}
+
+[[Category:Asura]]
+[[Category:Charr]]
+[[Category:Humans]]
+[[Category:Norn]]
+[[Category:Sylvari]]</text>
+      <sha1>hjhq87cvpny5bd8o493b8iqt46p9f0e</sha1>
+    </revision>
+  </page>
+<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
+    <title>Wounded Ebon Vanguard Soldier</title>
+    <ns>0</ns>
+    <id>231886</id>
+    <revision>
+      <id>2937637</id>
+      <parentid>2930515</parentid>
+      <timestamp>2025-02-26T06:20:10Z</timestamp>
+      <contributor>
+        <username>Tery3065</username>
+        <id>270948</id>
+      </contributor>
+      <minor />
+      <origin>2937637</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="438" sha1="r4phmf2vwuirzwwavr9vfo6jkliqg7g" xml:space="preserve">{{NPC infobox
+| location = Warrior's Crown
+| race = Human
+| organization = Ebon Vanguard
+| level = 35
+| coordinates = [63141.8, 34100.7], [63128.1, 34074.0]
+}}
+[[Wounded Ebon Vanguard Soldier]]s are members of the [[Ebon Vanguard]] found at the [[Ebonhawke Delegation]] at the [[Warrior's Crown]].
+
+== Location ==
+;[[Ascalon]]
+* [[Fields of Ruin]]
+** [[Warrior's Crown]]
+*** [[Ebonhawke Delegation]]
+
+[[de:Verwundeter Ebon-Vorhut-Soldat]]</text>
+      <sha1>r4phmf2vwuirzwwavr9vfo6jkliqg7g</sha1>
+    </revision>
+  </page>
+<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
+    <title>Wounded Explorer</title>
+    <ns>0</ns>
+    <id>194029</id>
+    <revision>
+      <id>2049794</id>
+      <parentid>1589843</parentid>
+      <timestamp>2020-04-30T20:17:08Z</timestamp>
+      <contributor>
+        <username>Nero9012</username>
+        <id>225401</id>
+      </contributor>
+      <origin>2049794</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="524" sha1="2l048xdxtdwera367lqqi0ydq8sv08w" xml:space="preserve">{{NPC infobox
+| location = Signal Peak
+| race = Various
+| organization = Durmand Priory, Pact
+| level = 70
+}}
+[[Wounded Explorer]]s are wounded [[Priory Explorer]]s found in the [[Pact]] field hospital at [[Oceanside Ordnance]].
+
+== Location ==
+;[[Ruins of Orr]]
+* [[Straits of Devastation]]
+** [[Signal Peak]]
+*** [[Oceanside Ordnance]]
+
+== Combat abilities ==
+;Effects
+* {{effect|Crippled}} - {{effect description|Crippled}}
+
+[[Category:Asura]]
+[[Category:Charr]]
+[[Category:Humans]]
+[[Category:Norn]]
+[[Category:Sylvari]]</text>
+      <sha1>2l048xdxtdwera367lqqi0ydq8sv08w</sha1>
+    </revision>
+  </page>
+<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
+    <title>Wounded Hunter</title>
+    <ns>0</ns>
+    <id>282285</id>
+    <revision>
+      <id>2924760</id>
+      <parentid>2773950</parentid>
+      <timestamp>2025-01-25T22:33:56Z</timestamp>
+      <contributor>
+        <username>Vysnaite</username>
+        <id>270646</id>
+      </contributor>
+      <comment>Added coords</comment>
+      <origin>2924760</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="484" sha1="lkr2ws04e96xf7w3a87lpf2sz22c2nl" xml:space="preserve">{{NPC infobox
+| image = Local.jpg
+| location = The Loneholme Range
+| race = norn
+| level = 17
+| coordinates = [52866.7, 28007.0], [52782.0, 28112.8], [52783.2, 28030.8], [52728.5, 27978.8], [52721.8, 27923.1], [52817.1, 27737.3], [52804.1, 27765.4]
+}}
+[[Wounded Hunter]]s can be found around [[The Loneholme Range]].
+
+== Locations ==
+;[[Shiverpeak Mountains]]
+* [[Snowden Drifts]]
+** [[The Loneholme Range]]
+
+== Heart involvement ==
+: {{heart|Preserve the Njordstead hunting grounds}}</text>
+      <sha1>lkr2ws04e96xf7w3a87lpf2sz22c2nl</sha1>
+    </revision>
+  </page>
+<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
+    <title>Wounded Kodan Scout</title>
+    <ns>0</ns>
+    <id>275389</id>
+    <revision>
+      <id>3064751</id>
+      <parentid>2162425</parentid>
+      <timestamp>2025-11-18T06:03:26Z</timestamp>
+      <contributor>
+        <username>Tery3065</username>
+        <id>270948</id>
+      </contributor>
+      <minor />
+      <origin>3064751</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="596" sha1="l4ijh8m4x1lz1kn90umn992k90c0zo4" xml:space="preserve">{{NPC infobox
+| image = Kodan male 2 (walking).jpg
+| location = Boreal Pass; Forest of a Thousand Voices; Frigid Dunes
+| race = Kodan
+| level = 80
+| requires = lws5
+}}
+[[Wounded Kodan Scout]]s are [[kodan]] that must be escorted back to [[Still Waters Speaking]] after being freed from [[Trial of Koda: Escort the wounded kodan to safety|corrupted ice shards]].
+
+== Locations ==
+;[[Shiverpeak Mountains]]
+* [[Bjora Marches]] {{during}}
+** [[Boreal Pass]]
+** [[Forest of a Thousand Voices]]
+** [[Frigid Dunes]]
+
+== Event involvement ==
+: {{event|Trial of Koda: Escort the wounded kodan to safety}}</text>
+      <sha1>l4ijh8m4x1lz1kn90umn992k90c0zo4</sha1>
+    </revision>
+  </page>
+<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
+    <title>Wounded Lionguard</title>
+    <ns>0</ns>
+    <id>115791</id>
+    <revision>
+      <id>2894515</id>
+      <parentid>2769314</parentid>
+      <timestamp>2024-11-11T13:27:38Z</timestamp>
+      <contributor>
+        <username>BeeBeeKay</username>
+        <id>223338</id>
+      </contributor>
+      <minor />
+      <comment>Typo</comment>
+      <origin>2894515</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="781" sha1="bqjvshyw76216bysa16cf9my2731rbq" xml:space="preserve">{{NPC infobox
+| location = Vigilant Hills
+| race = Various
+| organization = Lionguard
+| requires = living world season 1
+}}
+[[Wounded Lionguard]]s are injured members of the [[Lionguard]] that have been affected by the [[miasma]] in [[Lion's Arch (Under Attack!)|Lion's Arch]].
+
+Two of these Lionguard can be found in [[Vigilant Hills]], near the corpses of several [[citizen]]s and [[commoner]]s.
+
+== Story involvement ==
+=== [[Living World Season 1]] ===
+* Episode 5: [[Battle for Lion's Arch]]
+** [[The Battle for Lion's Arch (story)|The Battle for Lion's Arch]]
+
+== Location ==
+=== Historical location ===
+;[[Kryta]]
+* [[Gendarran Fields]]
+** [[Vigilant Hills]]
+*** [[Vigilant Hills Refugee Camp]]
+
+== See also ==
+* [[Drax Tinderstride]]
+
+[[Category:Charr]]
+[[Category:Humans]]</text>
+      <sha1>bqjvshyw76216bysa16cf9my2731rbq</sha1>
+    </revision>
+  </page>
+<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
+    <title>Wounded Moa</title>
+    <ns>0</ns>
+    <id>84142</id>
+    <revision>
+      <id>2936286</id>
+      <parentid>2251872</parentid>
+      <timestamp>2025-02-22T13:36:50Z</timestamp>
+      <contributor>
+        <username>Tery3065</username>
+        <id>270948</id>
+      </contributor>
+      <origin>2936286</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="808" sha1="fhtc3sh02asshelkn1xc3cdoqxcx7pm" xml:space="preserve">{{NPC infobox	
+| image = White Moa.jpg
+| location = Hunter's Pitfalls
+| race = Moa
+| level = 14
+| coordinates = [54241,27916],[54082,28284],[54359,28264]
+}}
+The [[Wounded Moa]] is a crippled [[moa]] that appears in [[Hunter's Pitfalls]] or [[Tromigar Valley]]. Attacking it will cause it to flee and trigger [[Defeat the Beak of Darkness and its darkwing defenders]].
+
+== Location ==
+;[[Shiverpeak Mountains]]
+* [[Snowden Drifts]]
+** [[Hunter's Pitfalls]]
+** [[Tromigar Valley]]
+
+== Event involvement ==
+: {{event|Defeat the Beak of Darkness and its darkwing defenders}}
+
+== Combat abilities ==
+;Abilities
+* Frenzies
+
+;Behavior
+* Does not attack back
+* {{effect|Determined}} - Gained upon reaching around 75% health
+* Flees when health reaches threshold
+
+;Effects
+* {{effect|Crippled}}
+
+[[de:Verwundete Moa]]</text>
+      <sha1>fhtc3sh02asshelkn1xc3cdoqxcx7pm</sha1>
+    </revision>
+  </page>
+<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
     <title>Wounded Pact Soldier</title>
     <ns>0</ns>
     <id>189585</id>
@@ -173355,21 +175278,24 @@ Double click on this item to open the vendor window.
     <ns>10</ns>
     <id>387217</id>
     <revision>
-      <id>3215159</id>
-      <parentid>3214670</parentid>
-      <timestamp>2026-10-18T02:04:43Z</timestamp>
+      <id>3215723</id>
+      <parentid>3215159</parentid>
+      <timestamp>2026-10-19T07:14:00Z</timestamp>
       <contributor>
-        <username>SinisterNote</username>
-        <id>264812</id>
+        <username>VectorSomething</username>
+        <id>263760</id>
       </contributor>
-      <origin>3215159</origin>
+      <minor />
+      <comment>added 2026-10-19 daily catch</comment>
+      <origin>3215723</origin>
       <model>wikitext</model>
       <format>text/x-wiki</format>
-      <text bytes="1738" sha1="e7k2by1iwtf8936z8y55s7h04exkzgv" xml:space="preserve">{{notice|Please archive the data quarterly (every 3 months) at [[Daily Catch/Archive]] to help ensure the article loads properly.}}
+      <text bytes="1767" sha1="hn1kqjcbxlb4xkfqu6a6wcgwafflpzw" xml:space="preserve">{{notice|Please archive the data quarterly (every 3 months) at [[Daily Catch/Archive]] to help ensure the article loads properly.}}
 {{Inventory/Vendor subpage header}}
 &lt;onlyinclude&gt;
 &lt;small&gt; ''If you wish to edit or update the [[Daily Catch]] fish on this list, please click [[Template:Inventory/Janthir Syntri Fishmonger|here]].'' &lt;/small&gt;
 {{Daily Catch table v2|
+2026-10-19; Indigo Drakefish
 2026-10-18; Rockfish
 2026-10-17; King Salmon
 2026-10-16; Cherry Salmon
@@ -173422,7 +175348,7 @@ Double click on this item to open the vendor window.
 &lt;!-- Don't remove data without archiving it --&gt;
 }}&lt;/onlyinclude&gt;
 &lt;/div&gt;&lt;!-- closes &lt;div&gt; from the header template --&gt;</text>
-      <sha1>e7k2by1iwtf8936z8y55s7h04exkzgv</sha1>
+      <sha1>hn1kqjcbxlb4xkfqu6a6wcgwafflpzw</sha1>
     </revision>
   </page>
 <page xmlns="http://www.mediawiki.org/xml/export-0.11/">
@@ -173627,21 +175553,24 @@ The other tabs consist of two currency containers and three other items of the l
     <ns>10</ns>
     <id>384656</id>
     <revision>
-      <id>3215158</id>
-      <parentid>3214669</parentid>
-      <timestamp>2026-10-18T02:03:36Z</timestamp>
+      <id>3215722</id>
+      <parentid>3215158</parentid>
+      <timestamp>2026-10-19T07:13:32Z</timestamp>
       <contributor>
-        <username>SinisterNote</username>
-        <id>264812</id>
+        <username>VectorSomething</username>
+        <id>263760</id>
       </contributor>
-      <origin>3215158</origin>
+      <minor />
+      <comment>added 2026-10-19 daily catch</comment>
+      <origin>3215722</origin>
       <model>wikitext</model>
       <format>text/x-wiki</format>
-      <text bytes="1868" sha1="jkxguan5dwt9f0y8te6ajklfgv61f34" xml:space="preserve">{{notice|Please archive the data quarterly (every 3 months) at [[Daily Catch/Archive]] to help ensure the article loads properly.}}
+      <text bytes="1894" sha1="6mpou4by5pu9yhx0y2zra4uft589o8x" xml:space="preserve">{{notice|Please archive the data quarterly (every 3 months) at [[Daily Catch/Archive]] to help ensure the article loads properly.}}
 {{Inventory/Vendor subpage header}}
 &lt;onlyinclude&gt;
 &lt;small&gt; ''If you wish to edit or update the [[Daily Catch]] fish on this list, please click [[Template:Inventory/Lowland Shore Fishmonger|here]].'' &lt;/small&gt;
 {{Daily Catch table v2|
+2026-10-19; Northern Pike
 2026-10-18; Spectacled Lumper
 2026-10-17; Shaderock Salamander
 2026-10-16; Rainbow Trout
@@ -173694,7 +175623,7 @@ The other tabs consist of two currency containers and three other items of the l
 &lt;!-- Don't remove data without archiving it --&gt;
 }}&lt;/onlyinclude&gt;
 &lt;/div&gt;&lt;!-- closes &lt;div&gt; from the header template --&gt;</text>
-      <sha1>jkxguan5dwt9f0y8te6ajklfgv61f34</sha1>
+      <sha1>6mpou4by5pu9yhx0y2zra4uft589o8x</sha1>
     </revision>
   </page>
 <page xmlns="http://www.mediawiki.org/xml/export-0.11/">
@@ -173702,21 +175631,24 @@ The other tabs consist of two currency containers and three other items of the l
     <ns>10</ns>
     <id>392887</id>
     <revision>
-      <id>3215160</id>
-      <parentid>3214671</parentid>
-      <timestamp>2026-10-18T02:06:05Z</timestamp>
+      <id>3215724</id>
+      <parentid>3215160</parentid>
+      <timestamp>2026-10-19T07:14:46Z</timestamp>
       <contributor>
-        <username>SinisterNote</username>
-        <id>264812</id>
+        <username>VectorSomething</username>
+        <id>263760</id>
       </contributor>
-      <origin>3215160</origin>
+      <minor />
+      <comment>added 2026-10-19 daily catch</comment>
+      <origin>3215724</origin>
       <model>wikitext</model>
       <format>text/x-wiki</format>
-      <text bytes="1816" sha1="4iacm0yqjpttz3vdcxv691wjf02jfu3" xml:space="preserve">{{notice|Please archive the data quarterly (every 3 months) at [[Daily Catch/Archive]] to help ensure the article loads properly.}}
+      <text bytes="1845" sha1="hnoaal6lsu8pzsq6dfknxt61pc02dui" xml:space="preserve">{{notice|Please archive the data quarterly (every 3 months) at [[Daily Catch/Archive]] to help ensure the article loads properly.}}
 {{Inventory/Vendor subpage header}}
 &lt;onlyinclude&gt;
 &lt;small&gt; ''If you wish to edit or update the [[Daily Catch]] fish on this list, please click [[Template:Inventory/Mistburned Barrens Fishmonger|here]].'' &lt;/small&gt;
 {{Daily Catch table v2|
+2026-10-19; Hermit Titancrab
 2026-10-18; White Bass
 2026-10-17; Longbeak Parrotfish
 2026-10-16; Spineback Crab
@@ -173769,7 +175701,7 @@ The other tabs consist of two currency containers and three other items of the l
 &lt;!-- Don't remove data without archiving it --&gt;
 }}&lt;/onlyinclude&gt;
 &lt;/div&gt;&lt;!-- closes &lt;div&gt; from the header template --&gt;</text>
-      <sha1>4iacm0yqjpttz3vdcxv691wjf02jfu3</sha1>
+      <sha1>hnoaal6lsu8pzsq6dfknxt61pc02dui</sha1>
     </revision>
   </page>
 <page xmlns="http://www.mediawiki.org/xml/export-0.11/">
@@ -173888,21 +175820,24 @@ This tab is only available to players with at least three levels of [[Provisions
     <ns>10</ns>
     <id>387408</id>
     <revision>
-      <id>3215157</id>
-      <parentid>3214667</parentid>
-      <timestamp>2026-10-18T02:01:34Z</timestamp>
+      <id>3215721</id>
+      <parentid>3215157</parentid>
+      <timestamp>2026-10-19T07:12:32Z</timestamp>
       <contributor>
-        <username>SinisterNote</username>
-        <id>264812</id>
+        <username>VectorSomething</username>
+        <id>263760</id>
       </contributor>
-      <origin>3215157</origin>
+      <minor />
+      <comment>added 2026-10-19 daily catch</comment>
+      <origin>3215721</origin>
       <model>wikitext</model>
       <format>text/x-wiki</format>
-      <text bytes="1682" sha1="94u9sn2t3qg5blzpssiizovhjai887v" xml:space="preserve">{{notice|Please archive the data quarterly (every 3 months) at [[Daily Catch/Archive]] to help ensure the article loads properly.}}
+      <text bytes="1707" sha1="oylsjd4yuci8gsx82vz8e8j2q2hu2dy" xml:space="preserve">{{notice|Please archive the data quarterly (every 3 months) at [[Daily Catch/Archive]] to help ensure the article loads properly.}}
 {{Inventory/Vendor subpage header}}
 &lt;onlyinclude&gt;
 &lt;small&gt; ''If you wish to edit or update the [[Daily Catch]] fish on this list, please click [[Template:Inventory/Taro Everclaw Fishmonger|here]].'' &lt;/small&gt;
 {{Daily Catch table v2|
+2026-10-19; Icy Lumpfish
 2026-10-18; Yellowtail Snapper
 2026-10-17; Cherry Barb
 2026-10-16; Tripletail
@@ -173954,7 +175889,7 @@ This tab is only available to players with at least three levels of [[Provisions
 2026-09-01; Fire Eel
 &lt;!-- Don't remove data without archiving it --&gt;
 }}&lt;/onlyinclude&gt;</text>
-      <sha1>94u9sn2t3qg5blzpssiizovhjai887v</sha1>
+      <sha1>oylsjd4yuci8gsx82vz8e8j2q2hu2dy</sha1>
     </revision>
   </page>
 <page xmlns="http://www.mediawiki.org/xml/export-0.11/">
@@ -205750,19 +207685,17 @@ Simple template to have matching Living World season complete pack sales for his
     <ns>10</ns>
     <id>31596</id>
     <revision>
-      <id>3189660</id>
-      <parentid>3180259</parentid>
-      <timestamp>2026-08-31T11:25:54Z</timestamp>
+      <id>3215202</id>
+      <parentid>3189660</parentid>
+      <timestamp>2026-10-18T12:50:16Z</timestamp>
       <contributor>
-        <username>Chieftain Alex</username>
-        <id>28878</id>
+        <username>Kossage</username>
+        <id>126773</id>
       </contributor>
-      <minor />
-      <comment>Protected "[[Template:Location infobox]]": High-usage template: low usage but high smw queries ([Edit=Allow only autoconfirmed users] (indefinite) [Move=Allow only autoconfirmed users] (indefinite))</comment>
-      <origin>3180259</origin>
+      <origin>3215202</origin>
       <model>wikitext</model>
       <format>text/x-wiki</format>
-      <text bytes="23809" sha1="o92qfmuhpqe44b6ermcvzwv0d62ah4n" xml:space="preserve">{{#set:Has context=Location}}&lt;!--
+      <text bytes="23810" sha1="swf33ii61z9ei8kllikafqi8dqnyl15" xml:space="preserve">{{#set:Has context=Location}}&lt;!--
 --&gt;{{infobox status|{{{status|}}}|{{{status notes|}}}|date={{{status date|}}}}}&lt;!--
 --&gt;{{infobox requires|{{{requires|}}} }}&lt;!--
 --&gt;{{#if: &lt;!-- Hide whitespace --&gt;
@@ -205858,7 +207791,7 @@ Simple template to have matching Living World season complete pack sales for his
   | {{#switch: {{PAGENAME}}&lt;!-- 2. If the location is Tyria, Elona, Cantha, or Castora, then don't set the location tree. --&gt;
      | Tyria | Elona | Cantha | Castora | The Mists | Tyria (world) = &lt;!-- unset, this is a root location. --&gt;
      | {{#if: {{{within|}}}
-        | {{#switch: {{{within|}}}&lt;!-- 3. If the parent location is Tyria, Elona, Cantha or Castora, then don't ask the location tree, use parent as full tree --&gt;
+        | {{#switch: {{{within|}}}&lt;!-- 3. If the parent location is Tyria, Elona, Cantha, or Castora, then don't ask the location tree, use parent as full tree --&gt;
           | Tyria | Elona | Cantha | Castora | The Mists | Tyria (world) = {{#set: Located in tree={{{within|}}} }}
           | #default = {{#set: Located in tree={{#show: {{{within}}} | ?Located in tree | default=Unset}}; {{{within|}}} }}&lt;!-- 4. Otherwise, find the location tree of the parent + add the parent's name --&gt;
          }}
@@ -206180,7 +208113,7 @@ All parameters are optional.
 * [[Guild Wars 2 Wiki:Location formatting]]
 
 [[Category:Infobox templates]]&lt;/noinclude&gt;</text>
-      <sha1>o92qfmuhpqe44b6ermcvzwv0d62ah4n</sha1>
+      <sha1>swf33ii61z9ei8kllikafqi8dqnyl15</sha1>
     </revision>
   </page>
 <page xmlns="http://www.mediawiki.org/xml/export-0.11/">
@@ -237766,21 +239699,21 @@ A table template for [[Pact Supply Network Agent]] that shows the current locati
     <ns>10</ns>
     <id>64642</id>
     <revision>
-      <id>623628</id>
-      <parentid>436914</parentid>
-      <timestamp>2013-07-09T03:58:29Z</timestamp>
+      <id>3215220</id>
+      <parentid>623628</parentid>
+      <timestamp>2026-10-18T13:42:04Z</timestamp>
       <contributor>
-        <username>Yandere</username>
-        <id>76787</id>
+        <username>Myriada</username>
+        <id>215477</id>
       </contributor>
       <minor />
-      <origin>623628</origin>
+      <origin>3215220</origin>
       <model>wikitext</model>
       <format>text/x-wiki</format>
-      <text bytes="389" sha1="j6oe6zs6ob21a172qss1t9kiwljq707" xml:space="preserve">{{Weapon set nav|Pact|axe=Battleaxe|dagger=Dirk|mace=Morning Star|pistol=Handgun|sword=Gladius|shield=Tower Shield|torch=Brazier|warhorn=Herald|greatsword=Avenger|hammer=Crusher|longbow=Hornbow|rifle=Shotgun|shortbow=Needler|staff=Quarterstaff|speargun=Harpoon Gun|}}&lt;includeonly&gt;[[Category:Pact weapons]]&lt;/includeonly&gt;&lt;noinclude&gt;
+      <text bytes="427" sha1="oulstnxfzk8xutcdq11xg16x9x1xlsk" xml:space="preserve">{{Weapon set nav|Pact|axe=Battleaxe|dagger=Dirk|mace=Morning Star|pistol=Handgun|sword=Gladius|shield=Tower Shield|torch=Brazier|warhorn=Herald|greatsword=Avenger|hammer=Crusher|longbow=Hornbow|rifle=Shotgun|shortbow=Needler|staff=Quarterstaff|speargun=Harpoon Gun|spear2_full=Magi's Pact Spade of Force}}&lt;includeonly&gt;[[Category:Pact weapons]]&lt;/includeonly&gt;&lt;noinclude&gt;
 [[Category:Weapon navigation templates|Pact]]
 &lt;/noinclude&gt;</text>
-      <sha1>j6oe6zs6ob21a172qss1t9kiwljq707</sha1>
+      <sha1>oulstnxfzk8xutcdq11xg16x9x1xlsk</sha1>
     </revision>
   </page>
 <page xmlns="http://www.mediawiki.org/xml/export-0.11/">

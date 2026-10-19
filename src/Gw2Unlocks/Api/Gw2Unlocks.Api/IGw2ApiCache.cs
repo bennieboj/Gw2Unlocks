@@ -1,9 +1,12 @@
 ﻿using GuildWars2.Hero.Achievements;
 using GuildWars2.Hero.Achievements.Categories;
 using GuildWars2.Hero.Achievements.Titles;
+using GuildWars2.Hero.Equipment.Gliders;
 using GuildWars2.Hero.Equipment.Miniatures;
 using GuildWars2.Hero.Equipment.Novelties;
+using GuildWars2.Hero.Equipment.Outfits;
 using GuildWars2.Hero.Equipment.Wardrobe;
+using GuildWars2.Hero.Emotes;
 using GuildWars2.Items;
 using System.Collections.ObjectModel;
 using System.Threading;
@@ -19,4 +22,7 @@ public interface IGw2ApiCache : IGw2ApiSource
     Task SaveMiniaturesToCacheAsync(Collection<Miniature> data, CancellationToken cancellationToken);
     Task SaveNoveltiesToCacheAsync(Collection<Novelty> data, CancellationToken cancellationToken);
     Task SaveTitlesToCacheAsync(Collection<Title> data, CancellationToken cancellationToken);
+    Task SaveGlidersToCacheAsync(Collection<GliderSkin> data, CancellationToken cancellationToken);
+    Task SaveOutfitsToCacheAsync(Collection<Outfit> data, CancellationToken cancellationToken);
+    Task SaveEmotesToCacheAsync(Collection<Emote> data, CancellationToken cancellationToken);
 }

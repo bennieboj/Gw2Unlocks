@@ -138,12 +138,13 @@
           <div class="content">
               <h1>{{ Title }}</h1>
               {{ for type in TypeGroups }}
-              <div class="type-title"
-                   data-total="{{ type.Total }}">
-                  {{ type.Label }}
-                  (<span class="type-unlocked">?</span> / {{ type.Total }}) <span class="type-percent">0%</span>
-              </div>
-              <div class="grid">
+              <section class="type-group">
+              <button class="type-toggle" aria-expanded="false">
+                  <span class="toggle-arrow" aria-hidden="true">▶</span>
+                  <span class="type-label">{{ type.Label }}</span>
+                  <span class="type-count">(<span class="type-visible">?</span> / <span class="type-total">{{ type.Total }}</span><span class="type-word"></span>) <span class="type-percent">0%</span></span>
+              </button>
+              <div class="grid" hidden>
                   {{ for u in type.Unlocks }}
                   <div class="item"
                        tabindex="0"
@@ -178,6 +179,7 @@
                   </div>
                   {{ end }}
               </div>
+              </section>
               {{ end }}
 
               <footer class="site-footer">
@@ -190,6 +192,11 @@
                       ArenaNet, NCSOFT, the Interlocking NC Logo, and all associated logos
                       and designs are trademarks or registered trademarks of NCSOFT Corporation.
                       All other trademarks are the property of their respective owners.
+                  </div>
+
+                  <div class="footer-generated">
+                      Page generated at:
+                      <time datetime="{{ GeneratedAt }}">{{ GeneratedAt }}</time>
                   </div>
 
                   <div class="footer-made-with">

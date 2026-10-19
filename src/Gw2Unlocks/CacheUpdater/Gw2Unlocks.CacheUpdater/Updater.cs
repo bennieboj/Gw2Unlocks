@@ -1,6 +1,7 @@
 ﻿using Gw2Unlocks.Api;
 using Gw2Unlocks.IconSpriteSheet;
 using Gw2Unlocks.Wiki;
+using GuildWars2.Items;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -36,6 +37,12 @@ internal class Updater(IGw2ApiSource apiSource, IGw2ApiCache apiCache,
         logger.LogInformation("Fetched {count} novelties from API.", novelties.Count);
         var titles = await RetryAsync(() => apiSource.GetTitlesAsync(cancellationToken), "Titles");
         logger.LogInformation("Fetched {count} titles from API.", titles.Count);
+        var gliders = await RetryAsync(() => apiSource.GetGlidersAsync(cancellationToken), "Gliders");
+        logger.LogInformation("Fetched {count} gliders from API.", gliders.Count);
+        var outfits = await RetryAsync(() => apiSource.GetOutfitsAsync(cancellationToken), "Outfits");
+        logger.LogInformation("Fetched {count} outfits from API.", outfits.Count);
+        var emotes = await RetryAsync(() => apiSource.GetEmotesAsync(cancellationToken), "Emotes");
+        logger.LogInformation("Fetched {count} emotes from API.", emotes.Count);
 
         List<IconSpriteSheetInput> input = [];
         input.AddRange(miniatures.Where(x => x.IconUrl != null).Select(x => new IconSpriteSheetInput("Miniature", x.Id, x.IconUrl!)));
@@ -44,6 +51,17 @@ internal class Updater(IGw2ApiSource apiSource, IGw2ApiCache apiCache,
         //input.AddRange(achievements.Where(x => x.IconUrl != null).Select(x => new IconSpriteSheetInput("Achievement", x.Id, x.IconUrl!)));
         input.AddRange(achievementCategories.Where(x => x.IconUrl != null).Select(x => new IconSpriteSheetInput("AchievementCategory", x.Id, x.IconUrl!)));
         input.AddRange(novelties.Where(x => x.IconUrl != null).Select(x => new IconSpriteSheetInput("Novelty", x.Id, x.IconUrl!)));
+        // Recipe sheets are items; the sheet carries the icon and unlocks a recipe.
+        input.AddRange(items.OfType<RecipeSheet>()
+            .Where(x => x.IconUrl != null)
+            .Select(x => new IconSpriteSheetInput("Recipe", x.RecipeId, x.IconUrl!)));
+        input.AddRange(gliders.Where(x => x.IconUrl != null).Select(x => new IconSpriteSheetInput("Glider", x.Id, x.IconUrl!)));
+        input.AddRange(outfits.Where(x => x.IconUrl != null).Select(x => new IconSpriteSheetInput("Outfit", x.Id, x.IconUrl!)));
+        // Emotes carry no icon; use the icon of each item that unlocks the emote.
+        var emoteUnlockItemIds = emotes.SelectMany(e => e.UnlockItemIds ?? []).ToHashSet();
+        input.AddRange(items
+            .Where(i => emoteUnlockItemIds.Contains(i.Id) && i.IconUrl != null)
+            .Select(i => new IconSpriteSheetInput("Emote", i.Id, i.IconUrl!)));
         var sw = Stopwatch.StartNew();
         var iconSpriteSheetData = await iconSpriteSheetGenerator.Generate(input, cancellationToken);
         logger.LogInformation("iconSpriteSheetData generation time: {totalseconds}", sw.Elapsed.TotalSeconds);
@@ -59,6 +77,9 @@ internal class Updater(IGw2ApiSource apiSource, IGw2ApiCache apiCache,
         await apiCache.SaveMiniaturesToCacheAsync(miniatures, cancellationToken);
         await apiCache.SaveNoveltiesToCacheAsync(novelties, cancellationToken);
         await apiCache.SaveTitlesToCacheAsync(titles, cancellationToken);
+        await apiCache.SaveGlidersToCacheAsync(gliders, cancellationToken);
+        await apiCache.SaveOutfitsToCacheAsync(outfits, cancellationToken);
+        await apiCache.SaveEmotesToCacheAsync(emotes, cancellationToken);
     }
 
     private async Task<Collection<T>> RetryAsync<T>(Func<Task<Collection<T>>> action, string name)

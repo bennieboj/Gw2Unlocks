@@ -30,6 +30,12 @@ internal sealed class PageModel
     /// Matches the key used in the unlock map and the data-path attributes in the template.
     /// </summary>
     public string CurrentSlug { get; set; } = "all";
+
+    /// <summary>
+    /// UTC render time of this page as an RFC 3339 timestamp, e.g. "2026-10-19T17:03:15Z".
+    /// JSON-compatible so tooling can parse it straight from the footer.
+    /// </summary>
+    public string GeneratedAt { get; set; } = "";
 }
 
 internal sealed class TypeGroupModel
@@ -47,7 +53,7 @@ internal sealed class TypeGroupModel
 
 internal sealed class UnlockRenderModel
 {
-    public int Id { get; set; }
+    public string Id { get; set; } = "";
 
     public string Name { get; set; } = "";
     public string IconUrl { get; set; } = "";
@@ -100,7 +106,7 @@ internal sealed class UnlockMapModel
     /// "heart-of-thorns/auric-basin". Each entry covers the node and everything beneath it, so a
     /// root entry is the total for that whole branch.
     /// </summary>
-    public Dictionary<string, Dictionary<Type, List<int>>> Categories { get; set; } = [];
+    public Dictionary<string, Dictionary<Type, List<string>>> Categories { get; set; } = [];
 
     /// <summary>
     /// The count at which each capped repeatable achievement has awarded its full achievement point
@@ -108,5 +114,5 @@ internal sealed class UnlockMapModel
     /// flag applies to them. Kept beside the map so the sidebar can count unlocks without a
     /// corresponding element on the page.
     /// </summary>
-    public Dictionary<int, int> AchievementPointCapReachedAt { get; set; } = [];
+    public Dictionary<string, int> AchievementPointCapReachedAt { get; set; } = [];
 }

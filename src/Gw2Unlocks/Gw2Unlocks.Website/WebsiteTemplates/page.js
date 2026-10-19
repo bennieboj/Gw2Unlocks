@@ -2,7 +2,11 @@ const accountState = {
   minis: [],
   skins: [],
   novelties: [],
-  achievements: []
+  achievements: [],
+  recipes: [],
+  gliders: [],
+  outfits: [],
+  emotes: []
 };
 
 const STORAGE_KEYS = {
@@ -12,7 +16,11 @@ const STORAGE_KEYS = {
     novelties: "gw2_account_novelties",
     achievements: "gw2_account_achievements",
     lastRefresh: "gw2_last_refresh",
-    filter_unlocked: "gw2_filter_unlocked"
+    filter_unlocked: "gw2_filter_unlocked",
+    recipes: "gw2_account_recipes",
+    gliders: "gw2_account_gliders",
+    outfits: "gw2_account_outfits",
+    emotes: "gw2_account_emotes"
 };
 
 loadAccountState();
@@ -92,6 +100,10 @@ function loadAccountState() {
   accountState.skins = JSON.parse(localStorage.getItem(STORAGE_KEYS.skins) || "[]");
   accountState.novelties = JSON.parse(localStorage.getItem(STORAGE_KEYS.novelties) || "[]");
   accountState.achievements = JSON.parse(localStorage.getItem(STORAGE_KEYS.achievements) || "[]");
+  accountState.recipes = JSON.parse(localStorage.getItem(STORAGE_KEYS.recipes) || "[]");
+  accountState.gliders = JSON.parse(localStorage.getItem(STORAGE_KEYS.gliders) || "[]");
+  accountState.outfits = JSON.parse(localStorage.getItem(STORAGE_KEYS.outfits) || "[]");
+  accountState.emotes = JSON.parse(localStorage.getItem(STORAGE_KEYS.emotes) || "[]");
 }
 
 function getColor(percent) {
@@ -100,10 +112,16 @@ function getColor(percent) {
 }
 
 function isUnlocked(id, type) {
-  if (type === "Miniature") return accountState.minis.includes(id);
-  if (type === "Skin") return accountState.skins.includes(id);
-  if (type === "Novelty") return accountState.novelties.includes(id);
-  if (type === "Achievement") return accountState.achievements.includes(id);
+  // Emotes are matched by their string id; every other type reports numeric account ids.
+  if (type === "Emote") return accountState.emotes.includes(id);
+  const numericId = Number(id);
+  if (type === "Miniature") return accountState.minis.includes(numericId);
+  if (type === "Skin") return accountState.skins.includes(numericId);
+  if (type === "Novelty") return accountState.novelties.includes(numericId);
+  if (type === "Achievement") return accountState.achievements.includes(numericId);
+  if (type === "Recipe") return accountState.recipes.includes(numericId);
+  if (type === "Glider") return accountState.gliders.includes(numericId);
+  if (type === "Outfit") return accountState.outfits.includes(numericId);
   return false;
 }
 
@@ -134,74 +152,113 @@ function isAchievementCapEarned(achievement) {
 
 function updateUnlockStates() {
 
-  document.querySelectorAll(".grid").forEach(grid => {
+  document.querySelectorAll(".type-group").forEach(group => {
 
+    const grid = group.querySelector(".grid");
     const items = [...grid.querySelectorAll(".item")];
-
-    let unlocked = 0;
 
     items.forEach(item => {
 
-      const id = Number(item.dataset.id);
+      const id = item.dataset.id;
       const type = item.dataset.type;
       if (isUnlocked(id, type)) {
         item.classList.add("unlocked");
-        unlocked++;
       }
       else {
         item.classList.remove("unlocked");
       }
     });
-
-    const title = grid.previousElementSibling;
-
-    const total = Number(title.dataset.total);
-
-    const percent =
-      total === 0
-        ? 0
-        : Math.round((unlocked / total) * 100);
-
-    title.querySelector(".type-unlocked").textContent = unlocked;
-    title.querySelector(".type-percent").textContent = `${percent}%`;
-    title.style.color = getColor(percent);
   });
+
+  applyFilter();
 }
 
+function updateGroupCount(group, visible, total, filter) {
+
+  const count = group.querySelector(".type-count");
+
+  const percent =
+    total === 0
+      ? 0
+      : Math.round((visible / total) * 100);
+
+  let word = "";
+  if (filter === "unlocked") word = " Unlocked";
+  else if (filter === "locked") word = " Locked";
+
+  count.querySelector(".type-visible").textContent = visible;
+  count.querySelector(".type-total").textContent = total;
+  count.querySelector(".type-word").textContent = word;
+  count.querySelector(".type-percent").textContent = `${percent}%`;
+
+  const toggle = group.querySelector(".type-toggle");
+  toggle.style.color = getColor(percent);
+}
+
+document.querySelectorAll(".type-toggle").forEach(toggle => {
+
+  toggle.addEventListener("click", () => {
+
+    const group = toggle.closest(".type-group");
+    const grid = group.querySelector(".grid");
+    const open = group.classList.toggle("open");
+
+    grid.hidden = !open;
+    toggle.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+});
+
 function applyFilter() {
-    document.querySelectorAll(".item").forEach(item => {
 
-        const id = Number(item.dataset.id);
-        const type = item.dataset.type;
+    localStorage.setItem(STORAGE_KEYS.filter_unlocked, currentFilter);
 
-        const unlocked = isUnlocked(id, type);
+    document.querySelectorAll(".type-group").forEach(group => {
 
-        let visible = true;
+        const grid = group.querySelector(".grid");
+        const items = [...grid.querySelectorAll(".item")];
 
-        localStorage.setItem(STORAGE_KEYS.filter_unlocked, currentFilter);
+        let unlocked = 0;
+        let visible = 0;
 
-        if (currentFilter === "unlocked") {
-            visible = unlocked;
+        items.forEach(item => {
+
+            const id = item.dataset.id;
+            const type = item.dataset.type;
+
+            const isItemUnlocked = isUnlocked(id, type);
+
+            if (isItemUnlocked) {
+                unlocked++;
+            }
+
+            let show = true;
+
+            if (currentFilter === "unlocked") {
+                show = isItemUnlocked;
+            }
+            else if (currentFilter === "locked") {
+                show = !isItemUnlocked;
+            }
+
+            item.style.display = show ? "" : "none";
+
+            if (show) {
+                visible++;
+            }
+        });
+
+        // All: unlocked / total with pct. Filtered: only matching items are shown,
+        // so the count is (n / n <word>) 100%; n itself carries the information.
+        if (currentFilter === "all") {
+            updateGroupCount(group, unlocked, items.length, currentFilter);
         }
-        else if (currentFilter === "locked") {
-            visible = !unlocked;
+        else {
+            updateGroupCount(group, visible, visible, currentFilter);
         }
 
-        item.style.display = visible ? "" : "none";
-    });
-
-    // hide empty sections
-    document.querySelectorAll(".grid").forEach(grid => {
-
-        const visibleItems =
-            grid.querySelectorAll('.item:not([style*="display: none"])');
-
-        const title = grid.previousElementSibling;
-
-        const hasVisibleItems = visibleItems.length > 0;
-
-        grid.style.display = hasVisibleItems ? "grid" : "none";
-        title.style.display = hasVisibleItems ? "" : "none";
+        // Hide groups the filter empties. Does not touch grid.hidden, so a
+        // group's collapsed/expanded state survives filtering.
+        group.style.display = visible > 0 ? "" : "none";
     });
 }
 
@@ -311,19 +368,31 @@ async function refreshApi() {
       minisRes,
       skinsRes,
       noveltiesRes,
-      achievementsRes
+      achievementsRes,
+      recipesRes,
+      glidersRes,
+      outfitsRes,
+      emotesRes
     ] = await Promise.all([
       fetch(`https://api.guildwars2.com/v2/account/minis?access_token=${apiKey}`),
       fetch(`https://api.guildwars2.com/v2/account/skins?access_token=${apiKey}`),
       fetch(`https://api.guildwars2.com/v2/account/novelties?access_token=${apiKey}`),
-      fetch(`https://api.guildwars2.com/v2/account/achievements?access_token=${apiKey}`)
+      fetch(`https://api.guildwars2.com/v2/account/achievements?access_token=${apiKey}`),
+      fetch(`https://api.guildwars2.com/v2/account/recipes?access_token=${apiKey}`),
+      fetch(`https://api.guildwars2.com/v2/account/gliders?access_token=${apiKey}`),
+      fetch(`https://api.guildwars2.com/v2/account/outfits?access_token=${apiKey}`),
+      fetch(`https://api.guildwars2.com/v2/account/emotes?access_token=${apiKey}`)
     ]);
 
       if (
           minisRes.status !== 200 ||
           skinsRes.status !== 200 ||
           noveltiesRes.status !== 200 ||
-          achievementsRes.status !== 200
+          achievementsRes.status !== 200 ||
+          recipesRes.status !== 200 ||
+          glidersRes.status !== 200 ||
+          outfitsRes.status !== 200 ||
+          emotesRes.status !== 200
       ) {
 
           setApiKeyValid(false);
@@ -356,16 +425,28 @@ async function refreshApi() {
     const achievements = achievementData
       .filter(x => x.done || isAchievementCapEarned(x))
       .map(x => x.id);
+    const recipes = await recipesRes.json();
+    const gliders = await glidersRes.json();
+    const outfits = await outfitsRes.json();
+    const emotes = await emotesRes.json();
 
     accountState.minis = minis;
     accountState.skins = skins;
     accountState.novelties = novelties;
     accountState.achievements = achievements;
+    accountState.recipes = recipes;
+    accountState.gliders = gliders;
+    accountState.outfits = outfits;
+    accountState.emotes = emotes;
 
     localStorage.setItem(STORAGE_KEYS.minis, JSON.stringify(minis));
     localStorage.setItem(STORAGE_KEYS.skins, JSON.stringify(skins));
     localStorage.setItem(STORAGE_KEYS.novelties, JSON.stringify(novelties));
     localStorage.setItem(STORAGE_KEYS.achievements, JSON.stringify(achievements));
+    localStorage.setItem(STORAGE_KEYS.recipes, JSON.stringify(recipes));
+    localStorage.setItem(STORAGE_KEYS.gliders, JSON.stringify(gliders));
+    localStorage.setItem(STORAGE_KEYS.outfits, JSON.stringify(outfits));
+    localStorage.setItem(STORAGE_KEYS.emotes, JSON.stringify(emotes));
 
     localStorage.setItem(STORAGE_KEYS.lastRefresh, Date.now().toString());
 
@@ -495,3 +576,4 @@ copyButton?.addEventListener("click", async () => {
         copyText.textContent = "Failed to copy";
     }
 });
+

@@ -8,13 +8,14 @@ namespace Gw2Unlocks.CacheInspector.Host;
 internal enum DataSet
 {
     Achievements, AchievementCategories, Items, Skins, Miniatures, Novelties, Titles,
+    Gliders, Outfits, Emotes,
     Wiki, Graph, Zones
 }
 
 internal sealed class LookupSettings : CommandSettings
 {
     [CommandArgument(0, "<dataset>")]
-    [Description("Achievements, AchievementCategories, Items, Skins, Miniatures, Novelties, Titles, Wiki, Graph, Zones.")]
+    [Description("Achievements, AchievementCategories, Items, Skins, Miniatures, Novelties, Titles, Gliders, Outfits, Emotes, Wiki, Graph, Zones.")]
     public DataSet DataSet { get; set; }
 
     [CommandArgument(1, "<query>")]

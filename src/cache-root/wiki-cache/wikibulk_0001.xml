@@ -1,5 +1,686 @@
 <?xml version="1.0" encoding="UTF-8"?><mediawiki xmlns="http://www.mediawiki.org/xml/export-0.11/">
 <page xmlns="http://www.mediawiki.org/xml/export-0.11/">
+    <title>Dungeon</title>
+    <ns>0</ns>
+    <id>7493</id>
+    <revision>
+      <id>3192224</id>
+      <parentid>3192222</parentid>
+      <timestamp>2026-09-09T18:33:46Z</timestamp>
+      <contributor>
+        <username>Tery3065</username>
+        <id>270948</id>
+      </contributor>
+      <minor />
+      <comment>/* Special event dungeons */</comment>
+      <origin>3192224</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="22963" sha1="6uqyi98qtbpvep9sh1au9ln0e5s8qfh" xml:space="preserve">[[File:Dungeon Locations.jpg|thumb|300px|Dungeon locations in ''[[Guild Wars 2]]''.]]
+&lt;div style="float:right;clear:right;margin:0 0 10px 10px"&gt;
+{{Mail
+| icon = dungeon
+| sender = Your Herald
+| subject = An Introduction
+| content = Greetings,&lt;br&gt;&lt;br&gt;
+We have not met, but I have long been a follower of your exploits. I am a collector of tales of great daring and heroism, and your name has come up increasingly in the stories that have been reported to me. I've spoken with your mentor, and the suggestion was made that I contact you and add your stories to my collection.&lt;br&gt;&lt;br&gt;
+Your mentor was a member of an adventuring group known as Destiny's Edge. They were legendary heroes, but went their separate ways about five years ago, for reasons I have yet to discover - none have chosen to share that story with me. If you discover the nature of their separation, I would be most appreciative.&lt;br&gt;&lt;br&gt;
+Thank you for your help in this, and I will get in contact with you in the future, and hope to keep you in touch with the whereabouts of your mentor and the other members of Destiny's Edge.&lt;br&gt;&lt;br&gt;
+Through this I will remain,&lt;br&gt;&lt;br&gt;
+[[Lady Camilla|Your Herald]]
+| nosign = y
+}}
+&lt;/div&gt;
+[[Dungeon]]s are optional [[Player versus Environment|PvE]] [[instance]]s, each with their own story, designed for [[party|parties]] of five players. There are eight dungeons in the game.
+
+Dungeons feature a '''story mode''', which focuses on the story of the [[Destiny's Edge]] group and runs parallel to the player's [[Personal Story]]; and an '''explorable mode''', unlocked after completing story mode. The eighth dungeon, [[The Ruined City of Arah]], doesn't have a story mode, as it's actually the last chapter of the Personal Story.
+
+Dungeons are intended for groups of five players and are balanced around it, but allow for fewer players, and some skilled players solo them, though this may require unintended paths and skips to do. Characters are dynamically leveled down to the level appropriate for the relevant story or explorable mode of each dungeon. 
+
+A [[waypoint]] can be found outside the start of each dungeon in the open world, as well as an NPC giving [[Dungeon information|basic information]]. All dungeons can also be accessed through [[Dungeon Transportation]] NPC in [[Lion's Arch]]. More waypoints will appear inside the dungeon as players progress, which may be used for quick travel or revival if all party members are [[Combat#Combat mode|out of combat]]. Additionally, dungeons retain a basic level of persistence during the instance: creatures do not respawn, and characters may join or rejoin a party in progress within a dungeon. 
+
+Players will be notified via [[mail]] by their [[Lady Camilla|"Herald"]] as they reach the suggested level for each dungeon, as well as another notification about the dungeon's explorable mode once they complete the dungeon's story mode.
+
+Dungeon development was discontinued in favor of [[Fractals of the Mists]], a special type of level 80 dungeon that consists of an array of encounters called fractals. These fractals take place in the [[The Mists|Mists]] and explore notable events of the past and future, and feature scaling difficulty.
+
+== Map icons ==
+: [[File:Dungeon (map icon).png|Dungeon entrance]] - Dungeon entrance 
+: [[File:Contested dungeon (map icon).png|Contested dungeon entrance]] - Contested dungeon entrance
+
+== Story mode ==
+Story mode is available to all players that meet the level required for the dungeon. Story mode focuses on filling players on the story of [[Destiny's Edge]], told through cut scenes and cinematic dialogue. One or two members of Destiny's Edge join the party to guide them through a largely linear dungeon story. This mode is relatively straightforward for a pick-up-group to complete. Personal storylines and dungeon story modes are parallel: the dungeon story mode does not affect a player's progression of their personal story nor the outcome of the story, but still occurs at the same time storywise. The storylines converge just for the last mission which takes place in [[The Ruined City of Arah]]. Completing the story mode of a dungeon for the first time will result in a letter in your mailbox, along with a headpiece reward. Story mode completion is character-based, not account-based, and so must be redone for each new character.
+
+====Personal Story involvement====
+As the [[Pact Commander|player character]] levels up and lives adventures in Tyria, so too do the members of [[Destiny's Edge]]. Their story is told through story mode dungeons. Whenever the player reaches the appropriate level for a new dungeon, they will receive a mail from their [[Lady Camilla|Herald]]. These mails will brief the player about the events of the dungeon, encouraging them to join and help their allies of Destiny's Edge accomplish their goals. If the player has been following the story, their mentor will also send them mails during the story to keep them posted on their adventures.
+
+The story of the dungeons takes place during the following Personal Story events:
+* Ascalonian Catacombs (unlocked at level 30) - takes place as the player joins an [[Orders of Tyria|Order of Tyria]].
+* Caudecus's Manor (unlocked at level 40) - takes place after recruiting more races of Tyria to fight against the dragons.
+* Twilight Arbor (unlocked at level 50) - takes place during the events in Claw Island.
+* Sorrow's Embrace (unlocked at level 60) - takes place during the creation of the Pact.
+* Citadel of Flame (unlocked at level 70) - takes place during the creation of the Pact
+* Honor of the Waves (unlocked at level 76) - takes place as the Pact begins their fight.
+* Crucible of Eternity (unlocked at level 78) - takes place as the Pact begins their fight.
+* The Ruined City of Arah - doesn't have a story mode, its events happen as part of the final chapter of the Personal Story, while the explorable mode happens after completing the story.
+
+=== Rewards ===
+Story mode does '''not''' reward the dungeon currency ([[Tale of Dungeon Delving|Tales of Dungeon Delving]]), but it does reward some coin:
+
+Completing any story path rewards {{coin|13.00}}, plus an additional {{coin|50.00}} if it's the first daily completion of that story path.
+
+Completing a story path for the first time per character also rewards an additional amount of gold, namely an extra {{coin|13.00}}, and a head armor piece of rare quality.
+
+== Explorable mode ==
+{{anchor|Explorable mode}}
+[[File:dungeon vendor.jpg|thumb|Dungeon Vendor]]
+Explorable mode is available for characters that have completed story mode on that character and meet the level requirement. Only the player that opens the dungeon instance needs to meet these requirements. Explorable mode deals with the aftermath of the events in story mode. The explorable dungeon story is told with fewer cutscenes and little cinematic dialogue, and the player party is no longer joined by members of Destiny's Edge but by other local NPC. The player is presented with at least three different paths to play through for each dungeon. The party votes on the option they will take through the dungeon and the majority determines which path they take. This mode requires significantly more coordination between team members and so is far more difficult than story mode.
+
+Completing a dungeon in explorable mode awards [[coin]], experience, and dungeon [[Currency|currency]] ([[Tale of Dungeon Delving|Tales of Dungeon Delving]]). This currency can be used at a [[Dungeon Merchant]] to buy weapons, armor, runes, and other items. Each dungeon has its own unique weapon and armor set modeled according to the theme of the dungeon. These items are no more powerful than items which can be gained doing other activities in-game; the exotic sets are equal to the level 80 exotic crafted sets.
+
+=== Rewards ===
+Completing an explorable path rewards {{token|Tale of Dungeon Delving|20|l=y}}, {{coin|2600}}, 20 [[Empyreal Fragment]]s, experience equal to 70% of the character's level, a [[Piece of Rare Unidentified Gear]], and karma.
+
+Completing 8 different paths (including story paths) awards the repeatable [[Dungeon Frequenter]] achievement with {{coin|50000}} and one {{item icon|Chest of Dungeoneering}}, which contains an additional {{token|Tale of Dungeon Delving|150|l=y}}.
+
+Completing an explorable path for the first time each day rewards an additional bonus chest which contains:
+&lt;div id="dungeoncontrol"&gt;&lt;/div&gt;
+{| {{STDT|item}}
+|- style="vertical-align:bottom;"
+! width="150" | Dungeon 
+! width="150" | Path
+! width="90" | Coin reward
+! width="90" | Token reward
+|- id="dungeons-hodgins"
+| rowspan="3" style="text-align:left;" | [[Ascalonian Catacombs]]
+| Path 1 - Hodgins
+| {{coin|5000}}
+| 80 {{Token|Tale of Dungeon Delving}}
+|- id="dungeons-detha"
+| Path 2 - Detha
+| {{coin|5000}}
+| 80 {{Token|Tale of Dungeon Delving}}
+|- id="dungeons-tzark"
+| Path 3 - Tzark
+| {{coin|5000}}
+| 80 {{Token|Tale of Dungeon Delving}}
+
+|- id="dungeons-asura"
+| rowspan="3" style="text-align:left;" | [[Caudecus's Manor]]
+| Path 1 - Asura
+| {{coin|3500}}
+| 80 {{Token|Tale of Dungeon Delving}}
+|- id="dungeons-seraph"
+| Path 2 - Seraph
+| {{coin|3500}}
+| 80 {{Token|Tale of Dungeon Delving}}
+|- id="dungeons-butler"
+| Path 3 - Butler
+| {{coin|3500}}
+| 80 {{Token|Tale of Dungeon Delving}}
+
+|- id="dungeons-leurent"
+| rowspan="3" style="text-align:left;" | [[Twilight Arbor]]
+| Path 1 - [[Twilight Arbor (explorable)#Leurent's Path (up)|Leurent]] (Up)
+| {{coin|3500}}
+| 80 {{Token|Tale of Dungeon Delving}}
+|- id="dungeons-vevina"
+|Path 2 - [[Twilight Arbor (explorable)#Vevina's Path (forward)|Vevina]] (Forward)
+| {{coin|3500}}
+| 80 {{Token|Tale of Dungeon Delving}}
+|- id="dungeons-aetherpath"
+| Path 3 - [[Twilight Arbor (explorable)#Aetherpath 2|Aetherpath]]
+| {{coin|6600}}
+| 80 {{Token|Tale of Dungeon Delving}}
+
+|- id="dungeons-fergg"
+| rowspan="3" style="text-align:left;" | [[Sorrow's Embrace]]
+| Path 1 - Fergg
+| {{coin|3500}}
+| 80 {{Token|Tale of Dungeon Delving}}
+|- id="dungeons-rasalov" &lt;!-- api bug named incorrectly --&gt;
+| Path 2 - Rasolov
+| {{coin|3500}}
+| 80 {{Token|Tale of Dungeon Delving}}
+|- id="dungeons-koptev"
+| Path 3 - Koptev
+| {{coin|3500}}
+| 80 {{Token|Tale of Dungeon Delving}}
+
+|- id="dungeons-ferrah"
+| rowspan="3" style="text-align:left;" | [[Citadel of Flame]]
+| Path 1 - Ferrah
+| {{coin|3500}}
+| 80 {{Token|Tale of Dungeon Delving}}
+|- id="dungeons-magg"
+| Path 2 - Magg
+| {{coin|3500}}
+| 80 {{Token|Tale of Dungeon Delving}}
+|- id="dungeons-rhiannon"
+| Path 3 - Rhiannon
+| {{coin|3500}}
+| 80 {{Token|Tale of Dungeon Delving}}
+
+|- id="dungeons-butcher"
+| rowspan="3" style="text-align:left;" | [[Honor of the Waves]]
+| Path 1 - Butcher
+| {{coin|3500}}
+| 80 {{Token|Tale of Dungeon Delving}}
+|- id="dungeons-plunderer"
+| Path 2 - Plunderer
+| {{coin|3500}}
+| 80 {{Token|Tale of Dungeon Delving}}
+|- id="dungeons-zealot"
+| Path 3 - Zealot
+| {{coin|3500}}
+| 80 {{Token|Tale of Dungeon Delving}}
+
+|- id="dungeons-submarine"
+| rowspan="3" style="text-align:left;" | [[Crucible of Eternity]]
+| Path 1 - Submarine
+| {{coin|3500}}
+| 80 {{Token|Tale of Dungeon Delving}}
+|- id="dungeons-teleporter"
+| Path 2 - Teleporter
+| {{coin|3500}}
+| 80 {{Token|Tale of Dungeon Delving}}
+|- id="dungeons-front_door"
+| Path 3 - Front door
+| {{coin|3500}}
+| 80 {{Token|Tale of Dungeon Delving}}
+
+|- id="dungeons-jotun"
+| rowspan="4" style="text-align:left;" | [[The Ruined City of Arah]]
+| Path 1 - Jotun
+| {{coin|10000}}
+| 80 {{Token|Tale of Dungeon Delving}}
+|- id="dungeons-mursaat"
+| Path 2 - Mursaat
+| {{coin|10500}}
+| 80 {{Token|Tale of Dungeon Delving}}
+|- id="dungeons-forgotten"
+| Path 3 - Forgotten
+| {{coin|5000}}
+| 80 {{Token|Tale of Dungeon Delving}}
+|- id="dungeons-seer"
+| Path 4 - Seer
+| {{coin|10000}}
+| 80 {{Token|Tale of Dungeon Delving}}
+|}
+{{Account dungeons widget}}
+
+== Mini-dungeons ==
+[[Mini-dungeon]]s are persistent open world dungeons. [[Jumping puzzle]]s are included in the definition of a mini-dungeon. Some mini-dungeons become available only after an event chain is completed.
+
+== List of dungeons ==
+Characters are [[Dynamic level adjustment|dynamically leveled]] up or down to the level appropriate for the relevant story or explorable mode, except for [[Fractals of the Mists]], for which characters are always boosted to level 80. A nearby waypoint increases accessibility. [[Dungeon information|Dungeon instructors]] at the entrance may explain the basics of each dungeon.
+
+Additionally the [[Dungeon Transportation]] NPC can provide instant access to any dungeon from [[Fort Marriner]] in [[Lion's Arch]].
+
+{| {{STDT|sortable pve}}
+! width="150" | Dungeon 
+! Story&lt;br&gt;Level 
+! Explorable&lt;br&gt;Level 
+! Location
+! Waypoint
+! Foe types &lt;ref&gt;[https://forum-en.gw2archive.eu/forum/game/dungeons/Guide-to-Sigils-and-Potions-in-Dungeons Guide to Sigils and Potions in Dungeons], a post on the official forums discussing foe types &amp; sigils.&lt;/ref&gt;
+! Day or&lt;br&gt;Night &lt;sup&gt;2&lt;/sup&gt;
+! Suitable utility items
+|-
+| [[Ascalonian Catacombs]]
+| style="text-align:center;" | 30
+| style="text-align:center;" | 35
+| [[Phasmatis Corridor]]&lt;br&gt;&lt;small&gt;[[Plains of Ashford]]&lt;/small&gt;
+| {{waypoint|Ascalonian Catacombs Waypoint}}
+| [[Ghost]]s
+| Night (22:00)
+| {{item icon|Extended Potion of Ghost Slaying}}&lt;sup&gt;3&lt;/sup&gt;
+|-
+| [[Caudecus's Manor]]
+| style="text-align:center;" | 40
+| style="text-align:center;" | 45
+| [[Shire of Beetletun]]&lt;br&gt;&lt;small&gt;[[Queensdale]]&lt;/small&gt;
+| {{waypoint|Beetletun Waypoint}}
+| [[Bandit]]s
+| Day (07:00)
+| {{item icon|Powerful Potion of Outlaw Slaying}}
+|-
+| [[Twilight Arbor]]
+| style="text-align:center;" | 50
+| style="text-align:center;" | Nightmare Court paths: 55
+Aetherblade path: 80
+| [[Wychmire Swamp]]&lt;br&gt;&lt;small&gt;[[Caledon Forest]]&lt;/small&gt;
+| {{waypoint|1345}}
+| [[Nightmare Court]], [[Aetherblades]]
+| Night (22:00)
+| {{item icon|Powerful Potion of Nightmare Court Slaying}}&lt;br&gt;{{item icon|Powerful Potion of Slaying Scarlet's Armies}}
+|-
+| [[Sorrow's Embrace]]
+| style="text-align:center;" | 60
+| style="text-align:center;" | 65
+| [[Tribulation Rift]]&lt;br&gt;&lt;small&gt;[[Dredgehaunt Cliffs]]&lt;/small&gt;
+| {{waypoint|598}}
+| [[Dredge]], [[Inquest]]
+| Night (22:00)
+| {{item icon|Powerful Potion of Dredge Slaying}}&lt;br&gt;{{item icon|Powerful Potion of Inquest Slaying}}
+|-
+| [[Citadel of Flame]]
+| style="text-align:center;" | 70
+| style="text-align:center;" | 75
+| [[The Baelfire]]&lt;br&gt;&lt;small&gt;[[Fireheart Rise]]&lt;/small&gt;
+| {{waypoint|The Citadel of Flame Waypoint}}
+| [[Flame Legion]], [[Elemental]]s
+| Night (22:00)
+| {{item icon|Powerful Potion of Flame Legion Slaying}}
+|-
+| [[Honor of the Waves]]
+| style="text-align:center;" | 76
+| style="text-align:center;" | 80
+| [[Watchful Fjord]]&lt;br&gt;&lt;small&gt;[[Frostgorge Sound]]&lt;/small&gt;
+| {{waypoint|Honor of the Waves Waypoint}}
+| [[Icebrood]], [[Sons of Svanir]]
+| Day (07:00)
+| {{item icon|Powerful Potion of Ice Brood Slaying}}&lt;br&gt;{{item icon|Powerful Potion of Sons of Svanir Slaying}}
+|-
+| [[Crucible of Eternity]]
+| style="text-align:center;" | 78
+| style="text-align:center;" | 80
+| [[Infinite Coil Reactor]]&lt;br&gt;&lt;small&gt;[[Mount Maelstrom]]&lt;/small&gt;
+| {{waypoint|Crucible of Eternity Waypoint}}
+| [[Destroyer]]s, [[Icebrood]], [[Inquest]], [[Risen]], [[Outlaw]]
+| Story: Day (12:00)
+Explorable: Night (22:00)
+| {{item icon|Powerful Potion of Undead Slaying}}&lt;br&gt;{{item icon|Powerful Potion of Inquest Slaying}}
+|-
+| [[The Ruined City of Arah]]
+| style="text-align:center;" | &lt;small&gt;NA&lt;/small&gt;
+| style="text-align:center;" | 80
+| [[The Narthex]]&lt;br&gt;&lt;small&gt;[[Cursed Shore]]&lt;/small&gt;
+| {{waypoint|Arah Waypoint}}
+| [[Risen]]
+| Day (07:00)
+| {{item icon|Powerful Potion of Undead Slaying}}
+|-
+| [[Fractals of the Mists]]
+| style="text-align:center;" | &lt;small&gt;NA&lt;/small&gt;
+| style="text-align:center;" | 80
+| [[Fort Marriner]]&lt;br&gt;&lt;small&gt;[[Lion's Arch]]&lt;/small&gt;
+| {{waypoint|Fort Marriner Waypoint}}
+| Varies with the fractal
+| Varies
+| {{item icon|Powerful Potion of Dredge Slaying}}&lt;br&gt;{{item icon|Powerful Potion of Elemental Slaying}}&lt;br&gt;{{item icon|Powerful Potion of Grawl Slaying}}&lt;br&gt;{{item icon|Powerful Potion of Krait Slaying}}&lt;br&gt;{{item icon|Powerful Potion of Inquest Slaying}}&lt;br&gt;{{item icon|Powerful Potion of Outlaw Slaying}}&lt;br&gt;{{item icon|Powerful Potion of Slaying Scarlet's Armies}}&lt;br&gt;{{item icon|Powerful Potion of Sons of Svanir Slaying}}
+|}
+
+: &lt;sup&gt;1&lt;/sup&gt; A partial list of foe types is available for those interested in using appropriate [[nourishment]] and/or [[sigil]]s.
+: &lt;sup&gt;2&lt;/sup&gt; Only relevant for the purpose of [[Sigil of the Night]].
+: &lt;sup&gt;3&lt;/sup&gt; Works against [[Graveling Hatchling]]s and [[Spider Hatchling]]s too.
+
+=== Special event dungeons ===
+Characters are scaled to level 80 for these instances which are only available during the relevant special event.
+
+{| {{STDT|sortable pve}}
+|- style="vertical-align:bottom;"
+! width="150" | Dungeon 
+! width="175" | Initial Event / Duration
+! width="140" | Location
+! Availability
+|-
+| [[Ascent to Madness]]
+| [[Shadow of the Mad King]]&lt;br&gt;&lt;small&gt;October 28–31, 2012&lt;/small&gt;
+| [[Grand Piazza]]&lt;br&gt;&lt;small&gt;[[Lion's Arch]]&lt;/small&gt;
+| Seasonal — [[Halloween]]
+|-
+| [[Tixx's Infinirarium]]
+| [[Wintersday: The Wondrous Workshop of Toymaker Tixx]]&lt;br&gt;&lt;small&gt;December 15, 2012 – January 3, 2013&lt;/small&gt;
+| See [[Wintersday: The Wondrous Workshop of Toymaker Tixx#Tixx's schedule|Tixx's schedule]] &lt;br&gt;&lt;small&gt;for 2012&lt;/small&gt;; &lt;br&gt;[[The Crown Pavilion]] &lt;br&gt;&lt;small&gt;2013-Present&lt;/small&gt;
+| Seasonal — [[Wintersday]]
+|-
+| [[Super Adventure Box]]
+| [[April Fools' Day 2013|April Fools' Day]]&lt;br&gt;&lt;small&gt;April 1–30, 2013
+| [[Creator's Commons]]&lt;br&gt;&lt;small&gt;[[Rata Sum]]&lt;/small&gt;
+| Seasonal — [[Super Adventure Festival]]
+|-
+| [[Molten Facility]]
+| [[Flame and Frost/archive|Flame and Frost]]&lt;br&gt;&lt;small&gt;April 30 – May 12, 2013&lt;/small&gt;
+| ''See [[Molten Facility#Entrance|Entrance]]''
+| Historical — Superseded with [[Molten Furnace]]
+|-
+| [[Canach's Lair (dungeon)|Canach's Lair]]
+| [[Last Stand at Southsun]]&lt;br&gt;&lt;small&gt;May 28 – June 11, 2013&lt;/small&gt;
+| [[Bakestone Cavern]]&lt;br&gt;&lt;small&gt;[[Southsun Cove]]&lt;/small&gt;
+| Historical — Superseded with [[Canach's Lair]]
+|-
+| [[Aetherblade Retreat]]
+| [[Sky Pirates of Tyria]]&lt;br&gt;&lt;small&gt;June 25 – July 9, 2013&lt;/small&gt;
+| [[Sanctum Harbor]]&lt;br&gt;&lt;small&gt;[[Lion's Arch]]&lt;/small&gt;
+| Historical — Superseded with [[The Aetherblade Retreat]]
+|-
+| [[Scarlet's Playhouse/historical|Scarlet's Playhouse]]
+| [[Clockwork Chaos]]&lt;br&gt;&lt;small&gt;August 20 – October 1, 2013&lt;/small&gt;
+| [[The Crown Pavilion (zone)|The Crown Pavilion]]&lt;br&gt;&lt;small&gt;[[Divinity's Reach]]&lt;/small&gt;
+| Historical — Superseded with [[Scarlet's Playhouse]]
+|}
+
+== List of dungeon vendors ==
+{{main|Dungeon Merchant}}
+{{NPC service table|Dungeon Merchant}}
+
+== Related achievements ==
+* {{Achievement|Hobby Dungeon Explorer}}
+* {{Achievement|Dungeon Master}}
+* {{achievement|Dungeon Frequenter}}
+* {{achievement|Catacombs Conqueror}}
+* {{achievement|Manor Magnate}}
+* {{achievement|Twilight's Idol}}
+* {{achievement|Sorrow's Subjugator}}
+* {{achievement|Citadel of Flame Foe}}
+* {{achievement|Sanctuary Savior}}
+* {{achievement|Eternity's Epitome}}
+* {{achievement|Master of Arah}}
+* {{achievement|Dungeoneer}}
+** {{achievement|Ascalonian Catacombs Collector}}
+** {{achievement|Caudecus's Manor Collector}}
+** {{achievement|Twilight Arbor Collector}}
+** {{achievement|Sorrow's Embrace Collector}}
+** {{achievement|Citadel of Flame Collector}}
+** {{achievement|Honor of the Waves Collector}}
+** {{achievement|Crucible of Eternity Collector}}
+** {{achievement|The Ruined City of Arah Collector}}
+
+== Notes ==
+* Once the dungeon instance has been created, all party members in the [[zone]] are prompted to join their party in explorable mode if they arrive in the zone where the dungeon entrance exists or if they join the party after it has already entered the dungeon. They also receive the prompt if they travel to a different [[waypoint]] within the zone if they rejected the prompt previously.
+* It is possible for a character to enter a dungeon in explorable mode without having completed story mode if another player in the party who has completed story mode creates the instance.
+* There are a total of 32 different dungeon paths across the eight dungeons in the game, including story and explorable modes.
+* The entrances to [[Citadel of Flame]], [[Crucible of Eternity]] and [[The Ruined City of Arah]] in their respective maps can become contested, preventing parties from beginning either story or exploration mode, though members can enter dungeons in progress. 
+** Completing the pertaining event chain for that dungeon will allow access for a given amount of time before needing to be defended or recaptured.
+** [[Dungeon Transportation]] in [[Lion's Arch]] can be used regardless.
+* Dungeons offer a repair anvil, typically near the entrance.
+* Each dungeon has its own set time of day, during which its events unfold; they do not follow the game's normal cycle of night and day — some are day and some are night.&lt;ref&gt;[https://forum-en.gw2archive.eu/forum/game/dungeons/Does-AC-CoF-exp-dungeons-take-place-at-night/first#post1163481 Dungeon Day and Night], [[Robert Hrouda]] commenting on the permanent time of day in dungeons.&lt;/ref&gt;
+* Following the [[September 2014 Feature Pack]], Dungeons no longer have an instance owner. The instance only closes when all players have left the instance.
+* The [[Game updates/2022-06-07|June 7th, 2022 game update]] introduced requirements of completing paths to be able to purchase items from Dungeon Merchants. Accounts that have already completed any story mode or explorable path before this change became exempt from this requirement.
+
+== Trivia ==
+* Upon successfully completing a dungeon path, your character has a chance to shout one of the following lines:
+''Please note that "?" only denotes that the voice lines for that particular race and gender combination have not been added to the wiki, but are fully implemented and can be heard in game. Any player can contribute to the wiki and help fill this table.''
+{{Character quote
+| asura_male = Couldn't have done it without me.&lt;br&gt;Of course we made it, I knew the way through.&lt;br&gt;That was both interesting and instructive.
+| asura_female = Another satisfying adventure.&lt;br&gt;Done and done.&lt;br&gt;Knew I'd make it through.
+| charr_male = That was fun. Let's do it again.&lt;br&gt;What an adventure.&lt;br&gt;?
+| charr_female = It was a worthy challenge.&lt;br&gt;Made it.&lt;br&gt;?
+| human_male = An experience to remember!&lt;br&gt;?&lt;br&gt;?
+| human_female = ?&lt;br&gt;?&lt;br&gt;?
+| norn_male = Made it!&lt;br&gt;My adventure!&lt;br&gt;The bards will sing of this.
+| norn_female = A worthy challenge.&lt;br&gt;I'd do that again.&lt;br&gt; What's next?
+| sylvari_male = Now that was fun. Can we go again?&lt;br&gt;They'll sing our names for centuries!&lt;br&gt;We were amazing! Woo!
+| sylvari_female = Can we do that again?&lt;br&gt;We did it! Yay!&lt;br&gt;We'll go down in history.
+}}
+
+== References ==
+&lt;references/&gt;
+
+{{dungeon nav}}
+{{Instanced PvE content nav}}
+[[Category:Dungeons|*]]
+[[Category:Locations|Dungeon]]
+[[de:Verlies]]
+[[es:Mazmorra]]
+[[fr:Donjon]]</text>
+      <sha1>6uqyi98qtbpvep9sh1au9ln0e5s8qfh</sha1>
+    </revision>
+  </page>
+<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
+    <title>Dungeon Armor Container</title>
+    <ns>0</ns>
+    <id>394908</id>
+    <revision>
+      <id>3065205</id>
+      <parentid>2952837</parentid>
+      <timestamp>2025-11-18T22:17:18Z</timestamp>
+      <contributor>
+        <username>BuffsEverywhere</username>
+        <id>214162</id>
+      </contributor>
+      <minor />
+      <origin>3065205</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="895" sha1="jw7wcx64l3bqfwc637h73rve97aar0l" xml:space="preserve">{{Item infobox
+| icon = Bladed Armor Box.png
+| type = Container
+| rarity = Basic
+| bound = Account
+| id = 104545
+}}
+
+== Acquisition ==
+{{Contained in reward track}}
+
+== Contents ==
+* {{contains|Mystic Clover|qty=2|chance=Guaranteed}}
+* Choose one of the following:
+** {{contains|Catacombs Armor Box|chance=Choice}}
+** {{contains|Arah Armor Box|chance=Choice}}
+** {{contains|Caudecus's Armor Box|chance=Choice}}
+** {{contains|Sorrow's Embrace Armor Box|chance=Choice}}
+** {{contains|Twilight Arbor Armor Box|chance=Choice}}
+** {{contains|Honor of the Waves Armor Box|chance=Choice}}
+** {{contains|Baelfire's Armor Box|chance=Choice}}
+** {{contains|Crucible of Eternity Armor Box|chance=Choice}}
+
+== Notes ==
+* To check what skins you have already unlocked, see: [[Dungeon unlocks]]
+
+[[de:Verlies-Rüstungsbehälter]]
+[[es:Contenedor de armaduras de mazmorra]]
+[[fr:Conteneur d'armures de donjon]]</text>
+      <sha1>jw7wcx64l3bqfwc637h73rve97aar0l</sha1>
+    </revision>
+  </page>
+<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
+    <title>Dungeon Armor and Weapons</title>
+    <ns>0</ns>
+    <id>152407</id>
+    <revision>
+      <id>3172825</id>
+      <parentid>2770683</parentid>
+      <timestamp>2026-07-23T09:09:42Z</timestamp>
+      <contributor>
+        <username>Tery3065</username>
+        <id>270948</id>
+      </contributor>
+      <minor />
+      <origin>3172825</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="5911" sha1="cn9b1l2cxzks1p74t5er548c0mn9l24" xml:space="preserve">{{NPC infobox
+| random = yes
+| location = Fort Marriner
+| race = Various
+| service = Dungeon merchant
+| coordinates = [49286.91, 32017.86]
+| image = Dungeon Armor and Weapons.jpg
+}}
+[[Dungeon Armor and Weapons]] is a vendor that trades [[dungeon]] [[Currency|currencies]] for [[weapon]]s, [[armor]], [[upgrade component]]s, and [[crafting material]]s.
+
+== Locations ==
+;[[Kryta]]
+* [[Lion's Arch]]
+** [[Fort Marriner]]
+
+;[[Maguuma Wastes]]
+* [[The Silverwastes]]
+** [[Camp Resolve]] &lt;small&gt;(Only if [[Donate bandit crests to requisition additional camp services]] has been completed and the Dungeon merchant selected)&lt;/small&gt;
+
+== Items offered ==
+{{inventory/dungeon merchant}}
+{| {{STDT|mech1}}
+! rowspan=2 | Armor sets (Overview)
+! rowspan=2 | Weapon sets
+! colspan=3 | Armor sets (By Type)
+|-class=line
+! Light
+! Medium
+! Heavy
+|-
+| [[Ascalonian Catacombs armor]]
+| [[Royal Ascalonian weapons]]
+| [[Ascalonian Performer armor]]
+| [[Ascalonian Sentry armor]]
+| [[Ascalonian Protector armor]]
+|-
+| [[Caudecus's Manor armor]]
+| [[Golden Wing weapons]]
+| [[Council Ministry armor]]
+| [[Council Watch armor]]
+| [[Council Guard armor]]
+|-
+| [[Twilight Arbor armor]]
+| [[Nightmare weapons]]
+| [[Nightmare Court armor (light)|Nightmare Court armor]]
+| [[Nightmare Court armor (medium)|Nightmare Court armor]]
+| [[Nightmare Court armor (heavy)|Nightmare Court armor]]
+|-
+| [[Sorrow's Embrace armor]]
+| [[Dark Asuran weapons]]
+| [[Forgeman armor (light)|Forgeman armor]]
+| [[Forgeman armor (medium)|Forgeman armor]]
+| [[Forgeman armor (heavy)|Forgeman armor]]
+|-
+| [[Citadel of Flame armor]]
+| [[Molten weapons]]
+| [[Flame Legion armor (light)|Flame Legion armor]]
+| [[Flame Legion armor (medium)|Flame Legion armor]]
+| [[Flame Legion armor (heavy)|Flame Legion armor]]
+|-
+| [[Honor of the Waves armor]]
+| [[Kodan weapons]]
+| [[Armor of Koda (light)|Armor of Koda]]
+| [[Armor of Koda (medium)|Armor of Koda]]
+| [[Armor of Koda (heavy)|Armor of Koda]]
+|-
+| [[Crucible of Eternity armor]]
+| [[Inquest weapons]]
+| [[Inquest armor (light)|Inquest armor]]
+| [[Inquest armor (medium)|Inquest armor]]
+| [[Inquest armor (heavy)|Inquest armor]]
+|-
+| [[The Ruined City of Arah armor]]
+| [[Weapons of the Dragon's Deep]]
+| [[Armor of the Lich]]
+| [[Accursed armor]]
+| [[Grasping Dead armor]]
+|}
+
+== Dialogue ==
+:Interested in trading for rare armor and weapon relics?
+:{{dialogue icon|more}} ''What weapons do you have?''
+::Here are all the weapons I have for trade.
+::{{dialogue icon|merchant}} ''Show me weapons from [[Ascalonian Catacombs]].''
+::{{dialogue icon|merchant}} ''Show me weapons from [[Caudecus's Manor]].''
+::{{dialogue icon|merchant}} ''Show me weapons from [[Twilight Arbor]].''
+::{{dialogue icon|merchant}} ''Show me weapons from [[Sorrow's Embrace]].''
+::{{dialogue icon|merchant}} ''Show me weapons from [[Citadel of Flame]].''
+::{{dialogue icon|merchant}} ''Show me weapons from [[Honor of the Waves]].''
+::{{dialogue icon|merchant}} ''Show me weapons from [[Crucible of Eternity]].''
+::{{dialogue icon|merchant}} ''Show me weapons from [[The Ruined City of Arah|Arah]].''
+:{{dialogue icon|more}} ''What armor do you have?''
+::Here are all the armor pieces I have for trade.
+::{{dialogue icon|merchant}} ''Show me armor from Ascalonian Catacombs.''
+::{{dialogue icon|merchant}} ''Show me armor from Caudecus's Manor.''
+::{{dialogue icon|merchant}} ''Show me armor from Twilight Arbor.''
+::{{dialogue icon|merchant}} ''Show me armor from Sorrow's Embrace.''
+::{{dialogue icon|merchant}} ''Show me armor from Citadel of Flame.''
+::{{dialogue icon|merchant}} ''Show me armor from Honor of the Waves.''
+::{{dialogue icon|merchant}} ''Show me armor from Crucible of Eternity.''
+::{{dialogue icon|merchant}} ''Show me armor from Arah.''
+:{{dialogue icon|more}} ''How do you come by all of these relics?''
+::Talk to [[Dungeon Historian|my companion]] about that. I just sell them.
+::{{dialogue icon|more}} ''Maybe later. What weapons do you have?'' &lt;small&gt;'''(same as "What weapons do you have" above)'''&lt;/small&gt;
+::{{dialogue icon|more}} ''Maybe later. What armor do you have?'' &lt;small&gt;'''(same as "What armor do you have?" above)'''&lt;/small&gt;
+::{{dialogue icon|end}} ''Good-bye.''
+:{{dialogue icon|end}} ''Not right now.''
+
+== Notes ==
+* The [[Game updates/2022-06-07|June 7th, 2022 game update]] introduced requirements of completing paths to be able to purchase items from Dungeon Merchants. Accounts that have already completed any story mode or explorable path before this change became exempt from this requirement.
+* The [[Game updates/2023-09-12|September 12, 2023 game update]] moved the vendor's location from the [[Vigil Centerhouse]] near the Aerodrome.
+
+== Trivia ==
+* Formerly called "Dungeon merchant" or "Dungeon vendor".
+* The appearance of this NPC is randomly selected from the uncombined versions each time a map instance is created. Each possible appearance wears armor and wields weapons associated with one of the dungeons.
+** Uncombined versions: [[Historian Symon]], [[Seraph Outfitter Eva]], [[Valiant Saeraquel]], [[Morro]], [[Officer Veros]], [[Ulof Sindersson]], [[Peacemaker Skrimm]], and [[Officer Hetja]].
+** Previous locations as individual NPCs:
+&lt;gallery heights="200px" widths="350px"&gt;
+Dungeon merchants in Lion's Arch (Fort Marriner).jpg|'''Lion's Arch''' ([[Memory of Old Lion's Arch|pre-Assault on Lion's Arch]])
+Vigil Keep Dungeon merchants.jpg|'''Vigil Keep''' (temporarily during the Assault on Lion's Arch)
+Dungeon merchants in Lion's Arch (Farshore Ward).jpg|'''Lion's Arch''' (post-assault; under construction)
+&lt;/gallery&gt;
+
+== See also ==
+* [[Equipment acquisition by stats#Dungeons|Equipment acquisition by stats (Dungeons)]]
+* [[Token]]
+* [[Vendor]]
+
+[[Category:Asura]]
+[[Category:Charr]]
+[[Category:Humans]]
+[[Category:Norn]]
+[[Category:Sylvari]]
+[[de:Verlies-Rüstungen und -Waffen]]
+[[es:Comerciante de armas y armaduras de mazmorra]]
+[[fr:Armes et armures de donjon]]</text>
+      <sha1>cn9b1l2cxzks1p74t5er548c0mn9l24</sha1>
+    </revision>
+  </page>
+<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
+    <title>Dungeon Armor and Weapons/Ascalonian Catacombs</title>
+    <ns>0</ns>
+    <id>152710</id>
+    <revision>
+      <id>2544265</id>
+      <parentid>2544235</parentid>
+      <timestamp>2022-06-08T20:29:44Z</timestamp>
+      <contributor>
+        <username>Medyro</username>
+        <id>204080</id>
+      </contributor>
+      <minor />
+      <comment>/* Notes */</comment>
+      <origin>2544265</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="1481" sha1="4376t4050m91c2qvwwjwhn68uv3tn3g" xml:space="preserve">{{TOCright}}
+This page shows all items offered by the [[Dungeon Armor and Weapons|dungeon merchant]] in [[Fort Marriner]] that are related to the [[Ascalonian Catacombs]] dungeon.
+
+== Available prefixes ==
+* The following [[Attribute combinations|prefixes]] can be selected for the {{rarity|rare|rare}} armor:
+{{prefix attribute table|Honed, Potent, Rejuvenating}}
+* The following prefixes can be selected for the {{rarity|exotic|exotic}} armor and weapons:
+{{prefix attribute table|Soldier's, Rampager's, Magi's}}
+
+== Items offered ==
+{{inventory|dungeon merchant Ascalonian Catacombs}}
+
+== Notes ==
+* The total cost of one rare armor set is {{token|Tale of Dungeon Delving|210}}.
+* The total cost of one exotic armor set is {{token|Tale of Dungeon Delving|1380}}.
+* All armor skins cost {{token|Tale of Dungeon Delving|4140}} in total.
+* All weapon skins cost {{token|Tale of Dungeon Delving|6150}} in total.
+* The exotic Soldier's and Magi's equipment can be salvaged into the corresponding [[Intricate Gossamer Insignia]] and [[Orichalcum Imbued Inscription]].
+
+{{Dungeon Armor and Weapons nav}}
+[[Category:Vendor merchandise subpages]]
+
+{{#set:
+ | Located in ={{#show: Dungeon Armor and Weapons|?Located in|link=none|sep=;}}|+sep=;
+ | Has canonical name=Dungeon Armor and Weapons
+ | Has game icon =File:Dungeon Merchant.png
+ | Is historical=N
+}}
+[[es:Comerciante de armas y armaduras de mazmorra/Catacumbas Ascalonianas]]
+[[fr:Armes et armures de donjon/Catacombes d'Ascalon]]</text>
+      <sha1>4376t4050m91c2qvwwjwhn68uv3tn3g</sha1>
+    </revision>
+  </page>
+<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
     <title>Dungeon Armor and Weapons/Ascalonian Catacombs/historical</title>
     <ns>0</ns>
     <id>355847</id>
@@ -142312,19 +142993,18 @@ File:Twisted Nightmare (biped form) render.jpg
     <ns>0</ns>
     <id>322538</id>
     <revision>
-      <id>3210624</id>
-      <parentid>3164387</parentid>
-      <timestamp>2026-10-09T17:25:02Z</timestamp>
+      <id>3215704</id>
+      <parentid>3215703</parentid>
+      <timestamp>2026-10-19T05:13:54Z</timestamp>
       <contributor>
-        <username>Ruby12</username>
-        <id>239584</id>
+        <username>Sunlion</username>
+        <id>225997</id>
       </contributor>
-      <minor />
       <comment>/* Combat abilities */</comment>
-      <origin>3210624</origin>
+      <origin>3215704</origin>
       <model>wikitext</model>
       <format>text/x-wiki</format>
-      <text bytes="911" sha1="th05wj9y6v1pguhg8yv96gy4579h31i" xml:space="preserve">{{NPC infobox
+      <text bytes="3293" sha1="iogfxrky1hnpcj3wkbdzfn3uuxsa6na" xml:space="preserve">{{NPC infobox
 | image = Unchained Acolyte (Canthan male 1).jpg
 | location = Old Kaineng
 | race = Risen
@@ -142352,16 +143032,30 @@ File:Twisted Nightmare (biped form) render.jpg
 * Cripples
 
 ;Effects
-{{defiance}}
+{{defiance}} &lt;br&gt;{{chain}}'''[[Stun (defiance)|Stun]]''' — {{skill description|Stun (defiance)}}
+* {{Resolution}} &lt;small&gt;(30s; reapplied every 10s)&lt;/small&gt; — {{effect description|Resolution}}
 
 ;Skills
-{{section-stub|npc|Missing skills and stolen skills}}
+;&lt;small&gt;Land&lt;/small&gt;
+* '''Staff Strike''' — Melee [[autoattack]]. Swings its staff in a [[Cleave|cleaving]], damaging strike that hits up to three targets.
+* '''Lightning Strike''' — Ranged [[autoattack]]. Raises a hand to the sky, causing moderately damaging lightning to strike in a small circular [[AoE]] placed at the target's feet.
+* '''Blighted Wave''' — Leans forward and raises a hand to the sky. After 3 seconds, six pools of putrid gunk surrounded by arms and eyes form on the ground around the acolyte. For each target present in the direction the acolyte is facing, one pool will instead be placed beneath that target's feet. These pools strike in circular [[AoE]]s, dealing moderate to heavy damage and applying {{Crippled}} &lt;small&gt;(3s)&lt;/small&gt; and {{Weakness}} &lt;small&gt;(3s)&lt;/small&gt;. Though the pools may overlap, a target can only take damage from one of them.
+* '''Lightning Storm''' — Slams their staff down on the ground, and raises a hand to the sky, causing a large circular indicator that follows a target to appear beneath them. After 2 seconds, a large circular [[AoE]] in the form of a lightning storm appears at the indicator's location. It has a duration of 10 seconds, and pulses moderate to heavy damage every second. 
+* '''Putrid Gust''' — Thrusts its staff forward, generating gusts of blighted wind at the locations of nearby targets. Each gust deals moderate to heavy damage, causes {{Knockback}}, and inflicts {{Poisoned}} &lt;small&gt;(3s)&lt;/small&gt; and {{Weakness}} &lt;small&gt;(3s)&lt;/small&gt;.
+
+;&lt;small&gt;Underwater&lt;/small&gt;
+* '''Claw''' — Ranged [[autoattack]]. Spins and slashes its spear while [[Evade|evading]] attacks, causing necrotic claws to rake over a target. Deals damage and applies {{Bleeding}} &lt;small&gt;(6s)&lt;/small&gt;.
+* '''Flurry of Bites''' — Stabs its spear forward repeatedly. On the final stab, a set of teeth appears and bites down on the target, [[Life stealing|stealing life]] from them for it. Only the bite deals any damage; the stabbing motions are harmless.
+* '''Ride the Plague''' — [[Leap|Rapidly moves]] in a direction while enveloped in a shroud of darkness, evading attacks. Deals moderate to heavy damage to targets it passes through.
+
+;Stolen skills
+{{section-stub|npc|missing stolen skills}}
 
 {{creature nav}}
 
 [[de:Elite Entfesselter Akolyth]]
 [[es:Acólito desencadenado de élite]]</text>
-      <sha1>th05wj9y6v1pguhg8yv96gy4579h31i</sha1>
+      <sha1>iogfxrky1hnpcj3wkbdzfn3uuxsa6na</sha1>
     </revision>
   </page>
 <page xmlns="http://www.mediawiki.org/xml/export-0.11/">
@@ -142642,54 +143336,79 @@ File:Twisted Nightmare (biped form) render.jpg
     <ns>0</ns>
     <id>349878</id>
     <revision>
-      <id>3210641</id>
-      <parentid>3164366</parentid>
-      <timestamp>2026-10-09T17:30:52Z</timestamp>
+      <id>3215714</id>
+      <parentid>3215690</parentid>
+      <timestamp>2026-10-19T06:17:10Z</timestamp>
       <contributor>
-        <username>Ruby12</username>
-        <id>239584</id>
+        <username>Sunlion</username>
+        <id>225997</id>
       </contributor>
-      <minor />
-      <comment>/* Combat abilities */</comment>
-      <origin>3210641</origin>
+      <comment>Possibly clearer to have in the same section?</comment>
+      <origin>3215714</origin>
       <model>wikitext</model>
       <format>text/x-wiki</format>
-      <text bytes="759" sha1="0yg4xzx6j7nedixc2epqo594732oirv" xml:space="preserve">{{NPC infobox
+      <text bytes="3016" sha1="c8jc03bq1vf206g88oe3qsd9k8zcrdf" xml:space="preserve">{{NPC infobox
 | image = Risen 2.jpg
-| location = Sotdae Landing; Old Kaineng
+| location = Grenth's Reliquary; North Peninsula; Old Kaineng; Sotdae Landing
 | race = Risen
 | level = 80
-| requires = eod
 | rank = Elite
 | gallery1 = Unchained Mage (Canthan male 1).jpg
 | gallery1-text = Canthan version
+| requires = lws3, eod
 }}
-[[Elite Unchained Mage]] is a tough [[Risen]] serving as one of the leaders of the horde roaming the [[Shipwreck Graveyard]].
+[[Elite Unchained Mage]]s are [[NPC rank#Elite|tough]] Unchained [[Risen]] found alongside groups of their allies.
 
-== Location ==
+== Locations ==
 ;[[Cantha]]
 * [[New Kaineng City]]
 ** [[Sotdae Landing]] {{during}}
 ** [[Old Kaineng]]
 
+* [[Seitung Province]]
+** [[North Peninsula]]
+
+;[[Ruins of Orr]]
+* [[Siren's Landing]]
+** [[Grenth's Reliquary]] {{during}}
+
 == Event involvement ==
 : {{event|Defeat the Unchained Risen leader before it summons reinforcements}}
+: {{event|Protect the nodes from unchained Risen}} {{upscaled}}
 
 == Combat abilities ==
+{{section-stub|npc|missing Orrian version}}
+
+=== Canthan version ===
 ;Abilities
 * Swift
 * Heals Allies
 
 ;Effects
-{{defiance}}
+{{defiance}} &lt;br&gt;{{chain}}'''[[Stun (defiance)|Stun]]''' — {{skill description|Stun (defiance)}}
+* {{Swiftness}} &lt;small&gt;(30s; reapplied every 10s while in combat)&lt;/small&gt; — {{effect description|Swiftness}}
 
 ;Skills
+;&lt;small&gt;Land&lt;/small&gt;
+* '''Rancid Blast''' — Ranged [[autoattack]]. Casts a damaging [[projectile]] of blighted water at the target.
+* '''Foul Geyser''' — Raises a hand to the sky, generating seven circular [[AoE]]s that gush blighted water and last for 6 seconds. At 1-second intervals, these AoEs pulse damage to hostile targets and [[healing]] and {{Regeneration}} &lt;small&gt;(6s)&lt;/small&gt; to allied ones. Only used if an allied target below 90% health is nearby.
+* '''Staff Strike''' — Swings its staff, dealing a small amount of damage and [[Cleave|cleaving]] to hit multiple targets. While using this skill, the Risen [[evade]]s incoming attacks.
+* '''Wave of Corruption''' — Floats up into the air and slams back down in a surge of corrupted water, causing {{Launch}} &lt;small&gt;({{fraction|2.75}}s)&lt;/small&gt; and dealing damage to hostile targets in a large circular [[AoE]] around itself. Removes one [[condition]] from itself and allied targets in the AoE.
+{{bug|Some of the AoEs created by '''Foul Geyser''' will usually spawn underground, rendering them harmless.}}
+
+;&lt;small&gt;Underwater&lt;/small&gt;
+* '''Claw''' — Ranged [[autoattack]]. Spins and slashes its spear while evading attacks, causing necrotic claws to rake over a target. Deals damage and applies {{Bleeding}} &lt;small&gt;(6s)&lt;/small&gt;.
+* '''Flurry of Bites''' — Stabs its spear forward repeatedly. On the final stab, a set of teeth appears and bites down on the target, [[Life stealing|stealing life]] from them for it. Only the bite deals any damage; the stabbing motions are harmless.
+* '''Ride the Plague''' — [[Leap|Rapidly moves]] in a direction while enveloped in a shroud of darkness, evading attacks. Deals moderate to heavy damage to targets it passes through.
+
+;Stolen skills
 {{section-stub|npc|Missing stolen skills}}
 
+{{creature nav}}
 
 [[de:Elite Entfesselter Magier]]
 [[es:Mago desencadenado de élite]]</text>
-      <sha1>0yg4xzx6j7nedixc2epqo594732oirv</sha1>
+      <sha1>c8jc03bq1vf206g88oe3qsd9k8zcrdf</sha1>
     </revision>
   </page>
 <page xmlns="http://www.mediawiki.org/xml/export-0.11/">
@@ -246958,20 +247677,18 @@ These items are no longer available as of the [[September 2014 Feature Pack]].
     <ns>0</ns>
     <id>364136</id>
     <revision>
-      <id>3206452</id>
-      <parentid>3206451</parentid>
-      <timestamp>2026-10-01T18:43:38Z</timestamp>
+      <id>3215561</id>
+      <parentid>3215560</parentid>
+      <timestamp>2026-10-18T18:47:21Z</timestamp>
       <contributor>
-        <username>ReLiFeD</username>
-        <id>189402</id>
+        <username>Kossage</username>
+        <id>126773</id>
       </contributor>
-      <minor />
-      <comment>/* Early years */</comment>
-      <origin>3206452</origin>
+      <origin>3215561</origin>
       <model>wikitext</model>
       <format>text/x-wiki</format>
-      <text bytes="32944" sha1="pptkyo36ntwo6asul8drc5afp18mryi" xml:space="preserve">{{otheruses redirect|Midnight King|the [[release]]|The Midnight King|the [[meta event]]|Into the Spider's Lair}}
-{{spoiler|[[Lonely Tower Fractal]] and ''[[Guild Wars 2: Secrets of the Obscure]]''}}
+      <text bytes="33329" sha1="5g9rfxy7b15hazg4wwf6ybgul0ylils" xml:space="preserve">{{otheruses redirect|Midnight King|the [[release]]|The Midnight King|the [[meta event]]|Into the Spider's Lair}}
+{{spoiler|[[Lonely Tower Fractal]], ''[[Guild Wars 2: Secrets of the Obscure]]'', and ''[[Guild Wars 2: Visions of Eternity]]''}}
 {{NPC infobox
 | location = Lonely Tower Fractal; Spire of Dreams
 | race = Demon
@@ -247152,6 +247869,10 @@ With Eparch's demise, Peitha assumed the title of Midnight King and ascended the
 * [[The Midnight King]]
 ** [[The Eleventh Hour]]
 
+=== [[Visions of Eternity story]] ===
+* [[Code of Creation]]
+** [[So Be It]] &lt;small&gt;(cinematic only)&lt;/small&gt;
+
 == Event involvement ==
 : {{event|Quickly disperse the unstable rift before it explodes}} &lt;small&gt;(voice only)&lt;/small&gt;
 : {{event|Defeat Eparch, the Consumed King}}
@@ -247245,10 +247966,12 @@ With Eparch's demise, Peitha assumed the title of Midnight King and ascended the
 
 == Gallery ==
 &lt;gallery&gt;
-Eparch (weaponless).jpg
+Eparch (weaponless).jpg|Eparch without a weapon.
 "Eparch" concept art.jpg|Eparch concept art by [[Kevin Moran]].
 "Throne Room Eparch's Castle 01" concept art.jpg|Eparch on [[the Midnight Throne]] concept art.
 "Throne Room Eparch's Castle 02" concept art.jpg|Eparch on the Midnight Throne concept art.
+So Be It cinematic 6.jpg|Isgarren teaches [[Eparch]] during [[So Be It]].
+So Be It cinematic 7.jpg|Eparch slaughters a [[centaur]] village as the horrified Isgarren witnesses the aftermath during So Be It.
 &lt;/gallery&gt;
 
 == Related achievements ==
@@ -247285,7 +248008,7 @@ Eparch (weaponless).jpg
 [[Category:Kryptis nobility]]
 [[de:Eparch]]
 [[es:Eparch]]</text>
-      <sha1>pptkyo36ntwo6asul8drc5afp18mryi</sha1>
+      <sha1>5g9rfxy7b15hazg4wwf6ybgul0ylils</sha1>
     </revision>
   </page>
 <page xmlns="http://www.mediawiki.org/xml/export-0.11/">
@@ -317856,19 +318579,17 @@ And much, much more!}}
     <ns>0</ns>
     <id>420900</id>
     <revision>
-      <id>3209973</id>
-      <parentid>3209544</parentid>
-      <timestamp>2026-10-07T23:06:36Z</timestamp>
+      <id>3215200</id>
+      <parentid>3215198</parentid>
+      <timestamp>2026-10-18T12:43:10Z</timestamp>
       <contributor>
-        <username>Tery3065</username>
-        <id>270948</id>
+        <username>Kossage</username>
+        <id>126773</id>
       </contributor>
-      <minor />
-      <comment>/* Hunter's Hearth (Home) */</comment>
-      <origin>3209973</origin>
+      <origin>3215200</origin>
       <model>wikitext</model>
       <format>text/x-wiki</format>
-      <text bytes="77770" sha1="pbsi5y6s7l04osn1zqi5yewrk11clwo" xml:space="preserve">{{Story infobox
+      <text bytes="77814" sha1="fzwyjp3h26fc262kkskx397yggn6znv" xml:space="preserve">{{Story infobox
 | year = 1339
 | storyline = Visions of Eternity
 | chapter number = 19
@@ -318141,6 +318862,8 @@ Two checkpoints are available during the story and can be freely accessed afterw
 
 ;Sylvari instances
 {{stub|story|missing allies}}
+* [[Arie]]
+* [[Glendon]]
 * [[Firstborn|Luminary]] of your cycle &lt;small&gt;(home instance)&lt;/small&gt;
 ** [[Aife]]
 ** [[Kahedins]]
@@ -318785,7 +319508,7 @@ Yours, until the end of eternity, Vass
 :'''&lt;Character name&gt;:''' Nothing wrong with taking the long way... Or stopping for a drink.
 
 ;Approaching the tavern
-:'''Brewer Daggulf:''' Ho, Slayer of [[Issormir]]! Been a while since I've seen you around.
+:'''Brewer Daggulf:''' Ho, [[The Great Hunt|Slayer]] of [[Issormir]]! Been a while since I've seen you around.
 :'''Brewer Daggulf:''' I've expanded beyond the ol' traveling cart to proprietor of this fine brewery.
 :'''&lt;Character name&gt;:''' That's quite the venture! I'll toast to your fortunes, then.
 :'''Brewer Daggulf:''' Ha! Grab a seat at that table over there. Just rolled out a fresh barrel to put on tap.
@@ -318997,7 +319720,7 @@ After, I continued on up the road to the Grove, happy that for once, there was n
 
 {{Visions of Eternity storyline|1}}
 [[es:Todo lo que somos]]</text>
-      <sha1>pbsi5y6s7l04osn1zqi5yewrk11clwo</sha1>
+      <sha1>fzwyjp3h26fc262kkskx397yggn6znv</sha1>
     </revision>
   </page>
 <page xmlns="http://www.mediawiki.org/xml/export-0.11/">
@@ -352254,21 +352977,23 @@ This insignia was used to craft rare-rarity Explorer's [[Masquerade armor]], [[N
     <ns>0</ns>
     <id>421960</id>
     <revision>
-      <id>3209319</id>
-      <parentid>3200850</parentid>
-      <timestamp>2026-10-07T03:00:41Z</timestamp>
+      <id>3215224</id>
+      <parentid>3209319</parentid>
+      <timestamp>2026-10-18T13:59:13Z</timestamp>
       <contributor>
-        <username>Sunlion</username>
-        <id>225997</id>
+        <username>Myriada</username>
+        <id>215477</id>
       </contributor>
-      <origin>3209319</origin>
+      <minor />
+      <origin>3215224</origin>
       <model>wikitext</model>
       <format>text/x-wiki</format>
-      <text bytes="549" sha1="2lhstrrqktj8s5u1tbc30e0rvesrwq2" xml:space="preserve">{{Weapon infobox
+      <text bytes="571" sha1="6ev6i6ebwlae06y2v3hlc6ra6azn4wb" xml:space="preserve">{{Weapon infobox
 | type = Sword
 | level = 80
 | rarity = Exotic
 | bound = use
+| prefix = selectable
 | skin = Explorer's Kukri (skin)
 | salvage = Standard
 | id = 109929
@@ -352290,7 +353015,7 @@ This insignia was used to craft rare-rarity Explorer's [[Masquerade armor]], [[N
 [[de:Explorator-Kukri]]
 [[es:Kukri de explorador]]
 [[fr:Kukri de l'explorateur]]</text>
-      <sha1>2lhstrrqktj8s5u1tbc30e0rvesrwq2</sha1>
+      <sha1>6ev6i6ebwlae06y2v3hlc6ra6azn4wb</sha1>
     </revision>
   </page>
 <page xmlns="http://www.mediawiki.org/xml/export-0.11/">
@@ -371306,18 +372031,18 @@ To become part of our Super Team, or to create a sub-team and join forces with u
     <ns>0</ns>
     <id>386063</id>
     <revision>
-      <id>3199744</id>
-      <parentid>3192909</parentid>
-      <timestamp>2026-09-20T15:57:52Z</timestamp>
+      <id>3215593</id>
+      <parentid>3199744</parentid>
+      <timestamp>2026-10-18T19:14:05Z</timestamp>
       <contributor>
-        <username>MrModius</username>
-        <id>243563</id>
+        <username>RootWyrm</username>
+        <id>232332</id>
       </contributor>
-      <comment>/* Extra Life 2025 */</comment>
-      <origin>3199744</origin>
+      <comment>Corrected years for Raspberry and Taffy, updated Black Citadel coordinates to add Taffy (added 2026)</comment>
+      <origin>3215593</origin>
       <model>wikitext</model>
       <format>text/x-wiki</format>
-      <text bytes="71109" sha1="9mn9yyugdhncyfbiie33yxfapwv5q8p" xml:space="preserve">A full list of all the [[Extra Life]] charity [[animals]] from each year.
+      <text bytes="71294" sha1="l4w38o078mqswdvmjwsgeaucmmcboph" xml:space="preserve">A full list of all the [[Extra Life]] charity [[animals]] from each year.
 
 Reminder that even we can miss some of the in-game NPCs (there are a lot of them, so it can happen). These NPCs also often have multiple in-game locations in game, which may be missing on their pages. We are [[Guild Wars 2 Wiki:Projects/Shared Model Project|trying]] to use a single image for each animal model; if you wish to create your own images in game, please let us know, so other editors will not mark your images for deletion due to duplication of the same model. There is also the possibility these names are already taken by other NPCs in the game: if this happens, please add (charity animal) behind the name.
 
@@ -371638,6 +372363,7 @@ These animals can be found in the inhabited areas of [[Lowland Shore]], as well 
 * [[Punky]]
 * [[Racecar]]
 * [[Raik]]
+* [[Raspberry (Canton Factorium)|Raspberry]]
 * [[Ripley]]
 * [[Rocket (cat)|Rocket]]
 * [[Rosie]]
@@ -371651,7 +372377,7 @@ These animals can be found in the inhabited areas of [[Lowland Shore]], as well 
 * [[Squeeky]] 
 * [[Stinky (charity animal)|Stinky]] 
 * [[Sunny]] 
-* [[Taffy (charity animal)|Taffy]]
+* [[Taffy]]
 * [[Tali (charity animal)|Tali]]
 * [[Tank (charity animal)|Tank]]
 * [[The Legendary Lyn]]
@@ -371855,6 +372581,7 @@ Most these animals can be found in the instanced area of [[Cats-tora]], as well 
 * [[Pyewacket]] &lt;!--Garenhoff Forest Cat--&gt;
 * [[Queen Towa]] &lt;!--Siamese Cat--&gt;
 * [[Quincifer Palehorse]] &lt;!--Fluffy Black Cat--&gt;
+* [[Raspberry (Canton Factorium)|Raspberry]] &lt;!--Black Cat--&gt;
 * [[Raven the Malevolent]] &lt;!--Fluffy Black Cat--&gt;
 * [[Rei]] &lt;!--Brown Tabby Cat--&gt;
 * [[Remlit]] &lt;!--Siamese Cat--&gt;
@@ -371890,6 +372617,7 @@ Most these animals can be found in the instanced area of [[Cats-tora]], as well 
 * [[Sprite (Calico Cat)|Sprite]] &lt;small&gt;(Calico Cat)&lt;/small&gt;
 * [[Sunny (Cats-tora)|Sunny]] &lt;!--Red Lion Cat--&gt;
 * [[T.J.]] &lt;!--Brown Cat--&gt;
+* [[Taffy]] &lt;!--Ginger Cat--&gt;
 * [[Tami]] &lt;!--Brown Tabby Cat--&gt;
 * [[Tanya]] &lt;!--Fluffy Black Cat--&gt;
 * [[Terra (charity animal)|Terra]] &lt;!--Calico Cat--&gt;
@@ -372210,7 +372938,7 @@ Most these animals can be found in the instanced area of [[Paw-Nthir]] since the
 * [[Sprout]] &lt;!--Brown Tabby Cat--&gt;
 * [[Stormi]] &lt;!--Warclaw Cub (grey)--&gt;
 * [[Tabitha]] &lt;!--Orange Tabby Cat--&gt;
-* [[Taffy|Taffy]] &lt;small&gt;(Ginger Cat)&lt;/small&gt; &lt;!--Cat (ginger)--&gt;
+* [[Taffy]] &lt;small&gt;(Ginger Cat)&lt;/small&gt; &lt;!--Cat (ginger)--&gt;
 * [[Target (Cat (red))|Target]] &lt;!--Cat (red)--&gt;
 * [[Tennessee]] &lt;!--Calico Cat--&gt;
 * [[Thomas]] &lt;!--Garenhoff Forest Cat--&gt;
@@ -372471,6 +373199,7 @@ Here are shown the ingame coordinates as listed on each pet's wiki page only.
 { "coord": [ 57672, 30917 ], "type": "label", "id": "60", "name": "Middos" },
 { "coord": [ 57552, 30822 ], "type": "label", "id": "61", "name": "Lizzie" },
 { "coord": [ 57621, 30760 ], "type": "label", "id": "62", "name": "Mimi" }
+{ "coord": [ 57246, 30239 ], "type": "label", "id": "63", "name": "Taffy" },
 }}
 &lt;/div&gt;
 &lt;div style="display: inline-block; margin-right: 10px; min-width: 800px; vertical-align: top;"&gt;
@@ -372836,7 +373565,7 @@ With the exception of these three, all other cats found in this location are als
 &lt;/div&gt;
 
 [[Category:Extra Life]]</text>
-      <sha1>9mn9yyugdhncyfbiie33yxfapwv5q8p</sha1>
+      <sha1>l4w38o078mqswdvmjwsgeaucmmcboph</sha1>
     </revision>
   </page>
 <page xmlns="http://www.mediawiki.org/xml/export-0.11/">
@@ -399285,6 +400014,53 @@ The adventure will end if either the timer is up, if the player is defeated or i
     </revision>
   </page>
 <page xmlns="http://www.mediawiki.org/xml/export-0.11/">
+    <title>Fallen Mech</title>
+    <ns>0</ns>
+    <id>424381</id>
+    <revision>
+      <id>3215678</id>
+      <timestamp>2026-10-19T01:32:37Z</timestamp>
+      <contributor>
+        <username>Sunlion</username>
+        <id>225997</id>
+      </contributor>
+      <comment>New page: '{{Object infobox | icon = Event gather (overhead icon).png | image = Salvage Pile.jpg | location = North Peninsula | interaction prompt = Scavenge | gallery1 = Salvage Pile (harvested).jpg | gallery1-text = Appearance being interacted with. | gallery2 = Gear (bundle).jpg | gallery2-text = Appearance while held. | requires = eod }} [[Fallen Mech]]s are the destroyed remains of [[Jade Mech]]s. Parts from them can be scavenged to receive a [[bundle]], which can be turned in at a ...'</comment>
+      <origin>3215678</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="1013" sha1="q8q9o2em4krnrxjmtgk8djrfkbqahnk" xml:space="preserve">{{Object infobox
+| icon = Event gather (overhead icon).png
+| image = Salvage Pile.jpg
+| location = North Peninsula
+| interaction prompt = Scavenge
+| gallery1 = Salvage Pile (harvested).jpg
+| gallery1-text = Appearance being interacted with.
+| gallery2 = Gear (bundle).jpg
+| gallery2-text = Appearance while held.
+| requires = eod
+}}
+[[Fallen Mech]]s are the destroyed remains of [[Jade Mech]]s. Parts from them can be scavenged to receive a [[bundle]], which can be turned in at a [[Unnamed object (North Peninsula)|crate]] to help [[Technical Liaison Eng]] repair the damaged [[Elite Jade Bulwark]].
+
+== Location ==
+;[[Cantha]]
+* [[Seitung Province]]
+** [[North Peninsula]] {{during}}
+
+== Event involvement ==
+: {{event|Collect parts to repair the broken mech before the technician is overrun}}
+
+== Skills ==
+{| {{STDT|pve}}
+{{Environmental skill table header}}
+{{Environmental skill table row|Rush (boot icon)}}
+|}
+
+== Notes ==
+* The animation for scavenging for mech parts will be cancelled upon taking damage.</text>
+      <sha1>q8q9o2em4krnrxjmtgk8djrfkbqahnk</sha1>
+    </revision>
+  </page>
+<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
     <title>Fallen Mountains</title>
     <ns>0</ns>
     <id>267274</id>
@@ -403932,17 +404708,17 @@ Toad (familiar).jpg|The [[Frog (Spirit of the Wild)|toad]] spirit.
     <ns>0</ns>
     <id>121096</id>
     <revision>
-      <id>3111035</id>
-      <parentid>3111034</parentid>
-      <timestamp>2026-02-24T22:25:53Z</timestamp>
+      <id>3215234</id>
+      <parentid>3215233</parentid>
+      <timestamp>2026-10-18T14:55:25Z</timestamp>
       <contributor>
         <username>Kossage</username>
         <id>126773</id>
       </contributor>
-      <origin>3111035</origin>
+      <origin>3215234</origin>
       <model>wikitext</model>
       <format>text/x-wiki</format>
-      <text bytes="30239" sha1="74bz4b9cvlgld2lzgpxdpdv6hiqd3en" xml:space="preserve">This article page contains an overview of known family relations within the [[Tyria (world)|Tyrian]] universe.&lt;br&gt;
+      <text bytes="30957" sha1="pn1z4iudd2tmtsy0kf5jrzsc02yxtjo" xml:space="preserve">This article page contains an overview of known family relations within the [[Tyria (world)|Tyrian]] universe.&lt;br&gt;
 Smaller and less notable families are not shown. Especially large and/or complex family trees have been given their own separate article, as linked to below.
 
 {{spoiler|''[[Guild Wars]]'', ''[[Guild Wars 2]]'' and all [[Living World]] stories and [[expansion]]s}}
@@ -403971,7 +404747,7 @@ Click {{family tree/toggle|id=Marriner}} to show/hide annotations.
 }}
 
 {| border="0" cellspacing="0" cellpadding="0" style="font:75% sans-serif"
-{{family tree|   |   |   |   |   |   ZUDAS   |   |   |   }}
+{{family tree|   |   |   |   |   |   |   ZUDAS   |   |   }}
 {{family tree|   |   |   |   |   | , | - | ^ | - | . |   }}
 {{family tree|   MELON   | y |   KOSS_   |   |   AILON   }}
 {{family tree|   |   |   | ! |   |   |   |   |   |   |   }}
@@ -404320,13 +405096,19 @@ Click {{family tree/toggle|id=Nephus}} to show/hide annotations.
 Click {{family tree/toggle|id=Alder}} to show/hide annotations.
 {{#if:
  {{#vardefine:parameters|1,2,3,4,5,6,7,8,9,10,11,12,13,14,15}}
- {{Family tree/textbox|ALMOM|♀'''[[Streamsong]]'''|Previous [[Claw of Koda|Claw]] of the [[Lowland Kodan]]. &lt;br&gt;Moved lowlanders south of the bay to build [[Harvest Den]] circa 1237 AE.&lt;ref&gt;[[Villager#Lowland Shore|Villager]]&lt;/ref&gt;&lt;br&gt;Was notably short for a [[kodan]] but nevertheless commanded respect.}}
+ {{Family tree/textbox|SOUTH|'''[[Southward Claw]]'''|Mate of Waiting Sorrow and first [[Claw of Koda|Claw]] of the [[Lowland Kodan]]. &lt;br&gt;Led the lowlanders south to [[Janthir]] during [[the Dragonstorm]]. Founded the [[Lowland Kodan Council]]. Left to seek out Waiting Sorrow in his old age but never returned.&lt;ref&gt;[[Recollector of Memories]]&lt;/ref&gt;}}
+ {{Family tree/textbox|SORRO|♀'''[[Waiting Sorrow]]'''|Mate of Southward Claw and [[Voice of Koda]]. &lt;br&gt;Driven mad by the [[Rage of Koda]] and fled from her people and mate.}}
+ {{Family tree/textbox|GENER|Several generations}}
+ {{Family tree/textbox|ALMOM|♀'''[[Streamsong]]'''|Previous Claw of the Lowland Kodan. &lt;br&gt;Moved lowlanders south of the bay to build [[Harvest Den]] circa 1237 AE.&lt;ref&gt;[[Villager#Lowland Shore|Villager]]&lt;/ref&gt;&lt;br&gt;Was notably short for a [[kodan]] but nevertheless commanded respect.}}
  {{Family tree/textbox|ALDER|'''[[Stoic Alder]]''' |Current Claw of the Lowland Kodan. &lt;br&gt;Member of the [[Lowland Kodan Council]].}}
  {{Family tree/textbox|SILKE|♀'''[[Silken Weir (lore)|Silken Weir]]''' |Late mate of Stoic Alder and mother of Poky. &lt;br&gt;Killed during [[Jormag]]'s latest rise.}}
  {{Family tree/textbox|POKY_|'''[[Poised Arrow|Poised "Poky" Arrow]]''' |Son of Stoic Alder and Silken Weir. &lt;br&gt;Ambassador of Harvest Den.}}
 }}
 {| border="0" cellspacing="0" cellpadding="0" style="font:75% sans-serif"
-{{family tree|   |   |   |   |   |   |   |   |   }}
+{{family tree|   |   SOUTH   | - |   SORRO   |   }}
+{{family tree|   |   | ! |   |   |   |   |   |   }}
+{{family tree|   |   GENER   |   |   |   |   |   }}
+{{family tree|   |   | ! |   |   |   |   |   |   }}
 {{family tree|   |   ALMOM   |   |   |   |   |   }}
 {{family tree|   |   | ! |   |   |   |   |   |   }}
 {{family tree|   |   ALDER   | v |   SILKE   |   }}
@@ -404344,7 +405126,7 @@ Click {{family tree/toggle|id=Alder}} to show/hide annotations.
 [[Category:Human culture]]
 [[Category:Charr culture]]
 [[Category:Norn culture]]</text>
-      <sha1>74bz4b9cvlgld2lzgpxdpdv6hiqd3en</sha1>
+      <sha1>pn1z4iudd2tmtsy0kf5jrzsc02yxtjo</sha1>
     </revision>
   </page>
 <page xmlns="http://www.mediawiki.org/xml/export-0.11/">
@@ -453396,18 +454178,17 @@ The Kryptis are swarming at the shoreline, pointed toward [[The Isles|the isles]
     <ns>0</ns>
     <id>371502</id>
     <revision>
-      <id>3179998</id>
-      <parentid>2947779</parentid>
-      <timestamp>2026-08-09T14:24:19Z</timestamp>
+      <id>3215661</id>
+      <parentid>3179998</parentid>
+      <timestamp>2026-10-18T23:12:28Z</timestamp>
       <contributor>
-        <username>Chieftain Alex</username>
-        <id>28878</id>
+        <username>Kossage</username>
+        <id>126773</id>
       </contributor>
-      <minor />
-      <origin>3179998</origin>
+      <origin>3215661</origin>
       <model>wikitext</model>
       <format>text/x-wiki</format>
-      <text bytes="5777" sha1="pvfpj5ynovyybu3ldc3ea376gdhrwww" xml:space="preserve">{{otheruses|the objects found in Heitor's Territory|other uses|Field Report}}
+      <text bytes="5874" sha1="b8dpgjxid6wskfk0dtf3s4l0bbj1hga" xml:space="preserve">{{otheruses|the objects found in Heitor's Territory|other uses|Field Report}}
 {{Object infobox
 | name = Field Report
 | image = Scroll 1.jpg
@@ -453425,7 +454206,7 @@ The Kryptis are swarming at the shoreline, pointed toward [[The Isles|the isles]
 
 == Text ==
 {{Book text|title=Field Report 1 (Personal Copy)—On [[Ramses]]|
-Peitha's ally Ramses has proven to be a valuable source of information. Contrary to his threatening appearance, he is relatively approachable. While verbose, he has proven somewhat more direct and willing to engage in conversation than Peitha herself.
+[[Peitha]]'s ally Ramses has proven to be a valuable source of information. Contrary to his threatening appearance, he is relatively approachable. While verbose, he has proven somewhat more direct and willing to engage in conversation than Peitha herself.
 
 Even when unwilling to discuss topics directly, he generally does not guard his ideas and opinions too closely, except when in conference with Peitha. I would go so far as to say that he can be almost charming, though he is disarmingly grotesque to behold.
 
@@ -453435,7 +454216,7 @@ Even when unwilling to discuss topics directly, he generally does not guard his 
 {{Book text|title=Field Report 2 (Personal Copy)—On [[Eparch]], [[Heitor]], [[Ignaxious]]|
 As I've pieced together snippets of conversation, it seems the relationship between Eparch, Heitor, and Ignaxious is rather complex.
 
-My understanding is that Heitor is a "cousin*" of Peitha and a former mate of [[Cerus]]. Eparch (who is nepotistic to a fault, it seems) put Heitor in charge of the fortress here in outer Nayos. It's unclear whether he doesn't fully trust her or if he just believes her to be unreliable, but Ramses seems to suggest that Heitor's lieutenant, Ignaxious, is stationed at the fortress as much to keep an eye on Heitor as to defend the gate.
+My understanding is that Heitor is a "cousin*" of Peitha and a former mate of [[Cerus]]. Eparch (who is nepotistic to a fault, it seems) put Heitor in charge of the [[Heitor's Gate|fortress]] here in outer Nayos. It's unclear whether he doesn't fully trust her or if he just believes her to be unreliable, but Ramses seems to suggest that Heitor's lieutenant, Ignaxious, is stationed at the fortress as much to keep an eye on Heitor as to defend the gate.
 
 Ignaxious is ambitious and dedicated to Eparch, and he seems to be willing to take on any task that will put him in Eparch's favor.
 
@@ -453443,7 +454224,7 @@ Ignaxious is ambitious and dedicated to Eparch, and he seems to be willing to ta
 }}
 
 {{Book text|title=Field Report 3 (Personal Copy)—On Beacons|
-Ramses claims that the beacon near our camp is part of a sort of security system that was used at some point in the past, before Heitor arrived and completely barricaded access to the fortress. Apparently the Kryptis had little fear of attack, as I hear it is not a particularly powerful weapon and has remained unused for some time—ignored by Heitor, and possibly scorned by Ignaxious. I suppose when one is able to create seemnigly impregnable [[magic]]al barrier defenses on a grand scale, such defenses become obsolete.
+Ramses claims that the beacon near our camp is part of a sort of security system that was used at some point in the past, before Heitor arrived and completely barricaded access to the fortress. Apparently the [[Kryptis]] had little fear of attack, as I hear it is not a particularly powerful weapon and has remained unused for some time—ignored by Heitor, and possibly scorned by Ignaxious. I suppose when one is able to create seemnigly impregnable [[magic]]al barrier defenses on a grand scale, such defenses become obsolete.
 
 —Researcher Selly
 }}
@@ -453465,13 +454246,13 @@ It seems unrealistic to me that an uncompromising ruler like Eparch would leave 
 }}
 
 {{Book text|title=Field Report 6 (Personal Copy)—On Eparch|
-Even Eparch's allies seem to be uneasy, according to Ramses. Eparch, centuries old, is known by the ward to be cunning and calculated in the extreme, but rumor has it he's become increasingly unpredictable and impatient. The speculation Ramses relays includes myriad theories: his mind is deteriorating; he's become aggressive or even beastlike; he's somehow infirm and senile, and Labris is actually ruling behind the scenes; he feeds nonstop and never leaves his castle grounds...and more besides. Ramses seems...dismissive. Though I admit it is impossible to read any expression on his "face."
+Even Eparch's allies seem to be uneasy, according to Ramses. Eparch, centuries old, is known by the [[Astral Ward|ward]] to be cunning and calculated in the extreme, but rumor has it he's become increasingly unpredictable and impatient. The speculation Ramses relays includes myriad theories: his mind is deteriorating; he's become aggressive or even beastlike; he's somehow infirm and senile, and Labris is actually ruling behind the scenes; he feeds nonstop and never leaves his [[Citadel of Zakiros|castle]] grounds...and more besides. Ramses seems...dismissive. Though I admit it is impossible to read any expression on his "face."
 
 —Researcher Selly
 }}
 
 {{Book text|title=Field Report 7 (Personal Copy)—A Career Change|
-Due to my success in gathering intelligence around the camp (and a decided lack of other candidates to replace our recent casualties, I suspect), I've been reassigned to Officer Havard's detail.
+Due to my success in gathering intelligence around the camp (and a decided lack of other candidates to replace our recent casualties, I suspect), I've been reassigned to [[Intelligence Officer Havard|Officer Havard]]'s detail.
 
 After a brief training stint, I will be tasked with gathering intelligence further afield. It is bittersweet, as research has always been my passion, but the ward requires my services in a new capacity, and I can hardly turn them down given our circumstances.
 
@@ -453492,7 +454273,7 @@ I am terrified. But I am determined to serve the ward to the best of my ability.
 == See also ==
 * [[Personal Note]] — the initial note
 * [[Field Report (Nyedra Surrounds)|Field Report]] — the following reports</text>
-      <sha1>pvfpj5ynovyybu3ldc3ea376gdhrwww</sha1>
+      <sha1>b8dpgjxid6wskfk0dtf3s4l0bbj1hga</sha1>
     </revision>
   </page>
 <page xmlns="http://www.mediawiki.org/xml/export-0.11/">
@@ -453542,18 +454323,17 @@ Where are [[Isgarren]] and [[Mabon]]? What do we do?
     <ns>0</ns>
     <id>375725</id>
     <revision>
-      <id>3179999</id>
-      <parentid>2947780</parentid>
-      <timestamp>2026-08-09T14:25:30Z</timestamp>
+      <id>3215665</id>
+      <parentid>3215662</parentid>
+      <timestamp>2026-10-18T23:45:55Z</timestamp>
       <contributor>
-        <username>Chieftain Alex</username>
-        <id>28878</id>
+        <username>Kossage</username>
+        <id>126773</id>
       </contributor>
-      <minor />
-      <origin>3179999</origin>
+      <origin>3215665</origin>
       <model>wikitext</model>
       <format>text/x-wiki</format>
-      <text bytes="10212" sha1="5c8n9to1vjlyj8yyr7vdf5n2sfvsgc5" xml:space="preserve">{{otheruses|the objects found in Inner Nayos|other uses|Field Report}}
+      <text bytes="10484" sha1="bjhvnumvaok20cfi98t44cnmyw2ks97" xml:space="preserve">{{otheruses|the objects found in Inner Nayos|other uses|Field Report}}
 {{Object infobox
 | name = Field Report
 | image = Scroll 1.jpg
@@ -453562,7 +454342,7 @@ Where are [[Isgarren]] and [[Mabon]]? What do we do?
 | coordinates = [[21763, 22838], [21853, 22982], [21827, 23236], [21556, 23463], [21073, 23417], [20888, 22948], [20756, 22676], [21358, 22234]]
 | requires = soto
 }}
-[[Field Report (Nyedra Surrounds)|Field Report]] are [[book]]s found in [[Inner Nayos]] written by [[Operative Selly]]. These books follow the field reports found during the achievement [[Well-Versed]].
+[[Field Report (Nyedra Surrounds)|Field Report]] are [[book]]s found in [[Inner Nayos]] written by [[Researcher Selly|Operative Selly]]. These books follow the field reports found during the achievement [[Well-Versed]].
 
 == Location ==
 ;[[Horn of Maguuma]]
@@ -453575,11 +454355,11 @@ Book on top of a crate at [[Grove of the First Kryptis]].
 {{Book text|title=Field Report 10—or is it 9?|
 I am out of sorts.
 
-In recent days, I believed myself a master spy, a valuable prisoner of war, and a hubristic plaything for capricious demonlings. The latter is the only belief that has proven true.
+In recent days, I believed myself a master spy, a valuable prisoner of war, and a hubristic plaything for capricious [[demon]]lings. The latter is the only belief that has proven true.
 
-Camouflaged in view of Heitor's Gate, I tracked the comings and goings of the enemy's patrols. No discernable patterns or schedules emerged. Rather than return empty handed, I lingered to collect more data.
+Camouflaged in view of [[Heitor's Gate]], I tracked the comings and goings of the enemy's patrols. No discernable patterns or schedules emerged. Rather than return empty handed, I lingered to collect more data.
 
-I can only conclude (in retrospect) that there was no pattern—the patrols were likely at the conflicting whims of Heitor and Ignaxious. This is evidenced both by my data and the fact that while the first several patrols marched past me, the last wilessly stumbled directly into my hiding spot. Not to mention my firsthand experience with Ignaxious countermanding the orders of Heitor's guards.
+I can only conclude (in retrospect) that there was no pattern—the patrols were likely at the conflicting whims of [[Heitor]] and [[Ignaxious]]. This is evidenced both by my data and the fact that while the first several patrols marched past me, the last wilessly stumbled directly into my hiding spot. Not to mention my firsthand experience with Ignaxious countermanding the orders of Heitor's guards.
 
 More on that later. A pack of the aforementioned doglike demons approaches. I must move.
 
@@ -453591,11 +454371,11 @@ Book on the floor south east of [[Grove of the First Kryptis]].
 {{Book text|title=Field Report 10|
 I am safe for a time.
 
-My notions of master espionage shattered, I was dragged by a Kryptis patrol inside Heitor's Gate, ostensibly to be presented to Heitor herself.
+My notions of master espionage shattered, I was dragged by a [[Kryptis]] patrol inside Heitor's Gate, ostensibly to be presented to Heitor herself.
 
-Ignaxious—see Field Report 2—observed my presence and ordered I be released into his custody instead. The patrol leader resisted initially, insisting Heitor's orders were to deliver any detainees to her directly, but after a few moments of silence (during which I can only assume Ignaxious appealed to him telepathically), the patrol leader's resistance turned quickly to acquiescence.
+Ignaxious—see [[Field Report (Heitor's Territory)|Field Report 2]]—observed my presence and ordered I be released into his custody instead. The patrol leader resisted initially, insisting Heitor's orders were to deliver any detainees to her directly, but after a few moments of silence (during which I can only assume Ignaxious appealed to him telepathically), the patrol leader's resistance turned quickly to acquiescence.
 
-Recalling his ambitions and loyalties, I deceived Ignaxious, posturing as a high-ranking member of the ward with valuable information. He believed my fabrications initially and enthusiastically secreted me through a series of protals to a location secure enough to question me at his leisure, telepathically.
+Recalling his ambitions and loyalties, I deceived Ignaxious, posturing as a high-ranking member of the [[Astral Ward|ward]] with valuable information. He believed my fabrications initially and enthusiastically secreted me through a series of portals to a location secure enough to question me at his leisure, telepathically.
 
 I believed myself quite strong, mentally, and my Astral Ward training did help, to a point. But as the questioning became increasingly spirited, my façade cracked. Soon Ignaxious discovered the truth, and no questioning technique wounded me as much as his final words: "A research lackey turned ineffectual mole. Feed it to the rabble."
 
@@ -453611,7 +454391,7 @@ After escaping the "rabble"—wait, I suppose I should cover that first.
 
 Ignaxious's assertion that they would find me adequate dinner fare was thankfully erroneous. Embarrassingly, I believe they even mistook me for one of their kind at first. From a distance, assuredly, as this seems an impossible (and highly offensive) mix-up to me. But it is one that I'm grateful for, nonetheless.
 
-So, after cleaning myself of slobber and engaging in polite—if hard to follow—conversation, I skirted my way along the land's edge in an attempt to steer clear of both physical and mental probes and continue my mission of gathering intel. My hope is that if and when Lady Peitha's invasion begins, these field reports will be discovered and put to some use.
+So, after cleaning myself of slobber and engaging in polite—if hard to follow—conversation, I skirted my way along the land's edge in an attempt to steer clear of both physical and mental probes and continue my mission of gathering intel. My hope is that if and when Lady [[Peitha]]'s invasion begins, these field reports will be discovered and put to some use.
 
 Granted, they've only seved to document my own self-centered tribulations thus far. Given that they will likely end up as low Kryptis excrement, my disappointment in myself is less than it might otherwise be.
 
@@ -453625,7 +454405,7 @@ After "escaping," I have moved on to an observation point along what I believe t
 
 The "rabble"—who seem to have take pity on me, sharing bits of edible flora—incessantly reiterate that the area was not the loyalists' to occupy and that their presence is unwanted. Given the unfriendly nature of the Kryptis roaming the area, I can understand their anger.
 
-My new friends seem to greatly fear the nearby area to the west, which I will attempt to observe next. One of my benefactors—Skup, the others call him—referred to it as something like, "the door things only go in."
+My new friends seem to greatly fear the nearby area to the west, which I will attempt to observe next. One of my benefactors—[[Skup]], the others call him—referred to it as something like, "the door things only go in."
 
 —Operative Selly
 }}
@@ -453635,7 +454415,7 @@ North west of [[Secluded Pond]].
 {{Book text|title=Field Report 13|
 My friends would not follow me to my new observation point high among waterfalls—not for fear of water, but for fear of the door I'm observing.
 
-It's unclear what occurs here. Loyalist enforcers patrol the area. Other Kryptis cower in fear, but they are never harmed. At times, they are invited inside the nearby structure. The door looks no less inviting (and decidedly less fleshy) than others in this forsaken land, but perhaps it is beyond my Tyrian eyes to discern the subtleties of Nayosian architectural style.
+It's unclear what occurs here. Loyalist enforcers patrol the area. Other Kryptis cower in fear, but they are never harmed. At times, they are invited inside the nearby structure. The door looks no less inviting (and decidedly less fleshy) than others in this forsaken land, but perhaps it is beyond my [[Tyria]]n eyes to discern the subtleties of [[Nayos]]ian architectural style.
 
 I will attempt to question my rotund friends to see if I can glean any more clues from their chittering.
 
@@ -453647,9 +454427,9 @@ On the ground near [[The Queen's Procession]].
 {{Book text|title=Field Report 15|
 I was just awoken by screams and what sounded like the low reverberations of beating wings.
 
-I've closely watched the goings-on in what appears to be an amphitheater or coliseum below. I can only assume it has seen better times. Or at least more significant times. I recall Grink chittering about it being a place of historical infamy, but I'm unable to verify that claim.
+I've closely watched the goings-on in what appears to be an [[Coliseum of the Midnight King|amphitheater or coliseum]] below. I can only assume it has seen better times. Or at least more significant times. I recall [[Grink]] chittering about it being a place of historical infamy, but I'm unable to verify that claim.
 
-A few Kryptis come and go, but for the most part it seems unoccupied. Until now. I do not want to meet whatever creature is associated with those reverberations. It's easy to believe this was once a place of tragedy. Perhaps one day this great arena can be a venue for glorious happenings if Lady Peitha succeeds. I hope I live to see it.
+A few Kryptis come and go, but for the most part it seems unoccupied. Until now. I do not want to meet [[Knaebelag the Terror|whatever creature]] is associated with those reverberations. It's easy to believe this was once a place of tragedy. Perhaps one day this great arena can be a venue for glorious happenings if Lady Peitha succeeds. I hope I live to see it.
 
 For now, I must find safer refuge, so I will work my way past this decrepit arena and continue north.
 
@@ -453659,11 +454439,11 @@ For now, I must find safer refuge, so I will work my way past this decrepit aren
 === Field Report 16 ===
 South of [[Temple of Charybda]].
 {{Book text|title=Field Report 16|
-I've taken refuge beneath a tower on the western bluff. I've tried to observe the differences between the nearby large and small extractors. The smaller towers appear to have weak points that could be exploited by air, where the large extractor seems fortified against conventional methods of attack and might require a more indirect means of assault.
+I've taken refuge beneath a tower on the western bluff. I've tried to observe the differences between the nearby large and small extractors. The smaller towers appear to have weak points that could be [[Clear the malignant fog protecting Zakiros|exploited by air]], where the large extractor seems fortified against conventional methods of attack and might require a more indirect means of assault.
 
-Perhaps the larger pool feeds the extractor? Or it needs to be fortified because of the greater resources it feeds on? They appear organic, but it's unclear if they are grown or simplfy placed by the Kryptis.
+Perhaps the larger pool feeds the extractor? Or it needs to be fortified because of the greater resources it feeds on? They appear organic, but it's unclear if they are grown or simply placed by the Kryptis.
 
-Frankly, I've had a hard time with any further analysis—there is a cacophony in the tower above, and at first I thought that perhaps I'd stumbled across an escape route. The lordling above, an apprentice of some sort, ceaselessly rattles on about creating a portal to—of all places—the Wizard's Tower!
+Frankly, I've had a hard time with any further analysis—there is a cacophony in the tower above, and at first I thought that perhaps I'd stumbled across an escape route. The [[Apprentice Scyllan|lordling]] above, an apprentice of some sort, ceaselessly rattles on about creating a portal to—of all places—[[the Wizard's Tower]]!
 
 I came to realize in short order that the chance of this self-important novice achieving such a feat was nil. My hopes were dashed and my thoughts addled from his carrying on. I will move to the northeast in search of a way out of this predicament—or, if nothing else, to report on any significance the area may have.
 
@@ -453673,9 +454453,9 @@ I came to realize in short order that the chance of this self-important novice a
 === Final Field Report ===
 On the cliff, north of [[Eventide's March (point of interest)|Eventide's March]].
 {{Book text|title=Final Field Report (with 90% certainty)|
-I know that friendly forces wait just beyond. I know you are all there, though I cannot see anything through this accursed wall of toxic fog. The bridge below, just behind what the Kryptis call Eventide's March, lies broken—but surely I could glide across this gap to the massive Mourning Tree that I know sits just beyond.
+I know that friendly forces wait just beyond. I know you are all there, though I cannot see anything through this accursed wall of toxic fog. The bridge below, just behind what the Kryptis call Eventide's March, lies broken—but surely I could glide across this gap to the massive [[Tree of Mourning|Mourning Tree]] that I know sits just beyond.
 
-Many Kryptis have come and gone from the cathedral-like gate-front as I observed from above, seemingly to mourn their lost loved ones. Lost, I can only guess, like Till and Bosh and Grink. And Skup. Not unlike myself.
+Many Kryptis have come and gone from the cathedral-like gate-front as I observed from above, seemingly to mourn their lost loved ones. Lost, I can only guess, like [[Till]] and [[Bosh]] and Grink. And Skup. Not unlike myself.
 
 I wrote some time ago that I have to lie to myself. To keep my morale up. To do my duty. But the time has come that I must do otherwise. I have to take action. I have to.
 
@@ -453702,7 +454482,7 @@ I wrote some time ago that I have to lie to myself. To keep my morale up. To do 
 * [[Field Report (Heitor's Territory)|Field Report]] — the earlier reports (1-8)
 
 [[es:Informe de campo (Zona interior de Nayos)]]</text>
-      <sha1>5c8n9to1vjlyj8yyr7vdf5n2sfvsgc5</sha1>
+      <sha1>bjhvnumvaok20cfi98t44cnmyw2ks97</sha1>
     </revision>
   </page>
 <page xmlns="http://www.mediawiki.org/xml/export-0.11/">
@@ -503489,18 +504269,18 @@ To get there, enter the building from the north of the point of interest. At the
     <ns>0</ns>
     <id>315156</id>
     <revision>
-      <id>2951112</id>
-      <parentid>2951111</parentid>
-      <timestamp>2025-03-31T12:01:16Z</timestamp>
+      <id>3215408</id>
+      <parentid>2951112</parentid>
+      <timestamp>2026-10-18T16:14:10Z</timestamp>
       <contributor>
-        <username>Tery3065</username>
-        <id>270948</id>
+        <username>Orenwolf</username>
+        <id>110127</id>
       </contributor>
-      <minor />
-      <origin>2951112</origin>
+      <comment>Added a link to the Daily Catch page</comment>
+      <origin>3215408</origin>
       <model>wikitext</model>
       <format>text/x-wiki</format>
-      <text bytes="449" sha1="al6yqz9i4997ixdoyw7czy1ajj4j00l" xml:space="preserve">[[File:Merchant.png|right|Merchant icon]]
+      <text bytes="483" sha1="645quewfmsbp751ixyjpeg5lepm6qny" xml:space="preserve">[[File:Merchant.png|right|Merchant icon]]
 
 [[File:Merchant (map icon).png|20px|Merchant map icon]][[Fishmonger]]s are [[merchant]]s offering fish exchange.
 
@@ -503512,12 +504292,15 @@ To get there, enter the building from the north of the point of interest. At the
 ;[[Daily Catch]] Fishmongers
 {{Daily Catch overview table}}
 
+== See also ==
+* [[Daily Catch]]
+
 {{Fishing nav}}
 {{End of Dragons content}}
 [[Category:Fishmongers|*]]
 [[Category:Fishing]]
 [[es:Pescadero]]</text>
-      <sha1>al6yqz9i4997ixdoyw7czy1ajj4j00l</sha1>
+      <sha1>645quewfmsbp751ixyjpeg5lepm6qny</sha1>
     </revision>
   </page>
 <page xmlns="http://www.mediawiki.org/xml/export-0.11/">
@@ -644346,18 +645129,19 @@ After a fierce clash, the adventurers were able to slowly fill Freezie's frozen 
     <ns>0</ns>
     <id>227799</id>
     <revision>
-      <id>3117898</id>
-      <parentid>3090492</parentid>
-      <timestamp>2026-03-18T17:56:35Z</timestamp>
+      <id>3215565</id>
+      <parentid>3117898</parentid>
+      <timestamp>2026-10-18T18:50:46Z</timestamp>
       <contributor>
-        <username>Vysnaite</username>
-        <id>270646</id>
+        <username>Doodleplex</username>
+        <id>203325</id>
       </contributor>
-      <comment>/* Gem Store history */</comment>
-      <origin>3117898</origin>
+      <minor />
+      <comment>/* Gallery */</comment>
+      <origin>3215565</origin>
       <model>wikitext</model>
       <format>text/x-wiki</format>
-      <text bytes="2349" sha1="5h0y3s5hbrwxgx28xs2awsumj3b3nkl" xml:space="preserve">{{Item infobox
+      <text bytes="2349" sha1="q89xm9a72hv5y8ucrmwp0w0hpi8kzq4" xml:space="preserve">{{Item infobox
 | description = Double-click to apply this look to any other helmet. This skin will be unlocked in your wardrobe for future use.&lt;br&gt;{{Flavor|"Where'd I find this glorious crown? Can't tell you. It's a secret." —[[gww:Koris Deeprunner|Koris Deeprunner]]}}
 | type = armor skin
 | skin type = headgear
@@ -644377,9 +645161,9 @@ After a fierce clash, the adventurers were able to slowly fill Freezie's frozen 
 * Asura, charr and sylvari each have a unique look, while humans and norn share theirs.
 &lt;gallery&gt;
 Freezie Crown.jpg|Appearance on human and norn characters.
-Freezie Crown Asura.jpg|Appearance on asura characters.
-Freezie Crown Charr.jpg|Appearance on charr characters.
-Freezie Crown Sylvari.jpg|Appearance on sylvari characters.
+Freezie Crown asura.jpg|Appearance on asura characters.
+Freezie Crown charr.jpg|Appearance on charr characters.
+Freezie Crown sylvari.jpg|Appearance on sylvari characters.
 &lt;/gallery&gt;
 
 == Gem Store history ==
@@ -644421,7 +645205,7 @@ Freezie Crown Sylvari.jpg|Appearance on sylvari characters.
 [[de:Frostie-Krone]]
 [[es:Diseño de corona de Bajocero]]
 [[fr:Couronne de Frisquet]]</text>
-      <sha1>5h0y3s5hbrwxgx28xs2awsumj3b3nkl</sha1>
+      <sha1>q89xm9a72hv5y8ucrmwp0w0hpi8kzq4</sha1>
     </revision>
   </page>
 <page xmlns="http://www.mediawiki.org/xml/export-0.11/">
@@ -806193,21 +806977,28 @@ Placed into your [[personal story]] tab after completion of [[Attempted Deicide]
     <ns>0</ns>
     <id>145025</id>
     <revision>
-      <id>2713882</id>
-      <parentid>1651570</parentid>
-      <timestamp>2023-08-11T20:19:22Z</timestamp>
+      <id>3215599</id>
+      <parentid>2713882</parentid>
+      <timestamp>2026-10-18T19:23:22Z</timestamp>
       <contributor>
-        <username>Aylia</username>
-        <id>196297</id>
+        <username>DiegoDeLaHouska</username>
+        <id>206595</id>
       </contributor>
-      <origin>2713882</origin>
+      <minor />
+      <origin>3215599</origin>
       <model>wikitext</model>
       <format>text/x-wiki</format>
-      <text bytes="375" sha1="del5ugng4hcvhzfp1741bpdo9tbi6oc" xml:space="preserve">{{NPC infobox
+      <text bytes="612" sha1="0tatks4cbp8u3npfmbipystawsnjrxx" xml:space="preserve">{{NPC infobox
 | location = Salma District
 | race = Human
+| coordinates = [44307, 26617]
 }}
-[[Garand]] is a young child who was kidnapped by the [[Ringmaster]] using the [[Floating Grizwhirl]].
+[[Garand]] is a young child who was kidnapped by the [[Ringmaster]] using the [[Floating Grizwhirl]]. Later appears in the [[Salma District]] [[home instance]], if the option to join the carnival is taken during the [[personal story]].
+
+== Location ==
+;[[Kryta]]
+* [[Divinity's Reach]]
+** [[Salma District]]
 
 == Story involvement ==
 === [[Personal story]] ===
@@ -806218,7 +807009,7 @@ Placed into your [[personal story]] tab after completion of [[Attempted Deicide]
 [[Category:Unlockable home instance characters]]
 [[de:Garand]]
 [[fr:Garand]]</text>
-      <sha1>del5ugng4hcvhzfp1741bpdo9tbi6oc</sha1>
+      <sha1>0tatks4cbp8u3npfmbipystawsnjrxx</sha1>
     </revision>
   </page>
 <page xmlns="http://www.mediawiki.org/xml/export-0.11/">
@@ -1380243,18 +1381034,18 @@ This research page is for the {{rarity|mw}} variant of this item, with an item i
     <ns>0</ns>
     <id>98946</id>
     <revision>
-      <id>2969149</id>
-      <parentid>2663367</parentid>
-      <timestamp>2025-05-22T04:56:07Z</timestamp>
+      <id>3215197</id>
+      <parentid>2969149</parentid>
+      <timestamp>2026-10-18T11:36:43Z</timestamp>
       <contributor>
         <username>Sunlion</username>
         <id>225997</id>
       </contributor>
-      <comment>/* Contents */ Added qty to contains, and added notes</comment>
-      <origin>2969149</origin>
+      <comment>/* Acquisition */</comment>
+      <origin>3215197</origin>
       <model>wikitext</model>
       <format>text/x-wiki</format>
-      <text bytes="18528" sha1="p4y5ywsve5uak5l3yqhafvocd8pigl5" xml:space="preserve">{{Item infobox
+      <text bytes="18563" sha1="im2758lxsaoexagzemptbc16i4yyzpi" xml:space="preserve">{{Item infobox
 | description = Double-click to open.
 | type = champ bag
 | bound = account
@@ -1380264,6 +1381055,9 @@ This research page is for the {{rarity|mw}} variant of this item, with an item i
 == Acquisition ==
 === Gathered from ===
 {{gathered from}}
+
+=== Dropped by ===
+{{dropped by}}
 
 === Contained in ===
 {{contained in}}
@@ -1380613,7 +1381407,7 @@ This research page is for the {{rarity|mw}} variant of this item, with an item i
 [[de:Saatgutbeutel]]
 [[es:Morral de semillas ecológicas]]
 [[fr:Trousse de graines de variétés anciennes]]</text>
-      <sha1>p4y5ywsve5uak5l3yqhafvocd8pigl5</sha1>
+      <sha1>im2758lxsaoexagzemptbc16i4yyzpi</sha1>
     </revision>
   </page>
 <page xmlns="http://www.mediawiki.org/xml/export-0.11/">
@@ -1466164,16 +1466958,17 @@ Priory norn female medium 2.jpg|Alternate appearance.
     <ns>0</ns>
     <id>407401</id>
     <revision>
-      <id>3191827</id>
-      <parentid>3190693</parentid>
-      <timestamp>2026-09-08T15:55:14Z</timestamp>
+      <id>3215255</id>
+      <parentid>3191827</parentid>
+      <timestamp>2026-10-18T15:29:54Z</timestamp>
       <contributor>
-        <ip>194.42.192.40</ip>
+        <username>Kossage</username>
+        <id>126773</id>
       </contributor>
-      <origin>3191827</origin>
+      <origin>3215255</origin>
       <model>wikitext</model>
       <format>text/x-wiki</format>
-      <text bytes="10741" sha1="5g4oen4osprxu11aky77szbi3j2f2dr" xml:space="preserve">{{NPC infobox
+      <text bytes="10783" sha1="9ez955he684ekjy8tfz1gm0r0k49ja5" xml:space="preserve">{{NPC infobox
 | icon = Renown heart NPC Janthir.png
 | location = Crumbling Precipice; Pilgrim's Rest
 | race = human
@@ -1466284,7 +1467079,7 @@ Priory norn female medium 2.jpg|Alternate appearance.
 :''[[Pact Commander|Commander]], good, you're here. [[Isgarren]] and I are coordinating [[Tyrian Alliance|alliance]] teams from this camp. We— I could use your help.''
 :''Speak to alliance members around camp and see what they need.''
 :&lt;small&gt;'''([[Pilgrim's Rest Renown Mastery]] tier 2)'''&lt;/small&gt;
-:''I'd say the gods answered my prayers, but... Forget it. Between camp and Priory tasks, I'm swamped. Help a scholar out?''
+:''I'd say the [[Six Human Gods|gods]] answered my prayers, but... Forget it. Between camp and [[Durmand Priory|Priory]] tasks, I'm swamped. Help a scholar out?''
 :&lt;small&gt;'''([[Pilgrim's Rest Renown Mastery]] tier 3)'''&lt;/small&gt;
 :''There you are. Ready to get to it?''
 :''We've collected some artifacts, thanks in part to your efforts. Give them a look when you're not busy.''
@@ -1466305,7 +1467100,7 @@ Priory norn female medium 2.jpg|Alternate appearance.
 :&lt;small&gt;'''([[Pilgrim's Rest Renown Mastery]] tier 4)'''&lt;/small&gt;
 :''And that's another day in the books.''
 :&lt;small&gt;'''([[Pilgrim's Rest Renown Mastery]] tier 5)'''&lt;/small&gt;
-:''I see why Isgarren relies on you to take charge, but then, it's hardly your first time. Trahearne would've been proud.''
+:''I see why Isgarren relies on you to take charge, but then, it's hardly your first time. [[Trahearne]] would've been proud.''
 
 ;Upon heart completion
 :&lt;small&gt;'''([[Pilgrim's Rest Renown Mastery]] tier 4 or 5)'''&lt;/small&gt;
@@ -1466323,7 +1467118,7 @@ Priory norn female medium 2.jpg|Alternate appearance.
 [[Category:Story characters]]
 [[de:Historikerin Meliza]]
 [[es:Historiadora Meliza]]</text>
-      <sha1>5g4oen4osprxu11aky77szbi3j2f2dr</sha1>
+      <sha1>9ez955he684ekjy8tfz1gm0r0k49ja5</sha1>
     </revision>
   </page>
 <page xmlns="http://www.mediawiki.org/xml/export-0.11/">
@@ -1507791,36 +1508586,53 @@ The [[Horns of the Dragon]] were a historical container item awarded for complet
     <ns>0</ns>
     <id>367152</id>
     <revision>
-      <id>2727450</id>
-      <parentid>2726441</parentid>
-      <timestamp>2023-08-28T00:37:42Z</timestamp>
+      <id>3215194</id>
+      <parentid>2727450</parentid>
+      <timestamp>2026-10-18T10:30:32Z</timestamp>
       <contributor>
-        <username>J.A.R.V.I.S.</username>
-        <id>207015</id>
+        <username>Sunlion</username>
+        <id>225997</id>
       </contributor>
-      <minor />
-      <comment>/* top */bot edit - &gt;  fixing headers/spacing</comment>
-      <origin>2727450</origin>
+      <origin>3215194</origin>
       <model>wikitext</model>
       <format>text/x-wiki</format>
-      <text bytes="408" sha1="07vssd0176y7l7xo7bi3abv9u9uozx5" xml:space="preserve">{{NPC infobox
-| image =
-| location = Hell Breaks Loose
+      <text bytes="845" sha1="qmq2052uy3dx2o0k1hnrwa41r1abgkq" xml:space="preserve">{{NPC infobox
+| image = no
+| location = Commander without a Cause; Hell Breaks Loose
 | race = Demon
 | organization = Kryptis
 | level = 80
 | requires = soto
 }}
-[[Horrific Creature]]s are various [[Kryptis]] attacking the [[Wizard's Ascent]] keep.
+[[Horrific Creature]]s are various [[Kryptis]] encountered in story steps before the [[Pact Commander]] learns their race's name.
 
 == Story involvement ==
 === [[Guild Wars 2: Secrets of the Obscure|Secrets of the Obscure]] ===
 * Act I
+** [[Commander without a Cause]]
 ** [[Hell Breaks Loose]]
 
 == Combat abilities ==
-* Various Kryptis abilities and skills</text>
-      <sha1>07vssd0176y7l7xo7bi3abv9u9uozx5</sha1>
+=== Commander without a Cause versions ===
+* Those of:
+** [[The Corrupted]]
+** [[Veteran Incarnation of Cruelty]]
+
+=== Hell Breaks Loose versions ===
+* Those of:
+** [[Incarnation of Terror]]
+** [[The Craven]]
+** [[The Tormented]]
+
+== Gallery ==
+&lt;gallery&gt;
+Incarnation of Cruelty.jpg
+Incarnation of Terror.jpg
+The Corrupted.jpg
+The Craven.jpg
+The Tormented.jpg
+&lt;/gallery&gt;</text>
+      <sha1>qmq2052uy3dx2o0k1hnrwa41r1abgkq</sha1>
     </revision>
   </page>
 <page xmlns="http://www.mediawiki.org/xml/export-0.11/">
@@ -1521439,27 +1522251,26 @@ Hullgarden Village Plaza 3.jpg
     <ns>0</ns>
     <id>384</id>
     <revision>
-      <id>3171956</id>
-      <parentid>3012347</parentid>
-      <timestamp>2026-07-20T22:10:13Z</timestamp>
+      <id>3215223</id>
+      <parentid>3171956</parentid>
+      <timestamp>2026-10-18T13:56:59Z</timestamp>
       <contributor>
-        <username>Ange</username>
-        <id>270755</id>
+        <username>Kossage</username>
+        <id>126773</id>
       </contributor>
-      <comment>/* See also */</comment>
-      <origin>3171956</origin>
+      <origin>3215223</origin>
       <model>wikitext</model>
       <format>text/x-wiki</format>
-      <text bytes="23782" sha1="kl0m3r1xo9j5gl3wklhy2w60plr0k2r" xml:space="preserve">[[File:Human 01 concept art (white).jpg|right|256px]]
+      <text bytes="23798" sha1="4053w3l5ica98lescuclo8zhlz6pj9v" xml:space="preserve">[[File:Human 01 concept art (white).jpg|right|256px]]
 {{quotation|In-game description|
 Humans have lost their homeland, their security, and their former glory. Even their gods have withdrawn. And yet, the human spirit remains unshaken. These brave defenders of Kryta continue to fight with every ounce of their strength.}}
-Once the dominant species of [[Tyria]], the [[human]]s have not fared well in the last few years. Their kingdoms, once spanning the entire continent of [[Central Tyria]], lie in ruins, leaving only [[Kryta]], the oppressed [[Elona]], and the isolationist [[Cantha]]. As the previous threats waned, an even deadlier one, that of the [[Elder Dragon]]s, has threatened the very existence of the human race.
+Once the dominant species of [[Tyria]], the [[human]]s have not fared well in the last few years. Their kingdoms, once spanning the entire [[continent]] of [[Central Tyria]], lie in ruins, leaving only [[Kryta]], the oppressed [[Elona]], and the isolationist [[Cantha]]. As the previous threats waned, an even deadlier one, that of the [[Elder Dragon]]s, has threatened the very existence of the human race.
 
-Humans are one of the five [[playable race]]s in Guild Wars 2.
+Humans are one of the five [[playable race]]s in ''[[Guild Wars 2]]''.
 
 == Character creation ==
 [[File:Humans render.jpg|thumb|200px|right|Render of human characters]]
-During [[character creation]], a player can customize a human's [[Physical appearance/Human|physical appearance]] and answer three race specific [[Biography#Human|biography]] questions which affect their [[personal story]]:
+During [[character creation]], a [[player]] can customize a human's [[Physical appearance/Human|physical appearance]] and answer three race specific [[Biography#Human|biography]] questions which affect their [[personal story]]:
 * the social status the character was raised as.
 * what one of their biggest regrets is.
 * which of the [[Six Human Gods]] they are blessed by.
@@ -1521631,7 +1522442,7 @@ Town02M render.jpg
 [[de:Mensch]]
 [[es:Humano]]
 [[fr:Humain]]</text>
-      <sha1>kl0m3r1xo9j5gl3wklhy2w60plr0k2r</sha1>
+      <sha1>4053w3l5ica98lescuclo8zhlz6pj9v</sha1>
     </revision>
   </page>
 <page xmlns="http://www.mediawiki.org/xml/export-0.11/">
@@ -1627602,18 +1628413,17 @@ The merged discussion about this bug (and where future comments on its recurrenc
     <ns>0</ns>
     <id>375171</id>
     <revision>
-      <id>3078452</id>
-      <parentid>2888898</parentid>
-      <timestamp>2025-12-15T12:46:48Z</timestamp>
+      <id>3215658</id>
+      <parentid>3078452</parentid>
+      <timestamp>2026-10-18T22:49:56Z</timestamp>
       <contributor>
-        <username>Tery3065</username>
-        <id>270948</id>
+        <username>Kossage</username>
+        <id>126773</id>
       </contributor>
-      <minor />
-      <origin>3078452</origin>
+      <origin>3215658</origin>
       <model>wikitext</model>
       <format>text/x-wiki</format>
-      <text bytes="1422" sha1="ljo84bd5584yt4mqio22t57aora3luv" xml:space="preserve">{{NPC infobox
+      <text bytes="1409" sha1="6f7hmx7lwi2zdbvw1xdrgkuy2134onr" xml:space="preserve">{{NPC infobox
 | image = Astral Ward Skirmisher charr male 4.jpg
 | location = Nyedra, Dreamer's Sanctum
 | coordinates = [20960.3, 22899.5]
@@ -1627637,17 +1628447,17 @@ The merged discussion about this bug (and where future comments on its recurrenc
 * Ranged Support
 
 == Dialogue ==
-:'''Infiltrator Seric''': Thanks for your help, Wayfinder. Need anything from me?
-:{{dialogue icon|more}} ''What have you learned about the Kryptis here?''
+:Thanks for your help, [[Wayfinder]]. Need anything from me?
+:{{dialogue icon|more}} ''What have you learned about the [[Kryptis]] here?''
 ::The civilians? They're scared, mostly. Barely knew a war was happening and definitely didn't expect it to show up on their doorstep. Most don't have a clue what we even are.
 ::{{dialogue icon|more}} ''Hopefully they'll see we mean them no harm.''
 :::I guess we'll see. But we're doing the right thing by helping them, whether they like us afterward or not
 :::{{dialogue icon|end}} ''Agreed.''
-:{{dialogue icon|more}} ''Have the freed Kryptis proven to be good allies?''
-::Of course. Nobody fights harder than someone fighting for their own home. They do anything we ask of, and sometimes more. Granted, they've got a lot more to lose.
+:{{dialogue icon|more}} ''Have the free Kryptis proven to be good allies?''
+::Of course. Nobody fights harder than someone fighting for their own home. They do anything we ask of them, and sometimes more. Granted, they've got a lot more to lose.
 ::{{dialogue icon|end}} ''That makes sense.''
 :{{dialogue icon|end}} ''I don't think so.''</text>
-      <sha1>ljo84bd5584yt4mqio22t57aora3luv</sha1>
+      <sha1>6f7hmx7lwi2zdbvw1xdrgkuy2134onr</sha1>
     </revision>
   </page>
 <page xmlns="http://www.mediawiki.org/xml/export-0.11/">
@@ -1678096,19 +1678906,17 @@ This meta event is not on a timer. Instead, it starts once both previous meta ev
     <ns>0</ns>
     <id>393191</id>
     <revision>
-      <id>3191561</id>
-      <parentid>3191073</parentid>
-      <timestamp>2026-09-07T10:46:04Z</timestamp>
+      <id>3215195</id>
+      <parentid>3191561</parentid>
+      <timestamp>2026-10-18T10:45:49Z</timestamp>
       <contributor>
-        <username>Caeldom</username>
-        <id>269879</id>
+        <ip>79.197.156.99</ip>
       </contributor>
-      <minor />
-      <comment>/* Walkthrough */ formatting</comment>
-      <origin>3191561</origin>
+      <comment>Upaded the objectives list with an entry only to be seen on screen; reorganised the NPC section and added allies from the first instance to it; some less linking; added Mursaat Mirror to Objects; some minor additions</comment>
+      <origin>3215195</origin>
       <model>wikitext</model>
       <format>text/x-wiki</format>
-      <text bytes="23763" sha1="07erlvz5d6pjc9zb33fw5h4v4q11g6r" xml:space="preserve">{{Story infobox
+      <text bytes="24627" sha1="pl83u00wtm5i7edeom8uie1kjrcu6dr" xml:space="preserve">{{Story infobox
 | name = Into the Valley of Shadow
 | storyline = Janthir Wilds
 | chapter number = 14
@@ -1678128,10 +1678936,10 @@ This meta event is not on a timer. Instead, it starts once both previous meta ev
 [[Into the Valley of Shadow]] is the fourteenth chapter of the [[Guild Wars 2: Janthir Wilds|Janthir Wilds]] [[Janthir Wilds story|story]] and the first chapter of [[Repentance]].
 
 == Objectives ==
-;''Read the [[#Mail from Countess Anise|mail]] from [[Countess Anise|Anise]].''
+;''Read the mail from Anise.''
 * Read the mail from Countess Anise. 
 
-;''Meet [[Poised Arrow]] in [[Janthir Syntri]].''
+;''Meet Poised Arrow in Janthir Syntri.''
 * Find Poised Arrow near [[Thunder Bay Point]].
 
 ;''Get the lay of the land.''
@@ -1678159,6 +1678967,7 @@ This meta event is not on a timer. Instead, it starts once both previous meta ev
 * Keep moving down the valley.
 * Approach the wisp.
 * Use the Heart of the Obscure on the wisp.
+* (Defeat the army od spirits.) &lt;!--only on screen, not in the list--&gt;
 * Mursaat Ghost Swarm &lt;br&gt; {{Event bar|color=green}}
 * Enter Waiting Sorrow's shield before agony consumes you.
 * Regroup with your allies.
@@ -1678220,19 +1679029,59 @@ When the progress bar is half empty, Waiting Sorrow will cast a shield. Enter th
 == NPCs ==
 {{section-stub|story|May be incomplete}}
 === Allies ===
+;[[Asura]]
+* [[Lieutenant Corri]]
+
+;[[Charr]]
+* [[Ward Protector Surepaw]]
+
+;[[Djinn]]
+* [[Alya]]
+
+;[[Human]]s
+* [[Astral Ward Scout]]
 * [[Countess Anise]]
-* [[Isgarren]]
-* [[Mabon]] &lt;small&gt;(projection)&lt;/small&gt;
+* [[Priory Scholar Ciana]]
+
+;[[Kodan]]
+* [[Curious Remedy]]
+* [[Kodan Landspeaker]]
+* [[Kodan Wildstalker]]
 * [[Poised Arrow]]
 * [[Waiting Sorrow]]
 
+;[[Mursaat]]
+* [[Mabon]] &lt;small&gt;(projection)&lt;/small&gt;
+
+;[[Norn]]
+* [[Ward Protector Timsdottir]]
+
+;[[Seer]]
+* [[Isgarren]]
+
+;[[Sylvari]]
+* [[Head Researcher Rhianwyn]]
+
+;Various
+* [[Astral Ward Protector (NPC)|Astral Ward Protector]]
+* [[Astral Ward Mage]]
+* [[Astral Ward Skirmisher]]
+* [[Priory Scholar]]
+* [[Rift Hunter Warrior]]
+
+In the open world parts of this story you also encounter allies related to the Mistburned Barrens map and its events.
+
 === Foes ===
+;[[Ghost]]s
 * [[Chorister]]
 * [[Mursaat Ghost]]
 * [[Yagon]]
 
+In the open world parts of this story you also encounter foes related to the Mistburned Barrens map and its events.
+
 == Objects ==
 {{section-stub|story|Missing the objects}}
+* [[Mursaat Mirror]]
 
 == Dialogue ==
 === Mail from Countess Anise ===
@@ -1678314,7 +1679163,7 @@ Countess Anise
 :'''&lt;Character name&gt;:''' Not hard to get lost out here...
 :'''&lt;Character name&gt;:''' Need to be careful; easy to get turned around out here.
 
-;Examining the [[Mursaat Mirror|strange object]]
+;Examining the Mursaat Mirror
 :The object thrums with power, but it does not react to your touch.
 :{{dialogue icon|story}} ''Maybe I'm missing something here.''
 ::You see visions of the ancient mursaat using these objects to traverse their ancient city. You have the insight—now you just need the training.
@@ -1678345,7 +1679194,8 @@ Countess Anise
 :'''Isgarren:''' Hm...
 :'''Isgarren:''' I can offer protection from the spectral agony provided you stay in my vicinity. Let us make haste.
 
-;Leaving Isgarren's protection (randomly chosen line from below)
+;Leaving Isgarren's protection
+:''One of the following:''
 :'''Isgarren:''' Where are you going? If you want my protection from the agony, you must stay nearby.
 :'''Isgarren:''' Is your attention span that feeble, Wayfinder? Stay close or my protections won't be able to help you.
 :'''Isgarren:''' Where are you wandering off to? I can't protect you from the agony if you're out of range.
@@ -1678366,7 +1679216,7 @@ Countess Anise
 :'''Isgarren:''' So many lost for such trivial ends...
 :'''Isgarren:''' So many lives sacrificed...and for what?
 
-;Random lines from the [[Chorister]]s
+;Random lines from the [[Chorister]]s &lt;small&gt;(only ambient, not in chat)&lt;/small&gt;
 :'''Chorister:''' We are done...
 :'''Chorister:''' Nothing but pain remains...
 :'''Chorister:''' It burns...!
@@ -1678393,7 +1679243,7 @@ Countess Anise
 :'''Poised Arrow:''' Hey... Hey!
 :'''&lt;Character name&gt;:''' Weapons! Now!
 
-;Random lines from the [[Mursaat Ghost]]s during the attack
+;Random lines from the [[Mursaat Ghost]]s during the attack &lt;small&gt;(only ambient, not in chat)&lt;/small&gt;
 :'''Mursaat Ghost:''' Back! Away!
 :'''Mursaat Ghost:''' The [[titan]]s come!
 :'''Mursaat Ghost:''' Your blood will feed the [[Bloodstone|stone]]!
@@ -1678492,7 +1679342,7 @@ Our surprises weren't done just yet. Poky drew our attention back to the wisp, o
 {{Janthir Wilds storyline}}
 [[de:Ins Tal der Schatten]]
 [[es:Hacia el corazón del Valle de las Sombras]]</text>
-      <sha1>07erlvz5d6pjc9zb33fw5h4v4q11g6r</sha1>
+      <sha1>pl83u00wtm5i7edeom8uie1kjrcu6dr</sha1>
     </revision>
   </page>
 <page xmlns="http://www.mediawiki.org/xml/export-0.11/">
@@ -1710960,17 +1711810,17 @@ By 1256 &lt;small&gt;AE&lt;/small&gt;, the two had a fight, concluding with Isay
     <ns>0</ns>
     <id>52569</id>
     <revision>
-      <id>3208826</id>
-      <parentid>3208024</parentid>
-      <timestamp>2026-10-05T23:30:39Z</timestamp>
+      <id>3215559</id>
+      <parentid>3208826</parentid>
+      <timestamp>2026-10-18T18:46:14Z</timestamp>
       <contributor>
         <username>Kossage</username>
         <id>126773</id>
       </contributor>
-      <origin>3208826</origin>
+      <origin>3215559</origin>
       <model>wikitext</model>
       <format>text/x-wiki</format>
-      <text bytes="61390" sha1="go40h2o0fsh1jlfjs86b45fta6snj9m" xml:space="preserve">{{otheruses|the [[story]] character|the [[Fractals of the Mists]] boss|The Eternal Tyrant}}
+      <text bytes="61394" sha1="g21l85566fkt8te49fcatoiz9qjn835" xml:space="preserve">{{otheruses|the [[story]] character|the [[Fractals of the Mists]] boss|The Eternal Tyrant}}
 {{spoiler|''[[Guild Wars 2: Secrets of the Obscure]]'', ''[[Guild Wars 2: Janthir Wilds]]'', and ''[[Guild Wars 2: Visions of Eternity]]''}}
 {{NPC infobox
 | icon = Collection.png
@@ -1711507,7 +1712357,7 @@ So Be It cinematic 1.jpg|Isgarren [[So Be It|breaks]] [[Ancora]] to remove the p
 So Be It cinematic 2.jpg|Isgarren unleashes a cascade of memories.
 So Be It cinematic 4.jpg|[[Legendary Sidony the Shadowkeeper|Sidony]] with Ancora.
 So Be It cinematic 6.jpg|Isgarren teaches [[Eparch]].
-So Be It cinematic 7.jpg|Eparch slaughters a [[centaur]] village as horrified Isgarren witnesses the aftermath.
+So Be It cinematic 7.jpg|Eparch slaughters a [[centaur]] village as the horrified Isgarren witnesses the aftermath.
 So Be It cinematic 8.jpg|Isgarren and [[Mabon]] stop fighting and forgive each other.
 So Be It cinematic 10.jpg|Isgarren loses his ascended power.
 Isgarren (mortal).jpg|Isgarren after losing his ascended power.
@@ -1711583,7 +1712433,7 @@ Code of Creation promo 01.jpg|Promotional art featuring [[Director Vloxx]] and I
 [[de:Isgarren]]
 [[es:Isgarren]]
 [[fr:Isgarren]]</text>
-      <sha1>go40h2o0fsh1jlfjs86b45fta6snj9m</sha1>
+      <sha1>g21l85566fkt8te49fcatoiz9qjn835</sha1>
     </revision>
   </page>
 <page xmlns="http://www.mediawiki.org/xml/export-0.11/">
@@ -1828179,20 +1829029,17 @@ The [[Kanuz Cache]] is a [[point of interest]] located in the southwest of the [
     <ns>0</ns>
     <id>314133</id>
     <revision>
-      <id>2775229</id>
-      <parentid>2583137</parentid>
-      <timestamp>2023-12-03T16:33:48Z</timestamp>
+      <id>3215205</id>
+      <parentid>3215204</parentid>
+      <timestamp>2026-10-18T12:58:53Z</timestamp>
       <contributor>
-        <username>J.A.R.V.I.S.</username>
-        <id>207015</id>
+        <username>Kossage</username>
+        <id>126773</id>
       </contributor>
-      <minor />
-      <comment>/* top */bot edit - &gt; adding stub tag reasons/adding to stub category</comment>
-      <origin>2775229</origin>
+      <origin>3215205</origin>
       <model>wikitext</model>
       <format>text/x-wiki</format>
-      <text bytes="570" sha1="rhgho8hdvsxjdsnex5n7d170j145su1" xml:space="preserve">{{stub|location|please put a reason for this stub tag, otherwise remove the stub tag}}
-{{Location infobox
+      <text bytes="487" sha1="hrpkguf8oh58ed5cjpmej5vvbs5wyaa" xml:space="preserve">{{Location infobox
 | type = Point of Interest
 | within = Flooded Basin
 | id = 3356
@@ -1828203,14 +1829050,14 @@ The [[Kanuz Cache]] is a [[point of interest]] located in the southwest of the [
 [[Kaolai Tower]] is a [[Point of Interest]] in the [[Flooded Basin]], [[Dragon's End]].
 
 == Trivia ==
-* Presumably named after [[gww:Kaolai|Kaolai]], an ancient [[Cantha]]n ritualist who challenged [[Balthazar]] to a game and won, though he was killed for it.
+* Presumably named after [[gww:Kaolai|Kaolai]], an ancient [[Cantha]]n [[ritualist]] who challenged [[Balthazar]] to a game and won, though he was killed for it.
 
 {{Dragon's End nav}}
 
 [[de:Kaolai-Turm]]
 [[es:Torre de Kaolai]]
 [[fr:Tour de Kaolai]]</text>
-      <sha1>rhgho8hdvsxjdsnex5n7d170j145su1</sha1>
+      <sha1>hrpkguf8oh58ed5cjpmej5vvbs5wyaa</sha1>
     </revision>
   </page>
 <page xmlns="http://www.mediawiki.org/xml/export-0.11/">
@@ -1878374,962 +1879221,6 @@ He survived the attack on [[Lion's Arch]] and can now be found back in [[Fort Ma
 [[de:Killian]]
 [[es:Killian]]</text>
       <sha1>ebjudf5r1x6c32p94ophb50arqqr3i0</sha1>
-    </revision>
-  </page>
-<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
-    <title>Killing Fields</title>
-    <ns>0</ns>
-    <id>51955</id>
-    <revision>
-      <id>2610341</id>
-      <parentid>2495320</parentid>
-      <timestamp>2022-10-30T09:18:14Z</timestamp>
-      <contributor>
-        <username>Balwin</username>
-        <id>4258</id>
-      </contributor>
-      <minor />
-      <comment>some minor wording changes; added comment about old Lion's Arch appearence</comment>
-      <origin>2610341</origin>
-      <model>wikitext</model>
-      <format>text/x-wiki</format>
-      <text bytes="12777" sha1="s8ixrui7sdqi48w54svs14zedhgia1h" xml:space="preserve">{{Story infobox
-| id = 296
-| storyline = Personal story
-| chapter = The Battle of Claw Island
-| chapter number = 6
-| sortkey number = 7
-| step number = 3
-| location = Fort Marriner
-| level = 60
-| order = Vigil
-| prev = The Battle of Claw Island
-| next = Defense Contract; The Good Fight
-}}
-[[Killing Fields]] is part of the [[personal story]] for [[character]]s of all races who decide to join the [[Vigil]] and have completed [[The Battle of Claw Island]].
-
-== Objectives ==
-'''Regroup with the Vigil troops.'''
-* Read Almorra's letter
-'''Join with the Vigil and defend Lion's Arch.'''
-* Report to General Almorra at Fort Marriner
-* Help Almorra inspire the Vigil soldiers.
-* Defend the beach.
-* Speak to Almorra.
-* Choose your next course of action.
-
-== Rewards ==
-{{story reward|The Battle of Claw Island|3}}
-
-== Walkthrough ==
-You meet up with Almorra Soulkeeper and several other Vigil soldiers. The beaches ahead are swarming with Risen, and it's your goal to eliminate them all. The soldiers will split off in three directions: one group to the left, one to the middle, one to the right. It's up to you to decide where you want to fight.
-
-This mission is largely luck-based; you're gambling on not drawing the attention of too many Risen at once, so that your NPC allies can soak up the damage. The Vigil do a decent job of staying alive, and you can revive them if needed. However, there are a lot of foes, and additional ones will come from the water periodically. If an entire group gets overwhelmed, it's a problem, since then the Risen will accumulate on that side; reviving all the troops takes time, and it is difficult to take on that many enemies at once.
-
-You should prioritize taking out Risen Abominations and Risen Plague Carriers as soon as possible. They deal devastating damage and quickly wipe out NPCs if left unattended. Alternatively you can stay behind and use the arrow carts to kill the Risen with minimal effort or danger.
-
-After all the Risen have been defeated, the mission is over, and you get a choice of what to do for the next mission.
-
-== NPCs ==
-=== Allies ===
-; [[Charr]]
-* [[General Almorra Soulkeeper]]
-
-; [[Sylvari]]
-* [[Laranthir of the Wild]]
-* [[Trahearne]]
-
-; Various
-* [[Vigil Crusader]]
-* [[Vigil Tactician]]
-
-=== Foes ===
-; [[Risen]]
-* [[Risen Abomination (veteran)|Risen Abomination]]
-* [[Risen Brute]]
-* [[Risen Plague Carrier]]
-* [[Risen Thrall]]
-
-== Objects ==
-;Siege weapons
-* [[Arrow Cart (Defending the Keep)|Arrow Cart]]
-
-== Dialogue ==
-Your mail:
-{{Mail
-| sender = General Almorra Soulkeeper
-| subject = Form Ranks at Fort Marriner
-| content = Warmaster,
-
-News of the death of mighty Forgal has been a blow to us all. I am deeply saddened to hear of it, and I know you must be suffering. But now, with Zhaitan on our shores and the city of Lion's Arch threatened, the Vigil is needed more than ever. We are regrouping at Fort Marriner, to lend our efforts to the city's immediate defense. Your orders are to rendezvous there and lead a contingent of soldiers into battle.
-
-The Vigil needs your courage; Tyria needs your knowledge of our enemy's weaknesses. Be strong.
-| sign = General Almorra Soulkeeper
-}}
-
-At [[Fort Marriner]], passing [[Vigil]] troops on way to meeting point:
-:'''Vigil Crusader''': It's so quiet... You know I was born here? I've never heard this city so silent.
-:'''Vigil Crusader''': Yes. It would be peaceful if only it didn't feel as if everything were holding its breath.
-
-:'''Vigil Crusader''': Did you know Warmaster Kernsson personally?
-:'''Vigil Crusader''': He trained me. He was a great soldier, but a hard person to know.
-:'''Vigil Crusader''': Forgal gave his life to save the people of Lion's Arch.
-:'''Vigil Crusader''': He gave his life to save us all. Remember that, soldier.
-
-:'''Vigil Tactician''': Are the undead on the continent? Have they taken Lion's Arch?
-:'''Vigil Crusader''': Not yet. Still, the city's taken precautions.
-:'''Vigil Crusader''': The Lionguard drew up the underwater sluice gates, cleared the streets, and put the city in lockdown.
-
-:'''Vigil Tactician''': In case you haven't realized it, this is war! Stay focused!
-:'''Vigil Tactician''': What are you, a jellyfish? Keep that arm stiff and use your wrist!
-:'''Vigil Tactician''': Better. Strike again, and this time, keep your shield up!
-
-:'''Vigil Tactician''': Aim gently, and as you breathe out...pull the trigger.
-
-:'''Vigil Tactician''': Tail up, charr! Yell it like you want the dragons to hear!
-:'''Vigil Tactician''': I don't want to see any of you humans falling behind. You've got to work twice as hard, but that'll make you twice as mean!
-:'''Vigil Tactician''': Left...left...left, right, left!
-:'''Vigil Tactician''': If I see another one of you asura trying to levitate instead of march, I'm giving you gravity boots!
-
-:'''Vigil Tactician''': Barkeep, more ale! Let's lift one to Warmaster Forgal!
-:'''Vigil Tactician''': Another round for the house. To absent friends!
-
-:'''Vigil Crusader''': Did you hear? They say a dragon lieutenant called Blightghast attacked Claw Island!
-:'''Vigil Crusader''': I heard Warmaster Forgal gave his life to hold it off. I can hardly believe it.
-:'''Vigil Crusader''': Burn me, he was brave. I hope I go down fighting like he did.
-
-Approaching meeting point:
-:'''General Almorra Soulkeeper''': Scouts are reporting undead just off the coast. It's a small force, but substantial enough for concern.
-:'''Trahearne''': [[Zhaitan]]'s overconfident, assuming [[Claw Island]] was the only thing standing between its army and [[Lion's Arch]].
-:'''General Almorra Soulkeeper''': Then it's our job to show the dragon how wrong it was.
-
-Upon talking to General Almorra Soulkeeper (cinematic):
-:'''General Almorra Soulkeeper''': At ease, Warmaster. I heard what happened at Claw Island. The [[Lionguard]] — no, the whole city — owes you a debt of honor.
-:'''&lt;Character name&gt;''': I just did my duty, ma'am. [[Warmaster Forgal Kernsson|Forgal]] was the brave one. He gave his life to save us.
-:'''General Almorra Soulkeeper''': He will be remembered as one of the Vigil's great heroes, and he will be dearly missed.
-:'''Trahearne''': Forgal's sacrifice held them back, but it was your bravery that led us to safety, my friend. I am grateful to you.
-:'''Trahearne''': If I can aid in this defense, Warmaster, I'm at your service.
-:'''General Almorra Soulkeeper''': You took out enough of Zhaitan's forces to stop the imminent attack on Lion's Arch, but the dragon won't pause for long.
-:'''General Almorra Soulkeeper''': There are reports of undead landing up and down the coast, likely an attempt to soften the city's perimeter.
-:'''General Almorra Soulkeeper''': We need to organize the Vigil's forces and defend the beach. Come, let's review the troops.
-
-While reviewing the troops with General Almorra Soulkeeper:
-:'''General Almorra Soulkeeper''': Crusaders! Forces of the Elder Dragon Zhaitan stand on the very threshold of Lion's Arch.
-:'''General Almorra Soulkeeper''': If Lion's Arch falls, the nations of Tyria will not be far behind. Fight for your homes! Fight for your families!
-:'''General Almorra Soulkeeper''': This is what we've trained for! This is what we've bled for! This is what we will die to defend!
-:'''General Almorra Soulkeeper''': We will hold this ground! We are the Vigil!
-
-:'''Trahearne''': You can't do this alone. I'll stand with you.
-
-Talking with Laranthir:
-:'''Laranthir of the Wild''': I never thought this day would come. I like Orr far away—not standing on Tyria's doorstep.
-:{{dialogue icon|more}} ''Zhaitan's hunger can't be sated. We're lucky we were ready.''
-::I'm glad you're among us, &lt;character name&gt;. We need you more than ever.
-::{{dialogue icon|back}} ''I have a question.''
-::{{dialogue icon|end}} ''Don't give in to fear.''
-:{{dialogue icon|end}} ''Stay strong.''
-
-Talking with General Soulkeeper:
-:'''General Almorra Soulkeeper''': Vigil scouts report massive numbers of undead along the coast. We must hold out or Lion's Arch will fall.
-:{{dialogue icon|more}} ''What's your plan, General?
-::We have soldiers mustering on the beach ready to take your orders. Command them and defend this point.
-::{{dialogue icon|end}} ''I'll do my best.''
-
-Talking with Trahearne:
-:'''Trahearne''': The Vigil troops may hold this beach, but more undead will come. We need a better solution.
-:{{dialogue icon|end}} ''We'll find one. But for now, we make a stand—here.''
-
-Speaking with Almorra after defending the beach (cinematic):
-:'''General Almorra Soulkeeper''': Well done, soldiers! That should thin out the undead and take pressure off Lion's Arch for a while longer.
-:'''Trahearne''': The Vigil bought us time, but not advantage. The undead don't get weary, and they have an almost unending supply of troops.
-:'''Trahearne''': We must retake Claw Island and drive Zhaitan from these shores.
-:'''Trahearne''': General Soulkeeper, there are many brave souls throughout [[Tyria]] who may be willing to lend a hand, if the Vigil reached out to them.
-:'''General Almorra Soulkeeper''': True. A few come to mind. A [[norn]] called [[Fibharr Ygosson|Fibharr]] has been making his name in the tournaments. Fights like a rabid drake.
-:'''General Almorra Soulkeeper''': I also know two fine [[charr]] soldiers that I've been trying to recruit for years—[[Snarl Backdraft|Snarl]] and [[Galina Edgecrusher|Galina]]. They'd be a tremendous help.
-:'''&lt;Character name&gt;''': These sound promising. I could go, ma'am, and speak on behalf of the order.
-:'''General Almorra Soulkeeper''': Good initiative. Pick one or the other, and do your best to bring them aboard. Meanwhile, I'll return to [[Vigil Keep]] and rally our crusaders there.
-:'''Trahearne''': Whatever you decide, I'm going with you. You need the help—and I owe it to Forgal.
-
-Talking with General Soulkeeper:
-:'''General Almorra Soulkeeper''': Well done, Warmaster. Forgal—bless his sour hear—would be proud.
-:{{dialogue icon|end}} ''I'd like to think so, ma'am.''
-
-Talking to Laranthir:
-:'''Laranthir of the Wild''': There were many Risen&amp;mdash;only a fraction of their army. By the Tree, I never really understood what we were fighting.
-:{{dialogue icon|dignity}} ''They're beaten. The beach is clear.''
-::But what else is out there across the waves?''
-::{{dialogue icon|end}} ''We need to take the offensive.''
-:{{dialogue icon|charm}} ''You fought bravely. The Vigil never faltered.''
-::We stood fast, but we can't hold the line anymore. We must destroy the source.
-::{{dialogue icon|end}} We will, but for now we strengthen our numbers.''
-:{{dialogue icon|ferocity}} ''The beach runs with Risen blood!''
-::Yes, but it isn't enough. We can't just wait here for them to coem to us.
-::{{dialogue icon|end}} ''We'll take the fight to Orr. I promise you that.''
-:{{dialogue icon|end}} ''We'll defeat the Risen.''
-
-Talking to Trahearne:
-:'''Trahearne''': We need reinforcements. I can think of two possibilities—a norn pit-champion, or a warband of Iron Legion{{sic|see notes}} charr.
-:{{dialogue icon|more}} ''What are their strengths? Start with the norn.''
-::Fibharr is powerful, skilled, and charismatic...but he's also the most egotistical snot-brain I've ever met.
-::{{dialogue icon|more}} ''What about the charr?''
-:::The Gear warband{{sic|see notes}} have two claims to fame: they built an impressive war-engine, and they got so drunk that they lost it.
-:::{{dialogue icon|back}} ''Bizarre. With that in mind, I'm ready to decide.''
-:{{dialogue icon|more}} ''I've made my decision.''
-::Which will it be, &lt;character name&gt;? The norn gladiator or the charr engineers?
-::{{dialogue icon|choice}} ''We should recruit the norn, Fibharr.'' &lt;small&gt;'''(leads to [[The Good Fight]])'''&lt;/small&gt;
-::{{dialogue icon|choice}} ''We should recruit the Gear warband.''{{sic|see notes}} &lt;small&gt;'''(leads to [[Defense Contract]])'''&lt;/small&gt;
-
-== My story ==
-{{mystory
-
-| text = Almorra ordered me to report to Fort Marriner, the Vigil's outpost in Lion's Arch. We have to hold off the dragon's incursions for as long as we can, until the Lionguard is ready to levy a counterassault.
-
-Zhaitan's forces attacked from the beach, but we held them off. General Soulkeeper is returning to Vigil Keep to rally an army. In the meantime, Trahearne and I are going to call upon our allies across the continent. Tyria is in great danger.
-}}
-
-== Notes ==
-* Like with all other Personal Story chapters taking place within Lion's Arch, it is showing the old version of the city and displaying it with a sepia tone added with post-processing.
-{{bug|Trahearne's dialogue when choosing your options talks about the Gear Warband from norn blacked-out storyline instead of Snarl and Galina.}}
-
-{{Orders storyline|6}}
-
-[[de:Der Kriegsschauplatz]]
-[[es:Campos de muerte]]
-[[fr:Champ de bataille]]</text>
-      <sha1>s8ixrui7sdqi48w54svs14zedhgia1h</sha1>
-    </revision>
-  </page>
-<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
-    <title>Killproof</title>
-    <ns>0</ns>
-    <id>389725</id>
-    <redirect title="Kill proof" />
-    <revision>
-      <id>2905577</id>
-      <timestamp>2024-12-01T22:32:53Z</timestamp>
-      <contributor>
-        <username>MrModius</username>
-        <id>243563</id>
-      </contributor>
-      <comment>Redirected page to [[Kill proof]]</comment>
-      <origin>2905577</origin>
-      <model>wikitext</model>
-      <format>text/x-wiki</format>
-      <text bytes="24" sha1="4qygzso78m6lph727s05yyjc0kh945q" xml:space="preserve">#REDIRECT [[Kill proof]]</text>
-      <sha1>4qygzso78m6lph727s05yyjc0kh945q</sha1>
-    </revision>
-  </page>
-<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
-    <title>Killshot</title>
-    <ns>0</ns>
-    <id>80270</id>
-    <redirect title="Kill Shot" />
-    <revision>
-      <id>510722</id>
-      <parentid>510721</parentid>
-      <timestamp>2013-02-04T07:57:13Z</timestamp>
-      <contributor>
-        <username>Knighthonor</username>
-        <id>55668</id>
-      </contributor>
-      <comment>Redirected page to [[Kill Shot]]</comment>
-      <origin>510722</origin>
-      <model>wikitext</model>
-      <format>text/x-wiki</format>
-      <text bytes="22" sha1="85zc4w5nkegrnut726ka4ueggvoiwll" xml:space="preserve">#redirect[[Kill Shot]]</text>
-      <sha1>85zc4w5nkegrnut726ka4ueggvoiwll</sha1>
-    </revision>
-  </page>
-<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
-    <title>Killstreak Experience Booster</title>
-    <ns>0</ns>
-    <id>40110</id>
-    <revision>
-      <id>3189522</id>
-      <parentid>2890786</parentid>
-      <timestamp>2026-08-31T09:01:14Z</timestamp>
-      <contributor>
-        <username>Hazasoul</username>
-        <id>133824</id>
-      </contributor>
-      <minor />
-      <comment>moved to service</comment>
-      <origin>3189522</origin>
-      <model>wikitext</model>
-      <format>text/x-wiki</format>
-      <text bytes="1016" sha1="0g7eqg4f0883iu2fx1qtr9rhhgvpcee" xml:space="preserve">{{Item infobox
-| type = Booster
-| rarity = fine
-| bound = account
-| status = discontinued
-| description = [[File:Active_Kill_Streak!.png|18px]] [[Active Kill Streak!]] (1m): +10% exp from kills for each stack. Maximum: +100%&lt;br&gt;[[Killstreak Experience Booster (effect)|Boost]] lasts for one hour. Kill streaks last 60 seconds from the most recent kill and can be restarted as often as necessary within the hour.
-| id = 19999
-}}
-
-== Acquisition ==
-=== Sold by ===
-{{Sold by}}
-
-=== Contained in ===
-{{contained in}}
-
-== Notes ==
-* {{item icon|Enchanted Reward Boost}}s can be created from this booster from [[Black Lion Trader]]s or [[Boost Enchantment Powder]].
-* Killstreak Experience Boosters will stack with [[Experience Booster]]s and [[Nourishment|nourishment buffs]] (from food, potions, oils etc.), meaning you can have one of each type running at once.
-
-[[de:Erfahrungsverstärker für Siegesserie]]
-[[es:Potenciador de experiencia de racha de muertes]]
-[[fr:Augmentation d'expérience de victimes en série]]</text>
-      <sha1>0g7eqg4f0883iu2fx1qtr9rhhgvpcee</sha1>
-    </revision>
-  </page>
-<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
-    <title>Killstreak Experience Booster (effect)</title>
-    <ns>0</ns>
-    <id>122898</id>
-    <revision>
-      <id>3189547</id>
-      <parentid>813691</parentid>
-      <timestamp>2026-08-31T09:50:17Z</timestamp>
-      <contributor>
-        <username>Hazasoul</username>
-        <id>133824</id>
-      </contributor>
-      <origin>3189547</origin>
-      <model>wikitext</model>
-      <format>text/x-wiki</format>
-      <text bytes="741" sha1="g9mk40s9o8i5bwtl5p2g7m4iw2woezt" xml:space="preserve">{{Effect infobox
-| name = Killstreak Experience Booster
-| stacking = no
-| description = Gain bonus [[experience]] for each kill within 60 seconds; max stack of 10.
-| id = 22888
-}}
-
-== Sources ==
-* {{item icon|Enchanted Reward Boost}} (1 h) &lt;small&gt;(if [[Killstreak Experience Booster (service)|Killstreak Experience Booster]] is chosen)&lt;/small&gt;{{verify|Tooltip only mentions Active Kill Streak!}}
-* {{item icon|Killstreak Experience Booster|{{gray|Killstreak Experience Booster}}}} (1 h) &lt;small&gt;(chance, discontinued)&lt;/small&gt;
-
-== Notes ==
-* Killing a foe grants one stack of {{effect|Active Kill Streak!}}
-* If also affected by {{effect|Experience Booster (effect)}}, stacks are gained twice as fast (2 per kill), but still cannot surpass 10.</text>
-      <sha1>g9mk40s9o8i5bwtl5p2g7m4iw2woezt</sha1>
-    </revision>
-  </page>
-<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
-    <title>Killstreak Experience Booster (service)</title>
-    <ns>0</ns>
-    <id>421440</id>
-    <revision>
-      <id>3189515</id>
-      <timestamp>2026-08-31T08:57:41Z</timestamp>
-      <contributor>
-        <username>Hazasoul</username>
-        <id>133824</id>
-      </contributor>
-      <comment>New page: '{{Item infobox | icon = Killstreak Experience Booster.png | name = Killstreak Experience Booster | type = Service | rarity = fine | description = {{nourishment|name=Active Kill Streak!|1 m|Gain 10 seconds of swiftness when gathering.&lt;br&gt;33% chance at extra resources when gathering.|icon=Active Kill Streak!.png}} | bound = Account | id = 49872 }}  {{bug|Despite only showing the {{effect|Active Kill Streak!}} (1 m) in the description, it likely provides {{effect|Killstreak Experie...'</comment>
-      <origin>3189515</origin>
-      <model>wikitext</model>
-      <format>text/x-wiki</format>
-      <text bytes="614" sha1="su1ilzgq1s2s9qf9b2xp3684p5zojis" xml:space="preserve">{{Item infobox
-| icon = Killstreak Experience Booster.png
-| name = Killstreak Experience Booster
-| type = Service
-| rarity = fine
-| description = {{nourishment|name=Active Kill Streak!|1 m|Gain 10 seconds of swiftness when gathering.&lt;br&gt;33% chance at extra resources when gathering.|icon=Active Kill Streak!.png}}
-| bound = Account
-| id = 49872
-}}
-
-{{bug|Despite only showing the {{effect|Active Kill Streak!}} (1 m) in the description, it likely provides {{effect|Killstreak Experience Booster (effect)}} (1 h).{{verify}}}}
-
-== Acquisition ==
-{{contained in}}
-
-== Notes ==
-* Immediately consumed upon acquisition.</text>
-      <sha1>su1ilzgq1s2s9qf9b2xp3684p5zojis</sha1>
-    </revision>
-  </page>
-<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
-    <title>Kilnn's Rest</title>
-    <ns>0</ns>
-    <id>55741</id>
-    <revision>
-      <id>2542432</id>
-      <parentid>2423976</parentid>
-      <timestamp>2022-06-03T15:53:43Z</timestamp>
-      <contributor>
-        <ip>201.103.15.126</ip>
-      </contributor>
-      <origin>2542432</origin>
-      <model>wikitext</model>
-      <format>text/x-wiki</format>
-      <text bytes="607" sha1="4iibehuwzpz8x5tyvqw61g6ktfci9wp" xml:space="preserve">{{Location infobox
-| type = Point of Interest
-| within = Hellion Forest
-| coordinates = [61454,28730]
-| id = 480
-}}
-[[Kilnn's Rest]] is a [[point of interest]] within the [[Hellion Forest]]. These ruins are all that are left of the Testibrie family mausoleum. All that remains standing is the arch at the entrance. [[Scholar Aimee Testibrie]] of the [[Durmand Priory]] is searching for remnants of her family history, namely her great-great-grandfather [[gww:Kilnn Testibrie|Kilnn Testibrie]].
-
-== NPCs ==
-=== Allies ===
-;[[Human]]
-*[[Scholar Aimee Testibrie]]
-
-{{Iron Marches nav}}
-[[es:Descanso de Kilnn]]</text>
-      <sha1>4iibehuwzpz8x5tyvqw61g6ktfci9wp</sha1>
-    </revision>
-  </page>
-<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
-    <title>Kilroy Stonekin</title>
-    <ns>0</ns>
-    <id>116494</id>
-    <revision>
-      <id>3129068</id>
-      <parentid>2738194</parentid>
-      <timestamp>2026-04-15T22:04:35Z</timestamp>
-      <contributor>
-        <username>Tery3065</username>
-        <id>270948</id>
-      </contributor>
-      <minor />
-      <origin>3129068</origin>
-      <model>wikitext</model>
-      <format>text/x-wiki</format>
-      <text bytes="1383" sha1="rhe7dsg6fc0u885xsiir2tcqzs41wqt" xml:space="preserve">{{quotation|[[Explorer Akka]]|Ever heard of Kilroy Stonekin? He was a dwarf as fearsome as they came, and fearless to a fault. He was known for blindly charging into battle. A dangerous tactic, but it did a number on the Stone Summit dwarves.}}
-[[Kilroy Stonekin]] is a deceased [[dwarf]] famous for fighting against the [[Stone Summit]] dwarves. He is remembered as a reckless yet masterful brawler, specifically known for charging blindly into battle. When he died, he was interred in [[Granite Citadel]], where his [[Kilroy Stonekin Memorial Headstone|headstone]] can still be found. Its [[magic]]al properties are currently being studied by [[Durmand Priory]] members [[Arcanist Artemis]] and [[Explorer Akka]].
-
-== Related achievements ==
-* {{collection achievement|The Hero Kilroy's Story}}
-
-== Trivia ==
-* Kilroy Stonekin Ale is named after him.&lt;ref&gt;Writing an ale jug within the [[Hunting Lodge]]&lt;/ref&gt;
-* Kilroy Stonekin's name and blind charge tactic are both in reference to [[w:Leeroy Jenkins|Leeroy Jenkins]], the subject of a famous internet video concerning this dubious strategy.
-
-== See also ==
-{{gww}}
-* [[Kilroy Stonekin Memorial Headstone]]
-
-;Associated items
-* {{item icon|Kilroy Stonekin Necklace}}
-
-== References ==
-&lt;references/&gt;
-
-[[Category:Dwarves]]
-[[Category:Deldrimor]]
-[[Category:Unseen NPCs]]
-[[Category:Historical figures]]
-[[es:Kilroy Casta de Piedra]]</text>
-      <sha1>rhe7dsg6fc0u885xsiir2tcqzs41wqt</sha1>
-    </revision>
-  </page>
-<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
-    <title>Kilroy Stonekin Memorial Headstone</title>
-    <ns>0</ns>
-    <id>116486</id>
-    <revision>
-      <id>2219428</id>
-      <parentid>2219313</parentid>
-      <timestamp>2021-01-17T21:39:52Z</timestamp>
-      <contributor>
-        <username>Kvothe</username>
-        <id>215889</id>
-      </contributor>
-      <minor />
-      <origin>2219428</origin>
-      <model>wikitext</model>
-      <format>text/x-wiki</format>
-      <text bytes="1891" sha1="pwesnye6rl2f4uvx85jseuhmugywxne" xml:space="preserve">{{Object infobox
-| location = Spearhead Bane
-| type = gravestone
-| gallery1 = Kilroy Stonekin Memorial Headstone inscription.jpg
-| gallery1-text = Inscription
-| gallery2 = Kilroy Stonekin Memorial Headstone map.jpg
-}}
-[[Kilroy Stonekin Memorial Headstone]] is the headstone of [[Kilroy Stonekin]]'s grave. It is located in the abandoned dwarven settlement, [[Granite Citadel]]. It is being investigated by priory members [[Arcanist Artemis]] and [[Explorer Akka]]. Like other dwarven gravestones, it's enchanted with magic to ward off grave robbers, as reading the dwarven inscriptions on the other headstones incorrectly causes a magical attack of some sort, but in the case of this gravestone, it starts the [[Defeat the giant imp]] event.
-
-== Location ==
-* [[Dredgehaunt Cliffs]]
-** [[Spearhead Bane]]
-*** [[Granite Citadel]]
-
-== Dialogue ==
-:This headstone stands in memory of Kilroy Stoneskin{{sic|Stonekin}}, who defeated [[gw1:Gulnar Irontoe|Gulnar Irontoe]] in battle. A master brawler, his deeds will not be forgotten. Another line of runes is below.
-:{{dialogue icon|more}} ''Examine the runes.''
-::The runes are worn and nearly indistinguishable in places. Who knows what they could be saying.
-::{{dialogue icon|more}} ''Read them anyway.''
-::{{dialogue icon|end}} ''Leave.''
-:&lt;small&gt;'''(If the player has [[The Flameseeker Prophecies III: The Chosen]] achievement collection unlocked)'''&lt;/small&gt;
-:{{dialogue icon|ready}} ''Record Kilroy's Story in your Anthology of Heroes.'' &lt;small&gt;'''(Ends dialogue and adds [[The Hero Kilroy's Story]] to your collection)'''&lt;/small&gt;
-:{{dialogue icon|more}} ''Read the runes.''
-:{{dialogue icon|end}} ''Leave.''
-
-== Trivia ==
-* The faint text on the headstone reads "Where's my resurrect portal?" in [[New Krytan]]. This is a reference to how using a [[gww:Portal|portal]] in Guild Wars 1 would resurrect party members in certain circumstances.</text>
-      <sha1>pwesnye6rl2f4uvx85jseuhmugywxne</sha1>
-    </revision>
-  </page>
-<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
-    <title>Kilroy Stonekin Necklace</title>
-    <ns>0</ns>
-    <id>116499</id>
-    <revision>
-      <id>2693031</id>
-      <parentid>2288440</parentid>
-      <timestamp>2023-07-04T03:22:15Z</timestamp>
-      <contributor>
-        <username>Looopy</username>
-        <id>253180</id>
-      </contributor>
-      <origin>2693031</origin>
-      <model>wikitext</model>
-      <format>text/x-wiki</format>
-      <text bytes="655" sha1="5rw84w9p21vrtt72s6a5v37yajvxuyj" xml:space="preserve">{{Trinket infobox
-| icon = Amulet.png
-| description = "He always owed someone something. This necklace was probably used to pay off a {{sic|missing capitalization}}stone summit slaver."&lt;br&gt;— Priory History of Kilroy Stonekin
-| type = amulet
-| level = 47
-| rarity = fine
-| prefix = lingering
-| bound = acquire
-| id = 23410
-}}
-== Acquisition ==
-{{Sold by}}
-
-== Notes ==
-{{anomaly|This fine heart vendor item has no masterwork counterpart, even though there is a masterwork counterpart in the item-API.}}
-
-== See also ==
-*[[Kilroy Stonekin]]
-
-[[de:Halskette von Kilroy Steinsipp]]
-[[es:Collar de Kilroy Casta de Piedra]]
-[[fr:Collier de Kilroy Pierraille]]</text>
-      <sha1>5rw84w9p21vrtt72s6a5v37yajvxuyj</sha1>
-    </revision>
-  </page>
-<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
-    <title>Kim Johnason</title>
-    <ns>0</ns>
-    <id>75610</id>
-    <revision>
-      <id>3168269</id>
-      <parentid>2978917</parentid>
-      <timestamp>2026-07-13T07:08:14Z</timestamp>
-      <contributor>
-        <username>Sunlion</username>
-        <id>225997</id>
-      </contributor>
-      <minor />
-      <origin>3168269</origin>
-      <model>wikitext</model>
-      <format>text/x-wiki</format>
-      <text bytes="895" sha1="la46ak4x9op2cy4wb59xkonsf8qv2fh" xml:space="preserve">{{NPC infobox
-| image = Human female 16 (weaponless).jpg
-| location = Township of Claypool
-| race = Human
-| coordinates = [43517,29974]
-| path = [[43517,29974],[43565,29977],[43603,29993],[43630,30026],[43623,30032],[43671,30077],[43629,30076],[43570,30120],[43572,30145],[43543,30210],[43445,30243],[43396,30205],[43460,30123],[43458,30062],[43477,30001],[43517,29974]]
-}}
-[[Kim Johnason]] can be found running around the perimeter of the [[Township of Claypool]].
-
-== Location ==
-;[[Kryta]]
-* [[Queensdale]]
-** [[Township of Claypool]]
-
-== Dialogue ==
-:Can't talk now! Got to keep training.
-:{{dialogue icon|more}} ''For what?''
-::Long-distance running! Once it's safe...(huff)...I'm going to run...(huff)...all the way...(huff)...to [[Stronghold of Ebonhawke|Ebonhawke]]...(huff)...without stopping!
-::{{dialogue icon|end}} ''Good luck!''
-:{{dialogue icon|end}} ''Okay.''
-
-[[fr:Kim Johnason]]</text>
-      <sha1>la46ak4x9op2cy4wb59xkonsf8qv2fh</sha1>
-    </revision>
-  </page>
-<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
-    <title>Kimberly Brooks</title>
-    <ns>0</ns>
-    <id>258414</id>
-    <revision>
-      <id>2503191</id>
-      <parentid>2503085</parentid>
-      <timestamp>2022-04-27T19:48:55Z</timestamp>
-      <contributor>
-        <username>Kossage</username>
-        <id>126773</id>
-      </contributor>
-      <origin>2503191</origin>
-      <model>wikitext</model>
-      <format>text/x-wiki</format>
-      <text bytes="1254" sha1="kgiy3i3vza7aph3c216ean49l1zw8kq" xml:space="preserve">{{ArenaNet employee infobox
-| position = Voice actor
-}}
-[[Kimberly Brooks]] (August 25th, 1968) is the voice actress for [[Councilor Mayameen]], [[First Mate Jentyk]] and [[Kay]]. She is also known for her voice portraying of Ashley Williams in the [[w:Mass Effect|Mass Effect]] video games, and Bumblebee in the [[w:DC Super Hero Girls|DC Super Hero Girls]] TV series.
-
-== Notable work ==
-;Voice acting
-*[[Asura]]
-**[[Crystallographer Smoxxi]]&lt;ref&gt;[https://en-forum.guildwars2.com/topic/114280-who-voices-crystallographer-smoxxi/?do=findComment&amp;comment=1648961 Comment by Bobby Stein], Guild Wars 2 Forums&lt;/ref&gt;
-
-*[[Charr]]
-**[[Boticca]]
-
-*[[Human]]
-**[[Councilor Mayameen]]
-**[[First Mate Jentyk]]&lt;ref&gt;[https://twitter.com/GuildWars2/status/1012082791864037382 Tweet by Guild Wars 2], Twitter.com&lt;/ref&gt;
-**[[Kay]]&lt;ref&gt;[https://www.reddit.com/r/Guildwars2/comments/9v1re8/who_does_the_voice_acting_for_kay_in_deepstone/eaizufa/ Comment by Eve Eschenbacher], Reddit.com&lt;/ref&gt;
-
-*[[Hylek]]
-**[[Chieftain Xipil]]
-
-*[[Norn]]
-**[[Jhavi Jorasdottir]]&lt;ref&gt;[[Guild Chat - Episode 97]]&lt;/ref&gt;
-
-== External links ==
-* [[w:Kimberly Brooks|Kimberly Brooks on Wikipedia]]
-* [https://www.imdb.com/name/nm1456471/ Kimberly Brooks on IMDB]
-
-== References ==
-&lt;references /&gt;</text>
-      <sha1>kgiy3i3vza7aph3c216ean49l1zw8kq</sha1>
-    </revision>
-  </page>
-<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
-    <title>Kimmes the Historian</title>
-    <ns>0</ns>
-    <id>47684</id>
-    <revision>
-      <id>3052929</id>
-      <parentid>2653809</parentid>
-      <timestamp>2025-11-02T19:14:42Z</timestamp>
-      <contributor>
-        <ip>193.84.1.143</ip>
-      </contributor>
-      <origin>3052929</origin>
-      <model>wikitext</model>
-      <format>text/x-wiki</format>
-      <text bytes="10150" sha1="crh2ue0sypsy3g40jy1ji84tw17fnvj" xml:space="preserve">{{NPC infobox
-| location = Eye of the North (instance); Hall of Monuments
-| race = Ghost
-| organization = Ebon Vanguard
-| rank = Legendary
-| profession = Mesmer
-| service = Merchant
-}}
-[[Kimmes the Historian]] traveled from [[Ascalon]] long ago to study the [[Hall of Monuments]] and the memories imbued therein. He discovered and restored long-dormant magics that enabled him to view the deeds of different adventurers who had traveled to the [[Eye of the North]] over the years. After returning to Ascalon and dying in [[Stronghold of Ebonhawke|Ebonhawke]], Kimmes's spirit returned to the Eye where he remains to this day, waiting for a hero who he sees fit to inherit the artifacts once owned by the [[Hero (NPC)|slayer]] of [[gww:the Great Destroyer|the Great Destroyer]].
-
-== Location ==
-;[[Far Shiverpeaks]]
-* [[Eye of the North (instance)]] (as a vendor)
-* [[Eye of the North]]
-** [[Hall of Monuments]]
-
-== Items offered ==
-All items cost {{coin|0}} and can be purchased an infinite amount of times, but they must be unlocked by earning points in the [[gw1:Hall of Monuments|Hall of Monuments]] in the original ''[[Guild Wars]]''.
-{{Vendor table header|showLevel=false|showCost=false|showFacts=false|location=Eye of the North (instance)|showNotes=true}}
-{{Vendor table row|item=Heritage Warboots|cost=0 coin|requirement=1 Hall of Monuments reward point}}
-{{Vendor table row|item=Heritage Shoes|cost=0 coin|requirement=1 Hall of Monuments reward point}}
-{{Vendor table row|item=Heritage Boots|cost=0 coin|requirement=1 Hall of Monuments reward point}}
-{{Vendor table row|item=Heritage Legplates|cost=0 coin|requirement=2 Hall of Monuments reward points}}
-{{Vendor table row|item=Heritage Pants|cost=0 coin|requirement=2 Hall of Monuments reward points}}
-{{Vendor table row|item=Heritage Legguards|cost=0 coin|requirement=2 Hall of Monuments reward points}}
-{{Vendor table row|item=Heritage Warplate|cost=0 coin|requirement=3 Hall of Monuments reward points}}
-{{Vendor table row|item=Heritage Greatcoat|cost=0 coin|requirement=3 Hall of Monuments reward points}}
-{{Vendor table row|item=Heritage Jerkin|cost=0 coin|requirement=3 Hall of Monuments reward points}}
-{{Vendor table row|item=Heritage Gauntlets|cost=0 coin|requirement=4 Hall of Monuments reward points}}
-{{Vendor table row|item=Heritage Gloves|cost=0 coin|requirement=4 Hall of Monuments reward points}}
-{{Vendor table row|item=Heritage Armguards|cost=0 coin|requirement=4 Hall of Monuments reward points}}
-{{Vendor table row|item=Heritage Pauldrons|cost=0 coin|requirement=5 Hall of Monuments reward points}}
-{{Vendor table row|item=Heritage Mantle|cost=0 coin|requirement=5 Hall of Monuments reward points}}
-{{Vendor table row|item=Heritage Shoulderpads|cost=0 coin|requirement=5 Hall of Monuments reward points}}
-{{Vendor table row|item=Heritage Warhelm|cost=0 coin|requirement=6 Hall of Monuments reward points}}
-{{Vendor table row|item=Heritage Masque|cost=0 coin|requirement=6 Hall of Monuments reward points}}
-{{Vendor table row|item=Heritage Bandana|cost=0 coin|requirement=6 Hall of Monuments reward points}}
-{{Vendor table row|item=Gnarled Walking Staff|cost=0 coin|requirement=7 Hall of Monuments reward points}}
-{{Vendor table row|item=Living Short Bow|cost=0 coin|requirement=8 Hall of Monuments reward points}}
-{{Vendor table row|item=Mini Orange Tabby Cat|cost=0 coin|requirement=9 Hall of Monuments reward points}}
-{{Vendor table row|item=Fiery Dragon Sword|cost=0 coin|requirement=10 Hall of Monuments reward points}}
-{{Vendor table row|item=Diamond Aegis Shield|cost=0 coin|requirement=11 Hall of Monuments reward points}}
-{{Vendor table row|item=Heavy Baroque Mask|cost=0 coin|requirement=12 Hall of Monuments reward points}}
-{{Vendor table row|item=Light Baroque Mask|cost=0 coin|requirement=12 Hall of Monuments reward points}}
-{{Vendor table row|item=Medium Baroque Mask|cost=0 coin|requirement=12 Hall of Monuments reward points}}
-{{Vendor table row|item=Centurions Claw|cost=0 coin|requirement=13 Hall of Monuments reward points}}
-{{Vendor table row|item=Wheelock Rifle|cost=0 coin|requirement=14 Hall of Monuments reward points}}
-{{Vendor table row|item=Mini Orrian Baby Chicken|cost=0 coin|requirement=15 Hall of Monuments reward points}}
-{{Vendor table row|item=Wayward Wand Scepter|cost=0 coin|requirement=16 Hall of Monuments reward points}}
-{{Vendor table row|item=Seathunder Pistol|cost=0 coin|requirement=17 Hall of Monuments reward points}}
-{{Vendor table row|item=Heavenly Heavy Bracers|cost=0 coin|requirement=18 Hall of Monuments reward points}}
-{{Vendor table row|item=Heavenly Light Bracers|cost=0 coin|requirement=18 Hall of Monuments reward points}}
-{{Vendor table row|item=Heavenly Medium Bracers|cost=0 coin|requirement=18 Hall of Monuments reward points}}
-{{Vendor table row|item=Deldrimor Mace|cost=0 coin|requirement=19 Hall of Monuments reward points}}
-{{Vendor table row|item=Chimeric Prism Focus|cost=0 coin|requirement=20 Hall of Monuments reward points}}
-{{Vendor table row|item=Mini Rockfur Racoon|cost=0 coin|requirement=21 Hall of Monuments reward points}}
-{{Vendor table row|item=Ithas Longbow|cost=0 coin|requirement=22 Hall of Monuments reward points}}
-{{Vendor table row|item=Fellblade|cost=0 coin|requirement=23 Hall of Monuments reward points}}
-{{Vendor table row|item=Icelord's Heavy Diadem|cost=0 coin|requirement=24 Hall of Monuments reward points}}
-{{Vendor table row|item=Icelord's Light Diadem|cost=0 coin|requirement=24 Hall of Monuments reward points}}
-{{Vendor table row|item=Icelord's Medium Diadem|cost=0 coin|requirement=24 Hall of Monuments reward points}}
-{{Vendor table row|item=Icebreaker|cost=0 coin|requirement=25 Hall of Monuments reward points}}
-{{Vendor table row|item=Flaming Beacon|cost=0 coin|requirement=26 Hall of Monuments reward points}}
-{{Vendor table row|item=Mini Servitor Golem|cost=0 coin|requirement=27 Hall of Monuments reward points}}
-{{Vendor table row|item=Stygian Axe|cost=0 coin|requirement=28 Hall of Monuments reward points}}
-{{Vendor table row|item=Mountaincall Warhorn|cost=0 coin|requirement=29 Hall of Monuments reward points}}
-{{Vendor table row|item=Fire God's Heavy Vambraces|cost=0 coin|requirement=30 Hall of Monuments reward points}}
-{{Vendor table row|item=Fire God's Light Vambraces|cost=0 coin|requirement=30 Hall of Monuments reward points}}
-{{Vendor table row|item=Fire God's Medium Vambraces|cost=0 coin|requirement=30 Hall of Monuments reward points}}
-|}
-
-== Dialogue ==
-=== In the old Eye of the North instance ===
-;If the player owns [[Guild Wars|Guild Wars: Eye of the North]]
-:I recognize the worthiness of your soul, hero. I cling to this world in order to guard these items, destined for you. Centuries have passed, and you're finally here. Collect your legacy. The time has come.
-:{{dialogue icon|merchant}} ''Show me my legacy.''
-:{{dialogue icon|more}} ''What items have you been keeping?''
-::&lt;small&gt;'''(If the player unlocked all the rewards)'''&lt;/small&gt;
-::They belonged to a [[Hero (NPC)|hero]] who earned all these relics during their life. I've waited centuries for someone to come who embodies the same heroism. You are that person. I give it all to you.
-::&lt;small&gt;'''(If the player unlocked some of the rewards)'''&lt;/small&gt;
-::They belonged to a hero who earned some, but not all, of these relics during their life. I've waited centuries for someone to come who embodies the same heroism. It's you. Claim what is yours.
-::{{dialogue icon|more}} ''How do I earn the rest?''
-:::Only the ancient hero, from the period following [[gww:The Guild Wars|the Guild Wars]], when [[Flameseeker Verse|Prophecies]] were fulfilled in [[Tyria]], when [[gww:Allegiance rank|Factions]] were united in [[Cantha]], and when [[gww:Nightfall (event)|Nightfall]] fell upon [[Elona]], can quest for these relics.
-:::{{dialogue icon|more}} ''Why are you here, of all places?''
-::::I returned with the [[Ebon Vanguard]] when they were recalled to their final home in [[Stronghold of Ebonhawke|Ebonhawke]]. It was there that I drew my last breath. But, I've always known that this was where I belonged.
-::::{{dialogue icon|back}} ''I'd like to ask something else.''
-::::{{dialogue icon|end}} ''If I pass your grave, I'll reflect on your determination.''
-::&lt;small&gt;'''(If the player unlocked all the rewards)'''&lt;/small&gt;
-::{{dialogue icon|more}} ''Why are you here, of all places?'' &lt;small&gt;'''(same as above)'''&lt;/small&gt;
-::{{dialogue icon|back}} ''I'd like to ask something else.''
-::{{dialogue icon|end}} ''Thank you. I must go.''
-:{{dialogue icon|end}} ''Good-bye.''
-
-;(Otherwise)
-:A hero from another time once strode these halls. I see the potential for the same bravery and glory in your eyes.
-:{{dialogue icon|more}} ''Tell me more about this hero.''
-::More than two hundred years ago, the hero honored here found glory after the Guild Wars, when Prophecies were fulfilled in Tyria, when Factions were united in Cantha, and Nightfall fell upon Elona.
-::{{dialogue icon|more}} ''How can I achieve these things?''
-:::In this life, you do not travel the same paths as those who came before. Only an ancient hero can quest for this glory.
-:::{{dialogue icon|end}} ''I see.''
-::{{dialogue icon|end}} ''I see.''
-:{{dialogue icon|end}} ''I'll be on my way.''
-
-=== In the new Eye of the North ===
-:Welcome to the Eye of the North. It brings a smile to my face to see so many inspiring figures walking this hall again.
-:{{dialogue icon|more}} ''Are there any treasures of the past here?'' &lt;small&gt;'''(if the player owns Guild Wars: Eye of the North)'''&lt;/small&gt;
-::Many heirlooms were stored in the Hall of Monuments. If that inheritance was meant for you, try to view the Hall in the Scrying Pool.
-::{{dialogue icon|end}} ''Thank you.''
-:{{dialogue icon|end}} ''Likewise.''
-
-== Combat abilities ==
-;Abilities
-* Firestorm
-* Unpredictable
-
-;Effects
-{{defiance}}
-
-== Trivia ==
-{{gww|Kimmes The Historian}}
-* Kimmes is the author of [[The Founding]].
-* He is named after [[Joe Kimmes]].
-* He has [[Royal Ascalonian Scepter]] and [[Royal Ascalonian Focus]].
-
-[[de:Kimmes, der Historiker]]
-[[es:Kimmes, el Historiador]]
-[[fr:Kimmes l'historien]]
-[[Category:NPCs named after ArenaNet employees]]</text>
-      <sha1>crh2ue0sypsy3g40jy1ji84tw17fnvj</sha1>
-    </revision>
-  </page>
-<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
-    <title>Kimmi</title>
-    <ns>0</ns>
-    <id>96296</id>
-    <revision>
-      <id>2423978</id>
-      <parentid>2406596</parentid>
-      <timestamp>2022-03-06T14:42:08Z</timestamp>
-      <contributor>
-        <username>AWB Alex</username>
-        <id>102516</id>
-      </contributor>
-      <minor />
-      <comment>/* top */+Update coordinates.</comment>
-      <origin>2423978</origin>
-      <model>wikitext</model>
-      <format>text/x-wiki</format>
-      <text bytes="531" sha1="bmh43k00dtkziroxfk0io91hlivgnv0" xml:space="preserve">{{Temporary|release=Bazaar of the Four Winds|seasonal=Festival of the Four Winds}}
-{{NPC infobox
-| image = Asura female 2.jpg
-| location = Bazaar Docks
-| race = asura
-| level = 80
-| service = armorsmith
-| coordinates = [55809.5,38956.6]
-| localtiles = y
-}}
-[[Kimmi]] is an [[Armorsmith (vendor)|armorsmith]] in the [[Bazaar Docks]].
-
-== Location ==
-;[[Maguuma]]
-* [[Labyrinthine Cliffs]]
-** [[Bazaar Docks]]
-
-== Items offered ==
-{{Inventory/armorsmith}}
-
-[[Category:Bazaar of the Four Winds]]
-[[de:Kimmi]]
-[[es:Kimmi]]
-[[fr:Kimmi]]</text>
-      <sha1>bmh43k00dtkziroxfk0io91hlivgnv0</sha1>
-    </revision>
-  </page>
-<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
-    <title>Kin Venomjab</title>
-    <ns>0</ns>
-    <id>203386</id>
-    <revision>
-      <id>3161582</id>
-      <parentid>2920018</parentid>
-      <timestamp>2026-06-19T13:15:58Z</timestamp>
-      <contributor>
-        <username>Ruby12</username>
-        <id>239584</id>
-      </contributor>
-      <minor />
-      <comment>/* Trivia */</comment>
-      <origin>3161582</origin>
-      <model>wikitext</model>
-      <format>text/x-wiki</format>
-      <text bytes="963" sha1="fkubss6sp4hd50xob2w61fxjn79xmby" xml:space="preserve">{{NPC infobox
-| location = Heathen's Hold
-| race = Charr
-| organization = Balthazar's Mercenaries
-| level = 80
-| rank = Veteran
-| path = [37174.5, 41176.8, 2],[37151.0, 41205.5, 2],[37086.0, 41172.7, 2],[37084.2, 41182.2, 2],[37068.3, 41172.3, 2]
-| requires = lws3
-}}
-[[Kin Venomjab]] is one of the leaders of [[Balthazar's Mercenaries]] that can be found patrolling a section of the Mercenary base located in [[Heathen's Hold]].
-
-== Location ==
-;[[Ring of Fire]]
-* [[Draconis Mons]]
-** [[Heathen's Hold]]
-
-== Combat abilities ==
-;Abilities
-* Tosses Hammer
-* Area Attacks
-
-;Skills
-{{section-stub|npc|Missing skills}}
-* '''Bash'''
-* '''Galrath Slash'''
-* '''Hammer Toss'''
-
-;Stolen skills
-{{section-stub|npc|Missing skills}}
-* {{stolen skill|Throw Gunk}}
-* {{stolen skill|Whirling Axe (stolen skill)}}
-
-== Trivia ==
-* [[gww:Galrath Slash|Galrath Slash]] was the name of a warrior skill in the original ''Guild Wars''.
-
-[[de:Kin Giftstoß]]
-[[es:Kin Clavaponzoña]]</text>
-      <sha1>fkubss6sp4hd50xob2w61fxjn79xmby</sha1>
-    </revision>
-  </page>
-<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
-    <title>Kina's Warning Shot</title>
-    <ns>0</ns>
-    <id>212352</id>
-    <revision>
-      <id>2703592</id>
-      <parentid>2600200</parentid>
-      <timestamp>2023-07-16T11:16:05Z</timestamp>
-      <contributor>
-        <username>AWB Alex</username>
-        <id>102516</id>
-      </contributor>
-      <minor />
-      <comment>/* top */+Add salvage parameter</comment>
-      <origin>2703592</origin>
-      <model>wikitext</model>
-      <format>text/x-wiki</format>
-      <text bytes="602" sha1="hf78lkx19lu2uhgbmu9zokkhvec9xd6" xml:space="preserve">{{weapon infobox
-| icon = Sunspear Recurve.png
-| requires = Path of Fire
-| level = 80
-| rarity = exotic
-| type = Longbow
-| skin = Sunspear Recurve (skin)
-| prefix = Marshal's
-| bound = use
-| salvage = Standard
-| id = 83742
-| set = Named Sunspear weapons
-| collection = The Main Thrust
-| gallery1 = Sunspear Recurve.jpg
-}}
-
-== Acquisition ==
-{{contained in}}
-
-== Trivia ==
-* Named after [[gw1:Kina|Kina]] from ''Guild Wars Nightfall''.
-
-== See also ==
-* {{item icon|Sunspear Recurve}}
-
-{{Named sunspear weapons nav}}
-
-[[de:Warnschuss Kinas]]
-[[es:Disparo de aviso de Kina]]
-[[fr:Tir de semonce de Kina]]</text>
-      <sha1>hf78lkx19lu2uhgbmu9zokkhvec9xd6</sha1>
-    </revision>
-  </page>
-<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
-    <title>Kina Snatchstone</title>
-    <ns>0</ns>
-    <id>63072</id>
-    <revision>
-      <id>2995612</id>
-      <parentid>2423980</parentid>
-      <timestamp>2025-07-04T23:06:32Z</timestamp>
-      <contributor>
-        <username>Tery3065</username>
-        <id>270948</id>
-      </contributor>
-      <minor />
-      <origin>2995612</origin>
-      <model>wikitext</model>
-      <format>text/x-wiki</format>
-      <text bytes="356" sha1="cc83e9znbp6zb1kfnz9fio3o8l33w6m" xml:space="preserve">{{NPC infobox
-| image = Charr female 1 (rifle).jpg
-| location = Town of Nageling
-| race = Charr
-| level = 17
-| service = Merchant
-| coordinates = [57767.4,29387.7]
-}}
-[[Kina Snatchstone]] is a [[merchant]] found in the [[Town of Nageling]].
-
-== Location ==
-* [[Diessa Plateau]]
-** [[Town of Nageling]]
-
-== Items offered ==
-{{inventory|standard merchant 2}}</text>
-      <sha1>cc83e9znbp6zb1kfnz9fio3o8l33w6m</sha1>
     </revision>
   </page>
 </mediawiki>

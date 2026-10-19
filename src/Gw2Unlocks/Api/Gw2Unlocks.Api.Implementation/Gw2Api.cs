@@ -2,9 +2,12 @@
 using GuildWars2.Hero.Achievements;
 using GuildWars2.Hero.Achievements.Categories;
 using GuildWars2.Hero.Achievements.Titles;
+using GuildWars2.Hero.Equipment.Gliders;
 using GuildWars2.Hero.Equipment.Miniatures;
 using GuildWars2.Hero.Equipment.Novelties;
+using GuildWars2.Hero.Equipment.Outfits;
 using GuildWars2.Hero.Equipment.Wardrobe;
+using GuildWars2.Hero.Emotes;
 using GuildWars2.Items;
 using System;
 using System.Collections.Generic;
@@ -71,6 +74,24 @@ internal sealed class Gw2Api(Gw2Client client) : IGw2ApiSource
     public async Task<Collection<Title>> GetTitlesAsync(CancellationToken cancellationToken)
     {
         var set = await client.Hero.Achievements.GetTitles(cancellationToken: cancellationToken).ValueOnly();
+        return [.. set];
+    }
+
+    public async Task<Collection<GliderSkin>> GetGlidersAsync(CancellationToken cancellationToken)
+    {
+        var set = await client.Hero.Equipment.Gliders.GetGliderSkins(cancellationToken: cancellationToken).ValueOnly();
+        return [.. set];
+    }
+
+    public async Task<Collection<Outfit>> GetOutfitsAsync(CancellationToken cancellationToken)
+    {
+        var set = await client.Hero.Equipment.Outfits.GetOutfits(cancellationToken: cancellationToken).ValueOnly();
+        return [.. set];
+    }
+
+    public async Task<Collection<Emote>> GetEmotesAsync(CancellationToken cancellationToken)
+    {
+        var set = await client.Hero.Emotes.GetEmotes(cancellationToken: cancellationToken).ValueOnly();
         return [.. set];
     }
 }

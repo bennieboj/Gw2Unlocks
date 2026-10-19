@@ -3,9 +3,12 @@ using GuildWars2.Hero.Achievements.Bits;
 using GuildWars2.Hero.Achievements.Categories;
 using GuildWars2.Hero.Achievements.Rewards;
 using GuildWars2.Hero.Achievements.Titles;
+using GuildWars2.Hero.Equipment.Gliders;
 using GuildWars2.Hero.Equipment.Miniatures;
 using GuildWars2.Hero.Equipment.Novelties;
+using GuildWars2.Hero.Equipment.Outfits;
 using GuildWars2.Hero.Equipment.Wardrobe;
+using GuildWars2.Hero.Emotes;
 using GuildWars2.Items;
 using Gw2Unlocks.Api;
 using Gw2Unlocks.IconSpriteSheet;
@@ -13,6 +16,7 @@ using Gw2Unlocks.WikiProcessing;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Collections.Immutable;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -33,6 +37,11 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
     private Collection<AchievementCategory>? achievementCategories;
     private Collection<Title>? titles;
     private Collection<Novelty>? novelties;
+    private Collection<GliderSkin>? gliders;
+    private Collection<Outfit>? outfits;
+    private Collection<Emote>? emotes;
+    private Dictionary<int, RecipeSheet>? recipeSheetByItemId;
+    private Dictionary<int, Emote>? emoteByUnlockItemId;
     private Dictionary<string, IconSpriteSheetInventoryItem>? iconSpriteSheetInventory;
     private Dictionary<int, List<UnlockCriteriaContext<AchievementCategoryCriteria>>>? achievementCriteriaByAchievementId;
     private Dictionary<int, AchievementCategory>? achievementCategoryByAchievementId;
@@ -1102,22 +1111,29 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                 .OfType<string>();
 
             unlocksToClassify = [.. itemNames
-                .Select(itemName =>
+                .SelectMany(itemName =>
                 {
+                    var node = graph!.GetNode(itemName);
+                    // Reward items that are themselves unlocks (recipe sheets, emote tomes,
+                    // glider/outfit skins) inherit the achievement's categorization directly.
+                    var direct = (node != null && ShouldClassify(node))
+                        ? (IEnumerable<Unlock>)[new Unlock(itemName, node)]
+                        : [];
+
                     var edges = edgesByTo!.TryGetValue(itemName, out var e) ? e : [];
                     var skins = edges.Where(e => e.Type == EdgeType.SkinUnlock).Select(e => e.From);
-                    
-                    return skins.Select(s => {
-                        var node = graph!.GetNode(s);
-                        if(node != null){
-                            return new Unlock(s, node);
+
+                    var skinUnlocks = skins.Select(s => {
+                        var skinNode = graph!.GetNode(s);
+                        if(skinNode != null){
+                            return new Unlock(s, skinNode);
                         }
                         return null;
                     })
-                    .OfType<Unlock>()
-                    .ToList();
+                    .OfType<Unlock>();
+
+                    return direct.Concat(skinUnlocks);
                 })
-                .SelectMany(x => x)
                 .ToList()];
         }
 
@@ -1205,6 +1221,22 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
         achievementCategories ??= await apiSource.GetAchievementCategoriesAsync(cancellationToken);
         titles ??= await apiSource.GetTitlesAsync(cancellationToken);
         novelties ??= await apiSource.GetNoveltiesAsync(cancellationToken);
+        gliders ??= await apiSource.GetGlidersAsync(cancellationToken);
+        outfits ??= await apiSource.GetOutfitsAsync(cancellationToken);
+        emotes ??= await apiSource.GetEmotesAsync(cancellationToken);
+        // Recipe sheets are items that unlock a recipe; emotes are unlocked by consuming items.
+        recipeSheetByItemId ??= items.OfType<RecipeSheet>().ToDictionary(r => r.Id, r => r);
+        emoteByUnlockItemId ??= [];
+        if (emoteByUnlockItemId.Count == 0)
+        {
+            foreach (var emote in emotes)
+            {
+                foreach (var unlockItemId in emote.UnlockItemIds ?? [])
+                {
+                    emoteByUnlockItemId[unlockItemId] = emote;
+                }
+            }
+        }
         iconSpriteSheetInventory = (await iconSpriteSheetCache.GetIconSpriteSheetInventory(cancellationToken)).Inventory;
 
         classifyConfig = CreateConfig();
@@ -1300,7 +1332,7 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
             .ToDictionary(g => g.Key, g => g.ToList());
     }
 
-    private static bool ShouldClassify(Node node) =>
+    private bool ShouldClassify(Node node) =>
     node switch
     {
         {
@@ -1320,8 +1352,29 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
         } when metadata.TryGetValue("type", out var type) &&
                (
                    type.Equals("miniature", StringComparison.OrdinalIgnoreCase) ||
-                   type.Contains("Novelty", StringComparison.OrdinalIgnoreCase)
+                   type.Contains("Novelty", StringComparison.OrdinalIgnoreCase) ||
+                   // Recipe sheets, glider skins and outfit skins are items; the API item is
+                   // the authoritative check for recipe sheets.
+                   (type.Equals("recipe sheet", StringComparison.OrdinalIgnoreCase) &&
+                       metadata.TryGetValue("id", out var recipeSheetItemId) &&
+                       int.TryParse(recipeSheetItemId, out var recipeSheetItemIdInt) &&
+                       recipeSheetByItemId != null &&
+                       recipeSheetByItemId.ContainsKey(recipeSheetItemIdInt)) ||
+                   (type.Equals("glider skin", StringComparison.OrdinalIgnoreCase) &&
+                       metadata.ContainsKey("glider-id")) ||
+                   (type.Equals("outfit skin", StringComparison.OrdinalIgnoreCase) &&
+                       metadata.ContainsKey("outfit-id"))
                )
+            => true,
+        // Emote unlock items are plain consumables on the wiki, so the only signal is the
+        // API emote listing the item as an unlock.
+        {
+            Type: NodeType.Item,
+            Metadata: var metadata
+        } when emoteByUnlockItemId != null &&
+               metadata.TryGetValue("id", out var emoteUnlockItemId) &&
+               int.TryParse(emoteUnlockItemId, out var emoteUnlockItemIdInt) &&
+               emoteByUnlockItemId.ContainsKey(emoteUnlockItemIdInt)
             => true,
 
         _ => false
@@ -1347,7 +1400,8 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
         logger.LogInformation("getting API data for {key} ({type})", startKey, node.Type);
         if (miniatures == null || skins == null || achievements == null || achievementCategories == null
             || titles == null || novelties == null || items == null || achievementCategoryByAchievementId == null 
-            || iconSpriteSheetInventory == null)
+            || iconSpriteSheetInventory == null || gliders == null || outfits == null || emotes == null
+            || recipeSheetByItemId == null || emoteByUnlockItemId == null)
         {
             logger.LogWarning("API data not initialized when trying to get API data for {key} ({type})", startKey, node.Type);
             return;
@@ -1380,7 +1434,7 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                 result = new()
                 {
                     Type = Type.Miniature,
-                    Id = mini.Id,
+                    Id = mini.Id.ToString(CultureInfo.InvariantCulture),
                     Name = mini.Name,
                     IconUrl = mini.IconUrl,
                     IconSheet = miniInvItem?.Sheet,
@@ -1404,7 +1458,7 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                 result = new()
                 {
                     Type = Type.Novelty,
-                    Id = novelty.Id,
+                    Id = novelty.Id.ToString(CultureInfo.InvariantCulture),
                     Name = novelty.Name,
                     IconUrl = novelty.IconUrl,
                     IconSheet = noveltyInvItem?.Sheet,
@@ -1413,6 +1467,93 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                     ChatCodeId = novelty.UnlockItemIds?[0] ?? 0
                 };
             }
+        }
+        else if (node.Type == NodeType.Item && node.Metadata.TryGetValue("id", out var recipeSheetItemIdStr) && !string.IsNullOrEmpty(recipeSheetItemIdStr) && int.TryParse(recipeSheetItemIdStr, out var recipeSheetItemIdInt)
+            && recipeSheetByItemId.TryGetValue(recipeSheetItemIdInt, out var recipeSheet))
+        {
+            IconSpriteSheetInventoryItem? recipeInvItem = null;
+            if (iconSpriteSheetInventory.TryGetValue($"Recipe/{recipeSheet.RecipeId}", out var recipeInvTmp))
+            {
+                recipeInvItem = recipeInvTmp;
+            }
+            result = new()
+            {
+                Type = Type.Recipe,
+                Id = recipeSheet.RecipeId.ToString(CultureInfo.InvariantCulture),
+                Name = recipeSheet.Name,
+                IconUrl = recipeSheet.IconUrl ?? new Uri("about:blank"),
+                IconSheet = recipeInvItem?.Sheet,
+                IconX = recipeInvItem?.X,
+                IconY = recipeInvItem?.Y,
+                ChatCodeId = recipeSheet.Id
+            };
+        }
+        else if (node.Type == NodeType.Item && node.Metadata.TryGetValue("glider-id", out var gliderIdStr) && !string.IsNullOrEmpty(gliderIdStr) && int.TryParse(gliderIdStr, out var gliderIdInt))
+        {
+            var glider = gliders.SingleOrDefault(g => g.Id == gliderIdInt);
+            IconSpriteSheetInventoryItem? gliderInvItem = null;
+            if (iconSpriteSheetInventory.TryGetValue($"Glider/{gliderIdInt}", out var gliderInvTmp))
+            {
+                gliderInvItem = gliderInvTmp;
+            }
+            if (glider != null)
+            {
+                result = new()
+                {
+                    Type = Type.Glider,
+                    Id = glider.Id.ToString(CultureInfo.InvariantCulture),
+                    Name = glider.Name,
+                    IconUrl = glider.IconUrl ?? new Uri("about:blank"),
+                    IconSheet = gliderInvItem?.Sheet,
+                    IconX = gliderInvItem?.X,
+                    IconY = gliderInvItem?.Y,
+                    ChatCodeId = glider.Id
+                };
+            }
+        }
+        else if (node.Type == NodeType.Item && node.Metadata.TryGetValue("outfit-id", out var outfitIdStr) && !string.IsNullOrEmpty(outfitIdStr) && int.TryParse(outfitIdStr, out var outfitIdInt))
+        {
+            var outfit = outfits.SingleOrDefault(o => o.Id == outfitIdInt);
+            IconSpriteSheetInventoryItem? outfitInvItem = null;
+            if (iconSpriteSheetInventory.TryGetValue($"Outfit/{outfitIdInt}", out var outfitInvTmp))
+            {
+                outfitInvItem = outfitInvTmp;
+            }
+            if (outfit != null)
+            {
+                result = new()
+                {
+                    Type = Type.Outfit,
+                    Id = outfit.Id.ToString(CultureInfo.InvariantCulture),
+                    Name = outfit.Name,
+                    IconUrl = outfit.IconUrl ?? new Uri("about:blank"),
+                    IconSheet = outfitInvItem?.Sheet,
+                    IconX = outfitInvItem?.X,
+                    IconY = outfitInvItem?.Y,
+                    ChatCodeId = outfit.Id
+                };
+            }
+        }
+        else if (node.Type == NodeType.Item && node.Metadata.TryGetValue("id", out var emoteUnlockItemIdStr) && !string.IsNullOrEmpty(emoteUnlockItemIdStr) && int.TryParse(emoteUnlockItemIdStr, out var emoteUnlockItemIdInt)
+            && emoteByUnlockItemId.TryGetValue(emoteUnlockItemIdInt, out var emote))
+        {
+            IconSpriteSheetInventoryItem? emoteInvItem = null;
+            if (iconSpriteSheetInventory.TryGetValue($"Emote/{emoteUnlockItemIdInt}", out var emoteInvTmp))
+            {
+                emoteInvItem = emoteInvTmp;
+            }
+            var emoteUnlockItem = items.FirstOrDefault(i => i.Id == emoteUnlockItemIdInt);
+            result = new()
+            {
+                Type = Type.Emote,
+                Id = emote.Id,
+                Name = emoteUnlockItem?.Name ?? emote.Id,
+                IconUrl = emoteUnlockItem?.IconUrl ?? new Uri("about:blank"),
+                IconSheet = emoteInvItem?.Sheet,
+                IconX = emoteInvItem?.X,
+                IconY = emoteInvItem?.Y,
+                ChatCodeId = emoteUnlockItemIdInt
+            };
         }
         else if (node.Type == NodeType.Skin && node.Metadata.TryGetValue("id", out var skinId) && !string.IsNullOrEmpty(skinId) && int.TryParse(skinId, out var skinIdInt))
         {
@@ -1427,7 +1568,7 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                 result = new()
                 {
                     Type = Type.Skin,
-                    Id = skin.Id,
+                    Id = skin.Id.ToString(CultureInfo.InvariantCulture),
                     Name = skin.Name,
                     IconUrl = skin.IconUrl ?? new Uri("about:blank"),
                     IconSheet = skinInvItem?.Sheet,
@@ -1474,7 +1615,7 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                 result = new()
                 {
                     Type = Type.Achievement,
-                    Id = achievement.Id,
+                    Id = achievement.Id.ToString(CultureInfo.InvariantCulture),
                     Name = achievement.Name,
                     Requirement = achievement.Requirement,
                     IconUrl = category?.IconUrl ?? new Uri("about:blank"),
@@ -1670,7 +1811,7 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
 
                     var cost = searchState.Cost;
                     var zonePriority = zoneCriteria.First().Priority;
-                    if (reachedViaFishingHole(currentKey, parent))
+                    if (ReachedViaFishingHole(currentKey, parent))
                     {
                         zonePriority = Math.Min(zonePriority, fishingHoleZonePriority);
                     }
@@ -1880,7 +2021,7 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
                 shared++;
             }
 
-            common = common.Take(shared).ToArray();
+            common = [.. common.Take(shared)];
         }
 
         // A shared root such as "Expansions & Living World" carries no information about the
@@ -2035,7 +2176,7 @@ public class Classifier(IGw2ApiSource apiSource, IGw2WikiProcessingSource wikiPr
     /// zone is then a weaker claim about the unlock than a recipe or vendor would be, so the
     /// caller scores it below those. Only fishing holes are treated this way: a curated chest is
     /// a deliberate placement and is as strong a claim as the wiki can make.
-    private bool reachedViaFishingHole(string endKey, Dictionary<string, string?> parent)
+    private bool ReachedViaFishingHole(string endKey, Dictionary<string, string?> parent)
     {
         var current = endKey;
         while (current != null)

@@ -3,6 +3,7 @@ using System.Collections.ObjectModel;
 using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Text.Json.Serialization;
 
 namespace Gw2Unlocks.UnlockClassifier;
@@ -57,7 +58,16 @@ public class Unlock(string name, WikiProcessing.Node node)
 
 public class ApiData
 {
-    public int Id { get; set; }
+    /// <summary>
+    /// The value the account API reports for this unlock: a numeric id for most types, or the
+    /// string id for emotes.
+    /// </summary>
+    /// <remarks>
+    /// Backwards compatible with caches written when this was an int: a JSON number reads as
+    /// its invariant-culture string form. New writes are always strings.
+    /// </remarks>
+    [JsonConverter(typeof(StringOrNumberConverter))]
+    public string Id { get; set; } = "";
     public Type Type { get; set; } = Type.None;
     public int ChatCodeId { get; set; }
     public string Name { get; set; } = "";
@@ -90,5 +100,9 @@ public enum Type
     Miniature,
     Novelty,
     Skin,
-    Achievement
+    Achievement,
+    Recipe,
+    Glider,
+    Outfit,
+    Emote
 }

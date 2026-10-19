@@ -105,6 +105,30 @@ public class IconSpriteSheetGeneratorTests(ITestOutputHelper output) : ServicePr
             Assert.Equal(expectedY, item.Y);
         }
     }
+
+    [Fact]
+    public async Task GenerateDuplicateTypeIdKeepsLastEntrySucceeds()
+    {
+        var sut = GetSut();
+
+        // Two recipe sheets unlocking the same recipe: same (Type, Id), different icons.
+        var input = new List<IconSpriteSheetInput>
+        {
+            new("Recipe", 6472, new System.Uri("http://dummy.com/a")),
+            new("Recipe", 6472, new System.Uri("http://dummy.com/b"))
+        };
+
+        var output = await sut.Generate(input, TestContext.Current.CancellationToken);
+
+        Assert.Single(output.Files);
+        Assert.Single(output.InventoryData.Inventory);
+        Assert.True(output.InventoryData.Inventory.TryGetValue("Recipe/6472", out var inventoryItem));
+
+        // Last write wins: second icon lands in column 1 (x = 64, y = 0) on sheet 0.
+        Assert.Equal(0, inventoryItem.Sheet);
+        Assert.Equal(64, inventoryItem.X);
+        Assert.Equal(0, inventoryItem.Y);
+    }
 }
 
 internal sealed class FakeHttpMessageHandler : DelegatingHandler

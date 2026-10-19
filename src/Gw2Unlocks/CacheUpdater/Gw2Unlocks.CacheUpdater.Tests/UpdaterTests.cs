@@ -1,8 +1,13 @@
-﻿using GuildWars2.Hero.Achievements;
+﻿using GuildWars2;
+using GuildWars2.Collections;
+using GuildWars2.Hero.Achievements;
 using GuildWars2.Hero.Achievements.Categories;
 using GuildWars2.Hero.Achievements.Titles;
+using GuildWars2.Hero.Emotes;
+using GuildWars2.Hero.Equipment.Gliders;
 using GuildWars2.Hero.Equipment.Miniatures;
 using GuildWars2.Hero.Equipment.Novelties;
+using GuildWars2.Hero.Equipment.Outfits;
 using GuildWars2.Hero.Equipment.Wardrobe;
 using GuildWars2.Items;
 using Gw2Unlocks.Api;
@@ -14,6 +19,7 @@ using Gw2Unlocks.IconSpriteSheet.Testing;
 using Gw2Unlocks.Testing.Common;
 using Gw2Unlocks.Wiki.Testing;
 using Microsoft.Extensions.DependencyInjection;
+using System;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using Xunit;
@@ -164,6 +170,124 @@ public class UpdaterTests : ServiceProviderBasedTest<IUpdater>
         Assert.True(inv.ContainsKey("Miniature/2"));
         Assert.True(inv.ContainsKey("Novelty/1"));
         Assert.True(inv.ContainsKey("Novelty/2"));
+    }
+
+    [Fact]
+    public async Task DuplicateRecipeIdsFromDifferentSheetsCollapseToOneInventoryEntry()
+    {
+        var sut = GetSut();
+
+        // Two different recipe-sheet items unlocking the same recipe (the Recipe/6472 crash).
+        source.SetItems(new Collection<Item>(
+        [
+            new RecipeSheet
+            {
+                Id = 1001,
+                Name = "Sheet A",
+                Description = "Desc",
+                Level = 0,
+                Rarity = Rarity.Masterwork,
+                VendorValue = Coin.Zero,
+                GameTypes = ImmutableValueList<Extensible<GameType>>.Empty,
+                Flags = new ItemFlagsBuilder().Build(),
+                Restrictions = new ItemRestrictionBuilder().Build(),
+                ChatLink = "dummy",
+                IconUrl = new Uri("http://www.example.com/a.png"),
+                RecipeId = 6472,
+                ExtraRecipeIds = ImmutableValueList<int>.Empty,
+            },
+            new RecipeSheet
+            {
+                Id = 1002,
+                Name = "Sheet B",
+                Description = "Desc",
+                Level = 0,
+                Rarity = Rarity.Masterwork,
+                VendorValue = Coin.Zero,
+                GameTypes = ImmutableValueList<Extensible<GameType>>.Empty,
+                Flags = new ItemFlagsBuilder().Build(),
+                Restrictions = new ItemRestrictionBuilder().Build(),
+                ChatLink = "dummy",
+                IconUrl = new Uri("http://www.example.com/b.png"),
+                RecipeId = 6472,
+                ExtraRecipeIds = ImmutableValueList<int>.Empty,
+            },
+        ]));
+
+        await sut.UpdateApiData(TestContext.Current.CancellationToken);
+
+        var inv = iconSpreadSheetCache.SavedInventory.Inventory;
+        Assert.True(inv.ContainsKey("Recipe/6472"));
+    }
+
+    [Fact]
+    public async Task RecipeGliderOutfitAndEmoteUnlocksProduceSpriteInventoryEntries()
+    {
+        var sut = GetSut();
+
+        source.SetItems(new Collection<Item>(
+        [
+            new RecipeSheet
+            {
+                Id = 2001,
+                Name = "Recipe Sheet",
+                Description = "Desc",
+                Level = 0,
+                Rarity = Rarity.Masterwork,
+                VendorValue = Coin.Zero,
+                GameTypes = ImmutableValueList<Extensible<GameType>>.Empty,
+                Flags = new ItemFlagsBuilder().Build(),
+                Restrictions = new ItemRestrictionBuilder().Build(),
+                ChatLink = "dummy",
+                IconUrl = new Uri("http://www.example.com/recipe.png"),
+                RecipeId = 5001,
+                ExtraRecipeIds = ImmutableValueList<int>.Empty,
+            },
+            new ItemBuilder().WithId(2002).WithName("Emote Tome").Build(),
+        ]));
+
+        source.SetGliders(new Collection<GliderSkin>(
+        [
+            new GliderSkin
+            {
+                Id = 64,
+                Name = "Test Glider",
+                Description = "Desc",
+                IconUrl = new Uri("http://www.example.com/glider.png"),
+                Order = 1,
+                DefaultDyeColorIds = ImmutableValueList<int>.Empty,
+                UnlockItemIds = ImmutableValueList.Create([9001]),
+            },
+        ]));
+
+        source.SetOutfits(new Collection<Outfit>(
+        [
+            new Outfit
+            {
+                Id = 129,
+                Name = "Test Outfit",
+                IconUrl = new Uri("http://www.example.com/outfit.png"),
+                UnlockItemIds = ImmutableValueList.Create([9002]),
+            },
+        ]));
+
+        source.SetEmotes(new Collection<Emote>(
+        [
+            new Emote
+            {
+                Id = "testemote",
+                Commands = ImmutableValueList.Create(["/testemote"]),
+                UnlockItemIds = ImmutableValueList.Create([2002]),
+            },
+        ]));
+
+        await sut.UpdateApiData(TestContext.Current.CancellationToken);
+
+        var inv = iconSpreadSheetCache.SavedInventory.Inventory;
+        Assert.True(inv.ContainsKey("Recipe/5001"));
+        Assert.True(inv.ContainsKey("Glider/64"));
+        Assert.True(inv.ContainsKey("Outfit/129"));
+        Assert.True(inv.ContainsKey("Emote/2002"));
     }
 }
 

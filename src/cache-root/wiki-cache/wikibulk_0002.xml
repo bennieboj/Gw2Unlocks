@@ -1,5 +1,961 @@
 <?xml version="1.0" encoding="UTF-8"?><mediawiki xmlns="http://www.mediawiki.org/xml/export-0.11/">
 <page xmlns="http://www.mediawiki.org/xml/export-0.11/">
+    <title>Killing Fields</title>
+    <ns>0</ns>
+    <id>51955</id>
+    <revision>
+      <id>2610341</id>
+      <parentid>2495320</parentid>
+      <timestamp>2022-10-30T09:18:14Z</timestamp>
+      <contributor>
+        <username>Balwin</username>
+        <id>4258</id>
+      </contributor>
+      <minor />
+      <comment>some minor wording changes; added comment about old Lion's Arch appearence</comment>
+      <origin>2610341</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="12777" sha1="s8ixrui7sdqi48w54svs14zedhgia1h" xml:space="preserve">{{Story infobox
+| id = 296
+| storyline = Personal story
+| chapter = The Battle of Claw Island
+| chapter number = 6
+| sortkey number = 7
+| step number = 3
+| location = Fort Marriner
+| level = 60
+| order = Vigil
+| prev = The Battle of Claw Island
+| next = Defense Contract; The Good Fight
+}}
+[[Killing Fields]] is part of the [[personal story]] for [[character]]s of all races who decide to join the [[Vigil]] and have completed [[The Battle of Claw Island]].
+
+== Objectives ==
+'''Regroup with the Vigil troops.'''
+* Read Almorra's letter
+'''Join with the Vigil and defend Lion's Arch.'''
+* Report to General Almorra at Fort Marriner
+* Help Almorra inspire the Vigil soldiers.
+* Defend the beach.
+* Speak to Almorra.
+* Choose your next course of action.
+
+== Rewards ==
+{{story reward|The Battle of Claw Island|3}}
+
+== Walkthrough ==
+You meet up with Almorra Soulkeeper and several other Vigil soldiers. The beaches ahead are swarming with Risen, and it's your goal to eliminate them all. The soldiers will split off in three directions: one group to the left, one to the middle, one to the right. It's up to you to decide where you want to fight.
+
+This mission is largely luck-based; you're gambling on not drawing the attention of too many Risen at once, so that your NPC allies can soak up the damage. The Vigil do a decent job of staying alive, and you can revive them if needed. However, there are a lot of foes, and additional ones will come from the water periodically. If an entire group gets overwhelmed, it's a problem, since then the Risen will accumulate on that side; reviving all the troops takes time, and it is difficult to take on that many enemies at once.
+
+You should prioritize taking out Risen Abominations and Risen Plague Carriers as soon as possible. They deal devastating damage and quickly wipe out NPCs if left unattended. Alternatively you can stay behind and use the arrow carts to kill the Risen with minimal effort or danger.
+
+After all the Risen have been defeated, the mission is over, and you get a choice of what to do for the next mission.
+
+== NPCs ==
+=== Allies ===
+; [[Charr]]
+* [[General Almorra Soulkeeper]]
+
+; [[Sylvari]]
+* [[Laranthir of the Wild]]
+* [[Trahearne]]
+
+; Various
+* [[Vigil Crusader]]
+* [[Vigil Tactician]]
+
+=== Foes ===
+; [[Risen]]
+* [[Risen Abomination (veteran)|Risen Abomination]]
+* [[Risen Brute]]
+* [[Risen Plague Carrier]]
+* [[Risen Thrall]]
+
+== Objects ==
+;Siege weapons
+* [[Arrow Cart (Defending the Keep)|Arrow Cart]]
+
+== Dialogue ==
+Your mail:
+{{Mail
+| sender = General Almorra Soulkeeper
+| subject = Form Ranks at Fort Marriner
+| content = Warmaster,
+
+News of the death of mighty Forgal has been a blow to us all. I am deeply saddened to hear of it, and I know you must be suffering. But now, with Zhaitan on our shores and the city of Lion's Arch threatened, the Vigil is needed more than ever. We are regrouping at Fort Marriner, to lend our efforts to the city's immediate defense. Your orders are to rendezvous there and lead a contingent of soldiers into battle.
+
+The Vigil needs your courage; Tyria needs your knowledge of our enemy's weaknesses. Be strong.
+| sign = General Almorra Soulkeeper
+}}
+
+At [[Fort Marriner]], passing [[Vigil]] troops on way to meeting point:
+:'''Vigil Crusader''': It's so quiet... You know I was born here? I've never heard this city so silent.
+:'''Vigil Crusader''': Yes. It would be peaceful if only it didn't feel as if everything were holding its breath.
+
+:'''Vigil Crusader''': Did you know Warmaster Kernsson personally?
+:'''Vigil Crusader''': He trained me. He was a great soldier, but a hard person to know.
+:'''Vigil Crusader''': Forgal gave his life to save the people of Lion's Arch.
+:'''Vigil Crusader''': He gave his life to save us all. Remember that, soldier.
+
+:'''Vigil Tactician''': Are the undead on the continent? Have they taken Lion's Arch?
+:'''Vigil Crusader''': Not yet. Still, the city's taken precautions.
+:'''Vigil Crusader''': The Lionguard drew up the underwater sluice gates, cleared the streets, and put the city in lockdown.
+
+:'''Vigil Tactician''': In case you haven't realized it, this is war! Stay focused!
+:'''Vigil Tactician''': What are you, a jellyfish? Keep that arm stiff and use your wrist!
+:'''Vigil Tactician''': Better. Strike again, and this time, keep your shield up!
+
+:'''Vigil Tactician''': Aim gently, and as you breathe out...pull the trigger.
+
+:'''Vigil Tactician''': Tail up, charr! Yell it like you want the dragons to hear!
+:'''Vigil Tactician''': I don't want to see any of you humans falling behind. You've got to work twice as hard, but that'll make you twice as mean!
+:'''Vigil Tactician''': Left...left...left, right, left!
+:'''Vigil Tactician''': If I see another one of you asura trying to levitate instead of march, I'm giving you gravity boots!
+
+:'''Vigil Tactician''': Barkeep, more ale! Let's lift one to Warmaster Forgal!
+:'''Vigil Tactician''': Another round for the house. To absent friends!
+
+:'''Vigil Crusader''': Did you hear? They say a dragon lieutenant called Blightghast attacked Claw Island!
+:'''Vigil Crusader''': I heard Warmaster Forgal gave his life to hold it off. I can hardly believe it.
+:'''Vigil Crusader''': Burn me, he was brave. I hope I go down fighting like he did.
+
+Approaching meeting point:
+:'''General Almorra Soulkeeper''': Scouts are reporting undead just off the coast. It's a small force, but substantial enough for concern.
+:'''Trahearne''': [[Zhaitan]]'s overconfident, assuming [[Claw Island]] was the only thing standing between its army and [[Lion's Arch]].
+:'''General Almorra Soulkeeper''': Then it's our job to show the dragon how wrong it was.
+
+Upon talking to General Almorra Soulkeeper (cinematic):
+:'''General Almorra Soulkeeper''': At ease, Warmaster. I heard what happened at Claw Island. The [[Lionguard]] — no, the whole city — owes you a debt of honor.
+:'''&lt;Character name&gt;''': I just did my duty, ma'am. [[Warmaster Forgal Kernsson|Forgal]] was the brave one. He gave his life to save us.
+:'''General Almorra Soulkeeper''': He will be remembered as one of the Vigil's great heroes, and he will be dearly missed.
+:'''Trahearne''': Forgal's sacrifice held them back, but it was your bravery that led us to safety, my friend. I am grateful to you.
+:'''Trahearne''': If I can aid in this defense, Warmaster, I'm at your service.
+:'''General Almorra Soulkeeper''': You took out enough of Zhaitan's forces to stop the imminent attack on Lion's Arch, but the dragon won't pause for long.
+:'''General Almorra Soulkeeper''': There are reports of undead landing up and down the coast, likely an attempt to soften the city's perimeter.
+:'''General Almorra Soulkeeper''': We need to organize the Vigil's forces and defend the beach. Come, let's review the troops.
+
+While reviewing the troops with General Almorra Soulkeeper:
+:'''General Almorra Soulkeeper''': Crusaders! Forces of the Elder Dragon Zhaitan stand on the very threshold of Lion's Arch.
+:'''General Almorra Soulkeeper''': If Lion's Arch falls, the nations of Tyria will not be far behind. Fight for your homes! Fight for your families!
+:'''General Almorra Soulkeeper''': This is what we've trained for! This is what we've bled for! This is what we will die to defend!
+:'''General Almorra Soulkeeper''': We will hold this ground! We are the Vigil!
+
+:'''Trahearne''': You can't do this alone. I'll stand with you.
+
+Talking with Laranthir:
+:'''Laranthir of the Wild''': I never thought this day would come. I like Orr far away—not standing on Tyria's doorstep.
+:{{dialogue icon|more}} ''Zhaitan's hunger can't be sated. We're lucky we were ready.''
+::I'm glad you're among us, &lt;character name&gt;. We need you more than ever.
+::{{dialogue icon|back}} ''I have a question.''
+::{{dialogue icon|end}} ''Don't give in to fear.''
+:{{dialogue icon|end}} ''Stay strong.''
+
+Talking with General Soulkeeper:
+:'''General Almorra Soulkeeper''': Vigil scouts report massive numbers of undead along the coast. We must hold out or Lion's Arch will fall.
+:{{dialogue icon|more}} ''What's your plan, General?
+::We have soldiers mustering on the beach ready to take your orders. Command them and defend this point.
+::{{dialogue icon|end}} ''I'll do my best.''
+
+Talking with Trahearne:
+:'''Trahearne''': The Vigil troops may hold this beach, but more undead will come. We need a better solution.
+:{{dialogue icon|end}} ''We'll find one. But for now, we make a stand—here.''
+
+Speaking with Almorra after defending the beach (cinematic):
+:'''General Almorra Soulkeeper''': Well done, soldiers! That should thin out the undead and take pressure off Lion's Arch for a while longer.
+:'''Trahearne''': The Vigil bought us time, but not advantage. The undead don't get weary, and they have an almost unending supply of troops.
+:'''Trahearne''': We must retake Claw Island and drive Zhaitan from these shores.
+:'''Trahearne''': General Soulkeeper, there are many brave souls throughout [[Tyria]] who may be willing to lend a hand, if the Vigil reached out to them.
+:'''General Almorra Soulkeeper''': True. A few come to mind. A [[norn]] called [[Fibharr Ygosson|Fibharr]] has been making his name in the tournaments. Fights like a rabid drake.
+:'''General Almorra Soulkeeper''': I also know two fine [[charr]] soldiers that I've been trying to recruit for years—[[Snarl Backdraft|Snarl]] and [[Galina Edgecrusher|Galina]]. They'd be a tremendous help.
+:'''&lt;Character name&gt;''': These sound promising. I could go, ma'am, and speak on behalf of the order.
+:'''General Almorra Soulkeeper''': Good initiative. Pick one or the other, and do your best to bring them aboard. Meanwhile, I'll return to [[Vigil Keep]] and rally our crusaders there.
+:'''Trahearne''': Whatever you decide, I'm going with you. You need the help—and I owe it to Forgal.
+
+Talking with General Soulkeeper:
+:'''General Almorra Soulkeeper''': Well done, Warmaster. Forgal—bless his sour hear—would be proud.
+:{{dialogue icon|end}} ''I'd like to think so, ma'am.''
+
+Talking to Laranthir:
+:'''Laranthir of the Wild''': There were many Risen&amp;mdash;only a fraction of their army. By the Tree, I never really understood what we were fighting.
+:{{dialogue icon|dignity}} ''They're beaten. The beach is clear.''
+::But what else is out there across the waves?''
+::{{dialogue icon|end}} ''We need to take the offensive.''
+:{{dialogue icon|charm}} ''You fought bravely. The Vigil never faltered.''
+::We stood fast, but we can't hold the line anymore. We must destroy the source.
+::{{dialogue icon|end}} We will, but for now we strengthen our numbers.''
+:{{dialogue icon|ferocity}} ''The beach runs with Risen blood!''
+::Yes, but it isn't enough. We can't just wait here for them to coem to us.
+::{{dialogue icon|end}} ''We'll take the fight to Orr. I promise you that.''
+:{{dialogue icon|end}} ''We'll defeat the Risen.''
+
+Talking to Trahearne:
+:'''Trahearne''': We need reinforcements. I can think of two possibilities—a norn pit-champion, or a warband of Iron Legion{{sic|see notes}} charr.
+:{{dialogue icon|more}} ''What are their strengths? Start with the norn.''
+::Fibharr is powerful, skilled, and charismatic...but he's also the most egotistical snot-brain I've ever met.
+::{{dialogue icon|more}} ''What about the charr?''
+:::The Gear warband{{sic|see notes}} have two claims to fame: they built an impressive war-engine, and they got so drunk that they lost it.
+:::{{dialogue icon|back}} ''Bizarre. With that in mind, I'm ready to decide.''
+:{{dialogue icon|more}} ''I've made my decision.''
+::Which will it be, &lt;character name&gt;? The norn gladiator or the charr engineers?
+::{{dialogue icon|choice}} ''We should recruit the norn, Fibharr.'' &lt;small&gt;'''(leads to [[The Good Fight]])'''&lt;/small&gt;
+::{{dialogue icon|choice}} ''We should recruit the Gear warband.''{{sic|see notes}} &lt;small&gt;'''(leads to [[Defense Contract]])'''&lt;/small&gt;
+
+== My story ==
+{{mystory
+
+| text = Almorra ordered me to report to Fort Marriner, the Vigil's outpost in Lion's Arch. We have to hold off the dragon's incursions for as long as we can, until the Lionguard is ready to levy a counterassault.
+
+Zhaitan's forces attacked from the beach, but we held them off. General Soulkeeper is returning to Vigil Keep to rally an army. In the meantime, Trahearne and I are going to call upon our allies across the continent. Tyria is in great danger.
+}}
+
+== Notes ==
+* Like with all other Personal Story chapters taking place within Lion's Arch, it is showing the old version of the city and displaying it with a sepia tone added with post-processing.
+{{bug|Trahearne's dialogue when choosing your options talks about the Gear Warband from norn blacked-out storyline instead of Snarl and Galina.}}
+
+{{Orders storyline|6}}
+
+[[de:Der Kriegsschauplatz]]
+[[es:Campos de muerte]]
+[[fr:Champ de bataille]]</text>
+      <sha1>s8ixrui7sdqi48w54svs14zedhgia1h</sha1>
+    </revision>
+  </page>
+<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
+    <title>Killproof</title>
+    <ns>0</ns>
+    <id>389725</id>
+    <redirect title="Kill proof" />
+    <revision>
+      <id>2905577</id>
+      <timestamp>2024-12-01T22:32:53Z</timestamp>
+      <contributor>
+        <username>MrModius</username>
+        <id>243563</id>
+      </contributor>
+      <comment>Redirected page to [[Kill proof]]</comment>
+      <origin>2905577</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="24" sha1="4qygzso78m6lph727s05yyjc0kh945q" xml:space="preserve">#REDIRECT [[Kill proof]]</text>
+      <sha1>4qygzso78m6lph727s05yyjc0kh945q</sha1>
+    </revision>
+  </page>
+<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
+    <title>Killshot</title>
+    <ns>0</ns>
+    <id>80270</id>
+    <redirect title="Kill Shot" />
+    <revision>
+      <id>510722</id>
+      <parentid>510721</parentid>
+      <timestamp>2013-02-04T07:57:13Z</timestamp>
+      <contributor>
+        <username>Knighthonor</username>
+        <id>55668</id>
+      </contributor>
+      <comment>Redirected page to [[Kill Shot]]</comment>
+      <origin>510722</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="22" sha1="85zc4w5nkegrnut726ka4ueggvoiwll" xml:space="preserve">#redirect[[Kill Shot]]</text>
+      <sha1>85zc4w5nkegrnut726ka4ueggvoiwll</sha1>
+    </revision>
+  </page>
+<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
+    <title>Killstreak Experience Booster</title>
+    <ns>0</ns>
+    <id>40110</id>
+    <revision>
+      <id>3189522</id>
+      <parentid>2890786</parentid>
+      <timestamp>2026-08-31T09:01:14Z</timestamp>
+      <contributor>
+        <username>Hazasoul</username>
+        <id>133824</id>
+      </contributor>
+      <minor />
+      <comment>moved to service</comment>
+      <origin>3189522</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="1016" sha1="0g7eqg4f0883iu2fx1qtr9rhhgvpcee" xml:space="preserve">{{Item infobox
+| type = Booster
+| rarity = fine
+| bound = account
+| status = discontinued
+| description = [[File:Active_Kill_Streak!.png|18px]] [[Active Kill Streak!]] (1m): +10% exp from kills for each stack. Maximum: +100%&lt;br&gt;[[Killstreak Experience Booster (effect)|Boost]] lasts for one hour. Kill streaks last 60 seconds from the most recent kill and can be restarted as often as necessary within the hour.
+| id = 19999
+}}
+
+== Acquisition ==
+=== Sold by ===
+{{Sold by}}
+
+=== Contained in ===
+{{contained in}}
+
+== Notes ==
+* {{item icon|Enchanted Reward Boost}}s can be created from this booster from [[Black Lion Trader]]s or [[Boost Enchantment Powder]].
+* Killstreak Experience Boosters will stack with [[Experience Booster]]s and [[Nourishment|nourishment buffs]] (from food, potions, oils etc.), meaning you can have one of each type running at once.
+
+[[de:Erfahrungsverstärker für Siegesserie]]
+[[es:Potenciador de experiencia de racha de muertes]]
+[[fr:Augmentation d'expérience de victimes en série]]</text>
+      <sha1>0g7eqg4f0883iu2fx1qtr9rhhgvpcee</sha1>
+    </revision>
+  </page>
+<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
+    <title>Killstreak Experience Booster (effect)</title>
+    <ns>0</ns>
+    <id>122898</id>
+    <revision>
+      <id>3189547</id>
+      <parentid>813691</parentid>
+      <timestamp>2026-08-31T09:50:17Z</timestamp>
+      <contributor>
+        <username>Hazasoul</username>
+        <id>133824</id>
+      </contributor>
+      <origin>3189547</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="741" sha1="g9mk40s9o8i5bwtl5p2g7m4iw2woezt" xml:space="preserve">{{Effect infobox
+| name = Killstreak Experience Booster
+| stacking = no
+| description = Gain bonus [[experience]] for each kill within 60 seconds; max stack of 10.
+| id = 22888
+}}
+
+== Sources ==
+* {{item icon|Enchanted Reward Boost}} (1 h) &lt;small&gt;(if [[Killstreak Experience Booster (service)|Killstreak Experience Booster]] is chosen)&lt;/small&gt;{{verify|Tooltip only mentions Active Kill Streak!}}
+* {{item icon|Killstreak Experience Booster|{{gray|Killstreak Experience Booster}}}} (1 h) &lt;small&gt;(chance, discontinued)&lt;/small&gt;
+
+== Notes ==
+* Killing a foe grants one stack of {{effect|Active Kill Streak!}}
+* If also affected by {{effect|Experience Booster (effect)}}, stacks are gained twice as fast (2 per kill), but still cannot surpass 10.</text>
+      <sha1>g9mk40s9o8i5bwtl5p2g7m4iw2woezt</sha1>
+    </revision>
+  </page>
+<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
+    <title>Killstreak Experience Booster (service)</title>
+    <ns>0</ns>
+    <id>421440</id>
+    <revision>
+      <id>3189515</id>
+      <timestamp>2026-08-31T08:57:41Z</timestamp>
+      <contributor>
+        <username>Hazasoul</username>
+        <id>133824</id>
+      </contributor>
+      <comment>New page: '{{Item infobox | icon = Killstreak Experience Booster.png | name = Killstreak Experience Booster | type = Service | rarity = fine | description = {{nourishment|name=Active Kill Streak!|1 m|Gain 10 seconds of swiftness when gathering.&lt;br&gt;33% chance at extra resources when gathering.|icon=Active Kill Streak!.png}} | bound = Account | id = 49872 }}  {{bug|Despite only showing the {{effect|Active Kill Streak!}} (1 m) in the description, it likely provides {{effect|Killstreak Experie...'</comment>
+      <origin>3189515</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="614" sha1="su1ilzgq1s2s9qf9b2xp3684p5zojis" xml:space="preserve">{{Item infobox
+| icon = Killstreak Experience Booster.png
+| name = Killstreak Experience Booster
+| type = Service
+| rarity = fine
+| description = {{nourishment|name=Active Kill Streak!|1 m|Gain 10 seconds of swiftness when gathering.&lt;br&gt;33% chance at extra resources when gathering.|icon=Active Kill Streak!.png}}
+| bound = Account
+| id = 49872
+}}
+
+{{bug|Despite only showing the {{effect|Active Kill Streak!}} (1 m) in the description, it likely provides {{effect|Killstreak Experience Booster (effect)}} (1 h).{{verify}}}}
+
+== Acquisition ==
+{{contained in}}
+
+== Notes ==
+* Immediately consumed upon acquisition.</text>
+      <sha1>su1ilzgq1s2s9qf9b2xp3684p5zojis</sha1>
+    </revision>
+  </page>
+<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
+    <title>Kilnn's Rest</title>
+    <ns>0</ns>
+    <id>55741</id>
+    <revision>
+      <id>2542432</id>
+      <parentid>2423976</parentid>
+      <timestamp>2022-06-03T15:53:43Z</timestamp>
+      <contributor>
+        <ip>201.103.15.126</ip>
+      </contributor>
+      <origin>2542432</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="607" sha1="4iibehuwzpz8x5tyvqw61g6ktfci9wp" xml:space="preserve">{{Location infobox
+| type = Point of Interest
+| within = Hellion Forest
+| coordinates = [61454,28730]
+| id = 480
+}}
+[[Kilnn's Rest]] is a [[point of interest]] within the [[Hellion Forest]]. These ruins are all that are left of the Testibrie family mausoleum. All that remains standing is the arch at the entrance. [[Scholar Aimee Testibrie]] of the [[Durmand Priory]] is searching for remnants of her family history, namely her great-great-grandfather [[gww:Kilnn Testibrie|Kilnn Testibrie]].
+
+== NPCs ==
+=== Allies ===
+;[[Human]]
+*[[Scholar Aimee Testibrie]]
+
+{{Iron Marches nav}}
+[[es:Descanso de Kilnn]]</text>
+      <sha1>4iibehuwzpz8x5tyvqw61g6ktfci9wp</sha1>
+    </revision>
+  </page>
+<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
+    <title>Kilroy Stonekin</title>
+    <ns>0</ns>
+    <id>116494</id>
+    <revision>
+      <id>3129068</id>
+      <parentid>2738194</parentid>
+      <timestamp>2026-04-15T22:04:35Z</timestamp>
+      <contributor>
+        <username>Tery3065</username>
+        <id>270948</id>
+      </contributor>
+      <minor />
+      <origin>3129068</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="1383" sha1="rhe7dsg6fc0u885xsiir2tcqzs41wqt" xml:space="preserve">{{quotation|[[Explorer Akka]]|Ever heard of Kilroy Stonekin? He was a dwarf as fearsome as they came, and fearless to a fault. He was known for blindly charging into battle. A dangerous tactic, but it did a number on the Stone Summit dwarves.}}
+[[Kilroy Stonekin]] is a deceased [[dwarf]] famous for fighting against the [[Stone Summit]] dwarves. He is remembered as a reckless yet masterful brawler, specifically known for charging blindly into battle. When he died, he was interred in [[Granite Citadel]], where his [[Kilroy Stonekin Memorial Headstone|headstone]] can still be found. Its [[magic]]al properties are currently being studied by [[Durmand Priory]] members [[Arcanist Artemis]] and [[Explorer Akka]].
+
+== Related achievements ==
+* {{collection achievement|The Hero Kilroy's Story}}
+
+== Trivia ==
+* Kilroy Stonekin Ale is named after him.&lt;ref&gt;Writing an ale jug within the [[Hunting Lodge]]&lt;/ref&gt;
+* Kilroy Stonekin's name and blind charge tactic are both in reference to [[w:Leeroy Jenkins|Leeroy Jenkins]], the subject of a famous internet video concerning this dubious strategy.
+
+== See also ==
+{{gww}}
+* [[Kilroy Stonekin Memorial Headstone]]
+
+;Associated items
+* {{item icon|Kilroy Stonekin Necklace}}
+
+== References ==
+&lt;references/&gt;
+
+[[Category:Dwarves]]
+[[Category:Deldrimor]]
+[[Category:Unseen NPCs]]
+[[Category:Historical figures]]
+[[es:Kilroy Casta de Piedra]]</text>
+      <sha1>rhe7dsg6fc0u885xsiir2tcqzs41wqt</sha1>
+    </revision>
+  </page>
+<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
+    <title>Kilroy Stonekin Memorial Headstone</title>
+    <ns>0</ns>
+    <id>116486</id>
+    <revision>
+      <id>2219428</id>
+      <parentid>2219313</parentid>
+      <timestamp>2021-01-17T21:39:52Z</timestamp>
+      <contributor>
+        <username>Kvothe</username>
+        <id>215889</id>
+      </contributor>
+      <minor />
+      <origin>2219428</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="1891" sha1="pwesnye6rl2f4uvx85jseuhmugywxne" xml:space="preserve">{{Object infobox
+| location = Spearhead Bane
+| type = gravestone
+| gallery1 = Kilroy Stonekin Memorial Headstone inscription.jpg
+| gallery1-text = Inscription
+| gallery2 = Kilroy Stonekin Memorial Headstone map.jpg
+}}
+[[Kilroy Stonekin Memorial Headstone]] is the headstone of [[Kilroy Stonekin]]'s grave. It is located in the abandoned dwarven settlement, [[Granite Citadel]]. It is being investigated by priory members [[Arcanist Artemis]] and [[Explorer Akka]]. Like other dwarven gravestones, it's enchanted with magic to ward off grave robbers, as reading the dwarven inscriptions on the other headstones incorrectly causes a magical attack of some sort, but in the case of this gravestone, it starts the [[Defeat the giant imp]] event.
+
+== Location ==
+* [[Dredgehaunt Cliffs]]
+** [[Spearhead Bane]]
+*** [[Granite Citadel]]
+
+== Dialogue ==
+:This headstone stands in memory of Kilroy Stoneskin{{sic|Stonekin}}, who defeated [[gw1:Gulnar Irontoe|Gulnar Irontoe]] in battle. A master brawler, his deeds will not be forgotten. Another line of runes is below.
+:{{dialogue icon|more}} ''Examine the runes.''
+::The runes are worn and nearly indistinguishable in places. Who knows what they could be saying.
+::{{dialogue icon|more}} ''Read them anyway.''
+::{{dialogue icon|end}} ''Leave.''
+:&lt;small&gt;'''(If the player has [[The Flameseeker Prophecies III: The Chosen]] achievement collection unlocked)'''&lt;/small&gt;
+:{{dialogue icon|ready}} ''Record Kilroy's Story in your Anthology of Heroes.'' &lt;small&gt;'''(Ends dialogue and adds [[The Hero Kilroy's Story]] to your collection)'''&lt;/small&gt;
+:{{dialogue icon|more}} ''Read the runes.''
+:{{dialogue icon|end}} ''Leave.''
+
+== Trivia ==
+* The faint text on the headstone reads "Where's my resurrect portal?" in [[New Krytan]]. This is a reference to how using a [[gww:Portal|portal]] in Guild Wars 1 would resurrect party members in certain circumstances.</text>
+      <sha1>pwesnye6rl2f4uvx85jseuhmugywxne</sha1>
+    </revision>
+  </page>
+<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
+    <title>Kilroy Stonekin Necklace</title>
+    <ns>0</ns>
+    <id>116499</id>
+    <revision>
+      <id>2693031</id>
+      <parentid>2288440</parentid>
+      <timestamp>2023-07-04T03:22:15Z</timestamp>
+      <contributor>
+        <username>Looopy</username>
+        <id>253180</id>
+      </contributor>
+      <origin>2693031</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="655" sha1="5rw84w9p21vrtt72s6a5v37yajvxuyj" xml:space="preserve">{{Trinket infobox
+| icon = Amulet.png
+| description = "He always owed someone something. This necklace was probably used to pay off a {{sic|missing capitalization}}stone summit slaver."&lt;br&gt;— Priory History of Kilroy Stonekin
+| type = amulet
+| level = 47
+| rarity = fine
+| prefix = lingering
+| bound = acquire
+| id = 23410
+}}
+== Acquisition ==
+{{Sold by}}
+
+== Notes ==
+{{anomaly|This fine heart vendor item has no masterwork counterpart, even though there is a masterwork counterpart in the item-API.}}
+
+== See also ==
+*[[Kilroy Stonekin]]
+
+[[de:Halskette von Kilroy Steinsipp]]
+[[es:Collar de Kilroy Casta de Piedra]]
+[[fr:Collier de Kilroy Pierraille]]</text>
+      <sha1>5rw84w9p21vrtt72s6a5v37yajvxuyj</sha1>
+    </revision>
+  </page>
+<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
+    <title>Kim Johnason</title>
+    <ns>0</ns>
+    <id>75610</id>
+    <revision>
+      <id>3168269</id>
+      <parentid>2978917</parentid>
+      <timestamp>2026-07-13T07:08:14Z</timestamp>
+      <contributor>
+        <username>Sunlion</username>
+        <id>225997</id>
+      </contributor>
+      <minor />
+      <origin>3168269</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="895" sha1="la46ak4x9op2cy4wb59xkonsf8qv2fh" xml:space="preserve">{{NPC infobox
+| image = Human female 16 (weaponless).jpg
+| location = Township of Claypool
+| race = Human
+| coordinates = [43517,29974]
+| path = [[43517,29974],[43565,29977],[43603,29993],[43630,30026],[43623,30032],[43671,30077],[43629,30076],[43570,30120],[43572,30145],[43543,30210],[43445,30243],[43396,30205],[43460,30123],[43458,30062],[43477,30001],[43517,29974]]
+}}
+[[Kim Johnason]] can be found running around the perimeter of the [[Township of Claypool]].
+
+== Location ==
+;[[Kryta]]
+* [[Queensdale]]
+** [[Township of Claypool]]
+
+== Dialogue ==
+:Can't talk now! Got to keep training.
+:{{dialogue icon|more}} ''For what?''
+::Long-distance running! Once it's safe...(huff)...I'm going to run...(huff)...all the way...(huff)...to [[Stronghold of Ebonhawke|Ebonhawke]]...(huff)...without stopping!
+::{{dialogue icon|end}} ''Good luck!''
+:{{dialogue icon|end}} ''Okay.''
+
+[[fr:Kim Johnason]]</text>
+      <sha1>la46ak4x9op2cy4wb59xkonsf8qv2fh</sha1>
+    </revision>
+  </page>
+<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
+    <title>Kimberly Brooks</title>
+    <ns>0</ns>
+    <id>258414</id>
+    <revision>
+      <id>2503191</id>
+      <parentid>2503085</parentid>
+      <timestamp>2022-04-27T19:48:55Z</timestamp>
+      <contributor>
+        <username>Kossage</username>
+        <id>126773</id>
+      </contributor>
+      <origin>2503191</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="1254" sha1="kgiy3i3vza7aph3c216ean49l1zw8kq" xml:space="preserve">{{ArenaNet employee infobox
+| position = Voice actor
+}}
+[[Kimberly Brooks]] (August 25th, 1968) is the voice actress for [[Councilor Mayameen]], [[First Mate Jentyk]] and [[Kay]]. She is also known for her voice portraying of Ashley Williams in the [[w:Mass Effect|Mass Effect]] video games, and Bumblebee in the [[w:DC Super Hero Girls|DC Super Hero Girls]] TV series.
+
+== Notable work ==
+;Voice acting
+*[[Asura]]
+**[[Crystallographer Smoxxi]]&lt;ref&gt;[https://en-forum.guildwars2.com/topic/114280-who-voices-crystallographer-smoxxi/?do=findComment&amp;comment=1648961 Comment by Bobby Stein], Guild Wars 2 Forums&lt;/ref&gt;
+
+*[[Charr]]
+**[[Boticca]]
+
+*[[Human]]
+**[[Councilor Mayameen]]
+**[[First Mate Jentyk]]&lt;ref&gt;[https://twitter.com/GuildWars2/status/1012082791864037382 Tweet by Guild Wars 2], Twitter.com&lt;/ref&gt;
+**[[Kay]]&lt;ref&gt;[https://www.reddit.com/r/Guildwars2/comments/9v1re8/who_does_the_voice_acting_for_kay_in_deepstone/eaizufa/ Comment by Eve Eschenbacher], Reddit.com&lt;/ref&gt;
+
+*[[Hylek]]
+**[[Chieftain Xipil]]
+
+*[[Norn]]
+**[[Jhavi Jorasdottir]]&lt;ref&gt;[[Guild Chat - Episode 97]]&lt;/ref&gt;
+
+== External links ==
+* [[w:Kimberly Brooks|Kimberly Brooks on Wikipedia]]
+* [https://www.imdb.com/name/nm1456471/ Kimberly Brooks on IMDB]
+
+== References ==
+&lt;references /&gt;</text>
+      <sha1>kgiy3i3vza7aph3c216ean49l1zw8kq</sha1>
+    </revision>
+  </page>
+<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
+    <title>Kimmes the Historian</title>
+    <ns>0</ns>
+    <id>47684</id>
+    <revision>
+      <id>3052929</id>
+      <parentid>2653809</parentid>
+      <timestamp>2025-11-02T19:14:42Z</timestamp>
+      <contributor>
+        <ip>193.84.1.143</ip>
+      </contributor>
+      <origin>3052929</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="10150" sha1="crh2ue0sypsy3g40jy1ji84tw17fnvj" xml:space="preserve">{{NPC infobox
+| location = Eye of the North (instance); Hall of Monuments
+| race = Ghost
+| organization = Ebon Vanguard
+| rank = Legendary
+| profession = Mesmer
+| service = Merchant
+}}
+[[Kimmes the Historian]] traveled from [[Ascalon]] long ago to study the [[Hall of Monuments]] and the memories imbued therein. He discovered and restored long-dormant magics that enabled him to view the deeds of different adventurers who had traveled to the [[Eye of the North]] over the years. After returning to Ascalon and dying in [[Stronghold of Ebonhawke|Ebonhawke]], Kimmes's spirit returned to the Eye where he remains to this day, waiting for a hero who he sees fit to inherit the artifacts once owned by the [[Hero (NPC)|slayer]] of [[gww:the Great Destroyer|the Great Destroyer]].
+
+== Location ==
+;[[Far Shiverpeaks]]
+* [[Eye of the North (instance)]] (as a vendor)
+* [[Eye of the North]]
+** [[Hall of Monuments]]
+
+== Items offered ==
+All items cost {{coin|0}} and can be purchased an infinite amount of times, but they must be unlocked by earning points in the [[gw1:Hall of Monuments|Hall of Monuments]] in the original ''[[Guild Wars]]''.
+{{Vendor table header|showLevel=false|showCost=false|showFacts=false|location=Eye of the North (instance)|showNotes=true}}
+{{Vendor table row|item=Heritage Warboots|cost=0 coin|requirement=1 Hall of Monuments reward point}}
+{{Vendor table row|item=Heritage Shoes|cost=0 coin|requirement=1 Hall of Monuments reward point}}
+{{Vendor table row|item=Heritage Boots|cost=0 coin|requirement=1 Hall of Monuments reward point}}
+{{Vendor table row|item=Heritage Legplates|cost=0 coin|requirement=2 Hall of Monuments reward points}}
+{{Vendor table row|item=Heritage Pants|cost=0 coin|requirement=2 Hall of Monuments reward points}}
+{{Vendor table row|item=Heritage Legguards|cost=0 coin|requirement=2 Hall of Monuments reward points}}
+{{Vendor table row|item=Heritage Warplate|cost=0 coin|requirement=3 Hall of Monuments reward points}}
+{{Vendor table row|item=Heritage Greatcoat|cost=0 coin|requirement=3 Hall of Monuments reward points}}
+{{Vendor table row|item=Heritage Jerkin|cost=0 coin|requirement=3 Hall of Monuments reward points}}
+{{Vendor table row|item=Heritage Gauntlets|cost=0 coin|requirement=4 Hall of Monuments reward points}}
+{{Vendor table row|item=Heritage Gloves|cost=0 coin|requirement=4 Hall of Monuments reward points}}
+{{Vendor table row|item=Heritage Armguards|cost=0 coin|requirement=4 Hall of Monuments reward points}}
+{{Vendor table row|item=Heritage Pauldrons|cost=0 coin|requirement=5 Hall of Monuments reward points}}
+{{Vendor table row|item=Heritage Mantle|cost=0 coin|requirement=5 Hall of Monuments reward points}}
+{{Vendor table row|item=Heritage Shoulderpads|cost=0 coin|requirement=5 Hall of Monuments reward points}}
+{{Vendor table row|item=Heritage Warhelm|cost=0 coin|requirement=6 Hall of Monuments reward points}}
+{{Vendor table row|item=Heritage Masque|cost=0 coin|requirement=6 Hall of Monuments reward points}}
+{{Vendor table row|item=Heritage Bandana|cost=0 coin|requirement=6 Hall of Monuments reward points}}
+{{Vendor table row|item=Gnarled Walking Staff|cost=0 coin|requirement=7 Hall of Monuments reward points}}
+{{Vendor table row|item=Living Short Bow|cost=0 coin|requirement=8 Hall of Monuments reward points}}
+{{Vendor table row|item=Mini Orange Tabby Cat|cost=0 coin|requirement=9 Hall of Monuments reward points}}
+{{Vendor table row|item=Fiery Dragon Sword|cost=0 coin|requirement=10 Hall of Monuments reward points}}
+{{Vendor table row|item=Diamond Aegis Shield|cost=0 coin|requirement=11 Hall of Monuments reward points}}
+{{Vendor table row|item=Heavy Baroque Mask|cost=0 coin|requirement=12 Hall of Monuments reward points}}
+{{Vendor table row|item=Light Baroque Mask|cost=0 coin|requirement=12 Hall of Monuments reward points}}
+{{Vendor table row|item=Medium Baroque Mask|cost=0 coin|requirement=12 Hall of Monuments reward points}}
+{{Vendor table row|item=Centurions Claw|cost=0 coin|requirement=13 Hall of Monuments reward points}}
+{{Vendor table row|item=Wheelock Rifle|cost=0 coin|requirement=14 Hall of Monuments reward points}}
+{{Vendor table row|item=Mini Orrian Baby Chicken|cost=0 coin|requirement=15 Hall of Monuments reward points}}
+{{Vendor table row|item=Wayward Wand Scepter|cost=0 coin|requirement=16 Hall of Monuments reward points}}
+{{Vendor table row|item=Seathunder Pistol|cost=0 coin|requirement=17 Hall of Monuments reward points}}
+{{Vendor table row|item=Heavenly Heavy Bracers|cost=0 coin|requirement=18 Hall of Monuments reward points}}
+{{Vendor table row|item=Heavenly Light Bracers|cost=0 coin|requirement=18 Hall of Monuments reward points}}
+{{Vendor table row|item=Heavenly Medium Bracers|cost=0 coin|requirement=18 Hall of Monuments reward points}}
+{{Vendor table row|item=Deldrimor Mace|cost=0 coin|requirement=19 Hall of Monuments reward points}}
+{{Vendor table row|item=Chimeric Prism Focus|cost=0 coin|requirement=20 Hall of Monuments reward points}}
+{{Vendor table row|item=Mini Rockfur Racoon|cost=0 coin|requirement=21 Hall of Monuments reward points}}
+{{Vendor table row|item=Ithas Longbow|cost=0 coin|requirement=22 Hall of Monuments reward points}}
+{{Vendor table row|item=Fellblade|cost=0 coin|requirement=23 Hall of Monuments reward points}}
+{{Vendor table row|item=Icelord's Heavy Diadem|cost=0 coin|requirement=24 Hall of Monuments reward points}}
+{{Vendor table row|item=Icelord's Light Diadem|cost=0 coin|requirement=24 Hall of Monuments reward points}}
+{{Vendor table row|item=Icelord's Medium Diadem|cost=0 coin|requirement=24 Hall of Monuments reward points}}
+{{Vendor table row|item=Icebreaker|cost=0 coin|requirement=25 Hall of Monuments reward points}}
+{{Vendor table row|item=Flaming Beacon|cost=0 coin|requirement=26 Hall of Monuments reward points}}
+{{Vendor table row|item=Mini Servitor Golem|cost=0 coin|requirement=27 Hall of Monuments reward points}}
+{{Vendor table row|item=Stygian Axe|cost=0 coin|requirement=28 Hall of Monuments reward points}}
+{{Vendor table row|item=Mountaincall Warhorn|cost=0 coin|requirement=29 Hall of Monuments reward points}}
+{{Vendor table row|item=Fire God's Heavy Vambraces|cost=0 coin|requirement=30 Hall of Monuments reward points}}
+{{Vendor table row|item=Fire God's Light Vambraces|cost=0 coin|requirement=30 Hall of Monuments reward points}}
+{{Vendor table row|item=Fire God's Medium Vambraces|cost=0 coin|requirement=30 Hall of Monuments reward points}}
+|}
+
+== Dialogue ==
+=== In the old Eye of the North instance ===
+;If the player owns [[Guild Wars|Guild Wars: Eye of the North]]
+:I recognize the worthiness of your soul, hero. I cling to this world in order to guard these items, destined for you. Centuries have passed, and you're finally here. Collect your legacy. The time has come.
+:{{dialogue icon|merchant}} ''Show me my legacy.''
+:{{dialogue icon|more}} ''What items have you been keeping?''
+::&lt;small&gt;'''(If the player unlocked all the rewards)'''&lt;/small&gt;
+::They belonged to a [[Hero (NPC)|hero]] who earned all these relics during their life. I've waited centuries for someone to come who embodies the same heroism. You are that person. I give it all to you.
+::&lt;small&gt;'''(If the player unlocked some of the rewards)'''&lt;/small&gt;
+::They belonged to a hero who earned some, but not all, of these relics during their life. I've waited centuries for someone to come who embodies the same heroism. It's you. Claim what is yours.
+::{{dialogue icon|more}} ''How do I earn the rest?''
+:::Only the ancient hero, from the period following [[gww:The Guild Wars|the Guild Wars]], when [[Flameseeker Verse|Prophecies]] were fulfilled in [[Tyria]], when [[gww:Allegiance rank|Factions]] were united in [[Cantha]], and when [[gww:Nightfall (event)|Nightfall]] fell upon [[Elona]], can quest for these relics.
+:::{{dialogue icon|more}} ''Why are you here, of all places?''
+::::I returned with the [[Ebon Vanguard]] when they were recalled to their final home in [[Stronghold of Ebonhawke|Ebonhawke]]. It was there that I drew my last breath. But, I've always known that this was where I belonged.
+::::{{dialogue icon|back}} ''I'd like to ask something else.''
+::::{{dialogue icon|end}} ''If I pass your grave, I'll reflect on your determination.''
+::&lt;small&gt;'''(If the player unlocked all the rewards)'''&lt;/small&gt;
+::{{dialogue icon|more}} ''Why are you here, of all places?'' &lt;small&gt;'''(same as above)'''&lt;/small&gt;
+::{{dialogue icon|back}} ''I'd like to ask something else.''
+::{{dialogue icon|end}} ''Thank you. I must go.''
+:{{dialogue icon|end}} ''Good-bye.''
+
+;(Otherwise)
+:A hero from another time once strode these halls. I see the potential for the same bravery and glory in your eyes.
+:{{dialogue icon|more}} ''Tell me more about this hero.''
+::More than two hundred years ago, the hero honored here found glory after the Guild Wars, when Prophecies were fulfilled in Tyria, when Factions were united in Cantha, and Nightfall fell upon Elona.
+::{{dialogue icon|more}} ''How can I achieve these things?''
+:::In this life, you do not travel the same paths as those who came before. Only an ancient hero can quest for this glory.
+:::{{dialogue icon|end}} ''I see.''
+::{{dialogue icon|end}} ''I see.''
+:{{dialogue icon|end}} ''I'll be on my way.''
+
+=== In the new Eye of the North ===
+:Welcome to the Eye of the North. It brings a smile to my face to see so many inspiring figures walking this hall again.
+:{{dialogue icon|more}} ''Are there any treasures of the past here?'' &lt;small&gt;'''(if the player owns Guild Wars: Eye of the North)'''&lt;/small&gt;
+::Many heirlooms were stored in the Hall of Monuments. If that inheritance was meant for you, try to view the Hall in the Scrying Pool.
+::{{dialogue icon|end}} ''Thank you.''
+:{{dialogue icon|end}} ''Likewise.''
+
+== Combat abilities ==
+;Abilities
+* Firestorm
+* Unpredictable
+
+;Effects
+{{defiance}}
+
+== Trivia ==
+{{gww|Kimmes The Historian}}
+* Kimmes is the author of [[The Founding]].
+* He is named after [[Joe Kimmes]].
+* He has [[Royal Ascalonian Scepter]] and [[Royal Ascalonian Focus]].
+
+[[de:Kimmes, der Historiker]]
+[[es:Kimmes, el Historiador]]
+[[fr:Kimmes l'historien]]
+[[Category:NPCs named after ArenaNet employees]]</text>
+      <sha1>crh2ue0sypsy3g40jy1ji84tw17fnvj</sha1>
+    </revision>
+  </page>
+<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
+    <title>Kimmi</title>
+    <ns>0</ns>
+    <id>96296</id>
+    <revision>
+      <id>2423978</id>
+      <parentid>2406596</parentid>
+      <timestamp>2022-03-06T14:42:08Z</timestamp>
+      <contributor>
+        <username>AWB Alex</username>
+        <id>102516</id>
+      </contributor>
+      <minor />
+      <comment>/* top */+Update coordinates.</comment>
+      <origin>2423978</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="531" sha1="bmh43k00dtkziroxfk0io91hlivgnv0" xml:space="preserve">{{Temporary|release=Bazaar of the Four Winds|seasonal=Festival of the Four Winds}}
+{{NPC infobox
+| image = Asura female 2.jpg
+| location = Bazaar Docks
+| race = asura
+| level = 80
+| service = armorsmith
+| coordinates = [55809.5,38956.6]
+| localtiles = y
+}}
+[[Kimmi]] is an [[Armorsmith (vendor)|armorsmith]] in the [[Bazaar Docks]].
+
+== Location ==
+;[[Maguuma]]
+* [[Labyrinthine Cliffs]]
+** [[Bazaar Docks]]
+
+== Items offered ==
+{{Inventory/armorsmith}}
+
+[[Category:Bazaar of the Four Winds]]
+[[de:Kimmi]]
+[[es:Kimmi]]
+[[fr:Kimmi]]</text>
+      <sha1>bmh43k00dtkziroxfk0io91hlivgnv0</sha1>
+    </revision>
+  </page>
+<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
+    <title>Kin Venomjab</title>
+    <ns>0</ns>
+    <id>203386</id>
+    <revision>
+      <id>3161582</id>
+      <parentid>2920018</parentid>
+      <timestamp>2026-06-19T13:15:58Z</timestamp>
+      <contributor>
+        <username>Ruby12</username>
+        <id>239584</id>
+      </contributor>
+      <minor />
+      <comment>/* Trivia */</comment>
+      <origin>3161582</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="963" sha1="fkubss6sp4hd50xob2w61fxjn79xmby" xml:space="preserve">{{NPC infobox
+| location = Heathen's Hold
+| race = Charr
+| organization = Balthazar's Mercenaries
+| level = 80
+| rank = Veteran
+| path = [37174.5, 41176.8, 2],[37151.0, 41205.5, 2],[37086.0, 41172.7, 2],[37084.2, 41182.2, 2],[37068.3, 41172.3, 2]
+| requires = lws3
+}}
+[[Kin Venomjab]] is one of the leaders of [[Balthazar's Mercenaries]] that can be found patrolling a section of the Mercenary base located in [[Heathen's Hold]].
+
+== Location ==
+;[[Ring of Fire]]
+* [[Draconis Mons]]
+** [[Heathen's Hold]]
+
+== Combat abilities ==
+;Abilities
+* Tosses Hammer
+* Area Attacks
+
+;Skills
+{{section-stub|npc|Missing skills}}
+* '''Bash'''
+* '''Galrath Slash'''
+* '''Hammer Toss'''
+
+;Stolen skills
+{{section-stub|npc|Missing skills}}
+* {{stolen skill|Throw Gunk}}
+* {{stolen skill|Whirling Axe (stolen skill)}}
+
+== Trivia ==
+* [[gww:Galrath Slash|Galrath Slash]] was the name of a warrior skill in the original ''Guild Wars''.
+
+[[de:Kin Giftstoß]]
+[[es:Kin Clavaponzoña]]</text>
+      <sha1>fkubss6sp4hd50xob2w61fxjn79xmby</sha1>
+    </revision>
+  </page>
+<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
+    <title>Kina's Warning Shot</title>
+    <ns>0</ns>
+    <id>212352</id>
+    <revision>
+      <id>2703592</id>
+      <parentid>2600200</parentid>
+      <timestamp>2023-07-16T11:16:05Z</timestamp>
+      <contributor>
+        <username>AWB Alex</username>
+        <id>102516</id>
+      </contributor>
+      <minor />
+      <comment>/* top */+Add salvage parameter</comment>
+      <origin>2703592</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="602" sha1="hf78lkx19lu2uhgbmu9zokkhvec9xd6" xml:space="preserve">{{weapon infobox
+| icon = Sunspear Recurve.png
+| requires = Path of Fire
+| level = 80
+| rarity = exotic
+| type = Longbow
+| skin = Sunspear Recurve (skin)
+| prefix = Marshal's
+| bound = use
+| salvage = Standard
+| id = 83742
+| set = Named Sunspear weapons
+| collection = The Main Thrust
+| gallery1 = Sunspear Recurve.jpg
+}}
+
+== Acquisition ==
+{{contained in}}
+
+== Trivia ==
+* Named after [[gw1:Kina|Kina]] from ''Guild Wars Nightfall''.
+
+== See also ==
+* {{item icon|Sunspear Recurve}}
+
+{{Named sunspear weapons nav}}
+
+[[de:Warnschuss Kinas]]
+[[es:Disparo de aviso de Kina]]
+[[fr:Tir de semonce de Kina]]</text>
+      <sha1>hf78lkx19lu2uhgbmu9zokkhvec9xd6</sha1>
+    </revision>
+  </page>
+<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
+    <title>Kina Snatchstone</title>
+    <ns>0</ns>
+    <id>63072</id>
+    <revision>
+      <id>2995612</id>
+      <parentid>2423980</parentid>
+      <timestamp>2025-07-04T23:06:32Z</timestamp>
+      <contributor>
+        <username>Tery3065</username>
+        <id>270948</id>
+      </contributor>
+      <minor />
+      <origin>2995612</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="356" sha1="cc83e9znbp6zb1kfnz9fio3o8l33w6m" xml:space="preserve">{{NPC infobox
+| image = Charr female 1 (rifle).jpg
+| location = Town of Nageling
+| race = Charr
+| level = 17
+| service = Merchant
+| coordinates = [57767.4,29387.7]
+}}
+[[Kina Snatchstone]] is a [[merchant]] found in the [[Town of Nageling]].
+
+== Location ==
+* [[Diessa Plateau]]
+** [[Town of Nageling]]
+
+== Items offered ==
+{{inventory|standard merchant 2}}</text>
+      <sha1>cc83e9znbp6zb1kfnz9fio3o8l33w6m</sha1>
+    </revision>
+  </page>
+<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
     <title>Kinar Fort</title>
     <ns>0</ns>
     <id>11526</id>
@@ -85534,17 +86490,17 @@ To exit, players can make their way through the winding path to the top of the v
     <ns>0</ns>
     <id>9077</id>
     <revision>
-      <id>3212773</id>
-      <parentid>3212772</parentid>
-      <timestamp>2026-10-13T15:47:09Z</timestamp>
+      <id>3215228</id>
+      <parentid>3215222</parentid>
+      <timestamp>2026-10-18T14:17:36Z</timestamp>
       <contributor>
         <username>Kossage</username>
         <id>126773</id>
       </contributor>
-      <origin>3212773</origin>
+      <origin>3215228</origin>
       <model>wikitext</model>
       <format>text/x-wiki</format>
-      <text bytes="23229" sha1="pcnhenqar68lwtwach4ja3z2fbw86uy" xml:space="preserve">{{gww|Language}}
+      <text bytes="23710" sha1="64n8tgqx2m4t35fi0qztb4ek755qih6" xml:space="preserve">{{gww|Language}}
 There are various '''languages''' throughout the world of [[Tyria (world)|Tyria]], with at least three commonly found languages during the time of ''[[Guild Wars 2]]''.
 
 == Tyrian ==
@@ -85778,6 +86734,8 @@ The [[seer]]s have their own language of which remnants can be found throughout 
 * '''Vrigalanate''' — To watch.
 
 ;Other notable words
+* '''[[Ancora]]''' — Anchor.
+* '''Aviet''' —&lt;ref name="Seer Tablet"&gt;[[Seer Tablet#Divitium Nava|Seer Tablet]]&lt;/ref&gt;
 * '''Divcia''' — (Of) lesser riches / wealth?
 * '''Divitium''' — (Of) riches / wealth.
 * '''Falta''' — "Those who have not been granted permission to enter these grounds."&lt;ref name="Path of Divinity"&gt;[[Path of Divinity]]
@@ -85787,13 +86745,18 @@ The [[seer]]s have their own language of which remnants can be found throughout 
 :'''Isgarren:''' "Santuro." The sacred place.
 :'''Isgarren:''' It is in reference not only to the island, but to the sacred ritual grounds.&lt;/ref&gt;&lt;ref&gt;[[The Burden of Seeing]]
 :'''Rune Plates:''' (It looks reminiscent of the rune Falta; perhaps the meaning is similar. "Hidden," or perhaps "silent.")&lt;/ref&gt;
+* '''Fhogos'''  — Flock / Horde / Kin.&lt;ref&gt;[[Assist Steward Divo while he performs his creator's last work]]&lt;/ref&gt;&lt;ref&gt;[[Isgarren#Dialogue|Isgarren]]&lt;/ref&gt;
+* '''Fortun''' — Luck.&lt;ref name="Seer Tablet" /&gt;
 * '''Guida''' — To guide.&lt;ref name="Those Who Watch"&gt;[[Those Who Watch]]&lt;/ref&gt;
 * '''Eroe''' — Heroes.&lt;ref name="Those Who Watch" /&gt;
 * '''Eterni''' — Eternal (plural).&lt;ref name="Those Who Watch" /&gt;
 * '''Nava''' — New.
 * '''Navarium''' — Place of newness / for new things.
+* '''[[Seer Lamp (Pilgrim's Rest)|Ombraband]]''' — Shadow ring?
+* '''[[Seer Dagger|Porsul Ret]]''' — 
 * '''Santuro''' — "The sacred place."&lt;ref name="Path of Divinity" /&gt;
 * '''Scudo''' — Shield.&lt;ref name="Path of Divinity" /&gt;
+* '''Semtini''' —&lt;ref name="Seer Tablet" /&gt;
 
 ;Runes
 &lt;gallery widths="70" heights="70"&gt;
@@ -85837,7 +86800,7 @@ Temple of Kormir banner.jpg|Banners hanging in the [[Temple of Kormir]].
 [[de:Schrift]]
 [[es:Idiomas de Tyria]]
 [[fr:Langues de la Tyrie]]</text>
-      <sha1>pcnhenqar68lwtwach4ja3z2fbw86uy</sha1>
+      <sha1>64n8tgqx2m4t35fi0qztb4ek755qih6</sha1>
     </revision>
   </page>
 <page xmlns="http://www.mediawiki.org/xml/export-0.11/">
@@ -153695,18 +154658,17 @@ Boss Blitz promo.jpg|Boss Blitz promo.
     <ns>0</ns>
     <id>364221</id>
     <revision>
-      <id>3200942</id>
-      <parentid>3200908</parentid>
-      <timestamp>2026-09-21T23:12:02Z</timestamp>
+      <id>3215557</id>
+      <parentid>3215556</parentid>
+      <timestamp>2026-10-18T18:44:00Z</timestamp>
       <contributor>
-        <username>Tery3065</username>
-        <id>270948</id>
+        <username>Kossage</username>
+        <id>126773</id>
       </contributor>
-      <minor />
-      <origin>3200942</origin>
+      <origin>3215557</origin>
       <model>wikitext</model>
       <format>text/x-wiki</format>
-      <text bytes="9587" sha1="lud0nyte210hd5jnz3rpzkgxnnhc5ka" xml:space="preserve">{{spoiler|''[[Guild Wars 2: Secrets of the Obscure]]'', ''[[Guild Wars 2: Janthir Wilds]]'', and ''[[Guild Wars 2: Visions of Eternity]]''}}
+      <text bytes="10100" sha1="7cdmh1dqvknvr8zp0zu331568nh8wua" xml:space="preserve">{{spoiler|''[[Guild Wars 2: Secrets of the Obscure]]'', ''[[Guild Wars 2: Janthir Wilds]]'', and ''[[Guild Wars 2: Visions of Eternity]]''}}
 {{NPC infobox
 | location = Bramble Pass
 | race = Ghost, Vision
@@ -153724,7 +154686,9 @@ Boss Blitz promo.jpg|Boss Blitz promo.
 
 == Biography ==
 === Early years ===
-Sidony succeeded his predecessor [[Calogero, Avatar of the All Seer|Calogero the First Elder]] as the [[doyen]], also known as the Immortal Leader,&lt;ref name="Historical Record" /&gt;&lt;ref&gt;[[A Doyen's Burden]]&lt;/ref&gt; of the [[seer]] horde. Calogero remained as Sidony's advisor after stepping down.&lt;ref&gt;[[Polished Plaque]]&lt;/ref&gt; The doyen cried for war during the previous devastating rise of the [[Elder Dragon]]s and allied with the [[elder race]]s of [[Tyria (world)|Tyria]] to achieve this end. However, just before the seers were to aid the [[mursaat]] in the attack against the Elder Dragon [[Zhaitan]], Sidony suddenly decided against seer involvement in the battle as he believed that the seers should respect the autonomy of the other races.&lt;ref&gt;[[Noninterventionist Rationalization: A Primer]]&lt;/ref&gt; He left the mursaat and the [[Forgotten]] to fend for themselves while the seers focused on the creation of the [[Shadowstone]] and the [[Bloodstone]] instead. Sidony also stopped the fellow seer [[Isgarren]] from interfering.&lt;ref name="Unseen"&gt;[[Strength of the Unseen (achievement)#Dialogue|Strength of the Unseen]]&lt;/ref&gt;&lt;ref name="Legavo"&gt;[[Archival Records: Legavo, the Binding of Wills]]&lt;/ref&gt; The mursaat, who had suffered many losses alongside the Forgotten, never forgave the seers for this perceived act of betrayal, leading to a [[Seer-mursaat war|bloody conflict]] between the two races for millennia during which the mursaat would exterminate most seers from Tyria despite their numbers being fewer compared to the seers.&lt;ref&gt;[[Isgarren#Dialogue|Isgarren]]&lt;/ref&gt;&lt;ref&gt;[[Mursaat Lore Tablet]]&lt;/ref&gt;
+Sidony succeeded his predecessor [[Calogero, Avatar of the All Seer|Calogero the First Elder]] as the [[doyen]], also known as the Immortal Leader,&lt;ref name="Historical Record" /&gt;&lt;ref name="Bookcase"&gt;[[Bookcase (The Burden of Seeing)]]&lt;/ref&gt; of the [[seer]] horde. Calogero remained as Sidony's advisor after stepping down.&lt;ref&gt;[[Polished Plaque]]&lt;/ref&gt; Unlike his predecessor, Sidony wanted faulty cast-offs made in [[The Forge (Eternity's Garden)|the Forge]] to be preserved rather than destroyed so they could be archived and studied by future seer generations to learn from the mistakes.&lt;ref&gt;[[Meliore's Journal]]&lt;/ref&gt;
+
+The doyen cried for war during the previous devastating rise of the [[Elder Dragon]]s and allied with the [[elder race]]s of [[Tyria (world)|Tyria]] to achieve this end. However, just before the seers were to aid the [[Forgotten]] and the [[mursaat]] in defending the [[Ruins of Orr|Orrian]] ley root from the Elder Dragon [[Zhaitan]], Sidony suddenly decided against seer involvement in the battle as he believed that the seers should respect the autonomy of the other races.&lt;ref name="Bookcase" /&gt; He left the mursaat and the [[Forgotten]] to fend for themselves while the seers focused on the creation of the [[Shadowstone]] and the [[Bloodstone]] instead. Sidony also stopped the fellow seer [[Isgarren]] from interfering.&lt;ref name="Unseen"&gt;[[Strength of the Unseen (achievement)#Dialogue|Strength of the Unseen]]&lt;/ref&gt;&lt;ref name="Legavo"&gt;[[Archival Records: Legavo, the Binding of Wills]]&lt;/ref&gt; The mursaat, who had suffered many losses alongside the Forgotten, never forgave the seers for this perceived act of betrayal, leading to a [[Seer-mursaat war|bloody conflict]] between the two races for millennia during which the mursaat would exterminate most seers from Tyria despite their numbers being fewer compared to the seers.&lt;ref&gt;[[Isgarren#Dialogue|Isgarren]]&lt;/ref&gt;&lt;ref&gt;[[Mursaat Lore Tablet]]&lt;/ref&gt;
 
 Since their creation at the hands of the seers, Sidony believed that the [[magic]]al weapons Legavo and Mulmund would be essential in the seers' defense against extraplanar invaders. However, the mursaat would eventually ward their armors against the staves' unique magics, well before the pair of weapons became known as the [[Scepter of Orr]] and the [[gww:Staff of the Mists|Staff of the Mists]], respectively. Eventually, the [[Six Human Gods|Six Gods]] and their servants came, unabated and unhindered, and it became clear that the staves were not the miracles the seers had thought they were.&lt;ref name="Legavo" /&gt; Sidony and his fellow seers became aware of the existence of [[human]]s around this time.&lt;ref&gt;[[Bookcase (The Burden of Seeing)]], Immortal Justice&lt;/ref&gt;
 
@@ -153754,6 +154718,7 @@ Sidony's mind was set in the past, reciting the speech from the previous [[drago
 * [[Code of Creation]]
 ** [[Under Pressure]] &lt;small&gt;(as a vision, Echo of Sidony the Shadowkeeper)&lt;/small&gt;
 ** [[The Burden of Seeing]] &lt;small&gt;(as a vision, Echo of Sidony the Shadowkeeper)&lt;/small&gt;
+** [[So Be It]] &lt;small&gt;(cinematic only)&lt;/small&gt;
 
 == Combat abilities ==
 ;Effects
@@ -153776,6 +154741,8 @@ Sidony's mind was set in the past, reciting the speech from the previous [[drago
 &lt;gallery&gt;
 Echo of Sidony the Shadowkeeper.jpg|A [[revenant]] [[Legend|echo]] of Sidony.
 Seer Statue.jpg|A [[Seer Statue|statue]] of Sidony.
+So Be It cinematic 4.jpg|Sidony with [[Ancora]] during [[So Be It]].
+So Be It cinematic 5.jpg|Sidony banishes [[Isgarren]] during [[So Be It]].
 &lt;/gallery&gt;
 
 == Related achievements ==
@@ -153806,7 +154773,7 @@ Seer Statue.jpg|A [[Seer Statue|statue]] of Sidony.
 [[Category:Seers]]
 [[Category:Story characters]]
 [[es:Sidony el Guardasombras (rango legendario)]]</text>
-      <sha1>lud0nyte210hd5jnz3rpzkgxnnhc5ka</sha1>
+      <sha1>7cdmh1dqvknvr8zp0zu331568nh8wua</sha1>
     </revision>
   </page>
 <page xmlns="http://www.mediawiki.org/xml/export-0.11/">
@@ -348165,17 +349132,17 @@ Lowland kodan concept art 02.jpg
     <ns>0</ns>
     <id>386882</id>
     <revision>
-      <id>3183405</id>
-      <parentid>3008020</parentid>
-      <timestamp>2026-08-16T08:14:31Z</timestamp>
+      <id>3215242</id>
+      <parentid>3183405</parentid>
+      <timestamp>2026-10-18T15:18:50Z</timestamp>
       <contributor>
         <username>Kossage</username>
         <id>126773</id>
       </contributor>
-      <origin>3183405</origin>
+      <origin>3215242</origin>
       <model>wikitext</model>
       <format>text/x-wiki</format>
-      <text bytes="2288" sha1="qklgp8pt1mfylkfziwu094nqt63khhz" xml:space="preserve">{{spoiler|''[[Guild Wars 2: Janthir Wilds]]''}}
+      <text bytes="2576" sha1="bh0whpd18kcorcpgwcwmihfio2e8ets" xml:space="preserve">{{spoiler|''[[Guild Wars 2: Janthir Wilds]]''}}
 The [[Lowland Kodan Council]] is the governing body of the [[Lowland Kodan]] of [[Harvest Den]]. The lowlanders operate under one leader, their [[Claw of Koda|Claw]] named [[Stoic Alder]], who is  advised by a council consisting of several heads of established disciplines, or masters, while also being a member of the council himself. Stoic Alder's son [[Poised Arrow]] is an honorary member of the council who is tasked with observing the council meetings and learning from them as he is groomed into his role of the future leader of the lowlanders.&lt;ref&gt;[[Unknown Territory]]
 :'''Poised Arrow:''' The role of Claw was taken, so I settled for a title more modest.
 :'''Stoic Alder:''' My son has some years before he claims such expertise. Though his mind is sharp.
@@ -348196,6 +349163,15 @@ The [[Lowland Kodan Council]] is the governing body of the [[Lowland Kodan]] of 
 * [[Wry Lichen]] — Lore Master
 
 === Historical members ===
+;Founders
+* [[Southward Claw]] — Claw of Koda
+* [[Embracing Refuge]] — Homestead Master
+* [[Gatherer of the Hunt]] — Hunting Master
+* [[Recollector of Memories]] — Lore Master
+* [[Sharpened Tip]] — Spear Master
+* [[Uncovered Grounds]] — Explorer, guide, cartographer
+
+;Others
 * [[Streamsong]] — Claw of Koda, mother of Stoic Alder
 
 == Related achievements ==
@@ -348214,7 +349190,7 @@ The [[Lowland Kodan Council]] is the governing body of the [[Lowland Kodan]] of 
 
 [[de:Tiefland-Kodan-Rat]]
 [[es:Consejo Kodan de las tierras bajas]]</text>
-      <sha1>qklgp8pt1mfylkfziwu094nqt63khhz</sha1>
+      <sha1>bh0whpd18kcorcpgwcwmihfio2e8ets</sha1>
     </revision>
   </page>
 <page xmlns="http://www.mediawiki.org/xml/export-0.11/">
@@ -404604,25 +405580,25 @@ Mad King Conjured Doorway Skin banner.jpg|Gem Store banner.
     <ns>0</ns>
     <id>161942</id>
     <revision>
-      <id>3113954</id>
-      <parentid>3037868</parentid>
-      <timestamp>2026-03-05T13:49:43Z</timestamp>
+      <id>3215656</id>
+      <parentid>3113954</parentid>
+      <timestamp>2026-10-18T22:01:04Z</timestamp>
       <contributor>
-        <username>Vysnaite</username>
-        <id>270646</id>
+        <username>Doodleplex</username>
+        <id>203325</id>
       </contributor>
-      <comment>/* Gem Store history */</comment>
-      <origin>3113954</origin>
+      <minor />
+      <origin>3215656</origin>
       <model>wikitext</model>
       <format>text/x-wiki</format>
-      <text bytes="4139" sha1="s51wm9pmzmrqkb5q4b13pcus63ihwug" xml:space="preserve">{{Item infobox
+      <text bytes="4178" sha1="doscu0mgw1dxsksehwu1qwxaceculnm" xml:space="preserve">{{Item infobox
 | description = Double-click to gain one random color. Includes six exclusive Mad King colors.&lt;br&gt;&lt;br&gt;{{golden|All dyes have an equal chance to drop.}}
 | rarity = masterwork
 | type = container
 | bound = account
 | id = 70367, 79345
+| gallery1 = Mad King Dye Kit window.jpg
 }}
-
 == Acquisition ==
 === Sold by ===
 {{Sold by}}
@@ -404716,11 +405692,10 @@ File:Ominous Yellow Dye (light armor).jpg|[[Ominous Yellow Dye]]
 
 [[Category:Gem Store Halloween items]]
 [[Category:Giftable items]]
-
 [[de:Farbkit des Verrückten Königs]]
 [[es:Kit de tintes del Rey Loco]]
 [[fr:Kit de teintures du Roi Dément]]</text>
-      <sha1>s51wm9pmzmrqkb5q4b13pcus63ihwug</sha1>
+      <sha1>doscu0mgw1dxsksehwu1qwxaceculnm</sha1>
     </revision>
   </page>
 <page xmlns="http://www.mediawiki.org/xml/export-0.11/">
@@ -414365,24 +415340,25 @@ Once on the ledge, continue a short way into the cave, sticking to the left (eas
     <ns>0</ns>
     <id>422771</id>
     <revision>
-      <id>3202227</id>
-      <parentid>3198751</parentid>
-      <timestamp>2026-09-24T12:47:54Z</timestamp>
+      <id>3215221</id>
+      <parentid>3215219</parentid>
+      <timestamp>2026-10-18T13:45:26Z</timestamp>
       <contributor>
-        <username>DiegoDeLaHouska</username>
-        <id>206595</id>
+        <username>Myriada</username>
+        <id>215477</id>
       </contributor>
       <minor />
-      <origin>3202227</origin>
+      <origin>3215221</origin>
       <model>wikitext</model>
       <format>text/x-wiki</format>
-      <text bytes="374" sha1="h44mv5lr9ne8ob1ovd7wpeag5saeib6" xml:space="preserve">{{Weapon infobox
+      <text bytes="529" sha1="f255h3kcpjkb3s6d5zjogke0ochfr51" xml:space="preserve">{{Weapon infobox
 | icon = Pact Spade.png
 | type = Spear
 | rarity = Rare
 | level = 80
 | skin = Pact Spade (skin)
 | set = Pact weapons
+| uslot = Major Sigil of Force
 | prefix = Magi's
 | bound = Account soul
 | salvage = Standard
@@ -414397,8 +415373,12 @@ Once on the ledge, continue a short way into the cave, sticking to the left (eas
 == Trivia ==
 * Added with the [[release]] [[Code of Creation]].
 
-{{Pact weapons nav}}</text>
-      <sha1>h44mv5lr9ne8ob1ovd7wpeag5saeib6</sha1>
+{{Pact weapons nav}}
+
+[[de:Magischer Pakt-Spaten der Heftigkeit]]
+[[es:Pala del Pacto de fuerza de magi]]
+[[fr:Pelle du Pacte mage de fermeté]]</text>
+      <sha1>f255h3kcpjkb3s6d5zjogke0ochfr51</sha1>
     </revision>
   </page>
 <page xmlns="http://www.mediawiki.org/xml/export-0.11/">
@@ -481715,19 +482695,17 @@ The [[Malxa Pyronetics]] is a point of interest within [[The Stychs]]. It is hom
     <ns>0</ns>
     <id>78085</id>
     <revision>
-      <id>3179343</id>
-      <parentid>3179342</parentid>
-      <timestamp>2026-08-08T11:48:34Z</timestamp>
+      <id>3215404</id>
+      <parentid>3215316</parentid>
+      <timestamp>2026-10-18T16:11:22Z</timestamp>
       <contributor>
-        <username>Tery3065</username>
-        <id>270948</id>
+        <username>Kossage</username>
+        <id>126773</id>
       </contributor>
-      <minor />
-      <comment>moved pod image out of infobox to avoid it getting pull by the popups widget</comment>
-      <origin>3179343</origin>
+      <origin>3215404</origin>
       <model>wikitext</model>
       <format>text/x-wiki</format>
-      <text bytes="13223" sha1="hr01wk2lhqsxalh1kpxn5xl5fxzwemp" xml:space="preserve">{{spoiler}}
+      <text bytes="13296" sha1="ri3a69xrskz0jw9pbmm8k5fznettj5w" xml:space="preserve">{{spoiler}}
 {{NPC infobox
 | location = Where Life Goes; An Unknown Soul; A Different Dream; Source of the Issue; Snuffing Out Embers
 | race = Sylvari
@@ -481752,9 +482730,9 @@ After repelling the assault, Malyck revealed that the courtiers had been after h
 
 The pair disguised themselves as courtiers to [[An Unknown Soul|infiltrate]] Joy's End and encountered the Knight of Embers who was torturing captive Wardens for information on Malyck. Frustrated with her fellow courtiers' incompetence and the Wardens' resilience, the Knight tasked the disguised Valiant to interrogate the captives. Using the orders to their advantage, the disguised Valiant and Malyck helped the Wardens escape before their ruse was discovered. Despite being pursued by the guards, they managed to flee to safety. In the conversation that followed the escape, Malyck admitted not having any deeper connection to the Wardens except his friendship with them; all he could feel was a great sense of distance and loss. Believing Malyck to suffer from amnesia, the Valiant invited him to the Grove so they could figure out how to help him and connect him to the Dream.
 
-Upon meeting Caithe and Trahearne, Malyck was initially wary of them and their motives but was willing to hear them out due to his respect for the Valiant. Upon learning only fragmentary memories from Malyck's recent past, Caithe and Trahearne had different solutions to solve the mystery. Caithe suggested that they follow the river in order to find a specific bridge which Malyck had mentioned and discover more clues there. Meanwhile, Trahearne suggested that they visit a sylvari seer named [[Amaranda the Lonesome]] who could help them find answers from the Dream.
+Upon meeting Caithe and Trahearne, Malyck was initially wary of them and their motives but was willing to hear them out due to his respect for the Valiant. Upon learning only fragmentary memories from Malyck's recent past, Caithe and Trahearne had different solutions to solve the mystery. Caithe suggested that they follow the river which had carried his pod in order to find a specific bridge which Malyck had mentioned and discover more clues there. Meanwhile, Trahearne suggested that they visit a sylvari seer named [[Amaranda the Lonesome]] who could help them find answers from the Dream.
 
-If Malyck and the Valiant followed [[Source of the Issue|Caithe's plan]], the three of them traveled to [[Venlin Vale]] in [[Brisban Wildlands]] where they followed the river north and fought Nightmare Courtiers along the way. The search led them to Malyck's pod which turned out to be different from the pods the sylvari of the Grove awakened from, which made Caithe realize that the pod had not come from the Pale Tree but somewhere else.
+If Malyck and the Valiant followed [[Source of the Issue|Caithe's plan]], the three of them traveled to [[Venlin Vale]] in [[Brisban Wildlands]] where they followed the [[Ullen River]] north to [[Gotala Cascade]] and fought Nightmare Courtiers along the way. The search led them to Malyck's pod which turned out to be different from the pods the sylvari of the Grove awakened from. This revelation made Caithe realize that the pod had not come from the Pale Tree but somewhere else.
 
 If Malyck and the Valiant followed [[A Different Dream|Trahearne's plan]], the three of them traveled to [[Zinder Slope]] where they found Amaranda being targeted by the Nightmare Court. After defeating the attackers and asking for Amaranda's assistance, the seer looked into Malyck's eyes. She saw strange images about a distant shore, darkness, a root, a cave, and how Malyck appeared to be the seed of what [[Ronan]], the [[human]] who had planted the Pale Tree, had known but had never told anyone about but which still lingered on in the Dream. Amaranda's words made Trahearne realize that Malyck did not originate from the Pale Tree but somewhere else.
 
@@ -481790,7 +482768,7 @@ Inspired by her meeting with Malyck, Amaranda had philosophical discussions abou
 :'''Scarlet Briar:''' I know Malyck's secret too. You're naughty for keeping that one to yourself. Tsk-tsk.&lt;/ref&gt;
 * Malyck's tree remains unaccounted for, though it was part of the initial plans for ''[[Guild Wars 2: Heart of Thorns]]''.&lt;ref&gt;[https://www.reddit.com/r/Guildwars2/comments/48z0kg/guild_chat_livestream_notes_storytelling_in_raids/d0op0s1 Comment by Bobby Stein], Reddit.com&lt;/ref&gt;&lt;ref&gt;[https://www.reddit.com/r/Guildwars2/comments/8kl13c/comment/dz8g4am/ Quotation from Bobby Stein's forum comment], Reddit.com&lt;/ref&gt;&lt;ref&gt;[https://www.reddit.com/r/Guildwars2/comments/8kl13c/comment/dzc1ehd/ Comment by Bobby Stein], Reddit.com&lt;/ref&gt;
 {{spoilers|
-* Malyck was intended to appear in an earlier draft of ''Heart of Thorns'', including the [[The Jungle Provides]] and [[Prisoners of the Dragon]] story steps, but was eventually cut from the story in later drafts. The design documents' accompanying storyboards from this earlier draft show how the player would have first met Malyck towards the end of The Jungle Provides step as Malyck appears and announces his intention to go after [[Faolain]] in the aftermath of a [[Nightmare Court]] attack.&lt;ref&gt;[https://drive.google.com/file/d/19p7lzbgMMplF6XTAmSVqN23vGlvuAkV-/view Design document for Heart of Thorns – Story Mission 02 – The Jungle Provides], in [https://sites.google.com/view/matthewmedinadesign/design-samples/design-documentation Mindful Game Design]&lt;/ref&gt; In Prisoners of the Dragon, the player would have been given an option to either choose a stealthy route with Malyck and [[Canach]], or a more action oriented route with [[Braham]] and [[Rytlock Brimstone]] as the party chases after Faolain. The chase would have led them to a Nightmare Court camp where a [[Blighting Tree]] is turning Nightmare Courtiers into the Mordrem Court, an earlier design for what eventually became the cross-faction [[Mordrem Guard]]. The party would have fought and killed Faolain who resurrects as a Mordrem Court commander before fleeing, and the party then chases [[Caithe]] deeper into the jungle.&lt;ref&gt;[https://drive.google.com/file/d/1VLIL862FEEcVe7W5UHJrYpg7CsPYx-br/view Design document for Heart of Thorns – Story Mission 03 – Prisoners of the Dragon], in Mindful Game Design&lt;/ref&gt;|''[[Guild Wars 2: Heart of Thorns]]''|100}}
+* Malyck was intended to appear in an earlier draft of ''Heart of Thorns'', including the [[The Jungle Provides]] and [[Prisoners of the Dragon]] chapters, but was eventually cut from the story in later drafts. The design documents' accompanying storyboards from this earlier draft show how the player would have first met Malyck towards the end of The Jungle Provides chapter as Malyck appears and announces his intention to go after [[Faolain]] in the aftermath of a [[Nightmare Court]] attack.&lt;ref&gt;[https://drive.google.com/file/d/19p7lzbgMMplF6XTAmSVqN23vGlvuAkV-/view Design document for Heart of Thorns – Story Mission 02 – The Jungle Provides], in [https://sites.google.com/view/matthewmedinadesign/design-samples/design-documentation Mindful Game Design]&lt;/ref&gt; In Prisoners of the Dragon, the player would have been given an option to either choose a stealthy route with Malyck and [[Canach]], or a more action oriented route with [[Braham]] and [[Rytlock Brimstone]] as the party chases after Faolain. The chase would have led them to a Nightmare Court camp where a [[Blighting Tree]] is turning Nightmare Courtiers into the Mordrem Court, an earlier design for what eventually became the cross-faction [[Mordrem Guard]]. The party would have fought and killed Faolain who resurrects as a Mordrem Court commander before fleeing, and the party would then chase [[Caithe]] deeper into the jungle.&lt;ref&gt;[https://drive.google.com/file/d/1VLIL862FEEcVe7W5UHJrYpg7CsPYx-br/view Design document for Heart of Thorns – Story Mission 03 – Prisoners of the Dragon], in Mindful Game Design&lt;/ref&gt;|''[[Guild Wars 2: Heart of Thorns]]''|100}}
 
 == Trivia ==
 * Malyck is [[Voice actor|voiced]] by [[Michael Donovan]].
@@ -481805,7 +482783,7 @@ Inspired by her meeting with Malyck, Amaranda had philosophical discussions abou
 [[de:Malyck]]
 [[es:Malyck]]
 [[fr:Malyck]]</text>
-      <sha1>hr01wk2lhqsxalh1kpxn5xl5fxzwemp</sha1>
+      <sha1>ri3a69xrskz0jw9pbmm8k5fznettj5w</sha1>
     </revision>
   </page>
 <page xmlns="http://www.mediawiki.org/xml/export-0.11/">
@@ -573288,17 +574266,17 @@ A [[Vision (race)|projection]] of the [[seer]] [[Meliore]] can be found in [[the
     <ns>0</ns>
     <id>415380</id>
     <revision>
-      <id>3211736</id>
-      <parentid>3201686</parentid>
-      <timestamp>2026-10-11T14:35:35Z</timestamp>
+      <id>3215225</id>
+      <parentid>3211736</parentid>
+      <timestamp>2026-10-18T13:59:25Z</timestamp>
       <contributor>
         <username>Kossage</username>
         <id>126773</id>
       </contributor>
-      <origin>3211736</origin>
+      <origin>3215225</origin>
       <model>wikitext</model>
       <format>text/x-wiki</format>
-      <text bytes="4239" sha1="74zhs14dvdaa9taa2kkmqmvnsrjjfpo" xml:space="preserve">{{Object infobox
+      <text bytes="4256" sha1="33us0flvw6flvczjqcv3nyjpjtdw0kd" xml:space="preserve">{{Object infobox
 | image = Worn Seer Tablet.jpg
 | location = Artificer's Islet
 | type = Book
@@ -573318,7 +574296,7 @@ A poignant occasion, today, one I wish to reflect on in less crowded surrounds. 
 
 I still remember my first day. I had assumed my position at [[The Forge (Eternity's Garden)|the forge]] a little over a week after walking the [[Pilgrim's Rest|Pilgrim's Path]] and passing the trials of [[Ascension (seer)|Divitium Nava]] in the [[Spire of Exaltation|high temple]]. My younger siblings stood by as I stood in the initiation circle, eyes veiled by various shades of pride and envy as they observed in the pageantry. They had been given the distinct honor of joining me on the island while I worked; it was my patron's wish for me to watch over them were he to perish. The [[Elder Dragon|great wyrms]] of this [[Tyria (world)|world]] saw to that. 
 
-Almost immediately, [[Legendary Sidony the Shadowkeeper|Sidony]] had enlisted me to take inventory of the restricted armoire; a menial task often assigned to the newly initiated, but I never minded the work. The armoires were peaceful, quiet. A place I could often retreat to for self-reflection. That day, I recall taking in the [[Torrs Calare]] with fresh eyes. The massive sword was one of the first sacred implements cast by our kind—long before my time—and had humbled many-a-[[giant]] in the endmost years of the previous age. Its blade edge was enchanted as such that it could pierce and cut through intraplanar space—not dissimilar to the ethereal fold from which our [[Mursaat|current foes]] come and go. In the time after, the Torrs Calare was displayed throughout our star, ultimately finding rest here. The blade was finally showing its age, last I saw it. It would have made for a promising restoration, were I not on my way to the bastions.
+Almost immediately, [[Legendary Sidony the Shadowkeeper|Sidony]] had enlisted me to take inventory of the restricted armoire; a menial task often assigned to the newly initiated, but I never minded the work. The armoires were peaceful, quiet. A place I could often retreat to for self-reflection. That day, I recall taking in the [[Torrs Calare]] with fresh eyes. The massive sword was one of the first sacred implements cast by our kind—long before my time—and had humbled many-a-[[giant]] in the endmost years of the previous age. Its blade edge was enchanted as such that it could pierce and cut through intraplanar space—not dissimilar to the ethereal fold from which our [[Mursaat|current foes]] come and go. In the time after, the Torrs Calare was displayed throughout [[Stellis Quor|our star]], ultimately finding rest here. The blade was finally showing its age, last I saw it. It would have made for a promising restoration, were I not on my way to the bastions.
 
 Still, not every artifact residing in the vault has been a testament to our mastery. A few cast offs{{sic|missing hyphen}} were kept as reminders, lessons. And though I would not openly critique the [[doyen]]'s works—much of them were made before my time—the creation of the [[Scepter of Orr|twin]] [[gww:Staff of the Mists|staves]] was fraught with missteps and impossible expectations.
 
@@ -573331,7 +574309,7 @@ At last, as I complete this final record as artificer of the forge, I admit a li
 
 == Related achievements ==
 * {{achievement|Scholar of the Garden}}</text>
-      <sha1>74zhs14dvdaa9taa2kkmqmvnsrjjfpo</sha1>
+      <sha1>33us0flvw6flvczjqcv3nyjpjtdw0kd</sha1>
     </revision>
   </page>
 <page xmlns="http://www.mediawiki.org/xml/export-0.11/">
@@ -619047,31 +620025,39 @@ These items are no longer available as of the [[Game updates/2012-09-08|Septembe
     <ns>0</ns>
     <id>182585</id>
     <revision>
-      <id>3184921</id>
-      <parentid>2064703</parentid>
-      <timestamp>2026-08-18T19:50:10Z</timestamp>
+      <id>3215598</id>
+      <parentid>3215597</parentid>
+      <timestamp>2026-10-18T19:22:25Z</timestamp>
       <contributor>
-        <username>Ange</username>
-        <id>270755</id>
+        <username>DiegoDeLaHouska</username>
+        <id>206595</id>
       </contributor>
-      <origin>3184921</origin>
+      <minor />
+      <origin>3215598</origin>
       <model>wikitext</model>
       <format>text/x-wiki</format>
-      <text bytes="317" sha1="66aofjn46scnc99q0vusa2vl22n03gf" xml:space="preserve">{{NPC infobox
-| location = Shire of Beetletun
+      <text bytes="613" sha1="5jtyvymv3z4l4urdznzieue6jysa3o5" xml:space="preserve">{{NPC infobox
+| location = Shire of Beetletun; Salma District
 | race = Human
 | level = 20
+| coordinates = [44303, 26628]
 }}
-The [[Mime]] is a member of the circus troupe that the player wishes to join during the events of [[Clown College]].
+The [[Mime]] is a member of the circus troupe that the player wishes to join during the events of [[Clown College]]. Later appears in the [[Salma District]] [[home instance]], if the option to join the carnival is taken during the [[personal story]].
 
 == Location ==
+;[[Kryta]]
+* [[Divinity's Reach]]
+** [[Salma District]]
+
+== Story involvement ==
 === [[Personal story]] ===
-* [[Clown College]]
+* Chapter 2: Shadows of the Past
+** [[Clown College]]
 
 [[Category:Story characters]]
 [[de:Mime (NSC)]]
 [[es:Mimo]]</text>
-      <sha1>66aofjn46scnc99q0vusa2vl22n03gf</sha1>
+      <sha1>5jtyvymv3z4l4urdznzieue6jysa3o5</sha1>
     </revision>
   </page>
 <page xmlns="http://www.mediawiki.org/xml/export-0.11/">
@@ -656120,16 +657106,17 @@ The [[Mini Orrian Wraith]] is a [[miniature]] following the example of the [[Ris
     <ns>0</ns>
     <id>192549</id>
     <revision>
-      <id>2891467</id>
-      <parentid>2890277</parentid>
-      <timestamp>2024-11-04T18:13:25Z</timestamp>
+      <id>3215669</id>
+      <parentid>2891467</parentid>
+      <timestamp>2026-10-19T00:23:05Z</timestamp>
       <contributor>
-        <ip>58.96.79.39</ip>
+        <ip>89.1.58.142</ip>
       </contributor>
-      <origin>2891467</origin>
+      <comment>Link to the correct year of the halloween event</comment>
+      <origin>3215669</origin>
       <model>wikitext</model>
       <format>text/x-wiki</format>
-      <text bytes="873" sha1="1mj8d4nacjustf0zsekv0r68wv21iov" xml:space="preserve">{{Item infobox
+      <text bytes="873" sha1="kiyqzqd1hur22rrdderqvwnkvh126s9" xml:space="preserve">{{Item infobox
 | description = Eyes like fire, wings like smoke. What does your heart desire, what does your soul invoke?
 | type = miniature
 | miniature set = Halloween
@@ -656138,7 +657125,7 @@ The [[Mini Orrian Wraith]] is a [[miniature]] following the example of the [[Ris
 | miniature id = 418
 | id = 79654
 }}
-[[Mini Oxidecimus the Shadow Raven]] is a [[miniature]] introduced with the 2016 [[Shadow of the Mad King]] [[Halloween]] release.
+[[Mini Oxidecimus the Shadow Raven]] is a [[miniature]] introduced with the [[Shadow of the Mad King 2016]] [[Halloween]] release.
 
 == Acquisition ==
 === Sold by ===
@@ -656163,7 +657150,7 @@ The [[Mini Orrian Wraith]] is a [[miniature]] following the example of the [[Ris
 [[de:Mini Oxidecimus der Schattenrabe]]
 [[es:Miniatura de Oxidecimus el Cuervo Sombrío]]
 [[fr:Mini-Oxidecimus le corbeau de l'ombre]]</text>
-      <sha1>1mj8d4nacjustf0zsekv0r68wv21iov</sha1>
+      <sha1>kiyqzqd1hur22rrdderqvwnkvh126s9</sha1>
     </revision>
   </page>
 <page xmlns="http://www.mediawiki.org/xml/export-0.11/">
@@ -813594,19 +814581,17 @@ He can be found near [[Old Gavril Plaza]] along with [[Ms. Stripes, the Masked B
     <ns>0</ns>
     <id>385755</id>
     <revision>
-      <id>3086787</id>
-      <parentid>3083642</parentid>
-      <timestamp>2025-12-30T03:53:31Z</timestamp>
+      <id>3215498</id>
+      <parentid>3086787</parentid>
+      <timestamp>2026-10-18T17:14:42Z</timestamp>
       <contributor>
-        <username>Sunlion</username>
-        <id>225997</id>
+        <username>MossyCorpse</username>
+        <id>286561</id>
       </contributor>
-      <minor />
-      <comment>/* Notes */</comment>
-      <origin>3086787</origin>
+      <origin>3215498</origin>
       <model>wikitext</model>
       <format>text/x-wiki</format>
-      <text bytes="1448" sha1="lyzyg38zcf2gmy2q7zlhr3upzvb8a33" xml:space="preserve">{{otheruses|an object|the [[homestead]] decoration|Mr. Quiggles (Handiwork)}}
+      <text bytes="1534" sha1="ax2e3wz63xlwpzd5q7tsasd1us84omh" xml:space="preserve">{{otheruses|an object|the [[homestead]] decoration|Mr. Quiggles (Handiwork)}}
 {{Object infobox
 | location = Comosus Isle; Glimmering Arches; Old Hutment Site; Hearth's Glow
 | requires = jw, voe
@@ -813624,6 +814609,12 @@ He can be found near [[Old Gavril Plaza]] along with [[Ms. Stripes, the Masked B
 * [[Janthir Syntri]] 
 ** [[Old Hutment Site]] {{during}} &lt;small&gt;(north of [[The Wrinkled Wetlands]])&lt;/small&gt;
 * [[Hearth's Glow]]
+
+;[[Elona]]
+* [[Domain of Istan]]
+** [[Corsair Flotilla]]
+*** [[The Skimming Stone]]
+
 
 == Heart involvement ==
 : {{Heart|Support the kodan as they maintain their camp}}
@@ -813646,7 +814637,7 @@ He can be found near [[Old Gavril Plaza]] along with [[Ms. Stripes, the Masked B
 * {{Achievement|Hidden Quiggles}}
 
 [[es:Sr. Quiggles]]</text>
-      <sha1>lyzyg38zcf2gmy2q7zlhr3upzvb8a33</sha1>
+      <sha1>ax2e3wz63xlwpzd5q7tsasd1us84omh</sha1>
     </revision>
   </page>
 <page xmlns="http://www.mediawiki.org/xml/export-0.11/">
@@ -841179,17 +842170,18 @@ Crystals are also used in the creation of recipes that allow you to craft entire
     <ns>0</ns>
     <id>417802</id>
     <revision>
-      <id>3212208</id>
-      <parentid>3176141</parentid>
-      <timestamp>2026-10-12T01:47:08Z</timestamp>
+      <id>3215208</id>
+      <parentid>3212208</parentid>
+      <timestamp>2026-10-18T13:18:24Z</timestamp>
       <contributor>
-        <username>Farlo</username>
-        <id>19720</id>
+        <username>Rin and tonic</username>
+        <id>287690</id>
       </contributor>
-      <origin>3212208</origin>
+      <minor />
+      <origin>3215208</origin>
       <model>wikitext</model>
       <format>text/x-wiki</format>
-      <text bytes="2085" sha1="j44cqxkz2rbrdx6he3s2bl9c08kahnr" xml:space="preserve">{{SDRH
+      <text bytes="2234" sha1="5vk9jcz9ce028ki79t87m41pu665kqr" xml:space="preserve">{{SDRH
 | title = Qty recieved | labels = yes | class = item | subject = crafting [[Mystic Facet]]s | size = 30
   | 1 Mote | s1 = one | i1 = Mystic Facet.png
   | 5 Motes | s2 = five | i2 = Mystic Facet.png
@@ -841206,11 +842198,12 @@ Crystals are also used in the creation of recipes that allow you to craft entire
 {{SDRL | Total =  21 | one = 20 | five = 1 | [[User:Hannah Em|Hannah Em]] ([[User talk:Hannah Em|talk]]) 19:51, 28 July 2026 (UTC) }}
 {{SDRL | Total =  3 | one = 2 | five = 1 | [[Special:Contributions/68.147.26.214|68.147.26.214]] 08:50, 1 August 2026 (UTC) }}
 {{SDRL | Total =  2 | one = 1 | five = 1 | ~[[User:Farlo|Farlo]][[File:User Farlo Triad.png|19px|link=User:Farlo]]&lt;small&gt;[[User talk:Farlo|Talk]]&lt;/small&gt; 01:47, 12 October 2026 (UTC) }}
+{{SDRL | Total =  32 | one = 32 | five = 0 | [[User:Rin and tonic|Rin and tonic]] ([[User talk:Rin and tonic|talk]]) 13:18, 18 October 2026 (UTC) }}
 &lt;!-- Add new lines above this line, using the following format:
 {{SDRL | Total =  0 | one = 0 | five = 0 | ~~~~ }}
 --&gt;
 {{SDRF}}</text>
-      <sha1>j44cqxkz2rbrdx6he3s2bl9c08kahnr</sha1>
+      <sha1>5vk9jcz9ce028ki79t87m41pu665kqr</sha1>
     </revision>
   </page>
 <page xmlns="http://www.mediawiki.org/xml/export-0.11/">
@@ -850617,19 +851610,19 @@ Note that if you took the portal directly to the yeti rather than through the ha
     <ns>0</ns>
     <id>382918</id>
     <revision>
-      <id>3115192</id>
-      <parentid>3044741</parentid>
-      <timestamp>2026-03-09T19:19:04Z</timestamp>
+      <id>3215649</id>
+      <parentid>3115192</parentid>
+      <timestamp>2026-10-18T20:56:18Z</timestamp>
       <contributor>
-        <username>Hazasoul</username>
-        <id>133824</id>
+        <username>Caeldom</username>
+        <id>269879</id>
       </contributor>
       <minor />
-      <comment>nav</comment>
-      <origin>3115192</origin>
+      <comment>/* Notes */</comment>
+      <origin>3215649</origin>
       <model>wikitext</model>
       <format>text/x-wiki</format>
-      <text bytes="8104" sha1="bugnwi66mt41a6fgc2ahnb9obdk9voe" xml:space="preserve">{{Item infobox
+      <text bytes="8111" sha1="gzdy68b5by26ukblg50sdn0u9hb72wv" xml:space="preserve">{{Item infobox
 | type = Container
 | description = 
 | rarity = Exotic
@@ -850756,7 +851749,7 @@ Note that if you took the portal directly to the yeti rather than through the ha
 
 == Notes ==
 * Drop rate research can be found [[Mythical Kodan Cache/Drop rate|here]].
-* As [[Lowland Expertise]] does not provide additional rewards outside [[Janthir]], it's recommended to open the container in one of the following maps:
+* As {{effect|Lowland Expertise}} does not provide additional rewards outside [[Janthir]], it's recommended to open the container in one of the following maps:
 {| {{STDT|item align-right}}
 ! Zone
 ! TP Buy
@@ -850795,7 +851788,7 @@ Note that if you took the portal directly to the yeti rather than through the ha
 [[de:Mythisches Kodan-Lager]]
 [[es:Alijo de kodan mítico]]
 [[fr:Cache kodan mythique]]</text>
-      <sha1>bugnwi66mt41a6fgc2ahnb9obdk9voe</sha1>
+      <sha1>gzdy68b5by26ukblg50sdn0u9hb72wv</sha1>
     </revision>
   </page>
 <page xmlns="http://www.mediawiki.org/xml/export-0.11/">
@@ -899579,18 +900572,17 @@ The [[Nice Scoop]] is an eighth slot [[Super Adventure Box]] upgrade.
     <ns>0</ns>
     <id>406078</id>
     <revision>
-      <id>3096761</id>
-      <parentid>3075254</parentid>
-      <timestamp>2026-01-19T00:07:29Z</timestamp>
+      <id>3215296</id>
+      <parentid>3096761</parentid>
+      <timestamp>2026-10-18T15:45:16Z</timestamp>
       <contributor>
-        <username>Tery3065</username>
-        <id>270948</id>
+        <username>PM205</username>
+        <id>287693</id>
       </contributor>
-      <minor />
-      <origin>3096761</origin>
+      <origin>3215296</origin>
       <model>wikitext</model>
       <format>text/x-wiki</format>
-      <text bytes="617" sha1="jsr14j4omkknq7b05dujzl00cdmvl0a" xml:space="preserve">{{NPC infobox
+      <text bytes="633" sha1="gp2s8q48s9j3ibpmgggha26wguoh9pp" xml:space="preserve">{{NPC infobox
 | name = Nigellus Ruinseeker
 | image = Priory charr male medium 1 (HoT pistol and warhorn).jpg
 | location = Crumbling Precipice
@@ -899600,7 +900592,7 @@ The [[Nice Scoop]] is an eighth slot [[Super Adventure Box]] upgrade.
 | level = 80
 | requires = voe
 }}
-[[Nigellus Ruinseeker]] is an [[Durmand Priory]] member who can be found in [[Crumbling Precipice]], along the western bank of the river south of [[Tranquil Falls]].
+[[Nigellus Ruinseeker]] is a [[charr]] member of the [[Durmand Priory]] who can be found in [[Crumbling Precipice]], along the western bank of the river south of [[Tranquil Falls]].
 
 == Location ==
 ;[[Castora]]
@@ -899610,7 +900602,7 @@ The [[Nice Scoop]] is an eighth slot [[Super Adventure Box]] upgrade.
 == Event involvement ==
 : {{event|Help Nigellus Ruinseeker investigate artifacts}}
 [[es:Nigellus Buscarruinas]]</text>
-      <sha1>jsr14j4omkknq7b05dujzl00cdmvl0a</sha1>
+      <sha1>gp2s8q48s9j3ibpmgggha26wguoh9pp</sha1>
     </revision>
   </page>
 <page xmlns="http://www.mediawiki.org/xml/export-0.11/">
@@ -941698,18 +942690,18 @@ The POI is inside the instanced area. The entrance is atop a flight of stairs no
     <ns>0</ns>
     <id>313890</id>
     <revision>
-      <id>3081235</id>
-      <parentid>2674389</parentid>
-      <timestamp>2025-12-20T06:41:20Z</timestamp>
+      <id>3215692</id>
+      <parentid>3081235</parentid>
+      <timestamp>2026-10-19T03:40:14Z</timestamp>
       <contributor>
         <username>Sunlion</username>
         <id>225997</id>
       </contributor>
-      <comment>/* NPCs */</comment>
-      <origin>3081235</origin>
+      <comment>/* Foes */</comment>
+      <origin>3215692</origin>
       <model>wikitext</model>
       <format>text/x-wiki</format>
-      <text bytes="2862" sha1="8ht0s7hn84kbxcwtzzitrhvgfd9p7zr" xml:space="preserve">{{Location infobox
+      <text bytes="3020" sha1="o24fxqg4t15ick34z5olkxornn12a0w" xml:space="preserve">{{Location infobox
 | sector id = 1905
 | type = area
 | points-of-interest = 3
@@ -941783,7 +942775,9 @@ The POI is inside the instanced area. The entrance is atop a flight of stairs no
 * [[Veteran Kappa Mudstomper]]
 
 ;[[Risen]]
+* [[Elite Unchained Acolyte]]
 * [[Elite Unchained Devastator]]
+* [[Elite Unchained Mage]]
 * [[Elite Unchained Sentinel]]
 * [[Unchained Acolyte]]
 * [[Unchained Berserker]]
@@ -941796,7 +942790,10 @@ The POI is inside the instanced area. The entrance is atop a flight of stairs no
 * [[Unchained Noble]]
 * [[Unchained Sentinel]]
 * [[Unchained Villager]]
+* [[Veteran Unchained Acolyte]]
+* [[Veteran Unchained Berserker]]
 * [[Veteran Unchained Defiler]]
+* [[Veteran Unchained Devastator]]
 * [[Veteran Unchained Gorilla]]
 * [[Veteran Unchained Hunter]]
 * [[Veteran Unchained Illusionist]]
@@ -941831,7 +942828,7 @@ The POI is inside the instanced area. The entrance is atop a flight of stairs no
 [[de:Nordhalbinsel]]
 [[es:Península Septentrional]]
 [[fr:Péninsule du nord]]</text>
-      <sha1>8ht0s7hn84kbxcwtzzitrhvgfd9p7zr</sha1>
+      <sha1>o24fxqg4t15ick34z5olkxornn12a0w</sha1>
     </revision>
   </page>
 <page xmlns="http://www.mediawiki.org/xml/export-0.11/">
@@ -1185336,18 +1186333,19 @@ Two of the following:
     <ns>0</ns>
     <id>64221</id>
     <revision>
-      <id>3214290</id>
-      <parentid>3019231</parentid>
-      <timestamp>2026-10-16T16:21:42Z</timestamp>
+      <id>3215675</id>
+      <parentid>3214290</parentid>
+      <timestamp>2026-10-19T01:27:00Z</timestamp>
       <contributor>
-        <username>Jertzukka</username>
-        <id>284719</id>
+        <username>Adeira Tasharo</username>
+        <id>16769</id>
       </contributor>
-      <comment>Add preview window</comment>
-      <origin>3214290</origin>
+      <minor />
+      <comment>/* Notes */ better clarification on the drop rat researches (and yes, untradable, b/c AB)</comment>
+      <origin>3215675</origin>
       <model>wikitext</model>
       <format>text/x-wiki</format>
-      <text bytes="4241" sha1="pckjuprk6182s90qb5qz404tpj850e4" xml:space="preserve">{{Temporary|release=Shadow of the Mad King 2012|seasonal=Halloween}}
+      <text bytes="4210" sha1="rq8bjjtb3h6uq4nij1c1t5cubh7aq3q" xml:space="preserve">{{Temporary|release=Shadow of the Mad King 2012|seasonal=Halloween}}
 {{Item infobox
 | description = {{flavor|Someone stitched your name on this bag. What a nice gift. Double-click to open.}}
 | rarity = basic
@@ -1185456,16 +1186454,15 @@ Each bag always contains 4 items from the following list. It is possible for the
 * {{contains|Mini Gwynefyrdd}}
 
 == Notes ==
-* Drop rate research can be found [[/research|here]] and [[/research/drops per bag|here]]. ('''The drop rate is currently not stable as the contents changed with the 2022 Shadow of the Mad King.''')
+* Drop rate research can be found [[/research|here]]. ('''The drop table changed with the 2022 Shadow of the Mad King, please consider contributing.''')
 * {{Drop rate lookup worth|mode=both}}
-* Has the same loot table as [[Trick-or-Treat Bag]], but drops items in larger quantities and has a better chance to contain valuable items.
-** After Halloween 2015, Loot tables are separated.
+* Research into the number of drops per bag can be found [[/research/drops per bag|here]].
+* Previously this container had the same loot table as [[Trick-or-Treat Bag]], in larger quantities and a better chance to contain valuable items, but after Halloween 2015, Loot tables are separated.
 
 [[de:Personalisierte "Süßes oder Saures"-Tasche]]
 [[es:Saco de Halloween personalizado]]
-[[fr:Sac de bonbons personnalisé]]
-* Unlike [[Trick-or-Treat Bag]], Personalized Trick-or-Treat Bags can't be traded.</text>
-      <sha1>pckjuprk6182s90qb5qz404tpj850e4</sha1>
+[[fr:Sac de bonbons personnalisé]]</text>
+      <sha1>rq8bjjtb3h6uq4nij1c1t5cubh7aq3q</sha1>
     </revision>
   </page>
 <page xmlns="http://www.mediawiki.org/xml/export-0.11/">
@@ -1185725,19 +1186722,19 @@ To add your data, add the following to the bottom of the table (above the totals
     <ns>0</ns>
     <id>135238</id>
     <revision>
-      <id>3138253</id>
-      <parentid>3138252</parentid>
-      <timestamp>2026-05-11T17:20:29Z</timestamp>
+      <id>3215683</id>
+      <parentid>3215676</parentid>
+      <timestamp>2026-10-19T02:04:34Z</timestamp>
       <contributor>
         <username>Adeira Tasharo</username>
         <id>16769</id>
       </contributor>
       <minor />
-      <comment>change Essence of Luck (masterwork) to Masterwork Essence of Luck, and Rare</comment>
-      <origin>3138253</origin>
+      <comment>Added drop rate data via form widget.</comment>
+      <origin>3215683</origin>
       <model>wikitext</model>
       <format>text/x-wiki</format>
-      <text bytes="8651" sha1="3ogtlaprvtnq51z3tnz375qdyigmowl" xml:space="preserve">{{Personalized Trick-or-Treat Bag research header}}
+      <text bytes="9382" sha1="7iefrimtuh3vp5h2lrtn5sq1eplgwm8" xml:space="preserve">{{Personalized Trick-or-Treat Bag research header}}
 
 {{Trick-or-Treat Bag research line
  | Total = 20
@@ -1185829,6 +1186826,18 @@ To add your data, add the following to the bottom of the table (above the totals
  | user = Adeira Tasharo
  | timestamp = 17:16, 11 May 2026 (UTC)
 }}
+{{Trick-or-Treat Bag research line
+ | Total = 10
+ | Piece of Candy Corn = 255 | Chattering Skull = 34 | Nougat Center = 15 | Plastic Fangs = 24 | Dragonite Ore = 3 | Empyreal Fragment = 3 | Pile of Bloodstone Dust = 3 | Masterwork Essence of Luck = 2 | Rare Essence of Luck = 1 | Toilet Paper = 3
+ | user = Adeira Tasharo
+ | timestamp = 01:29, 19 October 2026 (UTC)
+}}
+{{Trick-or-Treat Bag research line
+ | Total = 10
+ | Piece of Candy Corn = 213 | Chattering Skull = 12 | Nougat Center = 38 | Plastic Fangs = 19 | Dragonite Ore = 3 | Pile of Bloodstone Dust = 3 | Masterwork Essence of Luck = 7 | Rare Essence of Luck = 1 | Halloween Tonic = 3 | Revenge = 1
+ | user = Adeira Tasharo
+ | timestamp = 02:04, 19 October 2026 (UTC)
+}}
 {{Trick-or-Treat Bag research summary}}
 
 == See also ==
@@ -1185871,7 +1186880,7 @@ To add your data, add the following to the bottom of the table (above the totals
 --&gt;
 
 [[Category:Drop rates]]</text>
-      <sha1>3ogtlaprvtnq51z3tnz375qdyigmowl</sha1>
+      <sha1>7iefrimtuh3vp5h2lrtn5sq1eplgwm8</sha1>
     </revision>
   </page>
 <page xmlns="http://www.mediawiki.org/xml/export-0.11/">
@@ -1234677,18 +1235686,17 @@ The [[Pilgrim's Approach]] is a [[point of interest]] in the [[Pilgrim's Rest]],
     <ns>0</ns>
     <id>415351</id>
     <revision>
-      <id>3202003</id>
-      <parentid>3196673</parentid>
-      <timestamp>2026-09-23T22:27:37Z</timestamp>
+      <id>3215261</id>
+      <parentid>3202003</parentid>
+      <timestamp>2026-10-18T15:34:24Z</timestamp>
       <contributor>
-        <username>Vysnaite</username>
-        <id>270646</id>
+        <username>Kossage</username>
+        <id>126773</id>
       </contributor>
-      <comment>Added connection parameter, listed missing NPCs, objects. Fixed links</comment>
-      <origin>3202003</origin>
+      <origin>3215261</origin>
       <model>wikitext</model>
       <format>text/x-wiki</format>
-      <text bytes="15387" sha1="n31cv0lb02qc9fyp3luhxxblw0le156" xml:space="preserve">{{Location infobox
+      <text bytes="15421" sha1="ts67oa1amjunvjfcyc954v01ia4nz4s" xml:space="preserve">{{Location infobox
 | hearts = 1
 | waypoints = 1
 | points-of-interest = 5
@@ -1234902,7 +1235910,7 @@ The [[Pilgrim's Approach]] is a [[point of interest]] in the [[Pilgrim's Rest]],
 :'''Priory Scholar Iikku:''' ''When I first joined this mission, I thought the Inquest were going to be like the [[Jade Brotherhood]]...''
 :'''Priory Scholar Iikku:''' ''Misguided, but not entirely evil. From that I've witnessed, though... [[Cantha]]'s scourge is but a chill compared to yours.''
 :'''Priory Scholar Liorra:''' ''If you think Vloxx's Inquest are bad, you should read up on [[Kudu|Kuda's father]]. He was a vile, vile [[Overseer (title)|overseer]]. We don't miss him.''
-:'''Priory Scholar Liorra:''' ''I never met him myself, but I did hear of his "prestige" then I was studying at the colleges. I shudder.''
+:'''Priory Scholar Liorra:''' ''I never met him myself, but I did hear of his "prestige" when I was studying at the colleges. I shudder.''
 :'''Priory Scholar Liorra:''' ''I can't imagine Kuda's much better. The progeny doesn't fall far from the progenitor.''
 :'''Priory Scholar Liorra:''' ''Based on the [[Pact Commander|commander]]'s reports, Vloxx is probably the only thing keeping her from resorting to old Inquest antics.''
 
@@ -1234939,13 +1235947,13 @@ The [[Pilgrim's Approach]] is a [[point of interest]] in the [[Pilgrim's Rest]],
 :'''Lieutenant Breida:''' ''Any questions?''
 :'''Lieutenant Breida:''' ''Good. Dismissed.''
 
-:'''Astral Ward Evina:''' ''I am not a fan of Director Vloxx or Overseer Kuda, but I'm relieved we don't have to face the principal biomancer in battle.''
+:'''Astral Ward Evina:''' ''I am not a fan of Director Vloxx or Overseer Kuda, but I'm relieved we don't have to [[Project 5388|face the principal biomancer in battle]].''
 :'''Olaf the Bloodwatcher:''' ''Yeah. Every time I see one of his abominations, I pray to [[Wolf (Spirit of the Wild)|Wolf]] they are met with a civil end...if they're even still alive.''
 :'''Astral Ward Evina:''' ''Absolutely dreadful, the things he did...''
 
 :'''Astral Ward Soldier Arden:''' ''I only have one more question. [[The Forge (Eternity's Garden)|The forge]]. What are they seeking to accomplish there? How worried should we be?''
 :'''Engineer Znitte:''' ''Not sure, but like I said, Vloxx and Kuda seem to be on different paths. The overseer is leading the operations at the forge.''
-:'''Engineer Znitte:''' ''Her [[krewe]]s were trying to power it up. Not sure if they were successful, but something seemed to catch her interest.''
+:'''Engineer Znitte:''' ''Her [[krewe]]s were trying to power it up. Not sure if they were successful, but [[Torrs Calare|something]] seemed to catch her interest.''
 :'''Engineer Znitte:''' ''Didn't see much of the [[director]] before I took off, though, so I can't speak for him. Like I said, different goals.''
 :'''Engineer Znitte:''' ''That's partly why I decided to defect. Too messy.''
 :'''Astral Ward Soldier Arden:''' ''Lines up with others' reports. Thanks. I'll make sure the [[Arcane Council|council]] is aware of your cooperation in case you face trial.''
@@ -1235020,7 +1236028,7 @@ Pilgrim's Rest 4.jpg|
 [[de:Pilgersruh]]
 [[es:Descanso del Peregrino]]
 [[fr:Repos du pèlerin]]</text>
-      <sha1>n31cv0lb02qc9fyp3luhxxblw0le156</sha1>
+      <sha1>ts67oa1amjunvjfcyc954v01ia4nz4s</sha1>
     </revision>
   </page>
 <page xmlns="http://www.mediawiki.org/xml/export-0.11/">
@@ -1272679,19 +1273687,18 @@ Mike O'Brien</text>
     <ns>0</ns>
     <id>381</id>
     <revision>
-      <id>3178717</id>
-      <parentid>3178716</parentid>
-      <timestamp>2026-08-06T07:15:22Z</timestamp>
+      <id>3215718</id>
+      <parentid>3215717</parentid>
+      <timestamp>2026-10-19T07:00:18Z</timestamp>
       <contributor>
-        <username>Sime</username>
-        <id>143985</id>
+        <username>Tery3065</username>
+        <id>270948</id>
       </contributor>
       <minor />
-      <comment>/* Notes */</comment>
-      <origin>3178717</origin>
+      <origin>3215718</origin>
       <model>wikitext</model>
       <format>text/x-wiki</format>
-      <text bytes="5307" sha1="s2e1uih4arg1uxgo6vwn2jyvdd6w4jy" xml:space="preserve">{{otheruses|playable races|the race with mounts|Mount race|the [[Guild Mission]]|Guild Race}}
+      <text bytes="5859" sha1="imq7u67tbvryt8bdhyzefqpqjcfu8ra" xml:space="preserve">{{otheruses|playable races|the race with mounts|Mount race|the [[Guild Mission]]|Guild Race}}
 [[File:Destiny's Edge 03 concept art.jpg|right|400px|The five playable races. From left to right: sylvari, charr, human, norn, asura]]
 
 The [[playable races]] are the [[Tyria (world)|Tyrian]] species that [[player]]s can select from during [[character creation]]: [[asura]], [[charr]], [[human]], [[norn]], or [[sylvari]]. While all [[profession]]s are available to every race, the latter still has effect on various features, primarily on the [[character]]'s physical appearance, their [[starting area]], and the selection of the early [[Story Journal|story chapters]]. Selected race cannot be changed later.
@@ -1272726,12 +1273733,20 @@ Each race has their own capital [[city]] and personal home instance located with
 A total of 6 racially-themed skills are available to each race. The type of skills available varies by race, but include [[healing skill|healing]], [[utility skill|utility]], and [[elite skill|elite]] skills. Racial skills are typically less powerful than similar profession skills, and cannot be equipped in [[Structured PvP]].
 
 == Gallery ==
-&lt;gallery widths="240" heights="300"&gt;
-Savant armor asura female front.jpg|Asura
-Trapper armor charr male front.jpg|Charr
-Aristocrat's armor human female front.jpg|Human
-Wolf armor norn female front.jpg|Norn
-Nightmare Court armor (medium) sylvari female front.jpg|Sylvari
+&lt;gallery widths="855" heights="240"&gt;
+Physical appearance height comparison.jpg|Height comparison between playable races.
+&lt;/gallery&gt;
+&lt;gallery widths="140" heights="170" perrow=5&gt;
+Dragon Emblem Clothing Outfit asura female front.jpg|Asura female
+Dragon Emblem Clothing Outfit charr female front.jpg|Charr female
+Dragon Emblem Clothing Outfit human female front.jpg|Human female
+Dragon Emblem Clothing Outfit norn female front.jpg|Norn female
+Dragon Emblem Clothing Outfit sylvari female front.jpg|Sylvari female
+Dragon Emblem Clothing Outfit asura male front.jpg|Asura male
+Dragon Emblem Clothing Outfit charr male front.jpg|Charr male
+Dragon Emblem Clothing Outfit human male front.jpg|Human male
+Dragon Emblem Clothing Outfit norn male front.jpg|Norn male
+Dragon Emblem Clothing Outfit sylvari male front.jpg|Sylvari male
 &lt;/gallery&gt;
 
 == Notes ==
@@ -1272757,7 +1273772,7 @@ Nightmare Court armor (medium) sylvari female front.jpg|Sylvari
 [[de:Volk]]
 [[es:Raza jugable]]
 [[fr:Races jouables]]</text>
-      <sha1>s2e1uih4arg1uxgo6vwn2jyvdd6w4jy</sha1>
+      <sha1>imq7u67tbvryt8bdhyzefqpqjcfu8ra</sha1>
     </revision>
   </page>
 <page xmlns="http://www.mediawiki.org/xml/export-0.11/">
@@ -1279612,19 +1280627,16 @@ Can be combined in the [[Mystic Forge]] with 2 other types of toy tonics and [[M
     <ns>0</ns>
     <id>424072</id>
     <revision>
-      <id>3214789</id>
-      <parentid>3212804</parentid>
-      <timestamp>2026-10-17T17:23:14Z</timestamp>
+      <id>3215607</id>
+      <parentid>3214789</parentid>
+      <timestamp>2026-10-18T20:11:26Z</timestamp>
       <contributor>
-        <username>Mimiha</username>
-        <id>89229</id>
+        <ip>89.164.240.167</ip>
       </contributor>
-      <minor />
-      <comment>unsalvageable item</comment>
-      <origin>3214789</origin>
+      <origin>3215607</origin>
       <model>wikitext</model>
       <format>text/x-wiki</format>
-      <text bytes="514" sha1="iy0p805k2r4need3sjo8qfdsh7hnv06" xml:space="preserve">{{Back item infobox
+      <text bytes="513" sha1="p00hxgsj96pzurc95wdmgbqt8xg6jjq" xml:space="preserve">{{Back item infobox
 | description = {{flavor|Your Mad King says: Raise me aloft, subject! The time has come to survey my domains.}}
 | rarity = Exotic
 | level = 80
@@ -1279637,14 +1280649,13 @@ Can be combined in the [[Mystic Forge]] with 2 other types of toy tonics and [[M
 == Acquisition ==
 {{Sold by}}
 
-
 == Notes ==
 * This item cannot be salvaged or placed in the Mystic Forge.
 
 [[de:Plüsch-Verrückter-König-Rucksack]]
 [[fr:Sac à dos du Roi Dément en peluche]]
 [[es:Mochila del Rey Loco de peluche]]</text>
-      <sha1>iy0p805k2r4need3sjo8qfdsh7hnv06</sha1>
+      <sha1>p00hxgsj96pzurc95wdmgbqt8xg6jjq</sha1>
     </revision>
   </page>
 <page xmlns="http://www.mediawiki.org/xml/export-0.11/">
@@ -1432783,18 +1433794,18 @@ Following the successful collection of sap, [[Doireann]] is ready to perform a r
     <ns>0</ns>
     <id>342550</id>
     <revision>
-      <id>2940052</id>
-      <parentid>2663101</parentid>
-      <timestamp>2025-03-07T10:18:33Z</timestamp>
+      <id>3215666</id>
+      <parentid>3215199</parentid>
+      <timestamp>2026-10-19T00:06:20Z</timestamp>
       <contributor>
-        <username>Tamie</username>
-        <id>263596</id>
+        <username>Sunlion</username>
+        <id>225997</id>
       </contributor>
-      <minor />
-      <origin>2940052</origin>
+      <comment>/* Foes */</comment>
+      <origin>3215666</origin>
       <model>wikitext</model>
       <format>text/x-wiki</format>
-      <text bytes="1763" sha1="jjanglkewakw4hyh7gugefjo09px8od" xml:space="preserve">{{Event infobox
+      <text bytes="1899" sha1="hdm5f8n79efftyrv0bqqc1l3qtdpwz1" xml:space="preserve">{{Event infobox
 | location = Old Kaineng
 | coordinates = [28112.4, 98277.4]
 | type = Dynamic event
@@ -1432831,12 +1433842,17 @@ Following the successful collection of sap, [[Doireann]] is ready to perform a r
 * [[Unchained Acolyte]]
 * [[Unchained Berserker]]
 * [[Unchained Defiler]]
+* [[Unchained Devastator]]
 * [[Unchained Gorilla]]
+* [[Unchained Hunter]]
 * [[Unchained Illusionist]]
 * [[Unchained Mage]]
+* [[Unchained Noble]]
 * [[Unchained Sentinel]]
 * [[Unchained Villager]]
 * [[Veteran Unchained Abomination]]
+* [[Veteran Unchained Hunter]]
+* [[Veteran Unchained Sentinel]]
 
 == Objects ==
 * [[Security Turret]]
@@ -1432856,7 +1433872,7 @@ Following the successful collection of sap, [[Doireann]] is ready to perform a r
 :'''Technician:''' ''Finally, the turrets are back up. We're good to go.''
 
 [[es:Protege a los técnicos de los atacantes resurgidos desencadenados]]</text>
-      <sha1>jjanglkewakw4hyh7gugefjo09px8od</sha1>
+      <sha1>hdm5f8n79efftyrv0bqqc1l3qtdpwz1</sha1>
     </revision>
   </page>
 <page xmlns="http://www.mediawiki.org/xml/export-0.11/">
@@ -1457135,19 +1458151,18 @@ File:Purifier skill trail.gif|Animation when using a skill.
     <ns>0</ns>
     <id>322312</id>
     <revision>
-      <id>3176221</id>
-      <parentid>3130068</parentid>
-      <timestamp>2026-08-01T13:10:22Z</timestamp>
+      <id>3215213</id>
+      <parentid>3215201</parentid>
+      <timestamp>2026-10-18T13:22:02Z</timestamp>
       <contributor>
-        <username>Ruby12</username>
-        <id>239584</id>
+        <username>Sunlion</username>
+        <id>225997</id>
       </contributor>
-      <minor />
       <comment>/* Combat abilities */</comment>
-      <origin>3176221</origin>
+      <origin>3215213</origin>
       <model>wikitext</model>
       <format>text/x-wiki</format>
-      <text bytes="1630" sha1="2vs02dl27ra2o5k78kqbllhd9xq9aj7" xml:space="preserve">{{NPC infobox
+      <text bytes="2972" sha1="3lvn6a8nhz8l736h28plgcyewm2a2tn" xml:space="preserve">{{NPC infobox
 | image = Purist Assassin (female).jpg
 | location = Seitung Province; New Kaineng City
 | level = 80
@@ -1457185,7 +1458200,6 @@ File:Purifier skill trail.gif|Animation when using a skill.
 : {{Heart|Help the East Precinct protect Grub Lane}}
 
 == Combat abilities ==
-{{section-stub|NPC|skills, behavior?}}
 ;Abilities
 * Bounces
 * Bleeds
@@ -1457193,16 +1458207,28 @@ File:Purifier skill trail.gif|Animation when using a skill.
 * Torments
 
 ;Skills
-* '''{{plain icon|Ricochet}}''' - {{skill description|Ricochet}}
+* '''{{plain icon|Ricochet}}''' — Ranged [[autoattack]]. Hurls a spinning blade [[projectile]] that deals a small amount of damage and applies {{Bleeding}} &lt;small&gt;(4s)&lt;/small&gt;. [[Bounce]]s to up to two additional targets.
+* '''Shredder''' — Hurls a projectile at a target's location. If it hits the ground or a target, it generates a circular [[AoE]] of spinning axes that lasts for 5 seconds and pulses {{Torment|stacks=3}} &lt;small&gt;(5s)&lt;/small&gt; every second.
+* Disappears in a cloud of shadowy purple [[magic]], becoming invisible and untargetable. If a target walks within a small radius around them, indicated by a purple glow, the Purist follows up with '''Sneak Attack'''.
+** '''Sneak Attack''' — Bashes a target with the hilt of their axe as a lead attack, dealing damage and causing {{Stun}} &lt;small&gt;({{fraction|1.5}}s)&lt;/small&gt;.
+*** '''Spider Fang Strike''' — Makes a spinning slash with the axe in their off hand that deals minor damage and applies {{Bleeding}} &lt;small&gt;(6s)&lt;/small&gt; and {{Poisoned}} &lt;small&gt;(6s)&lt;/small&gt;.
+**** '''Critical Strike''' — Swings both axes downward in a dual attack, striking twice. The first strike deals an average amount of damage, and the second deals around double that amount. Both strikes are guaranteed to [[Critical hit|critically hit]].
 
 ;Stolen skills
+{{section-stub|NPC|missing stolen skills}}
 * {{stolen skill|Throw Gunk}}
+
+== Drops ==
+{{section-stub|npc|missing drops}}
+{{Drops table header}}
+{{Drops table row|Bag of Stolen Goods}}
+|}
 
 {{creature nav}}
 
 [[de:Puristen-Assassin]]
 [[es:Asesino purista]]</text>
-      <sha1>2vs02dl27ra2o5k78kqbllhd9xq9aj7</sha1>
+      <sha1>3lvn6a8nhz8l736h28plgcyewm2a2tn</sha1>
     </revision>
   </page>
 <page xmlns="http://www.mediawiki.org/xml/export-0.11/">
@@ -1457849,19 +1458875,18 @@ Four [[Purist Document Fragment]]s can be found scattered throughout the ruins o
     <ns>0</ns>
     <id>322313</id>
     <revision>
-      <id>3176213</id>
-      <parentid>3130020</parentid>
-      <timestamp>2026-08-01T11:51:28Z</timestamp>
+      <id>3215667</id>
+      <parentid>3176213</parentid>
+      <timestamp>2026-10-19T00:12:05Z</timestamp>
       <contributor>
-        <username>Ruby12</username>
-        <id>239584</id>
+        <username>Sunlion</username>
+        <id>225997</id>
       </contributor>
-      <minor />
       <comment>/* Combat abilities */</comment>
-      <origin>3176213</origin>
+      <origin>3215667</origin>
       <model>wikitext</model>
       <format>text/x-wiki</format>
-      <text bytes="838" sha1="l03o8kyj6zhfev5wxdj87r2uuwsg4cq" xml:space="preserve">{{stub|npc|please put a reason for this stub tag, otherwise remove the stub tag}}
+      <text bytes="1232" sha1="ivpg2pnqgvjw1skvkiv4mzvuqpi1t5v" xml:space="preserve">{{stub|npc|please put a reason for this stub tag, otherwise remove the stub tag}}
 {{NPC infobox
 | image = Purist Junker (female).jpg
 | location = Seitung Province; New Kaineng City
@@ -1457890,13 +1458915,17 @@ Four [[Purist Document Fragment]]s can be found scattered throughout the ruins o
 * Boomerang Wrench
 
 ;Skills
-{{section-stub|npc}}
+* '''Mace Smash''' — Melee [[autoattack]]. Makes a lightly damaging leftward swing with their mace.
+* '''Throw Wrench''' — Throws a spinning, [[Pierces|piercing]] wrench [[projectile]] that deals damage and applies {{Crippled}} &lt;small&gt;(5s)&lt;/small&gt; to targets it passes through. When it reaches its maximum range, it will quickly return to the junker.
+
+;Stolen skills
+{{section-stub|npc|missing stolen skills}} 
 
 {{creature nav}}
 
 [[de:Puristen-Rümpler]]
 [[es:Chatarrero purista]]</text>
-      <sha1>l03o8kyj6zhfev5wxdj87r2uuwsg4cq</sha1>
+      <sha1>ivpg2pnqgvjw1skvkiv4mzvuqpi1t5v</sha1>
     </revision>
   </page>
 <page xmlns="http://www.mediawiki.org/xml/export-0.11/">
@@ -1458659,19 +1459688,17 @@ One of several [[Purist leaders]] will spawn in [[Old Kaineng]] during {{event|D
     <ns>0</ns>
     <id>309632</id>
     <revision>
-      <id>3158975</id>
-      <parentid>3158971</parentid>
-      <timestamp>2026-06-13T16:07:00Z</timestamp>
+      <id>3215209</id>
+      <parentid>3158975</parentid>
+      <timestamp>2026-10-18T13:19:10Z</timestamp>
       <contributor>
-        <username>Tery3065</username>
-        <id>270948</id>
+        <username>Sunlion</username>
+        <id>225997</id>
       </contributor>
-      <minor />
-      <comment>/* Notable operatives */</comment>
-      <origin>3158975</origin>
+      <origin>3215209</origin>
       <model>wikitext</model>
       <format>text/x-wiki</format>
-      <text bytes="8099" sha1="3tzj8gnqduf0myekg0w7m8octcnwtwc" xml:space="preserve">{{spoiler|''[[Guild Wars 2: End of Dragons]]'' and ''[[Guild Wars 2: Visions of Eternity]]''}}
+      <text bytes="8519" sha1="gopqndhad5ws5gx0nxcdss1fh18hoxp" xml:space="preserve">{{spoiler|''[[Guild Wars 2: End of Dragons]]'' and ''[[Guild Wars 2: Visions of Eternity]]''}}
 [[File:Purist Banner.png|thumb|250px|Banner of the Purists.]]
 {{quotation|[[The Ritualist]] in [[Search the isle for squatters with M.U.P. Analyst Bian]]|Our nation is infected. Rife with turpitude! Rotting with sedition! Fowl strut among us, presuming they are equals. Poisoning your sons! Sullying your daughters! Do NOT succumb to this indoctrination! Cantha is your birthright. Cantha belongs to Canthans!}}
 The [[Purists]] are [[human]] members of a [[Cantha]]n sect that is a remnant of the fallen, xenophobic [[Ministry of Purity]]. They view themselves as true Canthans and wear masks that mimic the helmets once worn by the Ministry of Purity. Unlike their Ministry of Purity predecessors and despite what some of the public Purist agitators [[Unmask and thwart the Purist agitators!|claim]], the Purists are not above recruiting [[Luxons]] and [[Kurzicks]] into their ranks. The Purists appear to operate as autonomous cells so the capture or death of one cell's leader will not expose the entire organization.
@@ -1458718,6 +1459745,30 @@ The Purists learned about the recently formed [[Tyrian Alliance]]'s expedition t
 == Members ==
 {{member list}}
 
+== Quotes ==
+=== Female ===
+;Aggro
+:''I'm coming for you.''
+:''Prepare for a beating!''
+
+;Upon death
+:''I give my life for the cause.''
+:''Your kind won't win...''
+
+=== Male ===
+;Aggro
+:''If you won't leave, you'll die!''
+:''You must not be allowed to live.''
+
+;Disengage
+:''Cowards. All of you.''
+
+;Upon death
+:''Do NOT give up!''
+:''I won't die in vain...''
+:''Reiko, I'm yours...''
+:''We...will never...give up...''
+
 == Related [[achievement]]s ==
 * {{achievement|Purist Shenanigans}}
 * {{achievement|Eternal Purist Shenanigans}}
@@ -1458740,7 +1459791,7 @@ The Purists learned about the recently formed [[Tyrian Alliance]]'s expedition t
 [[Category:Purists|*]]
 [[de:Puristen]]
 [[es:Puristas]]</text>
-      <sha1>3tzj8gnqduf0myekg0w7m8octcnwtwc</sha1>
+      <sha1>gopqndhad5ws5gx0nxcdss1fh18hoxp</sha1>
     </revision>
   </page>
 <page xmlns="http://www.mediawiki.org/xml/export-0.11/">
@@ -1483058,25 +1484109,25 @@ There are two different ways to reach the underwater-channel (see image), as the
     <ns>0</ns>
     <id>148372</id>
     <revision>
-      <id>2341772</id>
-      <parentid>1693710</parentid>
-      <timestamp>2021-09-30T15:49:08Z</timestamp>
+      <id>3215235</id>
+      <parentid>2341772</parentid>
+      <timestamp>2026-10-18T14:59:15Z</timestamp>
       <contributor>
-        <username>Aylia</username>
-        <id>196297</id>
+        <username>Kossage</username>
+        <id>126773</id>
       </contributor>
-      <origin>2341772</origin>
+      <origin>3215235</origin>
       <model>wikitext</model>
       <format>text/x-wiki</format>
-      <text bytes="464" sha1="596lvll2oe4or59t6c0coalr0zw94ff" xml:space="preserve">[[Quaken Frostraven]] was a member of the [[gww:Zealots of Shiverpeak|Zealots of Shiverpeak]]. After fighting the [[gww:Ascalon's Chosen|Ascalon's Chosen]] for years, he decided to go to Ebonhawke to serve with the [[Ebon Vanguard]]. He later died there and was buried at the [[Defender's Field]].
+      <text bytes="468" sha1="036kic7op81p8ucc05p3b9c2jth7cwo" xml:space="preserve">[[Quaken Frostraven]] was a member of the [[gww:Zealots of Shiverpeak|Zealots of Shiverpeak]]. After fighting the [[gww:Ascalon's Chosen|Ascalon's Chosen]] for years, he decided to go to Ebonhawke to serve with the [[Ebon Vanguard]]. He later died there and was buried at the [[Defender's Field]].
 
 == Trivia ==
-* Quaken Frostraven is a character from ''Guild Wars'' owned by [[Andrew Gray]].
+* Quaken Frostraven is a character from ''[[Guild Wars]]'' owned by [[Andrew Gray]].
 
-[[Category:Humans]][[Category:Ebon Vanguard]]
-
+[[Category:Humans]]
+[[Category:Ebon Vanguard]]
 [[de:Quaken Frostrabe]]</text>
-      <sha1>596lvll2oe4or59t6c0coalr0zw94ff</sha1>
+      <sha1>036kic7op81p8ucc05p3b9c2jth7cwo</sha1>
     </revision>
   </page>
 <page xmlns="http://www.mediawiki.org/xml/export-0.11/">
@@ -1883725,36 +1884776,46 @@ Aside from rapid and aggressive growth, after surviving several rounds of stimul
     <ns>0</ns>
     <id>372720</id>
     <revision>
-      <id>3082977</id>
-      <parentid>2927408</parentid>
-      <timestamp>2025-12-22T12:46:37Z</timestamp>
+      <id>3215668</id>
+      <parentid>3082977</parentid>
+      <timestamp>2026-10-19T00:12:44Z</timestamp>
       <contributor>
-        <username>Tery3065</username>
-        <id>270948</id>
+        <username>Kossage</username>
+        <id>126773</id>
       </contributor>
-      <minor />
-      <origin>3082977</origin>
+      <origin>3215668</origin>
       <model>wikitext</model>
       <format>text/x-wiki</format>
-      <text bytes="3544" sha1="91ki89cb3c4drpfd1tt0tvaloqtm6fm" xml:space="preserve">{{Spoiler|''[[Guild Wars 2: Secrets of the Obscure]]''}}
-[[Researcher Selly]], later given the title '''Operative Selly''', is an [[asura]]n scout for the [[Astral Ward]] who has been taking notes on [[Inner Nayos]] and its [[Kryptis]] denizens after being trapped in the demon realm along with Outrider [[Arina]]'s unit.
+      <text bytes="6864" sha1="syhgqqfryxywwhy50ckt9yios77gr2f" xml:space="preserve">{{Spoiler|''[[Guild Wars 2: Secrets of the Obscure]]''}}
+[[Researcher Selly]], later given the title '''Operative Selly''', was an [[asura]]n scout for the [[Astral Ward]] who took notes on [[Inner Nayos]] and its [[Kryptis]] denizens after being trapped in the demon realm along with Outrider [[Arina]]'s unit. She died fighting against [[Eparch]] while trying to save young Kryptis whom Eparch was feeding on.
 
 == Biography ==
-;Act I
+=== Act 1 ===
 Selly accompanied her commanding officer [[Arina]]'s [[Astral Ward]] unit on a mission to discreetly contain a [[Kryptis]] incursion on [[Gendarran Fields]] in 1336 &lt;small&gt;[[Mouvelian calendar|AE]]&lt;/small&gt;. However, sudden [[Commander without a Cause|interference]] from the [[Pact Commander]] caused the unit and the Commander to be sucked into [[Inner Nayos]] through a Kryptis [[Mists Rift (Kryptis)|Mists Rift]]. The Commander was separated from the others in the resulting chaos while Arina did her best to [[Hell Breaks Loose|regroup her scattered forces]].
 
-;Act IV - [[Through the Veil (release)|Through the Veil]]
-After acclimating to their new environments, Selly and the rest of Arina's unit survived in hostile territory as well as they could while avoiding Kryptis patrols for weeks on end. When the unit made contact with the unexpectedly friendly Kryptis [[Peitha]] and [[Ramses]] who offered to assist them against the hostile Kryptis, Selly was approached by [[Intelligence Officer Havard]] who asked her to listen in on the talks between their new allies and gather intel on other Kryptis in the region as well as scout the environment. According to Havard, Selly's capacity as a researcher in addition to her diminutive stature and nondescript appearance—a comment which Selly found quite rude—put the asura in close proximity and occasional direct contact with the Kryptis and therefore gave her a unique opportunity to make note of potentially useful intelligence without arousing suspicion.
+=== [[Through the Veil (release)|Through the Veil]] ===
+After acclimating to their new environments, Selly and the rest of Arina's unit survived in hostile territory as well as they could while avoiding Kryptis patrols for weeks on end. When the unit made contact with the unexpectedly friendly Kryptis [[Peitha]] and [[Ramses]] who offered to assist them against the hostile Kryptis, Selly was approached by [[Intelligence Officer Havard]] who asked her to listen in on the talks between their new allies and gather intel on other Kryptis in the region as well as scout the environment. According to Havard, Selly's capacity as a researcher in addition to her diminutive stature and nondescript appearance—a comment which Selly found quite rude—put the asura in close proximity and occasional direct contact with the Kryptis and therefore gave her a unique opportunity to make note of potentially useful intelligence without arousing suspicion.&lt;ref&gt;[[Personal Note]]&lt;/ref&gt;
 
-Despite her [[Well-Versed|extensive note-taking]], Selly's initial forays into the field resulted in little usable information. As a result, she was tasked with gathering intelligence deep in Kryptis territory, just outside the fortress known as [[Heitor's Gate (point of interest)|Heitor's Gate]] which acted as a gateway to the heart of inner Kryptis territory. In her last log entry Selly noted that an Astral Ward patrol would escort her as far as they dared, and from there she would make her way toward the fortress to gather information on the comings and goings of Kryptis general [[Heitor]]'s forces.
+Despite her [[Well-Versed|extensive note-taking]] about Kryptis relationships as well as areas and objects of interest in Inner Nayos, Selly's initial forays into the field resulted in little usable information aside from the intel she had gathered in the makeshift camp shared by the ward and Peitha's rebels. As a result, she was tasked with gathering intelligence deep in Kryptis territory, just outside the fortress known as [[Heitor's Gate (point of interest)|Heitor's Gate]] which acted as a gateway to the heart of inner Kryptis territory. In her last log entry Selly noted that an Astral Ward patrol would escort her as far as they dared, and from there she would make her way toward the fortress to gather information on the comings and goings of Kryptis general [[Heitor]]'s forces.
 
-Some of Selly's fellow Astral Ward noted later that she had gotten separated from her patrol and never returned, leading to speculation whether she had been possessed or killed. The Ward resolved to bring her back unharmed if they could only find her.&lt;ref&gt;[[Heitor's Dominion#Ambient dialogue|Heitor's Dominion ambient dialogue]]&lt;/ref&gt;
+Some of Selly's fellow Astral Ward noted later that she had gotten separated from her patrol and never returned, leading to speculation whether she had been possessed or killed. The Ward resolved to bring her back unharmed if they could only find her.&lt;ref&gt;[[Heitor's Dominion#Ambient dialogue|Heitor's Dominion ambient dialogue]]&lt;/ref&gt;&lt;ref&gt;[[Field Report (Heitor's Territory)]]&lt;/ref&gt;
+
+Selly was caught by a Kryptis patrol and brought inside Heitor's Gate where she met with [[Ignaxious]]. Although the patrol leader initially intended to take Selly to Heitor who was in charge of operations in the region and served as Ignaxious's superior, Ignaxious telepathically convinced the patrol to hand the asura over to him. Recalling Ignaxious's ambitions and loyalties which she had learned about from Peitha and Ramses earlier, Selly deceived Ignaxious by posturing as a high-ranking member of the ward with valuable information. The Kryptis general believed her fabrications initially and led her through a series of portals to a location secure enough to telepathically question her at his leisure.
+
+Although Selly was able to use her Astral Ward training to resist Ignaxious's mental probing at first, he eventually got through and discovered the truth. Disappointed with having only captured what he called an "ineffectual mole," Ignaxious ordered the asura to be fed to the rabble.&lt;ref name="Nyedra"&gt;[[Field Report (Nyedra Surrounds)]]&lt;/ref&gt;
+
+=== [[The Realm of Dreams]] ===
+Selly survived her encounter with the hungry Kryptis against expectations, however, as these Kryptis initially mistook her as one of their kind. After having polite talks with them, she continued her trek westward while doing her best to avoid any patrols loyal to Eparch. She continued writing her reports despite being cut off from allied forces, hoping that the reports would be discovered and put to some use once Peitha's invasion began.
+
+Her trek led her to observe various points of interest such as the [[Fortress of the Founding]], the [[Coliseum of the Midnight King]], the [[Temple of Charybda]], and [[Eventide's March (point of interest)|Eventide's March]] and trying to understand their significance to the Kryptis. She befriended the lesser Kryptis from earlier who provided her with something to eat while giving her morsels of information about the great fear they had regarding Eparch and the loyalists' cruelty. Selly managed to eavesdrop [[Apprentice Scyllan]]'s musings about wanting to open a portal to [[the Wizard's Tower]], which gave her hope that she could use such a portal for her unit to return home. However, she quickly surmised that the Kryptis apprentice lacked what was required to pull that kind of feat off, so she continued her journey.
+
+While resting near Eventide's March, Selly considered gliding towards the [[Tree of Mourning]] and return to her allies to deliver her report. However, she had learned that her Kryptis friends had been captured, and her conscience did not allow her to leave them behind, so she resolved to take the fight to the loyalists to do what was right.&lt;ref name="Nyedra" /&gt;
+
+=== [[The Midnight King]] ===
+Selly made her way to the shadows of the spires of [[Citadel of Zakiros|Zakiros]], Eparch's seat of power, where she found the Midnight King feeding on the captured Kryptis. She managed to save her Kryptis friends, [[Grink]] and [[Skup]], and they attempted to flee. However, Grink and Selly would ultimately lost their lives fighting against overwhelming odds while Skup tried to escape in the ensuing chaos. Given that the Pact Commander would later discover what appeared to be Skup's distilled memories during the [[The Eleventh Hour|assault]] on the [[Spire of Dreams]], it is likely that Skup perished as well although the Kryptis's extracted memories immortalized Selly's noble sacrifice.&lt;ref&gt;[[Bookshelf (The Eleventh Hour)]]&lt;/ref&gt;
 
 == Related achievements ==
 * {{achievement|Well-Versed}}
-
-== Notes ==
-* It is likely that the corpse of the asuran [[Astral Ward Protector (NPC)|Astral Ward Protector]] seen within the [[Heitor's Gate (point of interest)|Kryptis fortress]] during the [[Heitor's Gate]] chapter is meant to be Selly given how her last log entry mentions her plan to investigate the fortress and because ambient dialogue between two Astral Ward members below a cliff north of [[Heitor's Maw]] at [[Heitor's Dominion]] speculates about her potentially having run into trouble after being separated from her patrol.
 
 == References ==
 &lt;references /&gt;
@@ -1883763,7 +1884824,7 @@ Some of Selly's fellow Astral Ward noted later that she had gotten separated fro
 [[Category:Asura]]
 [[Category:Astral Ward]]
 [[Category:Unseen NPCs]]</text>
-      <sha1>91ki89cb3c4drpfd1tt0tvaloqtm6fm</sha1>
+      <sha1>syhgqqfryxywwhy50ckt9yios77gr2f</sha1>
     </revision>
   </page>
 <page xmlns="http://www.mediawiki.org/xml/export-0.11/">
@@ -1884537,19 +1885598,18 @@ Some of Selly's fellow Astral Ward noted later that she had gotten separated fro
     <ns>0</ns>
     <id>345022</id>
     <revision>
-      <id>2938467</id>
-      <parentid>2772178</parentid>
-      <timestamp>2025-03-01T09:05:17Z</timestamp>
+      <id>3215715</id>
+      <parentid>2938467</parentid>
+      <timestamp>2026-10-19T06:21:37Z</timestamp>
       <contributor>
-        <username>Tamie</username>
-        <id>263596</id>
+        <username>Sunlion</username>
+        <id>225997</id>
       </contributor>
-      <minor />
-      <origin>2938467</origin>
+      <origin>3215715</origin>
       <model>wikitext</model>
       <format>text/x-wiki</format>
-      <text bytes="1002" sha1="18crzc7tsj8zjlfoq9bxg9bn3gwtuty" xml:space="preserve">{{NPC infobox
-| image = 
+      <text bytes="806" sha1="42ev1riwzwslo8vf292oiax0i1en9gj" xml:space="preserve">{{NPC infobox
+| image = Laborer female 17.jpg
 | location = North Peninsula
 | race = human
 | level = 80
@@ -1884561,20 +1885621,11 @@ Some of Selly's fellow Astral Ward noted later that she had gotten separated fro
 == Location ==
 ;[[Cantha]]
 * [[Seitung Province]]
-** [[North Peninsula]] {{During|event}}
+** [[North Peninsula]] {{during}}
 
 == Event involvement ==
 : {{Event|Defeat the Unchained Kingpin}}
 : {{Event|Defeat the Unchained and capture their ritual sites}}
-
-== Combat abilites ==
-{{section-stub|npc|Any abilities? Remove otherwise.}}
-
-== Dialogue ==
-{{section-stub|NPC|Any dialogue? Remove otherwise.}}
-
-== Quotes ==
-{{section-stub|npc|Any quotes? Remove otherwise.}}
 
 == Related achievements ==
 * {{Achievement|Eternal Troubles from the Deep}}
@@ -1884585,7 +1885636,7 @@ Some of Selly's fellow Astral Ward noted later that she had gotten separated fro
 * She can only be found during events, and she teleports to and from the location, leaving her home base unknown.
 
 [[es:Investigadora Ushi]]</text>
-      <sha1>18crzc7tsj8zjlfoq9bxg9bn3gwtuty</sha1>
+      <sha1>42ev1riwzwslo8vf292oiax0i1en9gj</sha1>
     </revision>
   </page>
 <page xmlns="http://www.mediawiki.org/xml/export-0.11/">
@@ -1971904,17 +1972955,17 @@ The entry point for this challenge is located directly above the "Candle Chimney
     <ns>0</ns>
     <id>309213</id>
     <revision>
-      <id>3209247</id>
-      <parentid>3103170</parentid>
-      <timestamp>2026-10-06T20:08:43Z</timestamp>
+      <id>3215207</id>
+      <parentid>3209247</parentid>
+      <timestamp>2026-10-18T13:01:31Z</timestamp>
       <contributor>
         <username>Kossage</username>
         <id>126773</id>
       </contributor>
-      <origin>3209247</origin>
+      <origin>3215207</origin>
       <model>wikitext</model>
       <format>text/x-wiki</format>
-      <text bytes="9292" sha1="43lvdn73m1j6af8w9297ou4oqa4tb9g" xml:space="preserve">{{otheruses|the [[elite specialization]]|the [[attribute combination]]|Ritualist's|other uses|Ritualist (disambiguation)}}
+      <text bytes="9299" sha1="qptxqqw548rjs5cq7a1at5r1jyqcbfx" xml:space="preserve">{{otheruses|the [[elite specialization]]|the [[attribute combination]]|Ritualist's|other uses|Ritualist (disambiguation)}}
 {{Specialization infobox
 | icon = Ritualist.png
 | description = "Embrace the world beyond."
@@ -1972022,8 +1973073,8 @@ File:Ritualist icon small.png|Wiki icon
 == Trivia ==
 * The ritualist icon resembles the [[w:Kris|kris]], a Javanese asymmetrical dagger. Viewed as both a weapon and a spiritual object, the kris is often considered to have an essence or presence, and is believed to possess magical powers, with some blades possessing good luck and others possessing bad.
 * In the concept art, the ritualist wears the [[Ritualist Outfit]].
-* [[gww:Ritualist|Ritualist]] was one of the playable professions in ''[[gw1:Guild Wars Factions|Guild Wars Factions]]''. However, in ''[[Guild Wars 2]]'', the profession was initially exclusive to NPCs, and added as a playable specialization with [[Guild Wars 2: Visions of Eternity|Visions of Eternity]].
-* The [[revenant]] profession shares many similarities with the ''Guild Wars Factions'' ritualist profession, including the use of blindfolds and the similarity of their profession symbol. Revenants also connect to [[the Mists]], though they seem more focused on channeling an [[Legend|echo of a legendary being]], rather than establishing a communion with ancestral spirits as ritualists do.
+* [[gww:Ritualist|Ritualist]] was one of the playable professions in ''[[gw1:Guild Wars Factions|Guild Wars Factions]]''. However, in ''[[Guild Wars 2]]'', the profession was initially exclusive to [[Non-player character|NPCs]], and added as a playable specialization with ''[[Guild Wars 2: Visions of Eternity]]''.
+* The [[revenant]] profession shares many similarities with the ''Guild Wars Factions'' ritualist profession, including the use of blindfolds and the similarity of their profession symbol. Revenants also connect to [[the Mists]], though they seem more focused on channeling [[Legend|echoes of legendary beings]], rather than establishing a communion with ancestral spirits as ritualists do.
 * During the ''Guild Wars 2: Visions of Eternity'' beta preview, ruptured for additional effect on expiration, whether through resummoning, Rupture F2-F4 skill activation, or when exiting ritualist shroud.&lt;ref name="Ritlive"&gt;[https://www.twitch.tv/videos/2528411270?t=1h7m50s Elite Specialization Livestream: Antiquary, Ritualist, Paragon | Visions of Eternity - Ritualist], Twitch.com&lt;/ref&gt;
 
 == External links ==
@@ -1972043,7 +1973094,7 @@ File:Ritualist icon small.png|Wiki icon
 [[de:Ritualist]]
 [[es:Ritualista]]
 [[fr:Ritualiste]]</text>
-      <sha1>43lvdn73m1j6af8w9297ou4oqa4tb9g</sha1>
+      <sha1>qptxqqw548rjs5cq7a1at5r1jyqcbfx</sha1>
     </revision>
   </page>
 <page xmlns="http://www.mediawiki.org/xml/export-0.11/">
@@ -2044701,1460 +2045752,6 @@ Damaging area that lasts for several seconds after the [[Junk Absorption]] attac
 [[es:Anillo de sello real de Rurik]]
 [[fr:Chevalière royale de Rurik]]</text>
       <sha1>jxhck73uuz4upbhm83ey0j5444it4d0</sha1>
-    </revision>
-  </page>
-<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
-    <title>Rurik's Royal Signet Ring (Infused)</title>
-    <ns>0</ns>
-    <id>96895</id>
-    <revision>
-      <id>2701137</id>
-      <parentid>1887243</parentid>
-      <timestamp>2023-07-16T10:04:55Z</timestamp>
-      <contributor>
-        <username>AWB Alex</username>
-        <id>102516</id>
-      </contributor>
-      <minor />
-      <comment>/* top */+Add salvage parameter</comment>
-      <origin>2701137</origin>
-      <model>wikitext</model>
-      <format>text/x-wiki</format>
-      <text bytes="714" sha1="cdw49y2crbqb5s7y34dr0o1grbekrcl" xml:space="preserve">{{Trinket infobox
-| icon = Rurik's Royal Signet Ring.png
-| unique = y
-| type = ring
-| prefix = cavalier's
-| infusion slot = y
-| infused = y
-| level = 80
-| rarity = Ascended
-| value = 495
-| bound = Account
-| salvage = Ascended
-| id = 37107, 49398
-}}
-
-== Acquisition ==
-{{recipe
-| source = mystic
-| ingredient1 = 1 Rurik's Royal Signet Ring
-| ingredient2 = 1 Shard of Crystallized Mists Essence
-| ingredient3 = 3 Glob of Coagulated Mists Essence
-| ingredient4 = 5 Vial of Condensed Mists Essence
-}}
-
-=== Contained in ===
-{{contained in}}
-
-== Used in ==
-{{recipe list}}
-
-[[de:Ruriks königlicher Siegelring (Infundiert)]]
-[[es:Anillo de sello real de Rurik (infundido)]]
-[[fr: Chevalière royale de Rurik (infusée)]]</text>
-      <sha1>cdw49y2crbqb5s7y34dr0o1grbekrcl</sha1>
-    </revision>
-  </page>
-<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
-    <title>Rurik's View</title>
-    <ns>0</ns>
-    <id>88097</id>
-    <redirect title="Guild Trek" />
-    <revision>
-      <id>560460</id>
-      <timestamp>2013-04-23T01:35:14Z</timestamp>
-      <contributor>
-        <username>Vahkris</username>
-        <id>64067</id>
-      </contributor>
-      <comment>Redirected page to [[Guild Trek#Rurik's View]]</comment>
-      <origin>560460</origin>
-      <model>wikitext</model>
-      <format>text/x-wiki</format>
-      <text bytes="62" sha1="mflrad3tcgrnta1mwonsvtkx8kz2o6z" xml:space="preserve">#REDIRECT [[Guild Trek#Rurik's View]]
-{{redirect|common term}}</text>
-      <sha1>mflrad3tcgrnta1mwonsvtkx8kz2o6z</sha1>
-    </revision>
-  </page>
-<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
-    <title>Rurik's armor</title>
-    <ns>0</ns>
-    <id>60949</id>
-    <revision>
-      <id>2785631</id>
-      <parentid>2019068</parentid>
-      <timestamp>2023-12-29T12:21:19Z</timestamp>
-      <contributor>
-        <username>Myriada</username>
-        <id>215477</id>
-      </contributor>
-      <minor />
-      <origin>2785631</origin>
-      <model>wikitext</model>
-      <format>text/x-wiki</format>
-      <text bytes="1400" sha1="suj03wfhn8gafzc4upry2dta6z0bybb" xml:space="preserve">{{Armor set infobox
-| image = Scallywag armor human female front.jpg
-| class = heavy
-| rarity = exotic
-| level = 80
-}}
-[[Rurik's armor]] is a themed heavy [[armor set]], named after the character [[gww:Prince Rurik|Prince Rurik]] from ''[[Guild Wars]]''. All pieces come with a [[Superior Rune of Vampirism]].
-
-== Attribute bonuses ==
-Rurik's armor uses the Cleric's prefix.
-{| {{STDT|equip align-center}}
-! colspan="6" | Individual attribute bonuses
-|-
-! Name || Slot || Defense || {{Healing Power}} || {{Power}} || {{Toughness}}
-|-
-| align=left | {{item icon|Rurik's Helm}} || Head || 121 || +60 || +43 || +43
-|-
-| align=left | {{item icon|Rurik's Pauldrons}} || Shoulders || 121 || +45 || +32 || +32
-|-
-| align=left | {{item icon|Rurik's Chestguard}} || Chest || 363 || +134 || +96 || +96
-|-
-| align=left | {{item icon|Rurik's Gauntlets}} || Hands || 182 || +45 || +32 || +32
-|-
-| align=left | {{item icon|Rurik's Legplates}} || Legs || 242 || +90 || +64 || +64
-|-
-| align=left | {{item icon|Rurik's Greaves}} || Feet || 182 || +45 || +32 || +32
-|-
-! colspan="6" | Cumulative attribute bonuses
-|-
-! — || — || Defense || {{Healing Power}} || {{Power}} || {{Toughness}}
-|-
-| — || — || 1211 || +419 || +299 || +299
-|}
-
-== Gallery ==
-{{main|Scallywag armor}}
-
-{{named armor nav}}
-	
-[[Category:Exotic armor sets]]
-[[de:Ruriks Rüstung]]
-[[es:Armadura de Rurik]]
-[[fr:Rurik (Ensemble d'armure)]]</text>
-      <sha1>suj03wfhn8gafzc4upry2dta6z0bybb</sha1>
-    </revision>
-  </page>
-<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
-    <title>Rurikton</title>
-    <ns>0</ns>
-    <id>12008</id>
-    <revision>
-      <id>2894165</id>
-      <parentid>2844915</parentid>
-      <timestamp>2024-11-10T16:00:07Z</timestamp>
-      <contributor>
-        <username>BeeBeeKay</username>
-        <id>223338</id>
-      </contributor>
-      <minor />
-      <comment>/* NPCs */ Plurals</comment>
-      <origin>2894165</origin>
-      <model>wikitext</model>
-      <format>text/x-wiki</format>
-      <text bytes="7785" sha1="ehb3422z6s0qn4g23gulo1flhlyvbaf" xml:space="preserve">{{Location infobox
-| points-of-interest = 2
-| type = Area
-| sector id = 183
-| within = Divinity's Reach
-| connections = [[Stronghold of Ebonhawke]] (Asura gate)&lt;br&gt;[[Plaza of Lyssa]] (N)&lt;br&gt;[[Lyssa Low Road]] (NW)&lt;br&gt;[[Plaza of Kormir]] (S)&lt;br&gt;[[Kormir Low Road]] (SW)&lt;br&gt;[[District Promenade]] (W)
-}}
-[[Rurikton]] is a district within [[Divinity's Reach]] located in the east. It is the [[Ascalon]]ian district and is where most of those with Ascalonian descent live as well as refugees from [[Stronghold of Ebonhawke|Ebonhawke]]. This district also has an [[asura gate]] which leads to Ebonhawke and Rurikton acts as the main support for the fortress. The asura gate used to be tuned periodically to places outside of Ebonhawke, such as [[Lion's Arch]], but due to the construction of a second gate in [[the Upper City]], it is now permanently tuned to Ebonhawke.
-
-The residents pride both their ancestry, especially their hero ancestors, as well as having immense pride for Ascalon. Rurikton is named after one such Ascalonian hero, [[gw1:Prince Rurik|Prince Rurik]], who gave his life to [[gw1:Ascalonian migration|lead his people]] over the [[Shiverpeak Mountains]] to escape the [[gw1:charr invasion|Charr Invasion]].
-
-There are several entrances into Rurikton. The main entrance is at the west, leading to the [[District Promenade]]. There are also two side entrances at the north and southern corners, leading to the [[Plaza of Lyssa|Plazas of Lyssa]] and [[Plaza of Kormir|Kormir]] respectively. From the two side entrances, one can travel quickly to the [[Salma District]] and the [[Eastern Commons]], again respectively.
-
-== Locations ==
-;Points of Interest
-: {{map objective|point of interest|Maiden's Whisper|id=258}}
-: {{map objective|point of interest|Minister Wi's Mansion|id=264}}
-
-;Asura Gates
-: {{map icon|asura gate}} [[Stronghold of Ebonhawke|Ebonhawke]]
-
-== NPCs ==
-=== Allies ===
-;[[Asura]]
-* [[Assistant]]
-* [[Asura Gate Operator Driks]]
-
-;[[Human]]s
-* [[Aleria Baptiste]]
-* [[Aquila Elek]]
-* [[Bartender (Rurikton)|Bartender]]
-* [[Chikage]]
-* [[Child]]
-* [[Citizen]]
-* [[Devva Sarite]]
-* [[Divinity Guide]] &lt;small&gt;(Directions/Tour)&lt;/small&gt;
-* [[Gossiping Citizen]]
-* [[Jennwyn]]
-* [[Kenden Baruch]]
-* [[Kenna]]
-* [[Lyren Sandor]]
-* [[Lavile]]
-* [[Ministry Guard (NPC)|Ministry Guard]]
-* [[Miria Malone]]
-* [[Noble]]
-* [[Seraph Soldier]]
-* [[Sergeant Hal]]
-* [[Servant]]
-* [[Temmeth]]
-* [[Tessa]]
-* [[Thander Sirsk]]
-* [[Waitress]]
-* [[Willen Sarite]]
-
-;[[Norn]]
-* [[Valdi the Lush]]
-
-;[[Sylvari]]
-* [[Willow]]
-
-;Various
-* [[Visitor]]
-
-=== Services ===
-: {{vendor|merchant}} [[Evona]]
-: {{vendor|merchant}} [[Landrus]]
-: {{vendor|merchant}} [[Melyss Talthorne]]
-: {{vendor|merchant}} [[Rilo Bretton]]
-
-=== Pets ===
-* [[Juvenile Krytan Drakehound]]
-
-== Ambient dialogue ==
-:'''Assistant:''' ''Fascinating...''
-
-:'''Assistant:''' ''Have you ever stopped a [[golem]] with logic alone? I have.''
-
-:'''Assistant:''' ''I love it when an asynchronous logic algorithm comes together.''
-
-:'''Assistant:''' ''If we increase the sympathetic resonance, perhaps the power output can be boosted.''
-
-:'''Assistant:''' ''Most intriguing...''
-
-:'''Child:''' ''(laugh)''
-
-:'''Child:''' ''I miss my mom and dad.''
-
-:'''Child:''' ''When I grow up, I'm going to be a brave hero!''
-
-:'''Child:''' ''Those guards ask a lot of questions. I didn't expect a [[Seraph]] Inquisition.''
-
-:'''Citizen:''' ''(giggle)''
-
-:'''Citizen:''' ''Hey! Grope me again and I'll cut off your thumbs.''
-
-:'''Citizen:''' ''If the [[charr]] think they can come here, me and my meat cleaver will tell them otherwise.''
-
-:'''Citizen:''' ''Met a [[sylvari]] the other day. Curious lot, they are.''
-
-:'''Citizen:''' ''My mug has gone empty. Bartender!''
-
-:'''Citizen:''' ''That [[Minister Caudecus|Caudecus the Wise]], I like him. Good head on his shoulders, he has.''
-
-:'''Citizen:''' ''To Divinity!''
-
-:'''Citizen:''' ''To [[Queen Jennah]]!''
-
-:'''Valdi the Lush:''' ''Beer, glorious beer!''
-
-:'''Child (1):''' ''Tag! You're it!''
-:'''Child (2):''' ''(squeal)''
-
-:'''Child (1):''' ''Hey, give that back!''
-:'''Child (2):''' ''(laugh)''
-
-:'''Child (1):''' ''I bet I can run faster than you!''
-:'''Child (2):''' ''Last one to [[Lyssa]]'s statue is a [[grawl]]!''
-
-:'''Child (1):''' ''Gotcha! You're afflicted!''
-:'''Child (2):''' ''Rowr! Rowr!''
-:'''Child (1):''' ''Eww. Get away! Unclean! Unclean!''
-:'''Child (2):''' ''Prepare to get gooified!''
-
-:'''Citizen (1):''' ''By the [[Six Human Gods|gods]], I wish [[Logan Thackeray]] would just take my wife away!''
-:'''Citizen (2):''' ''You know, just because your wife's taken a shine to Logan Thackeray doesn't make him a bad guy. He's cursed!''
-:'''Citizen (1):''' ''I can't believe you're saying this.''
-:'''Citizen (2):''' ''Cursed with good looks and true [[Ascalon]]ian blood. It's not his fault that every woman fawns over him.''
-:'''Citizen (1):''' ''You're not helping.''
-
-:'''Citizen (1):''' ''It's always, "Logan is so dreamy!" or "Why can't you be more like Logan Thackeray?"''
-:'''Citizen (2):''' ''Not this again.''
-
-:'''Citizen (1):''' ''Any news from [[Stronghold of Ebonhawke|Ebonhawke]]?''
-:'''Citizen (2):''' ''Just the usual. The [[Ministry]] won't send troops, but we're trying to send food.''
-:'''Citizen (1):''' ''I'm sick of this. You know, if we had Ebonhawke as a strong ally, we'd have those [[centaur]]s surrounded. We'd crush them.''
-:'''Citizen (2):''' ''Ebonhawke has its own problems.''
-
-:'''Citizen (1):''' ''[[Asura]] get on my nerves. I'm sick of their condescending nonsense.''
-:'''Citizen (2):''' ''We could use more of those [[asura gate]]s, though. Think of the supplies we could move in here.
-:'''Citizen (1)''': You have any idea how much it costs to ship something by asura gate? Maybe Ebonhawke is willing to pay those prices, but I'm not! All I get from those flop-eared rats is attitude!''
-:'''Citizen (2):''' ''Hey, I'm not the one who lost at [[Polymock]]. Get over it!''
-
-:'''Citizen (1):''' ''Did you see what happened in the market?''
-:'''Citizen (2):''' ''He must be rich, and she must be desperate.''
-:'''Citizen (1):''' ''It's disgraceful. She should know her place.''
-:'''Citizen (2):''' ''Kids today...''
-
-:'''Citizen:''' ''Good day, Officer.''
-:'''Seraph Soldier:''' ''Seen anyone suspicious?''
-:'''Citizen:''' ''No one lately.''
-:'''Seraph Soldier:''' ''Good. You know where to find us if you see anything unusual.''
-
-:'''Citizen:''' ''Officer! Could I talk to you for a moment?''
-:'''Seraph Soldier:''' ''Is there a problem?''
-:'''Citizen:''' ''Come inside. I'll tell you all about it.''
-
-:'''Citizen:''' ''Ran into an asura. Called me a bookah. I think she was hitting on me.''
-:'''Seraph Soldier:''' ''It's nothing. Don't worry about it.''
-
-:'''Seraph Soldier:''' ''If you've got a [[shield]], don't be afraid to drive it into a creature's skull.''
-
-:'''Citizen:''' ''Relax. You'll live longer.''
-
-:'''Scholar (1):''' ''Find anything good?''
-:'''Scholar (2):''' ''Yes! I found some rather remarkable scrolls about a group of [[Hero (NPC)|adventurers]] some centuries ago.''
-:'''Scholar (2):''' ''They escaped Ascalon right before [[the Searing]], crossed the Kingdom of [[Kryta]], joined and betrayed the [[White Mantle]], and even faced a [[Vizier Khilbron|lich lord]]!''
-:'''Scholar (1):''' ''Wow. Maybe someday, we'll meet heroes like that.''
-
-:'''Seraph Soldier (1):''' ''Take my advice: never poke at a hungry [[bear]].''
-:'''Seraph Soldier (2):''' ''Well, at least I'm ready for a fight.''
-
-:'''Valdi the Lush:''' ''Show me a woman who can wrestle a bear, and I'll show you a keeper!''
-:'''Seraph Soldier:''' ''(giggle)''
-
-== Objects ==
-* [[Apple Cart]]
-* [[Book Cart]]
-* [[Statue (Rurikton)|Statue]]
-* [[Posted Message]]
-
-{{Divinity's Reach nav}}
-
-[[de:Rurikstadt]]
-[[es:Rurikton]]
-[[fr:Rurikton]]</text>
-      <sha1>ehb3422z6s0qn4g23gulo1flhlyvbaf</sha1>
-    </revision>
-  </page>
-<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
-    <title>Rurikton Waypoint</title>
-    <ns>0</ns>
-    <id>202283</id>
-    <redirect title="District Promenade" />
-    <revision>
-      <id>1408249</id>
-      <timestamp>2017-04-11T20:55:36Z</timestamp>
-      <contributor>
-        <username>Chieftain Alex</username>
-        <id>28878</id>
-      </contributor>
-      <comment>Redirected page to [[District Promenade]]</comment>
-      <origin>1408249</origin>
-      <model>wikitext</model>
-      <format>text/x-wiki</format>
-      <text bytes="55" sha1="aeactvq97hj1xalilmdndbu7bw461ra" xml:space="preserve">#REDIRECT [[District Promenade]]
-
-{{redirect|waypoint}}</text>
-      <sha1>aeactvq97hj1xalilmdndbu7bw461ra</sha1>
-    </revision>
-  </page>
-<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
-    <title>Rurtha Diremane</title>
-    <ns>0</ns>
-    <id>108575</id>
-    <revision>
-      <id>2989721</id>
-      <parentid>2190354</parentid>
-      <timestamp>2025-06-25T15:30:27Z</timestamp>
-      <contributor>
-        <username>Tery3065</username>
-        <id>270948</id>
-      </contributor>
-      <origin>2989721</origin>
-      <model>wikitext</model>
-      <format>text/x-wiki</format>
-      <text bytes="926" sha1="k8uhhe59a882w34yv4cn0kt0tg6oari" xml:space="preserve">{{stub|NPC|please list a reason for this stub tag, otherwise please remove stub tag}}
-{{NPC infobox
-| location = AWOL; Thicker Than Water; Dishonorable Discharge; Hero's Canton
-| race = Charr
-| organization = Ash Legion
-| gallery1 = Ash Legion female 2.jpg
-| gallery1-text = Appearance during [[Dishonorable Discharge]].
-}}
-[[Rurtha Diremane]] is a member of the [[Mane Warband]] involved in tracking down [[Vallus Smokemane]]. She can be found in Hero's Canton after completion of [[Thicker Than Water]].
-
-== Location ==
-;[[Ascalon]]
-* [[Black Citadel]]
-** [[Hero's Canton]] &lt;small&gt;(Only after completing [[Dishonorable Discharge]])&lt;/small&gt;
-
-== Story involvement ==
-=== [[Personal story]] ===
-* Chapter 2: Sins of the Father
-** [[AWOL]]
-** [[Thicker Than Water]]
-** [[Dishonorable Discharge]]
-
-[[Category:Story characters]]
-[[Category:Unlockable home instance characters]]
-[[de:Rurtha Düstermähne]]
-[[fr:Rurtha Tristecrin]]</text>
-      <sha1>k8uhhe59a882w34yv4cn0kt0tg6oari</sha1>
-    </revision>
-  </page>
-<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
-    <title>Rusa Jonidottir</title>
-    <ns>0</ns>
-    <id>80740</id>
-    <revision>
-      <id>2995241</id>
-      <parentid>2612095</parentid>
-      <timestamp>2025-07-04T01:39:25Z</timestamp>
-      <contributor>
-        <username>Snitching</username>
-        <id>203864</id>
-      </contributor>
-      <minor />
-      <origin>2995241</origin>
-      <model>wikitext</model>
-      <format>text/x-wiki</format>
-      <text bytes="1657" sha1="fgfs94x0nlirhrpwhz3127zed0rrxay" xml:space="preserve">{{NPC infobox
-| image = Kristyna Sohnstag.jpg
-| location = Shelter Rock
-| coordinates = [54377, 29895]
-| race = Norn
-| service = Speed boons
-}}
-[[Rusa Jonidottir]] is a [[speed boons]] NPC. She can be found in front of [[Master Blackforge's Steading]] in Hoelbrak.
-
-== Location ==
-;[[Shiverpeak Mountains]]
-* [[Hoelbrak]]
-** [[Shelter Rock]]
-
-== Dialogue ==
-:[[Bear (Spirit of the Wild)|Bear]] guide and protect you, friend. Would you like her blessing?
-:&lt;small&gt;'''If not under the effects of [[Bear's Rush]]:'''&lt;/small&gt;
-:{{dialogue icon|more}} ''What can I do to earn Bear's blessing?''
-::Bear gives her blessing to any who ask.
-::{{dialogue icon|charm}} ''Bear's strength is unmatched. I thank her for this boon.''
-:::Bear is a symbol of strength, true. But she can also strike with surprising speed. Receive her blessing of swiftness.
-:::{{dialogue icon|end}} ''Thank you.''
-::{{dialogue icon|dignity}} ''Bear inspires me with her courage and power.''
-:::The blessing Bear will bestow upon you this day is one of swiftness— just as she strikes at her enemies with furious energy.
-:::{{dialogue icon|end}} ''Thank you.''
-::{{dialogue icon|ferocity}} ''I'll show Bear my own strength, and honor her name with it.''
-:::While Bear appreciates your passion, it is swiftness that Bear offers you, that you may meet your enemies that much quicker.
-:::{{dialogue icon|end}} ''I'm ready.''
-::{{dialogue icon|end}} ''Good-bye.''
-:&lt;small&gt;'''If already under the effects of [[Bear's Rush]]:'''&lt;/small&gt;
-:{{dialogue icon|more}} ''I've already received Bear's blessing.''
-::Go and honor her gift to you.
-::{{dialogue icon|end}} ''I will try.''
-
-[[de:Rusa Jonidottir]]</text>
-      <sha1>fgfs94x0nlirhrpwhz3127zed0rrxay</sha1>
-    </revision>
-  </page>
-<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
-    <title>Rush</title>
-    <ns>0</ns>
-    <id>6335</id>
-    <revision>
-      <id>2811886</id>
-      <parentid>2623658</parentid>
-      <timestamp>2024-03-29T19:50:09Z</timestamp>
-      <contributor>
-        <username>Chieftain Alex</username>
-        <id>28878</id>
-      </contributor>
-      <minor />
-      <origin>2811886</origin>
-      <model>wikitext</model>
-      <format>text/x-wiki</format>
-      <text bytes="2363" sha1="puwxs790vdfoztt18x2a9oxhefw29w5" xml:space="preserve">{{otheruses|the warrior skill|other skills named "Rush"|Rush (disambiguation)}}
-{{Skill infobox
-| split = pve, wvw pvp
-| description = Charge and strike your foe.
-| facts = {{skill fact|damage|weapon=greatsword|coefficient=2.5|game mode = pve}}{{skill fact|damage|weapon=greatsword|coefficient=1.36|game mode = pvp wvw}}{{skill fact|range|1200}}
-| activation = 2
-| recharge = 20
-| profession = warrior
-| slot = weapon
-| twohand = greatsword
-| weapon slot = 5
-| movement type = Leap
-| id = 14446
-}}
-
-== Related [[trait]]s ==
-{{related traits}}
-
-== Notes ==
-{{anomaly|The skill description in-game lacks an Activation time.}}
-* Affects only one target.
-* Using this skill on large creatures (such as giants or oakhearts) or inanimate objects (such as dredge towers or siege equipment) will sometimes cause the player to run in place just before reaching attack range.
-
-== Version history ==
-{{Version history table header|warrior}}
-{{Version history table row|2024-03-19|Warrior}}
-* This skill now tracks moving targets better.
-{{Version history table row|2022-08-23|Warrior}}
-* (PvE only) Damage multiplier increased from 1.7 to 2.5.
-{{Version history table row|2020-02-25|Warrior}}
-* (Competitive split) Reduced power coefficient from 1.7 to 1.36.
-{{Version history table row|2016-07-26|Warrior}}
-* Increased the speed of the swinging animation, and increased the radius of the strike in order to have the skill land more consistently.
-{{Version history table row|2015-06-23|Warrior 2}}
-* Movement-speed adjustments no longer affect the intended travel distance.
-{{Version history table row|2015-01-27|Warrior}}
-* Adjusted the animation and attack radius of this skill to hit more consistently.
-{{Version history table row|2013-07-23|Warrior}}
-* Cleaned up the animation so that this skill will have a smoother transition when approaching the target.
-{{Version history table row|2013-06-25|Warrior 2}}
-* Reduced the aftercast by .2 seconds.
-* The transition between the run and swing portion has been smoothed out for hitting moving targets.
-{{Version history table row|2012-09-14|Warrior}}
-* Improved the ability to hit fleeing foes.
-{{Version history table row|release|r=y}}
-|}
-
-== Trivia ==
-* {{Guild Wars skill}}
-* The fifth greatsword skill slot was originally occupied by {{Skill icon|Uppercut (unimplemented)}}.
-
-[[de:Ansturm]]
-[[es:Acelerar]]
-[[fr:Ruée]]</text>
-      <sha1>puwxs790vdfoztt18x2a9oxhefw29w5</sha1>
-    </revision>
-  </page>
-<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
-    <title>Rush/history</title>
-    <ns>0</ns>
-    <id>192145</id>
-    <revision>
-      <id>2811887</id>
-      <parentid>2586306</parentid>
-      <timestamp>2024-03-29T19:50:27Z</timestamp>
-      <contributor>
-        <username>Chieftain Alex</username>
-        <id>28878</id>
-      </contributor>
-      <minor />
-      <origin>2811887</origin>
-      <model>wikitext</model>
-      <format>text/x-wiki</format>
-      <text bytes="2535" sha1="jyb9b4h02enqy0zn7ofzcwa5cmmsa7b" xml:space="preserve">{{Version history}}
-
-{{Skill infobox/historical
-| date = 2024-03-19
-| changes = 
-* This skill now tracks moving targets better.
-| minor = y
-}}
-
-{{Skill infobox/historical
-| date = 2022-08-23
-| changes =
-* [[Rush]]: (PvE only) Damage multiplier increased from 1.7 to 2.5.
-| split = pve, wvw pvp
-| description = Charge and strike your foe.
-| facts = {{skill fact|damage|weapon=greatsword|coefficient=2.5|game mode = pve}}{{skill fact|damage|weapon=greatsword|coefficient=1.36|game mode = pvp wvw}}{{skill fact|range|1200}}
-| activation = 2
-| recharge = 20
-| profession = warrior
-| slot = weapon
-| twohand = greatsword
-| weapon slot = 5
-| movement type = Leap
-| id = 14446
-}}
-
-{{Skill infobox/historical
-| date = 2020-02-25
-| changes =
-* [[Rush]]: (Competitive split) Reduced power coefficient from 1.7 to 1.36.
-| split = pve, wvw pvp
-| description = Charge and strike your foe.
-| facts = {{skill fact|damage|weapon=greatsword|coefficient=1.7|game mode = pve}}{{skill fact|damage|weapon=greatsword|coefficient=1.36|game mode = pvp wvw}}{{skill fact|range|1200}}
-| activation = 2
-| recharge = 20
-| profession = warrior
-| slot = weapon
-| twohand = greatsword
-| weapon slot = 5
-| id = 14446
-}}
-
-{{Skill infobox/historical
-| date = 2016-07-26
-| changes =
-* [[Rush]]: Increased the speed of the swinging animation, and increased the radius of the strike in order to have the skill land more consistently.
-| minor = y
-}}
-
-{{Skill infobox/historical
-| date = 2015-06-23
-| changes =
-* [[Rush]]: Movement-speed adjustments no longer affect the intended travel distance.
-| minor = y
-}}
-
-{{Skill infobox/historical
-| date = 2015-01-27
-| changes =
-* [[Rush]]: Adjusted the animation and attack radius of this skill to hit more consistently.
-| minor = y
-}}
-
-{{Skill infobox/historical
-| date = 2013-07-23
-| changes =
-* [[Rush]]: Cleaned up the animation so that this skill will have a smoother transition when approaching the target.
-| minor = y
-}}
-
-{{Skill infobox/historical
-| date = 2013-06-25
-| changes =
-* [[Rush]]: Reduced the aftercast by .2 seconds.
-** The transition between the run and swing portion has been smoothed out for hitting moving targets.
-| minor = y
-}}
-
-{{Skill infobox/historical
-| date = 2012-09-14
-| changes =
-* [[Rush]]: Improved the ability to hit fleeing foes.
-| minor = y
-}}
-
-{{Skill infobox/historical
-| description = Charge and strike your foe.
-| facts = {{skill fact|damage|686|coefficient=1.7}}{{skill fact|range|1200}}
-| recharge = 20
-| profession = warrior
-| slot = weapon
-| twohand = greatsword
-| weapon slot = 5
-}}</text>
-      <sha1>jyb9b4h02enqy0zn7ofzcwa5cmmsa7b</sha1>
-    </revision>
-  </page>
-<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
-    <title>Rush (Crystal Shard)</title>
-    <ns>0</ns>
-    <id>125886</id>
-    <revision>
-      <id>2361729</id>
-      <parentid>2272756</parentid>
-      <timestamp>2021-10-31T10:16:20Z</timestamp>
-      <contributor>
-        <username>AWB Alex</username>
-        <id>102516</id>
-      </contributor>
-      <minor />
-      <comment>/* top */+Renaming parameters (removing -).</comment>
-      <origin>2361729</origin>
-      <model>wikitext</model>
-      <format>text/x-wiki</format>
-      <text bytes="464" sha1="hdzegifqh5erlxor3cp2fmecwl7bda4" xml:space="preserve">{{otheruses|the Crystal Shard bundle skill|other skills named "Rush"|Rush (disambiguation)}}
-{{Skill infobox
-| name = Rush
-| icon = Gale (Sanctum Sprint).png
-| description = You move faster!
-| slot = bundle
-| facts = {{skill fact|range|1000}}
-| missing facts = {{skill fact|swiftness|10}}
-| bundle = Crystal Shard (Dry Top)
-| recharge = 15
-| weapon slot = 1
-| id = 24690
-}}
-
-== Notes ==
-* Applies 10 seconds of [[swiftness]].
-
-[[es:Acelerar (esquirla de cristal)]]</text>
-      <sha1>hdzegifqh5erlxor3cp2fmecwl7bda4</sha1>
-    </revision>
-  </page>
-<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
-    <title>Rush (Dolphin form)</title>
-    <ns>0</ns>
-    <id>113013</id>
-    <revision>
-      <id>2361730</id>
-      <parentid>2355122</parentid>
-      <timestamp>2021-10-31T10:16:26Z</timestamp>
-      <contributor>
-        <username>AWB Alex</username>
-        <id>102516</id>
-      </contributor>
-      <minor />
-      <comment>/* top */+Renaming parameters (removing -).</comment>
-      <origin>2361730</origin>
-      <model>wikitext</model>
-      <format>text/x-wiki</format>
-      <text bytes="553" sha1="dx3d2iq1rdpvfwu3mheedc0y44krvgu" xml:space="preserve">{{otheruses|the Dolphin form skill|other skills named "Rush"|Rush (disambiguation)}}
-{{Skill infobox
-| name = Rush
-| description = Gain a burst of speed. Passing through revealed water spirals reduces the recharge of this skill.
-| facts = {{skill fact|effect|Swiftness (effect)|2.5|desc=+33% [[Movement Speed]].}}
-| profession = common
-| weapon slot = 2
-| activation = 1.75
-| recharge = 30
-| id = 16291
-}}
-
-== Notes ==
-* Available when in [[Dolphin Form]] in [[Aquatic Ruins Fractal]].
-
-[[de:Ansturm (Delphingestalt)]]
-[[es:Acelerar (forma de delfín)]]</text>
-      <sha1>dx3d2iq1rdpvfwu3mheedc0y44krvgu</sha1>
-    </revision>
-  </page>
-<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
-    <title>Rush (Ember Apple)</title>
-    <ns>0</ns>
-    <id>192448</id>
-    <revision>
-      <id>2361731</id>
-      <parentid>2127709</parentid>
-      <timestamp>2021-10-31T10:16:36Z</timestamp>
-      <contributor>
-        <username>AWB Alex</username>
-        <id>102516</id>
-      </contributor>
-      <minor />
-      <comment>/* top */+Renaming parameters (removing -).</comment>
-      <origin>2361731</origin>
-      <model>wikitext</model>
-      <format>text/x-wiki</format>
-      <text bytes="438" sha1="dc676ntr9zip9j4cnt5ub6vpgvbacvq" xml:space="preserve">{{otheruses|the underwater bundle skill|other skills named "Rush"|Rush (disambiguation)}}
-{{Skill infobox
-| name = Rush
-| icon = Hare's Speed.png
-| description = You move faster!
-| slot = bundle
-| facts = {{skill fact|swiftness|10}}
-| bundle = Ember Apple
-| uw replaces = Rush (rabbit icon)
-| recharge = 15
-| weapon slot = 1
-| id = 36254
-}}
-
-== Notes ==
-* The terrestrial version of this skill is identical, but does not share a cooldown.</text>
-      <sha1>dc676ntr9zip9j4cnt5ub6vpgvbacvq</sha1>
-    </revision>
-  </page>
-<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
-    <title>Rush (Sap Blob)</title>
-    <ns>0</ns>
-    <id>343216</id>
-    <revision>
-      <id>3074585</id>
-      <parentid>2971893</parentid>
-      <timestamp>2025-12-10T07:44:14Z</timestamp>
-      <contributor>
-        <username>Sunlion</username>
-        <id>225997</id>
-      </contributor>
-      <origin>3074585</origin>
-      <model>wikitext</model>
-      <format>text/x-wiki</format>
-      <text bytes="442" sha1="jti3klxqm35don6guhthx0ilbos7bdz" xml:space="preserve">{{otheruses|the [[Sap Blob]] [[bundle]] skill|other skills named "Rush"|Rush (disambiguation)}}
-{{Skill infobox
-| name = Rush
-| description = Applies a short burst of [[swiftness]]. Helps you dodge worm spittle.
-| facts = 
-{{skill fact|swiftness|2}}
-{{skill fact|effect|Rush (Sap Blob effect)|2}}
-| recharge = 5
-| slot = bundle
-| bundle = Sap Blob
-| weapon slot = 1
-| id = 63892
-| requires = eod, voe
-}}
-
-[[es:Acelerar (Arbusto de aléolas)]]</text>
-      <sha1>jti3klxqm35don6guhthx0ilbos7bdz</sha1>
-    </revision>
-  </page>
-<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
-    <title>Rush (Sap Blob effect)</title>
-    <ns>0</ns>
-    <id>347902</id>
-    <revision>
-      <id>3074586</id>
-      <parentid>2971898</parentid>
-      <timestamp>2025-12-10T07:44:34Z</timestamp>
-      <contributor>
-        <username>Sunlion</username>
-        <id>225997</id>
-      </contributor>
-      <origin>3074586</origin>
-      <model>wikitext</model>
-      <format>text/x-wiki</format>
-      <text bytes="288" sha1="d97fxk4wnwq02349ym37yy0togyo0h3" xml:space="preserve">{{effect infobox
-| name = Rush
-| icon = Rush (Sap Blob).png
-| description = Applies a short burst of [[swiftness]]. Helps you dodge worm spittle.
-| id = 67210
-| requires = eod, voe
-}}
-
-== Related [[skill]]s ==
-* {{skill icon|Rush (Sap Blob)}}
-
-[[es:Acelerar (Arbusto de aléolas efecto)]]</text>
-      <sha1>d97fxk4wnwq02349ym37yy0togyo0h3</sha1>
-    </revision>
-  </page>
-<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
-    <title>Rush (Snowball Mayhem)</title>
-    <ns>0</ns>
-    <id>74388</id>
-    <revision>
-      <id>2389511</id>
-      <parentid>2127710</parentid>
-      <timestamp>2022-02-07T16:20:55Z</timestamp>
-      <contributor>
-        <username>Ruby12</username>
-        <id>239584</id>
-      </contributor>
-      <minor />
-      <origin>2389511</origin>
-      <model>wikitext</model>
-      <format>text/x-wiki</format>
-      <text bytes="451" sha1="5iouigef1lcf14ib3bou6az5edphw70" xml:space="preserve">{{otheruses|the Snowball Mayhem skill|other skills named "Rush"|Rush (disambiguation)}}
-{{Skill infobox
-| name = Rush
-| description = [[Knockdown|Knock your foe down]] with a headlong charge. [[Reflect]] snowballs while running.
-| facts = {{skill fact|range|900}}
-| activation = 2
-| recharge = 45
-| activity = Snowball Mayhem
-| profession = warrior
-| id = 16750
-}}
-
-[[de:Ansturm (Schneeballkrawall)]]
-[[es:Acelerar (Batalla campal de bolas de nieve)]]</text>
-      <sha1>5iouigef1lcf14ib3bou6az5edphw70</sha1>
-    </revision>
-  </page>
-<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
-    <title>Rush (boot icon)</title>
-    <ns>0</ns>
-    <id>172237</id>
-    <revision>
-      <id>3022212</id>
-      <parentid>3005231</parentid>
-      <timestamp>2025-08-28T07:02:39Z</timestamp>
-      <contributor>
-        <username>Eleria</username>
-        <id>206264</id>
-      </contributor>
-      <origin>3022212</origin>
-      <model>wikitext</model>
-      <format>text/x-wiki</format>
-      <text bytes="774" sha1="jsxx430d6m88gu266xugdufh3tazrb3" xml:space="preserve">{{otheruses|the bundle skill denoted by a boot icon|other skills named "Rush"|Rush (disambiguation)}}
-{{skill infobox
-| name = Rush
-| description = You move faster!
-| facts = {{skill fact|swiftness|10}}
-| recharge = 15
-| slot = bundle
-| weapon slot = 1
-| bundle = Donated Food, Dropped Items, Explosives (Drizzlewood Coast), Firewood, Fresh Food, Fresh Water (object), Golem Parts (Draconis Mons), Medical Supplies, Mummy Wrappings, Mushroom Chunk, Rations (Lake Doric), Shipwrecked Rations, Stunned Sand Shark Pup, Supply Sack (bundle), Wildflowers, Archaic Golem Part, Food (Confiscated), Blood Collectors, Pretty Shell, Tasty Fish Scraps, Jade (object), Mists Ward Supply Crate, Dirty Chamber Pot
-| id = 27331
-}}
-
-[[de:Ansturm (Rationen)]]
-[[es:Acelerar (icono de bota)]]</text>
-      <sha1>jsxx430d6m88gu266xugdufh3tazrb3</sha1>
-    </revision>
-  </page>
-<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
-    <title>Rush (disambiguation)</title>
-    <ns>0</ns>
-    <id>213222</id>
-    <revision>
-      <id>3169169</id>
-      <parentid>2971900</parentid>
-      <timestamp>2026-07-16T00:14:48Z</timestamp>
-      <contributor>
-        <username>Hazasoul</username>
-        <id>133824</id>
-      </contributor>
-      <minor />
-      <comment>update availability</comment>
-      <origin>3169169</origin>
-      <model>wikitext</model>
-      <format>text/x-wiki</format>
-      <text bytes="1283" sha1="t810nkavlqyost69az09us7b2hcji9q" xml:space="preserve">{{disambig}}
-=== Skills ===
-[[Rush (disambiguation)|Rush]] is the name of several [[skill]]s that provide a speed boost or otherwise grant quicker movement:
-* {{skill icon|Rush}} — A [[warrior]] [[greatsword]] skill.
-* {{skill icon|Rush (boot icon)}} — A skill found on many [[bundle]]s.
-* {{skill icon|Rush (rabbit icon)}} — A skill found on many bundles.
-* {{skill icon|Rush (Ember Apple)}} — The underwater variant of the above skill.
-* {{skill icon|Rush (Crystal Shard)}} — A skill granted by the [[Crystal Shard (Dry Top)|Crystal Shard]] bundle.
-* {{skill icon|Rush (Dolphin form)}} — Granted by [[Dolphin Form]] in the [[Aquatic Ruins Fractal]].
-* {{skill icon|Rush (Sap Blob effect)}} — Granted by [[Sap Blob]]s during [[Collect sap for the restoration ritual before the plants stop producing it|a related event]].
-* {{skill icon|Rush (Snowball Mayhem)}} — Granted to warriors during [[Snowball Mayhem]].
-
-=== Special events ===
-[[Rush (disambiguation)|Rush]] can refer several [[special event]]s that are occasionally held by [[ArenaNet]].
-
-* [[PvE]] Rushes
-** [[World Boss Rush]]
-** [[Fractal Rush]]
-** [[Dungeon Rush]]
-* [[Player vs. Player Rush]]
-* [[World vs. World Rush]]
-* Historical
-** [[Meta-Event Rush]]
-** [[Champion Rush]]
-
-[[fr:Ruée (Homonymie)]]</text>
-      <sha1>t810nkavlqyost69az09us7b2hcji9q</sha1>
-    </revision>
-  </page>
-<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
-    <title>Rush (rabbit icon)</title>
-    <ns>0</ns>
-    <id>157814</id>
-    <revision>
-      <id>3209495</id>
-      <parentid>3168448</parentid>
-      <timestamp>2026-10-07T10:24:34Z</timestamp>
-      <contributor>
-        <username>Lineste</username>
-        <id>256233</id>
-      </contributor>
-      <origin>3209495</origin>
-      <model>wikitext</model>
-      <format>text/x-wiki</format>
-      <text bytes="1310" sha1="4xd4n6u9wy2irs1wwlpr464zhul4bop" xml:space="preserve">{{otheruses|the bundle skill denoted by a rabbit icon|other skills named "Rush"|Rush (disambiguation)}}
-{{Skill infobox
-| name = Rush
-| icon = Hare's Speed.png
-| description = You move faster!
-| slot = bundle
-| facts = {{skill fact|swiftness|10}}
-| bundle = Amped Destroyer Core, Average Smelling Pot of Ogre Stew, Bangar's Private Reserve Rum, Beehive (Sandswept Isles bundle), Bloodstone Fragment (object), Cage Key, Cannon Scrap, Celestial Tribute (Boar's Challenge), Celestial Tribute (Rat's Challenge), Corsair Supplies, Crystal Shard (bundle), Eagle Egg, Ember Apple, Fresh Food, Fresh Water (Ember Bay), Honey Ale, Inquest Keypad, Inquest Spanner, Key (Can't Trust a Pirate), Ley Energy, Outstanding Pot of Ogre Stew, Pile of Wood, Pact Supplies (bundle), Patented Pheromone Recycler 2.0, Reclaimed Essence, Rolling Devil Fertilizer, Scrap of Cloth, Sentinel Weapons, Shipwrecked Goods, Super-Fresh Cat Snacks, Unstable Bloodstone Fragment, Warclaw Scat, Wavehawk Treats, Wyvern Egg (Verdant Brink), Zephyrite Supplies (Thunderhead Peaks)
-| activity = Gnashbash Heist
-| recharge = 15
-| uw replaced by = Rush (Ember Apple)
-| weapon slot = 1
-| id = 6334, 51217, 73291 &lt;!-- Bloodstone Fragment --&gt;
-}}
-
-[[de:Ansturm (Schildwächter-Waffen)]]
-[[es:Acelerar (icono de conejo)]]
-[[fr:Ruée (Plumes de harpie)]]</text>
-      <sha1>4xd4n6u9wy2irs1wwlpr464zhul4bop</sha1>
-    </revision>
-  </page>
-<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
-    <title>Rush Rewards</title>
-    <ns>0</ns>
-    <id>297357</id>
-    <redirect title="Mist Stranger" />
-    <revision>
-      <id>2294895</id>
-      <timestamp>2021-07-13T22:09:45Z</timestamp>
-      <contributor>
-        <username>Sime</username>
-        <id>143985</id>
-      </contributor>
-      <comment>Redirected page to [[Mist Stranger]]</comment>
-      <origin>2294895</origin>
-      <model>wikitext</model>
-      <format>text/x-wiki</format>
-      <text bytes="27" sha1="rgmuyhp5cqabauyq9uuv7i29e8u4b5n" xml:space="preserve">#REDIRECT [[Mist Stranger]]</text>
-      <sha1>rgmuyhp5cqabauyq9uuv7i29e8u4b5n</sha1>
-    </revision>
-  </page>
-<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
-    <title>Rushed Note</title>
-    <ns>0</ns>
-    <id>285767</id>
-    <revision>
-      <id>3072669</id>
-      <parentid>2799199</parentid>
-      <timestamp>2025-12-04T14:53:29Z</timestamp>
-      <contributor>
-        <username>Tamie</username>
-        <id>263596</id>
-      </contributor>
-      <minor />
-      <origin>3072669</origin>
-      <model>wikitext</model>
-      <format>text/x-wiki</format>
-      <text bytes="312" sha1="7sejhduyl0ccow7yl0gukvfal8hlrbk" xml:space="preserve">{{Item infobox
-| type = Trophy
-| rarity = Basic
-| collection = Another Side, Another Story
-| bound = account
-| id = 94052
-}}
-
-== Acquisition ==
-* Interacting with [[30 Nongkam 1637 CC]] in the [[Sunqua Peak Fractal]].
-
-{{Collection nav}}
-[[de:Rasche Notiz]]
-[[es:Nota apresurada]]
-[[fr:Note écrite à la hâte]]</text>
-      <sha1>7sejhduyl0ccow7yl0gukvfal8hlrbk</sha1>
-    </revision>
-  </page>
-<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
-    <title>Rushes</title>
-    <ns>0</ns>
-    <id>373733</id>
-    <redirect title="Rush (disambiguation)" />
-    <revision>
-      <id>2791000</id>
-      <timestamp>2024-01-23T23:50:43Z</timestamp>
-      <contributor>
-        <username>Targal</username>
-        <id>161134</id>
-      </contributor>
-      <comment>'Rush' is likely for the warrior skill, but this 'Rushes' will likely refer to special events. It's QoL stuff</comment>
-      <origin>2791000</origin>
-      <model>wikitext</model>
-      <format>text/x-wiki</format>
-      <text bytes="35" sha1="h05r3uev18inyacg84weyhqzcbkjw72" xml:space="preserve">#redirect [[Rush (disambiguation)]]</text>
-      <sha1>h05r3uev18inyacg84weyhqzcbkjw72</sha1>
-    </revision>
-  </page>
-<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
-    <title>Rushing Justice</title>
-    <ns>0</ns>
-    <id>298269</id>
-    <revision>
-      <id>3128718</id>
-      <parentid>2969675</parentid>
-      <timestamp>2026-04-15T18:24:57Z</timestamp>
-      <contributor>
-        <username>Chieftain Alex</username>
-        <id>28878</id>
-      </contributor>
-      <minor />
-      <origin>3128718</origin>
-      <model>wikitext</model>
-      <format>text/x-wiki</format>
-      <text bytes="3110" sha1="rc7kn81xte2iky7h6eaxd3ftsktxwo4" xml:space="preserve">{{Otheruses|the skill used by the [[Willbender]] elite specialization|the skill used by [[The Enforcer]] in the [[Strike Mission: Kaineng Overlook|Kaineng Overlook]] strike mission|Rushing Justice (The Enforcer)}}
-{{Skill infobox
-| split = pve, wvw, pvp
-| description = {{skill type|Virtue}} Rush toward your target and gain [[Justice (willbender effect)|Justice]] delivering a strike and emanating [[Willbender Flames (Rushing Justice)|Willbender Flames]].
-| facts = 
-{{skill fact|damage|alt=Impact Damage|weapon=unequipped|coefficient=1.5|game mode=pve}}{{skill fact|damage|alt=Impact Damage|weapon=unequipped|coefficient=1.2|game mode=wvw pvp}}
-{{skill fact|effect|Justice (willbender effect)|8|desc=Consecutive attacks cause burning.|game mode=pve}}{{skill fact|effect|Justice (willbender effect)|6|desc=Consecutive attacks cause burning.|game mode=wvw pvp}}
-{{skill fact|burning|4|alt=Initial Burning}}
-{{skill fact|burning|2|game mode=pve}}{{skill fact|burning|1.5|game mode=wvw pvp}}
-{{skill fact|Number of Attacks to Trigger|5}}
-{{skill fact|range|800}}
-| movement type = Leap
-| profession = Guardian
-| specialization = Willbender
-| slot = mechanic
-| type = Virtue
-| mechanic slot = 1
-| activation = 0.5
-| recharge = 12
-| recharge wvw = 22
-| recharge pvp = 18
-| damage type = Fire
-| id = 62668
-| requires = eod
-}}
-
-== Related [[trait]]s ==
-{{related traits}}
-
-== Notes ==
-* Your character will occasionally shout out one of the following lines upon using this skill:
-** ''Face the consequences!''
-** ''Take the initiative!''
-** ''Bring 'em to justice!''
-
-== Version history ==
-{{Version history table header|guardian}}
-{{Version history table row|2026-04-14|Willbender_2}}
-* Reduced the burning duration from the Justice effect from 2 seconds to 1.5 seconds in PvE only.
-{{Version history table row|2025-02-11|Guardian}}
-* Increased the cooldown from 18 seconds to 22 seconds and reduced the power coefficient from 1.5 to 1.2 in WvW only.
-{{Version history table row|2024-06-25|Willbender}}
-* Increased the Justice effect duration from 6 seconds to 8 seconds in PvE only.
-{{Version history table row|2023-02-14|Guardian}}
-* Willbender virtues no longer remove the active effects of other willbender virtues.
-{{Version history table row|2022-07-19|Guardian}}
-* Reduced power coefficient from 1.5 to 1.2 in PvP only.
-{{Version history table row|2022-02-28|New Elite Specialization: Willbender|r=y}}
-{{Version history table row|2021-11-30/End of Dragons Elite Specialization Updates|Guardian - Willbender|r=beta}}
-* Improved the transition between running and punching. Increased velocities toward the end of the run and initial punch. Total range of the skill has been increased, taking the ability from maximum 450 to maximum 800 distance. Strike damage has been improved from 0.6 to 1.5. Reduced cast time of the attack by about 1/4 second.
-{{Version history table row|2021-08-17|Guardian—Willbender|r=beta}}
-|}
-
-== See also ==
-* {{guardian}} {{skill icon|Virtue of Justice}}
-* {{dragonhunter}} {{skill icon|Spear of Justice}}
-* {{firebrand}} {{skill icon|Tome of Justice}}
-
-[[es:Justicia impetuosa]]</text>
-      <sha1>rc7kn81xte2iky7h6eaxd3ftsktxwo4</sha1>
-    </revision>
-  </page>
-<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
-    <title>Rushing Justice/history</title>
-    <ns>0</ns>
-    <id>301785</id>
-    <revision>
-      <id>3128838</id>
-      <parentid>2932215</parentid>
-      <timestamp>2026-04-15T18:42:38Z</timestamp>
-      <contributor>
-        <username>Chieftain Alex</username>
-        <id>28878</id>
-      </contributor>
-      <minor />
-      <comment>Added changes from [[Game updates/2026-04-14]] (via AJAX script).</comment>
-      <origin>3128838</origin>
-      <model>wikitext</model>
-      <format>text/x-wiki</format>
-      <text bytes="9532" sha1="869elg05y2ar6sgs8f3d3b0zxau3b8o" xml:space="preserve">{{Version history}}
-
-{{Skill infobox/historical
-| date = 2026-04-14
-| changes =
-* [[Rushing Justice]]: Reduced the burning duration from the Justice effect from 2 seconds to 1.5 seconds in PvE only.
-| split = pve, wvw, pvp
-| description = {{skill type|Virtue}} Rush toward your target and gain [[Justice (willbender effect)|Justice]] delivering a strike and emanating [[Willbender Flames (Rushing Justice)|Willbender Flames]].
-| facts = 
-{{skill fact|damage|alt=Impact Damage|weapon=unequipped|coefficient=1.5|game mode=pve}}{{skill fact|damage|alt=Impact Damage|weapon=unequipped|coefficient=1.2|game mode=wvw pvp}}
-{{skill fact|effect|Justice (willbender effect)|8|desc=Consecutive attacks cause burning.|game mode=pve}}{{skill fact|effect|Justice (willbender effect)|6|desc=Consecutive attacks cause burning.|game mode=wvw pvp}}
-{{skill fact|burning|4|alt=Initial Burning}}
-{{skill fact|burning|2|game mode=pve}}{{skill fact|burning|1.5|game mode=wvw pvp}}
-{{skill fact|Number of Attacks to Trigger|5}}
-{{skill fact|range|800}}
-| movement type = Leap
-| profession = Guardian
-| specialization = Willbender
-| slot = mechanic
-| type = Virtue
-| mechanic slot = 1
-| activation = 0.5
-| recharge = 12
-| recharge wvw = 22
-| recharge pvp = 18
-| damage type = Fire
-| id = 62668
-| requires = eod
-}}
-
-{{Skill infobox/historical
-| date = 2025-02-11
-| changes =
-* [[Rushing Justice]]: Increased the cooldown from 18 seconds to 22 seconds and reduced the power coefficient from 1.5 to 1.2 in WvW only.
-| split = pve, wvw, pvp
-| description = {{skill type|Virtue}} Rush toward your target and gain [[Justice (willbender effect)|Justice]] delivering a strike and emanating [[Willbender Flames (Rushing Justice)|Willbender Flames]].
-| facts = 
-{{skill fact|damage|alt=Impact Damage|weapon=unequipped|coefficient=1.5|game mode=pve}}{{skill fact|damage|alt=Impact Damage|weapon=unequipped|coefficient=1.2|game mode=wvw}}{{skill fact|damage|alt=Impact Damage|weapon=unequipped|coefficient=1.2|game mode=pvp}}
-{{skill fact|effect|Justice (willbender effect)|8|desc=Consecutive attacks cause burning.|game mode=pve}}{{skill fact|effect|Justice (willbender effect)|6|desc=Consecutive attacks cause burning.|game mode=wvw pvp}}
-{{skill fact|burning|4|alt=Initial Burning}}
-{{skill fact|burning|2|game mode=pve}}{{skill fact|burning|1.5|game mode=wvw pvp}}
-{{skill fact|Number of Attacks to Trigger|5}}
-{{skill fact|range|800}}
-| movement type = Leap
-| profession = Guardian
-| specialization = Willbender
-| slot = mechanic
-| type = Virtue
-| mechanic slot = 1
-| activation = 0.5
-| recharge = 12
-| recharge wvw = 22
-| recharge pvp = 18
-| id = 62668
-| requires = eod
-}}
-
-{{Skill infobox/historical
-| date = 2024-06-25
-| changes = 
-* [[Rushing Justice]]: Increased the Justice effect duration from 6 seconds to 8 seconds in PvE only.
-| split = pve, wvw, pvp
-| description = {{skill type|Virtue}} Rush toward your target and gain [[Justice (willbender effect)|Justice]] delivering a strike and emanating [[Willbender Flames (Rushing Justice)|Willbender Flames]].
-| facts = 
-{{skill fact|damage|alt=Impact Damage|weapon=unequipped|coefficient=1.5|game mode=pve wvw}}{{skill fact|damage|alt=Impact Damage|weapon=unequipped|coefficient=1.2|game mode=pvp}}
-{{skill fact|effect|Justice (willbender effect)|8|desc=Consecutive attacks cause burning.|game mode=pve}}{{skill fact|effect|Justice (willbender effect)|6|desc=Consecutive attacks cause burning.|game mode=wvw pvp}}
-{{skill fact|burning|4|alt=Initial Burning}}
-{{skill fact|burning|2|game mode=pve}}{{skill fact|burning|1.5|game mode=wvw pvp}}
-{{skill fact|Number of Attacks to Trigger|5}}
-{{skill fact|range|800}}
-| movement type = Leap
-| profession = Guardian
-| specialization = Willbender
-| slot = mechanic
-| type = Virtue
-| mechanic slot = 1
-| activation = 0.5
-| recharge = 12
-| recharge wvw = 18
-| recharge pvp = 18
-| id = 62668
-| requires = eod
-}}
-
-{{Skill infobox/historical
-| date = 2023-02-14
-| changes =
-* [[Rushing Justice]]: Willbender virtues no longer remove the active effects of other willbender virtues.
-| split = pve, wvw, pvp
-| description = {{skill type|Virtue}} Rush toward your target and gain [[Justice (willbender effect)|Justice]] delivering a strike and emanating [[Willbender Flames (Rushing Justice)|Willbender Flames]].
-| facts = {{skill fact|damage|alt=Impact Damage|weapon=unequipped|coefficient=1.5|game mode=pve wvw}}{{skill fact|damage|alt=Impact Damage|weapon=unequipped|coefficient=1.2|game mode=pvp}}
-{{skill fact|effect|Justice (willbender effect)|6|desc=Consecutive attacks cause burning.}}
-{{skill fact|burning|4|alt=Initial Burning}}
-{{skill fact|burning|2|game mode=pve}}{{skill fact|burning|1.5|game mode=wvw pvp}}
-{{skill fact|Number of Attacks to Trigger|5}}
-{{skill fact|range|800}}
-| activation = 0.5
-| recharge = 12
-| recharge pvp = 18
-| recharge wvw = 18
-| profession = Guardian
-| specialization = Willbender
-| slot = mechanic
-| type = Virtue
-| movement type = Leap
-| mechanic slot = 1
-| id = 62668
-| requires = eod
-}}
-
-{{Skill infobox/historical
-| date = 2022-07-19
-| changes =
-* [[Rushing Justice]]: Reduced power coefficient from 1.5 to 1.2 in PvP only.
-| split = pve, wvw, pvp
-| description = {{skill type|Virtue}} Rush toward your target and gain [[Justice (willbender effect)|Justice]] delivering a strike and emanating [[Willbender Flames (Rushing Justice)|Willbender Flames]].&lt;br&gt;&lt;br&gt;{{gray|Removes other active [[Virtue]] effects.}}
-| facts = {{skill fact|damage|alt=Impact Damage|weapon=unequipped|coefficient=1.5|game mode=pve wvw}}{{skill fact|damage|alt=Impact Damage|weapon=unequipped|coefficient=1.2|game mode=pvp}}
-{{skill fact|effect|Justice (willbender effect)|6|desc=Consecutive attacks cause burning.}}
-{{skill fact|burning|4|alt=Initial Burning}}
-{{skill fact|burning|2|game mode=pve}}{{skill fact|burning|1.5|game mode=wvw pvp}}
-{{skill fact|Number of Attacks to Trigger|5}}
-{{skill fact|range|800}}
-| movement type = Leap
-| profession = Guardian
-| specialization = Willbender
-| slot = mechanic
-| type = Virtue
-| mechanic slot = 1
-| activation = 0.5
-| recharge = 12
-| recharge wvw = 18
-| recharge pvp = 18
-| id = 62668
-| requires = eod
-}}
-
-{{Skill infobox/historical
-| split = pve, wvw pvp
-| description = {{skill type|Virtue}} Rush toward your target and gain [[Justice (willbender effect)|Justice]] delivering a strike and emanating [[Willbender Flames (Rushing Justice)|Willbender Flames]].&lt;br&gt;&lt;br&gt;{{gray|Removes other active [[Virtue]] effects.}}
-| facts = {{skill fact|damage|alt=Impact Damage|weapon=unequipped|coefficient=1.5}}
-{{skill fact|effect|Justice (willbender effect)|6|desc=Consecutive attacks cause burning.}}
-{{skill fact|burning|4|alt=Initial Burning}}
-{{skill fact|burning|2|game mode=pve}}{{skill fact|burning|1.5|game mode=wvw pvp}}
-{{skill fact|Number of Attacks to Trigger|5}}
-{{skill fact|range|800}}
-| activation = 0.5
-| recharge = 12
-| recharge pvp = 18
-| profession = Guardian
-| specialization = Willbender
-| slot = mechanic
-| type = Virtue
-| movement type = Leap
-| mechanic slot = 1
-| id = 62668
-| requires = eod
-}}
-
-{{Skill infobox/historical
-| beta = y
-| date = 2021-11-30/End of Dragons Elite Specialization Updates
-| changes =
-* Rushing Justice was available during the [[Guild Wars 2: End of Dragons|End of Dragons]] [[Beta#End of Dragons|Beta Event 4]].
-* [[Rushing Justice]]: Improved the transition between running and punching. Increased velocities toward the end of the run and initial punch. Total range of the skill has been increased, taking the ability from maximum 450 to maximum 800 distance. Strike damage has been improved from 0.6 to 1.5. Reduced cast time of the attack by about 1/4 second.
-| split = pve, wvw pvp
-| description = {{skill type|Virtue}} Rush toward your target and gain [[Justice (willbender effect)|Justice]] delivering a strike and emanating [[Willbender Flames (Rushing Justice)|Willbender Flames]].&lt;br&gt;&lt;br&gt;{{gray|Removes other active [[Virtue]] effects.}}
-| facts = {{skill fact|damage|alt=Impact Damage|weapon=unequipped|coefficient=1.5}}
-{{skill fact|effect|Justice (willbender effect)|6|desc=Consecutive attacks cause burning.}}
-{{skill fact|burning|4|alt=Initial Burning}}
-{{skill fact|burning|2|game mode=pve}}{{skill fact|burning|1.5|game mode=wvw pvp}}
-{{skill fact|Number of Attacks to Trigger|5}}
-{{skill fact|range|800}}
-| activation = 0.5
-| recharge = 12
-| recharge pvp = 18
-| profession = Guardian
-| specialization = Willbender
-| slot = mechanic
-| type = Virtue
-| movement type = Leap
-| mechanic slot = 1
-| id = 62668
-| requires = eod
-}}
-
-{{Skill infobox/historical
-| split = pve, wvw pvp
-| beta = y
-| date = 2021-08-17
-| changes =
-* Rushing Justice was available during the [[Guild Wars 2: End of Dragons|End of Dragons]] [[Beta#End of Dragons|Beta Event 1]].
-| description = {{skill type|Virtue}} Rush toward your target and gain [[Justice (willbender effect)|Justice]] delivering a strike and emanating [[Willbender Flames (Rushing Justice)|Willbender Flames]].&lt;br&gt;&lt;br&gt;{{gray|Removes other active [[Virtue]] effects.}}
-| facts = {{skill fact|damage|alt=Impact Damage|weapon=unequipped|coefficient=0.4}}
-{{skill fact|effect|Justice (willbender effect)|6|desc=Consecutive attacks cause burning.}}
-{{skill fact|burning|4|alt=Initial Burning}}
-{{skill fact|burning|2}}
-{{skill fact|Number of Attacks to Trigger|5}}
-{{skill fact|range|450}}
-| activation = 0.5
-| recharge = 12
-| recharge pvp = 18
-| profession = Guardian
-| specialization = Willbender
-| slot = mechanic
-| type = Virtue
-| movement type = Leap
-| mechanic slot = 1
-| id = 62668
-| requires = eod
-}}</text>
-      <sha1>869elg05y2ar6sgs8f3d3b0zxau3b8o</sha1>
-    </revision>
-  </page>
-<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
-    <title>Rushing Justice (The Enforcer)</title>
-    <ns>0</ns>
-    <id>356014</id>
-    <revision>
-      <id>3100601</id>
-      <parentid>2776065</parentid>
-      <timestamp>2026-01-31T04:37:33Z</timestamp>
-      <contributor>
-        <username>Flutte</username>
-        <id>253194</id>
-      </contributor>
-      <minor />
-      <origin>3100601</origin>
-      <model>wikitext</model>
-      <format>text/x-wiki</format>
-      <text bytes="1159" sha1="3mmjcb19j0gqfbb54frjdbgr6mcwp5c" xml:space="preserve">{{Otheruses|the skill used by [[The Enforcer]] in the [[Strike Mission: Kaineng Overlook|Kaineng Overlook]] strike mission|the skill used by the [[Willbender]] elite specialization|Rushing Justice}}
-{{Skill infobox
-| name = Rushing Justice
-| icon = Temp icon (red).png
-| description = The Enforcer rushes to a location, leaving behind a trail of fire that damages and burns enemies within.
-| facts =
-{{skill fact|range|3000}}
-| activation = 1
-| monster = The Enforcer
-| activation type = chain
-| movement type = leap
-| chain1 = Rushing Justice (The Enforcer)
-| chain2 = Booming Command
-| id = 65206,65574,65608,67455,68028
-| requires = eod
-}}
-
-[[Rushing Justice (The Enforcer)|Rushing Justice]] is a skill performed by [[The Enforcer]] during the [[Strike Mission: Kaineng Overlook|Kaineng Overlook]] [[strike mission]].
-
-== Notes ==
-* The Enforcer performs this skill six times in a row, forming an hourglass pattern and ending with the [[Booming Command]] attack.
-** The pattern starts with a dash towards either the shorter side or longer side of the arena.
-* If the [[Challenge Mode]] is active, this attack rapidly pulses the {{effect|infirmity}} effect.</text>
-      <sha1>3mmjcb19j0gqfbb54frjdbgr6mcwp5c</sha1>
-    </revision>
-  </page>
-<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
-    <title>Rushing Waves</title>
-    <ns>0</ns>
-    <id>346544</id>
-    <redirect title="Fallen Boulders" />
-    <revision>
-      <id>2502859</id>
-      <timestamp>2022-04-27T04:20:13Z</timestamp>
-      <contributor>
-        <username>Sunlion</username>
-        <id>225997</id>
-      </contributor>
-      <comment>Redirected page to [[Fallen Boulders#Combat abilities]]</comment>
-      <origin>2502859</origin>
-      <model>wikitext</model>
-      <format>text/x-wiki</format>
-      <text bytes="46" sha1="orctf63yew25lur6qf9broj0bghuni5" xml:space="preserve">#REDIRECT [[Fallen Boulders#Combat abilities]]</text>
-      <sha1>orctf63yew25lur6qf9broj0bghuni5</sha1>
-    </revision>
-  </page>
-<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
-    <title>Rushioo</title>
-    <ns>0</ns>
-    <id>110643</id>
-    <revision>
-      <id>2425773</id>
-      <parentid>2407524</parentid>
-      <timestamp>2022-03-06T15:39:52Z</timestamp>
-      <contributor>
-        <username>AWB Alex</username>
-        <id>102516</id>
-      </contributor>
-      <minor />
-      <comment>/* top */+Update coordinates.</comment>
-      <origin>2425773</origin>
-      <model>wikitext</model>
-      <format>text/x-wiki</format>
-      <text bytes="719" sha1="izlmk6flcl51j6erkcbqlzi0dzzj4fu" xml:space="preserve">{{NPC infobox
-| image = Generic Quaggan.jpg
-| location = Viathan Lake
-| race = Quaggan
-| coordinates = [43285,31330]
-}}
-[[Rushioo]] is a quaggan in [[Moogooloo]] village, located in [[Viathan Lake]].
-
-== Location ==
-* [[Kessex Hills]]
-** [[Viathan Lake]]
-
-== Dialogue ==
-:Quaggans will be strong. Thank you for helping us. Without friends like you, quaggans would be extinct by now.
-:{{dialogue icon|more}} ''Are you going to try to clean up the lake?''
-::Quaggans will try, but quaggans must find security, food, and clean drinking water first. It will be a long time before this is back to its original beauty.
-::{{dialogue icon|end}} ''Good luck.''
-:{{dialogue icon|end}} ''Farewell.''
-
-[[de:Rushioo]]
-[[fr:Rushioo]]</text>
-      <sha1>izlmk6flcl51j6erkcbqlzi0dzzj4fu</sha1>
     </revision>
   </page>
 </mediawiki>

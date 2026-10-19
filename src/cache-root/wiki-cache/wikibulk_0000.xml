@@ -131262,19 +131262,18 @@ The [[Aetherblade Shipyard]] is the main sector of the [[Aetherblades]] base in 
     <ns>0</ns>
     <id>94106</id>
     <revision>
-      <id>3193732</id>
-      <parentid>3106079</parentid>
-      <timestamp>2026-09-12T14:29:44Z</timestamp>
+      <id>3215672</id>
+      <parentid>3215671</parentid>
+      <timestamp>2026-10-19T00:54:50Z</timestamp>
       <contributor>
-        <username>Kote</username>
-        <id>250871</id>
+        <username>Sunlion</username>
+        <id>225997</id>
       </contributor>
-      <minor />
-      <comment>/* Notes */ replace auto-attack with autoattack</comment>
-      <origin>3193732</origin>
+      <comment>/* Combat abilities */</comment>
+      <origin>3215672</origin>
       <model>wikitext</model>
       <format>text/x-wiki</format>
-      <text bytes="3482" sha1="11nbfxkm9sdd50erns35oii6ywcijkb" xml:space="preserve">{{NPC infobox
+      <text bytes="4712" sha1="beqk4wbbwyk3vqo60pgufjto0uft30l" xml:space="preserve">{{NPC infobox
 | image = Aetherblade Swashbuckler (female).jpg
 | location = Broadhollow Bluffs; Aetherblade Fractal; Twilight Arbor
 | race = Human
@@ -131340,14 +131339,33 @@ The [[Aetherblade Shipyard]] is the main sector of the [[Aetherblades]] base in 
 : {{event|Stop the Aetherblade miasma deployment}}
 
 == Combat abilities ==
+=== Core version ===
 ;Abilities
 * Bleeds
 
 ;Skills
-* '''{{plain icon|Dancing Dagger|Thrown Dagger}}''' - {{skill description|Throw Dagger}} &lt;!-- id 64760 --&gt;
-* '''{{plain icon|Slash (ranger sword skill)|Slash}}''' - {{skill description|Slash (ranger sword skill)}} &lt;!-- id 66071 --&gt;
-** {{chain}} '''{{plain icon|Counterattack Kick|Kick}}''' - Kick your foe, [[bleeding]] them for a short time. &lt;!-- id 63912 --&gt;
-*** {{chain}} '''{{plain icon|Pounce}}''' - Deliver a blow to your foe. &lt;!-- id 19261 --&gt;
+* '''{{plain icon|Slash (ranger sword skill)|Slash}}''' — Melee [[autoattack]]. Makes a lightly damaging leftward swing with their sword, applying {{Bleeding}} &lt;small&gt;(15s)&lt;/small&gt;. &lt;!-- id 66071 --&gt;
+** '''{{plain icon|Counterattack Kick|Kick}}''' — Follows up with a kick, dealing a small amount of damage and applying {{Crippled}} &lt;small&gt;(5s)&lt;/small&gt;. &lt;!-- id 63912 --&gt;
+*** '''{{plain icon|Pounce}}''' — Finishes by thrusting their sword forward, dealing a small amount of damage. &lt;!-- id 19261 --&gt;
+* '''Thrown Dagger''' — Hurls a damaging dagger [[projectile]] at a target. Only used when outside of melee range. &lt;!-- id 64760 --&gt;
+
+;Stolen skills
+* {{stolen skill|Drink (stolen skill)}} (48%)
+* {{stolen skill|Mace Head Crack}} (3%)
+* {{stolen skill|Throw Gunk}} (34%)
+* {{stolen skill|Use Scepter}} (5%)
+* {{stolen skill|Use Staff}} (5%)
+* {{stolen skill|Whirling Axe (stolen skill)}} (5%)
+
+=== End of Dragons version ===
+;Abilities
+* Bleeds
+
+;Skills
+* '''{{plain icon|Slash (ranger sword skill)|Slash}}''' — Melee [[autoattack]]. Makes a lightly damaging leftward swing with their sword, applying {{Bleeding|stacks=3}} &lt;small&gt;(5s)&lt;/small&gt;. &lt;!-- id 66071 --&gt;
+** '''{{plain icon|Counterattack Kick|Kick}}''' — Follows up with a kick, dealing a small amount of damage and applying {{Crippled}} &lt;small&gt;(5s)&lt;/small&gt;. &lt;!-- id 63912 --&gt;
+*** '''{{plain icon|Pounce}}''' — Finishes by thrusting their sword forward, dealing a small amount of damage. &lt;!-- id 19261 --&gt;
+* '''Thrown Dagger''' — Hurls a damaging dagger [[projectile]] that inflicts {{Bleeding}} &lt;small&gt;(5s)&lt;/small&gt; at a target. Only used when outside of melee range. &lt;!-- id 64760 --&gt;
 
 ;Stolen skills
 * {{stolen skill|Drink (stolen skill)}} (48%)
@@ -131388,7 +131406,7 @@ The [[Aetherblade Shipyard]] is the main sector of the [[Aetherblades]] base in 
 
 [[de:Ätherklingen-Säbelrassler]]
 [[es:Espadachín filoetéreo]]</text>
-      <sha1>11nbfxkm9sdd50erns35oii6ywcijkb</sha1>
+      <sha1>beqk4wbbwyk3vqo60pgufjto0uft30l</sha1>
     </revision>
   </page>
 <page xmlns="http://www.mediawiki.org/xml/export-0.11/">
@@ -227241,23 +227259,21 @@ After several years, Ande moves back to the village of Shaemoor and continues hi
     <ns>0</ns>
     <id>3681</id>
     <revision>
-      <id>2562888</id>
-      <parentid>2300324</parentid>
-      <timestamp>2022-07-15T21:50:55Z</timestamp>
+      <id>3215237</id>
+      <parentid>3215236</parentid>
+      <timestamp>2026-10-18T15:00:54Z</timestamp>
       <contributor>
-        <username>ReLiFeD</username>
-        <id>189402</id>
+        <username>Kossage</username>
+        <id>126773</id>
       </contributor>
-      <minor />
-      <comment>Pretty sure "Jungle living world team" hasn't been a thing for years, so I got rid of that part.</comment>
-      <origin>2562888</origin>
+      <origin>3215237</origin>
       <model>wikitext</model>
       <format>text/x-wiki</format>
-      <text bytes="1161" sha1="odvk9hvlike3y7tfxkcku7ml54vbu56" xml:space="preserve">{{ArenaNet employee infobox
+      <text bytes="1230" sha1="jjmuv0sy2onayegvfys1bneysrub8xm" xml:space="preserve">{{ArenaNet employee infobox
 | position = Lead Game Designer
 | department = Design
 }}
-[[Andrew Gray]] (né Andrew Patrick) is a Lead Game Designer at ArenaNet. He began in the Community Department in 2004 and has served as Fansite Liaison, Alpha Test Manager, and Website Writer, and later worked as a designer on the [[gw1:Guild Wars Beyond|Guild Wars Beyond]] content, and as a QA lead for GW2.
+[[Andrew Gray]] (né Andrew Patrick) is a Lead Game Designer at ArenaNet. He began in the Community Department in 2004 and has served as Fansite Liaison, Alpha Test Manager, and Website Writer, and later worked as a designer on the [[gw1:Guild Wars Beyond|Guild Wars Beyond]] content, and as a QA lead for ''[[Guild Wars 2]]''.
 
 == Job title progression ==
 * Visual Assets Producer &lt;small&gt;(February 2004 to February 2006)&lt;/small&gt;
@@ -227269,11 +227285,11 @@ After several years, Ande moves back to the village of Shaemoor and continues hi
 * Lead Game Designer &lt;small&gt;(April 2019 to Present)&lt;/small&gt;
 
 == Trivia ==
-* He is the Guild Leader of the [[gw1:Guild:Zealots Of Shiverpeak|first Guild]] in Guild Wars, Zealots of Shiverpeak.
+* He is the Guild Leader of the [[gw1:Guild:Zealots Of Shiverpeak|first Guild]] in Guild Wars, Zealots of Shiverpeak. [[Quaken Frostraven]] is named after his character.
 * There was a [[gw1:Andru Pitrak|collector]] in the original [[gw1:House zu Heltzer|Guild Wars]] named after him.
 
 {{gww}}</text>
-      <sha1>odvk9hvlike3y7tfxkcku7ml54vbu56</sha1>
+      <sha1>jjmuv0sy2onayegvfys1bneysrub8xm</sha1>
     </revision>
   </page>
 <page xmlns="http://www.mediawiki.org/xml/export-0.11/">
@@ -367635,17 +367651,19 @@ Alternative ending if undefeated or unchallenged:
     <ns>0</ns>
     <id>421913</id>
     <revision>
-      <id>3214524</id>
-      <parentid>3214521</parentid>
-      <timestamp>2026-10-17T00:48:55Z</timestamp>
+      <id>3215650</id>
+      <parentid>3214524</parentid>
+      <timestamp>2026-10-18T21:28:30Z</timestamp>
       <contributor>
-        <ip>82.170.139.154</ip>
+        <username>VectorSomething</username>
+        <id>263760</id>
       </contributor>
-      <comment>/* Contributing actions */</comment>
-      <origin>3214524</origin>
+      <minor />
+      <comment>don't break stuff (fixed closing brackets)</comment>
+      <origin>3215650</origin>
       <model>wikitext</model>
       <format>text/x-wiki</format>
-      <text bytes="5932" sha1="bhb3x1qtegmt2crqsnotg3l7mmqhhmz" xml:space="preserve">{{Heart infobox
+      <text bytes="5924" sha1="1v5rwwp164d0er9eeb8v1ehrd629ikk" xml:space="preserve">{{Heart infobox
 | description = Help Astral Ward Agent Snarlcrow sabotage Inquest operations by infiltrating their base and spread unrest, sabotaging equipment requests, or destroying equipment. 
 | location = Ordnance Depot
 | level = 80
@@ -367699,8 +367717,6 @@ Alternative ending if undefeated or unchallenged:
 {{bug|
 * Completing the [[Disguise yourself and destroy Inquest communication devices]] event kicks everyone out of the camp and removes their disguises.
 * Below [[Seat of the Director]] a sleeping Lead Researcher can be found, who can be picked up, granting the buff [[Carrying Lead Researcher]]&lt;!-- skill id 80966 --&gt;. However, contrary to the buff's description, bringing Lead Researcher to [[Astral Ward Agent Snarlcrow]] accomplishes nothing.
-
-{{bug|
 * If you pick a disguise soon after you've completed the [[Disguise yourself and destroy Inquest communication devices]] event and enter the camp your disguise will be removed without getting any stacks of suspicion allowing you to walk around the camp in your characters form without being kicked.
 }}
 
@@ -367732,7 +367748,7 @@ Alternative ending if undefeated or unchallenged:
 
 {{Leyspring Hollows nav}}
 [[es:Ayuda al agente del Resguardo Astral Cuervofiero y a sus socios a sabotear la base de operaciones de la Inquisa en las Hondonadas del Manantial de Ley]]</text>
-      <sha1>bhb3x1qtegmt2crqsnotg3l7mmqhhmz</sha1>
+      <sha1>1v5rwwp164d0er9eeb8v1ehrd629ikk</sha1>
     </revision>
   </page>
 <page xmlns="http://www.mediawiki.org/xml/export-0.11/">
@@ -420581,18 +420597,19 @@ Excluding the cost of {{item icon|Mystic Clover|Mystic Clovers}} and {{item icon
     <ns>0</ns>
     <id>348028</id>
     <revision>
-      <id>3161269</id>
-      <parentid>3161267</parentid>
-      <timestamp>2026-06-17T20:31:29Z</timestamp>
+      <id>3215594</id>
+      <parentid>3161269</parentid>
+      <timestamp>2026-10-18T19:19:58Z</timestamp>
       <contributor>
-        <username>Warming Hearth</username>
-        <id>215338</id>
+        <username>Futeko</username>
+        <id>259019</id>
       </contributor>
-      <comment>/* Collection items */</comment>
-      <origin>3161269</origin>
+      <minor />
+      <comment>Corrected note about Purified Risen Aether: gliding is allowed, not forbidden</comment>
+      <origin>3215594</origin>
       <model>wikitext</model>
       <format>text/x-wiki</format>
-      <text bytes="4393" sha1="qxoymr84g4x8332cp9viyyfxqi2dtjw" xml:space="preserve">[[Aurene's Facet of Shadows]] is a [[The Legendary Facets of Aurene]] [[achievement]].
+      <text bytes="4404" sha1="fa9pi11r78pj1zu0lho4x295ewyng7x" xml:space="preserve">[[Aurene's Facet of Shadows]] is a [[The Legendary Facets of Aurene]] [[achievement]].
 
 == Achievement ==
 {{Achievement box}}
@@ -420617,7 +420634,7 @@ Excluding the cost of {{item icon|Mystic Clover|Mystic Clovers}} and {{item icon
 }}
 {{Collection table row
 |Purified Risen Aether
-| notes = Interact with the darkened Aurene crystal at the start of the [[Buried Archives]] jumping puzzle to get the "Unpurified Lingering Risen Aether" effect. Then complete the jumping puzzle and interact with the other Aurene crystal at the end near the chest (you cannot mount, glide, teleport, take a portal, etc.).
+| notes = Interact with the darkened Aurene crystal at the start of the [[Buried Archives]] jumping puzzle to get the "Unpurified Lingering Risen Aether" effect. Then complete the jumping puzzle and interact with the other Aurene crystal at the end near the chest (you cannot mount, teleport, take a portal, etc. but you may glide).
 }}
 {{Collection table row
 |Uncharged Fragment of Prismatic Shadows
@@ -420687,7 +420704,7 @@ Excluding the cost of {{item icon|Mystic Clover|Mystic Clovers}} and {{item icon
 [[de:Aurenes Aspekt der Schatten]]
 [[es:Faceta de Aurene de las sombras]]
 [[fr:Facette des ombres d'Aurene]]</text>
-      <sha1>qxoymr84g4x8332cp9viyyfxqi2dtjw</sha1>
+      <sha1>fa9pi11r78pj1zu0lho4x295ewyng7x</sha1>
     </revision>
   </page>
 <page xmlns="http://www.mediawiki.org/xml/export-0.11/">
@@ -591510,18 +591527,18 @@ On {{rarity|ascended|ascended}} equipment, the prefix is called '''Zojja's'''.
     <ns>0</ns>
     <id>422772</id>
     <revision>
-      <id>3202225</id>
-      <parentid>3198754</parentid>
-      <timestamp>2026-09-24T12:45:51Z</timestamp>
+      <id>3215216</id>
+      <parentid>3202225</parentid>
+      <timestamp>2026-10-18T13:35:53Z</timestamp>
       <contributor>
-        <username>DiegoDeLaHouska</username>
-        <id>206595</id>
+        <username>Myriada</username>
+        <id>215477</id>
       </contributor>
       <minor />
-      <origin>3202225</origin>
+      <origin>3215216</origin>
       <model>wikitext</model>
       <format>text/x-wiki</format>
-      <text bytes="405" sha1="r374alsifqcuwtnarq7gdbj90439zxs" xml:space="preserve">{{Weapon infobox
+      <text bytes="549" sha1="emjmzpbggazq3ryvczh0dj393uihhls" xml:space="preserve">{{Weapon infobox
 | icon = Godskull Poleaxe.png
 | type = Spear
 | rarity = Rare
@@ -591542,8 +591559,12 @@ On {{rarity|ascended|ascended}} equipment, the prefix is called '''Zojja's'''.
 == Trivia ==
 * Added with the [[release]] [[Code of Creation]].
 
-{{Godskull weapons nav}}</text>
-      <sha1>r374alsifqcuwtnarq7gdbj90439zxs</sha1>
+{{Godskull weapons nav}}
+
+[[de:Berserkerhafter Gottschädel-Mordaxt]]
+[[es:Hacha de petos del cráneo divino de berserker]]
+[[fr:Arme d'hast du crâne divin berserker]]</text>
+      <sha1>emjmzpbggazq3ryvczh0dj393uihhls</sha1>
     </revision>
   </page>
 <page xmlns="http://www.mediawiki.org/xml/export-0.11/">
@@ -592207,19 +592228,18 @@ On {{rarity|ascended|ascended}} equipment, the prefix is called '''Zojja's'''.
     <ns>0</ns>
     <id>422773</id>
     <revision>
-      <id>3201692</id>
-      <parentid>3201682</parentid>
-      <timestamp>2026-09-23T14:07:11Z</timestamp>
+      <id>3215217</id>
+      <parentid>3201692</parentid>
+      <timestamp>2026-10-18T13:37:42Z</timestamp>
       <contributor>
-        <username>Doodleplex</username>
-        <id>203325</id>
+        <username>Myriada</username>
+        <id>215477</id>
       </contributor>
       <minor />
-      <comment>Only way I can think to do it, as there's already a [[Krait Spear]]...</comment>
-      <origin>3201692</origin>
+      <origin>3215217</origin>
       <model>wikitext</model>
       <format>text/x-wiki</format>
-      <text bytes="377" sha1="tkvixheww77apll53nfwt6s9hfhzkec" xml:space="preserve">{{Weapon infobox
+      <text bytes="474" sha1="j2sm5a0qow8of4qmlakbsmg8l6cljsc" xml:space="preserve">{{Weapon infobox
 | type = Spear
 | rarity = Rare
 | level = 80
@@ -592238,8 +592258,12 @@ On {{rarity|ascended|ascended}} equipment, the prefix is called '''Zojja's'''.
 == Trivia ==
 * Added with the [[release]] [[Code of Creation]].
 
-{{Krait weapons nav}}</text>
-      <sha1>tkvixheww77apll53nfwt6s9hfhzkec</sha1>
+{{Krait weapons nav}}
+
+[[de:Berserkerhafter Krait-Speer]]
+[[es:Lanza krait de berserker]]
+[[fr:Lance krait berserker]]</text>
+      <sha1>j2sm5a0qow8of4qmlakbsmg8l6cljsc</sha1>
     </revision>
   </page>
 <page xmlns="http://www.mediawiki.org/xml/export-0.11/">
@@ -593604,18 +593628,18 @@ On {{rarity|ascended|ascended}} equipment, the prefix is called '''Zojja's'''.
     <ns>0</ns>
     <id>422770</id>
     <revision>
-      <id>3202226</id>
-      <parentid>3198747</parentid>
-      <timestamp>2026-09-24T12:47:48Z</timestamp>
+      <id>3215218</id>
+      <parentid>3202226</parentid>
+      <timestamp>2026-10-18T13:38:39Z</timestamp>
       <contributor>
-        <username>DiegoDeLaHouska</username>
-        <id>206595</id>
+        <username>Myriada</username>
+        <id>215477</id>
       </contributor>
       <minor />
-      <origin>3202226</origin>
+      <origin>3215218</origin>
       <model>wikitext</model>
       <format>text/x-wiki</format>
-      <text bytes="385" sha1="c0hmzmxupk6z3ay13tboas9d4nc4jz7" xml:space="preserve">{{Weapon infobox
+      <text bytes="489" sha1="r1jmd7h2p3uf260fzz29dcu9q4mgisq" xml:space="preserve">{{Weapon infobox
 | icon = Norn Impaler.png
 | type = Spear
 | rarity = Rare
@@ -593636,8 +593660,12 @@ On {{rarity|ascended|ascended}} equipment, the prefix is called '''Zojja's'''.
 == Trivia ==
 * Added with the [[release]] [[Code of Creation]].
 
-{{Norn weapons nav}}</text>
-      <sha1>c0hmzmxupk6z3ay13tboas9d4nc4jz7</sha1>
+{{Norn weapons nav}}
+
+[[de:Berserkerhafter Norn-Pfähler]]
+[[es:Empalador norn de berserker]]
+[[fr:Empaleur norn berserker]]</text>
+      <sha1>r1jmd7h2p3uf260fzz29dcu9q4mgisq</sha1>
     </revision>
   </page>
 <page xmlns="http://www.mediawiki.org/xml/export-0.11/">
@@ -713624,19 +713652,18 @@ The [[Bloodstone Shard (NPC)|Bloodstone Shard]] is the largest shard kept in [[T
     <ns>0</ns>
     <id>187748</id>
     <revision>
-      <id>3207975</id>
-      <parentid>2959795</parentid>
-      <timestamp>2026-10-04T15:39:16Z</timestamp>
+      <id>3215574</id>
+      <parentid>3207975</parentid>
+      <timestamp>2026-10-18T19:01:56Z</timestamp>
       <contributor>
         <username>Doodleplex</username>
         <id>203325</id>
       </contributor>
       <minor />
-      <comment>Not sure about the asura being needed...hmmm</comment>
-      <origin>3207975</origin>
+      <origin>3215574</origin>
       <model>wikitext</model>
       <format>text/x-wiki</format>
-      <text bytes="1054" sha1="6ixnk9lgpa3j8b8trh2blgay84iu20f" xml:space="preserve">{{Item infobox
+      <text bytes="1054" sha1="8tlaks77qzjv5u5zjiz6cc82v0hu3jx" xml:space="preserve">{{Item infobox
 | icon = Bloodstone Visage.png
 | description = Double-click to apply this look to any headgear.
 | type = armor skin
@@ -713651,7 +713678,7 @@ The [[Bloodstone Shard (NPC)|Bloodstone Shard]] is the largest shard kept in [[T
 | gallery2 = Bloodstone Visage charr.jpg
 | gallery2-text = On a charr.
 | gallery3 = Bloodstone Visage asura.jpg
-| gallery3-text = On an asura with white-colored eyes.
+| gallery3-text = On an asura with light colored eyes.
 }}
 == Acquisition ==
 {{Achievement list|reward=Bloodstone Visage Skin}}
@@ -713663,7 +713690,7 @@ The [[Bloodstone Shard (NPC)|Bloodstone Shard]] is the largest shard kept in [[T
 [[de:Skin für Blutstein-Antlitz]]
 [[es:Diseño de faz de hematites]]
 [[fr:Peau de visage en pierre de sang]]</text>
-      <sha1>6ixnk9lgpa3j8b8trh2blgay84iu20f</sha1>
+      <sha1>8tlaks77qzjv5u5zjiz6cc82v0hu3jx</sha1>
     </revision>
   </page>
 <page xmlns="http://www.mediawiki.org/xml/export-0.11/">
@@ -755590,19 +755617,17 @@ Several [[Bookshelf (Ministry of Archives)|bookshelves]] can be found in the [[M
     <ns>0</ns>
     <id>378100</id>
     <revision>
-      <id>3183139</id>
-      <parentid>3012077</parentid>
-      <timestamp>2026-08-15T12:34:18Z</timestamp>
+      <id>3215664</id>
+      <parentid>3183139</parentid>
+      <timestamp>2026-10-18T23:33:24Z</timestamp>
       <contributor>
-        <username>Caeldom</username>
-        <id>269879</id>
+        <username>Kossage</username>
+        <id>126773</id>
       </contributor>
-      <minor />
-      <comment>Improve description</comment>
-      <origin>3183139</origin>
+      <origin>3215664</origin>
       <model>wikitext</model>
       <format>text/x-wiki</format>
-      <text bytes="6163" sha1="dpetrc0ppq3kgx436233qemq8uob3cf" xml:space="preserve">{{Object infobox
+      <text bytes="6196" sha1="8foq7zxfsxb7106vtujqkmj1ju5so27" xml:space="preserve">{{Object infobox
 | name = Bookshelf
 | image = 
 | location = The Eleventh Hour
@@ -755810,9 +755835,9 @@ Forever still.
 
 Fight and be before still!
 
-Bosh, already still.
+[[Bosh]], already still.
 
-And Till. Till still.
+And [[Till]]. Till still.
 
 King's feed.
 
@@ -755820,7 +755845,7 @@ Spitting in shadow.
 
 Spire shadow. Death door.
 
-Grink has no fight.
+[[Grink]] has no fight.
 
 Fight and be here, Grink!
 
@@ -755830,7 +755855,7 @@ Noise. Great fuss. Someone fights!
 
 Grink growls. Grink knows!
 
-Gray Ears!
+[[Researcher Selly|Gray Ears]]!
 
 Kind stranger. Ferocious stranger.
 
@@ -755884,7 +755909,7 @@ In the stale and musky air of the next morning, as the final embers in the heart
 
 [[de:Bücherregal (Die Stunde der Wahrheit)]]
 [[es:Estantería (Última hora)]]</text>
-      <sha1>dpetrc0ppq3kgx436233qemq8uob3cf</sha1>
+      <sha1>8foq7zxfsxb7106vtujqkmj1ju5so27</sha1>
     </revision>
   </page>
 <page xmlns="http://www.mediawiki.org/xml/export-0.11/">
@@ -846484,6 +846509,26 @@ The [[Bridgewatch Camp]] is a camp located in the [[Greenflin Plateau]] within t
     </revision>
   </page>
 <page xmlns="http://www.mediawiki.org/xml/export-0.11/">
+    <title>Brigadier General Kernel</title>
+    <ns>0</ns>
+    <id>424374</id>
+    <redirect title="Veteran Brigadier General Kernel" />
+    <revision>
+      <id>3215230</id>
+      <timestamp>2026-10-18T14:33:06Z</timestamp>
+      <contributor>
+        <username>Jertzukka</username>
+        <id>284719</id>
+      </contributor>
+      <comment>Redirected page to [[Veteran Brigadier General Kernel]]</comment>
+      <origin>3215230</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="46" sha1="126w9z81u69s5ejc0k4lhglys0lsey5" xml:space="preserve">#REDIRECT [[Veteran Brigadier General Kernel]]</text>
+      <sha1>126w9z81u69s5ejc0k4lhglys0lsey5</sha1>
+    </revision>
+  </page>
+<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
     <title>Brigand's Shoulders</title>
     <ns>0</ns>
     <id>14761</id>
@@ -913176,17 +913221,17 @@ File:Cairn the Indomitable Arena.jpg | View of the arena for Cairn the Indomitab
     <ns>0</ns>
     <id>4461</id>
     <revision>
-      <id>3188490</id>
-      <parentid>3179242</parentid>
-      <timestamp>2026-08-27T16:04:30Z</timestamp>
+      <id>3215552</id>
+      <parentid>3215547</parentid>
+      <timestamp>2026-10-18T18:30:27Z</timestamp>
       <contributor>
         <username>Kossage</username>
         <id>126773</id>
       </contributor>
-      <origin>3188490</origin>
+      <origin>3215552</origin>
       <model>wikitext</model>
       <format>text/x-wiki</format>
-      <text bytes="68223" sha1="qeta4rfms4dl5dxbe819xs9ay8k2ihf" xml:space="preserve">{{stub|npc|Missing her Icebrood Saga, End of Dragons, and Janthir Wilds biography}}
+      <text bytes="84871" sha1="lvn4m8rytdxdzx9gsmc7mt9fxqofxmo" xml:space="preserve">{{stub|npc|Missing her Icebrood Saga, End of Dragons, and Janthir Wilds biography}}
 {{spoiler|''[[Edge of Destiny]]'', the [[personal story]], [[Living World]], and [[expansion]]s}}
 {{NPC infobox
 | location = The House of Caithe; Dragon's Stand (Heart of Thorns); Sun's Refuge; Crystal Bloom Camp; Dragon Response Mission: Brisban Wildlands; Dragonstorm Arena; Dragon's End; Harvest Den
@@ -913209,21 +913254,21 @@ After Glint's [[scion]] [[Aurene]] hatches from the egg, Caithe atones for her a
 == Biography ==
 === Early years ===
 ;Love and Nightmare
-When the sylvari race was young, most of the [[Firstborn]] stayed in [[the Grove]] to tend the [[Pale Tree]], but Caithe and [[Faolain]] dared to see the [[Tyria (world)|world]].&lt;ref name="Dream and Nightmare"&gt;[[Dream and Nightmare]]&lt;/ref&gt; Over time, they established a deep bond and became lovers. While exploring [[Ruins of Orr|Orr]], they encountered the [[Dream of Dreams#The Nightmare|Nightmare]]; Caithe shied away from it, but Faolain embraced it, planting the beginning of a rift that would form between them over time.{{verify|Add a source for the claim that they encountered the Nightmare in particular in Orr. I'm pretty sure I've seen the mention somewhere but haven't been able to find the source.}}
+When the sylvari race was young, most of the [[firstborn]] stayed in [[the Grove]] to tend the [[Pale Tree]], but Caithe and [[Faolain]] dared to see the [[Tyria (world)|world]].&lt;ref name="Dream and Nightmare"&gt;[[Dream and Nightmare]]&lt;/ref&gt; Over time, they established a deep bond and became lovers. While exploring [[Ruins of Orr|Orr]], they encountered the [[Dream of Dreams#The Nightmare|Nightmare]]; Caithe shied away from it, but Faolain embraced it, planting the beginning of a rift that would form between them over time.{{verify|Add a source for the claim that they encountered the Nightmare in particular in Orr. I'm pretty sure I've seen the mention somewhere but haven't been able to find the source.}}
 
 ;A sister's burden
 {{spoilers|
-Caithe and Faolain returned to the Grove when the Pale Tree had begun producing a new generation of sylvari in greater numbers. The Firstborn had a [[The Newly Awakened|meeting]] to discuss these [[Newly Awakened]] although each Firstborn had different ideas about how to handle them with some offering to name them [[Secondborn]] while others objected to such categorization. At some point Caithe witnessed [[Cadeyrn]]'s argument with the Pale Tree and how the Tree ultimately ignored Cadeyrn's concerns to break away from the tenets of [[Ventari's Tablet]]. When Cadeyrn demanded to be heard due to being the first of the Secondborn, Caithe told him that to the Pale Tree there were only Firstborn and the rest were merely sylvari. Caithe's remark angered Cadeyrn who swore to make the Pale Tree listen to him before he stormed off and left Caithe alone to watch him go.&lt;ref name="Dream and Nightmare" /&gt;
+Caithe and Faolain returned to the Grove when the Pale Tree had begun producing a new generation of sylvari in greater numbers. The firstborn had a [[The Newly Awakened|meeting]] to discuss these [[Newly Awakened]] although each Firstborn had different ideas about how to handle them with some offering to name them [[secondborn]] while others objected to such categorization. At some point Caithe witnessed [[Cadeyrn]]'s argument with the Pale Tree and how the Tree ultimately ignored Cadeyrn's concerns to break away from the tenets of [[Ventari's Tablet]]. When Cadeyrn demanded to be heard due to being the first of the Secondborn, Caithe told him that to the Pale Tree there were only Firstborn and the rest were merely sylvari. Caithe's remark angered Cadeyrn who swore to make the Pale Tree listen to him before he stormed off and left Caithe alone to watch him go.&lt;ref name="Dream and Nightmare" /&gt;
 
-When news reached the Firstborn that the [[asura]] had kidnapped some of the Secondborn and taken them deep into [[Metrica Province]] to experiment on them, Caithe and Faolain were asked to go investigate the matter as they had traveled the farthest out of all the sylvari. At this time, Cadeyrn first spoke to Faolain about forming the [[Nightmare Court]], although it was not called that at the time.
+When news reached the firstborn that the [[asura]] had kidnapped some of the secondborn and taken them deep into [[Metrica Province]] to experiment on them, Caithe and Faolain were asked to go investigate the matter as they had traveled the farthest out of all the sylvari. At this time, Cadeyrn first spoke to Faolain about forming the [[Nightmare Court]], although it was not called that at the time.
 
-Caithe and Faolain [[Meeting the Asura|rescued]] the Secondborn that they could, including [[Canach]], from [[Emissary Vorpp|Vorpp]] although the asura researcher successfully fled their wrath. The pair then headed to [[the Silverwastes]] to learn their fellow Firstborn [[Wynne]]'s secret, which Faolain was obsessing over, and met the [[Maguuma]] [[centaur]] tribe who Wynne was staying with. An [[No Refuge|incident]] occurred between the centaurs and Faolain and provoked by the latter, and Faolain and Caithe slaughtered the tribe with help from Cadeyrn and other to-be Nightmare Courtiers who had secretly been following them under Faolain's orders.
+Caithe and Faolain [[Meeting the Asura|rescued]] the secondborn that they could, including [[Canach]], from [[Emissary Vorpp|Vorpp]] although the asura researcher successfully fled their wrath. The pair then headed to [[the Silverwastes]] to learn their fellow Firstborn [[Wynne]]'s secret, which Faolain was obsessing over, and met the [[Maguuma]] [[centaur]] tribe who Wynne was staying with. An [[No Refuge|incident]] occurred between the centaurs and Faolain and provoked by the latter, and Faolain and Caithe slaughtered the tribe with help from Cadeyrn and other to-be Nightmare Courtiers who had secretly been following them under Faolain's orders.
 
 Faolain and Caithe pursued Wynne to a nearby cave, cornering her there and demanding answers. When Wynne remained reluctant to reveal the information she was hiding, Faolain left to gather some needles to torture the answer out of Wynne, making Caithe watch over the fugitive Firstborn. While Faolain was gone, Wynne revealed her secret to Caithe, explaining why no one could ever know the terrifying truth about sylvari origins, and asked to be killed so Faolain could not torture the information out of her.
 
 Caithe obliged and [[The Mystery Cave|stabbed]] Wynne, holding her sister's lifeless body in her arms and lamenting what she had done. Faolain returned shortly afterwards and believed that Caithe had murdered Wynne without remorse, and Caithe did nothing to dissuade her from the thought. The incident, as well as Faolain's growing interest in the Nightmare, caused a rift between the lovers and made them part ways. However, Faolain was convinced that Caithe's heart was as dark as hers and tried to convince Caithe to join her ever since.
 
-Now carrying Wynne's heavy burden, Caithe adopted her sister's hairstyle and changed her clothing to act as a reminder of the tragedy of the Silverwastes.
+Now carrying Wynne's heavy burden, Caithe adopted her sister's hairstyle and changed her clothing to act as a reminder of the tragedy in the Silverwastes.
 |''[[Living World Season 2]]''}}
 
 === ''[[Edge of Destiny]]'' ===
@@ -913286,43 +913331,125 @@ However, Logan's absence affected the fighting capabilities of Destiny's Edge. T
 :But they would be friends again. Someday, they would join her. Someday, they would fight the dragons again.&lt;/ref&gt;
 
 === [[Personal story]] ===
-Circa 1325 &lt;small&gt;AE&lt;/small&gt;, Caithe thwarted an attack on the Dream with the help of an unborn [[sapling]]. Together, they defeated a manifestation of the [[Shadow of the Dragon]], a champion of the Jungle Dragon [[Mordremoth]]. Grateful for the assistance, Caithe would soon after help the sapling, known as the [[Valiant]], to resolve a vision of their dream. The two become quick friends, sharing as special bond as the only two sylvari whose [[Wyld Hunt]] involved Elder Dragons.
+==== Following the Dream ====
+{{section-stub|npc|Add missing information.}}
 
-Some time later, Caithe, the Valiant, and [[Firstborn]] [[Trahearne]] were summoned by the Pale Tree to attend a matter of urgency. The Elder Dragon Zhaitan's influence was growing, and its Risen was becoming a dire threat to a [[Lionguard]] outpost just outside of Caledon Forest. Realizing the potential threat to her children should the outpost fall, the Pale Tree offered to aid the [[Order]]s of Tyria in its defense. But before a single undead would fall, the three organizations became locked in argument, none able to fully win the Pale Tree's support. Naming the Valiant as her Herald, the Pale Tree gave the young sylvari the chance to help the Orders as they saw best for the sylvari.
+Circa 1325 &lt;small&gt;AE&lt;/small&gt;, Caithe thwarted an attack on the Dream with the help of an unborn [[sapling]]. Together, they defeated a manifestation of the [[Shadow of the Dragon]], a champion of the Jungle Dragon [[Mordremoth]]. Grateful for the assistance, Caithe would soon after help the sapling, known as the [[Pact Commander|Valiant]], to resolve a vision of their dream. The two become quick friends, sharing as special bond as the only two sylvari whose [[Wyld Hunt]] involved Elder Dragons.
+
+;White Stag
+{{section-stub|npc|Add missing information.}}
+
+;Green Knight
+{{section-stub|npc|Add missing information.}}
+
+;Shield of the Moon
+{{section-stub|npc|Add missing information.}}
+
+==== The Teachings of Ventari ====
+;Act With Wisdom
+{{section-stub|npc|Add missing information.}}
+
+;All Things Have a Right to Grow
+{{section-stub|npc|Add missing information.}}
+
+;Where Life Goes
+When news about the Nightmare Court's raids and their search for a mysterious Harbinger reached the Grove, Caithe, Trahearne, and the Valiant [[Where Life Goes|volunteered]] to travel to each outpost in order to both aid in the outposts' defense and thwart the courtiers' plans. As they [[An Unknown Soul|reunited]] after successfully defending the outposts, Caithe and Trahearne learned that the Valiant had found the supposed Harbinger, a sylvari named [[Malyck]], who was initially wary of the two firstborn and their motives but was willing to hear them out due to his respect for the Valiant who had aided him in thwarting the Nightmare Court's attacks earlier.
+
+Upon learning only fragmentary memories from Malyck's recent past and that he seemingly did not have a connection to the Dream unlike other sylvari, Caithe and Trahearne had different solutions to solve the mystery. Caithe suggested that they follow the [[Ullen River]] in order to find a specific bridge which Malyck had mentioned and discover more clues to his origins there. Meanwhile, Trahearne suggested that they visit his old friend, the sylvari seer named Amaranda the Lonesome, who could help them find answers from the Dream. 
+
+Upon meeting Caithe and Trahearne, Malyck was initially wary of them and their motives but was willing to hear them out due to his respect for the Valiant. Upon learning only fragmentary memories from Malyck's recent past, Caithe and Trahearne had different solutions to solve the mystery. Caithe suggested that they follow the river which had carried his pod in order to find a specific bridge which Malyck had mentioned and discover more clues there. Meanwhile, Trahearne suggested that they visit a sylvari seer named [[Amaranda the Lonesome]] who could help them find answers from the Dream.
+
+If Malyck and the Valiant followed [[Source of the Issue|Caithe's plan]], the three of them traveled to [[Venlin Vale]] in [[Brisban Wildlands]] where they followed the [[Ullen River]] north to [[Gotala Cascade]] and fought Nightmare Courtiers along the way. The search led them to Malyck's pod which turned out to be different from the pods the sylvari of the Grove awakened from. This revelation made Caithe realize that the pod had not come from the Pale Tree but somewhere else.
+
+Regardless of the path chosen, the [[Knight of Embers]], a high-ranking courtier whose [[Dark Hunt]] was to find the Harbinger, managed to track down the trio and realized Malyck's importance not only for her Dark Hunt but to the Nightmare and the entire sylvari race as well. She revealed that it was her mission to draw Malyck into Nightmare so he in turn could help free the sylvari from the laws of [[Ventari]]'s [[Ventari's Tablet|Tablet]]. She tried to persuade Malyck to come with her, but Malyck refusal to follow her led to a fight between the trio and the Knight's entourage. Realizing that her forces could not win, the Knight retreated but promised to bring news of the Harbinger to Faolain and hunt Malyck to the ends of the earth if she had to.
+
+The trio tracked the Knight of Embers to [[Nemeton Grove]], and Malyck pondered his options and the gravity of the situation as they [[Snuffing Out Embers|prepared for battle]]. If the Nightmare Court as a whole learned of the existence of Malyck's tree which was not influenced by Ventari's Tablet, the courtiers could burn down the Grove as they no longer needed to convert the Pale Tree to Nightmare due to having another tree to turn their attention to. Malyck resolved to rather die and take his secret with him to the grave than allow the Nightmare Court to abuse the knowledge of his origins.
+
+Malyck had kept the disguises from his and the Valiant's earlier infiltration of [[Joy's End]] and had the Valiant and Caithe dress up as courtiers who had ostensibly captured him. They managed to infiltrate the Nightmare Court gathering and freed the courtiers' prisoners, using the resulting chaos to their advantage to locate the Knight of Embers who was accompanied by her two squires. Malyck rejected the Knight's final offer to join her side, and the trio [[Snuffing Out Embers|defeated]] the Knight and her squires after a fierce clash.
+
+The trio reunited with Trahearne in the aftermath, and Malyck realized that the victory over the Knight of Embers was only temporary. He had to leave the sylvari of the Grove behind or the rest of the Nightmare Court, despite still being unaware of his origins, would keep hunting him, hurt others and eventually discover his secret. Malyck determined to head west, into the [[Heart of Maguuma]], to find his people if they still existed, and tell them of the Grove while carrying the virtues of loyalty and honor that he had learned from the Valiant during their adventures together. Before departing, he promised his companions to return with an army with which to fight the Elder Dragons someday.&lt;ref&gt;[[Snuffing Out Embers]]
+:'''Malyck:''' Still, this is only the beginning. Even if they don't know the reason, the court will keep searching for their "harbinger."
+:'''Malyck:''' If I stay here, others will try to convert me to nightmare. They'll discover my secret.
+:'''Caithe:''' He's right. Faolain will hunt him, and I promise you: she does not give up.
+:'''Malyck:''' Somewhere to the west, at the source of that river, there's another tree. Maybe even another city, with more sylvari like me. My family.
+:'''Malyck:''' I'm going to find them. When I do, I'll tell them about the Grove, and I'll return with an army to help fight the dragons.
+:'''&lt;Character name&gt;:''' I wish I could go with you, Malyck, but my duty is here. I wish you good fortune and safe travels.
+:'''Malyck:''' Don't worry. We'll meet again, some day.&lt;/ref&gt;
+
+==== Justice for Riannoc ====
+{{section-stub|npc|Add missing information.}}
+
+Some time later, Caithe, Trahearne, and the Valiant were summoned by the Pale Tree to attend a matter of urgency. The Elder Dragon Zhaitan's influence was growing, and its Risen was becoming a dire threat to a [[Lionguard]] outpost just outside of Caledon Forest. Realizing the potential threat to her children should the outpost fall, the Pale Tree offered to aid the [[Order]]s of Tyria in its defense. But before a single undead would fall, the three organizations became locked in argument, none able to fully win the Pale Tree's support. Naming the Valiant as her Herald, the Pale Tree gave the young sylvari the chance to help the Orders as they saw best for the sylvari.
 
 While the Valiant took point on all the decisions, Caithe offered valuable advice on the side. However, it did not escape her notice the constant bickering between the Orders at every juncture. Despite an imminent threat as dire as the full awakening of an Elder Dragon, the three organizations were incapable of seeing past their differences. And in them, Caithe saw her former guild, now just as fragmented. If Tyria would have a fighting chance against the rising of Zhaitan, she knew, a united force needed to be established, if not the three Orders of Tyria, then at the very least [[Destiny's Edge]].
 
-Calling her former guild mates to a meeting in Lion's Arch, Caithe attempted to rally Destiny's Edge to rise up against the imminent threat of Zhaitan. Sadly, this would be to no avail, as the gathering soon devolved into argument and disarray. Undaunted by her initial failure, Caithe attempted twice more to help the group reconcile their differences, once in [[Twilight Arbor]] as she sought the aid of [[Logan]] and [[Rytlock]] to stop her lover [[Faolain]], and another in the depths of an ancient dwarven mine, [[Sorrow's Embrace]] where she and [[Eir Stegalkin]] chased after a determined [[Zojja]]. However, neither attempts bore fruit, with both leading to the group disbanding part way.
+==== Order Neophyte ====
+Calling her former guild mates to a [[Setting the Stage|meeting]] in Lion's Arch, Caithe attempted to rally Destiny's Edge to rise up against the imminent threat of Zhaitan. However, this would be to no avail, as the gathering soon devolved into argument and disarray because the emotional turmoil inflicted by Glint and Snaff's deaths was still too fresh in the guild's minds. Undaunted by her initial failure, Caithe kept her resolve to help the guild reconcile their differences.
 
-Even after these disastrous setbacks, Caithe persisted in her efforts to reunite her friends. She managed her first breakthrough when she assisted Eir in driving off the [[Sons of Svanir]] from a kodan [[Sanctuary (city)|sanctuary ship]], the [[Honor of the Waves]]. Deep in the frigid halls of the glacier-city, Caithe eventually convinced Eir to return to the guild. Destiny's Edge would reunite just in time to join the [[Pact]] force's assault into [[The Ruined City of Arah]], joined by the [[Pact Commander]]. First boarding ''[[The Humble]]'' and taking down multiple dragon champions, the airship was damaged in the battle and Destiny's Edge was forced aboard ''[[The Glory of Tyria]]'', which had confronted the [[Elder Dragon]] Zhaitan. Utilizing the Pact's weaponry, the forces on ''The Glory of Tyria'' finally felled the Elder Dragon, and Caithe had finally completed her [[Wyld Hunt]], witnessing the Elder Dragon [[Victory or Death|fall to its demise]].
+==== [[Twilight Arbor (story)|Twilight Arbor]] ====
+Caithe separately invited both Logan and Rytlock to stop her former lover [[Faolain]] in the heart of the Nightmare Court's operations in the [[Twilight Arbor]] while hoping to use this mission to rekindle the friendship between the bickering pair. Upon arriving at the arbor, Logan and Rytlock were furious to find themselves trapped in the same room, and Rytlock abandoned the group in protest. After rescuing some of the trapped sylvari in the arbor, Logan remarked that their team worked better without Rytlock. However, when Caithe pointed out that the guild was weaker without Rytlock just as they had been weakened by Logan's desertion prior to the battle against Kralkatorrik, the offended Logan stormed off as well.
+
+Faolain seized the opportunity to mock Caithe's progress, trying to sway Caithe to join her side as she would never abandon Caithe unlike Destiny's Edge. When Caithe resisted temptation, the Grand Duchess invited her and her sole remaining ally, the future [[Pact Commander]], to continue their trek and face her three champions in battle to prove their worth. The pair fought Faolain's current lover [[Sariel]], the knight [[Brangoire]] who had once fought alongside Caithe as an ally before being twisted into Nightmare, and ultimately the secondborn [[Cadeyrn]] who had founded the Nightmare Court but had since become Faolain's minion upon her seizing control of the court.
+
+As they defeated each champion and cleared each obstacle one after the other, Caithe began wondering what she had in her troubled life while Faolain had the support of her court and mentor. Her doubts grew into despair about how she was doomed to fail, but the Commander urged her to keep fighting on and provided her with emotional support. Upon cornering Faolain in her lair, the pair faced the Grand Duchess's final challenge: conjured [[phantasm]]s representing twisted versions of Destiny's Edge, all of whom attempted to break Caithe's resolve by reminding her of her personal failures.
+
+The pair successfully defeated the phantasms as Caithe rejected Faolain's advances. The Grand Duchess remained as undeterred as ever, however, and suggested that Caithe would change her mind about her one day, before she vanished. Although Caithe was frustrated that she had failed to defeat Faolain for good, she took solace in the fact that she and the Commander had at least put an end to Faolain's operations in the Twilight Arbor for the time being.
+
+==== The Battle for Claw Island ====
+As the Pale Tree created a portal through which the future Pact Commander and Trahearne entered the Dream's vision of a potential future in Orr, the pair [[A Light in the Darkness|witnessed]] what would happen if Destiny's Edge never reconciled. Feeling abandoned by her friends and being overwhelmed by the futility of bringing them together, Caithe had lost her resolve and had ultimately chosen to side with Faolain as Zhaitan was preparing to spread his blight across the known world. Trahearne pointed out how important it was for Destiny's Edge to reconcile if they were to defeat Zhaitan.&lt;ref&gt;[[A Light in the Darkness]]
+:'''Caithe:''' I've tried so very hard. They can't stop arguing. They can't understand that the dragons are more important.
+:'''Caithe:''' They'd throw everything away! I'm alone—and I'm tired.
+:'''Faolain:''' Come back to me. If the world must end, let us spend our last days in each other's arms.
+:'''Trahearne:''' These visions represent a possible future for Destiny's Edge should they not resolve their quarrels. We need them to reconcile if we're to defeat Zhaitan.&lt;/ref&gt;
+
+==== [[Sorrow's Embrace (story)|Sorrow's Embrace]] ====
+Having renewed her resolve to reunite Destiny's Edge after her crisis of faith in the Twilight Arbor, Caithe [[Sorrow's Embrace (story)|traveled]] to the depths of [[Sorrow's Embrace]], an ancient [[Dwarf|dwarven]] mine since taken over by the [[dredge]] [[moletariate]], where she, Eir, Garm, and the Pact Commander chased after a determined Zojja who had ventured within in pursuit of Snaff's former apprentice [[Kudu]]. Upon reuniting with Zojja, Eir and Zojja ended up in an argument which ultimately led to Eir feeling worthless and leaving with Garm. Caithe, having witnessed a similar scenario between Logan and Rytlock in the Twilight Arbor, resolved to stay by Zojja's side.
+
+As the trio progressed deeper, they witnessed [[War Minister Shukov]]'s declaration as the representative of the moletariate to the gathered dredge troops to prepare for an invasion of the surface. The group realized that Kudu had teamed up with the dredge to provide them with the means to attack for his ulterior motives. Shukov and his forces retreated after the trio beat back the dredge assembly, allowing the trio to continue their search for Kudu. Caithe told the Commander about the origins of Eir and Zojja's animosity and revealed more details about the fateful confrontation with Kralkatorrik and the breaking of Destiny's Edge from five years ago which resonated with the guild to this day.
+
+Although the group ultimately managed to reach Kudu's lab and defeated his [[Iron Forgeman]], Kudu himself managed to flee much to Zojja's frustration. When Caithe suggested that they should ask for the rest of Destiny's Edge to help them with Kudu and other threats, Zojja dismissed her by stating that she did not care if Caithe sought the others out or not as Zojja herself was fully focused on hunting Kudu down once and for all.
+
+==== [[Honor of the Waves (story)|Honor of the Waves]] ====
+Even after the previous setbacks, Caithe persisted in her efforts to reunite her friends more than ever. She was once again aided by the Pact Commander as they [[Honor of the Waves (story)|tracked down]] Eir and Garm to the [[kodan]] [[Sanctuary (city)|sanctuary ship]] known as the [[Honor of the Waves]] which was under siege by the [[Sons of Svanir]] and the [[icebrood]]. Eir had resolved to go on a suicide mission to aid the kodan, not expecting to survive the battle but having made peace with it as she believed herself to be worthless after her constant failures. They joined forces with [[Honor's Claw]] to track down the
+
+Deep in the frigid halls of the glacier-city, they joined forces with [[Honor's Claw]] to find the missing [[Honor's Voice]] only to discover that [[Kodan's Bane, Huntsman of Jormag]] had corrupted the Voice into Jormag's servant. They assisted the grieving Claw to defeat the corrupted Voice and nearly succumb to despair until Eir regaining some of her composure as she offered sage words to keep the Claw resolved to finish the fight. When Caithe attempted to remind Eir of her own failure in the past, the Commander, who had witnessed what Caithe's asides had done to Logan and Rytlock back in the Twilight Arbor, gently asked Caithe not to interfere and let Eir finish her pep talk on her own terms so Eir would come to a newfound realization of her own worth. Caithe admitted to the Commander that she was confused by Eir's returned resolve and that she would never understand how other races' minds worked.
+
+After the group had defeated Kodan's Bane, Caithe exchanged words with Eir who was once again inspired to reunite Destiny's Edge. The norn invited Caithe to accompany her and Garm so they could find the others as they still had a dragon to fight.
+
+==== Victory or Death ====
+Destiny's Edge reunited just in time in early 1326 &lt;small&gt;AE&lt;/small&gt; to assist the [[Pact]]'s assault into [[the Ruined City of Arah]], where they were joined by the Pact Commander. First boarding ''[[The Humble]]'' and taking down multiple dragon champions, the airship was damaged in the battle and Destiny's Edge was forced aboard the recently built flagship known as ''[[The Glory of Tyria]]''. Utilizing the Pact's weaponry, the forces on ''The Glory of Tyria'' finally [[Victory or Death|felled]] the Elder Dragon. Caithe felt a sense of relief after completing her [[Wyld Hunt]] at long last.
 
 === [[Living World Season 1]] ===
-;[[Twilight Assault]]
-In 1326 &lt;small&gt;AE&lt;/small&gt;, Caithe was invited to the [[Twilight Arbor]] by [[Scarlet Briar]] who had struck up an alliance with the Nightmare Court and set up a base for the [[Aetherblades]]. Scarlet claimed to have learned of some "nasty" indiscretion of Caithe's that not even Faolain knew about, and threatened to reveal it to the world. Scarlet was not present in the base in person, however; she had instead set up a trap and spread the news to lure Caithe in and capture the Firstborn. Scarlet seemed to have some sort of plan for Caithe, but a party led by the Pact Commander defeated the [[Clockheart]] and the Aetherblades and freed Caithe before this plan could come to fruition.
+;[[Clockwork Chaos]]
+In 1326 &lt;small&gt;AE&lt;/small&gt;, Caithe was [[Twilight Assault|invited]] to the [[Twilight Arbor]] by the rogue sylvari secondborn [[Scarlet Briar]] who had struck up an alliance with the Nightmare Court and set up a base for her [[Aetherblades]]. Scarlet claimed to have learned of some "nasty" indiscretion of Caithe's that not even Faolain knew about, and threatened to reveal it to the world. Worried that Scarlet had somehow learned about the secret which Caithe had taken as a burden over two decades ago, Caithe resolved to stop Scarlet and [[Twilight Arbor (explorable)|find out]] what exactly the rogue secondborn believed to have learned about her. Scarlet was not present in the base in person, however; she had instead set up a trap with prerecorded holomessages and spread the news to lure Caithe in and capture the firstborn. Scarlet seemed to have some sort of plan for Caithe, but a party led by the Pact Commander defeated the [[Clockheart]] and the Aetherblades and freed Caithe before this plan could come to fruition.
 
-Angered by being deceived, Caithe vowed to hunt down Scarlet and began tracking her. Despite this, she never made an appearance when Scarlet launched an [[Battle for Lion's Arch|open invasion]] on Lion's Arch and did not witness Scarlet's [[Scarlet's End|fall]] at the hands of the Commander.
+Angered by being deceived, Caithe vowed to hunt down Scarlet and began tracking her. Despite this, she never made an appearance when Scarlet launched an [[Battle for Lion's Arch|open invasion]] on Lion's Arch, and she did not witness Scarlet's [[Scarlet's End|fall]] at the hands of the Commander months later.
 
 === [[Living World Season 2]] ===
 ;[[The Dragon's Reach: Part 2]]
-After the destruction of Lion's Arch and the awakening of the Elder Dragon [[Mordremoth]] caused by Scarlet's Briar's last act, the Elder Dragon's [[Mordrem]] minions began appearing in Central Tyria and attacking various locations. The Pale Tree arranged [[The World Summit|a world summit]] in the Grove in 1327 &lt;small&gt;AE&lt;/small&gt; to discuss the threat with other notable leaders and representatives. Caithe attended the summit as well and ended up defending the Grove from a sudden invasion of the Mordrem alongside other participants while the Pact Commander faced the [[Shadow of the Dragon]]. The dragon champion and its minions were ultimately driven off, but the Pale Tree was gravely injured in the attack and fell unconscious. The attack convinced the leaders to shift their focus and resources on helping the Pact take down Mordremoth.
+After the destruction of Lion's Arch and the awakening of the Elder Dragon [[Mordremoth]] caused by Scarlet's Briar's last defiant act, the Elder Dragon's [[Mordrem]] minions began appearing in Central Tyria and attacking various locations. The Pale Tree arranged a [[The World Summit|world summit]] in the Grove in 1327 &lt;small&gt;AE&lt;/small&gt; to discuss the threat with other notable leaders and representatives. Caithe attended the summit as well and ended up defending the Grove from a sudden invasion of the Mordrem alongside other participants while the Pact Commander faced the [[Shadow of the Dragon]]. The dragon champion and its minions were ultimately driven off, but the Pale Tree was gravely injured in the attack and fell unconscious. The attack convinced the leaders to shift their focus and resources on helping the Pact take down Mordremoth.
 
 ;[[Echoes of the Past]]
-Following the assault on the Grove, Caithe reunited with Destiny's Edge and traveled to [[Camp Resolve]] in the Silverwastes which the Pact was using as a staging ground in the upcoming assault on Mordremoth. She and [[Canach]] accompanied a reconnaissance squad deeper into [[the Silverwastes]] to investigate Mordrem movements but ended up in trouble when the Mordrem spotted the squad and fought them. Thanks to the assistance provided by the Commander, they discovered a hive swarming with increasing numbers of Mordrem led by the [[Mordrem Vinewrath (NPC)|Mordrem Vinewrath]] before they had to retreat back to Camp Resolve to report their findings.
+Following the assault on the Grove, Caithe reunited with Destiny's Edge and traveled to [[Camp Resolve]] in the Silverwastes which the Pact and Marshal Trahearne were using as a staging ground in the upcoming assault on Mordremoth. She and secondborn [[Canach]] accompanied a reconnaissance squad deeper into [[the Silverwastes]] to investigate Mordrem movements but ended up in trouble when the Mordrem spotted the squad and fought them. Thanks to the [[Caithe's Reconnaissance Squad|assistance]] provided by the Pact Commander, they discovered a hive swarming with increasing numbers of Mordrem led by the [[Mordrem Vinewrath (NPC)|Mordrem Vinewrath]] before they had to retreat back to Camp Resolve to report their findings.
 
 ;[[Tangled Paths]]
-When news of [[Glint's Egg]] emerged upon finding the [[Master of Peace]], Caithe was immediately interested in the Commander's mission to find the leader of the [[Zephyrites]]. Once the Master of Peace was found deep within a labyrinthine cave in the Silverwastes, he was revealed to be carrying the egg. After a battle with the Mordrem which left the Master of Peace fatally wounded, Caithe immediately seized and fled with the egg much to the confusion of the Commander's party.
+When news of [[Glint's Egg]] [[Return to Camp Resolve|emerged]], Caithe was immediately interested in the Pact Commander's mission to find the [[Master of Peace]], the leader of the [[Zephyrites]] who was suspected to know more about the egg. She, the Commander, and their charr ally [[Rox]] [[Tracking the Aspect Masters|tracked down]] the [[Aspect Master]]s, who had left the camp to search for the missing Master of Peace, as they believed the three masters to know the Master of Peace's whereabouts. They were ambushed by the Mordrem and assisted the Aspect Masters in fighting them off although the [[Master of Sun]] died in the clash. Realizing that they were in no condition to continue the search, the two remaining masters provided clues to how to track down the elusive Master of Peace.
+
+Eager to continue the search, Caithe assisted the Commander and their allies [[Braham Eirsson]], [[Kasmeer Meade]], [[Marjory Delaqua]], [[Frostbite]], and Rox in tracking down the Master of Peace into a labyrinth underneath the Silverwastes, but Mordrem vines erupted and blocked their path while separating the allies from one another. Caithe and the Commander [[Into the Labyrinth|worked together]] to locate each missing ally before pushing into the heart of the labyrinth where they found the Master of Peace who was carrying the egg. The meeting was cut short when they were ambushed by the Mordrem which were also after the egg, leading to the Master of Peace being fatally wounded in the resulting clash before the Mordrem were defeated. Although the Master of Peace's dying request was for the Commander to take on the duty to safeguard the egg, Caithe seized the egg all of a sudden and fled with it. Before vanishing into the shadows, she claimed that she did not have the time to explain the reason for her actions, leading to confusion among the Commander's party.
 
 ;[[Point of No Return]]
-In 1328 &lt;small&gt;AE&lt;/small&gt;, the Commander followed Caithe's trail to a remote cave in the Silverwastes with clues provided by the Pale Tree's [[memory seed]]s which granted access to Caithe's [[Seeds of Truth|memories]]. After witnessing the memory of Caithe learning the secret of the sylvari's origins as minions of Mordremoth, the Commander came face to face with the Firstborn herself. When questioned, Caithe confirmed the truth about the sylvari's origins but refused to hand over the egg while insisting she was on the Commander's side. The conversation was interrupted when the [[Shadow of the Dragon]] attacked them in order to seize the egg. While the Commander's party battled and defeated the dragon champion, Caithe fled with the egg once again.
+In 1328 &lt;small&gt;AE&lt;/small&gt;, the Pact Commander followed Caithe's trail into a remote cave in the [[Far Silverwastes]] with clues provided by the Pale Tree's [[memory seed]]s which had granted access to Caithe's [[Seeds of Truth|memories]]. After witnessing the memory of Caithe learning the secret of the sylvari's origins as minions of Mordremoth and her role in killing firstborn [[Wynne]] and taking over the latter's duty to safeguard the secret from other sylvari and other races, the Commander [[The Mystery Cave|came face to face]] with the elusive firstborn herself. When questioned, Caithe confirmed the truth about the sylvari's origins, and explained how the Pale Tree had reacted to the events surrounding her, Faolain and Wynne's actions decades ago. However, she refused to hand over the egg while insisting that she was on the Commander's side. Before the Commander could press Caithe for more answers, the Shadow of the Dragon attacked them in order to seize the egg. While the Commander's party battled and defeated the dragon champion, Caithe managed to flee with the egg once again.
 
 === [[Guild Wars 2: Heart of Thorns|Heart of Thorns]] ===
 ;Act 2
-Caithe's journey with the egg took her deep into the [[Heart of Maguuma]] where the Pact fleet eventually crashed into in Mordremoth's surprise assault. She was spotted a few times by the local populace and Pact survivors before both the Commander's party and Faolain, whom Mordremoth had captured and transformed into a monstrous creature, caught up with her. During the ensuing battle Caithe dropped the egg and then later escaped on her own once more while the Commander took the egg to safety in [[Tarir, the Forgotten City]]. Caithe witnessed from afar how the city powered up shortly after the egg had been delivered there, and vanished into the jungle.
+Caithe's journey with the egg took her deep into the [[Heart of Maguuma]] where the Pact fleet eventually crashed in Mordremoth's surprise assault. She was spotted a few times by the local populace and Pact survivors before the Pact Commander's party, which now included Rytlock, caught up with her just as they witnessed Faolain attempting to manipulate Caithe to hand over the egg. When Caithe hesitated, Faolain stepped out of the shadows of the underbrush, revealed to have been transformed into a monstrous [[vinetooth]]-like creature by Mordremoth whose forces had seized her in an [[Prisoners of the Dragon|earlier confrontation]] with the Commander's party. In the [[Prized Possessions|ensuing battle]] Caithe dropped the egg and then later escaped on her own once more while the Commander took the egg to safety in [[Tarir, the Forgotten City]] governed by the [[Exalted]]. Caithe witnessed from afar how the golden city [[City of Hope|powered up]] shortly after the egg had been delivered there, and vanished into the jungle.
 
 ;Act 4
-Caithe met up with the Commander in [[Dragon's Stand]] shortly before the rescue of Logan and Zojja. She explained her actions with the egg as a new Wyld Hunt that had driven her too strongly. Although the Commander's party was initially distrustful of her and confiscated her weapons, Caithe was eventually allowed to join the battle against corrupted Faolain who tried to stop their advance. Seeing her former lover's new, abhorrent form and fall to Mordremoth's influence, Caithe came to terms with killing her. She stayed with the Commander's party afterwards, vowing to defeat the Elder Dragon regardless of the cost to the sylvari race.
+Caithe met up with the Commander's party in [[Dragon's Stand]] shortly before the rescue of Logan and Zojja from Mordremoth's clutches. She explained her actions with the egg as a new Wyld Hunt that had driven her too strongly. Although the Commander's party was initially distrustful of her and confiscated her weapons, Caithe was eventually allowed to [[Bitter Harvest|join the battle]] against corrupted Faolain who tried to stop their advance. Seeing her former lover's new, abhorrent form and fall to Mordremoth's influence, Caithe came to terms with killing her. She stayed with the Commander's party afterwards, vowing to defeat the Elder Dragon regardless of the cost to the sylvari race.
 
-Caithe followed the Commander to the heart of Mordremoth's domain where Trahearne was kept in. She offered to join in the final battle in the Dream against Mordremoth or to remain behind to safeguard the Commander's body. Mordremoth tried to break her spirit by showing her a vision of a [[Blighted Pale Tree]] loyal to the dragon's cause, but Caithe ultimately rejected the vision and resolved to fight on, not wanting such a fate come to pass. After Mordremoth's demise, Caithe expressed relief but also concern as their creator's death now left the future of the Pale Tree and the sylvari race open and uncertain.
+Caithe [[Hearts and Minds|followed]] the Commander into the heart of Mordremoth's domain where Trahearne was kept in. They discovered the marhal fused into a pod as the Elder Dragon attempted to break Trahearne's resolve to mold him into a champion. Caithe offered to join in the final battle in the Dream against Mordremoth or to remain behind to safeguard the Commander's body. If Caithe was allowed to join the fight in the Dream, Mordremoth tried to break her spirit by showing her a vision of a [[Blighted Pale Tree]] loyal to the Elder Dragon's cause. However, Caithe ultimately rejected the vision and resolved to fight on, not wanting such a fate come to pass, as the Commander assisted her in overcoming the vision.
+
+After Mordremoth was defeated in the Dream, the party returned to the heart of the dragon's domain only to witness the defiant Mordremoth attempting to regrow itself via a seed planted in Trahearne to have his revenge. Caithe witnessed the Commander honoring the marshal's last request to kill him with Caladbolg, ending Trahearne and Mordremoth's lives at the same time. Caithe expressed relief but also concern as their creator's death now left the future of the Pale Tree and the sylvari race open and uncertain.
 
 === [[Living World Season 3]] ===
 ;[[Out of the Shadows]]
@@ -913427,10 +913554,13 @@ When the Tyrian Alliance delegates reconvened for a [[Strangers among Lands|seco
 Following the titan trio's defeat, the kodan held a victory celebration for their returned allies in Harvest Den. Caithe had received a [[Letter (Balrior Peak)|letter]] discreetly from Dagonet at some point and had left it in Stoic Alder's house where the Commander discovered it during the festivities. In his letter Dagonet expressed his gratitude to Caithe for encouraging him to join the Battle's Eve feast to get to know the lowlanders better. He was also happy to have learned that Caithe's intuition to seek out Waiting Sorrow had proven to be fruitful as it had led to potential leads to cure the Pale Tree. However, Dagonet believed that it would take time to research and pursue these leads, and he urged Caithe to not mention their private investigation to anyone for the time being.&lt;ref name="Letter (Balrior Peak)" /&gt;
 
 ;[[Absolution]]
-Following the Tyrian Alliance's success in ending the titan threat in Janthir and the [[Foundry of Failed Creations]] in 1338 &lt;small&gt;AE&lt;/small&gt;, a [[Salvation's Cost|victory celebration]] was held in Lion's Arch. Caithe was among the many guests attending the festivities, taking the time to listen to Queen Jennah's celebration speech before mingling with the other participants. While conversing with the Pact Commander, Caithe pointed out that both she and Aurene were proud of the Commander's achievements. Choosing not to inform the Commander about her private investigations due to Dagonet's request, Caithe simply admitted that the Pale Tree's slow recovery continued to vex even the sylvari's best minds and had made her wonder whether there was something deeper at the root of her illness.&lt;ref&gt;[[Salvation's Cost]]
+Following the Tyrian Alliance's success in ending the titan threat in Janthir and the [[Foundry of Failed Creations]] in 1338 &lt;small&gt;AE&lt;/small&gt;, a [[Salvation's Cost|victory celebration]] was held in Lion's Arch. Caithe was among the many guests attending the festivities, taking the time to listen to Queen Jennah's celebration speech before mingling with the other participants. While conversing with the Pact Commander, Caithe pointed out that both she and Aurene were proud of the Commander's achievements. Choosing not to inform the Commander about her ongoing private investigations due to Dagonet's request, Caithe simply admitted that the Pale Tree's slow recovery continued to vex even the sylvari's best minds and had made her wonder whether there was something deeper at the root of her illness.&lt;ref&gt;[[Salvation's Cost]]
 :'''Caithe:''' I knew leaving the bearkin in your capable hands was a good thing. I'm sure wherever Aurene is, she'd be proud of your achievements. I know I am.
 :'''&lt;Character name&gt;:''' What's next for you, Caithe?
 :'''Caithe:''' Much the same, I'm afraid. Mother's slow recovery continues to vex even our best minds. It makes me wonder whether there's something deeper at the root of her illness.&lt;/ref&gt;
+
+=== [[Guild Wars 2: Visions of Eternity|Visions of Eternity]] ===
+By 1339 &lt;small&gt;AE&lt;/small&gt;, Caithe served as a delegate representing the Grove and [[Village of Astorea|Greater Astorea]] in the Tyrian Alliance alongside Aife and Dagonet.&lt;ref&gt;[["The Tyrian Alliance: A Primer"]]&lt;/ref&gt;
 
 == Locations ==
 ;[[Cantha]]
@@ -913870,7 +914000,7 @@ Valentine's Card 2014 - Caithe.jpg|Valentine's Day Card from 2014 featuring Cait
 [[de:Caithe]]
 [[es:Caithe]]
 [[fr:Caithe]]</text>
-      <sha1>qeta4rfms4dl5dxbe819xs9ay8k2ihf</sha1>
+      <sha1>lvn4m8rytdxdzx9gsmc7mt9fxqofxmo</sha1>
     </revision>
   </page>
 <page xmlns="http://www.mediawiki.org/xml/export-0.11/">
@@ -972192,23 +972322,23 @@ These items are no longer available as of the [[September 2014 Feature Pack]].
     <ns>0</ns>
     <id>232040</id>
     <revision>
-      <id>3126519</id>
-      <parentid>2774259</parentid>
-      <timestamp>2026-04-08T18:01:57Z</timestamp>
+      <id>3215595</id>
+      <parentid>3126519</parentid>
+      <timestamp>2026-10-18T19:20:54Z</timestamp>
       <contributor>
-        <username>Tery3065</username>
-        <id>270948</id>
+        <username>DiegoDeLaHouska</username>
+        <id>206595</id>
       </contributor>
       <minor />
-      <origin>3126519</origin>
+      <origin>3215595</origin>
       <model>wikitext</model>
       <format>text/x-wiki</format>
-      <text bytes="436" sha1="mck61tnx2lfkqgey53flltvczw1jtoz" xml:space="preserve">{{stub|npc|please put a reason for this stub tag, otherwise remove the stub tag}}
-{{NPC infobox
+      <text bytes="385" sha1="oz02havb71242csuapwcsyof7zusp3v" xml:space="preserve">{{NPC infobox
 | image = Clown.jpg
 | location = Salma District
 | race = Human
 | level = 20
+| coordinates = [44316, 26621]
 }}
 [[Carnival Clown]]s are [[human]]s that appear in the [[Salma District]] [[home instance]] if the option to join the carnival is taken during the [[personal story]].
 
@@ -972218,7 +972348,7 @@ These items are no longer available as of the [[September 2014 Feature Pack]].
 ** [[Salma District]]
 
 [[de:Jahrmarkt-Clown]]</text>
-      <sha1>mck61tnx2lfkqgey53flltvczw1jtoz</sha1>
+      <sha1>oz02havb71242csuapwcsyof7zusp3v</sha1>
     </revision>
   </page>
 <page xmlns="http://www.mediawiki.org/xml/export-0.11/">
@@ -1014581,17 +1014711,18 @@ Cecil the Strong Arm (historical).jpg|Cecil appearance prior to [[Game updates/2
     <ns>0</ns>
     <id>47391</id>
     <revision>
-      <id>2896310</id>
-      <parentid>2889773</parentid>
-      <timestamp>2024-11-15T05:47:47Z</timestamp>
+      <id>3215568</id>
+      <parentid>2896310</parentid>
+      <timestamp>2026-10-18T18:53:19Z</timestamp>
       <contributor>
-        <ip>24.23.247.110</ip>
+        <username>Doodleplex</username>
+        <id>203325</id>
       </contributor>
-      <comment>historical sources</comment>
-      <origin>2896310</origin>
+      <minor />
+      <origin>3215568</origin>
       <model>wikitext</model>
       <format>text/x-wiki</format>
-      <text bytes="1424" sha1="g2qt1ohpwp4evf9rrjnbxzxrzdbul5w" xml:space="preserve">{{Item infobox
+      <text bytes="1424" sha1="am6ye43ds2scqjv2sumfjq61hm2r6zj" xml:space="preserve">{{Item infobox
 | description = A hat to celebrate this new day in Tyria.
 | type = armor skin
 | skin type = headgear
@@ -1014600,10 +1014731,9 @@ Cecil the Strong Arm (historical).jpg|Cecil appearance prior to [[Game updates/2
 | bound = account
 | id = 64752,20311
 | gallery1 = Celebration Hat.jpg
-| gallery2 = Celebration Hat Asura.jpg
-| gallery2-text = In-game appearance on Asura
+| gallery2 = Celebration Hat asura.jpg
+| gallery2-text = In-game appearance on asura.
 }}
-
 == Acquisition ==
 === Contained in ===
 {{contained in}}
@@ -1014628,7 +1014758,7 @@ Cecil the Strong Arm (historical).jpg|Cecil appearance prior to [[Game updates/2
 [[de:Festhut]]
 [[es:Sombrero de celebración]]
 [[fr:Chapeau festif (apparence de casquette)]]</text>
-      <sha1>g2qt1ohpwp4evf9rrjnbxzxrzdbul5w</sha1>
+      <sha1>am6ye43ds2scqjv2sumfjq61hm2r6zj</sha1>
     </revision>
   </page>
 <page xmlns="http://www.mediawiki.org/xml/export-0.11/">
@@ -1087068,19 +1087198,19 @@ The [[Champion Horrid Illusion]] is a [[Phantasm (race)|phantasm]]al [[shark]] f
     <ns>0</ns>
     <id>119362</id>
     <revision>
-      <id>2969061</id>
-      <parentid>1984397</parentid>
-      <timestamp>2025-05-21T16:58:58Z</timestamp>
+      <id>3215660</id>
+      <parentid>3215659</parentid>
+      <timestamp>2026-10-18T23:01:07Z</timestamp>
       <contributor>
-        <username>Hazasoul</username>
-        <id>133824</id>
+        <username>Felrend</username>
+        <id>287553</id>
       </contributor>
       <minor />
-      <comment>/* Contents */</comment>
-      <origin>2969061</origin>
+      <origin>3215660</origin>
       <model>wikitext</model>
       <format>text/x-wiki</format>
-      <text bytes="1079" sha1="40egi0df0psn7nqogdglnfjko74q4d9" xml:space="preserve">{{item infobox
+      <text bytes="1222" sha1="1tz8gu2r2zbfpgc7xuyr2hak655ox00" xml:space="preserve">{{otheruses|the container acquired from the [[Maguuma Jungle Reward Track]]|the {{rarity|exotic}} container|Champion Hylek Loot Box (exotic)}}
+{{item infobox
 | type = loot box
 | rarity = basic
 | description = This champion container has [[Champion loot bag|champion bags]], [[Dragonite Ore|dragonite ore]], and [[Empyreal Fragment|empyreal fragments]].
@@ -1087104,7 +1087234,7 @@ The [[Champion Horrid Illusion]] is a [[Phantasm (race)|phantasm]]al [[shark]] f
 [[de:Beutekiste des Champion Hylek]]
 [[es:Caja de botín de hylek campeón]]
 [[fr:Boîte de butin hylek champion]]</text>
-      <sha1>40egi0df0psn7nqogdglnfjko74q4d9</sha1>
+      <sha1>1tz8gu2r2zbfpgc7xuyr2hak655ox00</sha1>
     </revision>
   </page>
 <page xmlns="http://www.mediawiki.org/xml/export-0.11/">
@@ -1134836,19 +1134966,17 @@ The [[Champion Wind Rider]] is a powerful [[Wind Rider]] found in [[Draconis Mon
     <ns>0</ns>
     <id>367128</id>
     <revision>
-      <id>3151056</id>
-      <parentid>2928181</parentid>
-      <timestamp>2026-05-29T09:18:40Z</timestamp>
+      <id>3215192</id>
+      <parentid>3151056</parentid>
+      <timestamp>2026-10-18T10:22:32Z</timestamp>
       <contributor>
-        <username>Caeldom</username>
-        <id>269879</id>
+        <username>Sunlion</username>
+        <id>225997</id>
       </contributor>
-      <minor />
-      <origin>3151056</origin>
+      <origin>3215192</origin>
       <model>wikitext</model>
       <format>text/x-wiki</format>
-      <text bytes="892" sha1="grefyiecpy7ipvjajanzmmc29cea86u" xml:space="preserve">{{Stub|NPC}}
-{{NPC infobox
+      <text bytes="1725" sha1="8eag0h1mykb1b6ed60uhmiygzc7hg7b" xml:space="preserve">{{NPC infobox
 | image = The Cursed.jpg
 | location = Commander without a Cause
 | race = Demon
@@ -1134867,19 +1134995,17 @@ The [[Champion Wind Rider]] is a powerful [[Wind Rider]] found in [[Draconis Mon
 
 == Combat abilities ==
 ;Effects
-{{defiance}}
+{{defiance}} &lt;br&gt;{{chain}}'''[[Stun (defiance)|Stun]]''' — {{skill description|Stun (defiance)}}
 
 ;Skills
-* '''Knocking Dive''' -
-* '''Flame Barrage''' - An AoE attack that rains down flaming arrows.
-* '''Weakening Flames''' - A pulsing AoE attack.
-* '''Cursed Shot''' - A single long range shot.
+* '''Cursed Shot''' — Ranged [[autoattack]]. Shoots a damaging arrow [[projectile]] imbued with [[Kryptis]] energy.
+* '''Flame Barrage''' — Aims its bow at the sky and begins firing volleys of arrows, generating a large circular [[AoE]] at a target's location. Every 2 seconds, targets in the AoE have damage and one stack of {{Burning}} &lt;small&gt;(5s)&lt;/small&gt; pulsed to them. It lasts for 8 seconds. Only used when outside of melee range.
+* '''Knocking Dive''' — Soars up into the air while [[Evade|evading]] incoming attacks, and then swoops back down to deal damage and cause {{Knockback}} to multiple nearby targets.
+* '''Weakening Flames''' — Surrounds itself with a wisp of flame and raises its hand to the sky. After around 3 seconds, a fireball falls to the ground at a target's location, creating a large circular AoE that pulses damage, {{Burning}} &lt;small&gt;(5s)&lt;/small&gt;, and {{Weakness}} &lt;small&gt;(5s)&lt;/small&gt; at 1-second intervals and lasts for 4 seconds.
 
 ;Stolen skills
-{{section-stub|npc|missing content, please remove stub tag if all content seems to be here}}
-
-{{creature nav}}</text>
-      <sha1>grefyiecpy7ipvjajanzmmc29cea86u</sha1>
+{{section-stub|npc|missing content, please remove stub tag if all content seems to be here}}</text>
+      <sha1>8eag0h1mykb1b6ed60uhmiygzc7hg7b</sha1>
     </revision>
   </page>
 <page xmlns="http://www.mediawiki.org/xml/export-0.11/">
@@ -1347971,18 +1348097,17 @@ Mount up on your [[Warclaw]] and select a tree. Approach to somewhat close range
     <ns>0</ns>
     <id>316439</id>
     <revision>
-      <id>3021348</id>
-      <parentid>3012141</parentid>
-      <timestamp>2025-08-26T05:10:36Z</timestamp>
+      <id>3215674</id>
+      <parentid>3021348</parentid>
+      <timestamp>2026-10-19T01:20:09Z</timestamp>
       <contributor>
-        <username>Caeldom</username>
-        <id>269879</id>
+        <username>Sunlion</username>
+        <id>225997</id>
       </contributor>
-      <comment>Improve article</comment>
-      <origin>3021348</origin>
+      <origin>3215674</origin>
       <model>wikitext</model>
       <format>text/x-wiki</format>
-      <text bytes="6497" sha1="jd0ihchlsz0dzxsamamkqngdvs8r90p" xml:space="preserve">{{Event infobox
+      <text bytes="6584" sha1="f0oskte8nvijnfrn3nrh2s8fiojg8tj" xml:space="preserve">{{Event infobox
 | location = North Peninsula
 | coordinates = [24377.5, 101109.3]
 | type = dynamic event
@@ -1348045,6 +1348170,10 @@ Gather Jade Mech Components from {{event icon|gather}} [[Fallen Mech]]s in the a
 * [[Unchained Mage]]
 * [[Unchained Villager]]
 
+== Objects ==
+* [[Fallen Mech]]
+* [[Unnamed object (North Peninsula)|Unnamed object]]
+
 == Dialogue ==
 ;Event start
 :'''[[Technical Liaison Eng]]:''' ''But, ma'am, [[Unchained]] are still lurking around here. And we've exhausted almost all of our supplies!''
@@ -1348098,7 +1348227,7 @@ Gather Jade Mech Components from {{event icon|gather}} [[Fallen Mech]]s in the a
 {{bug|The progress of how many Jade Mech Components have been collected may not show up, but it will still progress and can be finished.}}
 * The damaged Jade Vanguard which Eng is repairing becomes an [[Elite Jade Bulwark]] when she finishes repairing it.
 * With only one player participating, the event requires 10 Jade Mech Components to be collected.</text>
-      <sha1>jd0ihchlsz0dzxsamamkqngdvs8r90p</sha1>
+      <sha1>f0oskte8nvijnfrn3nrh2s8fiojg8tj</sha1>
     </revision>
   </page>
 <page xmlns="http://www.mediawiki.org/xml/export-0.11/">
@@ -1423473,6 +1423602,49 @@ Kellach returned to Alastia for revenge and for a cure; to save her crew on the 
 [[Category:NPCs with unique hidden dialogue]]
 [[de:Korporal Vaughan]]</text>
       <sha1>0r8glxe8n01gbnnodu709u0gjhm3lid</sha1>
+    </revision>
+  </page>
+<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
+    <title>Corporal Vikar</title>
+    <ns>0</ns>
+    <id>424375</id>
+    <revision>
+      <id>3215480</id>
+      <parentid>3215268</parentid>
+      <timestamp>2026-10-18T16:53:07Z</timestamp>
+      <contributor>
+        <username>Snitching</username>
+        <id>203864</id>
+      </contributor>
+      <minor />
+      <comment>icon, shared image, coords (replacing location in description), event involvement, combat abilities</comment>
+      <origin>3215480</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="567" sha1="n6cvsr2wgh4bv2xyfkr0zr2dt4rqwjd" xml:space="preserve">{{NPC infobox
+| icon = Event collect (map icon).png
+| image = Astral Ward Protector norn male 6.jpg
+| location = Tranquil Glen
+| race = Norn
+| organization = Astral Ward
+| level = 80
+| coordinates = [8874.4, 58665.7]
+| requires = voe
+}}
+[[Corporal Vikar]] is a [[norn]] member of the [[Astral Ward]] found at [[Tranquil Glen]] gathering unknown ley magic.  
+
+== Location ==
+;[[Castora]]
+* [[Starlit Weald]]
+** [[Tranquil Glen]] {{during}}
+
+== Event involvement ==
+: {{event|Help Corporal Vikar gather magic samples}}
+
+== Combat abilities ==
+;Abilities
+* Melee Warrior</text>
+      <sha1>n6cvsr2wgh4bv2xyfkr0zr2dt4rqwjd</sha1>
     </revision>
   </page>
 <page xmlns="http://www.mediawiki.org/xml/export-0.11/">
@@ -1676304,19 +1676476,18 @@ Beware of using melee attacks on the Clam, as you can become trrapped inside its
     <ns>0</ns>
     <id>56258</id>
     <revision>
-      <id>3160909</id>
-      <parentid>3159222</parentid>
-      <timestamp>2026-06-16T18:15:10Z</timestamp>
+      <id>3215206</id>
+      <parentid>3160909</parentid>
+      <timestamp>2026-10-18T12:59:52Z</timestamp>
       <contributor>
-        <username>Sunlion</username>
-        <id>225997</id>
+        <username>Endaris</username>
+        <id>216158</id>
       </contributor>
-      <minor />
-      <comment>/* Objectives */</comment>
-      <origin>3160909</origin>
+      <comment>/* Related achievements */ added flameseeker prophecies III</comment>
+      <origin>3215206</origin>
       <model>wikitext</model>
       <format>text/x-wiki</format>
-      <text bytes="3499" sha1="o37omr5ycm5tz04p6d0em3d7cg18mlp" xml:space="preserve">{{Event infobox
+      <text bytes="3548" sha1="406hbnyd54eurc0uvcr14khicmd39uy" xml:space="preserve">{{Event infobox
 | location = The Narthex
 | coordinates = [44575,44173]
 | type = Group event
@@ -1676402,6 +1676573,7 @@ Beware of using melee attacks on the Clam, as you can become trrapped inside its
 * {{collection achievement|Fertilized with the High Wizard's Bone Meal}}
 * {{collection achievement|Ode to the High Wizard}}
 * {{collection achievement|Risen High Wizard Soul Energy}}
+* {{collection achievement|The Retaking of Orr}}
 * {{collection achievement|Ancient Planetarium Slide}}
 * {{collection achievement|Fragment of Prismatic Shadows}}
 * {{collection achievement|Rotbeard's Treasure}}
@@ -1676414,7 +1676586,7 @@ Beware of using melee attacks on the Clam, as you can become trrapped inside its
 [[de:Besiegt den Auferstandenen Oberster Zauberer und sichert die Promenade der Götter]]
 [[es:Derrota al alto brujo resurgido y asegura el Paseo de los Dioses]]
 [[fr:Vaincre le grand sorcier trépassé et capturer la Promenade des dieux]]</text>
-      <sha1>o37omr5ycm5tz04p6d0em3d7cg18mlp</sha1>
+      <sha1>406hbnyd54eurc0uvcr14khicmd39uy</sha1>
     </revision>
   </page>
 <page xmlns="http://www.mediawiki.org/xml/export-0.11/">
@@ -1679621,32 +1679793,32 @@ Spawns a [[Toxic Seedling]] each time the event is completed, which can be harve
     <ns>0</ns>
     <id>322439</id>
     <revision>
-      <id>3192594</id>
-      <parentid>3192593</parentid>
-      <timestamp>2026-09-10T18:59:55Z</timestamp>
+      <id>3215716</id>
+      <parentid>3215712</parentid>
+      <timestamp>2026-10-19T06:35:12Z</timestamp>
       <contributor>
-        <username>Doodleplex</username>
-        <id>203325</id>
+        <username>Sunlion</username>
+        <id>225997</id>
       </contributor>
-      <minor />
-      <origin>3192594</origin>
+      <comment>Should be all the NPCs; doesn't seem like nobles or villagers have veteran variants, and abominations and tacticians don't have normal variants in Cantha</comment>
+      <origin>3215716</origin>
       <model>wikitext</model>
       <format>text/x-wiki</format>
-      <text bytes="1596" sha1="skv25kv7hpz93i6kgmx5va9sxbp0a3t" xml:space="preserve">{{stub|event|coordinates needed}}
-{{Event infobox
+      <text bytes="2618" sha1="j9vc290g3ztpf6hpteh6yglghocgizm" xml:space="preserve">{{Event infobox
 | location = North Peninsula
 | type = group event
 | indicator = boss
 | level = 80
 | id = 
-| requires = eod
 | previous = Defeat the Unchained and capture their ritual sites
+| coordinates = [24553.1, 100768.0]
+| path = [[24568.4, 100817.0],[24541.3, 100756.9],[24533.9, 100708.6],[24540.3, 100664.4],[24582.2, 100626.8],[24646.5, 100632.3],[24660.7, 100632.9],[24712.9, 100641.8]]
+| requires = eod
 }}
 [[Defeat the Unchained Kingpin]] is a level 80 [[Dynamic event|event]] around [[Abandoned Lighthouse]].
 
 == Objectives ==
-* Champion Unchained Kingpin
-* {{event bar}} {{event boss}}
+* Champion Unchained Kingpin&lt;br&gt;{{event bar}} {{event boss}}
 * Time limit: 10:00
 
 == Rewards ==
@@ -1679658,28 +1679830,55 @@ Spawns a [[Toxic Seedling]] each time the event is completed, which can be harve
 
 === Foes ===
 * [[Champion Unchained Kingpin]]
+* [[Elite Unchained Acolyte]]
+* [[Elite Unchained Devastator]]
+* [[Elite Unchained Mage]]
+* [[Elite Unchained Sentinel]]
+* [[Unchained Berserker]]
+* [[Unchained Defiler]]
+* [[Unchained Devastator]]
+* [[Unchained Gorilla]]
+* [[Unchained Hunter]]
+* [[Unchained Illusionist]]
+* [[Unchained Noble]]
+* [[Unchained Sentinel]]
+* [[Unchained Villager]]
+* [[Veteran Unchained Abomination]]
+* [[Veteran Unchained Acolyte]]
+* [[Veteran Unchained Berserker]]
+* [[Veteran Unchained Defiler]]
+* [[Veteran Unchained Gorilla]]
+* [[Veteran Unchained Hunter]]
+* [[Veteran Unchained Illusionist]]
+* [[Veteran Unchained Mage]]
+* [[Veteran Unchained Sentinel]]
+* [[Veteran Unchained Tactician]]
 
 == Dialogue ==
-;Upon event start
+;Event start
 :'''Champion Unchained Kingpin:''' ''Interlopers. I will hunt, then begin again.''
 :'''Researcher Ushi:''' ''What do you seek? Tell us what you want.''
 :'''Champion Unchained Kingpin:''' ''More.''
 
-;Once the kingpin reaches 75% health
+;Once the kingpin reaches 66% health
 :'''Champion Unchained Kingpin:''' ''Stronger than anticipated. Need my kin... To me!''
-:'''Researcher Ushi:''' It's summoning more of them. Be strong.''
+:'''Researcher Ushi:''' ''It's summoning more of them. Be strong.''
 
-;Once the kingpin reaches 25%  health
+;Once the kingpin reaches 2% health
 :'''Champion Unchained Kingpin:''' ''No more. Rest...''
 
-;Upon completion
+;Event success
 :'''Researcher Ushi:''' ''They're getting stronger, their voices more...pungent.''
 :'''Researcher Ushi:''' ''More and more of them keep coming from the [[Drowned Kaineng|ruins]]. Bleeding into [[Shing Jea Island|Shing Jea]] like a gaping wound.''
 :'''Researcher Ushi:''' ''A storm is brewing, but there's much more research to be done. Had the ritual concluded...''
 :'''Researcher Ushi:''' ''Drawing magic from the soil... Death magic. What are they doing?''
 
+;Event failure
+:'''Champion Unchained Kingpin:''' ''More blood into soil. We thrive.''
+:'''Researcher Ushi:''' ''Retreat! There's...there's too many of them. They're too strong!''
+
 [[de:Bezwingt die entfesselte Bandenchefin]]</text>
-      <sha1>skv25kv7hpz93i6kgmx5va9sxbp0a3t</sha1>
+      <sha1>j9vc290g3ztpf6hpteh6yglghocgizm</sha1>
     </revision>
   </page>
 <page xmlns="http://www.mediawiki.org/xml/export-0.11/">
@@ -1679759,19 +1679958,17 @@ Spawns a [[Toxic Seedling]] each time the event is completed, which can be harve
     <ns>0</ns>
     <id>314539</id>
     <revision>
-      <id>3021216</id>
-      <parentid>3021207</parentid>
-      <timestamp>2025-08-25T18:21:46Z</timestamp>
+      <id>3215713</id>
+      <parentid>3021216</parentid>
+      <timestamp>2026-10-19T06:08:19Z</timestamp>
       <contributor>
-        <username>Snitching</username>
-        <id>203864</id>
+        <username>Sunlion</username>
+        <id>225997</id>
       </contributor>
-      <minor />
-      <comment>/* Foes */</comment>
-      <origin>3021216</origin>
+      <origin>3215713</origin>
       <model>wikitext</model>
       <format>text/x-wiki</format>
-      <text bytes="2959" sha1="7uy1hhy9tvkuecm01zhsbqet1wap24k" xml:space="preserve">{{Event infobox
+      <text bytes="3016" sha1="ckv8hqkon22ydvolwjqlujg1rwn4cvl" xml:space="preserve">{{Event infobox
 | location = North Peninsula
 | type = group event
 | indicator = shield
@@ -1679797,8 +1679994,7 @@ Spawns a [[Toxic Seedling]] each time the event is completed, which can be harve
 {{Event rewards}}
 
 == Walkthrough ==
-
-To complete the event all three marked ritual sites must be captured by the players. Capturing is progressed as long as more players than [[Risen | Unchained]] enemies are in the circled area. The capturing progress is displayed in the objectives UI. Once a site has been fully captured the marked area and the progress bar in the UI disappear, the areas do not need to be defended after capture. During the capturing waves of enemies will spawn and attack the players. 
+To complete the event all three marked ritual sites must be captured by the players. Capturing is progressed as long as more players than [[Risen|Unchained]] enemies are in the circled area. The capturing progress is displayed in the objectives UI. Once a site has been fully captured the marked area and the progress bar in the UI disappear, the areas do not need to be defended after capture. During the capturing waves of enemies will spawn and attack the players. 
 
 === Interactive map ===
 {{Interactive map | map = 1442 | fit = markers | markers =
@@ -1679808,15 +1680004,16 @@ To complete the event all three marked ritual sites must be captured by the play
 }}
 
 == NPCs ==
-{{stub|event|npcs}}
 === Allies ===
 * [[Researcher Ushi]]
 
 === Foes ===
+{{stub|event|check for more NPCs, remove if none}}
 * [[Unchained Acolyte]]
 * [[Unchained Noble]]
 * [[Veteran Unchained Devastator]]
 * [[Veteran Unchained Illusionist]]
+* [[Veteran Unchained Mage]]
 
 == Dialogue ==
 {{section-stub|dialogue|Need success dialogue and any during the event.}}
@@ -1679840,7 +1680037,7 @@ To complete the event all three marked ritual sites must be captured by the play
 * {{achievement|Eternal Troubles from the Deep}}
 
 [[es:Derrota a los desencadenados y captura sus lugares rituales]]</text>
-      <sha1>7uy1hhy9tvkuecm01zhsbqet1wap24k</sha1>
+      <sha1>ckv8hqkon22ydvolwjqlujg1rwn4cvl</sha1>
     </revision>
   </page>
 <page xmlns="http://www.mediawiki.org/xml/export-0.11/">
@@ -1696089,19 +1696286,19 @@ The giant spawns at any of three gates of Nageling (does not spawn at north gate
     <ns>0</ns>
     <id>54052</id>
     <revision>
-      <id>3119793</id>
-      <parentid>3119792</parentid>
-      <timestamp>2026-03-25T01:46:24Z</timestamp>
+      <id>3215681</id>
+      <parentid>3215663</parentid>
+      <timestamp>2026-10-19T01:39:50Z</timestamp>
       <contributor>
         <username>Snitching</username>
         <id>203864</id>
       </contributor>
       <minor />
-      <comment>reverting location - missed the note</comment>
-      <origin>3119793</origin>
+      <comment>/* Dialogue */</comment>
+      <origin>3215681</origin>
       <model>wikitext</model>
       <format>text/x-wiki</format>
-      <text bytes="2297" sha1="nc6sv22qq3fc6j8mr6pi5gtudqmzv02" xml:space="preserve">{{Event infobox
+      <text bytes="2576" sha1="fglu1q185770f70barj9uy1i8buibhk" xml:space="preserve">{{Event infobox
 | location = Akk Wilds; Voloxian Passage
 | coordinates = [41641.0, 35614.4]
 | indicator = boss
@@ -1696138,10 +1696335,17 @@ The giant spawns at any of three gates of Nageling (does not spawn at north gate
 
 ;During event
 :'''Ploint:''' ''Aaah! Help!''
+
 :'''Ploint:''' ''I'm too brilliant to pass through a lizard's digestive tract!''
 
-;Once the raptor is attacked
-:'''Ploint:''' ''Take that, you giant...hairless ???!''
+:'''Ploint:''' ''It's trying to ingest me!'' {{verify|if this line is correct}}
+
+;When the raptor targets a player, one of the following
+:'''Ploint:''' ''Take that, you giant...hairless beast!''
+
+:'''Ploint:''' ''Get him! Get him! Or is it a her? Whatever. "Get" is gender neutral.''
+
+:'''Ploint:''' ''Ha, ha! Choke on your own incompetence—instead of on me.''
 
 ;After event
 :'''Ploint:''' ''Well, that could have gone better. Perhaps next time, a little more magic would be in order.''
@@ -1696153,7 +1696357,7 @@ The giant spawns at any of three gates of Nageling (does not spawn at north gate
 [[de:Besiegt das riesige hungrige Raptorjunge]]
 [[es:Derrota al bebé de raptor gigante hambriento]]
 [[fr:Vaincre le bébé raptor géant affamé]]</text>
-      <sha1>nc6sv22qq3fc6j8mr6pi5gtudqmzv02</sha1>
+      <sha1>fglu1q185770f70barj9uy1i8buibhk</sha1>
     </revision>
   </page>
 <page xmlns="http://www.mediawiki.org/xml/export-0.11/">
@@ -1757683,18 +1757887,18 @@ Applied to players during [[A Race to Arms]] upon reaching a torch.</text>
     <ns>0</ns>
     <id>415298</id>
     <revision>
-      <id>3213239</id>
-      <parentid>3213214</parentid>
-      <timestamp>2026-10-14T04:15:02Z</timestamp>
+      <id>3215215</id>
+      <parentid>3213239</parentid>
+      <timestamp>2026-10-18T13:29:01Z</timestamp>
       <contributor>
-        <username>Tery3065</username>
-        <id>270948</id>
+        <username>Ruby12</username>
+        <id>239584</id>
       </contributor>
       <minor />
-      <origin>3213239</origin>
+      <origin>3215215</origin>
       <model>wikitext</model>
       <format>text/x-wiki</format>
-      <text bytes="4693" sha1="2g1n4dvax3ktuas96tdsptte21igabf" xml:space="preserve">{{#set:Has canonical name=Deft Lahar|Has context=NPC|Has game icon=File:Merchant.png}}
+      <text bytes="4699" sha1="hl3rqjwh8afn5iv6lrsyzfw3ehppq1y" xml:space="preserve">{{#set:Has canonical name=Deft Lahar|Has context=NPC|Has game icon=File:Merchant.png}}
 This page contains historical offers from [[Deft Lahar]].
 
 == Halloween ==
@@ -1757725,7 +1757929,7 @@ This page contains historical offers from [[Deft Lahar]].
 
 == Lunar New Year ==
 * Replaced by [[Homestead Recipe Book: Lunar New Year Celestials]] with [[Lunar New Year 2026]].
-{{Vendor table header|showFacts=false|showLevel=false|location=Grand Piazza|status=historical|icon=Lunar New Year Vendor.png}}
+{{Vendor table header|showFacts=false|showLevel=false|location=The Crown Pavilion|status=historical|icon=Lunar New Year Vendor.png}}
 {{Vendor table row|item=Recipe: Golden Snake Statue|cost=1 Exotic Essence of Luck}}
 {{Vendor table row|item=Recipe: Snake Statue|cost=1 Exotic Essence of Luck}}
 {{Vendor table row|item=Recipe: Plain Red Lantern|cost=1 Exotic Essence of Luck}}
@@ -1757766,7 +1757970,7 @@ This page contains historical offers from [[Deft Lahar]].
 |}
 
 [[Category: Vendor merchandise subpages]]</text>
-      <sha1>2g1n4dvax3ktuas96tdsptte21igabf</sha1>
+      <sha1>hl3rqjwh8afn5iv6lrsyzfw3ehppq1y</sha1>
     </revision>
   </page>
 <page xmlns="http://www.mediawiki.org/xml/export-0.11/">
@@ -1777905,6 +1778109,45 @@ Exterior of Denning Forge.jpg|Outside.
 
 [[Category:Thief trainers]]</text>
       <sha1>munu81o1ays9ant2osd3v4gedkr9yk6</sha1>
+    </revision>
+  </page>
+<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
+    <title>Dense Bushes</title>
+    <ns>0</ns>
+    <id>424371</id>
+    <revision>
+      <id>3215191</id>
+      <timestamp>2026-10-18T10:04:27Z</timestamp>
+      <contributor>
+        <username>Sunlion</username>
+        <id>225997</id>
+      </contributor>
+      <comment>New page: '{{Object infobox | location = Commander without a Cause | interaction prompt = Eavesdrop; Hide | requires = soto }} [[Dense Bushes]] can be found scattered all around the [[Astral Ward]] camp in the [[Cornucopian Fields]] during the [[Secrets of the Obscure story]] step [[Commander without a Cause]]. They can be interacted with to reset the suspicion meter and hide from patrolling [[Sketchy Individual]]s.  == Story involvement == === [[Secrets of the Obscure story]] === * Act I...'</comment>
+      <origin>3215191</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="956" sha1="biugdx5tbw7vnu0kpu5kux4skvyuco2" xml:space="preserve">{{Object infobox
+| location = Commander without a Cause
+| interaction prompt = Eavesdrop; Hide
+| requires = soto
+}}
+[[Dense Bushes]] can be found scattered all around the [[Astral Ward]] camp in the [[Cornucopian Fields]] during the [[Secrets of the Obscure story]] step [[Commander without a Cause]]. They can be interacted with to reset the suspicion meter and hide from patrolling [[Sketchy Individual]]s.
+
+== Story involvement ==
+=== [[Secrets of the Obscure story]] ===
+* Act I
+** [[Commander without a Cause]]
+
+== Skills ==
+{| {{STDT|pve}}
+{{Environmental skill table header}}
+{{Environmental skill table row|Stop Hiding}}
+|}
+
+== Notes ==
+* After interacting with them, the player will receive the {{effect|Hidden}} effect, preventing them from moving. This can be removed by using the skill listed above.
+* Their interaction prompt reads "Eavesdrop" during the objectives for listening to [[Arina]], and "Hide" during the subsequent stealth section.</text>
+      <sha1>biugdx5tbw7vnu0kpu5kux4skvyuco2</sha1>
     </revision>
   </page>
 <page xmlns="http://www.mediawiki.org/xml/export-0.11/">
@@ -1848426,17 +1848669,17 @@ Used by the [[Titanic Twister]] in the [[Cardinal Sabir]] fight when a player ge
     <ns>0</ns>
     <id>405993</id>
     <revision>
-      <id>3212533</id>
-      <parentid>3209680</parentid>
-      <timestamp>2026-10-12T18:38:09Z</timestamp>
+      <id>3215693</id>
+      <parentid>3215689</parentid>
+      <timestamp>2026-10-19T03:43:11Z</timestamp>
       <contributor>
-        <username>Kossage</username>
-        <id>126773</id>
+        <ip>64.37.1.206</ip>
       </contributor>
-      <origin>3212533</origin>
+      <comment>/* Trivia */</comment>
+      <origin>3215693</origin>
       <model>wikitext</model>
       <format>text/x-wiki</format>
-      <text bytes="21547" sha1="9c3ntao1qhd6kz6ibszv679jb70u959" xml:space="preserve">{{spoiler|''[[Guild Wars 2: Visions of Eternity]]''}}
+      <text bytes="21704" sha1="88m9bvfvur2iqwadc6f07592ma1b9tc" xml:space="preserve">{{spoiler|''[[Guild Wars 2: Visions of Eternity]]''}}
 {{NPC infobox
 | location = Convergence: Nexus of Eternity; The Mists (area)
 | race = Asura
@@ -1848675,6 +1848918,7 @@ Code of Creation key art.jpg|[[Code of Creation]] key art featuring the [[Pact C
 == Trivia ==
 * Vloxx is [[Voice actor|voiced]] by [[Jason Spisak]].&lt;ref&gt;[https://www.reddit.com/r/Guildwars2/comments/1ojolm4/comment/nm5074q/ Comment by Indigo Linde], Reddit.com&lt;/ref&gt;
 * Vloxx wears [[Extremis armor]] with no headgear as a member of the [[Inquest]].
+* Vloxx wears [[Wedding Attire Outfit]] minus the headgear during [[Code of Creation]], similar to the concept art for the asuran male by [[Ahmed Aldoori]].
 
 == See also ==
 ;Associated items
@@ -1848695,7 +1848939,7 @@ Code of Creation key art.jpg|[[Code of Creation]] key art featuring the [[Pact C
 [[Category:Story characters]]
 [[Category:Holograms]]
 [[es:Director Vloxx]]</text>
-      <sha1>9c3ntao1qhd6kz6ibszv679jb70u959</sha1>
+      <sha1>88m9bvfvur2iqwadc6f07592ma1b9tc</sha1>
     </revision>
   </page>
 <page xmlns="http://www.mediawiki.org/xml/export-0.11/">
@@ -2019891,687 +2020135,6 @@ The [[Dune Roller]] effect on the player's user interface tracks the remaining d
       <format>text/x-wiki</format>
       <text bytes="33" sha1="0m4m7cob0l7kw51t4ayefq3v52sqhe2" xml:space="preserve">#REDIRECT [[Champion Dunechaser]]</text>
       <sha1>0m4m7cob0l7kw51t4ayefq3v52sqhe2</sha1>
-    </revision>
-  </page>
-<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
-    <title>Dungeon</title>
-    <ns>0</ns>
-    <id>7493</id>
-    <revision>
-      <id>3192224</id>
-      <parentid>3192222</parentid>
-      <timestamp>2026-09-09T18:33:46Z</timestamp>
-      <contributor>
-        <username>Tery3065</username>
-        <id>270948</id>
-      </contributor>
-      <minor />
-      <comment>/* Special event dungeons */</comment>
-      <origin>3192224</origin>
-      <model>wikitext</model>
-      <format>text/x-wiki</format>
-      <text bytes="22963" sha1="6uqyi98qtbpvep9sh1au9ln0e5s8qfh" xml:space="preserve">[[File:Dungeon Locations.jpg|thumb|300px|Dungeon locations in ''[[Guild Wars 2]]''.]]
-&lt;div style="float:right;clear:right;margin:0 0 10px 10px"&gt;
-{{Mail
-| icon = dungeon
-| sender = Your Herald
-| subject = An Introduction
-| content = Greetings,&lt;br&gt;&lt;br&gt;
-We have not met, but I have long been a follower of your exploits. I am a collector of tales of great daring and heroism, and your name has come up increasingly in the stories that have been reported to me. I've spoken with your mentor, and the suggestion was made that I contact you and add your stories to my collection.&lt;br&gt;&lt;br&gt;
-Your mentor was a member of an adventuring group known as Destiny's Edge. They were legendary heroes, but went their separate ways about five years ago, for reasons I have yet to discover - none have chosen to share that story with me. If you discover the nature of their separation, I would be most appreciative.&lt;br&gt;&lt;br&gt;
-Thank you for your help in this, and I will get in contact with you in the future, and hope to keep you in touch with the whereabouts of your mentor and the other members of Destiny's Edge.&lt;br&gt;&lt;br&gt;
-Through this I will remain,&lt;br&gt;&lt;br&gt;
-[[Lady Camilla|Your Herald]]
-| nosign = y
-}}
-&lt;/div&gt;
-[[Dungeon]]s are optional [[Player versus Environment|PvE]] [[instance]]s, each with their own story, designed for [[party|parties]] of five players. There are eight dungeons in the game.
-
-Dungeons feature a '''story mode''', which focuses on the story of the [[Destiny's Edge]] group and runs parallel to the player's [[Personal Story]]; and an '''explorable mode''', unlocked after completing story mode. The eighth dungeon, [[The Ruined City of Arah]], doesn't have a story mode, as it's actually the last chapter of the Personal Story.
-
-Dungeons are intended for groups of five players and are balanced around it, but allow for fewer players, and some skilled players solo them, though this may require unintended paths and skips to do. Characters are dynamically leveled down to the level appropriate for the relevant story or explorable mode of each dungeon. 
-
-A [[waypoint]] can be found outside the start of each dungeon in the open world, as well as an NPC giving [[Dungeon information|basic information]]. All dungeons can also be accessed through [[Dungeon Transportation]] NPC in [[Lion's Arch]]. More waypoints will appear inside the dungeon as players progress, which may be used for quick travel or revival if all party members are [[Combat#Combat mode|out of combat]]. Additionally, dungeons retain a basic level of persistence during the instance: creatures do not respawn, and characters may join or rejoin a party in progress within a dungeon. 
-
-Players will be notified via [[mail]] by their [[Lady Camilla|"Herald"]] as they reach the suggested level for each dungeon, as well as another notification about the dungeon's explorable mode once they complete the dungeon's story mode.
-
-Dungeon development was discontinued in favor of [[Fractals of the Mists]], a special type of level 80 dungeon that consists of an array of encounters called fractals. These fractals take place in the [[The Mists|Mists]] and explore notable events of the past and future, and feature scaling difficulty.
-
-== Map icons ==
-: [[File:Dungeon (map icon).png|Dungeon entrance]] - Dungeon entrance 
-: [[File:Contested dungeon (map icon).png|Contested dungeon entrance]] - Contested dungeon entrance
-
-== Story mode ==
-Story mode is available to all players that meet the level required for the dungeon. Story mode focuses on filling players on the story of [[Destiny's Edge]], told through cut scenes and cinematic dialogue. One or two members of Destiny's Edge join the party to guide them through a largely linear dungeon story. This mode is relatively straightforward for a pick-up-group to complete. Personal storylines and dungeon story modes are parallel: the dungeon story mode does not affect a player's progression of their personal story nor the outcome of the story, but still occurs at the same time storywise. The storylines converge just for the last mission which takes place in [[The Ruined City of Arah]]. Completing the story mode of a dungeon for the first time will result in a letter in your mailbox, along with a headpiece reward. Story mode completion is character-based, not account-based, and so must be redone for each new character.
-
-====Personal Story involvement====
-As the [[Pact Commander|player character]] levels up and lives adventures in Tyria, so too do the members of [[Destiny's Edge]]. Their story is told through story mode dungeons. Whenever the player reaches the appropriate level for a new dungeon, they will receive a mail from their [[Lady Camilla|Herald]]. These mails will brief the player about the events of the dungeon, encouraging them to join and help their allies of Destiny's Edge accomplish their goals. If the player has been following the story, their mentor will also send them mails during the story to keep them posted on their adventures.
-
-The story of the dungeons takes place during the following Personal Story events:
-* Ascalonian Catacombs (unlocked at level 30) - takes place as the player joins an [[Orders of Tyria|Order of Tyria]].
-* Caudecus's Manor (unlocked at level 40) - takes place after recruiting more races of Tyria to fight against the dragons.
-* Twilight Arbor (unlocked at level 50) - takes place during the events in Claw Island.
-* Sorrow's Embrace (unlocked at level 60) - takes place during the creation of the Pact.
-* Citadel of Flame (unlocked at level 70) - takes place during the creation of the Pact
-* Honor of the Waves (unlocked at level 76) - takes place as the Pact begins their fight.
-* Crucible of Eternity (unlocked at level 78) - takes place as the Pact begins their fight.
-* The Ruined City of Arah - doesn't have a story mode, its events happen as part of the final chapter of the Personal Story, while the explorable mode happens after completing the story.
-
-=== Rewards ===
-Story mode does '''not''' reward the dungeon currency ([[Tale of Dungeon Delving|Tales of Dungeon Delving]]), but it does reward some coin:
-
-Completing any story path rewards {{coin|13.00}}, plus an additional {{coin|50.00}} if it's the first daily completion of that story path.
-
-Completing a story path for the first time per character also rewards an additional amount of gold, namely an extra {{coin|13.00}}, and a head armor piece of rare quality.
-
-== Explorable mode ==
-{{anchor|Explorable mode}}
-[[File:dungeon vendor.jpg|thumb|Dungeon Vendor]]
-Explorable mode is available for characters that have completed story mode on that character and meet the level requirement. Only the player that opens the dungeon instance needs to meet these requirements. Explorable mode deals with the aftermath of the events in story mode. The explorable dungeon story is told with fewer cutscenes and little cinematic dialogue, and the player party is no longer joined by members of Destiny's Edge but by other local NPC. The player is presented with at least three different paths to play through for each dungeon. The party votes on the option they will take through the dungeon and the majority determines which path they take. This mode requires significantly more coordination between team members and so is far more difficult than story mode.
-
-Completing a dungeon in explorable mode awards [[coin]], experience, and dungeon [[Currency|currency]] ([[Tale of Dungeon Delving|Tales of Dungeon Delving]]). This currency can be used at a [[Dungeon Merchant]] to buy weapons, armor, runes, and other items. Each dungeon has its own unique weapon and armor set modeled according to the theme of the dungeon. These items are no more powerful than items which can be gained doing other activities in-game; the exotic sets are equal to the level 80 exotic crafted sets.
-
-=== Rewards ===
-Completing an explorable path rewards {{token|Tale of Dungeon Delving|20|l=y}}, {{coin|2600}}, 20 [[Empyreal Fragment]]s, experience equal to 70% of the character's level, a [[Piece of Rare Unidentified Gear]], and karma.
-
-Completing 8 different paths (including story paths) awards the repeatable [[Dungeon Frequenter]] achievement with {{coin|50000}} and one {{item icon|Chest of Dungeoneering}}, which contains an additional {{token|Tale of Dungeon Delving|150|l=y}}.
-
-Completing an explorable path for the first time each day rewards an additional bonus chest which contains:
-&lt;div id="dungeoncontrol"&gt;&lt;/div&gt;
-{| {{STDT|item}}
-|- style="vertical-align:bottom;"
-! width="150" | Dungeon 
-! width="150" | Path
-! width="90" | Coin reward
-! width="90" | Token reward
-|- id="dungeons-hodgins"
-| rowspan="3" style="text-align:left;" | [[Ascalonian Catacombs]]
-| Path 1 - Hodgins
-| {{coin|5000}}
-| 80 {{Token|Tale of Dungeon Delving}}
-|- id="dungeons-detha"
-| Path 2 - Detha
-| {{coin|5000}}
-| 80 {{Token|Tale of Dungeon Delving}}
-|- id="dungeons-tzark"
-| Path 3 - Tzark
-| {{coin|5000}}
-| 80 {{Token|Tale of Dungeon Delving}}
-
-|- id="dungeons-asura"
-| rowspan="3" style="text-align:left;" | [[Caudecus's Manor]]
-| Path 1 - Asura
-| {{coin|3500}}
-| 80 {{Token|Tale of Dungeon Delving}}
-|- id="dungeons-seraph"
-| Path 2 - Seraph
-| {{coin|3500}}
-| 80 {{Token|Tale of Dungeon Delving}}
-|- id="dungeons-butler"
-| Path 3 - Butler
-| {{coin|3500}}
-| 80 {{Token|Tale of Dungeon Delving}}
-
-|- id="dungeons-leurent"
-| rowspan="3" style="text-align:left;" | [[Twilight Arbor]]
-| Path 1 - [[Twilight Arbor (explorable)#Leurent's Path (up)|Leurent]] (Up)
-| {{coin|3500}}
-| 80 {{Token|Tale of Dungeon Delving}}
-|- id="dungeons-vevina"
-|Path 2 - [[Twilight Arbor (explorable)#Vevina's Path (forward)|Vevina]] (Forward)
-| {{coin|3500}}
-| 80 {{Token|Tale of Dungeon Delving}}
-|- id="dungeons-aetherpath"
-| Path 3 - [[Twilight Arbor (explorable)#Aetherpath 2|Aetherpath]]
-| {{coin|6600}}
-| 80 {{Token|Tale of Dungeon Delving}}
-
-|- id="dungeons-fergg"
-| rowspan="3" style="text-align:left;" | [[Sorrow's Embrace]]
-| Path 1 - Fergg
-| {{coin|3500}}
-| 80 {{Token|Tale of Dungeon Delving}}
-|- id="dungeons-rasalov" &lt;!-- api bug named incorrectly --&gt;
-| Path 2 - Rasolov
-| {{coin|3500}}
-| 80 {{Token|Tale of Dungeon Delving}}
-|- id="dungeons-koptev"
-| Path 3 - Koptev
-| {{coin|3500}}
-| 80 {{Token|Tale of Dungeon Delving}}
-
-|- id="dungeons-ferrah"
-| rowspan="3" style="text-align:left;" | [[Citadel of Flame]]
-| Path 1 - Ferrah
-| {{coin|3500}}
-| 80 {{Token|Tale of Dungeon Delving}}
-|- id="dungeons-magg"
-| Path 2 - Magg
-| {{coin|3500}}
-| 80 {{Token|Tale of Dungeon Delving}}
-|- id="dungeons-rhiannon"
-| Path 3 - Rhiannon
-| {{coin|3500}}
-| 80 {{Token|Tale of Dungeon Delving}}
-
-|- id="dungeons-butcher"
-| rowspan="3" style="text-align:left;" | [[Honor of the Waves]]
-| Path 1 - Butcher
-| {{coin|3500}}
-| 80 {{Token|Tale of Dungeon Delving}}
-|- id="dungeons-plunderer"
-| Path 2 - Plunderer
-| {{coin|3500}}
-| 80 {{Token|Tale of Dungeon Delving}}
-|- id="dungeons-zealot"
-| Path 3 - Zealot
-| {{coin|3500}}
-| 80 {{Token|Tale of Dungeon Delving}}
-
-|- id="dungeons-submarine"
-| rowspan="3" style="text-align:left;" | [[Crucible of Eternity]]
-| Path 1 - Submarine
-| {{coin|3500}}
-| 80 {{Token|Tale of Dungeon Delving}}
-|- id="dungeons-teleporter"
-| Path 2 - Teleporter
-| {{coin|3500}}
-| 80 {{Token|Tale of Dungeon Delving}}
-|- id="dungeons-front_door"
-| Path 3 - Front door
-| {{coin|3500}}
-| 80 {{Token|Tale of Dungeon Delving}}
-
-|- id="dungeons-jotun"
-| rowspan="4" style="text-align:left;" | [[The Ruined City of Arah]]
-| Path 1 - Jotun
-| {{coin|10000}}
-| 80 {{Token|Tale of Dungeon Delving}}
-|- id="dungeons-mursaat"
-| Path 2 - Mursaat
-| {{coin|10500}}
-| 80 {{Token|Tale of Dungeon Delving}}
-|- id="dungeons-forgotten"
-| Path 3 - Forgotten
-| {{coin|5000}}
-| 80 {{Token|Tale of Dungeon Delving}}
-|- id="dungeons-seer"
-| Path 4 - Seer
-| {{coin|10000}}
-| 80 {{Token|Tale of Dungeon Delving}}
-|}
-{{Account dungeons widget}}
-
-== Mini-dungeons ==
-[[Mini-dungeon]]s are persistent open world dungeons. [[Jumping puzzle]]s are included in the definition of a mini-dungeon. Some mini-dungeons become available only after an event chain is completed.
-
-== List of dungeons ==
-Characters are [[Dynamic level adjustment|dynamically leveled]] up or down to the level appropriate for the relevant story or explorable mode, except for [[Fractals of the Mists]], for which characters are always boosted to level 80. A nearby waypoint increases accessibility. [[Dungeon information|Dungeon instructors]] at the entrance may explain the basics of each dungeon.
-
-Additionally the [[Dungeon Transportation]] NPC can provide instant access to any dungeon from [[Fort Marriner]] in [[Lion's Arch]].
-
-{| {{STDT|sortable pve}}
-! width="150" | Dungeon 
-! Story&lt;br&gt;Level 
-! Explorable&lt;br&gt;Level 
-! Location
-! Waypoint
-! Foe types &lt;ref&gt;[https://forum-en.gw2archive.eu/forum/game/dungeons/Guide-to-Sigils-and-Potions-in-Dungeons Guide to Sigils and Potions in Dungeons], a post on the official forums discussing foe types &amp; sigils.&lt;/ref&gt;
-! Day or&lt;br&gt;Night &lt;sup&gt;2&lt;/sup&gt;
-! Suitable utility items
-|-
-| [[Ascalonian Catacombs]]
-| style="text-align:center;" | 30
-| style="text-align:center;" | 35
-| [[Phasmatis Corridor]]&lt;br&gt;&lt;small&gt;[[Plains of Ashford]]&lt;/small&gt;
-| {{waypoint|Ascalonian Catacombs Waypoint}}
-| [[Ghost]]s
-| Night (22:00)
-| {{item icon|Extended Potion of Ghost Slaying}}&lt;sup&gt;3&lt;/sup&gt;
-|-
-| [[Caudecus's Manor]]
-| style="text-align:center;" | 40
-| style="text-align:center;" | 45
-| [[Shire of Beetletun]]&lt;br&gt;&lt;small&gt;[[Queensdale]]&lt;/small&gt;
-| {{waypoint|Beetletun Waypoint}}
-| [[Bandit]]s
-| Day (07:00)
-| {{item icon|Powerful Potion of Outlaw Slaying}}
-|-
-| [[Twilight Arbor]]
-| style="text-align:center;" | 50
-| style="text-align:center;" | Nightmare Court paths: 55
-Aetherblade path: 80
-| [[Wychmire Swamp]]&lt;br&gt;&lt;small&gt;[[Caledon Forest]]&lt;/small&gt;
-| {{waypoint|1345}}
-| [[Nightmare Court]], [[Aetherblades]]
-| Night (22:00)
-| {{item icon|Powerful Potion of Nightmare Court Slaying}}&lt;br&gt;{{item icon|Powerful Potion of Slaying Scarlet's Armies}}
-|-
-| [[Sorrow's Embrace]]
-| style="text-align:center;" | 60
-| style="text-align:center;" | 65
-| [[Tribulation Rift]]&lt;br&gt;&lt;small&gt;[[Dredgehaunt Cliffs]]&lt;/small&gt;
-| {{waypoint|598}}
-| [[Dredge]], [[Inquest]]
-| Night (22:00)
-| {{item icon|Powerful Potion of Dredge Slaying}}&lt;br&gt;{{item icon|Powerful Potion of Inquest Slaying}}
-|-
-| [[Citadel of Flame]]
-| style="text-align:center;" | 70
-| style="text-align:center;" | 75
-| [[The Baelfire]]&lt;br&gt;&lt;small&gt;[[Fireheart Rise]]&lt;/small&gt;
-| {{waypoint|The Citadel of Flame Waypoint}}
-| [[Flame Legion]], [[Elemental]]s
-| Night (22:00)
-| {{item icon|Powerful Potion of Flame Legion Slaying}}
-|-
-| [[Honor of the Waves]]
-| style="text-align:center;" | 76
-| style="text-align:center;" | 80
-| [[Watchful Fjord]]&lt;br&gt;&lt;small&gt;[[Frostgorge Sound]]&lt;/small&gt;
-| {{waypoint|Honor of the Waves Waypoint}}
-| [[Icebrood]], [[Sons of Svanir]]
-| Day (07:00)
-| {{item icon|Powerful Potion of Ice Brood Slaying}}&lt;br&gt;{{item icon|Powerful Potion of Sons of Svanir Slaying}}
-|-
-| [[Crucible of Eternity]]
-| style="text-align:center;" | 78
-| style="text-align:center;" | 80
-| [[Infinite Coil Reactor]]&lt;br&gt;&lt;small&gt;[[Mount Maelstrom]]&lt;/small&gt;
-| {{waypoint|Crucible of Eternity Waypoint}}
-| [[Destroyer]]s, [[Icebrood]], [[Inquest]], [[Risen]], [[Outlaw]]
-| Story: Day (12:00)
-Explorable: Night (22:00)
-| {{item icon|Powerful Potion of Undead Slaying}}&lt;br&gt;{{item icon|Powerful Potion of Inquest Slaying}}
-|-
-| [[The Ruined City of Arah]]
-| style="text-align:center;" | &lt;small&gt;NA&lt;/small&gt;
-| style="text-align:center;" | 80
-| [[The Narthex]]&lt;br&gt;&lt;small&gt;[[Cursed Shore]]&lt;/small&gt;
-| {{waypoint|Arah Waypoint}}
-| [[Risen]]
-| Day (07:00)
-| {{item icon|Powerful Potion of Undead Slaying}}
-|-
-| [[Fractals of the Mists]]
-| style="text-align:center;" | &lt;small&gt;NA&lt;/small&gt;
-| style="text-align:center;" | 80
-| [[Fort Marriner]]&lt;br&gt;&lt;small&gt;[[Lion's Arch]]&lt;/small&gt;
-| {{waypoint|Fort Marriner Waypoint}}
-| Varies with the fractal
-| Varies
-| {{item icon|Powerful Potion of Dredge Slaying}}&lt;br&gt;{{item icon|Powerful Potion of Elemental Slaying}}&lt;br&gt;{{item icon|Powerful Potion of Grawl Slaying}}&lt;br&gt;{{item icon|Powerful Potion of Krait Slaying}}&lt;br&gt;{{item icon|Powerful Potion of Inquest Slaying}}&lt;br&gt;{{item icon|Powerful Potion of Outlaw Slaying}}&lt;br&gt;{{item icon|Powerful Potion of Slaying Scarlet's Armies}}&lt;br&gt;{{item icon|Powerful Potion of Sons of Svanir Slaying}}
-|}
-
-: &lt;sup&gt;1&lt;/sup&gt; A partial list of foe types is available for those interested in using appropriate [[nourishment]] and/or [[sigil]]s.
-: &lt;sup&gt;2&lt;/sup&gt; Only relevant for the purpose of [[Sigil of the Night]].
-: &lt;sup&gt;3&lt;/sup&gt; Works against [[Graveling Hatchling]]s and [[Spider Hatchling]]s too.
-
-=== Special event dungeons ===
-Characters are scaled to level 80 for these instances which are only available during the relevant special event.
-
-{| {{STDT|sortable pve}}
-|- style="vertical-align:bottom;"
-! width="150" | Dungeon 
-! width="175" | Initial Event / Duration
-! width="140" | Location
-! Availability
-|-
-| [[Ascent to Madness]]
-| [[Shadow of the Mad King]]&lt;br&gt;&lt;small&gt;October 28–31, 2012&lt;/small&gt;
-| [[Grand Piazza]]&lt;br&gt;&lt;small&gt;[[Lion's Arch]]&lt;/small&gt;
-| Seasonal — [[Halloween]]
-|-
-| [[Tixx's Infinirarium]]
-| [[Wintersday: The Wondrous Workshop of Toymaker Tixx]]&lt;br&gt;&lt;small&gt;December 15, 2012 – January 3, 2013&lt;/small&gt;
-| See [[Wintersday: The Wondrous Workshop of Toymaker Tixx#Tixx's schedule|Tixx's schedule]] &lt;br&gt;&lt;small&gt;for 2012&lt;/small&gt;; &lt;br&gt;[[The Crown Pavilion]] &lt;br&gt;&lt;small&gt;2013-Present&lt;/small&gt;
-| Seasonal — [[Wintersday]]
-|-
-| [[Super Adventure Box]]
-| [[April Fools' Day 2013|April Fools' Day]]&lt;br&gt;&lt;small&gt;April 1–30, 2013
-| [[Creator's Commons]]&lt;br&gt;&lt;small&gt;[[Rata Sum]]&lt;/small&gt;
-| Seasonal — [[Super Adventure Festival]]
-|-
-| [[Molten Facility]]
-| [[Flame and Frost/archive|Flame and Frost]]&lt;br&gt;&lt;small&gt;April 30 – May 12, 2013&lt;/small&gt;
-| ''See [[Molten Facility#Entrance|Entrance]]''
-| Historical — Superseded with [[Molten Furnace]]
-|-
-| [[Canach's Lair (dungeon)|Canach's Lair]]
-| [[Last Stand at Southsun]]&lt;br&gt;&lt;small&gt;May 28 – June 11, 2013&lt;/small&gt;
-| [[Bakestone Cavern]]&lt;br&gt;&lt;small&gt;[[Southsun Cove]]&lt;/small&gt;
-| Historical — Superseded with [[Canach's Lair]]
-|-
-| [[Aetherblade Retreat]]
-| [[Sky Pirates of Tyria]]&lt;br&gt;&lt;small&gt;June 25 – July 9, 2013&lt;/small&gt;
-| [[Sanctum Harbor]]&lt;br&gt;&lt;small&gt;[[Lion's Arch]]&lt;/small&gt;
-| Historical — Superseded with [[The Aetherblade Retreat]]
-|-
-| [[Scarlet's Playhouse/historical|Scarlet's Playhouse]]
-| [[Clockwork Chaos]]&lt;br&gt;&lt;small&gt;August 20 – October 1, 2013&lt;/small&gt;
-| [[The Crown Pavilion (zone)|The Crown Pavilion]]&lt;br&gt;&lt;small&gt;[[Divinity's Reach]]&lt;/small&gt;
-| Historical — Superseded with [[Scarlet's Playhouse]]
-|}
-
-== List of dungeon vendors ==
-{{main|Dungeon Merchant}}
-{{NPC service table|Dungeon Merchant}}
-
-== Related achievements ==
-* {{Achievement|Hobby Dungeon Explorer}}
-* {{Achievement|Dungeon Master}}
-* {{achievement|Dungeon Frequenter}}
-* {{achievement|Catacombs Conqueror}}
-* {{achievement|Manor Magnate}}
-* {{achievement|Twilight's Idol}}
-* {{achievement|Sorrow's Subjugator}}
-* {{achievement|Citadel of Flame Foe}}
-* {{achievement|Sanctuary Savior}}
-* {{achievement|Eternity's Epitome}}
-* {{achievement|Master of Arah}}
-* {{achievement|Dungeoneer}}
-** {{achievement|Ascalonian Catacombs Collector}}
-** {{achievement|Caudecus's Manor Collector}}
-** {{achievement|Twilight Arbor Collector}}
-** {{achievement|Sorrow's Embrace Collector}}
-** {{achievement|Citadel of Flame Collector}}
-** {{achievement|Honor of the Waves Collector}}
-** {{achievement|Crucible of Eternity Collector}}
-** {{achievement|The Ruined City of Arah Collector}}
-
-== Notes ==
-* Once the dungeon instance has been created, all party members in the [[zone]] are prompted to join their party in explorable mode if they arrive in the zone where the dungeon entrance exists or if they join the party after it has already entered the dungeon. They also receive the prompt if they travel to a different [[waypoint]] within the zone if they rejected the prompt previously.
-* It is possible for a character to enter a dungeon in explorable mode without having completed story mode if another player in the party who has completed story mode creates the instance.
-* There are a total of 32 different dungeon paths across the eight dungeons in the game, including story and explorable modes.
-* The entrances to [[Citadel of Flame]], [[Crucible of Eternity]] and [[The Ruined City of Arah]] in their respective maps can become contested, preventing parties from beginning either story or exploration mode, though members can enter dungeons in progress. 
-** Completing the pertaining event chain for that dungeon will allow access for a given amount of time before needing to be defended or recaptured.
-** [[Dungeon Transportation]] in [[Lion's Arch]] can be used regardless.
-* Dungeons offer a repair anvil, typically near the entrance.
-* Each dungeon has its own set time of day, during which its events unfold; they do not follow the game's normal cycle of night and day — some are day and some are night.&lt;ref&gt;[https://forum-en.gw2archive.eu/forum/game/dungeons/Does-AC-CoF-exp-dungeons-take-place-at-night/first#post1163481 Dungeon Day and Night], [[Robert Hrouda]] commenting on the permanent time of day in dungeons.&lt;/ref&gt;
-* Following the [[September 2014 Feature Pack]], Dungeons no longer have an instance owner. The instance only closes when all players have left the instance.
-* The [[Game updates/2022-06-07|June 7th, 2022 game update]] introduced requirements of completing paths to be able to purchase items from Dungeon Merchants. Accounts that have already completed any story mode or explorable path before this change became exempt from this requirement.
-
-== Trivia ==
-* Upon successfully completing a dungeon path, your character has a chance to shout one of the following lines:
-''Please note that "?" only denotes that the voice lines for that particular race and gender combination have not been added to the wiki, but are fully implemented and can be heard in game. Any player can contribute to the wiki and help fill this table.''
-{{Character quote
-| asura_male = Couldn't have done it without me.&lt;br&gt;Of course we made it, I knew the way through.&lt;br&gt;That was both interesting and instructive.
-| asura_female = Another satisfying adventure.&lt;br&gt;Done and done.&lt;br&gt;Knew I'd make it through.
-| charr_male = That was fun. Let's do it again.&lt;br&gt;What an adventure.&lt;br&gt;?
-| charr_female = It was a worthy challenge.&lt;br&gt;Made it.&lt;br&gt;?
-| human_male = An experience to remember!&lt;br&gt;?&lt;br&gt;?
-| human_female = ?&lt;br&gt;?&lt;br&gt;?
-| norn_male = Made it!&lt;br&gt;My adventure!&lt;br&gt;The bards will sing of this.
-| norn_female = A worthy challenge.&lt;br&gt;I'd do that again.&lt;br&gt; What's next?
-| sylvari_male = Now that was fun. Can we go again?&lt;br&gt;They'll sing our names for centuries!&lt;br&gt;We were amazing! Woo!
-| sylvari_female = Can we do that again?&lt;br&gt;We did it! Yay!&lt;br&gt;We'll go down in history.
-}}
-
-== References ==
-&lt;references/&gt;
-
-{{dungeon nav}}
-{{Instanced PvE content nav}}
-[[Category:Dungeons|*]]
-[[Category:Locations|Dungeon]]
-[[de:Verlies]]
-[[es:Mazmorra]]
-[[fr:Donjon]]</text>
-      <sha1>6uqyi98qtbpvep9sh1au9ln0e5s8qfh</sha1>
-    </revision>
-  </page>
-<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
-    <title>Dungeon Armor Container</title>
-    <ns>0</ns>
-    <id>394908</id>
-    <revision>
-      <id>3065205</id>
-      <parentid>2952837</parentid>
-      <timestamp>2025-11-18T22:17:18Z</timestamp>
-      <contributor>
-        <username>BuffsEverywhere</username>
-        <id>214162</id>
-      </contributor>
-      <minor />
-      <origin>3065205</origin>
-      <model>wikitext</model>
-      <format>text/x-wiki</format>
-      <text bytes="895" sha1="jw7wcx64l3bqfwc637h73rve97aar0l" xml:space="preserve">{{Item infobox
-| icon = Bladed Armor Box.png
-| type = Container
-| rarity = Basic
-| bound = Account
-| id = 104545
-}}
-
-== Acquisition ==
-{{Contained in reward track}}
-
-== Contents ==
-* {{contains|Mystic Clover|qty=2|chance=Guaranteed}}
-* Choose one of the following:
-** {{contains|Catacombs Armor Box|chance=Choice}}
-** {{contains|Arah Armor Box|chance=Choice}}
-** {{contains|Caudecus's Armor Box|chance=Choice}}
-** {{contains|Sorrow's Embrace Armor Box|chance=Choice}}
-** {{contains|Twilight Arbor Armor Box|chance=Choice}}
-** {{contains|Honor of the Waves Armor Box|chance=Choice}}
-** {{contains|Baelfire's Armor Box|chance=Choice}}
-** {{contains|Crucible of Eternity Armor Box|chance=Choice}}
-
-== Notes ==
-* To check what skins you have already unlocked, see: [[Dungeon unlocks]]
-
-[[de:Verlies-Rüstungsbehälter]]
-[[es:Contenedor de armaduras de mazmorra]]
-[[fr:Conteneur d'armures de donjon]]</text>
-      <sha1>jw7wcx64l3bqfwc637h73rve97aar0l</sha1>
-    </revision>
-  </page>
-<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
-    <title>Dungeon Armor and Weapons</title>
-    <ns>0</ns>
-    <id>152407</id>
-    <revision>
-      <id>3172825</id>
-      <parentid>2770683</parentid>
-      <timestamp>2026-07-23T09:09:42Z</timestamp>
-      <contributor>
-        <username>Tery3065</username>
-        <id>270948</id>
-      </contributor>
-      <minor />
-      <origin>3172825</origin>
-      <model>wikitext</model>
-      <format>text/x-wiki</format>
-      <text bytes="5911" sha1="cn9b1l2cxzks1p74t5er548c0mn9l24" xml:space="preserve">{{NPC infobox
-| random = yes
-| location = Fort Marriner
-| race = Various
-| service = Dungeon merchant
-| coordinates = [49286.91, 32017.86]
-| image = Dungeon Armor and Weapons.jpg
-}}
-[[Dungeon Armor and Weapons]] is a vendor that trades [[dungeon]] [[Currency|currencies]] for [[weapon]]s, [[armor]], [[upgrade component]]s, and [[crafting material]]s.
-
-== Locations ==
-;[[Kryta]]
-* [[Lion's Arch]]
-** [[Fort Marriner]]
-
-;[[Maguuma Wastes]]
-* [[The Silverwastes]]
-** [[Camp Resolve]] &lt;small&gt;(Only if [[Donate bandit crests to requisition additional camp services]] has been completed and the Dungeon merchant selected)&lt;/small&gt;
-
-== Items offered ==
-{{inventory/dungeon merchant}}
-{| {{STDT|mech1}}
-! rowspan=2 | Armor sets (Overview)
-! rowspan=2 | Weapon sets
-! colspan=3 | Armor sets (By Type)
-|-class=line
-! Light
-! Medium
-! Heavy
-|-
-| [[Ascalonian Catacombs armor]]
-| [[Royal Ascalonian weapons]]
-| [[Ascalonian Performer armor]]
-| [[Ascalonian Sentry armor]]
-| [[Ascalonian Protector armor]]
-|-
-| [[Caudecus's Manor armor]]
-| [[Golden Wing weapons]]
-| [[Council Ministry armor]]
-| [[Council Watch armor]]
-| [[Council Guard armor]]
-|-
-| [[Twilight Arbor armor]]
-| [[Nightmare weapons]]
-| [[Nightmare Court armor (light)|Nightmare Court armor]]
-| [[Nightmare Court armor (medium)|Nightmare Court armor]]
-| [[Nightmare Court armor (heavy)|Nightmare Court armor]]
-|-
-| [[Sorrow's Embrace armor]]
-| [[Dark Asuran weapons]]
-| [[Forgeman armor (light)|Forgeman armor]]
-| [[Forgeman armor (medium)|Forgeman armor]]
-| [[Forgeman armor (heavy)|Forgeman armor]]
-|-
-| [[Citadel of Flame armor]]
-| [[Molten weapons]]
-| [[Flame Legion armor (light)|Flame Legion armor]]
-| [[Flame Legion armor (medium)|Flame Legion armor]]
-| [[Flame Legion armor (heavy)|Flame Legion armor]]
-|-
-| [[Honor of the Waves armor]]
-| [[Kodan weapons]]
-| [[Armor of Koda (light)|Armor of Koda]]
-| [[Armor of Koda (medium)|Armor of Koda]]
-| [[Armor of Koda (heavy)|Armor of Koda]]
-|-
-| [[Crucible of Eternity armor]]
-| [[Inquest weapons]]
-| [[Inquest armor (light)|Inquest armor]]
-| [[Inquest armor (medium)|Inquest armor]]
-| [[Inquest armor (heavy)|Inquest armor]]
-|-
-| [[The Ruined City of Arah armor]]
-| [[Weapons of the Dragon's Deep]]
-| [[Armor of the Lich]]
-| [[Accursed armor]]
-| [[Grasping Dead armor]]
-|}
-
-== Dialogue ==
-:Interested in trading for rare armor and weapon relics?
-:{{dialogue icon|more}} ''What weapons do you have?''
-::Here are all the weapons I have for trade.
-::{{dialogue icon|merchant}} ''Show me weapons from [[Ascalonian Catacombs]].''
-::{{dialogue icon|merchant}} ''Show me weapons from [[Caudecus's Manor]].''
-::{{dialogue icon|merchant}} ''Show me weapons from [[Twilight Arbor]].''
-::{{dialogue icon|merchant}} ''Show me weapons from [[Sorrow's Embrace]].''
-::{{dialogue icon|merchant}} ''Show me weapons from [[Citadel of Flame]].''
-::{{dialogue icon|merchant}} ''Show me weapons from [[Honor of the Waves]].''
-::{{dialogue icon|merchant}} ''Show me weapons from [[Crucible of Eternity]].''
-::{{dialogue icon|merchant}} ''Show me weapons from [[The Ruined City of Arah|Arah]].''
-:{{dialogue icon|more}} ''What armor do you have?''
-::Here are all the armor pieces I have for trade.
-::{{dialogue icon|merchant}} ''Show me armor from Ascalonian Catacombs.''
-::{{dialogue icon|merchant}} ''Show me armor from Caudecus's Manor.''
-::{{dialogue icon|merchant}} ''Show me armor from Twilight Arbor.''
-::{{dialogue icon|merchant}} ''Show me armor from Sorrow's Embrace.''
-::{{dialogue icon|merchant}} ''Show me armor from Citadel of Flame.''
-::{{dialogue icon|merchant}} ''Show me armor from Honor of the Waves.''
-::{{dialogue icon|merchant}} ''Show me armor from Crucible of Eternity.''
-::{{dialogue icon|merchant}} ''Show me armor from Arah.''
-:{{dialogue icon|more}} ''How do you come by all of these relics?''
-::Talk to [[Dungeon Historian|my companion]] about that. I just sell them.
-::{{dialogue icon|more}} ''Maybe later. What weapons do you have?'' &lt;small&gt;'''(same as "What weapons do you have" above)'''&lt;/small&gt;
-::{{dialogue icon|more}} ''Maybe later. What armor do you have?'' &lt;small&gt;'''(same as "What armor do you have?" above)'''&lt;/small&gt;
-::{{dialogue icon|end}} ''Good-bye.''
-:{{dialogue icon|end}} ''Not right now.''
-
-== Notes ==
-* The [[Game updates/2022-06-07|June 7th, 2022 game update]] introduced requirements of completing paths to be able to purchase items from Dungeon Merchants. Accounts that have already completed any story mode or explorable path before this change became exempt from this requirement.
-* The [[Game updates/2023-09-12|September 12, 2023 game update]] moved the vendor's location from the [[Vigil Centerhouse]] near the Aerodrome.
-
-== Trivia ==
-* Formerly called "Dungeon merchant" or "Dungeon vendor".
-* The appearance of this NPC is randomly selected from the uncombined versions each time a map instance is created. Each possible appearance wears armor and wields weapons associated with one of the dungeons.
-** Uncombined versions: [[Historian Symon]], [[Seraph Outfitter Eva]], [[Valiant Saeraquel]], [[Morro]], [[Officer Veros]], [[Ulof Sindersson]], [[Peacemaker Skrimm]], and [[Officer Hetja]].
-** Previous locations as individual NPCs:
-&lt;gallery heights="200px" widths="350px"&gt;
-Dungeon merchants in Lion's Arch (Fort Marriner).jpg|'''Lion's Arch''' ([[Memory of Old Lion's Arch|pre-Assault on Lion's Arch]])
-Vigil Keep Dungeon merchants.jpg|'''Vigil Keep''' (temporarily during the Assault on Lion's Arch)
-Dungeon merchants in Lion's Arch (Farshore Ward).jpg|'''Lion's Arch''' (post-assault; under construction)
-&lt;/gallery&gt;
-
-== See also ==
-* [[Equipment acquisition by stats#Dungeons|Equipment acquisition by stats (Dungeons)]]
-* [[Token]]
-* [[Vendor]]
-
-[[Category:Asura]]
-[[Category:Charr]]
-[[Category:Humans]]
-[[Category:Norn]]
-[[Category:Sylvari]]
-[[de:Verlies-Rüstungen und -Waffen]]
-[[es:Comerciante de armas y armaduras de mazmorra]]
-[[fr:Armes et armures de donjon]]</text>
-      <sha1>cn9b1l2cxzks1p74t5er548c0mn9l24</sha1>
-    </revision>
-  </page>
-<page xmlns="http://www.mediawiki.org/xml/export-0.11/">
-    <title>Dungeon Armor and Weapons/Ascalonian Catacombs</title>
-    <ns>0</ns>
-    <id>152710</id>
-    <revision>
-      <id>2544265</id>
-      <parentid>2544235</parentid>
-      <timestamp>2022-06-08T20:29:44Z</timestamp>
-      <contributor>
-        <username>Medyro</username>
-        <id>204080</id>
-      </contributor>
-      <minor />
-      <comment>/* Notes */</comment>
-      <origin>2544265</origin>
-      <model>wikitext</model>
-      <format>text/x-wiki</format>
-      <text bytes="1481" sha1="4376t4050m91c2qvwwjwhn68uv3tn3g" xml:space="preserve">{{TOCright}}
-This page shows all items offered by the [[Dungeon Armor and Weapons|dungeon merchant]] in [[Fort Marriner]] that are related to the [[Ascalonian Catacombs]] dungeon.
-
-== Available prefixes ==
-* The following [[Attribute combinations|prefixes]] can be selected for the {{rarity|rare|rare}} armor:
-{{prefix attribute table|Honed, Potent, Rejuvenating}}
-* The following prefixes can be selected for the {{rarity|exotic|exotic}} armor and weapons:
-{{prefix attribute table|Soldier's, Rampager's, Magi's}}
-
-== Items offered ==
-{{inventory|dungeon merchant Ascalonian Catacombs}}
-
-== Notes ==
-* The total cost of one rare armor set is {{token|Tale of Dungeon Delving|210}}.
-* The total cost of one exotic armor set is {{token|Tale of Dungeon Delving|1380}}.
-* All armor skins cost {{token|Tale of Dungeon Delving|4140}} in total.
-* All weapon skins cost {{token|Tale of Dungeon Delving|6150}} in total.
-* The exotic Soldier's and Magi's equipment can be salvaged into the corresponding [[Intricate Gossamer Insignia]] and [[Orichalcum Imbued Inscription]].
-
-{{Dungeon Armor and Weapons nav}}
-[[Category:Vendor merchandise subpages]]
-
-{{#set:
- | Located in ={{#show: Dungeon Armor and Weapons|?Located in|link=none|sep=;}}|+sep=;
- | Has canonical name=Dungeon Armor and Weapons
- | Has game icon =File:Dungeon Merchant.png
- | Is historical=N
-}}
-[[es:Comerciante de armas y armaduras de mazmorra/Catacumbas Ascalonianas]]
-[[fr:Armes et armures de donjon/Catacombes d'Ascalon]]</text>
-      <sha1>4376t4050m91c2qvwwjwhn68uv3tn3g</sha1>
     </revision>
   </page>
 </mediawiki>

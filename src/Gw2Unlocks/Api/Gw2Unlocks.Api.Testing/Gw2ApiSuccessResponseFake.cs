@@ -2,9 +2,12 @@
 using GuildWars2.Hero.Achievements;
 using GuildWars2.Hero.Achievements.Categories;
 using GuildWars2.Hero.Achievements.Titles;
+using GuildWars2.Hero.Equipment.Gliders;
 using GuildWars2.Hero.Equipment.Miniatures;
 using GuildWars2.Hero.Equipment.Novelties;
+using GuildWars2.Hero.Equipment.Outfits;
 using GuildWars2.Hero.Equipment.Wardrobe;
+using GuildWars2.Hero.Emotes;
 using GuildWars2.Items;
 using System.Collections.ObjectModel;
 using System.Threading;
@@ -20,6 +23,9 @@ public class Gw2ApiSuccessResponseFake : IGw2ApiSource, IGw2ApiCache
     public Collection<Miniature> Miniatures { get; private set; } = [];
     public Collection<Novelty> Novelties { get; private set; } = [];
     public Collection<Title> Titles { get; private set; } = [];
+    public Collection<GliderSkin> Gliders { get; private set; } = [];
+    public Collection<Outfit> Outfits { get; private set; } = [];
+    public Collection<Emote> Emotes { get; private set; } = [];
 
     public void SetItems(Collection<Item> items) => Items = items;
     public void SetSkins(Collection<EquipmentSkin> skins) => Skins = skins;
@@ -28,6 +34,9 @@ public class Gw2ApiSuccessResponseFake : IGw2ApiSource, IGw2ApiCache
     public void SetMiniatures(Collection<Miniature> miniatures) => Miniatures = miniatures;
     public void SetNovelties(Collection<Novelty> novelties) => Novelties = novelties;
     public void SetTitles(Collection<Title> titles) => Titles = titles;
+    public void SetGliders(Collection<GliderSkin> gliders) => Gliders = gliders;
+    public void SetOutfits(Collection<Outfit> outfits) => Outfits = outfits;
+    public void SetEmotes(Collection<Emote> emotes) => Emotes = emotes;
 
     public virtual Task<Collection<Item>> GetItemsAsync(CancellationToken cancellationToken)
         => Task.FromResult(Items);
@@ -49,6 +58,15 @@ public class Gw2ApiSuccessResponseFake : IGw2ApiSource, IGw2ApiCache
     public virtual Task<Collection<Title>> GetTitlesAsync(CancellationToken cancellationToken)
         => Task.FromResult(Titles);
 
+    public virtual Task<Collection<GliderSkin>> GetGlidersAsync(CancellationToken cancellationToken)
+        => Task.FromResult(Gliders);
+
+    public virtual Task<Collection<Outfit>> GetOutfitsAsync(CancellationToken cancellationToken)
+        => Task.FromResult(Outfits);
+
+    public virtual Task<Collection<Emote>> GetEmotesAsync(CancellationToken cancellationToken)
+        => Task.FromResult(Emotes);
+
 
     public Collection<Item>? SavedItems { get; private set; }
     public Collection<EquipmentSkin>? SavedSkins { get; private set; }
@@ -57,6 +75,9 @@ public class Gw2ApiSuccessResponseFake : IGw2ApiSource, IGw2ApiCache
     public Collection<Miniature>? SavedMiniatures { get; private set; }
     public Collection<Novelty>? SavedNovelties { get; private set; }
     public Collection<Title>? SavedTitles { get; private set; }
+    public Collection<GliderSkin>? SavedGliders { get; private set; }
+    public Collection<Outfit>? SavedOutfits { get; private set; }
+    public Collection<Emote>? SavedEmotes { get; private set; }
 
 
     public Task SaveItemsToCacheAsync(Collection<Item> data, CancellationToken cancellationToken)
@@ -97,6 +118,24 @@ public class Gw2ApiSuccessResponseFake : IGw2ApiSource, IGw2ApiCache
     public Task SaveTitlesToCacheAsync(Collection<Title> data, CancellationToken cancellationToken)
     {
         SavedTitles = [.. data];
+        return Task.CompletedTask;
+    }
+
+    public Task SaveGlidersToCacheAsync(Collection<GliderSkin> data, CancellationToken cancellationToken)
+    {
+        SavedGliders = [.. data];
+        return Task.CompletedTask;
+    }
+
+    public Task SaveOutfitsToCacheAsync(Collection<Outfit> data, CancellationToken cancellationToken)
+    {
+        SavedOutfits = [.. data];
+        return Task.CompletedTask;
+    }
+
+    public Task SaveEmotesToCacheAsync(Collection<Emote> data, CancellationToken cancellationToken)
+    {
+        SavedEmotes = [.. data];
         return Task.CompletedTask;
     }
 }

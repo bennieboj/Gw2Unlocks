@@ -30,17 +30,30 @@ internal sealed class IconSpriteSheetGenerator : IIconSpriteSheetGenerator
         var sheets = new Dictionary<string, byte[]>();
         var inventoryData = new IconSpriteSheetInventoryData();
 
-        inputs = [.. inputs];
+        var inputList = inputs.ToList();
+
+        // Dedup by icon URL so identical icons occupy a single sheet slot.
+        var uniqueInputs = inputList
+            .GroupBy(i => i.IconUrl)
+            .Select(g => g.First())
+            .ToList();
+
+        var urlToUniqueIndex = uniqueInputs
+            .Select((u, idx) => (u.IconUrl, idx))
+            .ToDictionary(x => x.IconUrl, x => x.idx);
+
+        // Positions for each unique input (indexed by position in uniqueInputs).
+        var uniquePositions = new Dictionary<int, (int Sheet, int X, int Y)>();
+
         Stopwatch sw = Stopwatch.StartNew();
-        for (int sheet = 0; sheet * IconsPerSheet < inputs.Count(); sheet++)
+        for (int sheet = 0; sheet * IconsPerSheet < uniqueInputs.Count; sheet++)
         {
-            var inputBatch = inputs
+            var inputBatch = uniqueInputs
                 .Skip(sheet * IconsPerSheet)
                 .Take(IconsPerSheet)
                 .ToList();
 
             int rows = (int)Math.Ceiling(inputBatch.Count / (double)Columns);
-
             int width = Columns * IconSize;
             int height = rows * IconSize;
 
@@ -109,7 +122,8 @@ internal sealed class IconSpriteSheetGenerator : IIconSpriteSheetGenerator
 
                 canvas.DrawBitmap(resizedBitmap, x, y, SKSamplingOptions.Default);
 
-                inventoryData.Inventory.Add($"{input.Type}/{input.Id}", new IconSpriteSheetInventoryItem(sheet, x, y));
+                var globalUniqueIndex = sheet * IconsPerSheet + i;
+                uniquePositions[globalUniqueIndex] = (sheet, x, y);
 
                 resizedBitmap.Dispose();
             }
@@ -119,6 +133,19 @@ internal sealed class IconSpriteSheetGenerator : IIconSpriteSheetGenerator
             using var data = image.Encode(SKEncodedImageFormat.Webp, 90);
             sheets.Add($"icons_{sheet}.webp", data.ToArray());
         }
+
+        // Build inventory entries for ALL original inputs (including duplicates).
+        // Duplicate icon URLs share the same sheet coordinates; a repeated (Type, Id) key
+        // (e.g. two recipe sheets unlocking the same recipe) keeps the last entry.
+        foreach (var input in inputList)
+        {
+            var uniqueIndex = urlToUniqueIndex[input.IconUrl];
+            if (uniquePositions.TryGetValue(uniqueIndex, out var pos))
+            {
+                inventoryData.Inventory[$"{input.Type}/{input.Id}"] = new IconSpriteSheetInventoryItem(pos.Sheet, pos.X, pos.Y);
+            }
+        }
+
         return new IconSpriteSheetResult(sheets, inventoryData);
     }
 }

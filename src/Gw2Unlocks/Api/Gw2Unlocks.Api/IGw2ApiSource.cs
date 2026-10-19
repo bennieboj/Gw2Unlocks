@@ -1,9 +1,12 @@
 ﻿using GuildWars2.Hero.Achievements;
 using GuildWars2.Hero.Achievements.Categories;
 using GuildWars2.Hero.Achievements.Titles;
+using GuildWars2.Hero.Equipment.Gliders;
 using GuildWars2.Hero.Equipment.Miniatures;
 using GuildWars2.Hero.Equipment.Novelties;
+using GuildWars2.Hero.Equipment.Outfits;
 using GuildWars2.Hero.Equipment.Wardrobe;
+using GuildWars2.Hero.Emotes;
 using GuildWars2.Items;
 using System.Collections.ObjectModel;
 using System.Threading;
@@ -19,4 +22,7 @@ public interface IGw2ApiSource
     Task<Collection<Miniature>> GetMiniaturesAsync(CancellationToken cancellationToken);
     Task<Collection<Novelty>> GetNoveltiesAsync(CancellationToken cancellationToken);
     Task<Collection<Title>> GetTitlesAsync(CancellationToken cancellationToken);
+    Task<Collection<GliderSkin>> GetGlidersAsync(CancellationToken cancellationToken);
+    Task<Collection<Outfit>> GetOutfitsAsync(CancellationToken cancellationToken);
+    Task<Collection<Emote>> GetEmotesAsync(CancellationToken cancellationToken);
 }

@@ -165,6 +165,11 @@ internal sealed class SiteGeneratorService(
         var config = await classifierCache.GetClassifierConfigFromCacheAsync(stoppingToken);
         var urls = new List<string>();
 
+        // One RFC 3339 UTC timestamp for the whole run, so every page and the sitemap agree on
+        // exactly when this generation happened.
+        var generatedAt = DateTimeOffset.UtcNow.ToString(
+            "yyyy-MM-dd'T'HH:mm:ss'Z'", CultureInfo.InvariantCulture);
+
         var sidebar = BuildSidebar(config);
 
         var allUnlocks = new Collection<Unlock>(
@@ -192,6 +197,7 @@ internal sealed class SiteGeneratorService(
             TypeGroups = BuildTypeGroups(allUnlocks),
             Sidebar = sidebar,
             UnlockMapJson = unlockMapJson,
+            GeneratedAt = generatedAt,
         },
         Path.Combine(wwwRootTempPath, "index.html")
     );
@@ -200,10 +206,10 @@ internal sealed class SiteGeneratorService(
 
         foreach (var category in config.Categories)
         {
-            GenerateCategoryPage(category, "", category.Name, css, js, sidebar, unlockMapJson, wwwRootTempPath, urls);
+            GenerateCategoryPage(category, "", category.Name, css, js, sidebar, unlockMapJson, generatedAt, wwwRootTempPath, urls);
         }
 
-        GenerateSiteMap(wwwRootTempPath, urls);
+        GenerateSiteMap(wwwRootTempPath, urls, generatedAt);
 
         logger.LogInformation("Static site generation complete.");
     }
@@ -221,6 +227,7 @@ internal sealed class SiteGeneratorService(
         string js,
         List<SidebarCategoryModel> sidebar,
         string unlockMapJson,
+        string generatedAt,
         string wwwRootTempPath,
         List<string> urls)
     {
@@ -245,7 +252,8 @@ internal sealed class SiteGeneratorService(
                 Sidebar = sidebar,
                 UnlockMapJson = unlockMapJson,
                 Category = category,
-                CurrentSlug = pathSlug
+                CurrentSlug = pathSlug,
+                GeneratedAt = generatedAt
             },
             Path.Combine(wwwRootTempPath, pathSlug.Replace('/', Path.DirectorySeparatorChar), "index.html")
         );
@@ -254,11 +262,11 @@ internal sealed class SiteGeneratorService(
 
         foreach (var subCategory in category.SubCategories)
         {
-            GenerateCategoryPage(subCategory, pathSlug, $"{titlePath} > {subCategory.Name}", css, js, sidebar, unlockMapJson, wwwRootTempPath, urls);
+            GenerateCategoryPage(subCategory, pathSlug, $"{titlePath} > {subCategory.Name}", css, js, sidebar, unlockMapJson, generatedAt, wwwRootTempPath, urls);
         }
     }
 
-    public static void GenerateSiteMap(string publicPath, List<string> urls)
+    public static void GenerateSiteMap(string publicPath, List<string> urls, string lastMod)
     {
         var sb = new StringBuilder();
 
@@ -270,7 +278,7 @@ internal sealed class SiteGeneratorService(
         {
             sb.AppendLine("  <url>");
             sb.AppendLine(CultureInfo.InvariantCulture, $"    <loc>https://gw2unlocks.com{url}</loc>");
-            sb.AppendLine(CultureInfo.InvariantCulture, $"    <lastmod>{DateTime.UtcNow:yyyy-MM-ddTHH:mm:sszzz}</lastmod>");
+            sb.AppendLine(CultureInfo.InvariantCulture, $"    <lastmod>{lastMod}</lastmod>");
             sb.AppendLine("  </url>");
         }
 
@@ -289,7 +297,7 @@ internal sealed class SiteGeneratorService(
 
             // A node's entry covers its whole subtree, matching what the old generator produced
             // for a group (its own unlocks plus all of its categories').
-            var dict = new Dictionary<UnlockClassifier.Type, List<int>>();
+            var dict = new Dictionary<UnlockClassifier.Type, List<string>>();
             foreach (var unlock in node.GetUnlocksWithDescendants())
             {
                 if (unlock.ApiData == null) continue;
@@ -354,7 +362,11 @@ internal sealed class SiteGeneratorService(
             { UnlockClassifier.Type.Achievement, "Achievements" },
             { UnlockClassifier.Type.Miniature, "Miniatures" },
             { UnlockClassifier.Type.Skin, "Skins" },
-            { UnlockClassifier.Type.Novelty, "Novelties" }
+            { UnlockClassifier.Type.Novelty, "Novelties" },
+            { UnlockClassifier.Type.Recipe, "Recipes" },
+            { UnlockClassifier.Type.Glider, "Gliders" },
+            { UnlockClassifier.Type.Outfit, "Outfits" },
+            { UnlockClassifier.Type.Emote, "Emotes" }
         };
 
     private static List<TypeGroupModel> BuildTypeGroups(Collection<Unlock> unlocks)
@@ -415,6 +427,10 @@ internal sealed class SiteGeneratorService(
             UnlockClassifier.Type.Miniature => CreateMiniChatLink(id),
             UnlockClassifier.Type.Skin => CreateSkinChatLink(id),
             UnlockClassifier.Type.Novelty => CreateItemChatLink(id),
+            UnlockClassifier.Type.Recipe => CreateItemChatLink(id),
+            UnlockClassifier.Type.Glider => CreateGliderChatLink(id),
+            UnlockClassifier.Type.Outfit => CreateOutfitChatLink(id),
+            UnlockClassifier.Type.Emote => CreateItemChatLink(id),
             _ => ""
         };
 
@@ -460,6 +476,34 @@ internal sealed class SiteGeneratorService(
         (byte)((id >> 8) & 0xFF),
         (byte)((id >> 16) & 0xFF),
         (byte)((id >> 24) & 0xFF)
+        ];
+
+        return $"[&{Convert.ToBase64String(bytes)}]";
+    }
+
+    private static string CreateGliderChatLink(int id)
+    {
+        byte[] bytes =
+        [
+            0x0B,
+            (byte)(id & 0xFF),
+            (byte)((id >> 8) & 0xFF),
+            (byte)((id >> 16) & 0xFF),
+            (byte)((id >> 24) & 0xFF)
+        ];
+
+        return $"[&{Convert.ToBase64String(bytes)}]";
+    }
+
+    private static string CreateOutfitChatLink(int id)
+    {
+        byte[] bytes =
+        [
+            0x0C,
+            (byte)(id & 0xFF),
+            (byte)((id >> 8) & 0xFF),
+            (byte)((id >> 16) & 0xFF),
+            (byte)((id >> 24) & 0xFF)
         ];
 
         return $"[&{Convert.ToBase64String(bytes)}]";
