@@ -13,6 +13,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.Json;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -355,7 +356,46 @@ internal sealed class SiteGeneratorService(
 
         Directory.CreateDirectory(Path.GetDirectoryName(outputPath)!);
 
-        File.WriteAllText(outputPath, result);
+        File.WriteAllText(outputPath, MinifyHtml(result));
+    }
+
+    /// <summary>
+    /// Elements whose content is whitespace-sensitive and must be left byte-for-byte alone:
+    /// <c>script</c> (JS relies on newlines for automatic semicolon insertion),
+    /// <c>style</c>, <c>pre</c> and <c>textarea</c> (whitespace is rendered literally).
+    /// The whole match is wrapped in a capture group so <see cref="Regex.Split(string)"/> keeps
+    /// each block in the output instead of discarding it.
+    /// </summary>
+    private static readonly Regex ProtectedBlocks = new(
+        @"(<(?:script|style|pre|textarea)\b[^>]*>.*?</(?:script|style|pre|textarea)>)",
+        RegexOptions.Singleline | RegexOptions.IgnoreCase | RegexOptions.Compiled);
+
+    /// <summary>
+    /// Collapses every run of whitespace to a single space, outside of <c>script</c>/<c>style</c>/<c>pre</c>/<c>textarea</c>.
+    ///
+    /// This is the standard "conservative collapse" HTML minification (what html-minifier's
+    /// collapseWhitespace does): a run of newlines + indentation becomes one space, never nothing,
+    /// so inline element spacing and the SSR'd markup are preserved exactly as the browser renders
+    /// them. Only the template's indentation is removed. On the "all unlocks" page this takes the
+    /// file from ~26.7 MB to ~10 MB, back under Cloudflare Pages' 25 MiB per-file limit.
+    /// </summary>
+    private static string MinifyHtml(string html)
+    {
+        if (string.IsNullOrEmpty(html))
+        {
+            return html;
+        }
+
+        // Split on the protected blocks, keeping the delimiters in the result. Even indices are
+        // ordinary markup (safe to collapse); odd indices are the protected blocks (left verbatim).
+        var parts = ProtectedBlocks.Split(html);
+
+        for (var i = 0; i < parts.Length; i += 2)
+        {
+            parts[i] = Regex.Replace(parts[i], @"\s+", " ");
+        }
+
+        return string.Concat(parts);
     }
     private static readonly Dictionary<UnlockClassifier.Type, string> TypeGroupLabels =
         new() {
