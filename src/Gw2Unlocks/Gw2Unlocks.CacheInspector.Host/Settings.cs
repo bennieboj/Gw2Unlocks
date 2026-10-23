@@ -31,8 +31,8 @@ internal sealed class LookupSettings : CommandSettings
     public bool Details { get; set; }
 
     public override ValidationResult Validate() =>
-        !Enum.IsDefined(DataSet) || string.IsNullOrWhiteSpace(Query)
-            ? ValidationResult.Error("Provide a valid dataset and a nonempty query.")
+        string.IsNullOrWhiteSpace(Query)
+            ? ValidationResult.Error("Provide a nonempty query.")
             : ValidationResult.Success();
 }
 

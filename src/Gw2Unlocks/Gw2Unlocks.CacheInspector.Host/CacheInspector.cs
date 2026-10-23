@@ -70,7 +70,7 @@ internal sealed class CacheInspector(IGw2ApiSource api, IGw2WikiSource wiki, IGw
                 }
                 return results;
             default:
-                throw new ArgumentOutOfRangeException(nameof(settings));
+                return [];
         }
     }
 
